@@ -1,0 +1,1 @@
+`workflow.png` uses the team-approved source PNG. The low-resolution Data Model JPG remains in `assets/` as its visual reference, while `generate.py` redraws it at `1700×980` for crisp text. Reproduce both final PNGs from the repository root with `python3 pitch/diagrams/generate.py` (requires Pillow).
