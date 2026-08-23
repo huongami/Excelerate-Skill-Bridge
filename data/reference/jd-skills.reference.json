@@ -1,0 +1,20 @@
+[
+  {
+    "jdId": "marketing-ops-1",
+    "targetRoleId": "marketing-operations-manager",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://marketing-ops-1", "capturedAt": "2026-08-23" },
+    "skills": ["stakeholder alignment", "performance analytics", "paid media operations", "marketing automation tools"]
+  },
+  {
+    "jdId": "marketing-ops-2",
+    "targetRoleId": "marketing-operations-manager",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://marketing-ops-2", "capturedAt": "2026-08-23" },
+    "skills": ["stakeholder alignment", "performance analytics", "marketing automation tools"]
+  },
+  {
+    "jdId": "marketing-ops-3",
+    "targetRoleId": "marketing-operations-manager",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://marketing-ops-3", "capturedAt": "2026-08-23" },
+    "skills": ["stakeholder alignment", "paid media operations", "campaign planning"]
+  }
+]

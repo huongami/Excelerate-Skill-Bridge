@@ -1,6 +1,6 @@
 # Skill Bridge Architecture
 
-This document specifies the next-layer live application. The hackathon build is the static, hardcoded `app/demo.html`; no live API or LLM code is required to demonstrate the idea. The design below exists to prove feasibility and prevent the demo from implying an unsafe or incoherent production path.
+This document defines both the implemented live-app scaffold and the production-minded next layer. The stage-safe deliverable remains the static `app/demo.html`; the Next.js app now implements the same three-screen flow with provisional synthetic/reference fixtures and a guarded AI boundary. Demo mode is deterministic and does not require an API key.
 
 ## 0. Functional inventory
 
@@ -145,9 +145,9 @@ flowchart TB
   CTRL --> SESSION[(Session adapter - local memory or signed cookie)]
 ```
 
-The static `app/demo.html` sits outside this live request path and remains the stage deliverable even if every next-layer component above is unimplemented.
+The static `app/demo.html` sits outside this request path and remains the safest stage deliverable. The route/controller/domain path above is implemented and testable independently.
 
-### 1.2 Planned folder and route layout
+### 1.2 Implemented folder and route layout
 
 ```text
 app/
@@ -167,7 +167,8 @@ frontend/
 ├── components/                      # uploader, field review, evidence card, gap list, action log
 ├── api/client.ts                    # only browser access to backend: same-origin fetch
 ├── state/sessionStore.ts            # Zustand state + cookie hydration
-└── types/contracts.ts               # generated API-facing types
+└── types/contracts.ts               # API-facing types re-exported from shared contracts
+shared/contracts.ts                  # dependency-neutral browser/server contract types
 backend/
 ├── controllers/                     # orchestration called only by route wrappers
 ├── domain/                          # F1.1-F7.2 pure/domain functions
@@ -416,19 +417,19 @@ A model/version change always reruns live golden/adversarial checks even when pr
 
 ### Current limitations accepted for the hackathon
 
-- Static data proves the flow and interaction, not extraction accuracy or model reliability.
+- Deterministic demo fixtures prove the flow and interaction, not extraction accuracy or model reliability.
 - No identity, persistence, audit-grade decision log, or concurrent usage.
-- Reference mappings and JD frequencies remain illustrative until the team answers the open questions and completes the reviewed build process.
+- Current Reference mappings and JD frequencies are explicitly provisional synthetic fixtures; external-source review remains required before product evaluation.
 - Per-skill `high/medium/low` is explainable but requires calibration and bias review before employment use.
 - Formal credential equivalence, visa/work-rights checks, and automated hiring decisions remain out of scope per PRD §7.
 
 ### Roadmap
 
-1. Resolve seed roles/mappings/JD sample/UI shape; build reviewed Reference JSON.
-2. Implement the single-process app and Zero-AI-Trust test harness.
-3. Run golden/adversarial evaluation and document limitations before any live demo.
+1. Replace provisional seeds with reviewed, dated Reference JSON sourced through the §2 process.
+2. Expand the golden/adversarial fixtures and calibrate prompt/model behavior against them.
+3. Run golden/adversarial evaluation and document limitations before enabling live AI in a presentation.
 4. Add PostgreSQL + Drizzle, auth, retention controls, and auditability only when multi-user persistence or PRD §5.2 learning features become real requirements.
 
 ### Open items
 
-The blocking decisions are maintained in `REPO_GUIDE.md`: reviewed seed pairs, target roles/industries, dated public JD sample set, and no-overall-score UI shape. Any resolution must update `PROMPTS.md`, this section/function inventory, REPO_GUIDE, README rubric citations, static demo copy/data where relevant, and tests in the same change.
+The implemented default scope uses the existing demo persona, Product Manager target role, provisional skill mappings, and a per-skill card UI with no aggregate score. Remaining product decisions are data-quality gates rather than code blockers: approve additional roles, sign off mappings, and capture a dated public JD sample set. Any resolution must update `PROMPTS.md`, this document, REPO_GUIDE, README, fixtures, and tests together.

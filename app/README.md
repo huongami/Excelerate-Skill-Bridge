@@ -1,1 +1,1 @@
-Open `demo.html` directly in a browser for the self-contained, three-screen Skill Bridge stage demo; it uses only hardcoded synthetic data and makes no network or AI calls.
+Open `demo.html` directly for the fail-safe stage demo. For the coded three-screen app, run `pnpm dev` from the repository root and open `http://localhost:3000`; deterministic demo mode is the default and needs no API key.

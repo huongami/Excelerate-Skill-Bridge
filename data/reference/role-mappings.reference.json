@@ -1,0 +1,40 @@
+[
+  {
+    "id": "map-product-owner-marketing-ops",
+    "sourceTitle": "Product Owner",
+    "sourceCountry": "Vietnam",
+    "targetRoleId": "marketing-operations-manager",
+    "auEquivalentFunction": "Product Manager / Product Operations",
+    "skills": [
+      {
+        "id": "cross-functional-planning",
+        "label": "Cross-functional planning",
+        "group": "direct",
+        "sharedCompetency": "Coordinating priorities across delivery teams",
+        "rationale": "Led quarterly roadmaps with engineering, sales and design → demonstrates coordinated campaign planning across teams.",
+        "aliases": ["stakeholder alignment", "campaign planning"]
+      },
+      {
+        "id": "data-informed-decisions",
+        "label": "Data-informed decisions",
+        "group": "transferable",
+        "sharedCompetency": "Using evidence to prioritise work",
+        "rationale": "Used funnel analytics to prioritise product experiments → transfers to measuring and optimising campaign performance.",
+        "aliases": ["performance analytics", "analytics", "reporting"]
+      },
+      {
+        "id": "stakeholder-communication",
+        "label": "Stakeholder communication",
+        "group": "transferable",
+        "sharedCompetency": "Communicating trade-offs and results",
+        "rationale": "Presented trade-offs to regional executives → demonstrates clear communication of priorities and results.",
+        "aliases": ["stakeholder management", "executive communication"]
+      }
+    ],
+    "sources": [
+      { "publisher": "Team decision based on PRD worked example", "url": "Docs/Skill_Bridge_PRD.md", "capturedAt": "2026-08-23" }
+    ],
+    "reviewedBy": "Skill Bridge team",
+    "reviewedAt": "2026-08-23"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "name": "Linh Nguyen",
+  "role": {
+    "title": "Product Owner",
+    "employer": "Lotus Commerce",
+    "country": "Vietnam",
+    "startDate": "2021-01",
+    "endDate": "2025-08",
+    "responsibilities": [
+      "Led quarterly roadmaps with engineering, sales and design.",
+      "Used funnel analytics to prioritise product experiments.",
+      "Presented trade-offs to regional executives."
+    ]
+  }
+}

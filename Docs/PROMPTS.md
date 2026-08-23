@@ -18,7 +18,7 @@ Build idea and demo reliability before engineering depth:
 
 1. Create `app/demo.html`, a self-contained static three-screen demo using hardcoded synthetic personas. It must need no server, build step, database, venue network, or live LLM call.
 2. Create pitch-ready `pitch/diagrams/workflow.png` and `data-model.png` from the team-approved originals retained under `pitch/diagrams/assets/`. Preserve the Workflow pixels. Because the approved Data Model JPG is only 600×386 and unreadably soft in a deck, retain it as the visual reference but redraw its exact information structure deterministically with Pillow at 1700×980. Do not use generative image upscaling for text-heavy diagrams, because labels must remain exact.
-3. Treat the live pipeline in ARCHITECTURE as the next-layer specification. Do not implement its API routes or LLM calls until the seed mapping set, target roles/industries, reference JD sample, and per-skill UI shape are resolved.
+3. Implement the single-process Next.js scaffold after the static assets, using the static persona, Product Manager role, provisional synthetic mappings, and per-skill card UI as explicit defaults. Keep `SKILL_BRIDGE_DEMO_MODE=true` deterministic and key-free. Real model calls and evaluation claims remain gated on reviewed seed mappings, a dated public JD set, and golden/adversarial validation.
 
 ### 3. Application architecture
 
@@ -40,9 +40,11 @@ Maintain:
 - `Docs/REPO_GUIDE.md`: full tree, purpose/owner, status, and open questions.
 - `Docs/ARCHITECTURE.md`: full functional inventory, code architecture, Raw/Reference/Silver/Gold data design, API contracts/schemas, prompt map, tests, limitations, roadmap, and open items.
 - `Docs/PROMPTS.md`: this current generation spec and supporting prompt library.
-- `app/demo.html` and one-line `app/README.md`.
+- `app/demo.html`, the three Next.js screens, thin API route wrappers, and `app/README.md`.
 - `pitch/diagrams/` with one-line README, team-approved source assets, normalization generator, and both generated PNGs.
-- `data/README.md`: intentional placeholder and unblock conditions.
+- `frontend/`, `backend/`, `infra/`, and `shared/`: UI, domain/controller, adapter, and dependency-neutral contract code.
+- `tests/`: unit/integration tests plus golden-set, adversarial, and e2e homes.
+- `data/`: labelled synthetic demo fixtures and provisional Reference JSON, with review gates documented in its README.
 
 ### 5. Functional inventory and data model
 
@@ -91,7 +93,7 @@ After every scope change, merge it into sections 1-7 and update README, REPO_GUI
 
 ## Runtime prompt library
 
-These prompts belong to the future live application, not the static demo. All outputs must use strict schemas through the guarded gateway.
+These prompts belong to the implemented live-app boundary, not the static demo. Demo mode uses deterministic fixtures; any enabled model output must use strict schemas through the guarded gateway.
 
 ### CV_EXTRACT_V1 — US-1 CV/experience parser
 
@@ -145,10 +147,10 @@ Present only per-skill match levels linked to evidence. Never output or imply a 
 
 ## Future vibe-coding stages
 
-### Stage 1 — scaffold after open questions resolve
+### Stage 1 — implemented scaffold
 
 ```text
-Implement the single-process Next.js/TypeScript layout in ARCHITECTURE with screens for profile review, translated skills/gaps, and recruiter match/human review. Keep framework routes thin, enforce frontend/backend import boundaries, and use placeholder or reviewed seed data first. No auth or database.
+Maintain the implemented single-process Next.js/TypeScript layout in ARCHITECTURE with profile review, translated skills/gaps, and recruiter match/human review. Keep framework routes thin, enforce frontend/backend import boundaries, and use clearly labelled synthetic/provisional data in demo mode. No auth or database.
 ```
 
 ### Stage 2 — runtime wiring
