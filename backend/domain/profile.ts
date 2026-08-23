@@ -2,6 +2,7 @@ import { createHash, randomUUID } from "node:crypto";
 import mammoth from "mammoth";
 import pdf from "pdf-parse";
 import demoCandidate from "@/data/demo/candidate-profile.json";
+import khoaCandidate from "@/data/demo/phung-dang-khoa-candidate-profile.json";
 import { AppError } from "@/backend/errors";
 import { guardedGenerate } from "@/backend/ai/guardedGenerate";
 import {
@@ -12,8 +13,8 @@ import {
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
-export async function extractDocumentText(file: File): Promise<{ text: string; sourceType: "pdf" | "docx" }> {
-  if (file.size > MAX_FILE_SIZE) throw new AppError("FILE_TOO_LARGE", "CV must be 10 MB or smaller", 413);
+export async function extractDocumentText(file: File, documentLabel = "Document"): Promise<{ text: string; sourceType: "pdf" | "docx" }> {
+  if (file.size > MAX_FILE_SIZE) throw new AppError("FILE_TOO_LARGE", `${documentLabel} must be 10 MB or smaller`, 413);
   const bytes = Buffer.from(await file.arrayBuffer());
   if (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")) {
     const result = await pdf(bytes);
@@ -28,22 +29,38 @@ export async function extractDocumentText(file: File): Promise<{ text: string; s
   throw new AppError("UNSUPPORTED_FILE_TYPE", "Only PDF and DOCX files are supported", 415);
 }
 
-function demoProfile(profileId: string, rawHash: string, fileName: string, sourceType: "pdf" | "docx" | "demo"): CandidateProfileSilver {
-  const role = demoCandidate.role;
+type DemoCandidate = typeof demoCandidate | typeof khoaCandidate;
+
+function selectDemoCandidate(file: File | null): DemoCandidate {
+  if (!file) return demoCandidate;
+  const normalizedName = file.name.trim().toLowerCase();
+  const fixtures: DemoCandidate[] = [demoCandidate, khoaCandidate];
+  const fixture = fixtures.find((candidate) => candidate.matchFileNames.some((name) => name.toLowerCase() === normalizedName));
+  if (!fixture) {
+    throw new AppError(
+      "LIVE_CV_PARSING_DISABLED",
+      "This CV has no reviewed demo fixture. Use Minh Tran or Phung Dang Khoa, or set SKILL_BRIDGE_DEMO_MODE=false to parse a new CV with the live model.",
+      422
+    );
+  }
+  return fixture;
+}
+
+function demoProfile(candidate: DemoCandidate, profileId: string, rawHash: string, fileName: string, sourceType: "pdf" | "docx" | "demo"): CandidateProfileSilver {
   return {
     profileId,
     revision: 1,
-    name: { value: demoCandidate.name, status: "extracted", reason: null, sourceExcerpt: demoCandidate.name },
+    name: { value: candidate.name, status: "extracted", reason: null, sourceExcerpt: candidate.name },
     document: { rawHash, sourceType, fileName, consentConfirmed: true },
-    roles: [{
+    roles: candidate.roles.map((role, roleIndex) => ({
       id: randomUUID(),
-      title: { value: role.title, status: "ambiguous", reason: "Confirm the local interpretation of this title", sourceExcerpt: role.title },
+      title: { value: role.title, status: roleIndex === 0 ? "ambiguous" : "extracted", reason: roleIndex === 0 ? "Confirm the local interpretation of this title" : null, sourceExcerpt: role.title },
       employer: { value: role.employer, status: "extracted", reason: null, sourceExcerpt: role.employer },
       country: { value: role.country, status: "extracted", reason: null, sourceExcerpt: role.country },
       startDate: { value: role.startDate, status: "extracted", reason: null, sourceExcerpt: role.startDate },
       endDate: { value: role.endDate, status: "extracted", reason: null, sourceExcerpt: role.endDate },
       responsibilities: role.responsibilities.map((text) => ({ id: randomUUID(), text, sourceExcerpt: text }))
-    }],
+    })),
     provenanceEvents: []
   };
 }
@@ -51,8 +68,9 @@ function demoProfile(profileId: string, rawHash: string, fileName: string, sourc
 export async function parseProfile(file: File | null, consentConfirmed: boolean): Promise<{ profile: CandidateProfileSilver; rawText: string }> {
   if (!consentConfirmed) throw new AppError("CONSENT_REQUIRED", "Confirm consent before processing a CV", 400);
   const profileId = randomUUID();
+  const candidate = selectDemoCandidate(file);
   let rawText = "Skill Bridge synthetic demo profile";
-  let fileName = "Linh_Nguyen_Demo_CV.pdf";
+  let fileName = "Minh_Tran_Demo_CV.pdf";
   let sourceType: "pdf" | "docx" | "demo" = "demo";
 
   if (file) {
@@ -66,7 +84,7 @@ export async function parseProfile(file: File | null, consentConfirmed: boolean)
     promptName: "CV_EXTRACT_V1",
     input: { profileId, rawHash, fileName, sourceType, rawText },
     schema: CandidateProfileSilverSchema,
-    demoFactory: () => demoProfile(profileId, rawHash, fileName, sourceType)
+    demoFactory: () => demoProfile(candidate, profileId, rawHash, fileName, sourceType)
   });
   return { profile, rawText };
 }

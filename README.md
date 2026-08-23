@@ -8,6 +8,7 @@ The repository now provides two presentation paths:
 
 - [Static three-screen demo](app/demo.html) - one self-contained HTML file with hardcoded illustrative personas, no server, build step, network dependency, database, or live AI call.
 - [Workflow diagram](pitch/diagrams/workflow.png) and [data-model diagram](pitch/diagrams/data-model.png) - pitch-ready PNGs generated reproducibly by [generate.py](pitch/diagrams/generate.py).
+- [Khoa → Product Owner demo video](output/video/Skill_Bridge_Khoa_Product_Owner_Demo.mp4) - a 34-second, captioned 720p walkthrough from CV profile to recruiter decision.
 - [Coded Next.js app](app/page.tsx) - the same flow through thin API routes, domain functions, Zod contracts, append-only decisions, and a guarded AI gateway. It defaults to deterministic demo mode.
 - Role-based demo portals at `/candidate`, `/hr`, and `/admin`, selected from `/`. Candidate owns profile/skills, HR owns matching/human decisions, and Admin displays trust/readiness controls. These are UI roles only; authentication remains outside hackathon scope.
 - [Architecture specification](Docs/ARCHITECTURE.md) - the implemented structure plus the full Raw -> Reference -> Silver -> Gold production path.
@@ -38,7 +39,7 @@ Australia hosts 680,582 international students, while 69% of employers report di
 
 ## Solution direction
 
-The candidate reviews a structured profile, sees their experience translated into Australian-market skill language with evidence, and receives neutral gap guidance. A recruiter then compares those already-translated skills with a specific job description using per-skill match levels and explanations. The recruiter alone chooses **Shortlist**, **Needs more info**, or **Not a fit**; the product never auto-accepts or auto-rejects.
+The candidate reviews a structured profile, sees their experience translated into Australian-market skill language with evidence, and receives neutral gap guidance. A recruiter uploads or pastes a JD, reviews mapped skills with evidence and transparent job-priority weights, then compares those requirements with the candidate using per-skill match levels and explanations. The weights describe the role and never form an overall candidate score. The recruiter alone chooses **Shortlist**, **Needs more info**, or **Not a fit**; the product never auto-accepts or auto-rejects.
 
 ## Judging-criteria alignment
 
@@ -51,7 +52,7 @@ Attendance is handled by the team and is not claimed by the repository.
 | Prototype and Technical Execution | 28% | The [static demo](app/demo.html) covers all three screens without stage-risk dependencies, while the coded app implements the screen/API/domain boundaries. [ARCHITECTURE §0-3](Docs/ARCHITECTURE.md) maps every function, contract, artifact, schema, and pipeline layer. |
 | Evaluation, Limitations and Future Development | 16% | [ARCHITECTURE §4](Docs/ARCHITECTURE.md) defines Zero-AI-Trust verification, golden-set/adversarial/e2e tests, and retest triggers; [§5](Docs/ARCHITECTURE.md#5-limitations-roadmap-and-open-items) records limitations, database triggers, and open decisions. |
 | Pitch and Live Demonstration | 8% | [Demo instructions](app/README.md), deterministic personas, and a three-step narrative support a smooth live walkthrough grounded in [PRD §2.3](Docs/Skill_Bridge_PRD.md). |
-| Creativity (Video/Pitch Presentation) | 4% | Reproducible [workflow and data-model visuals](pitch/diagrams/README.md), consistent Skill Bridge styling, explainability copy, and the two-sided story provide pitch-ready visual anchors. |
+| Creativity (Video/Pitch Presentation) | 4% | Reproducible [workflow and data-model visuals](pitch/diagrams/README.md), the [captioned demo video](output/video/Skill_Bridge_Khoa_Product_Owner_Demo.mp4), consistent Skill Bridge styling, explainability copy, and the two-sided story provide pitch-ready visual anchors. |
 
 ## Deliberate scope decisions
 

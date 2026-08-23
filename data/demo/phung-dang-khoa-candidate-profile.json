@@ -1,0 +1,43 @@
+{
+  "fixtureId": "phung-dang-khoa",
+  "matchFileNames": ["[CV] Phung Dang Khoa.docx.pdf", "Phung Dang Khoa.pdf"],
+  "name": "Phung Dang Khoa",
+  "dataClassification": "user-provided-consented-demo",
+  "roles": [
+    {
+      "title": "Proxy Product Owner | Data Analyst",
+      "employer": "FPT Software",
+      "country": "Vietnam",
+      "startDate": "2023-10",
+      "endDate": "Present",
+      "responsibilities": [
+        "Owned the Data Mart 2.0 backlog from problem definition to release, delivering a 91% performance improvement and more than 600% increase in data capacity.",
+        "Defined requirements and prioritised delivery of more than 10 enterprise dashboards for senior stakeholders.",
+        "Redesigned backlog and sprint processes, lifting team efficiency by 30% and reducing rework by 20%.",
+        "Led product discovery, user research, solution design and roadmap planning for client-sponsored innovation programs."
+      ]
+    },
+    {
+      "title": "Event Manager | Chief Translator",
+      "employer": "Learning Mastery PTE. LTD. / Babylons Group",
+      "country": "Vietnam",
+      "startDate": "2023-07",
+      "endDate": "Present",
+      "responsibilities": [
+        "Owned delivery of programs for more than 400 participants and 50 staff while standardising repeatable workflows.",
+        "Built a continuous participant and stakeholder feedback mechanism to refine program structure and communication.",
+        "Mentored participants into translators and core team members and coordinated multilingual teams around shared objectives."
+      ]
+    },
+    {
+      "title": "Event Organizer",
+      "employer": "Learning Mastery PTE. LTD. / Babylons Group",
+      "country": "Vietnam",
+      "startDate": "2018-07",
+      "endDate": "2023-07",
+      "responsibilities": [
+        "Organised project-based learning events and supported cross-team delivery from preparation through completion."
+      ]
+    }
+  ]
+}

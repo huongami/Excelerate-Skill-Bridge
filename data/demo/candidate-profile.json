@@ -1,15 +1,18 @@
 {
-  "name": "Linh Nguyen",
-  "role": {
-    "title": "Product Owner",
-    "employer": "Lotus Commerce",
+  "fixtureId": "minh-tran",
+  "matchFileNames": ["Minh_Tran_Demo_CV.docx", "Minh_Tran_Demo_CV.pdf"],
+  "name": "Minh Tran",
+  "dataClassification": "synthetic-demo",
+  "roles": [{
+    "title": "Operations Team Lead",
+    "employer": "Saigon Service Group",
     "country": "Vietnam",
-    "startDate": "2021-01",
+    "startDate": "2022-01",
     "endDate": "2025-08",
     "responsibilities": [
-      "Led quarterly roadmaps with engineering, sales and design.",
-      "Used funnel analytics to prioritise product experiments.",
-      "Presented trade-offs to regional executives."
+      "Managed a 12-person operations and customer service team in Ho Chi Minh City.",
+      "Tracked service volumes and customer issues in weekly spreadsheets to improve staffing decisions.",
+      "Coordinated escalations across warehouse, sales and customer support teams."
     ]
-  }
+  }]
 }

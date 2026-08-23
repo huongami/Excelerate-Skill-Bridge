@@ -80,9 +80,9 @@ The fine-grained rows below are the audit checklist. Several rows intentionally 
 
 ### F4.1 Extract skills from one job description
 
-- **Trigger:** A reference JD is ingested offline or a recruiter submits one JD at runtime.
-- **Processing:** Preserve Raw text and source metadata; call `guardedGenerate()` once with `JD_EXTRACT_V1`; validate normalized skills and evidence spans; reject any skill without a source span.
-- **Output:** `jobDescriptionSilver` with one document ID and extracted required/preferred skills.
+- **Trigger:** A reference JD is ingested offline or a recruiter submits one JD at runtime. Candidate state is not required for JD upload, extraction, mapping, or weighting; it is required only when F6.1 begins.
+- **Processing:** Accept pasted text or extract text from a recruiter-uploaded PDF/DOCX (10 MB maximum); preserve Raw text and source metadata; call `guardedGenerate()` once with `JD_EXTRACT_V1`; validate normalized skills and evidence spans; classify each skill as `essential`, `important`, or `supporting` from the JD language; deterministically normalize priority points (5/3/1) into per-skill percentages totalling 100; reject any skill without a source span. The percentages rank job requirements, never candidates.
+- **Output:** `jobDescriptionSilver` with one document ID and extracted skills containing `requirement`, `importance`, `weight`, and `evidenceSpan`.
 - **Edge cases:** Boilerplate-only or garbled input fails explicitly. An empty valid requirements list is permitted and clearly reported.
 
 ### F4.2 Aggregate frequency across many reference JDs (US-4.1-US-4.3)
@@ -103,7 +103,7 @@ The fine-grained rows below are the audit checklist. Several rows intentionally 
 
 - **Trigger:** Recruiter submits one JD and selects an existing candidate profile revision.
 - **Processing:** Run F4.1 once for the JD; compare each JD skill with the candidate's validated skills/reference synonyms; optionally use `guardedGenerate()` with `SKILL_MATCH_V1` only for bounded semantic relations; validate `high | medium | low`, evidence IDs, and reused US-3 rationale; produce one row per required JD skill.
-- **Output:** `candidateJobMatchGold.skillMatches[]`, each with per-skill level, JD evidence, candidate evidence or explicit absence, and rationale. There is structurally no total/aggregate score field.
+- **Output:** `candidateJobMatchGold.skillMatches[]`, each with its JD priority/weight, per-skill match level, JD evidence, candidate evidence or explicit absence, and rationale. There is structurally no total/aggregate candidate-score field.
 - **Edge cases:** No candidate evidence forces `low`; conflicting mappings are flagged for recruiter review. Hover/tap details resolve the stored evidence chain, not a new LLM call.
 
 ### F7.1 Present human review only (US-7.1)
@@ -203,6 +203,7 @@ All errors use `{ "error": { "code": string, "message": string, "retryable": boo
 | `PATCH /api/profiles/:id` | `{ revision, edits: [{ fieldPath, value, action: "edit"|"confirm" }] }` | `200 { revision, profile, reviewTasks }` | F1.3 |
 | `POST /api/profiles/:id/translate` | `{ revision, targetRoleId, targetIndustryId? }` | `200 { translatedRoles, skillProfile, gaps, frequencyContext }` | F2.1-F5.1 |
 | `GET /api/reference/frequency?targetRoleId=...` | target role ID | `200 { roleSkillFrequency }` | F4.2 |
+| `POST /api/jds/parse` | multipart optional `file` (PDF/DOCX), optional `text`, `sourceLabel` | `201 { jd, rawText, fileName }`; `jd.skills[].weight` totals 100 | F4.1 |
 | `POST /api/matches` | `{ profileId, revision, jd: { text, sourceLabel }, clientRequestId }` | `201 { matchId, skillMatches, humanReviewCopy }` | F4.1, F6.1-F7.1 |
 | `POST /api/matches/:id/decisions` | `{ clientRequestId, action: "shortlist"|"needs_more_info"|"not_a_fit", actorLabel, note? }` | `201 { event, decisionEvents }` | F7.2 |
 
@@ -437,4 +438,4 @@ A model/version change always reruns live golden/adversarial checks even when pr
 
 ### Open items
 
-The implemented default scope uses the existing demo persona, Product Manager target role, provisional skill mappings, and a per-skill card UI with no aggregate score. Remaining product decisions are data-quality gates rather than code blockers: approve additional roles, sign off mappings, and capture a dated public JD sample set. Any resolution must update `PROMPTS.md`, this document, REPO_GUIDE, README, fixtures, and tests together.
+The implemented default scope uses the Minh Tran demo persona, Business Operations Coordinator target role, provisional skill mappings, and a per-skill card UI with no aggregate score. Remaining product decisions are data-quality gates rather than code blockers: approve additional roles, sign off mappings, and capture a dated public JD sample set. Any resolution must update `PROMPTS.md`, this document, REPO_GUIDE, README, fixtures, and tests together.

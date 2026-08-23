@@ -1,4 +1,4 @@
-import type { CandidateProfile, DecisionEvent, Frequency, GapAnalysis, Match, ReviewTask, SkillProfile } from "@/shared/contracts";
+import type { CandidateProfile, DecisionEvent, Frequency, GapAnalysis, JobDescription, Match, ReviewTask, SkillProfile } from "@/shared/contracts";
 
 export type ParseProfileResponse = {
   profileId: string;
@@ -25,5 +25,7 @@ export type MatchResponse = {
   match: Match;
   humanReviewCopy: string;
 };
+
+export type ParseJdResponse = { jd: JobDescription; rawText: string; fileName: string };
 
 export type DecisionResponse = { event: DecisionEvent; decisionEvents: DecisionEvent[] };

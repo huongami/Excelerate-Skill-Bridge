@@ -35,7 +35,8 @@ The static demo, reproducible pitch diagrams, and single-process Next.js app sca
 │       ├── workflow.png              # Pitch workflow visual (Design)
 │       └── data-model.png            # Pitch data-layer visual (Design)
 └── data/
-    ├── demo/                         # Synthetic candidate fixtures (Product + QA)
+    ├── demo/                         # Synthetic/consented CV fixtures plus 21 upload-ready operations/tech/Product Owner JDs and generators (Product + QA)
+├── output/video/                     # Reproducible 720p Khoa → Product Owner demo video, captures, and generator (Pitch + Technical)
     ├── reference/                    # Provisional demo-mode role/mapping/JD JSON (Product + Technical)
     └── README.md                     # Fixture status and review gate (Technical + Product)
 ```

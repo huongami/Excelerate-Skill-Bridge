@@ -100,6 +100,8 @@ export const JdSkillSchema = z.object({
   skillId: z.string().min(1),
   label: z.string().min(1),
   requirement: z.enum(["required", "preferred"]),
+  importance: z.enum(["essential", "important", "supporting"]),
+  weight: z.number().positive().max(100),
   evidenceSpan: z.string().min(1)
 }).strict();
 
@@ -147,6 +149,8 @@ export const CandidateJobMatchGoldSchema = z.object({
   skillMatches: z.array(z.object({
     jdSkillId: z.string().min(1),
     label: z.string().min(1),
+    importance: z.enum(["essential", "important", "supporting"]),
+    weight: z.number().positive().max(100),
     matchRate: z.enum(["high", "medium", "low"]),
     reason: z.string().min(1),
     jdEvidence: z.string().min(1),

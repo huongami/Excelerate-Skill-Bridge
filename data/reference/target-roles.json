@@ -1,5 +1,13 @@
 [
   {
+    "id": "business-operations-coordinator",
+    "label": "Business Operations Coordinator",
+    "industry": "Business Operations",
+    "decisionSource": "PRD §4.1 Minh Tran candidate persona",
+    "reviewedBy": "Skill Bridge team",
+    "reviewedAt": "2026-08-23"
+  },
+  {
     "id": "marketing-operations-manager",
     "label": "Marketing Operations Manager",
     "industry": "Marketing",

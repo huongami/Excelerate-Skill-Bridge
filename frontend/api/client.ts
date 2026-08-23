@@ -1,4 +1,4 @@
-import type { DecisionResponse, MatchResponse, ParseProfileResponse, ProfileResponse, TranslationResponse } from "@/frontend/types/contracts";
+import type { DecisionResponse, MatchResponse, ParseJdResponse, ParseProfileResponse, ProfileResponse, TranslationResponse } from "@/frontend/types/contracts";
 
 async function parseResponse<T>(response: Response): Promise<T> {
   const body = await response.json();
@@ -30,6 +30,14 @@ export async function createMatch(profileId: string, revision: number, text: str
   return parseResponse(await fetch("/api/matches", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ profileId, revision, jd: { text, sourceLabel: "Recruiter-entered demo JD" }, clientRequestId: crypto.randomUUID() }) }));
 }
 
+export async function parseJd(file: File | undefined, text: string): Promise<ParseJdResponse> {
+  const form = new FormData();
+  form.set("text", text);
+  form.set("sourceLabel", file?.name ?? "Recruiter-entered demo JD");
+  if (file) form.set("file", file);
+  return parseResponse(await fetch("/api/jds/parse", { method: "POST", body: form }));
+}
+
 export async function decide(matchId: string, action: "shortlist" | "needs_more_info" | "not_a_fit"): Promise<DecisionResponse> {
-  return parseResponse(await fetch(`/api/matches/${matchId}/decisions`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ clientRequestId: crypto.randomUUID(), action, actorLabel: "Alex Morgan" }) }));
+  return parseResponse(await fetch(`/api/matches/${matchId}/decisions`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ clientRequestId: crypto.randomUUID(), action, actorLabel: "Sarah Whitfield" }) }));
 }
