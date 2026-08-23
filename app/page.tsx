@@ -1,2 +1,3 @@
-import { redirect } from "next/navigation";
-export default function Home() { redirect("/profile"); }
+import { RoleSelectorScreen } from "@/frontend/screens/RoleSelectorScreen";
+
+export default function Home() { return <RoleSelectorScreen/>; }

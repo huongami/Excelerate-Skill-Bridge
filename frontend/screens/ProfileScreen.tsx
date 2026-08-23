@@ -8,7 +8,7 @@ import { useSessionStore } from "@/frontend/state/sessionStore";
 
 export function ProfileScreen() {
   const router = useRouter();
-  const { profile, setProfile, setTranslation } = useSessionStore();
+  const { profile, setProfile, setTranslation, reset } = useSessionStore();
   const [file, setFile] = useState<File>(); const [busy, setBusy] = useState(false); const [error, setError] = useState<string>();
   const [targetRoleId, setTargetRoleId] = useState("marketing-operations-manager");
 
@@ -23,7 +23,13 @@ export function ProfileScreen() {
       const result = await translateProfile(updated.profile.profileId, updated.profile.revision, targetRoleId);
       setTranslation(result.skillProfile, result.gaps, result.frequencyContext);
       router.push("/skills");
-    } catch (cause) { setError(cause instanceof Error ? cause.message : "Unable to translate profile"); } finally { setBusy(false); }
+    } catch (cause) {
+      const message = cause instanceof Error ? cause.message : "Unable to translate profile";
+      if (message.includes("does not exist in this session")) {
+        reset();
+        setError("This profile belonged to an earlier server session. Parse the CV again to create a fresh profile.");
+      } else setError(message);
+    } finally { setBusy(false); }
   }
 
   return <><section className="hero"><p className="eyebrow">Step 1 · Candidate profile</p><h1>Make experience readable before judging it.</h1><p>Upload a CV or load the synthetic demo persona. Ambiguous fields must be confirmed before translation.</p></section><Status error={error} busy={busy}/>

@@ -151,7 +151,10 @@ The static `app/demo.html` sits outside this request path and remains the safest
 
 ```text
 app/
-├── page.tsx                         # redirects to /profile; routing glue only
+├── page.tsx                         # role selector for Candidate, HR, and Admin
+├── candidate/page.tsx               # candidate dashboard -> profile/skills journey
+├── hr/page.tsx                      # HR dashboard -> match/human decision journey
+├── admin/page.tsx                   # demo governance/readiness dashboard
 ├── profile/page.tsx                 # Screen 1 wrapper -> frontend/screens/ProfileScreen
 ├── skills/page.tsx                  # Screen 2 wrapper -> frontend/screens/SkillsScreen
 ├── review/page.tsx                  # Screen 3 wrapper -> frontend/screens/ReviewScreen
@@ -187,6 +190,8 @@ tests/{unit,integration,golden-set,adversarial,e2e}/
 
 **Import rule:** `frontend/**` may import `frontend/**` and shared contract types, never `backend/**`. It calls same-origin APIs with `fetch`. `app/api/**` may import backend controllers. Only `backend/ai/guardedGenerate.ts` may import `openai`; lint rule `no-restricted-imports` rejects all other imports. A future service split therefore changes the API base URL/deployment, not domain/UI code.
 
+Candidate, HR, and Admin are presentation-level roles, not security principals. `/candidate` and `/hr` expose the two product journeys; `/admin` exposes read-only demo governance. With no authentication or authorization in hackathon scope, these routes must not be treated as access control.
+
 ### 1.3 API contracts
 
 All errors use `{ "error": { "code": string, "message": string, "retryable": boolean, "fieldPaths"?: string[] } }`; no route fabricates success data.
@@ -208,7 +213,7 @@ All errors use `{ "error": { "code": string, "message": string, "retryable": boo
 | Static demo personas | Embedded in `app/demo.html` | Build/repo lifetime |
 | Reference taxonomies, reviewed mappings, JD-derived skills | `data/reference/*.json`, imported at build/start | Versioned release |
 | Raw CV/JD and Silver/Gold session artifacts | Local demo: process memory; public demo: encrypted/signed size-bounded client cookie, with raw text kept browser-side | One session only |
-| UI navigation/draft edits | Browser Zustand store | Tab/session |
+| UI navigation/draft edits | Non-persisted browser Zustand store | Current loaded app only; deliberately cleared on reload so browser IDs cannot outlive process-memory backend records |
 | Secrets | Server environment variables | Process/deploy |
 | Production history | No storage in hackathon scope | Not available |
 

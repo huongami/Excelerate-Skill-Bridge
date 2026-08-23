@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./portals.css";
 import { AppShell } from "@/frontend/components/AppShell";
 
 export const metadata: Metadata = { title: "Skill Bridge", description: "Evidence-backed skill translation for international talent" };

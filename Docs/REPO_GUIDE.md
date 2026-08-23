@@ -20,6 +20,7 @@ The static demo, reproducible pitch diagrams, and single-process Next.js app sca
 │   ├── README.md                     # Static and coded-app run instructions (Technical)
 │   └── demo.html                     # Self-contained, hardcoded three-screen stage demo (Technical + Design)
 │   ├── {profile,skills,review}/       # Thin screen wrappers (Frontend)
+│   ├── {candidate,hr,admin}/           # Role dashboards and portal entry points (Frontend/Product)
 │   └── api/                           # Thin HTTP wrappers over backend controllers (Technical)
 ├── frontend/                          # Screens, components, fetch client, browser state (Frontend)
 ├── backend/                           # Controllers, domain logic, schemas, repositories, guarded AI (Technical)
@@ -55,6 +56,8 @@ tests/                  # unit, integration, golden-set, adversarial, e2e
 ```
 
 One boundary is non-negotiable: `frontend/` never imports `backend/`. It uses `fetch` against same-origin API routes. Route wrappers may import backend controllers; they contain no business logic.
+
+Candidate, HR, and Admin are demo UI roles. They clarify journey ownership but do not imply authentication, authorization, or separate services.
 
 ## Remaining decisions before reviewed/live-AI evaluation
 

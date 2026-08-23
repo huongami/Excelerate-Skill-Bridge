@@ -1,7 +1,6 @@
 "use client";
 
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 import type { CandidateProfile, DecisionEvent, Frequency, GapAnalysis, Match, SkillProfile } from "@/shared/contracts";
 
 type AppSession = {
@@ -18,11 +17,11 @@ type AppSession = {
   reset: () => void;
 };
 
-export const useSessionStore = create<AppSession>()(persist((set) => ({
+export const useSessionStore = create<AppSession>()((set) => ({
   decisions: [],
   setProfile: (profile) => set({ profile }),
   setTranslation: (skillProfile, gaps, frequency) => set({ skillProfile, gaps, frequency }),
   setMatch: (match) => set({ match }),
   setDecisions: (decisions) => set({ decisions }),
   reset: () => set({ profile: undefined, skillProfile: undefined, gaps: undefined, frequency: undefined, match: undefined, decisions: [] })
-}), { name: "skill-bridge-demo" }));
+}));

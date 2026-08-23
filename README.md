@@ -9,6 +9,7 @@ The repository now provides two presentation paths:
 - [Static three-screen demo](app/demo.html) - one self-contained HTML file with hardcoded illustrative personas, no server, build step, network dependency, database, or live AI call.
 - [Workflow diagram](pitch/diagrams/workflow.png) and [data-model diagram](pitch/diagrams/data-model.png) - pitch-ready PNGs generated reproducibly by [generate.py](pitch/diagrams/generate.py).
 - [Coded Next.js app](app/page.tsx) - the same flow through thin API routes, domain functions, Zod contracts, append-only decisions, and a guarded AI gateway. It defaults to deterministic demo mode.
+- Role-based demo portals at `/candidate`, `/hr`, and `/admin`, selected from `/`. Candidate owns profile/skills, HR owns matching/human decisions, and Admin displays trust/readiness controls. These are UI roles only; authentication remains outside hackathon scope.
 - [Architecture specification](Docs/ARCHITECTURE.md) - the implemented structure plus the full Raw -> Reference -> Silver -> Gold production path.
 
 Open [app/demo.html](app/demo.html) directly in a browser and use **Next** or the top navigation to move through:
@@ -18,6 +19,10 @@ Open [app/demo.html](app/demo.html) directly in a browser and use **Next** or th
 3. Recruiter job match and human decision log
 
 To run the coded app:
+
+Requirements: Node.js 20.9 or newer and pnpm 11.
+
+If `node --version` is below 20.9, run `nvm install 22 && nvm use 22` before installing dependencies. The repository includes `.nvmrc` and `.node-version` so Node version managers can select Node 22 automatically.
 
 ```bash
 pnpm install
