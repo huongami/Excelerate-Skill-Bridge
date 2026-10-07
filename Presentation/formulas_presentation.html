@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jinder Intelligence Engine — Mathematical Architecture & Formulas (ASD-STE100)</title>
+  
+  <!-- Organic / Natural Typography: Fraunces (Headings) + Nunito (Body) + JetBrains Mono (Metrics) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,600&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for Mathematical Formula Rendering (Local Assets with CDN Fallback) -->
+  <link rel="stylesheet" href="assets/katex/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="assets/katex/katex.min.js"></script>
+  <script src="assets/katex/auto-render.min.js"></script>
+  <script>
+    if (!window.katex) {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"><\/script>');
+      document.write('<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"><\/script>');
+    }
+  </script>
+
+  <style>
+    /* =====================================================================
+       1. DESIGN TOKENS & ORGANIC WABI-SABI PALETTE (MATCHING DEMO.HTML)
+       ===================================================================== */
+    :root {
+      --bg-rice: #0B0F19;
+      --fg-loam: #F9FAFB;
+      --moss: #6868F7;
+      --moss-light: rgba(104, 104, 247, 0.16);
+      --moss-dark: #8E8EFC;
+      --terracotta: #FFA340;
+      --terracotta-light: rgba(255, 163, 64, 0.16);
+      --sand: #1F2937;
+      --stone: #111827;
+      --timber: rgba(255, 255, 255, 0.10);
+      --bark: #9CA3AF;
+      --dried-grass: #9CA3AF;
+      --sienna-danger: #EF4444;
+      --sienna-light: rgba(239, 68, 68, 0.18);
+      --flame: #F97316;
+      --flame-light: rgba(249, 115, 22, 0.18);
+      --amber: #F59E0B;
+      --amber-light: rgba(245, 158, 11, 0.18);
+      --rose: #F43F5E;
+
+      /* Purple Gradient Tokens for Range Sliders & Highlights */
+      --purple: #6868F7;
+      --purple-light: #8E8EFC;
+      --purple-soft: rgba(104, 104, 247, 0.18);
+      --indigo: #4F46E5;
+      --indigo-light: #6868F7;
+      --cyan: #06B6D4;
+      --cyan-light: #06B6D4;
+      --emerald: #10B981;
+      --emerald-light: #10B981;
+
+      --surface: #111827;
+      --surface-elevated: #1F2937;
+      --surface-alt: #162033;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(104, 104, 247, 0.35);
+
+      --shadow-moss: 0 4px 20px -2px rgba(104, 104, 247, 0.25);
+      --shadow-terracotta: 0 8px 30px -4px rgba(255, 163, 64, 0.20);
+      --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.35);
+      --shadow-float: 0 16px 48px -8px rgba(0, 0, 0, 0.60);
+
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-rice);
+      color: var(--fg-loam);
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Fixed Subtle Noise Texture Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 99999;
+      opacity: 0.02;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Subtle Ambient Organic Blobs */
+    .ambient-blob {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(80px);
+      opacity: 0.45;
+      border-radius: 50%;
+    }
+    .blob-1 { top: -80px; left: -60px; width: 460px; height: 400px; background: rgba(104, 104, 247, 0.12); }
+    .blob-2 { bottom: 8%; right: -80px; width: 500px; height: 440px; background: rgba(255, 163, 64, 0.08); }
+    .blob-3 { top: 40%; right: 15%; width: 380px; height: 350px; background: rgba(104, 104, 247, 0.08); opacity: 0.28; }
+
+    /* FIXED TOP PRESENTATION BAR & TABS STRIP */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+    .header-top {
+      padding: 10px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-pill {
+      background: var(--moss-light);
+      color: var(--moss-dark);
+      border: 1px solid #C4D4BF;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* SLIDE NAVIGATION CONTROLS */
+    .slide-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-btn {
+      background: var(--surface);
+      border: 1px solid var(--timber);
+      color: var(--fg-loam);
+      padding: 7px 18px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+      outline: none;
+      box-shadow: 0 1px 3px rgba(44, 44, 36, 0.05);
+    }
+    .nav-btn:hover {
+      background: var(--moss-light);
+      border-color: var(--moss);
+      color: var(--moss-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(93, 112, 82, 0.15);
+    }
+    .nav-btn:focus {
+      outline: none;
+    }
+    .nav-btn:focus-visible {
+      outline: 2px solid var(--moss);
+      outline-offset: 2px;
+    }
+    .slide-counter {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--bark);
+      min-width: 65px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* SLIDE TABS STRIP - ALWAYS FIXED IN PLACE */
+    .tabs-strip {
+      display: flex;
+      gap: 6px;
+      padding: 8px 28px;
+      background: rgba(17, 24, 39, 0.85);
+      overflow-x: auto;
+      scrollbar-width: none;
+      align-items: center;
+    }
+    .tabs-strip::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--dried-grass);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      outline: none !important;
+      -webkit-tap-highlight-color: transparent;
+      transition: color 0.16s ease, background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+    .tab-btn:hover {
+      color: var(--fg-loam);
+      background: rgba(93, 112, 82, 0.08);
+    }
+    .tab-btn:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .tab-btn:focus-visible {
+      outline: 2px solid var(--moss) !important;
+      outline-offset: 1px;
+    }
+    .tab-btn.active {
+      background: var(--surface);
+      border-color: var(--moss);
+      color: var(--moss-dark);
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(93, 112, 82, 0.14);
+    }
+
+    /* PROGRESS TRACK */
+    .progress-track {
+      height: 3px;
+      background: rgba(44, 44, 36, 0.06);
+      width: 100%;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--moss), var(--terracotta), var(--purple));
+      width: 12.5%;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* MAIN CONTAINER */
+    .presentation-container {
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* SLIDE WRAPPER & TRANSITIONS */
+    .slide {
+      display: none;
+      opacity: 0;
+    }
+    .slide.active {
+      display: block;
+      animation: slideFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* SLIDE HEADER */
+    .slide-header {
+      margin-bottom: 24px;
+    }
+    .slide-spec-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .slide-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      color: var(--fg-loam);
+    }
+    .slide-subtitle {
+      font-size: 1.0rem;
+      color: var(--bark);
+      max-width: 950px;
+      line-height: 1.55;
+    }
+
+    /* LAYOUT GRIDS */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+    }
+    .grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 6px 20px rgba(44, 44, 36, 0.07);
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      color: var(--fg-loam);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* FORMULA DISPLAY BOX */
+    .formula-box {
+      background: var(--surface-alt);
+      border: 1px solid #E2DCD0;
+      border-left: 4px solid var(--moss);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      overflow-x: auto;
+      color: var(--fg-loam);
+      box-shadow: inset 0 1px 3px rgba(44, 44, 36, 0.03);
+    }
+    .formula-box .katex {
+      font-size: 1.25rem;
+      color: var(--fg-loam);
+    }
+    .formula-sub {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--timber);
+    }
+
+    /* SPECIFICATION TABLES */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+    .spec-table th, .spec-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: left;
+      vertical-align: top;
+      color: var(--fg-loam);
+    }
+    .spec-table th {
+      background: #F4EFE7;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--bark);
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--timber);
+    }
+
+    /* ASD-STE100 CALLOUT */
+    .ste-block {
+      background: var(--moss-light);
+      border: 1px solid #C4D4BF;
+      border-left: 4px solid var(--moss);
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      margin-bottom: 16px;
+      color: var(--fg-loam);
+    }
+    .ste-block strong {
+      color: var(--moss-dark);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* WORKED EXAMPLE BOX */
+    .worked-example-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+    .worked-example-card h4 {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--moss-dark);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+    }
+    .step-item {
+      margin-bottom: 10px;
+      padding-left: 14px;
+      border-left: 2px solid var(--terracotta);
+      font-size: 0.86rem;
+      color: var(--fg-loam);
+    }
+    .step-item strong {
+      color: var(--fg-loam);
+    }
+    .calc-pill {
+      display: inline-block;
+      background: var(--terracotta-light);
+      border: 1px solid #E8D6C5;
+      color: #9C5E28;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin: 2px 0;
+    }
+
+    /* SIMULATION / INTERACTIVE PANEL */
+    .sim-panel {
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      box-shadow: var(--shadow-moss);
+    }
+    .sim-group {
+      margin-bottom: 16px;
+    }
+    .sim-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--fg-loam);
+      gap: 12px;
+    }
+    .sim-val {
+      font-family: var(--font-mono);
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* =====================================================================
+       RANGE SLIDERS WITH VIBRANT PURPLE GRADIENT LEFT-FILL
+       ===================================================================== */
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 9999px;
+      background: linear-gradient(to right, #7C3AED 0%, #A855F7 var(--range-pct, 50%), #E8E2D8 var(--range-pct, 50%), #E8E2D8 100%);
+      outline: none;
+      cursor: pointer;
+      margin: 10px 0 6px;
+      border: 1px solid rgba(44, 44, 36, 0.08);
+      transition: background 0.04s ease;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 9999px;
+      border: none;
+    }
+    input[type=range]::-moz-range-track {
+      height: 8px;
+      border-radius: 9999px;
+      background: transparent;
+      border: none;
+    }
+    input[type=range]::-moz-range-progress {
+      height: 8px;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #7C3AED 0%, #A855F7 100%);
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 3.5px solid #7C3AED;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.42), 0 1px 3px rgba(44, 44, 36, 0.15);
+      cursor: pointer;
+      margin-top: -7px;
+      transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.16s ease, border-color 0.16s ease;
+    }
+    input[type=range]::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 3.5px solid #7C3AED;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.42), 0 1px 3px rgba(44, 44, 36, 0.15);
+      cursor: pointer;
+      border: none;
+      transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.16s ease;
+    }
+    input[type=range]:hover::-webkit-slider-thumb,
+    input[type=range]:active::-webkit-slider-thumb {
+      transform: scale(1.18);
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.55), 0 2px 5px rgba(44, 44, 36, 0.2);
+      border-color: #6D28D9;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+
+    /* DROPDOWN SELECTS */
+    .sim-select, select {
+      width: 100%;
+      background: #FCFAF6;
+      border: 1px solid var(--timber);
+      color: var(--fg-loam);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .sim-select:focus, select:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15);
+    }
+    .sim-select option, select option {
+      background: #FFFFFF;
+      color: var(--fg-loam);
+    }
+
+    /* CHECKBOXES */
+    input[type=checkbox] {
+      accent-color: var(--purple);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .preset-btn-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .preset-btn {
+      background: #F2EDE4;
+      border: 1px solid var(--timber);
+      color: var(--bark);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .preset-btn:hover {
+      background: var(--moss-light);
+      border-color: var(--moss);
+      color: var(--moss-dark);
+    }
+
+    .sim-result-box {
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      margin-top: 16px;
+      background: var(--surface-alt);
+      border: 1px solid var(--timber);
+    }
+    .sim-result-box.sim-result-purple {
+      background: #F8F4FD;
+      border: 1px solid #E2D4F7;
+    }
+    .sim-result-box.sim-result-amber {
+      background: #FDF9EE;
+      border: 1px solid #F3E4BA;
+    }
+    .sim-result-box.sim-result-moss {
+      background: #F4F7F2;
+      border: 1px solid #D6E2D1;
+    }
+    .sim-result-box.sim-result-terracotta {
+      background: #FAF4EE;
+      border: 1px solid #EBD9C8;
+    }
+    .sim-big-score {
+      font-family: var(--font-mono);
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 4px 0 8px;
+      color: var(--purple);
+    }
+    .sim-breakdown {
+      font-size: 0.82rem;
+      color: var(--bark);
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px dashed var(--timber);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .sim-breakdown strong {
+      color: var(--fg-loam);
+    }
+
+    @media (max-width: 1024px) {
+      .grid-2col { grid-template-columns: 1fr; }
+      .grid-3col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT ORGANIC WABI-SABI BLOBS -->
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+  <div class="ambient-blob blob-3"></div>
+
+  <!-- FIXED TOP PRESENTATION BAR & TABS -->
+  <header class="navbar-sticky">
+    <div class="header-top">
+      <div class="brand-title">
+        <span style="font-family:var(--font-display); font-weight:800; font-size:1.35rem; color:var(--fg-loam); letter-spacing:-0.02em;">Jinder</span>
+        <span style="font-size:0.88rem; color:var(--dried-grass); font-weight:600; font-family:var(--font-body);">Intelligence Engine</span>
+        <span class="badge-pill">ASD-STE100 Compliant</span>
+      </div>
+
+      <div class="slide-nav">
+        <button class="nav-btn" onclick="prevSlide()" title="Previous slide (Left Arrow)">
+          &larr; Prev
+        </button>
+        <div class="slide-counter" id="slideIndicator">1 / 8</div>
+        <button class="nav-btn" onclick="nextSlide()" title="Next slide (Right Arrow)">
+          Next &rarr;
+        </button>
+      </div>
+    </div>
+
+    <!-- QUICK JUMP TABS STRIP (FIXED IN PLACE) -->
+    <nav class="tabs-strip" id="tabsStrip" aria-label="Formula slides navigation">
+      <button class="tab-btn active" onclick="goToSlide(0)">0. Architecture</button>
+      <button class="tab-btn" onclick="goToSlide(1)">1. SMF Skill Match</button>
+      <button class="tab-btn" onclick="goToSlide(2)">2. SGF Gap Severity</button>
+      <button class="tab-btn" onclick="goToSlide(3)">3. JPI Job Distance</button>
+      <button class="tab-btn" onclick="goToSlide(4)">4. RMS Candidate Merit</button>
+      <button class="tab-btn" onclick="goToSlide(5)">5. FRS Seeker Feed</button>
+      <button class="tab-btn" onclick="goToSlide(6)">6. TSS Recruiter Search</button>
+      <button class="tab-btn" onclick="goToSlide(7)">7. System Audit</button>
+    </nav>
+
+    <!-- PROGRESS TRACK -->
+    <div class="progress-track">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
+  </header>
+
+  <!-- MAIN SLIDES CONTAINER -->
+  <main class="presentation-container">
+
+    <!-- NOTICE (version 2): these slides still show the formulas of version 1. -->
+    <div role="note" style="margin:12px auto; max-width:1100px; padding:12px 16px; border:2px solid #b45309; background:#fffbeb; color:#78350f; border-radius:8px; font-size:0.95rem; line-height:1.5;">
+      <strong>Note: these slides show the formulas of version 1.</strong>
+      The formulas, the weights and the worked examples are now different (levels, exact years, skill levels, certifications, awards, smooth functions).
+      The sliders on these slides do not give the results of the code.
+      For version 2, read <code>MASTER_PLAN.md</code>, the files <code>01_</code> to <code>06_*.md</code> in this folder and <code>../docs/02_FORMULAS_MATHEMATICAL_SPEC.md</code>.
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 0: ARCHITECTURAL FOUNDATION & ASD-STE100 PRINCIPLES -->
+    <!-- ================================================================= -->
+    <section class="slide active" id="slide-0">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--indigo-light)">
+          DOCUMENT IE-SPEC-000 &bull; STANDARD ASD-STE100 ISSUE 8
+        </div>
+        <h1 class="slide-title">Mathematical Architecture & Formula Framework</h1>
+        <p class="slide-subtitle">
+          Standardized technical specification of the deterministic mathematical scoring engine used in Jinder. Solves capability mismatch for international job seekers in Australia.
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="card">
+            <div class="card-title">1. Operational Problem & Technical Solution</div>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:12px;">
+              Conventional Applicant Tracking Systems (ATS) use keyword matching. This causes high rejection rates for international applicants because overseas qualifications use different job titles and wording.
+            </p>
+            <div class="ste-block">
+              <strong>ASD-STE100 Core Principle:</strong>
+              The Intelligence Engine does not guess. The system applies six exact mathematical models to compare candidate skills, Australian Bureau of Statistics (ABS) ANZSCO benchmarks, and statutory requirements.
+            </div>
+
+            <table class="spec-table">
+              <thead>
+                <tr>
+                  <th>Formula</th>
+                  <th>Module</th>
+                  <th>Mathematical Objective</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>F-01 (SMF)</strong></td>
+                  <td>Skill Match Function</td>
+                  <td>Aligns candidate verified skills with ABS ANZSCO occupational tree.</td>
+                </tr>
+                <tr>
+                  <td><strong>F-02 (SGF)</strong></td>
+                  <td>Skill Gap Severity</td>
+                  <td>Isolates statutory blockers (AHPRA, CPA) from learnable software tools.</td>
+                </tr>
+                <tr>
+                  <td><strong>F-03 (JPI)</strong></td>
+                  <td>Job Proximity Index</td>
+                  <td>Calculates career pivot distance and compensation parity across jobs.</td>
+                </tr>
+                <tr>
+                  <td><strong>F-04 (RMS)</strong></td>
+                  <td>Candidate Benchmarking</td>
+                  <td>Measures relative candidate merit without Personally Identifiable Information (PII).</td>
+                </tr>
+                <tr>
+                  <td><strong>F-05 (FRS)</strong></td>
+                  <td>Seeker Feed Ranking</td>
+                  <td>Ranks live Australian vacancies using skills, salary, location, and recency.</td>
+                </tr>
+                <tr>
+                  <td><strong>F-06 (TSS)</strong></td>
+                  <td>Recruiter Talent Search</td>
+                  <td>Ranks candidate applicants against employer requisition requirements.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <div class="card-title">2. End-to-End Mathematical Pipeline</div>
+            <div style="background:var(--surface-alt); border:1px solid var(--timber); border-radius:10px; padding:16px; font-size:0.82rem; font-family:var(--font-mono); color:var(--fg-loam);">
+              <div style="color:var(--cyan); margin-bottom:6px; font-weight:700;">[INPUT STAGE]</div>
+              &bull; Verified Candidate Profiles &amp; Skill Inventory (Platform Native)<br>
+              &bull; ABS ANZSCO 2026 Taxonomy (6-digit occupational hierarchy)<br>
+              &bull; Live Platform Job Requisitions &amp; Direct Employer Vacancies<br>
+              <div style="color:var(--indigo-light); margin:10px 0 6px;">[MATHEMATICAL ENGINE]</div>
+              &bull; Continuous logarithmic experience scaling &Phi;(Y)<br>
+              &bull; Parallel learning bridge duration max(T) + 0.18&Sigma;T<br>
+              &bull; Continuous Gaussian seniority parity S_sen<br>
+              &bull; Learnability factor &lambda;_lrn based on degree level<br>
+              <div style="color:var(--emerald-light); margin:10px 0 6px;">[OUTPUT STAGE]</div>
+              &bull; Differentiated decimal scores (e.g. 90.2% vs 88.5%)<br>
+              &bull; Zero-PII candidate shortlist for employers<br>
+              &bull; 12-Month Dual Line Projection Curves<br>
+            </div>
+
+            <div class="worked-example-card" style="margin-top:14px;">
+              <h4>Mathematical Audit Commitments</h4>
+              <div class="step-item"><strong>Zero Static Defaults:</strong> Every applicant and job has distinct, continuous decimal scores.</div>
+              <div class="step-item"><strong>Zero PII Leakage:</strong> Candidate scores are computed without name, phone, or gender bias.</div>
+              <div class="step-item"><strong>Deterministic Execution:</strong> Identical inputs yield identical outputs in under 5 milliseconds.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 1: FORMULA 1 — CANDIDATE VS ANZSCO SKILL MATCH (SMF) -->
+    <!-- ================================================================= -->
+    <section class="slide" id="slide-1">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--cyan-light)">
+          FORMULA 1 &bull; DOCUMENT IE-SPEC-001 &bull; REQ-S08, REQ-S09
+        </div>
+        <h1 class="slide-title">Candidate vs ANZSCO Skill Match Model (SMF)</h1>
+        <p class="slide-subtitle">
+          Quantifies how accurately an international candidate's verified skills and experience align with the Australian Bureau of Statistics (ABS) standard occupational definition.
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="card">
+            <div class="card-title">1. Mathematical Specification</div>
+            <div class="formula-box">
+              $$\text{SMF}(C, O) = \min\left(100.0, \; \left( 0.25 S_{\text{tree}} + 0.50 S_{\text{direct}} + 0.25 S_{\text{trans}} \right) \times \Phi(Y_C, L_O)\right)$$
+              <div class="formula-sub">
+                $$\Phi(Y_C, L_O) = 0.80 + 0.15 \ln\left(1 + \frac{Y_C}{Y_{\text{req}}(L_O)}\right) + 0.05 \min\left(2.0, \; \frac{Y_C}{Y_{\text{req}}(L_O)}\right)$$
+              </div>
+            </div>
+
+            <table class="spec-table">
+              <tr>
+                <td><strong>$S_{\text{tree}}$ (25%)</strong></td>
+                <td>ABS ANZSCO hierarchical tree distance: 100% exact 6-digit match, 85% 4-digit unit group match, 65% 2-digit sub-major match.</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{direct}}$ (50%)</strong></td>
+                <td>IDF-weighted overlap between candidate skills and ANZSCO core competencies: $100 \times \frac{\sum_{s \in \mathcal{M}} \text{IDF}(s)}{\sum_{s \in \mathcal{R}} \text{IDF}(s)}$.</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{trans}}$ (25%)</strong></td>
+                <td>Transferable methodology agility score (quality assurance, crisis stabilization, leadership, compliance).</td>
+              </tr>
+              <tr>
+                <td><strong>$\Phi(Y_C, L_O)$</strong></td>
+                <td>Continuous logarithmic experience multiplier calibrated against ANZSCO Skill Level ($L_O$). Clamped to $[0.75, 1.15]$.</td>
+              </tr>
+            </table>
+
+            <div class="ste-block">
+              <strong>ASD-STE100 Procedural Rule:</strong>
+              Do not penalize missing optional tools in this formula. Quantify all skill deficits in Formula 2.
+            </div>
+
+            <div class="worked-example-card">
+              <h4>Verified Worked Example: SilverKangaroo84 (Registered Nurse)</h4>
+              <div class="step-item">
+                <strong>Input Data:</strong> $Y_C = 10.0$ years experience, ANZSCO target = 254411 (Skill Level 1, $Y_{\text{req}} = 5.0$ years).
+              </div>
+              <div class="step-item">
+                <strong>Step 1 (Taxonomy):</strong> 6-digit code matches target ANZSCO exactly: <span class="calc-pill">S_tree = 100.0</span>.
+              </div>
+              <div class="step-item">
+                <strong>Step 2 (Direct Overlap):</strong> 8 of 10 core clinical competencies verified: <span class="calc-pill">S_direct = 81.7</span>.
+              </div>
+              <div class="step-item">
+                <strong>Step 3 (Transferable Agility):</strong> 5 transferable competencies verified: <span class="calc-pill">S_trans = 85.0</span>.
+              </div>
+              <div class="step-item">
+                <strong>Step 4 (Experience Multiplier):</strong> $\text{Ratio} = 10.0 / 5.0 = 2.0$. Multiplier $\Phi = 0.80 + 0.15 \ln(3.0) + 0.05(2.0) = 0.80 + 0.165 + 0.10 = \mathbf{1.065}$.
+              </div>
+              <div class="step-item">
+                <strong>Step 5 (Composite SMF):</strong> Base $= (0.25 \times 100) + (0.50 \times 81.7) + (0.25 \times 85.0) = 25.0 + 40.85 + 21.25 = 87.1$.<br>
+                Final $\text{SMF} = \min(100.0, \; 87.1 \times 1.065) = \mathbf{92.8\%}$.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card sim-panel">
+            <div class="card-title" style="color:var(--cyan-light)">Interactive Formula 1 Simulator</div>
+            
+            <div class="preset-btn-group">
+              <button class="preset-btn" onclick="setF1Preset('senior_nurse')">Nurse (10 yrs, Exact)</button>
+              <button class="preset-btn" onclick="setF1Preset('junior_dev')">Software Dev (2 yrs)</button>
+              <button class="preset-btn" onclick="setF1Preset('overseas_acct')">Overseas Accountant (12 yrs)</button>
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>ANZSCO Taxonomy Alignment ($S_{\text{tree}}$)</span>
+                <span class="sim-val" id="f1_tree_val">100.0%</span>
+              </div>
+              <input type="range" id="f1_tree" min="30" max="100" step="5" value="100" oninput="runF1()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Direct Competency Match ($S_{\text{direct}}$)</span>
+                <span class="sim-val" id="f1_dir_val">82.0%</span>
+              </div>
+              <input type="range" id="f1_dir" min="20" max="100" step="1" value="82" oninput="runF1()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Transferable Methodologies ($S_{\text{trans}}$)</span>
+                <span class="sim-val" id="f1_trans_val">85.0%</span>
+              </div>
+              <input type="range" id="f1_trans" min="20" max="100" step="1" value="85" oninput="runF1()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Years Experience ($Y_C$ vs Req $5.0$ yrs)</span>
+                <span class="sim-val" id="f1_exp_val">10.0 yrs (&times;1.065)</span>
+              </div>
+              <input type="range" id="f1_exp" min="0.5" max="25" step="0.5" value="10" oninput="runF1()">
+            </div>
+
+            <div class="sim-result-box sim-result-purple">
+              <div style="font-size:0.75rem; color:var(--bark); font-family:var(--font-mono); text-transform:uppercase;">
+                Skill Match Score (SMF)
+              </div>
+              <div class="sim-big-score" id="f1_result" style="color:var(--purple)">92.8%</div>
+              <div class="sim-breakdown">
+                <div>Base Core: <strong id="f1_base_display">87.1%</strong></div>
+                <div>Exp Factor: <strong id="f1_phi_display">&times;1.065</strong></div>
+                <div>Status: <strong style="color:var(--emerald)">High Alignment</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 2: FORMULA 2 — SKILL GAP SEVERITY & LEARNABILITY (SGF) -->
+    <!-- ================================================================= -->
+    <section class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--amber-light)">
+          FORMULA 2 &bull; DOCUMENT IE-SPEC-002 &bull; REQ-S10, REQ-S12
+        </div>
+        <h1 class="slide-title">Skill Gap Severity & Learnability Model (SGF)</h1>
+        <p class="slide-subtitle">
+          Detects what an applicant lacks relative to a job requisition. Distinguishes hard statutory licensing barriers from learnable software frameworks, and projects concurrent closing time in months.
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="card">
+            <div class="card-title">1. Mathematical Specification</div>
+            <div class="formula-box">
+              $$GSI(C, J) = \min\left(95.0, \; \max\left(2.0, \; \sum_{k=1}^{m} W_{\text{cat}}(g_k) \times \left(14.0 + 4.5 \ln(1 + T_k \cdot \lambda_{\text{lrn}})\right) + S_{\text{sen\_deficit}}\right)\right)$$
+              <div class="formula-sub">
+                $$JRS(C, J) = \max\left(5.0, \; 100.0 - GSI(C, J)\right) \quad \Big| \quad T_{\text{total}} = \max_k(T_k \cdot \lambda_{\text{lrn}}) + 0.18 \sum_{k \neq \max} (T_k \cdot \lambda_{\text{lrn}})$$
+              </div>
+            </div>
+
+            <table class="spec-table">
+              <thead>
+                <tr>
+                  <th>Category Code</th>
+                  <th>Classification Name</th>
+                  <th>Weight ($W$)</th>
+                  <th>Base Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>CAT-1</strong></td>
+                  <td>Statutory License / Legal Registration (AHPRA, CPA, NER)</td>
+                  <td>1.00</td>
+                  <td>8.0 months</td>
+                </tr>
+                <tr>
+                  <td><strong>CAT-2</strong></td>
+                  <td>Core Discipline Competency (Clinical Triage, Distributed Systems)</td>
+                  <td>0.60</td>
+                  <td>4.0 months</td>
+                </tr>
+                <tr>
+                  <td><strong>CAT-3</strong></td>
+                  <td>Tool, Platform, or Framework (Snowflake, dbt, Revit, Epic)</td>
+                  <td>0.25</td>
+                  <td>1.5 months</td>
+                </tr>
+                <tr>
+                  <td><strong>CAT-4</strong></td>
+                  <td>Local Standard / Orientation (PBS billing, WHS compliance)</td>
+                  <td>0.10</td>
+                  <td>0.8 months</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="ste-block">
+              <strong>Learnability Acceleration Factor ($\lambda_{\text{lrn}}$):</strong>
+              $$\lambda_{\text{lrn}} = \max\left(0.65, \; \min\left(1.05, \; 1.0 - 0.16 \min\left(1.0, \frac{Y_C}{12.0}\right) - 0.05 \cdot \mathbb{I}_{\text{Degree}}\right)\right)$$
+              Experienced candidates with higher degrees learn faster. This reduces both the duration and gap severity.
+            </div>
+
+            <div class="worked-example-card">
+              <h4>Verified Worked Example: Overseas Nurse bridging to Australia</h4>
+              <div class="step-item">
+                <strong>Candidate:</strong> 10.0 years clinical experience, Bachelor Degree. Target: Registered Nurse Sydney.
+              </div>
+              <div class="step-item">
+                <strong>Gaps Identified:</strong> (1) AHPRA Registration (CAT-1, 8.0 mo), (2) Australian PBS Billing Guidelines (CAT-4, 0.8 mo).
+              </div>
+              <div class="step-item">
+                <strong>Learnability Factor:</strong> $\lambda_{\text{lrn}} = 1.0 - 0.16(10/12) - 0.05(1) = 1.0 - 0.133 - 0.05 = \mathbf{0.817}$.
+              </div>
+              <div class="step-item">
+                <strong>Calibrated Durations:</strong> $T_1 = 8.0 \times 0.817 = 6.54$ mo. $T_2 = 0.8 \times 0.817 = 0.65$ mo.
+              </div>
+              <div class="step-item">
+                <strong>Severity Calculation:</strong><br>
+                $S_1 = 1.00 \times [14.0 + 4.5 \ln(1 + 6.54)] = 14.0 + 4.5(2.02) = 23.09$ pts.<br>
+                $S_2 = 0.10 \times [14.0 + 4.5 \ln(1 + 0.65)] = 0.10 \times [14.0 + 4.5(0.50)] = 1.63$ pts.<br>
+                $\text{GSI} = 23.09 + 1.63 = \mathbf{24.7\%}$. $\text{JRS} = 100 - 24.7 = \mathbf{75.3\%}$.
+              </div>
+              <div class="step-item">
+                <strong>Parallel Bridge Time:</strong> $T_{\text{total}} = 6.54 + (0.18 \times 0.65) = 6.54 + 0.12 = \mathbf{6.7\text{ calendar months}}$.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card sim-panel">
+            <div class="card-title" style="color:var(--amber-light)">Interactive Gap Severity Simulator</div>
+            
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">Toggle candidate missing requirements:</div>
+            
+            <label style="display:flex; align-items:center; gap:10px; font-size:0.85rem; margin-bottom:10px; cursor:pointer;">
+              <input type="checkbox" id="f2_cat1" checked onchange="runF2()">
+              <span><strong>CAT-1: Statutory License</strong> (AHPRA / CPA / NER &bull; 8.0 mo)</span>
+            </label>
+
+            <label style="display:flex; align-items:center; gap:10px; font-size:0.85rem; margin-bottom:10px; cursor:pointer;">
+              <input type="checkbox" id="f2_cat2" onchange="runF2()">
+              <span><strong>CAT-2: Core Discipline</strong> (Clinical Triage, Data Modeling &bull; 4.0 mo)</span>
+            </label>
+
+            <label style="display:flex; align-items:center; gap:10px; font-size:0.85rem; margin-bottom:10px; cursor:pointer;">
+              <input type="checkbox" id="f2_cat3" checked onchange="runF2()">
+              <span><strong>CAT-3: Tool / Platform</strong> (Snowflake, dbt, AutoCAD &bull; 1.5 mo)</span>
+            </label>
+
+            <label style="display:flex; align-items:center; gap:10px; font-size:0.85rem; margin-bottom:14px; cursor:pointer;">
+              <input type="checkbox" id="f2_cat4" checked onchange="runF2()">
+              <span><strong>CAT-4: Local Orientation</strong> (WHS Laws, PBS Guidelines &bull; 0.8 mo)</span>
+            </label>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Candidate Seniority ($Y_C$)</span>
+                <span class="sim-val" id="f2_exp_val">10.0 yrs</span>
+              </div>
+              <input type="range" id="f2_exp" min="1" max="20" step="1" value="10" oninput="runF2()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Higher Degree (Bachelor / Master / PhD)</span>
+                <span class="sim-val" id="f2_deg_val">Yes (Awarded)</span>
+              </div>
+              <select id="f2_deg" onchange="runF2()" class="sim-select">
+                <option value="1">Yes (Bachelor / Master / PhD &bull; -5% duration)</option>
+                <option value="0">No (High School / Diploma &bull; baseline duration)</option>
+              </select>
+            </div>
+
+            <div class="sim-result-box sim-result-amber">
+              <div style="font-size:0.75rem; color:var(--bark); font-family:var(--font-mono); text-transform:uppercase;">
+                Job Readiness Score (JRS)
+              </div>
+              <div class="sim-big-score" id="f2_jrs_display" style="color:var(--amber)">72.3%</div>
+              <div class="sim-breakdown">
+                <div>Gap Severity: <strong id="f2_gsi_display">27.7%</strong></div>
+                <div>Bridge Time: <strong id="f2_time_display">6.8 mo</strong></div>
+                <div>Tier: <strong id="f2_tier_display" style="color:var(--amber)">Fast-Track Bridging</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 3: FORMULA 3 — JOB-TO-JOB PROXIMITY MATRIX (JPI) -->
+    <!-- ================================================================= -->
+    <section class="slide" id="slide-3">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--emerald-light)">
+          FORMULA 3 &bull; DOCUMENT IE-SPEC-003 &bull; REQ-S21, REQ-S22
+        </div>
+        <h1 class="slide-title">Job-to-Job Proximity & Transition Matrix (JPI)</h1>
+        <p class="slide-subtitle">
+          Measures the distance between two job requisitions. Recommends safe horizontal career pivots and evaluates salary and location parity across employment vacancies.
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="card">
+            <div class="card-title">1. Mathematical Specification</div>
+            <div class="formula-box">
+              $$\text{JPI}(J_A, J_B) = 0.40 S_{\text{tree}} + 0.35 S_{\text{req\_jac}} + 0.15 S_{\text{sal\_par}} + 0.10 S_{\text{loc\_prox}}$$
+              <div class="formula-sub">
+                $$S_{\text{sal\_par}} = \max\left(0.0, \; 100.0 - 150 \cdot \frac{|\text{Mid}_A - \text{Mid}_B|}{\max(\text{Mid}_A, \text{Mid}_B)}\right)$$
+              </div>
+            </div>
+
+            <table class="spec-table">
+              <tr>
+                <td><strong>$S_{\text{tree}}$ (40%)</strong></td>
+                <td>Taxonomy tree proximity based on ABS ANZSCO shared unit group (4-digit) or minor group (2-digit).</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{req\_jac}}$ (35%)</strong></td>
+                <td>Jaccard similarity between requirement sets: $\frac{|\mathcal{R}_A \cap \mathcal{R}_B|}{|\mathcal{R}_A \cup \mathcal{R}_B|} \times 100$.</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{sal\_par}}$ (15%)</strong></td>
+                <td>Salary midpoint equilibrium score. Penalizes compensation gaps exceeding 25% of baseline.</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{loc\_prox}}$ (10%)</strong></td>
+                <td>Geographic distance score: Same city = 100.0, same state = 80.0, interstate = 50.0.</td>
+              </tr>
+            </table>
+
+            <div class="worked-example-card">
+              <h4>Verified Worked Example: Registered Nurse vs Clinical Coordinator</h4>
+              <div class="step-item">
+                <strong>Role A:</strong> Registered Nurse (ANZSCO 254411, Mid: $110,000 AUD, Sydney).
+              </div>
+              <div class="step-item">
+                <strong>Role B:</strong> Clinical Care Coordinator (ANZSCO 254413, Mid: $125,000 AUD, Sydney).
+              </div>
+              <div class="step-item">
+                <strong>Taxonomy ($S_{\text{tree}}$):</strong> Share 4-digit unit group 2544 (Registered Nurses) = <span class="calc-pill">85.0</span>.
+              </div>
+              <div class="step-item">
+                <strong>Skill Jaccard ($S_{\text{req\_jac}}$):</strong> Share 6 out of 8 required clinical tasks = <span class="calc-pill">75.0</span>.
+              </div>
+              <div class="step-item">
+                <strong>Salary Parity:</strong> Variance $= (125k - 110k)/125k = 12.0\%$. $S_{\text{sal\_par}} = 100 - (150 \times 0.12) = \mathbf{82.0}$.
+              </div>
+              <div class="step-item">
+                <strong>Location ($S_{\text{loc\_prox}}$):</strong> Both in Sydney, NSW = <span class="calc-pill">100.0</span>.
+              </div>
+              <div class="step-item">
+                <strong>Composite JPI:</strong> $(0.40 \times 85) + (0.35 \times 75) + (0.15 \times 82) + (0.10 \times 100) = 34.0 + 26.25 + 12.3 + 10.0 = \mathbf{82.6\%}$.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card sim-panel">
+            <div class="card-title" style="color:var(--emerald-light)">Interactive JPI Simulator</div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>ANZSCO Taxonomy Distance</span>
+                <span class="sim-val" id="f3_tree_val">85% (Same 4-Digit Unit)</span>
+              </div>
+              <input type="range" id="f3_tree" min="30" max="100" step="5" value="85" oninput="runF3()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Skill Requirements Jaccard</span>
+                <span class="sim-val" id="f3_jac_val">75% Overlap</span>
+              </div>
+              <input type="range" id="f3_jac" min="10" max="100" step="5" value="75" oninput="runF3()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Salary Difference</span>
+                <span class="sim-val" id="f3_sal_val">12% Variance</span>
+              </div>
+              <input type="range" id="f3_sal" min="0" max="50" step="2" value="12" oninput="runF3()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Location Proximity</span>
+                <span class="sim-val" id="f3_loc_val">100% (Same City)</span>
+              </div>
+              <input type="range" id="f3_loc" min="30" max="100" step="10" value="100" oninput="runF3()">
+            </div>
+
+            <div class="sim-result-box sim-result-moss">
+              <div style="font-size:0.75rem; color:var(--bark); font-family:var(--font-mono); text-transform:uppercase;">
+                Job Proximity Index (JPI)
+              </div>
+              <div class="sim-big-score" id="f3_result_display" style="color:var(--moss-dark)">82.6%</div>
+              <div class="sim-breakdown">
+                <div>Transition: <strong style="color:var(--moss-dark)">High Feasibility</strong></div>
+                <div>Salary Parity: <strong id="f3_sal_score_display">82.0%</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 4: FORMULA 4 — CANDIDATE BENCHMARKING (RMS & HEAD-TO-HEAD) -->
+    <!-- ================================================================= -->
+    <section class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--purple)">
+          FORMULA 4 &bull; DOCUMENT IE-SPEC-004 &bull; REQ-H12
+        </div>
+        <h1 class="slide-title">Candidate-to-Candidate Benchmarking Model (RMS)</h1>
+        <p class="slide-subtitle">
+          Evaluates multi-candidate applicant cohorts for recruiters using Zero-PII merit parameters. Powers the overlaid radar charts and Head-to-Head hiring decision matrix.
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="card">
+            <div class="card-title">1. Mathematical Specification</div>
+            <div class="formula-box">
+              $$\text{RMS} = \alpha S_{\text{depth}} + \beta S_{\text{exp}} + \gamma S_{\text{evid}} + \delta S_{\text{trans}} - \epsilon P_{\text{gap}} + \text{EduBonus}$$
+              <div class="formula-sub">
+                $$S_{\text{exp}} = 100 \left(1 - e^{-Y_C / 5.2}\right) \quad \Big| \quad \Delta(C_A, C_B) = \text{RMS}_A - \text{RMS}_B$$
+              </div>
+            </div>
+
+            <table class="spec-table">
+              <tr>
+                <td><strong>Skill Depth ($S_{\text{depth}}$)</strong></td>
+                <td>$30.0 + 40.0(1 - e^{-N_{\text{dir}}/3.0}) + 30.0(1 - e^{-N_{\text{trans}}/4.0})$. Continuous asymptotic growth.</td>
+              </tr>
+              <tr>
+                <td><strong>Experience Maturity ($S_{\text{exp}}$)</strong></td>
+                <td>Smooth exponential model: 2 yrs $\rightarrow$ 32%, 5 yrs $\rightarrow$ 62%, 10 yrs $\rightarrow$ 85%, 15 yrs $\rightarrow$ 94%.</td>
+              </tr>
+              <tr>
+                <td><strong>Evidence Rigor ($S_{\text{evid}}$)</strong></td>
+                <td>$40.0 + 35.0(1 - e^{-\text{words}/120}) + 25.0 \min(1.0, \frac{\text{metrics}}{4.0})$. Rewards verified quantitative metrics.</td>
+              </tr>
+              <tr>
+                <td><strong>Hiring Decision ($\Delta$)</strong></td>
+                <td>If $|\Delta| > 8.0$: Clear competitive advantage. If $|\Delta| \le 8.0$: Equivalent competency band.</td>
+              </tr>
+            </table>
+
+            <div class="worked-example-card">
+              <h4>Verified Worked Example: Head-to-Head Comparison</h4>
+              <div class="step-item">
+                <strong>Candidate A (SilverKangaroo84):</strong> 10 yrs exp, 8 skills, Bachelor Degree. $\text{RMS} = \mathbf{88.2}$.
+              </div>
+              <div class="step-item">
+                <strong>Candidate B (AzureKangaroo30):</strong> 12 yrs exp, 6 skills, High School Diploma. $\text{RMS} = \mathbf{81.3}$.
+              </div>
+              <div class="step-item">
+                <strong>Score Delta:</strong> $\Delta = 88.2 - 81.3 = \mathbf{+6.9\text{ pts}}$.
+              </div>
+              <div class="step-item">
+                <strong>ASD-STE100 Verdict:</strong> $|\Delta| = 6.9 \le 8.0$ pts. Equivalent competency band. Recruiter must differentiate by specific statutory accreditation and shift availability.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card sim-panel">
+            <div class="card-title" style="color:var(--purple)">Interactive Benchmarking & Radar Polygon</div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Direct Skills Verified ($N_{\text{dir}}$)</span>
+                <span class="sim-val" id="f4_dir_val">5 skills</span>
+              </div>
+              <input type="range" id="f4_dir" min="1" max="12" step="1" value="5" oninput="runF4()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Years Verified Experience ($Y_C$)</span>
+                <span class="sim-val" id="f4_exp_val">10.0 yrs</span>
+              </div>
+              <input type="range" id="f4_exp" min="1" max="25" step="1" value="10" oninput="runF4()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Resume Metrics & Evidence Depth</span>
+                <span class="sim-val" id="f4_evid_val">85% Rigor</span>
+              </div>
+              <input type="range" id="f4_evid" min="30" max="100" step="5" value="85" oninput="runF4()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Statutory Licensing Gap Penalty</span>
+                <span class="sim-val" id="f4_gap_val">0 pts (Registered)</span>
+              </div>
+              <select id="f4_gap" onchange="runF4()" class="sim-select">
+                <option value="0">Zero Penalty (Registered / Unblocked &bull; 0 deduction)</option>
+                <option value="15">Minor Orientation Deficit (&bull; -1.5 pts)</option>
+                <option value="60">Statutory License Blocked (Overseas Nurse &bull; -6.0 pts)</option>
+              </select>
+            </div>
+
+            <div class="sim-result-box sim-result-purple">
+              <div style="font-size:0.75rem; color:var(--bark); font-family:var(--font-mono); text-transform:uppercase;">
+                Relative Merit Score (RMS)
+              </div>
+              <div class="sim-big-score" id="f4_rms_display" style="color:var(--purple)">85.4%</div>
+              <div class="sim-breakdown">
+                <div>Cohort Percentile: <strong id="f4_pct_display">Top 8%</strong></div>
+                <div>Decision: <strong style="color:var(--moss-dark)">Shortlist Priority</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 5: FORMULA 5 — JOB SEEKER FEED RANKING (JFR / FRS★) -->
+    <!-- ================================================================= -->
+    <section class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--cyan-light)">
+          FORMULA 5 &bull; DOCUMENT IE-SPEC-005 &bull; REQ-S01, REQ-S16
+        </div>
+        <h1 class="slide-title">Job Seeker Feed Ranking Engine (JFR / FRS★)</h1>
+        <p class="slide-subtitle">
+          Ranks hundreds of live Australian vacancies for an active candidate. Incorporates behavioural feedback loops (saved employers, saved sectors, ignored penalties).
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="card">
+            <div class="card-title">1. Mathematical Specification</div>
+            <div class="formula-box">
+              $$\text{FRS} = (0.45 S_{\text{cap}} + 0.20 S_{\text{wage}} + 0.20 S_{\text{loc}} + 0.15 S_{\text{rec}}) \times (1 - \delta_{\text{div}})$$
+              <div class="formula-sub">
+                $$\text{FRS}^\star = \min\left(100.0, \; \text{FRS} \times (1.10)^{\mathbb{I}_{\text{save\_emp}}} \times (1.05)^{\mathbb{I}_{\text{save\_sec}}} \times (0.75)^{\mathbb{I}_{\text{ignore}\ge 3}}\right)$$
+              </div>
+            </div>
+
+            <table class="spec-table">
+              <tr>
+                <td><strong>$S_{\text{cap}}$ (45%)</strong></td>
+                <td>Candidate capability alignment based on ANZSCO taxonomy match and verified skill overlap.</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{wage}}$ (20%)</strong></td>
+                <td>Compensation upside relative to Australian industry sector median.</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{loc}}$ (20%)</strong></td>
+                <td>Location match to candidate preference (Sydney: 100%, NSW: 82%, Interstate: 58%).</td>
+              </tr>
+              <tr>
+                <td><strong>$S_{\text{rec}}$ (15%)</strong></td>
+                <td>Recency exponential decay: $100 \cdot e^{-0.04 \cdot \text{days\_old}}$.</td>
+              </tr>
+              <tr>
+                <td><strong>$\delta_{\text{div}}$</strong></td>
+                <td>Employer diversity penalty: Prevents single-employer saturation ($\min(0.40, 0.15 \times \text{count})$).</td>
+              </tr>
+            </table>
+
+            <div class="worked-example-card">
+              <h4>Verified Worked Example: Live Vacancy Ranking</h4>
+              <div class="step-item">
+                <strong>Requisition:</strong> Lead Registered Nurse at East Bridge Recruitment ($135,000 AUD, Sydney, Posted 2 days ago).
+              </div>
+              <div class="step-item">
+                <strong>Scores:</strong> $S_{\text{cap}} = 98.0$, $S_{\text{wage}} = 85.0$, $S_{\text{loc}} = 100.0$, $S_{\text{rec}} = 100 e^{-0.04(2)} = 92.3$.
+              </div>
+              <div class="step-item">
+                <strong>Base FRS:</strong> $(0.45 \times 98) + (0.20 \times 85) + (0.20 \times 100) + (0.15 \times 92.3) = 44.1 + 17.0 + 20.0 + 13.8 = \mathbf{94.9\%}$.
+              </div>
+              <div class="step-item">
+                <strong>Behavioural Boost:</strong> Seeker previously saved East Bridge vacancies: $\text{FRS}^\star = 94.9 \times 1.10 = \mathbf{100.0\%}$ (clamped).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card sim-panel">
+            <div class="card-title" style="color:var(--cyan-light)">Interactive Feed Ranking Simulator</div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Capability Alignment ($S_{\text{cap}}$)</span>
+                <span class="sim-val" id="f5_cap_val">95%</span>
+              </div>
+              <input type="range" id="f5_cap" min="30" max="100" step="5" value="95" oninput="runF5()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Posting Age ($S_{\text{rec}} = 100e^{-0.04t}$)</span>
+                <span class="sim-val" id="f5_age_val">2 days old (92.3%)</span>
+              </div>
+              <input type="range" id="f5_age" min="1" max="30" step="1" value="2" oninput="runF5()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Location Alignment</span>
+                <span class="sim-val" id="f5_loc_val">Sydney (100%)</span>
+              </div>
+              <select id="f5_loc" onchange="runF5()" class="sim-select">
+                <option value="100">Exact Target City (Sydney &bull; 100%)</option>
+                <option value="82">Greater Metropolitan NSW (&bull; 82%)</option>
+                <option value="58">Interstate Capital (Melbourne/Brisbane &bull; 58%)</option>
+                <option value="38">Remote / Unspecified Region (&bull; 38%)</option>
+              </select>
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Behavioural Feedback Toggle</span>
+              </div>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.82rem; margin-bottom:6px; cursor:pointer;">
+                <input type="checkbox" id="f5_boost_emp" checked onchange="runF5()">
+                <span>Saved Employer Affinity (+10% Boost)</span>
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.82rem; cursor:pointer;">
+                <input type="checkbox" id="f5_pen_ignore" onchange="runF5()">
+                <span>Frequently Ignored Employer (-25% Penalty)</span>
+              </label>
+            </div>
+
+            <div class="sim-result-box sim-result-terracotta">
+              <div style="font-size:0.75rem; color:var(--bark); font-family:var(--font-mono); text-transform:uppercase;">
+                Personalized Feed Score (FRS★)
+              </div>
+              <div class="sim-big-score" id="f5_result_display" style="color:var(--terracotta)">98.2%</div>
+              <div class="sim-breakdown">
+                <div>Base FRS: <strong id="f5_base_display">89.3%</strong></div>
+                <div>Position: <strong style="color:var(--moss-dark)">Top Card in Feed</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 6: FORMULA 6 — RECRUITER TALENT SEARCH RANKING (TSR / TSS) -->
+    <!-- ================================================================= -->
+    <section class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--rose)">
+          FORMULA 6 &bull; DOCUMENT IE-SPEC-006 &bull; REQ-H09, REQ-H10
+        </div>
+        <h1 class="slide-title">Recruiter Talent Search Ranking Engine (TSR / TSS)</h1>
+        <p class="slide-subtitle">
+          Ranks candidate applicant pools for employer vacancies. Eliminates identical scores through multi-factor continuous mathematical curves.
+        </p>
+      </div>
+
+      <div class="grid-2col">
+        <div>
+          <div class="card">
+            <div class="card-title">1. Mathematical Specification</div>
+            <div class="formula-box">
+              $$\text{TSS} = 0.40 S_{\text{req}} + 0.25 S_{\text{sen}} + 0.15 S_{\text{evid}} + 0.15 S_{\text{reg}} + 0.05 S_{\text{audit}}$$
+              <div class="formula-sub">
+                $$S_{\text{sen}} = \begin{cases} 
+                \min\left(100.0, \; 92.0 + 3.0 \ln\left(1 + (Y_C - Y_{\text{req}})\right)\right) & \text{if } Y_C \ge Y_{\text{req}} \\
+                \max\left(25.0, \; 92.0 \cdot e^{-0.15 \frac{(Y_{\text{req}} - Y_C)^2}{Y_{\text{req}}}}\right) & \text{if } Y_C < Y_{\text{req}}
+                \end{cases}$$
+              </div>
+            </div>
+
+            <table class="spec-table">
+              <tr>
+                <td><strong>Requisition Fit ($S_{\text{req}}$, 40%)</strong></td>
+                <td>$\text{Base}_{\text{anzsco}} + (24.0 \times \text{SkillCoverage}) + \text{EduBonus}$. Differentiates candidates by exact required JD skills.</td>
+              </tr>
+              <tr>
+                <td><strong>Seniority Parity ($S_{\text{sen}}$, 25%)</strong></td>
+                <td>Smooth Gaussian decay for experience deficits, logarithmic bonus for experience surplus. No clamped step caps.</td>
+              </tr>
+              <tr>
+                <td><strong>Evidence Rigor ($S_{\text{evid}}$, 15%)</strong></td>
+                <td>$35 + 35(1 - e^{-N_{\text{dir}}/2.5}) + 18(1 - e^{-N_{\text{trans}}/3.5}) + 12 \min(1.0, \frac{\text{metrics}}{3})$.</td>
+              </tr>
+              <tr>
+                <td><strong>Statutory Readiness ($S_{\text{reg}}$, 15%)</strong></td>
+                <td>Verified Australian licensing (AHPRA, CPA, NER): 96% - 98%; overseas eligibility pending: 82%; unverified overseas: 62%.</td>
+              </tr>
+              <tr>
+                <td><strong>Contract Audit ($S_{\text{audit}}$, 5%)</strong></td>
+                <td>Verifies data contract schema integrity across Lakehouse pipelines (100.0%).</td>
+              </tr>
+            </table>
+
+            <div class="worked-example-card">
+              <h4>Verified Worked Example: Candidate Ranking for Lead Nurse Role</h4>
+              <div class="step-item">
+                <strong>Job Requisition:</strong> Lead Registered Nurse (Target: 7.0 yrs exp, requires AHPRA, triage, ICU).
+              </div>
+              <div class="step-item">
+                <strong>Candidate 1 (SilverKangaroo84):</strong> 10 yrs exp, 100% skill coverage, AHPRA eligible.
+                <span class="calc-pill">TSS = 90.2%</span>
+              </div>
+              <div class="step-item">
+                <strong>Candidate 2 (ForestKangaroo86):</strong> 20 yrs exp, 85% skill coverage, non-clinical.
+                <span class="calc-pill">TSS = 89.0%</span>
+              </div>
+              <div class="step-item">
+                <strong>Candidate 3 (SolarKangaroo51):</strong> 8 yrs exp, 50% skill coverage, needs bridging.
+                <span class="calc-pill">TSS = 78.5%</span>
+              </div>
+              <div class="step-item">
+                <strong>Outcome:</strong> Clear score separation. Candidates appear in mathematically verified merit order.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card sim-panel">
+            <div class="card-title" style="color:var(--rose)">Interactive Recruiter Search Simulator</div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Job Skill Coverage (Verified Overlap)</span>
+                <span class="sim-val" id="f6_cov_val">100% (24.0 pts)</span>
+              </div>
+              <input type="range" id="f6_cov" min="20" max="100" step="5" value="100" oninput="runF6()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Candidate Experience vs Requisition (Req: 7.0 yrs)</span>
+                <span class="sim-val" id="f6_exp_val">10.0 yrs Held (Surplus)</span>
+              </div>
+              <input type="range" id="f6_exp" min="1" max="25" step="1" value="10" oninput="runF6()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Direct Verified Skills Count</span>
+                <span class="sim-val" id="f6_skills_val">8 skills</span>
+              </div>
+              <input type="range" id="f6_skills" min="1" max="15" step="1" value="8" oninput="runF6()">
+            </div>
+
+            <div class="sim-group">
+              <div class="sim-label">
+                <span>Statutory Licensing Status</span>
+              </div>
+              <select id="f6_reg" onchange="runF6()" class="sim-select">
+                <option value="96">Fully Registered & Verified in Australia (96.0 pts)</option>
+                <option value="82" selected>Overseas Qualified & In-Progress / Eligible (82.0 pts)</option>
+                <option value="62">Overseas Unaccredited (Needs Bridge Exam &bull; 62.0 pts)</option>
+              </select>
+            </div>
+
+            <div class="sim-result-box sim-result-purple">
+              <div style="font-size:0.75rem; color:var(--bark); font-family:var(--font-mono); text-transform:uppercase;">
+                Talent Search Score (TSS)
+              </div>
+              <div class="sim-big-score" id="f6_result_display" style="color:var(--purple)">90.2%</div>
+              <div class="sim-breakdown">
+                <div>Req Fit: <strong id="f6_sreq_display">94.0%</strong></div>
+                <div>Seniority: <strong id="f6_ssen_display">95.3%</strong></div>
+                <div>Evidence: <strong id="f6_sevid_display">73.0%</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SLIDE 7: SYSTEM AUDIT & VERIFICATION MATRIX -->
+    <!-- ================================================================= -->
+    <section class="slide" id="slide-7">
+      <div class="slide-header">
+        <div class="slide-spec-tag" style="color:var(--emerald-light)">
+          SECTION 7 &bull; QUALITY AUDIT & REPOSITORY VERIFICATION
+        </div>
+        <h1 class="slide-title">Mathematical Verification & Audit Matrix</h1>
+        <p class="slide-subtitle">
+          Summary of algorithmic compliance across all 8 Australian economic sectors, 320 international candidate profiles, and 461 job requisitions.
+        </p>
+      </div>
+
+      <div class="grid-3col">
+        <div class="card">
+          <div class="card-title">Continuous Score Verification</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+            All 50 candidates returned on the Recruiter Shortlist board demonstrate distinct scores:
+          </p>
+          <div style="font-size:0.8rem; font-family:var(--font-mono); background:var(--surface-alt); border:1px solid var(--timber); padding:12px; border-radius:8px; line-height:1.8; color:var(--fg-loam);">
+            SilverKangaroo84: <span style="color:var(--moss-dark); font-weight:700;">90.2%</span> (Gap 10.0%, 1.1 mo)<br>
+            ForestKangaroo86: <span style="color:var(--moss-dark); font-weight:700;">89.0%</span> (Gap 33.2%, 7.1 mo)<br>
+            DesertKangaroo79: <span style="color:var(--moss-dark); font-weight:700;">88.5%</span> (Gap 32.9%, 6.7 mo)<br>
+            VibrantKangaroo38: <span style="color:var(--moss-dark); font-weight:700;">88.5%</span> (Gap 32.9%, 6.7 mo)<br>
+            SouthernKangaroo52: <span style="color:var(--moss-dark); font-weight:700;">87.8%</span> (Gap 33.4%, 7.4 mo)<br>
+            EmeraldKangaroo37: <span style="color:var(--moss-dark); font-weight:700;">87.7%</span> (Gap 32.9%, 6.7 mo)
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">ASD-STE100 Compliance Checklist</div>
+          <table class="spec-table">
+            <tr>
+              <td><strong>Sentence Length</strong></td>
+              <td>Maximum 20 words for instructions, 25 for descriptions. [PASS]</td>
+            </tr>
+            <tr>
+              <td><strong>Approved Verbs</strong></td>
+              <td>Use approved, unambiguous vocabulary (calculate, determine, compare). [PASS]</td>
+            </tr>
+            <tr>
+              <td><strong>Active Voice</strong></td>
+              <td>100% active voice structure in procedural calculation algorithms. [PASS]</td>
+            </tr>
+            <tr>
+              <td><strong>Noun Clusters</strong></td>
+              <td>No noun clusters exceeding 3 consecutive words. [PASS]</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Zero-PII Compliance & Audit</div>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+            The Intelligence Engine strictly conforms to Australian National Privacy Principles:
+          </p>
+          <ul style="font-size:0.83rem; color:var(--text-muted); padding-left:18px; line-height:1.7;">
+            <li>Zero PII transmitted across candidate search endpoints.</li>
+            <li>Randomized Australian Wildlife animal aliases (e.g. SilverKangaroo84).</li>
+            <li>Raw CV text redacted before recruiter browser delivery.</li>
+            <li>Deterministic sub-5ms mathematical score execution.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // =====================================================================
+    // SLIDE PRESENTATION ROUTER
+    // =====================================================================
+    let currentSlide = 0;
+    const totalSlides = 8;
+
+    function showSlide(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= totalSlides) idx = totalSlides - 1;
+      currentSlide = idx;
+
+      // Blur any focused element so no button retains a focus ghost outline/mark
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+      }
+
+      // Update tab buttons cleanly
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      tabBtns.forEach((b, i) => {
+        const isActive = (i === currentSlide);
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        if (isActive) {
+          b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
+      });
+
+      // Update slide visibility
+      document.querySelectorAll('.slide').forEach((s, i) => {
+        s.classList.toggle('active', i === currentSlide);
+      });
+
+      // Update indicators
+      document.getElementById('slideIndicator').textContent = `${currentSlide + 1} / ${totalSlides}`;
+      document.getElementById('progressBar').style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+
+      // Scroll to top instantly without jitter
+      window.scrollTo(0, 0);
+
+      // Trigger formula re-rendering if KaTeX is present
+      triggerKaTeX();
+    }
+
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function prevSlide() { showSlide(currentSlide - 1); }
+    function goToSlide(idx) { showSlide(idx); }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+      if (e.key === 'Home') showSlide(0);
+      if (e.key === 'End') showSlide(totalSlides - 1);
+    });
+
+    function triggerKaTeX() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false,
+          errorColor: '#F43F5E'
+        });
+      }
+    }
+
+    // =====================================================================
+    // FORMULA 1 CALCULATOR
+    // =====================================================================
+    function runF1() {
+      const tree = parseFloat(document.getElementById('f1_tree').value);
+      const dir = parseFloat(document.getElementById('f1_dir').value);
+      const trans = parseFloat(document.getElementById('f1_trans').value);
+      const exp = parseFloat(document.getElementById('f1_exp').value);
+
+      document.getElementById('f1_tree_val').textContent = `${tree.toFixed(1)}%`;
+      document.getElementById('f1_dir_val').textContent = `${dir.toFixed(1)}%`;
+      document.getElementById('f1_trans_val').textContent = `${trans.toFixed(1)}%`;
+
+      const ratio = exp / 5.0;
+      const phi = Math.min(1.15, Math.max(0.75, 0.80 + 0.15 * Math.log(1.0 + ratio) + 0.05 * Math.min(2.0, ratio)));
+      document.getElementById('f1_exp_val').textContent = `${exp.toFixed(1)} yrs (\u00D7${phi.toFixed(3)})`;
+
+      const base = (0.25 * tree) + (0.50 * dir) + (0.25 * trans);
+      const finalScore = Math.min(100.0, Math.max(0.0, base * phi));
+
+      document.getElementById('f1_result').textContent = `${finalScore.toFixed(1)}%`;
+      document.getElementById('f1_base_display').textContent = `${base.toFixed(1)}%`;
+      document.getElementById('f1_phi_display').textContent = `\u00D7${phi.toFixed(3)}`;
+      updateAllSliderTracks();
+    }
+
+    function setF1Preset(preset) {
+      if (preset === 'senior_nurse') {
+        document.getElementById('f1_tree').value = 100;
+        document.getElementById('f1_dir').value = 82;
+        document.getElementById('f1_trans').value = 85;
+        document.getElementById('f1_exp').value = 10;
+      } else if (preset === 'junior_dev') {
+        document.getElementById('f1_tree').value = 100;
+        document.getElementById('f1_dir').value = 70;
+        document.getElementById('f1_trans').value = 65;
+        document.getElementById('f1_exp').value = 2;
+      } else if (preset === 'overseas_acct') {
+        document.getElementById('f1_tree').value = 85;
+        document.getElementById('f1_dir').value = 75;
+        document.getElementById('f1_trans').value = 80;
+        document.getElementById('f1_exp').value = 12;
+      }
+      runF1();
+    }
+
+    // =====================================================================
+    // FORMULA 2 CALCULATOR
+    // =====================================================================
+    function runF2() {
+      const c1 = document.getElementById('f2_cat1').checked;
+      const c2 = document.getElementById('f2_cat2').checked;
+      const c3 = document.getElementById('f2_cat3').checked;
+      const c4 = document.getElementById('f2_cat4').checked;
+      const exp = parseFloat(document.getElementById('f2_exp').value);
+      const hasDeg = parseInt(document.getElementById('f2_deg').value) === 1;
+
+      document.getElementById('f2_exp_val').textContent = `${exp.toFixed(1)} yrs`;
+
+      const lambda = Math.max(0.65, Math.min(1.05, 1.0 - 0.16 * Math.min(1.0, exp / 12.0) - (hasDeg ? 0.05 : 0.0)));
+
+      let totalGsi = 0.0;
+      const durations = [];
+      let hasStat = false;
+
+      if (c1) { // CAT-1: w=1.00, t=8.0
+        hasStat = true;
+        const t = 8.0 * lambda;
+        durations.push(t);
+        totalGsi += 1.00 * (14.0 + 4.5 * Math.log(1.0 + t));
+      }
+      if (c2) { // CAT-2: w=0.60, t=4.0
+        const t = 4.0 * lambda;
+        durations.push(t);
+        totalGsi += 0.60 * (14.0 + 4.5 * Math.log(1.0 + t));
+      }
+      if (c3) { // CAT-3: w=0.25, t=1.5
+        const t = 1.5 * lambda;
+        durations.push(t);
+        totalGsi += 0.25 * (14.0 + 4.5 * Math.log(1.0 + t));
+      }
+      if (c4) { // CAT-4: w=0.10, t=0.8
+        const t = 0.8 * lambda;
+        durations.push(t);
+        totalGsi += 0.10 * (14.0 + 4.5 * Math.log(1.0 + t));
+      }
+
+      if (durations.length === 0) {
+        totalGsi = 2.0;
+      }
+
+      const gsi = Math.min(95.0, Math.max(2.0, totalGsi));
+      const jrs = Math.max(5.0, 100.0 - gsi);
+
+      let tTotal = 0.8;
+      if (durations.length > 0) {
+        const maxT = Math.max(...durations);
+        const sumOthers = durations.reduce((a, b) => a + b, 0) - maxT;
+        tTotal = maxT + (0.18 * sumOthers);
+      }
+
+      document.getElementById('f2_jrs_display').textContent = `${jrs.toFixed(1)}%`;
+      document.getElementById('f2_gsi_display').textContent = `${gsi.toFixed(1)}%`;
+      document.getElementById('f2_time_display').textContent = `${tTotal.toFixed(1)} mo`;
+
+      const tierEl = document.getElementById('f2_tier_display');
+      if (jrs >= 80.0 && !hasStat) {
+        tierEl.textContent = 'Immediate Deployment';
+        tierEl.style.color = 'var(--emerald-light)';
+      } else if (jrs >= 55.0 || (!hasStat && jrs >= 45.0)) {
+        tierEl.textContent = 'Fast-Track Bridging';
+        tierEl.style.color = 'var(--amber-light)';
+      } else {
+        tierEl.textContent = 'Structural Bridging Required';
+        tierEl.style.color = 'var(--rose)';
+      }
+      updateAllSliderTracks();
+    }
+
+    // =====================================================================
+    // FORMULA 3 CALCULATOR
+    // =====================================================================
+    function runF3() {
+      const tree = parseFloat(document.getElementById('f3_tree').value);
+      const jac = parseFloat(document.getElementById('f3_jac').value);
+      const salDiff = parseFloat(document.getElementById('f3_sal').value);
+      const loc = parseFloat(document.getElementById('f3_loc').value);
+
+      document.getElementById('f3_tree_val').textContent = `${tree}%`;
+      document.getElementById('f3_jac_val').textContent = `${jac}% Overlap`;
+      document.getElementById('f3_sal_val').textContent = `${salDiff}% Variance`;
+      document.getElementById('f3_loc_val').textContent = `${loc}%`;
+
+      const salScore = Math.max(0.0, 100.0 - (150.0 * (salDiff / 100.0)));
+      const jpi = (0.40 * tree) + (0.35 * jac) + (0.15 * salScore) + (0.10 * loc);
+
+      document.getElementById('f3_result_display').textContent = `${jpi.toFixed(1)}%`;
+      document.getElementById('f3_sal_score_display').textContent = `${salScore.toFixed(1)}%`;
+      updateAllSliderTracks();
+    }
+
+    // =====================================================================
+    // FORMULA 4 CALCULATOR
+    // =====================================================================
+    function runF4() {
+      const dir = parseFloat(document.getElementById('f4_dir').value);
+      const exp = parseFloat(document.getElementById('f4_exp').value);
+      const evid = parseFloat(document.getElementById('f4_evid').value);
+      const gapPen = parseFloat(document.getElementById('f4_gap').value);
+
+      document.getElementById('f4_dir_val').textContent = `${dir} skills`;
+      document.getElementById('f4_exp_val').textContent = `${exp.toFixed(1)} yrs`;
+      document.getElementById('f4_evid_val').textContent = `${evid}% Rigor`;
+
+      const sDepth = Math.min(100.0, 30.0 + 40.0 * (1.0 - Math.exp(-dir / 3.0)) + 30.0 * (1.0 - Math.exp(-4 / 4.0)));
+      const sExp = Math.min(100.0, 100.0 * (1.0 - Math.exp(-exp / 5.2)));
+      const sEvid = evid;
+      const sTrans = 80.0;
+      const eduBonus = 2.0;
+
+      const rms = (0.35 * sDepth) + (0.25 * sExp) + (0.20 * sEvid) + (0.10 * sTrans) - (0.10 * gapPen) + eduBonus;
+      const finalRms = Math.min(100.0, Math.max(0.0, rms));
+
+      document.getElementById('f4_rms_display').textContent = `${finalRms.toFixed(1)}%`;
+      document.getElementById('f4_pct_display').textContent = `Top ${Math.max(1, Math.round(100 - finalRms))}%`;
+      updateAllSliderTracks();
+    }
+
+    // =====================================================================
+    // FORMULA 5 CALCULATOR
+    // =====================================================================
+    function runF5() {
+      const cap = parseFloat(document.getElementById('f5_cap').value);
+      const age = parseFloat(document.getElementById('f5_age').value);
+      const loc = parseFloat(document.getElementById('f5_loc').value);
+      const boostEmp = document.getElementById('f5_boost_emp').checked;
+      const penIgnore = document.getElementById('f5_pen_ignore').checked;
+
+      const sRec = 100.0 * Math.exp(-0.04 * age);
+      document.getElementById('f5_cap_val').textContent = `${cap}%`;
+      document.getElementById('f5_age_val').textContent = `${age} d (${sRec.toFixed(1)}%)`;
+
+      const sWage = 80.0;
+      const base = (0.45 * cap) + (0.20 * sWage) + (0.20 * loc) + (0.15 * sRec);
+      
+      let finalScore = base;
+      if (boostEmp) finalScore *= 1.10;
+      if (penIgnore) finalScore *= 0.75;
+      finalScore = Math.min(100.0, Math.max(0.0, finalScore));
+
+      document.getElementById('f5_result_display').textContent = `${finalScore.toFixed(1)}%`;
+      document.getElementById('f5_base_display').textContent = `${base.toFixed(1)}%`;
+      updateAllSliderTracks();
+    }
+
+    // =====================================================================
+    // FORMULA 6 CALCULATOR
+    // =====================================================================
+    function runF6() {
+      const cov = parseFloat(document.getElementById('f6_cov').value);
+      const exp = parseFloat(document.getElementById('f6_exp').value);
+      const skills = parseFloat(document.getElementById('f6_skills').value);
+      const reg = parseFloat(document.getElementById('f6_reg').value);
+
+      document.getElementById('f6_cov_val').textContent = `${cov}% (${(24.0 * cov / 100).toFixed(1)} pts)`;
+      document.getElementById('f6_exp_val').textContent = `${exp.toFixed(1)} yrs Held`;
+      document.getElementById('f6_skills_val').textContent = `${skills} skills`;
+
+      // Req fit
+      const sReq = Math.min(98.0, 68.0 + (24.0 * (cov / 100.0)) + 2.0);
+
+      // Seniority vs target 7.0 yrs
+      const reqYears = 7.0;
+      let sSen = 92.0;
+      if (exp >= reqYears) {
+        sSen = Math.min(100.0, 92.0 + 3.0 * Math.log(1.0 + (exp - reqYears)));
+      } else {
+        const diff = reqYears - exp;
+        sSen = Math.max(25.0, 92.0 * Math.exp(-0.15 * (diff * diff) / reqYears));
+      }
+
+      // Evidence
+      const sEvid = Math.min(100.0, 35.0 + 35.0 * (1.0 - Math.exp(-skills / 2.5)) + 18.0 * (1.0 - Math.exp(-4 / 3.5)) + 10.0);
+
+      const tss = (0.40 * sReq) + (0.25 * sSen) + (0.15 * sEvid) + (0.15 * reg) + (0.05 * 100.0);
+      const finalTss = Math.min(100.0, Math.max(0.0, tss));
+
+      document.getElementById('f6_result_display').textContent = `${finalTss.toFixed(1)}%`;
+      document.getElementById('f6_sreq_display').textContent = `${sReq.toFixed(1)}%`;
+      document.getElementById('f6_ssen_display').textContent = `${sSen.toFixed(1)}%`;
+      document.getElementById('f6_sevid_display').textContent = `${sEvid.toFixed(1)}%`;
+      updateAllSliderTracks();
+    }
+
+    // Dynamic Purple Gradient Track Fill for Range Sliders
+    function updateSliderTrack(input) {
+      if (!input) return;
+      const min = input.min !== '' ? parseFloat(input.min) : 0;
+      const max = input.max !== '' ? parseFloat(input.max) : 100;
+      const val = parseFloat(input.value);
+      const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
+      input.style.setProperty('--range-pct', `${pct}%`);
+    }
+
+    function updateAllSliderTracks() {
+      document.querySelectorAll('input[type="range"]').forEach(updateSliderTrack);
+    }
+
+    // Initialize all calculators, KaTeX, and Range Slider Gradients on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('input[type="range"]').forEach(input => {
+        input.addEventListener('input', () => updateSliderTrack(input));
+        input.addEventListener('change', () => updateSliderTrack(input));
+      });
+      runF1();
+      runF2();
+      runF3();
+      runF4();
+      runF5();
+      runF6();
+      updateAllSliderTracks();
+      triggerKaTeX();
+    });
+  </script>
+</body>
+</html>

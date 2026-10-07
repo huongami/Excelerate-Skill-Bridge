@@ -1,0 +1,3116 @@
+{
+  "version": "2",
+  "note": "Demo taxonomy for Jinder. It is a small list that people made by hand for the Software Engineering, AI & Machine Learning and Data domains. It is not an official standard. ANZSCO codes with approximate=false are real codes. For approximate=true the code is the nearest real code. Certification names are public product names.",
+  "levels": [
+    {
+      "name": "Intern",
+      "rank": 0,
+      "typicalYears": [0, 0],
+      "titleWords": [
+        "intern", "internship", "trainee", "cadet", "apprentice", "student", "work experience"
+      ]
+    },
+    {
+      "name": "Junior",
+      "rank": 1,
+      "typicalYears": [0, 2],
+      "titleWords": [
+        "junior", "jr", "graduate", "grad", "entry level", "entry-level", "associate", "early career",
+        "level 1"
+      ]
+    },
+    {
+      "name": "Mid",
+      "rank": 2,
+      "typicalYears": [2, 5],
+      "titleWords": ["mid", "mid-level", "mid level", "intermediate", "level 2", "ii"]
+    },
+    {
+      "name": "Senior",
+      "rank": 3,
+      "typicalYears": [5, 9],
+      "titleWords": ["senior", "sr", "snr", "level 3", "iii"]
+    },
+    {
+      "name": "Lead",
+      "rank": 4,
+      "typicalYears": [7, 12],
+      "titleWords": [
+        "lead", "team lead", "tech lead", "technical lead", "staff", "engineering manager", "level 4",
+        "iv"
+      ]
+    },
+    {
+      "name": "Principal",
+      "rank": 5,
+      "typicalYears": [10, 40],
+      "titleWords": [
+        "principal", "distinguished", "fellow", "head of", "director", "chief", "vice president", "vp",
+        "level 5"
+      ]
+    }
+  ],
+  "skillLevels": [
+    {"level": 1, "label": "Beginner", "meaning": "You know the basic ideas. You need help with real tasks."},
+    {"level": 2, "label": "Working", "meaning": "You do simple tasks alone. You need help with hard ones."},
+    {"level": 3, "label": "Proficient", "meaning": "You do normal work alone, to a good standard."},
+    {"level": 4, "label": "Advanced", "meaning": "You solve hard problems and you guide other people."},
+    {"level": 5, "label": "Expert", "meaning": "You set the standard, design for others and teach the topic."}
+  ],
+  "domains": [
+    {
+      "name": "Software Engineering",
+      "specialisations": [
+        "Backend", "Frontend", "Full-stack", "Mobile", "Platform and DevOps", "Quality engineering",
+        "Security engineering", "Software architecture"
+      ]
+    },
+    {
+      "name": "AI & Machine Learning",
+      "specialisations": [
+        "Machine learning engineering", "Generative AI and LLM", "Computer vision",
+        "Natural language processing", "MLOps", "Applied science and research"
+      ]
+    },
+    {
+      "name": "Data",
+      "specialisations": [
+        "Data engineering", "Data analytics", "Analytics engineering", "Business intelligence",
+        "Data science", "Business analysis"
+      ]
+    }
+  ],
+  "skillGroups": {
+    "languages": {"label": "Languages"},
+    "frameworks": {"label": "Frameworks & libraries"},
+    "cloud": {"label": "Cloud & DevOps"},
+    "data": {"label": "Data & storage"},
+    "ml": {"label": "ML & AI"},
+    "practices": {"label": "Engineering practices"},
+    "collab": {"label": "Collaboration"}
+  },
+  "skills": [
+    {
+      "name": "Python",
+      "group": "languages",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": ["py", "python3", "python 3", "python programming"],
+      "related": ["R", "Ruby", "Shell scripting", "Go", "MATLAB"],
+      "monthsToLearn": 3,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Java",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["java se", "java ee", "j2ee", "jdk", "java programming"],
+      "related": ["Kotlin", "C#", "Scala", "Spring Boot", "Go"],
+      "monthsToLearn": 4,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "JavaScript",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["js", "javascript es6", "es6", "ecmascript", "vanilla js", "vanilla javascript"],
+      "related": ["TypeScript", "Node.js", "React", "HTML and CSS", "PHP"],
+      "monthsToLearn": 3,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "TypeScript",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["ts", "typed javascript"],
+      "related": ["JavaScript", "Node.js", "Angular", "React", "Next.js"],
+      "monthsToLearn": 3,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "C#",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["csharp", "c sharp", "c-sharp"],
+      "related": ["Java", ".NET", "Kotlin", "C++", "Azure Functions"],
+      "monthsToLearn": 4,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "C++",
+      "group": "languages",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": ["cpp", "c plus plus", "cplusplus"],
+      "related": [
+        "C", "Rust", "C#", "Distributed training and GPU computing", "Data structures and algorithms"
+      ],
+      "monthsToLearn": 6,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "C",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["c language", "ansi c", "c programming"],
+      "related": ["C++", "Rust", "Go"],
+      "monthsToLearn": 5,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Go",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["golang", "go lang", "go programming"],
+      "related": ["Rust", "Java", "Python", "C"],
+      "monthsToLearn": 4,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Rust",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["rust lang", "rustlang"],
+      "related": ["C++", "Go", "C", "Swift"],
+      "monthsToLearn": 7,
+      "rarity": 2.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Kotlin",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["kotlin multiplatform"],
+      "related": ["Java", "Android development", "Swift", "Scala", "C#"],
+      "monthsToLearn": 4,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "Swift",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["swiftui", "swift ui"],
+      "related": ["iOS development", "Kotlin", "Rust"],
+      "monthsToLearn": 4,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "PHP",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["php 8", "php7", "php programming"],
+      "related": ["Laravel", "JavaScript", "Ruby"],
+      "monthsToLearn": 3,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Ruby",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["ruby programming", "ruby lang"],
+      "related": ["Ruby on Rails", "Python", "PHP"],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Scala",
+      "group": "languages",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["scala 3", "scala lang"],
+      "related": ["Java", "Kotlin", "Apache Spark"],
+      "monthsToLearn": 6,
+      "rarity": 2.2,
+      "kind": "hard"
+    },
+    {
+      "name": "R",
+      "group": "languages",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": ["r language", "r programming", "rstudio", "r studio", "tidyverse"],
+      "related": ["Python", "Statistics", "MATLAB"],
+      "monthsToLearn": 3,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "SQL",
+      "group": "languages",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "structured query language", "t-sql", "tsql", "pl/sql", "plsql", "sql queries", "ansi sql"
+      ],
+      "related": [
+        "PostgreSQL", "MySQL", "Microsoft SQL Server", "Database design and tuning", "Oracle Database"
+      ],
+      "monthsToLearn": 2,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Shell scripting",
+      "group": "languages",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["bash", "zsh", "bash scripting", "unix shell"],
+      "related": ["Linux", "PowerShell", "Python", "Ansible"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "PowerShell",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": ["powershell core", "pwsh"],
+      "related": ["Shell scripting", "Azure", "Ansible"],
+      "monthsToLearn": 2,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "MATLAB",
+      "group": "languages",
+      "domains": ["AI & Machine Learning"],
+      "aliases": ["matlab simulink", "simulink", "octave"],
+      "related": ["Python", "R", "NumPy"],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "HTML and CSS",
+      "group": "languages",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "html", "css", "html5", "css3", "html/css", "sass", "scss", "responsive design",
+        "responsive web design"
+      ],
+      "related": ["JavaScript", "Tailwind CSS", "Web accessibility"],
+      "monthsToLearn": 2,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "React",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["reactjs", "react.js", "react hooks", "redux"],
+      "related": ["JavaScript", "TypeScript", "Next.js", "React Native", "Vue.js"],
+      "monthsToLearn": 3,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Angular",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["angularjs", "angular 2", "rxjs", "angular cli"],
+      "related": ["TypeScript", "React", "Vue.js"],
+      "monthsToLearn": 3.5,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "Vue.js",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["vue", "vuejs", "vue 3", "nuxt", "nuxt.js"],
+      "related": ["React", "JavaScript", "Angular"],
+      "monthsToLearn": 3,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Next.js",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["nextjs", "next js"],
+      "related": ["React", "Node.js", "TypeScript", "Tailwind CSS"],
+      "monthsToLearn": 2,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Node.js",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["nodejs", "node js", "express.js", "expressjs"],
+      "related": ["JavaScript", "TypeScript", "NestJS", "API design", "Next.js"],
+      "monthsToLearn": 3,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "NestJS",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["nest.js", "nest js"],
+      "related": ["Node.js", "TypeScript", "Spring Boot"],
+      "monthsToLearn": 2,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Spring Boot",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["spring framework", "spring mvc", "spring cloud", "spring boot 3"],
+      "related": ["Java", "Kotlin", "Microservices architecture", ".NET", "NestJS"],
+      "monthsToLearn": 4,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": ".NET",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        ".net core", "dotnet", "asp.net", "asp.net core", "entity framework", ".net framework", ".net 8"
+      ],
+      "related": ["C#", "Spring Boot", "Azure"],
+      "monthsToLearn": 4,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "Django",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["django rest framework", "drf"],
+      "related": ["Python", "Flask", "FastAPI", "Ruby on Rails", "Laravel"],
+      "monthsToLearn": 3,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Flask",
+      "group": "frameworks",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": ["flask framework", "flask api"],
+      "related": ["Python", "Django", "FastAPI"],
+      "monthsToLearn": 2,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "FastAPI",
+      "group": "frameworks",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": ["fast api", "pydantic"],
+      "related": ["Python", "Flask", "Django"],
+      "monthsToLearn": 2,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Ruby on Rails",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["rails", "ruby rails", "ror"],
+      "related": ["Ruby", "Django", "Laravel"],
+      "monthsToLearn": 4,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "Laravel",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["laravel framework", "laravel php"],
+      "related": ["PHP", "Ruby on Rails", "Django"],
+      "monthsToLearn": 3,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "React Native",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["react-native", "reactnative", "expo"],
+      "related": ["React", "Flutter", "Android development", "iOS development"],
+      "monthsToLearn": 3,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Flutter",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["dart", "flutter dart", "dart language"],
+      "related": ["React Native", "Android development", "iOS development"],
+      "monthsToLearn": 4,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Android development",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "android", "android sdk", "android studio", "jetpack compose", "android app development"
+      ],
+      "related": ["Kotlin", "Java", "Flutter", "React Native"],
+      "monthsToLearn": 4,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "iOS development",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["ios", "ios app development", "uikit", "xcode", "apple development"],
+      "related": ["Swift", "Flutter", "React Native"],
+      "monthsToLearn": 4,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "GraphQL",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["graph ql", "apollo", "apollo graphql"],
+      "related": ["API design", "gRPC", "Node.js"],
+      "monthsToLearn": 2,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "gRPC",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["protocol buffers", "protobuf"],
+      "related": ["API design", "GraphQL", "Microservices architecture"],
+      "monthsToLearn": 2,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Tailwind CSS",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["tailwind", "tailwindcss"],
+      "related": ["HTML and CSS", "React", "Next.js"],
+      "monthsToLearn": 1,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "Pandas",
+      "group": "frameworks",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": ["pandas library", "pandas dataframe", "dataframes"],
+      "related": ["NumPy", "Python", "Data analysis", "scikit-learn", "Feature engineering"],
+      "monthsToLearn": 2,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "NumPy",
+      "group": "frameworks",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": ["numpy arrays", "scipy", "numerical python"],
+      "related": ["Pandas", "Python", "MATLAB"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "Selenium",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["selenium webdriver", "webdriver", "selenium grid"],
+      "related": ["Playwright", "Cypress", "Test automation"],
+      "monthsToLearn": 2,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Playwright",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["playwright test"],
+      "related": ["Cypress", "Selenium", "Test automation"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Cypress",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["cypress.io", "cypress e2e"],
+      "related": ["Playwright", "Selenium", "Jest", "Test automation"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Jest",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["jest testing", "vitest", "react testing library", "mocha", "jasmine"],
+      "related": ["JavaScript", "Cypress", "Unit and integration testing"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "pytest",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["py.test", "unittest", "python unittest"],
+      "related": ["Python", "Unit and integration testing", "JUnit"],
+      "monthsToLearn": 1,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "JUnit",
+      "group": "frameworks",
+      "domains": ["Software Engineering"],
+      "aliases": ["junit 5", "testng", "mockito"],
+      "related": ["Java", "Unit and integration testing", "pytest"],
+      "monthsToLearn": 1,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "AWS",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "amazon web services", "aws cloud", "ec2", "amazon ec2", "amazon rds", "cloudwatch",
+        "amazon sqs", "sqs", "sns", "amazon sns"
+      ],
+      "related": ["Azure", "Google Cloud Platform", "AWS Lambda", "Amazon S3", "AWS CloudFormation"],
+      "monthsToLearn": 4,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Azure",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "microsoft azure", "azure cloud", "azure active directory", "azure ad", "entra id", "azure vm",
+        "azure app service", "azure blob storage"
+      ],
+      "related": ["AWS", "Google Cloud Platform", "Azure Functions", "Azure DevOps", "PowerShell"],
+      "monthsToLearn": 4,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Google Cloud Platform",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "gcp", "google cloud", "google cloud services", "cloud run", "gcs", "google cloud storage"
+      ],
+      "related": ["AWS", "Azure", "Google BigQuery", "Vertex AI"],
+      "monthsToLearn": 4,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "AWS Lambda",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "lambda", "aws serverless", "serverless", "serverless functions", "aws api gateway"
+      ],
+      "related": ["Azure Functions", "AWS", "Amazon S3", "Microservices architecture"],
+      "monthsToLearn": 2,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Amazon S3",
+      "group": "cloud",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["s3", "aws s3", "s3 bucket", "object storage", "simple storage service"],
+      "related": ["AWS", "Data lakehouse", "Azure", "AWS Lambda"],
+      "monthsToLearn": 1,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Azure Functions",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["azure function apps", "function apps", "durable functions"],
+      "related": ["AWS Lambda", "Azure", "C#"],
+      "monthsToLearn": 2,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Docker",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "docker compose", "dockerfile", "containers", "containerisation", "containerization",
+        "docker containers", "container images"
+      ],
+      "related": ["Kubernetes", "Linux", "CI/CD", "MLflow", "MLOps"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Kubernetes",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "k8s", "kube", "eks", "aks", "gke", "openshift", "helm", "helm charts", "argo cd", "argocd",
+        "gitops", "container orchestration"
+      ],
+      "related": [
+        "Docker", "Terraform", "Observability", "Site reliability engineering", "Prometheus"
+      ],
+      "monthsToLearn": 4,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Terraform",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["terraform cloud", "hcl", "opentofu", "terragrunt"],
+      "related": ["Infrastructure as code", "AWS CloudFormation", "Ansible", "Kubernetes"],
+      "monthsToLearn": 2.5,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Ansible",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["ansible playbooks", "puppet", "chef infra", "configuration management"],
+      "related": ["Terraform", "Infrastructure as code", "Linux", "Shell scripting", "PowerShell"],
+      "monthsToLearn": 2,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "AWS CloudFormation",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["cloudformation", "aws cdk", "cdk"],
+      "related": ["Terraform", "Infrastructure as code", "AWS"],
+      "monthsToLearn": 2,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Infrastructure as code",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["iac", "pulumi", "bicep", "azure bicep", "arm templates", "infrastructure-as-code"],
+      "related": ["Terraform", "AWS CloudFormation", "Ansible"],
+      "monthsToLearn": 2,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Jenkins",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["jenkinsfile", "jenkins pipelines"],
+      "related": ["CI/CD", "GitHub Actions", "GitLab CI/CD", "Azure DevOps"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "GitHub Actions",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["github workflows", "gh actions"],
+      "related": ["CI/CD", "Jenkins", "GitLab CI/CD", "Git", "Azure DevOps"],
+      "monthsToLearn": 1,
+      "rarity": 1.3,
+      "kind": "hard"
+    },
+    {
+      "name": "GitLab CI/CD",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["gitlab ci", "gitlab pipelines", "gitlab-ci"],
+      "related": ["CI/CD", "GitHub Actions", "Jenkins"],
+      "monthsToLearn": 1,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Azure DevOps",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["azure pipelines", "azure repos", "vsts", "tfs", "azure boards"],
+      "related": ["CI/CD", "GitHub Actions", "Azure", "Jenkins"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "CI/CD",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "ci cd", "cicd", "ci/cd pipelines", "continuous integration", "continuous delivery",
+        "continuous deployment", "build pipelines", "deployment pipelines"
+      ],
+      "related": ["Jenkins", "GitHub Actions", "GitLab CI/CD", "Azure DevOps", "Docker"],
+      "monthsToLearn": 2,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Linux",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "ubuntu", "red hat", "rhel", "centos", "debian", "unix", "linux administration", "linux server"
+      ],
+      "related": [
+        "Shell scripting", "Networking fundamentals", "Docker", "Ansible",
+        "Site reliability engineering"
+      ],
+      "monthsToLearn": 3,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Prometheus",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["promql", "prometheus monitoring", "alertmanager"],
+      "related": ["Grafana", "Observability", "Kubernetes"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Grafana",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["grafana dashboards", "grafana loki"],
+      "related": ["Prometheus", "Observability", "Data visualisation"],
+      "monthsToLearn": 1,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "Observability",
+      "group": "cloud",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "monitoring", "logging", "opentelemetry", "otel", "distributed tracing", "datadog", "new relic",
+        "splunk", "application monitoring", "apm"
+      ],
+      "related": [
+        "Prometheus", "Grafana", "Site reliability engineering", "Incident response", "Kubernetes"
+      ],
+      "monthsToLearn": 2.5,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Site reliability engineering",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": ["sre", "site reliability", "reliability engineering", "slo", "error budgets"],
+      "related": ["Observability", "Incident response", "Kubernetes", "Linux"],
+      "monthsToLearn": 6,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Networking fundamentals",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "computer networking", "tcp/ip", "tcp ip", "dns", "load balancing", "load balancers", "vpc",
+        "firewalls", "subnets", "vpn", "network security basics"
+      ],
+      "related": ["Linux", "Cloud security", "Azure", "Penetration testing"],
+      "monthsToLearn": 3,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Cloud security",
+      "group": "cloud",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "cloud security posture", "aws security", "azure security", "iam policies",
+        "identity and access management", "iam", "kms", "secrets management", "hashicorp vault",
+        "zero trust"
+      ],
+      "related": [
+        "Authentication and authorisation", "Application security", "Networking fundamentals", "AWS",
+        "Threat modelling"
+      ],
+      "monthsToLearn": 4,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "PostgreSQL",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["postgres", "psql", "pgsql"],
+      "related": [
+        "MySQL", "SQL", "Microsoft SQL Server", "Database design and tuning", "Oracle Database"
+      ],
+      "monthsToLearn": 2,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "MySQL",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["mariadb", "mysql database", "aurora mysql"],
+      "related": ["PostgreSQL", "SQL", "Microsoft SQL Server"],
+      "monthsToLearn": 2,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["sql server", "mssql", "ms sql", "ssms", "ssis", "ssrs", "azure sql"],
+      "related": ["SQL", "PostgreSQL", "Oracle Database", "Azure Data Factory", "MySQL"],
+      "monthsToLearn": 2.5,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Oracle Database",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["oracle", "oracle db", "oracle rdbms"],
+      "related": ["SQL", "Microsoft SQL Server", "PostgreSQL"],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "MongoDB",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": [
+        "mongo", "mongo db", "mongoose", "nosql", "document database", "document databases"
+      ],
+      "related": ["Amazon DynamoDB", "Redis", "Apache Cassandra", "Elasticsearch"],
+      "monthsToLearn": 2,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Redis",
+      "group": "data",
+      "domains": ["Software Engineering"],
+      "aliases": ["redis cache", "caching", "in-memory cache", "memcached"],
+      "related": ["MongoDB", "Amazon DynamoDB", "System design", "Elasticsearch"],
+      "monthsToLearn": 1,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Amazon DynamoDB",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["dynamodb", "dynamo db", "aws dynamodb"],
+      "related": ["MongoDB", "Apache Cassandra", "AWS", "Redis"],
+      "monthsToLearn": 2,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Apache Cassandra",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["cassandra", "scylladb", "datastax"],
+      "related": ["Amazon DynamoDB", "MongoDB", "Apache Kafka"],
+      "monthsToLearn": 4,
+      "rarity": 2.3,
+      "kind": "hard"
+    },
+    {
+      "name": "Elasticsearch",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": ["elastic search", "opensearch", "kibana", "elk", "elastic stack", "solr"],
+      "related": ["MongoDB", "Observability", "Redis", "Vector databases"],
+      "monthsToLearn": 2.5,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Snowflake",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["snowflake data cloud", "snowpark", "snowflake sql", "snowpipe"],
+      "related": [
+        "Google BigQuery", "Amazon Redshift", "Databricks", "Data warehousing", "Microsoft Fabric"
+      ],
+      "monthsToLearn": 2.5,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Google BigQuery",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["bigquery", "big query", "bq"],
+      "related": [
+        "Snowflake", "Amazon Redshift", "Google Cloud Platform", "Data warehousing", "Looker"
+      ],
+      "monthsToLearn": 2,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Amazon Redshift",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["redshift", "aws redshift", "redshift spectrum"],
+      "related": ["Snowflake", "Google BigQuery", "AWS", "Data warehousing"],
+      "monthsToLearn": 2,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Databricks",
+      "group": "data",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "databricks lakehouse", "unity catalog", "delta live tables", "databricks sql",
+        "databricks workflows"
+      ],
+      "related": ["Apache Spark", "Data lakehouse", "Snowflake", "Microsoft Fabric"],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Microsoft Fabric",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": [
+        "azure synapse", "synapse analytics", "azure synapse analytics", "onelake", "synapse"
+      ],
+      "related": ["Azure Data Factory", "Power BI", "Databricks", "Snowflake"],
+      "monthsToLearn": 3,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Apache Spark",
+      "group": "data",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": ["spark", "pyspark", "spark sql", "spark streaming", "spark structured streaming"],
+      "related": ["Databricks", "Apache Hadoop", "Scala", "Apache Flink", "Apache Kafka"],
+      "monthsToLearn": 4,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "Apache Kafka",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": [
+        "kafka", "confluent", "kafka streams", "kafka connect", "ksql", "event streaming", "kinesis",
+        "amazon kinesis", "azure event hubs", "event hubs", "rabbitmq", "message queues", "pub/sub"
+      ],
+      "related": ["Apache Flink", "Apache Spark", "Microservices architecture", "Apache Cassandra"],
+      "monthsToLearn": 3,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Apache Flink",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["flink", "flink sql", "stream processing", "apache beam"],
+      "related": ["Apache Kafka", "Apache Spark", "Java"],
+      "monthsToLearn": 4,
+      "rarity": 2.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Apache Airflow",
+      "group": "data",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "airflow", "airflow dags", "dags", "dagster", "prefect", "workflow orchestration",
+        "data orchestration", "mwaa", "cloud composer"
+      ],
+      "related": ["ETL and ELT pipelines", "dbt", "Azure Data Factory", "Python"],
+      "monthsToLearn": 2,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "dbt",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["dbt core", "dbt cloud", "data build tool", "dbt models"],
+      "related": ["SQL", "Data modelling", "ETL and ELT pipelines", "Apache Airflow", "Data quality"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Azure Data Factory",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["adf", "data factory", "synapse pipelines"],
+      "related": [
+        "ETL and ELT pipelines", "Microsoft Fabric", "Azure", "Apache Airflow", "Microsoft SQL Server"
+      ],
+      "monthsToLearn": 2,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Apache Hadoop",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["hadoop", "hdfs", "hive", "apache hive", "mapreduce", "hbase", "big data"],
+      "related": ["Apache Spark", "Data lakehouse", "Data warehousing"],
+      "monthsToLearn": 4,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Data lakehouse",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": [
+        "lakehouse", "data lake", "data lakes", "delta lake", "apache iceberg", "iceberg", "apache hudi",
+        "hudi", "parquet", "medallion architecture"
+      ],
+      "related": ["Databricks", "Amazon S3", "Apache Spark", "Data warehousing", "Apache Hadoop"],
+      "monthsToLearn": 3,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Data modelling",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": [
+        "data modeling", "dimensional modelling", "dimensional modeling", "kimball", "star schema",
+        "data vault", "entity relationship", "er diagrams", "erd", "conceptual data model",
+        "logical data model"
+      ],
+      "related": ["Data warehousing", "Database design and tuning", "dbt", "SQL", "Data governance"],
+      "monthsToLearn": 4,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Data warehousing",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": [
+        "data warehouse", "dwh", "edw", "enterprise data warehouse", "olap", "data marts", "data mart"
+      ],
+      "related": ["Data modelling", "Snowflake", "ETL and ELT pipelines", "SQL", "Google BigQuery"],
+      "monthsToLearn": 3,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "ETL and ELT pipelines",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": [
+        "etl", "elt", "data pipelines", "data pipeline", "data integration", "data ingestion",
+        "aws glue", "informatica", "talend", "fivetran", "airbyte", "batch processing"
+      ],
+      "related": ["Apache Airflow", "dbt", "Apache Spark", "Azure Data Factory", "Data warehousing"],
+      "monthsToLearn": 3,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Data quality",
+      "group": "data",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "data validation", "great expectations", "data testing", "data profiling", "data cleansing",
+        "data cleaning", "data observability", "deequ"
+      ],
+      "related": ["Data governance", "dbt", "ETL and ELT pipelines"],
+      "monthsToLearn": 2,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "Data governance",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": [
+        "data catalog", "data catalogue", "data lineage", "master data management", "mdm",
+        "data stewardship", "collibra", "data management"
+      ],
+      "related": ["Data quality", "Data privacy and compliance", "Data modelling", "Responsible AI"],
+      "monthsToLearn": 3,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Database design and tuning",
+      "group": "data",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": [
+        "database design", "schema design", "query optimisation", "query optimization", "query tuning",
+        "database indexing", "indexing", "normalisation", "normalization", "performance tuning",
+        "database administration", "dba", "stored procedures", "database migration"
+      ],
+      "related": ["SQL", "PostgreSQL", "Data modelling", "Microsoft SQL Server", "System design"],
+      "monthsToLearn": 4,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Power BI",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": [
+        "powerbi", "power bi desktop", "dax", "power query", "power bi service", "microsoft power bi"
+      ],
+      "related": ["Tableau", "Looker", "Data visualisation", "Microsoft Excel", "Microsoft Fabric"],
+      "monthsToLearn": 2,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "Tableau",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["tableau desktop", "tableau server", "tableau prep", "tableau public"],
+      "related": ["Power BI", "Looker", "Data visualisation"],
+      "monthsToLearn": 2,
+      "rarity": 1.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Looker",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": ["looker studio", "lookml", "google data studio", "data studio"],
+      "related": ["Power BI", "Tableau", "Data visualisation", "Google BigQuery"],
+      "monthsToLearn": 2,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Microsoft Excel",
+      "group": "data",
+      "domains": ["Data"],
+      "aliases": [
+        "excel", "spreadsheets", "ms excel", "vba", "excel vba", "pivot tables", "google sheets",
+        "vlookup", "xlookup"
+      ],
+      "related": ["Data analysis", "Power BI", "Data visualisation"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Data visualisation",
+      "group": "data",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "data visualization", "dashboards", "dashboarding", "charts", "matplotlib", "seaborn", "plotly",
+        "d3", "d3.js", "bokeh", "streamlit", "visual analytics"
+      ],
+      "related": ["Power BI", "Tableau", "Data storytelling", "Data analysis", "Grafana"],
+      "monthsToLearn": 2,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Data analysis",
+      "group": "data",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "data analytics", "exploratory data analysis", "eda", "data mining", "ad hoc analysis",
+        "business analytics"
+      ],
+      "related": ["SQL", "Statistics", "Data visualisation", "Microsoft Excel", "Pandas"],
+      "monthsToLearn": 3,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Machine learning",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "ml", "machine-learning", "ml models", "predictive modelling", "predictive modeling",
+        "supervised learning", "unsupervised learning", "classical ml", "applied machine learning",
+        "statistical learning", "predictive analytics", "ai/ml"
+      ],
+      "related": [
+        "Deep learning", "scikit-learn", "Statistics", "Feature engineering", "Model evaluation"
+      ],
+      "monthsToLearn": 6,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "Deep learning",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "dl", "neural networks", "neural network", "cnns", "rnns", "lstm",
+        "convolutional neural networks", "gans", "autoencoders"
+      ],
+      "related": [
+        "Machine learning", "PyTorch", "TensorFlow", "Computer vision", "Natural language processing"
+      ],
+      "monthsToLearn": 6,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "scikit-learn",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": ["sklearn", "scikit learn", "scikitlearn"],
+      "related": ["Machine learning", "Python", "Pandas", "XGBoost", "Feature engineering"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "PyTorch",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": ["torch", "pytorch lightning", "torchvision"],
+      "related": [
+        "TensorFlow", "Deep learning", "Hugging Face Transformers", "Computer vision",
+        "Reinforcement learning"
+      ],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "TensorFlow",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "tf", "keras", "tensorflow keras", "tf.keras", "tensorflow lite", "tflite", "tensorflow serving"
+      ],
+      "related": ["PyTorch", "Deep learning", "Machine learning", "Computer vision"],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "XGBoost",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "lightgbm", "catboost", "gradient boosting", "gradient boosted trees", "gbm", "random forest",
+        "random forests", "decision trees"
+      ],
+      "related": ["scikit-learn", "Machine learning", "Feature engineering"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Hugging Face Transformers",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "hugging face", "huggingface", "transformers", "hf transformers", "bert",
+        "sentence transformers", "huggingface transformers"
+      ],
+      "related": ["PyTorch", "Natural language processing", "Generative AI", "LLM fine-tuning"],
+      "monthsToLearn": 2,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "Natural language processing",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "nlp", "text mining", "text classification", "spacy", "nltk", "named entity recognition", "ner",
+        "sentiment analysis", "text analytics"
+      ],
+      "related": ["Hugging Face Transformers", "Machine learning", "Deep learning", "Generative AI"],
+      "monthsToLearn": 5,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "Computer vision",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "image recognition", "image classification", "object detection", "opencv", "image processing",
+        "yolo", "image segmentation", "video analytics", "ocr"
+      ],
+      "related": ["Deep learning", "PyTorch", "Machine learning", "TensorFlow"],
+      "monthsToLearn": 5,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Generative AI",
+      "group": "ml",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "genai", "gen ai", "gen-ai", "large language models", "large language model", "llm", "llms",
+        "foundation models", "generative models", "chatgpt", "gpt", "gpt-4", "llm applications",
+        "generative artificial intelligence", "diffusion models"
+      ],
+      "related": [
+        "Prompt engineering", "Retrieval-augmented generation", "LLM APIs", "LLM fine-tuning",
+        "Natural language processing"
+      ],
+      "monthsToLearn": 3,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "Prompt engineering",
+      "group": "ml",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "prompt design", "prompting", "prompt optimisation", "prompt optimization", "prompt templates",
+        "few-shot prompting", "chain of thought"
+      ],
+      "related": ["Generative AI", "LLM APIs", "Retrieval-augmented generation", "AI agents"],
+      "monthsToLearn": 1,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Retrieval-augmented generation",
+      "group": "ml",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "rag", "retrieval augmented generation", "rag pipelines", "rag systems", "semantic search",
+        "knowledge retrieval", "embeddings"
+      ],
+      "related": ["Vector databases", "LangChain", "Generative AI", "LLM APIs", "Prompt engineering"],
+      "monthsToLearn": 2,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "LangChain",
+      "group": "ml",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "langgraph", "llamaindex", "llama index", "llm orchestration", "semantic kernel", "langsmith"
+      ],
+      "related": ["Retrieval-augmented generation", "LLM APIs", "AI agents", "Generative AI"],
+      "monthsToLearn": 1.5,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "LLM APIs",
+      "group": "ml",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "openai api", "openai", "azure openai", "anthropic api", "claude api", "gemini api",
+        "amazon bedrock", "bedrock", "llm integration", "chat completions", "function calling"
+      ],
+      "related": [
+        "Generative AI", "Prompt engineering", "Retrieval-augmented generation", "LangChain",
+        "AI agents"
+      ],
+      "monthsToLearn": 1.5,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Vector databases",
+      "group": "ml",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "vector database", "vector db", "pinecone", "weaviate", "chroma", "chromadb", "milvus", "qdrant",
+        "faiss", "pgvector", "vector search", "vector stores", "embedding stores"
+      ],
+      "related": ["Retrieval-augmented generation", "Elasticsearch", "PostgreSQL", "Generative AI"],
+      "monthsToLearn": 1.5,
+      "rarity": 2.1,
+      "kind": "hard"
+    },
+    {
+      "name": "LLM fine-tuning",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "fine-tuning", "fine tuning", "finetuning", "lora", "qlora", "peft", "rlhf",
+        "instruction tuning", "model distillation", "parameter-efficient fine-tuning", "llm training"
+      ],
+      "related": [
+        "Hugging Face Transformers", "Deep learning", "Generative AI",
+        "Distributed training and GPU computing"
+      ],
+      "monthsToLearn": 5,
+      "rarity": 2.5,
+      "kind": "hard"
+    },
+    {
+      "name": "AI agents",
+      "group": "ml",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "agentic ai", "agentic workflows", "llm agents", "agent frameworks", "tool calling", "tool use",
+        "multi-agent systems", "multi-agent", "model context protocol", "mcp servers",
+        "autonomous agents", "agent orchestration", "crewai", "autogen"
+      ],
+      "related": ["LangChain", "Generative AI", "LLM APIs", "Prompt engineering"],
+      "monthsToLearn": 2,
+      "rarity": 2.3,
+      "kind": "hard"
+    },
+    {
+      "name": "Responsible AI",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "ai ethics", "ai governance", "ai safety", "ethical ai", "fairness and bias", "model fairness",
+        "bias mitigation", "guardrails", "ai guardrails", "explainability", "explainable ai", "xai",
+        "trustworthy ai", "model interpretability"
+      ],
+      "related": [
+        "Data privacy and compliance", "Model evaluation", "Data governance", "Generative AI"
+      ],
+      "monthsToLearn": 3,
+      "rarity": 2.0,
+      "kind": "method"
+    },
+    {
+      "name": "MLflow",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "ml flow", "experiment tracking", "weights and biases", "weights & biases", "wandb", "w&b",
+        "neptune", "comet ml", "model registry"
+      ],
+      "related": ["MLOps", "Machine learning", "Docker"],
+      "monthsToLearn": 1.5,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Amazon SageMaker",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "sagemaker", "aws sagemaker", "sagemaker studio", "sagemaker pipelines", "sagemaker endpoints"
+      ],
+      "related": ["Azure Machine Learning", "Vertex AI", "MLOps", "AWS"],
+      "monthsToLearn": 2.5,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Azure Machine Learning",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "azure ml", "azureml", "azure ml studio", "azure ai studio", "azure ai foundry", "ai foundry"
+      ],
+      "related": ["Amazon SageMaker", "Vertex AI", "MLOps", "Azure"],
+      "monthsToLearn": 2.5,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Vertex AI",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": ["google vertex ai", "vertex ai pipelines", "vertex ai studio"],
+      "related": ["Amazon SageMaker", "Azure Machine Learning", "Google Cloud Platform", "MLOps"],
+      "monthsToLearn": 2.5,
+      "rarity": 2.1,
+      "kind": "hard"
+    },
+    {
+      "name": "MLOps",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "ml ops", "machine learning operations", "model deployment", "model serving", "ml pipelines",
+        "ml pipeline", "kubeflow", "model monitoring", "feature store", "feature stores", "bentoml",
+        "seldon", "ml platform", "llmops"
+      ],
+      "related": ["MLflow", "Docker", "CI/CD", "Machine learning", "Kubernetes"],
+      "monthsToLearn": 4,
+      "rarity": 2.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Feature engineering",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "feature selection", "feature extraction", "feature design", "feature creation",
+        "dimensionality reduction", "pca", "data preprocessing", "data preparation"
+      ],
+      "related": ["Machine learning", "Pandas", "Data analysis", "scikit-learn", "XGBoost"],
+      "monthsToLearn": 3,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "Time series forecasting",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "time series", "time-series", "forecasting", "demand forecasting", "arima", "facebook prophet",
+        "sarima", "forecast models", "anomaly detection"
+      ],
+      "related": ["Statistics", "Machine learning", "Data analysis"],
+      "monthsToLearn": 4,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "Recommender systems",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "recommendation systems", "recommendation engines", "recommender engines", "recsys",
+        "collaborative filtering", "personalisation models", "ranking models", "learning to rank"
+      ],
+      "related": ["Machine learning", "Deep learning", "Feature engineering"],
+      "monthsToLearn": 4,
+      "rarity": 2.2,
+      "kind": "hard"
+    },
+    {
+      "name": "Reinforcement learning",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": ["rl", "deep reinforcement learning", "q-learning", "policy gradients"],
+      "related": ["Deep learning", "Machine learning", "PyTorch"],
+      "monthsToLearn": 6,
+      "rarity": 2.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Statistics",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "stats", "statistical analysis", "statistical modelling", "statistical modeling",
+        "hypothesis testing", "regression analysis", "bayesian statistics", "bayesian methods",
+        "probability", "inferential statistics", "descriptive statistics", "statistical inference"
+      ],
+      "related": [
+        "Data analysis", "Machine learning", "R", "Experimentation and A/B testing",
+        "Time series forecasting"
+      ],
+      "monthsToLearn": 6,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Experimentation and A/B testing",
+      "group": "ml",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "a/b testing", "ab testing", "a/b tests", "split testing", "experiment design",
+        "experimentation", "controlled experiments", "causal inference", "multivariate testing"
+      ],
+      "related": ["Statistics", "Data analysis", "Product thinking"],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Model evaluation",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "model validation", "cross-validation", "cross validation", "model metrics",
+        "precision and recall", "evaluation metrics", "model testing", "llm evaluation", "llm evals",
+        "evals", "model performance", "hyperparameter tuning", "hyperparameter optimisation",
+        "model selection"
+      ],
+      "related": ["Machine learning", "Statistics", "scikit-learn", "Responsible AI"],
+      "monthsToLearn": 3,
+      "rarity": 1.6,
+      "kind": "hard"
+    },
+    {
+      "name": "Distributed training and GPU computing",
+      "group": "ml",
+      "domains": ["AI & Machine Learning"],
+      "aliases": [
+        "cuda", "gpu computing", "gpu programming", "gpu", "distributed training", "deepspeed",
+        "horovod", "multi-gpu training", "nvidia gpus", "triton inference server", "model parallelism",
+        "model optimisation", "onnx", "tensorrt"
+      ],
+      "related": ["PyTorch", "Deep learning", "LLM fine-tuning", "C++"],
+      "monthsToLearn": 8,
+      "rarity": 2.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Agile delivery",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "agile", "scrum", "kanban", "sprint planning", "agile methodologies", "agile methodology",
+        "scrum master", "jira", "scaled agile", "sprints", "agile development"
+      ],
+      "related": ["Project management", "Estimation and planning", "Teamwork", "Facilitation"],
+      "monthsToLearn": 1,
+      "rarity": 1.0,
+      "kind": "method"
+    },
+    {
+      "name": "Git",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "github", "gitlab", "bitbucket", "version control", "source control", "gitflow", "git flow",
+        "branching strategies", "git workflow", "svn"
+      ],
+      "related": ["CI/CD", "Code review", "GitHub Actions"],
+      "monthsToLearn": 0.5,
+      "rarity": 1.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Unit and integration testing",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "unit testing", "integration testing", "unit tests", "tdd", "test-driven development",
+        "test driven development", "bdd", "behaviour-driven development", "behavior-driven development",
+        "mocking", "automated tests", "contract testing", "code coverage"
+      ],
+      "related": ["Test automation", "pytest", "JUnit", "Jest", "Code review"],
+      "monthsToLearn": 1.5,
+      "rarity": 1.1,
+      "kind": "method"
+    },
+    {
+      "name": "Test automation",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "automated testing", "qa automation", "test automation framework", "sdet", "e2e testing",
+        "end-to-end testing", "api testing", "regression testing", "ui automation", "test frameworks",
+        "postman", "rest assured"
+      ],
+      "related": [
+        "Selenium", "Playwright", "Cypress", "Unit and integration testing", "Performance testing"
+      ],
+      "monthsToLearn": 3,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "Manual testing",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "manual qa", "exploratory testing", "test cases", "test case design", "test planning", "uat",
+        "user acceptance testing", "regression test cases", "test scripts", "bug reporting",
+        "defect management", "functional testing", "test execution", "qa testing", "quality assurance"
+      ],
+      "related": [
+        "Test automation", "Requirements analysis", "Debugging and troubleshooting", "Web accessibility"
+      ],
+      "monthsToLearn": 1.5,
+      "rarity": 1.1,
+      "kind": "method"
+    },
+    {
+      "name": "Performance testing",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "load testing", "stress testing", "jmeter", "apache jmeter", "k6", "gatling", "locust",
+        "performance test", "soak testing", "capacity testing", "performance engineering"
+      ],
+      "related": ["Test automation", "Observability", "System design"],
+      "monthsToLearn": 2,
+      "rarity": 2.0,
+      "kind": "hard"
+    },
+    {
+      "name": "Code review",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "peer review", "code reviews", "pull request reviews", "pr reviews", "reviewing code",
+        "code quality"
+      ],
+      "related": ["Git", "Mentoring", "Unit and integration testing", "Teamwork"],
+      "monthsToLearn": 1,
+      "rarity": 1.1,
+      "kind": "method"
+    },
+    {
+      "name": "System design",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "software architecture", "solution architecture", "solutions architecture",
+        "architecture design", "scalable systems", "high-level design", "hld", "low-level design", "lld",
+        "distributed systems", "scalability", "system architecture", "technical design",
+        "design documents", "architecture patterns"
+      ],
+      "related": [
+        "Microservices architecture", "API design", "Object-oriented design",
+        "Database design and tuning", "Redis"
+      ],
+      "monthsToLearn": 8,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Microservices architecture",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "microservices", "microservice", "service-oriented architecture", "soa",
+        "event-driven architecture", "event driven architecture", "event-driven systems", "service mesh",
+        "api gateway"
+      ],
+      "related": ["System design", "API design", "Docker", "Kubernetes", "Apache Kafka"],
+      "monthsToLearn": 5,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Object-oriented design",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "oop", "object oriented programming", "object-oriented programming", "design patterns",
+        "solid principles", "domain-driven design", "ddd", "clean architecture", "clean code",
+        "oo design", "uml"
+      ],
+      "related": [
+        "System design", "Java", "C#", "Unit and integration testing", "Data structures and algorithms"
+      ],
+      "monthsToLearn": 4,
+      "rarity": 1.2,
+      "kind": "hard"
+    },
+    {
+      "name": "Data structures and algorithms",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "dsa", "algorithms", "data structures", "algorithm design", "competitive programming",
+        "leetcode", "algorithmic problem solving", "complexity analysis", "big o"
+      ],
+      "related": ["Problem solving", "C++", "Object-oriented design"],
+      "monthsToLearn": 5,
+      "rarity": 1.5,
+      "kind": "hard"
+    },
+    {
+      "name": "API design",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning"],
+      "aliases": [
+        "restful", "rest api", "rest apis", "restful api", "restful apis", "openapi", "swagger",
+        "api development", "web services", "web apis", "api design and development", "json apis", "soap",
+        "api versioning", "api documentation"
+      ],
+      "related": [
+        "GraphQL", "gRPC", "Microservices architecture", "Authentication and authorisation", "Node.js"
+      ],
+      "monthsToLearn": 2,
+      "rarity": 1.1,
+      "kind": "hard"
+    },
+    {
+      "name": "Technical documentation",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "technical writing", "architecture decision records", "adr", "runbooks", "api docs",
+        "confluence", "design docs", "readme", "knowledge base articles"
+      ],
+      "related": ["Communication", "Requirements analysis", "System design"],
+      "monthsToLearn": 1,
+      "rarity": 1.1,
+      "kind": "method"
+    },
+    {
+      "name": "Debugging and troubleshooting",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "debugging", "troubleshooting", "root cause analysis", "rca", "bug fixing", "issue diagnosis",
+        "production support", "problem diagnosis", "fault finding", "log analysis"
+      ],
+      "related": [
+        "Problem solving", "Incident response", "Observability", "Unit and integration testing",
+        "Manual testing"
+      ],
+      "monthsToLearn": 2,
+      "rarity": 1.0,
+      "kind": "method"
+    },
+    {
+      "name": "Application security",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "appsec", "owasp", "owasp top 10", "secure coding", "devsecops", "secure software development",
+        "sast", "dast", "dependency scanning", "code security", "security best practices", "xss",
+        "web application security", "vulnerability scanning"
+      ],
+      "related": [
+        "Authentication and authorisation", "Threat modelling", "Penetration testing", "Cloud security",
+        "Data privacy and compliance"
+      ],
+      "monthsToLearn": 4,
+      "rarity": 1.9,
+      "kind": "hard"
+    },
+    {
+      "name": "Authentication and authorisation",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "authentication", "authorisation", "authorization", "oauth", "oauth2", "oauth 2.0",
+        "openid connect", "oidc", "jwt", "json web tokens", "sso", "single sign-on", "saml",
+        "identity management", "identity and access", "keycloak", "okta", "auth0", "rbac", "mfa",
+        "passkeys"
+      ],
+      "related": ["Application security", "Cloud security", "API design"],
+      "monthsToLearn": 3,
+      "rarity": 1.7,
+      "kind": "hard"
+    },
+    {
+      "name": "Penetration testing",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "pen testing", "pentesting", "pentest", "ethical hacking", "red teaming", "red team",
+        "burp suite", "metasploit", "vulnerability assessment", "security testing", "offensive security",
+        "bug bounty", "ctf", "capture the flag", "nmap", "kali linux"
+      ],
+      "related": ["Application security", "Threat modelling", "Networking fundamentals", "Linux"],
+      "monthsToLearn": 8,
+      "rarity": 2.4,
+      "kind": "hard"
+    },
+    {
+      "name": "Threat modelling",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "threat modeling", "stride threat model", "attack trees", "security architecture",
+        "security design reviews", "risk assessment", "security risk assessment", "mitre att&ck",
+        "attack surface analysis"
+      ],
+      "related": ["Application security", "Cloud security", "Penetration testing", "System design"],
+      "monthsToLearn": 4,
+      "rarity": 2.3,
+      "kind": "method"
+    },
+    {
+      "name": "Incident response",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "incident management", "on-call", "on call", "oncall", "postmortems", "post-mortems",
+        "post-incident reviews", "security incident response", "incident handling", "pagerduty",
+        "opsgenie", "outage response"
+      ],
+      "related": ["Observability", "Site reliability engineering", "Debugging and troubleshooting"],
+      "monthsToLearn": 3,
+      "rarity": 1.8,
+      "kind": "method"
+    },
+    {
+      "name": "Web accessibility",
+      "group": "practices",
+      "domains": ["Software Engineering"],
+      "aliases": [
+        "accessibility", "a11y", "wcag", "wcag 2.1", "wcag 2.2", "wai-aria", "accessible design",
+        "inclusive design", "screen reader testing"
+      ],
+      "related": ["HTML and CSS", "React", "Manual testing"],
+      "monthsToLearn": 2,
+      "rarity": 1.8,
+      "kind": "hard"
+    },
+    {
+      "name": "Data privacy and compliance",
+      "group": "practices",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "data privacy", "privacy act", "gdpr", "pii", "pii handling", "data protection",
+        "privacy by design", "soc 2", "soc2", "iso 27001", "australian privacy principles",
+        "regulatory compliance"
+      ],
+      "related": ["Data governance", "Responsible AI", "Application security", "Cloud security"],
+      "monthsToLearn": 3,
+      "rarity": 1.9,
+      "kind": "method"
+    },
+    {
+      "name": "Communication",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "communication skills", "written communication", "verbal communication", "presentation skills",
+        "presenting", "public speaking", "clear communication", "technical communication",
+        "written and verbal communication", "interpersonal skills"
+      ],
+      "related": [
+        "Stakeholder management", "Technical documentation", "Data storytelling", "Teamwork",
+        "Facilitation"
+      ],
+      "monthsToLearn": 3,
+      "rarity": 1.0,
+      "kind": "soft"
+    },
+    {
+      "name": "Stakeholder management",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "stakeholder engagement", "stakeholder communication", "client management",
+        "client relationships", "customer management", "expectation management",
+        "relationship management", "business partnering"
+      ],
+      "related": [
+        "Communication", "Product thinking", "Requirements analysis", "Project management",
+        "Team leadership"
+      ],
+      "monthsToLearn": 4,
+      "rarity": 1.3,
+      "kind": "soft"
+    },
+    {
+      "name": "Mentoring",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "coaching", "mentorship", "mentoring juniors", "coaching engineers", "onboarding new starters",
+        "knowledge sharing", "training others", "peer coaching", "developing others"
+      ],
+      "related": ["Team leadership", "Code review", "Technical leadership", "Continuous learning"],
+      "monthsToLearn": 3,
+      "rarity": 1.5,
+      "kind": "soft"
+    },
+    {
+      "name": "Team leadership",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "leading teams", "team lead", "people management", "people leadership", "line management",
+        "engineering management", "managing engineers", "managing teams", "team management",
+        "direct reports"
+      ],
+      "related": [
+        "Mentoring", "Technical leadership", "Stakeholder management", "Project management"
+      ],
+      "monthsToLearn": 8,
+      "rarity": 1.8,
+      "kind": "soft"
+    },
+    {
+      "name": "Technical leadership",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "tech lead", "technical lead", "technical direction", "technical strategy",
+        "architecture leadership", "leading technical decisions", "engineering leadership",
+        "technical mentoring", "staff engineering", "technical ownership", "engineering excellence"
+      ],
+      "related": [
+        "Team leadership", "System design", "Mentoring", "Stakeholder management",
+        "Estimation and planning"
+      ],
+      "monthsToLearn": 9,
+      "rarity": 2.0,
+      "kind": "soft"
+    },
+    {
+      "name": "Problem solving",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "analytical thinking", "analytical skills", "critical thinking", "logical thinking",
+        "creative problem solving", "solution oriented", "problem-solving", "analytical problem solving",
+        "structured thinking", "analytical mindset"
+      ],
+      "related": [
+        "Debugging and troubleshooting", "Data structures and algorithms", "Continuous learning"
+      ],
+      "monthsToLearn": 2,
+      "rarity": 1.0,
+      "kind": "soft"
+    },
+    {
+      "name": "Teamwork",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "collaboration", "team player", "cross-functional collaboration", "cross functional teams",
+        "working in teams", "pair programming", "team collaboration", "collaborative working",
+        "working with designers", "partnering with product"
+      ],
+      "related": ["Communication", "Agile delivery", "Code review", "Continuous learning"],
+      "monthsToLearn": 1,
+      "rarity": 1.0,
+      "kind": "soft"
+    },
+    {
+      "name": "Project management",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "project delivery", "program management", "programme management", "delivery management",
+        "project planning", "pmp", "project coordination", "release management", "roadmap delivery",
+        "prince2"
+      ],
+      "related": [
+        "Agile delivery", "Stakeholder management", "Estimation and planning", "Team leadership"
+      ],
+      "monthsToLearn": 5,
+      "rarity": 1.3,
+      "kind": "method"
+    },
+    {
+      "name": "Product thinking",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "product management", "product sense", "product mindset", "roadmapping", "product roadmap",
+        "product strategy", "user-centred thinking", "customer-centric thinking", "product discovery",
+        "product ownership", "product owner", "okrs"
+      ],
+      "related": [
+        "Stakeholder management", "Requirements analysis", "Experimentation and A/B testing"
+      ],
+      "monthsToLearn": 5,
+      "rarity": 1.6,
+      "kind": "method"
+    },
+    {
+      "name": "Data storytelling",
+      "group": "collab",
+      "domains": ["AI & Machine Learning", "Data"],
+      "aliases": [
+        "data story telling", "insight communication", "communicating insights", "presenting data",
+        "presenting insights", "analytics storytelling", "executive reporting",
+        "reporting to executives", "insight storytelling", "data communication"
+      ],
+      "related": ["Data visualisation", "Communication", "Stakeholder management"],
+      "monthsToLearn": 4,
+      "rarity": 1.5,
+      "kind": "soft"
+    },
+    {
+      "name": "Facilitation",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "workshop facilitation", "facilitating workshops", "running workshops", "retrospectives",
+        "meeting facilitation", "design thinking", "design sprints", "stakeholder workshops",
+        "scrum ceremonies", "event storming", "requirements workshops"
+      ],
+      "related": [
+        "Communication", "Agile delivery", "Stakeholder management", "Requirements analysis"
+      ],
+      "monthsToLearn": 3,
+      "rarity": 1.6,
+      "kind": "soft"
+    },
+    {
+      "name": "Continuous learning",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "self-learning", "self learning", "quick learner", "fast learner", "learning agility",
+        "lifelong learning", "self-taught", "adaptability", "growth mindset",
+        "learning new technologies", "upskilling"
+      ],
+      "related": ["Problem solving", "Mentoring", "Teamwork"],
+      "monthsToLearn": 1,
+      "rarity": 1.0,
+      "kind": "soft"
+    },
+    {
+      "name": "Estimation and planning",
+      "group": "collab",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "aliases": [
+        "estimation", "story points", "sprint estimation", "planning poker", "capacity planning",
+        "delivery planning", "effort estimation", "timeline planning", "backlog refinement",
+        "backlog grooming", "roadmap planning", "task breakdown"
+      ],
+      "related": ["Agile delivery", "Project management", "Technical leadership"],
+      "monthsToLearn": 4,
+      "rarity": 1.5,
+      "kind": "method"
+    },
+    {
+      "name": "Requirements analysis",
+      "group": "collab",
+      "domains": ["Software Engineering", "Data"],
+      "aliases": [
+        "business analysis", "requirements gathering", "requirements elicitation", "user stories",
+        "acceptance criteria", "functional requirements", "non-functional requirements", "use cases",
+        "bpmn", "process mapping", "process modelling", "process modeling", "business requirements",
+        "brd", "functional specifications", "gap analysis"
+      ],
+      "related": [
+        "Stakeholder management", "Technical documentation", "Product thinking", "Facilitation",
+        "Manual testing"
+      ],
+      "monthsToLearn": 4,
+      "rarity": 1.3,
+      "kind": "method"
+    }
+  ],
+  "occupations": [
+    {
+      "code": "261313",
+      "title": "Software Engineer",
+      "anzscoTitle": "Software Engineer",
+      "domain": "Software Engineering",
+      "specialisations": ["Backend", "Full-stack"],
+      "coreSkills": [
+        {"name": "Git", "level": 3, "must": true},
+        {"name": "API design", "level": 3, "must": true},
+        {"name": "System design", "level": 3, "must": true},
+        {"name": "Unit and integration testing", "level": 3, "must": true},
+        {"name": "SQL", "level": 3, "must": true},
+        {"name": "Debugging and troubleshooting", "level": 3, "must": true},
+        {"name": "Object-oriented design", "level": 3, "must": false},
+        {"name": "Data structures and algorithms", "level": 3, "must": false},
+        {"name": "CI/CD", "level": 3, "must": false},
+        {"name": "Docker", "level": 2, "must": false}
+      ],
+      "methods": [
+        "Agile delivery", "Code review", "Problem solving", "Teamwork", "Communication",
+        "Technical documentation"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "261312",
+      "title": "Developer Programmer",
+      "anzscoTitle": "Developer Programmer",
+      "domain": "Software Engineering",
+      "specialisations": ["Backend", "Frontend", "Full-stack", "Mobile"],
+      "coreSkills": [
+        {"name": "Git", "level": 3, "must": true},
+        {"name": "SQL", "level": 3, "must": true},
+        {"name": "API design", "level": 3, "must": true},
+        {"name": "Object-oriented design", "level": 3, "must": true},
+        {"name": "Unit and integration testing", "level": 3, "must": true},
+        {"name": "Debugging and troubleshooting", "level": 3, "must": true},
+        {"name": "JavaScript", "level": 3, "must": false},
+        {"name": "HTML and CSS", "level": 2, "must": false},
+        {"name": "Docker", "level": 2, "must": false}
+      ],
+      "methods": [
+        "Agile delivery", "Code review", "Teamwork", "Problem solving", "Continuous learning"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "261212",
+      "title": "Web Developer",
+      "anzscoTitle": "Web Developer",
+      "domain": "Software Engineering",
+      "specialisations": ["Frontend", "Full-stack"],
+      "coreSkills": [
+        {"name": "HTML and CSS", "level": 4, "must": true},
+        {"name": "JavaScript", "level": 4, "must": true},
+        {"name": "TypeScript", "level": 3, "must": false},
+        {"name": "React", "level": 3, "must": true},
+        {"name": "Git", "level": 3, "must": true},
+        {"name": "API design", "level": 3, "must": false},
+        {"name": "Web accessibility", "level": 3, "must": false},
+        {"name": "Jest", "level": 2, "must": false},
+        {"name": "Node.js", "level": 2, "must": false}
+      ],
+      "methods": ["Agile delivery", "Code review", "Communication", "Teamwork"],
+      "approximate": false
+    },
+    {
+      "code": "261316",
+      "title": "DevOps Engineer",
+      "anzscoTitle": "DevOps Engineer",
+      "domain": "Software Engineering",
+      "specialisations": ["Platform and DevOps"],
+      "coreSkills": [
+        {"name": "Linux", "level": 3, "must": true},
+        {"name": "Docker", "level": 4, "must": true},
+        {"name": "Kubernetes", "level": 3, "must": true},
+        {"name": "Terraform", "level": 3, "must": true},
+        {"name": "CI/CD", "level": 4, "must": true},
+        {"name": "AWS", "level": 3, "must": true},
+        {"name": "Git", "level": 3, "must": true},
+        {"name": "Observability", "level": 3, "must": false},
+        {"name": "Shell scripting", "level": 3, "must": false},
+        {"name": "Python", "level": 3, "must": false}
+      ],
+      "methods": [
+        "Incident response", "Technical documentation", "Teamwork", "Communication", "Problem solving"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "261314",
+      "title": "Software Tester",
+      "anzscoTitle": "Software Tester",
+      "domain": "Software Engineering",
+      "specialisations": ["Quality engineering"],
+      "coreSkills": [
+        {"name": "Manual testing", "level": 4, "must": true},
+        {"name": "Test automation", "level": 3, "must": true},
+        {"name": "Debugging and troubleshooting", "level": 3, "must": true},
+        {"name": "SQL", "level": 2, "must": false},
+        {"name": "Selenium", "level": 3, "must": false},
+        {"name": "API design", "level": 2, "must": false},
+        {"name": "Git", "level": 2, "must": false},
+        {"name": "Performance testing", "level": 2, "must": false}
+      ],
+      "methods": [
+        "Agile delivery", "Requirements analysis", "Communication", "Technical documentation",
+        "Teamwork"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "263211",
+      "title": "ICT Quality Assurance Engineer",
+      "anzscoTitle": "ICT Quality Assurance Engineer",
+      "domain": "Software Engineering",
+      "specialisations": ["Quality engineering"],
+      "coreSkills": [
+        {"name": "Test automation", "level": 4, "must": true},
+        {"name": "Unit and integration testing", "level": 4, "must": true},
+        {"name": "CI/CD", "level": 3, "must": true},
+        {"name": "Git", "level": 3, "must": true},
+        {"name": "Debugging and troubleshooting", "level": 3, "must": true},
+        {"name": "Playwright", "level": 3, "must": false},
+        {"name": "Selenium", "level": 3, "must": false},
+        {"name": "Performance testing", "level": 3, "must": false},
+        {"name": "JavaScript", "level": 3, "must": false},
+        {"name": "API design", "level": 3, "must": false}
+      ],
+      "methods": [
+        "Agile delivery", "Code review", "Teamwork", "Problem solving", "Technical documentation"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "261315",
+      "title": "Cyber Security Engineer",
+      "anzscoTitle": "Cyber Security Engineer",
+      "domain": "Software Engineering",
+      "specialisations": ["Security engineering"],
+      "coreSkills": [
+        {"name": "Application security", "level": 4, "must": true},
+        {"name": "Cloud security", "level": 3, "must": true},
+        {"name": "Threat modelling", "level": 3, "must": true},
+        {"name": "Authentication and authorisation", "level": 3, "must": true},
+        {"name": "Networking fundamentals", "level": 3, "must": true},
+        {"name": "Incident response", "level": 3, "must": true},
+        {"name": "Linux", "level": 3, "must": false},
+        {"name": "Penetration testing", "level": 3, "must": false},
+        {"name": "Python", "level": 3, "must": false},
+        {"name": "Data privacy and compliance", "level": 2, "must": false}
+      ],
+      "methods": [
+        "Communication", "Stakeholder management", "Technical documentation", "Problem solving"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "261112",
+      "title": "Solutions Architect",
+      "anzscoTitle": "Systems Analyst",
+      "domain": "Software Engineering",
+      "specialisations": ["Software architecture"],
+      "coreSkills": [
+        {"name": "System design", "level": 4, "must": true},
+        {"name": "Microservices architecture", "level": 4, "must": true},
+        {"name": "API design", "level": 4, "must": true},
+        {"name": "AWS", "level": 3, "must": true},
+        {"name": "Object-oriented design", "level": 3, "must": false},
+        {"name": "Authentication and authorisation", "level": 3, "must": false},
+        {"name": "Docker", "level": 3, "must": false},
+        {"name": "Database design and tuning", "level": 3, "must": false},
+        {"name": "Application security", "level": 3, "must": false},
+        {"name": "Networking fundamentals", "level": 3, "must": false}
+      ],
+      "methods": [
+        "Technical leadership", "Stakeholder management", "Communication", "Requirements analysis",
+        "Technical documentation", "Estimation and planning"
+      ],
+      "approximate": true
+    },
+    {
+      "code": "261399",
+      "title": "Machine Learning Engineer",
+      "anzscoTitle": "Software and Applications Programmers nec",
+      "domain": "AI & Machine Learning",
+      "specialisations": ["Machine learning engineering", "Computer vision", "Natural language processing"],
+      "coreSkills": [
+        {"name": "Python", "level": 4, "must": true},
+        {"name": "Machine learning", "level": 4, "must": true},
+        {"name": "Deep learning", "level": 3, "must": true},
+        {"name": "PyTorch", "level": 3, "must": true},
+        {"name": "scikit-learn", "level": 3, "must": false},
+        {"name": "Model evaluation", "level": 3, "must": true},
+        {"name": "Feature engineering", "level": 3, "must": false},
+        {"name": "Statistics", "level": 3, "must": true},
+        {"name": "Git", "level": 3, "must": false},
+        {"name": "Docker", "level": 2, "must": false}
+      ],
+      "methods": [
+        "Problem solving", "Communication", "Code review", "Continuous learning", "Teamwork"
+      ],
+      "approximate": true
+    },
+    {
+      "code": "261311",
+      "title": "Generative AI Engineer",
+      "anzscoTitle": "Analyst Programmer",
+      "domain": "AI & Machine Learning",
+      "specialisations": ["Generative AI and LLM"],
+      "coreSkills": [
+        {"name": "Python", "level": 4, "must": true},
+        {"name": "Generative AI", "level": 4, "must": true},
+        {"name": "LLM APIs", "level": 4, "must": true},
+        {"name": "Prompt engineering", "level": 3, "must": true},
+        {"name": "Retrieval-augmented generation", "level": 3, "must": true},
+        {"name": "LangChain", "level": 3, "must": false},
+        {"name": "Vector databases", "level": 3, "must": true},
+        {"name": "API design", "level": 3, "must": false},
+        {"name": "AI agents", "level": 3, "must": false},
+        {"name": "Responsible AI", "level": 3, "must": false}
+      ],
+      "methods": ["Problem solving", "Communication", "Continuous learning", "Code review"],
+      "approximate": true
+    },
+    {
+      "code": "263111",
+      "title": "MLOps Engineer",
+      "anzscoTitle": "Computer Network and Systems Engineer",
+      "domain": "AI & Machine Learning",
+      "specialisations": ["MLOps"],
+      "coreSkills": [
+        {"name": "MLOps", "level": 4, "must": true},
+        {"name": "Docker", "level": 4, "must": true},
+        {"name": "Kubernetes", "level": 3, "must": true},
+        {"name": "CI/CD", "level": 3, "must": true},
+        {"name": "Python", "level": 4, "must": true},
+        {"name": "MLflow", "level": 3, "must": false},
+        {"name": "AWS", "level": 3, "must": false},
+        {"name": "Terraform", "level": 3, "must": false},
+        {"name": "Observability", "level": 3, "must": false},
+        {"name": "Machine learning", "level": 3, "must": true}
+      ],
+      "methods": ["Incident response", "Technical documentation", "Teamwork", "Communication"],
+      "approximate": true
+    },
+    {
+      "code": "224112",
+      "title": "AI Research Scientist",
+      "anzscoTitle": "Mathematician",
+      "domain": "AI & Machine Learning",
+      "specialisations": ["Applied science and research"],
+      "coreSkills": [
+        {"name": "Deep learning", "level": 4, "must": true},
+        {"name": "Statistics", "level": 4, "must": true},
+        {"name": "PyTorch", "level": 4, "must": true},
+        {"name": "Python", "level": 4, "must": true},
+        {"name": "Model evaluation", "level": 4, "must": true},
+        {"name": "Reinforcement learning", "level": 3, "must": false},
+        {"name": "Natural language processing", "level": 3, "must": false},
+        {"name": "Computer vision", "level": 3, "must": false},
+        {"name": "Distributed training and GPU computing", "level": 3, "must": false}
+      ],
+      "methods": [
+        "Technical documentation", "Communication", "Continuous learning", "Problem solving"
+      ],
+      "approximate": true
+    },
+    {
+      "code": "224115",
+      "title": "Data Scientist",
+      "anzscoTitle": "Data Scientist",
+      "domain": "Data",
+      "specialisations": ["Data science"],
+      "coreSkills": [
+        {"name": "Python", "level": 4, "must": true},
+        {"name": "Statistics", "level": 4, "must": true},
+        {"name": "Machine learning", "level": 4, "must": true},
+        {"name": "SQL", "level": 3, "must": true},
+        {"name": "scikit-learn", "level": 3, "must": true},
+        {"name": "Pandas", "level": 4, "must": true},
+        {"name": "Feature engineering", "level": 3, "must": false},
+        {"name": "Experimentation and A/B testing", "level": 3, "must": false},
+        {"name": "Data visualisation", "level": 3, "must": false},
+        {"name": "Model evaluation", "level": 3, "must": true}
+      ],
+      "methods": ["Data storytelling", "Stakeholder management", "Communication", "Problem solving"],
+      "approximate": false
+    },
+    {
+      "code": "224114",
+      "title": "Data Analyst",
+      "anzscoTitle": "Data Analyst",
+      "domain": "Data",
+      "specialisations": ["Data analytics", "Business intelligence"],
+      "coreSkills": [
+        {"name": "SQL", "level": 4, "must": true},
+        {"name": "Data analysis", "level": 4, "must": true},
+        {"name": "Data visualisation", "level": 4, "must": true},
+        {"name": "Microsoft Excel", "level": 4, "must": true},
+        {"name": "Power BI", "level": 3, "must": false},
+        {"name": "Tableau", "level": 3, "must": false},
+        {"name": "Statistics", "level": 3, "must": false},
+        {"name": "Python", "level": 3, "must": false},
+        {"name": "Data quality", "level": 3, "must": false},
+        {"name": "Data modelling", "level": 2, "must": false}
+      ],
+      "methods": [
+        "Data storytelling", "Stakeholder management", "Communication", "Requirements analysis",
+        "Problem solving"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "262111",
+      "title": "Data Engineer",
+      "anzscoTitle": "Database Administrator",
+      "domain": "Data",
+      "specialisations": ["Data engineering", "Analytics engineering"],
+      "coreSkills": [
+        {"name": "SQL", "level": 4, "must": true},
+        {"name": "Python", "level": 4, "must": true},
+        {"name": "ETL and ELT pipelines", "level": 4, "must": true},
+        {"name": "Apache Spark", "level": 3, "must": false},
+        {"name": "Apache Airflow", "level": 3, "must": false},
+        {"name": "Data modelling", "level": 3, "must": true},
+        {"name": "Data warehousing", "level": 3, "must": true},
+        {"name": "AWS", "level": 3, "must": false},
+        {"name": "Git", "level": 3, "must": false},
+        {"name": "Database design and tuning", "level": 3, "must": false}
+      ],
+      "methods": [
+        "Technical documentation", "Code review", "Teamwork", "Problem solving", "Agile delivery"
+      ],
+      "approximate": true
+    },
+    {
+      "code": "261111",
+      "title": "ICT Business Analyst",
+      "anzscoTitle": "ICT Business Analyst",
+      "domain": "Data",
+      "specialisations": ["Business analysis"],
+      "coreSkills": [
+        {"name": "Requirements analysis", "level": 4, "must": true},
+        {"name": "SQL", "level": 3, "must": true},
+        {"name": "Data analysis", "level": 3, "must": true},
+        {"name": "Data visualisation", "level": 3, "must": false},
+        {"name": "Microsoft Excel", "level": 3, "must": false},
+        {"name": "Power BI", "level": 3, "must": false},
+        {"name": "Data modelling", "level": 2, "must": false},
+        {"name": "Technical documentation", "level": 3, "must": true}
+      ],
+      "methods": [
+        "Stakeholder management", "Facilitation", "Communication", "Agile delivery", "Problem solving"
+      ],
+      "approximate": false
+    },
+    {
+      "code": "224113",
+      "title": "Statistician",
+      "anzscoTitle": "Statistician",
+      "domain": "Data",
+      "specialisations": ["Data science"],
+      "coreSkills": [
+        {"name": "Statistics", "level": 5, "must": true},
+        {"name": "R", "level": 4, "must": true},
+        {"name": "Python", "level": 3, "must": false},
+        {"name": "SQL", "level": 3, "must": true},
+        {"name": "Experimentation and A/B testing", "level": 4, "must": true},
+        {"name": "Time series forecasting", "level": 3, "must": false},
+        {"name": "Data visualisation", "level": 3, "must": false},
+        {"name": "Model evaluation", "level": 3, "must": false},
+        {"name": "Machine learning", "level": 3, "must": false}
+      ],
+      "methods": [
+        "Communication", "Data storytelling", "Technical documentation", "Stakeholder management"
+      ],
+      "approximate": false
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "tier": "foundation",
+      "prepMonths": 1.0,
+      "aliases": ["aws cloud practitioner", "aws ccp", "clf-c02"],
+      "evidences": ["AWS"]
+    },
+    {
+      "name": "AWS Certified AI Practitioner",
+      "issuer": "Amazon Web Services",
+      "domains": ["AI & Machine Learning"],
+      "tier": "foundation",
+      "prepMonths": 1.0,
+      "aliases": ["aws ai practitioner", "aif-c01"],
+      "evidences": ["AWS", "Generative AI", "Machine learning", "Responsible AI"]
+    },
+    {
+      "name": "AWS Certified Solutions Architect - Associate",
+      "issuer": "Amazon Web Services",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": ["aws solutions architect associate", "aws saa", "saa-c03"],
+      "evidences": ["AWS", "System design", "Networking fundamentals", "Cloud security", "Amazon S3"]
+    },
+    {
+      "name": "AWS Certified Developer - Associate",
+      "issuer": "Amazon Web Services",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": ["aws developer associate", "dva-c02"],
+      "evidences": ["AWS", "AWS Lambda", "CI/CD", "Amazon S3"]
+    },
+    {
+      "name": "AWS Certified Data Engineer - Associate",
+      "issuer": "Amazon Web Services",
+      "domains": ["Data"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": ["aws data engineer associate", "dea-c01"],
+      "evidences": [
+        "AWS", "ETL and ELT pipelines", "Data modelling", "Amazon Redshift", "Data quality"
+      ]
+    },
+    {
+      "name": "AWS Certified Machine Learning Engineer - Associate",
+      "issuer": "Amazon Web Services",
+      "domains": ["AI & Machine Learning"],
+      "tier": "associate",
+      "prepMonths": 3.5,
+      "aliases": ["aws machine learning engineer associate", "mla-c01"],
+      "evidences": ["AWS", "Amazon SageMaker", "MLOps", "Machine learning", "Feature engineering"]
+    },
+    {
+      "name": "AWS Certified DevOps Engineer - Professional",
+      "issuer": "Amazon Web Services",
+      "domains": ["Software Engineering"],
+      "tier": "professional",
+      "prepMonths": 4.0,
+      "aliases": ["aws devops engineer professional", "dop-c02"],
+      "evidences": ["AWS", "CI/CD", "Infrastructure as code", "AWS CloudFormation", "Observability"]
+    },
+    {
+      "name": "AWS Certified Security - Specialty",
+      "issuer": "Amazon Web Services",
+      "domains": ["Software Engineering"],
+      "tier": "specialty",
+      "prepMonths": 4.0,
+      "aliases": ["aws security specialty", "scs-c02"],
+      "evidences": [
+        "AWS", "Cloud security", "Authentication and authorisation", "Networking fundamentals"
+      ]
+    },
+    {
+      "name": "Microsoft Certified: Azure Fundamentals",
+      "issuer": "Microsoft",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "tier": "foundation",
+      "prepMonths": 1.0,
+      "aliases": ["az-900", "azure fundamentals"],
+      "evidences": ["Azure"]
+    },
+    {
+      "name": "Microsoft Certified: Azure Developer Associate",
+      "issuer": "Microsoft",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": ["az-204", "azure developer associate"],
+      "evidences": ["Azure", "Azure Functions", "Authentication and authorisation", "CI/CD"]
+    },
+    {
+      "name": "Microsoft Certified: Azure AI Engineer Associate",
+      "issuer": "Microsoft",
+      "domains": ["AI & Machine Learning"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": ["ai-102", "azure ai engineer associate"],
+      "evidences": [
+        "Azure", "Generative AI", "Natural language processing", "Computer vision", "LLM APIs"
+      ]
+    },
+    {
+      "name": "Microsoft Certified: Azure Data Scientist Associate",
+      "issuer": "Microsoft",
+      "domains": ["AI & Machine Learning", "Data"],
+      "tier": "associate",
+      "prepMonths": 3.5,
+      "aliases": ["dp-100", "azure data scientist associate"],
+      "evidences": [
+        "Azure Machine Learning", "Machine learning", "MLflow", "Azure", "Model evaluation"
+      ]
+    },
+    {
+      "name": "Microsoft Certified: Fabric Data Engineer Associate",
+      "issuer": "Microsoft",
+      "domains": ["Data"],
+      "tier": "associate",
+      "prepMonths": 3.5,
+      "aliases": ["dp-700", "fabric data engineer associate"],
+      "evidences": [
+        "Microsoft Fabric", "Apache Spark", "SQL", "ETL and ELT pipelines", "Data lakehouse"
+      ]
+    },
+    {
+      "name": "Microsoft Certified: Power BI Data Analyst Associate",
+      "issuer": "Microsoft",
+      "domains": ["Data"],
+      "tier": "associate",
+      "prepMonths": 2.0,
+      "aliases": ["pl-300", "power bi data analyst associate"],
+      "evidences": ["Power BI", "Data visualisation", "Data modelling", "Data analysis"]
+    },
+    {
+      "name": "Microsoft Certified: DevOps Engineer Expert",
+      "issuer": "Microsoft",
+      "domains": ["Software Engineering"],
+      "tier": "professional",
+      "prepMonths": 4.0,
+      "aliases": ["az-400", "azure devops engineer expert"],
+      "evidences": ["Azure DevOps", "CI/CD", "Azure", "Infrastructure as code", "Git"]
+    },
+    {
+      "name": "Google Cloud Associate Cloud Engineer",
+      "issuer": "Google Cloud",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 2.5,
+      "aliases": ["gcp associate cloud engineer", "google associate cloud engineer"],
+      "evidences": ["Google Cloud Platform", "Networking fundamentals", "Cloud security", "Linux"]
+    },
+    {
+      "name": "Google Cloud Professional Data Engineer",
+      "issuer": "Google Cloud",
+      "domains": ["Data"],
+      "tier": "professional",
+      "prepMonths": 4.0,
+      "aliases": ["gcp professional data engineer", "google professional data engineer"],
+      "evidences": [
+        "Google Cloud Platform", "Google BigQuery", "ETL and ELT pipelines", "Apache Airflow",
+        "Data modelling"
+      ]
+    },
+    {
+      "name": "Google Cloud Professional Machine Learning Engineer",
+      "issuer": "Google Cloud",
+      "domains": ["AI & Machine Learning"],
+      "tier": "professional",
+      "prepMonths": 4.5,
+      "aliases": ["gcp professional machine learning engineer", "google professional ml engineer"],
+      "evidences": ["Google Cloud Platform", "Vertex AI", "MLOps", "Machine learning", "TensorFlow"]
+    },
+    {
+      "name": "Certified Kubernetes Application Developer",
+      "issuer": "Cloud Native Computing Foundation",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 2.0,
+      "aliases": ["ckad"],
+      "evidences": ["Kubernetes", "Docker", "Microservices architecture"]
+    },
+    {
+      "name": "Certified Kubernetes Administrator",
+      "issuer": "Cloud Native Computing Foundation",
+      "domains": ["Software Engineering"],
+      "tier": "professional",
+      "prepMonths": 3.0,
+      "aliases": ["cka"],
+      "evidences": ["Kubernetes", "Linux", "Networking fundamentals", "Observability"]
+    },
+    {
+      "name": "HashiCorp Certified: Terraform Associate",
+      "issuer": "HashiCorp",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 1.5,
+      "aliases": ["terraform associate", "hashicorp terraform associate"],
+      "evidences": ["Terraform", "Infrastructure as code"]
+    },
+    {
+      "name": "Databricks Certified Data Engineer Associate",
+      "issuer": "Databricks",
+      "domains": ["Data"],
+      "tier": "associate",
+      "prepMonths": 2.0,
+      "aliases": ["databricks data engineer associate"],
+      "evidences": ["Databricks", "Apache Spark", "SQL", "Data lakehouse", "ETL and ELT pipelines"]
+    },
+    {
+      "name": "Databricks Certified Data Engineer Professional",
+      "issuer": "Databricks",
+      "domains": ["Data"],
+      "tier": "professional",
+      "prepMonths": 4.0,
+      "aliases": ["databricks data engineer professional"],
+      "evidences": [
+        "Databricks", "Apache Spark", "Data lakehouse", "ETL and ELT pipelines", "Data quality"
+      ]
+    },
+    {
+      "name": "Databricks Certified Generative AI Engineer Associate",
+      "issuer": "Databricks",
+      "domains": ["AI & Machine Learning"],
+      "tier": "associate",
+      "prepMonths": 2.0,
+      "aliases": ["databricks generative ai engineer associate"],
+      "evidences": [
+        "Databricks", "Generative AI", "Retrieval-augmented generation", "Vector databases", "LLM APIs"
+      ]
+    },
+    {
+      "name": "SnowPro Core Certification",
+      "issuer": "Snowflake",
+      "domains": ["Data"],
+      "tier": "associate",
+      "prepMonths": 2.0,
+      "aliases": ["snowpro core", "snowflake snowpro core"],
+      "evidences": ["Snowflake", "Data warehousing", "SQL"]
+    },
+    {
+      "name": "dbt Analytics Engineering Certification",
+      "issuer": "dbt Labs",
+      "domains": ["Data"],
+      "tier": "associate",
+      "prepMonths": 2.0,
+      "aliases": ["dbt analytics engineering", "dbt certification"],
+      "evidences": ["dbt", "SQL", "Data modelling", "Data quality"]
+    },
+    {
+      "name": "Confluent Certified Developer for Apache Kafka",
+      "issuer": "Confluent",
+      "domains": ["Software Engineering", "Data"],
+      "tier": "associate",
+      "prepMonths": 2.5,
+      "aliases": ["ccdak", "confluent kafka developer"],
+      "evidences": ["Apache Kafka", "ETL and ELT pipelines"]
+    },
+    {
+      "name": "Tableau Certified Data Analyst",
+      "issuer": "Salesforce",
+      "domains": ["Data"],
+      "tier": "associate",
+      "prepMonths": 2.5,
+      "aliases": ["tableau data analyst certification"],
+      "evidences": ["Tableau", "Data visualisation", "Data analysis"]
+    },
+    {
+      "name": "Machine Learning Specialization",
+      "issuer": "DeepLearning.AI and Stanford Online",
+      "domains": ["AI & Machine Learning"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": [
+        "andrew ng machine learning specialization", "deeplearning.ai machine learning specialization"
+      ],
+      "evidences": ["Machine learning", "Deep learning", "Python", "scikit-learn", "Model evaluation"]
+    },
+    {
+      "name": "NVIDIA-Certified Associate: Generative AI LLMs",
+      "issuer": "NVIDIA",
+      "domains": ["AI & Machine Learning"],
+      "tier": "associate",
+      "prepMonths": 1.5,
+      "aliases": ["nvidia generative ai llms associate", "nca-genl"],
+      "evidences": [
+        "Generative AI", "Prompt engineering", "LLM fine-tuning", "Retrieval-augmented generation"
+      ]
+    },
+    {
+      "name": "Professional Scrum Master I",
+      "issuer": "Scrum.org",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "tier": "associate",
+      "prepMonths": 1.0,
+      "aliases": ["psm i", "psm 1", "psm1"],
+      "evidences": ["Agile delivery", "Facilitation"]
+    },
+    {
+      "name": "ISTQB Certified Tester Foundation Level",
+      "issuer": "ISTQB",
+      "domains": ["Software Engineering"],
+      "tier": "foundation",
+      "prepMonths": 1.5,
+      "aliases": ["istqb foundation", "istqb ctfl", "ctfl"],
+      "evidences": ["Manual testing", "Unit and integration testing"]
+    },
+    {
+      "name": "ISTQB Certified Tester Test Automation Engineer",
+      "issuer": "ISTQB",
+      "domains": ["Software Engineering"],
+      "tier": "professional",
+      "prepMonths": 3.0,
+      "aliases": ["istqb test automation engineer", "istqb ct-tae", "ct-tae"],
+      "evidences": ["Test automation", "Unit and integration testing", "CI/CD"]
+    },
+    {
+      "name": "CompTIA Security+",
+      "issuer": "CompTIA",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": ["security+", "comptia security plus", "sy0-701"],
+      "evidences": [
+        "Networking fundamentals", "Cloud security", "Incident response",
+        "Authentication and authorisation"
+      ]
+    },
+    {
+      "name": "Certified Ethical Hacker",
+      "issuer": "EC-Council",
+      "domains": ["Software Engineering"],
+      "tier": "associate",
+      "prepMonths": 3.0,
+      "aliases": ["ceh", "ec-council ceh"],
+      "evidences": ["Penetration testing", "Networking fundamentals", "Application security"]
+    },
+    {
+      "name": "Offensive Security Certified Professional",
+      "issuer": "OffSec",
+      "domains": ["Software Engineering"],
+      "tier": "professional",
+      "prepMonths": 6.0,
+      "aliases": ["oscp", "offsec oscp"],
+      "evidences": [
+        "Penetration testing", "Linux", "Networking fundamentals", "Application security",
+        "Shell scripting"
+      ]
+    },
+    {
+      "name": "Oracle Certified Professional: Java SE 17 Developer",
+      "issuer": "Oracle",
+      "domains": ["Software Engineering"],
+      "tier": "professional",
+      "prepMonths": 3.0,
+      "aliases": ["ocp java se 17", "oracle java se 17 developer", "1z0-829"],
+      "evidences": ["Java", "Object-oriented design", "Data structures and algorithms"]
+    },
+    {
+      "name": "PCAP: Certified Associate in Python Programming",
+      "issuer": "Python Institute",
+      "domains": ["Software Engineering", "AI & Machine Learning", "Data"],
+      "tier": "associate",
+      "prepMonths": 2.0,
+      "aliases": ["pcap", "python institute pcap"],
+      "evidences": ["Python", "Object-oriented design", "Debugging and troubleshooting"]
+    }
+  ],
+  "awardKinds": [
+    {
+      "kind": "competitive-programming",
+      "label": "Competitive programming",
+      "examples": [
+        "Regional Programming Contest Silver Medal 2023", "University Algorithm Cup Finalist 2022",
+        "Online Coding Contest Top 5 Percent 2024"
+      ]
+    },
+    {
+      "kind": "hackathon",
+      "label": "Hackathon",
+      "examples": [
+        "Regional Hackathon Winner 2024", "Smart City Hackathon Runner-up 2023",
+        "Health Data Hackathon Finalist 2025"
+      ]
+    },
+    {
+      "kind": "data-science-competition",
+      "label": "Data science competition",
+      "examples": [
+        "National Forecasting Challenge Top 10 2023", "Open Data Prediction Cup Gold Tier 2024",
+        "University Analytics Challenge Winner 2022"
+      ]
+    },
+    {
+      "kind": "open-source",
+      "label": "Open source contribution",
+      "examples": [
+        "Maintainer Award, Community Python Library 2024", "Top Contributor, Open Data Toolkit 2023",
+        "Core Contributor, Web Framework Project 2025"
+      ]
+    },
+    {
+      "kind": "conference-talk",
+      "label": "Conference talk or paper",
+      "examples": [
+        "Speaker, Cloud Native Meetup 2024", "Best Paper, Applied AI Workshop 2023",
+        "Invited Talk, Data Engineering Summit 2025"
+      ]
+    },
+    {
+      "kind": "employer-recognition",
+      "label": "Employer recognition",
+      "examples": [
+        "Engineer of the Year, Internal Awards 2024", "Excellence in Delivery Award 2023",
+        "Customer Impact Award 2025"
+      ]
+    },
+    {
+      "kind": "scholarship",
+      "label": "Scholarship",
+      "examples": [
+        "Merit Scholarship in Information Technology 2020",
+        "Industry Scholarship for Data Science Students 2022", "Postgraduate Research Scholarship 2023"
+      ]
+    },
+    {
+      "kind": "academic-excellence",
+      "label": "Academic excellence",
+      "examples": [
+        "Dean's List 2021", "University Medal in Software Engineering 2020",
+        "Top Graduate in Data Science Cohort 2022"
+      ]
+    },
+    {
+      "kind": "patent",
+      "label": "Patent",
+      "examples": [
+        "Granted Patent: Method for Scheduling Batch Jobs 2024",
+        "Patent Filed: Adaptive Data Compression Method 2023",
+        "Patent Filed: Low-latency Model Serving Method 2025"
+      ]
+    },
+    {
+      "kind": "community-leadership",
+      "label": "Community leadership",
+      "examples": [
+        "Organiser, City Python Meetup 2023", "Mentor of the Year, Coding Bootcamp 2024",
+        "Chair, University Computing Society 2021"
+      ]
+    },
+    {
+      "kind": "security-competition",
+      "label": "Security competition or bug bounty",
+      "examples": [
+        "Capture the Flag Finalist 2024", "Bug Bounty Hall of Fame Entry 2023",
+        "National Cyber Challenge Top 10 2025"
+      ]
+    },
+    {
+      "kind": "innovation-award",
+      "label": "Innovation award",
+      "examples": [
+        "Innovation Prize, Startup Pitch Night 2023", "Product Innovation Award, Tech Expo 2024",
+        "Best Prototype, Industry Demo Day 2022"
+      ]
+    }
+  ],
+  "roles": [
+    {"title": "Software Engineer", "domain": "Software Engineering", "occupationCode": "261313"},
+    {"title": "Software Developer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": "Backend Engineer", "domain": "Software Engineering", "occupationCode": "261313"},
+    {"title": "Frontend Engineer", "domain": "Software Engineering", "occupationCode": "261212"},
+    {"title": "Full-stack Engineer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": "Web Developer", "domain": "Software Engineering", "occupationCode": "261212"},
+    {"title": "Mobile Developer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": "Android Developer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": "iOS Developer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": "Java Developer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": ".NET Developer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": "Python Developer", "domain": "Software Engineering", "occupationCode": "261312"},
+    {"title": "Platform Engineer", "domain": "Software Engineering", "occupationCode": "261316"},
+    {"title": "DevOps Engineer", "domain": "Software Engineering", "occupationCode": "261316"},
+    {"title": "Site Reliability Engineer", "domain": "Software Engineering", "occupationCode": "261316"},
+    {"title": "Cloud Engineer", "domain": "Software Engineering", "occupationCode": "261316"},
+    {"title": "Cloud Architect", "domain": "Software Engineering", "occupationCode": "261112"},
+    {"title": "Solutions Architect", "domain": "Software Engineering", "occupationCode": "261112"},
+    {"title": "Software Architect", "domain": "Software Engineering", "occupationCode": "261112"},
+    {"title": "QA Engineer", "domain": "Software Engineering", "occupationCode": "263211"},
+    {"title": "Test Automation Engineer", "domain": "Software Engineering", "occupationCode": "263211"},
+    {"title": "Software Tester", "domain": "Software Engineering", "occupationCode": "261314"},
+    {"title": "Security Engineer", "domain": "Software Engineering", "occupationCode": "261315"},
+    {"title": "Application Security Engineer", "domain": "Software Engineering", "occupationCode": "261315"},
+    {"title": "Machine Learning Engineer", "domain": "AI & Machine Learning", "occupationCode": "261399"},
+    {"title": "Computer Vision Engineer", "domain": "AI & Machine Learning", "occupationCode": "261399"},
+    {"title": "NLP Engineer", "domain": "AI & Machine Learning", "occupationCode": "261399"},
+    {"title": "Deep Learning Engineer", "domain": "AI & Machine Learning", "occupationCode": "261399"},
+    {"title": "AI Engineer", "domain": "AI & Machine Learning", "occupationCode": "261311"},
+    {"title": "Generative AI Engineer", "domain": "AI & Machine Learning", "occupationCode": "261311"},
+    {"title": "LLM Engineer", "domain": "AI & Machine Learning", "occupationCode": "261311"},
+    {"title": "MLOps Engineer", "domain": "AI & Machine Learning", "occupationCode": "263111"},
+    {"title": "ML Platform Engineer", "domain": "AI & Machine Learning", "occupationCode": "263111"},
+    {"title": "Applied Scientist", "domain": "AI & Machine Learning", "occupationCode": "224112"},
+    {"title": "AI Research Scientist", "domain": "AI & Machine Learning", "occupationCode": "224112"},
+    {"title": "AI Research Engineer", "domain": "AI & Machine Learning", "occupationCode": "224112"},
+    {"title": "Data Engineer", "domain": "Data", "occupationCode": "262111"},
+    {"title": "Analytics Engineer", "domain": "Data", "occupationCode": "262111"},
+    {"title": "Big Data Engineer", "domain": "Data", "occupationCode": "262111"},
+    {"title": "Data Platform Engineer", "domain": "Data", "occupationCode": "262111"},
+    {"title": "ETL Developer", "domain": "Data", "occupationCode": "262111"},
+    {"title": "Data Warehouse Engineer", "domain": "Data", "occupationCode": "262111"},
+    {"title": "Database Administrator", "domain": "Data", "occupationCode": "262111"},
+    {"title": "Data Architect", "domain": "Data", "occupationCode": "262111"},
+    {"title": "Data Analyst", "domain": "Data", "occupationCode": "224114"},
+    {"title": "Business Intelligence Analyst", "domain": "Data", "occupationCode": "224114"},
+    {"title": "BI Developer", "domain": "Data", "occupationCode": "224114"},
+    {"title": "Reporting Analyst", "domain": "Data", "occupationCode": "224114"},
+    {"title": "Product Analyst", "domain": "Data", "occupationCode": "224114"},
+    {"title": "Data Scientist", "domain": "Data", "occupationCode": "224115"},
+    {"title": "Statistician", "domain": "Data", "occupationCode": "224113"},
+    {"title": "Business Analyst", "domain": "Data", "occupationCode": "261111"},
+    {"title": "Business Systems Analyst", "domain": "Data", "occupationCode": "261111"}
+  ],
+  "fieldsOfStudy": [
+    "Computer science", "Software engineering", "Information technology", "Information systems",
+    "Data science", "Artificial intelligence", "Statistics", "Mathematics",
+    "Electrical and computer engineering", "Cyber security", "Physics", "Economics"
+  ],
+  "cities": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Remote"],
+  "workModes": ["Onsite", "Hybrid", "Remote"],
+  "workTypes": ["Full-time", "Part-time", "Contract", "Graduate / Internship"]
+}

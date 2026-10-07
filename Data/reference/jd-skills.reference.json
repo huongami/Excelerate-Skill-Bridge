@@ -1,0 +1,38 @@
+[
+  {
+    "jdId": "business-ops-1",
+    "targetRoleId": "business-operations-coordinator",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://business-ops-1", "capturedAt": "2026-08-23" },
+    "skills": ["team operations", "cross-functional coordination", "operational reporting", "AI tool familiarity"]
+  },
+  {
+    "jdId": "business-ops-2",
+    "targetRoleId": "business-operations-coordinator",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://business-ops-2", "capturedAt": "2026-08-23" },
+    "skills": ["cross-functional coordination", "operational reporting", "spreadsheet analysis", "AI tool familiarity"]
+  },
+  {
+    "jdId": "business-ops-3",
+    "targetRoleId": "business-operations-coordinator",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://business-ops-3", "capturedAt": "2026-08-23" },
+    "skills": ["team operations", "customer service operations", "operational reporting", "AI tool familiarity"]
+  },
+  {
+    "jdId": "marketing-ops-1",
+    "targetRoleId": "marketing-operations-manager",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://marketing-ops-1", "capturedAt": "2026-08-23" },
+    "skills": ["stakeholder alignment", "performance analytics", "paid media operations", "marketing automation tools"]
+  },
+  {
+    "jdId": "marketing-ops-2",
+    "targetRoleId": "marketing-operations-manager",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://marketing-ops-2", "capturedAt": "2026-08-23" },
+    "skills": ["stakeholder alignment", "performance analytics", "marketing automation tools"]
+  },
+  {
+    "jdId": "marketing-ops-3",
+    "targetRoleId": "marketing-operations-manager",
+    "source": { "producer": "Team-authored synthetic JD", "sourceUrl": "synthetic://marketing-ops-3", "capturedAt": "2026-08-23" },
+    "skills": ["stakeholder alignment", "paid media operations", "campaign planning"]
+  }
+]

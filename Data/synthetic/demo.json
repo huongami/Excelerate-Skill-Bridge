@@ -1,0 +1,382 @@
+{
+  "synthetic": true,
+  "employer": {
+    "name": "Alex Morgan",
+    "company": "Bluebushworks"
+  },
+  "jobs": [
+    {
+      "key": "demo-data-engineer-mid",
+      "ownerDemo": true,
+      "title": "Data Engineer, Solar Analytics",
+      "company": "Bluebushworks",
+      "domain": "Data",
+      "specialisation": "Data engineering",
+      "level": "Mid",
+      "minYears": 3,
+      "maxYears": 6,
+      "type": "Full-time",
+      "workMode": "Hybrid",
+      "city": "Sydney",
+      "area": "Sydney NSW",
+      "salary": {
+        "min": 118000,
+        "max": 138000,
+        "unit": "year"
+      },
+      "occupation": {
+        "code": "262111",
+        "title": "Data Engineer"
+      },
+      "skills": [
+        {
+          "name": "SQL",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "Python",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "ETL and ELT pipelines",
+          "level": 3,
+          "must": true
+        },
+        {
+          "name": "Data modelling",
+          "level": 3,
+          "must": true
+        },
+        {
+          "name": "Apache Airflow",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Snowflake",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "dbt",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "AWS",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Git",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Data quality",
+          "level": 3,
+          "must": false
+        }
+      ],
+      "certifications": {
+        "required": [],
+        "preferred": [
+          "SnowPro Core Certification"
+        ]
+      },
+      "awards": {
+        "preferred": []
+      },
+      "educationMin": "Bachelor's degree",
+      "postedDaysAgo": 6,
+      "closesInDays": 30,
+      "description": "## About the role\n\nBluebushworks helps solar and battery installers quote, plan and track their jobs, and every installed system reports its output back to us every five minutes. The Solar Analytics team of five turns those readings into reports for installers and homeowners. We need a mid-level data engineer to take over the pipelines that load, clean and join this data. This is a Hybrid role in our Sydney office, close to the installers' product team.\n\n## What you will do\n\n- Run and improve the pipelines that load system readings and weather data into Snowflake.\n- Schedule the jobs in Apache Airflow and handle retries and late data.\n- Model tables for systems, sites and installers, so that reports stay quick.\n- Move older SQL scripts into dbt models with tests.\n- Add checks that catch a dead inverter feed before a homeowner does.\n- Answer data questions from the product and support teams.\n\n## What you bring\n\n- 3 to 6 years in data engineering or a data-heavy developer role.\n- SQL and Python at an advanced level (4 of 5), with tests for both.\n- ETL and ELT pipelines at a proficient level (3 of 5): loads, retries and backfills.\n- Data modelling at a proficient level, with clean keys and clear names.\n- A habit of writing short notes so that others can run your jobs.\n\n## Nice to have\n\n- Apache Airflow, Snowflake or dbt in production.\n- AWS basics, and Git habits for team work.\n- Data quality tools or tests that you built.\n\n## Tech stack\n\nPython, SQL, Apache Airflow, Snowflake and dbt on AWS, with Git for all code.\n\n## Certifications and awards\n\n- Preferred certification: SnowPro Core Certification.\n\n## What we offer\n\n- $118,000 to $138,000 a year, plus 12% superannuation.\n- Hybrid work: three days a week in our Sydney office and two at home.\n- Four weeks of annual leave, plus two extra days to spend with family.\n- A learning budget of $2,000 a year.\n- A small team where your pipelines reach customers within days.\n\n## About Bluebushworks\n\nBluebushworks makes planning and quoting software for solar and battery installers. It was founded in 2019 and has about 90 people, with its head office in Sydney. Its software is used on thousands of home installations each year.\n\n## How we hire\n\n- A 30-minute call with the data lead.\n- A SQL and Python exercise that you do live with one engineer.\n- A talk with two teammates about a pipeline that you built.\n- An answer within a week."
+    },
+    {
+      "key": "demo-backend-senior",
+      "ownerDemo": true,
+      "title": "Senior Backend Engineer, Installer Platform",
+      "company": "Bluebushworks",
+      "domain": "Software Engineering",
+      "specialisation": "Backend",
+      "level": "Senior",
+      "minYears": 6,
+      "maxYears": 11,
+      "type": "Full-time",
+      "workMode": "Hybrid",
+      "city": "Sydney",
+      "area": "Sydney NSW",
+      "salary": {
+        "min": 165000,
+        "max": 185000,
+        "unit": "year"
+      },
+      "occupation": {
+        "code": "261313",
+        "title": "Software Engineer"
+      },
+      "skills": [
+        {
+          "name": "Python",
+          "level": 5,
+          "must": true
+        },
+        {
+          "name": "Django",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "PostgreSQL",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "AWS",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "System design",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "API design",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "Docker",
+          "level": 4,
+          "must": false
+        },
+        {
+          "name": "Redis",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Unit and integration testing",
+          "level": 4,
+          "must": false
+        },
+        {
+          "name": "Mentoring",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Code review",
+          "level": 4,
+          "must": false
+        },
+        {
+          "name": "Observability",
+          "level": 3,
+          "must": false
+        }
+      ],
+      "certifications": {
+        "required": [],
+        "preferred": [
+          "AWS Certified Solutions Architect - Associate"
+        ]
+      },
+      "awards": {
+        "preferred": []
+      },
+      "educationMin": "Bachelor's degree",
+      "postedDaysAgo": 3,
+      "closesInDays": 26,
+      "description": "## About the role\n\nThe Installer Platform is the backend that 2,500 solar and battery installers use to quote jobs, order equipment and book inspections. It is a Django application with a PostgreSQL database, and it has doubled in size twice in three years. We are hiring a senior backend engineer to guide its next stage: faster quotes, safer integrations with equipment suppliers and a design that more engineers can work in at once. This is a Hybrid role in Sydney.\n\n## What you will do\n\n- Design and build new parts of the platform in Python and Django, from quotes to orders.\n- Split the largest Django app into clear modules with strong boundaries.\n- Build integrations with equipment suppliers and keep them safe when a supplier is slow.\n- Speed up PostgreSQL queries and plan schema changes that do not lock tables.\n- Run the platform on AWS and improve the logs, traces and alerts.\n- Review code and coach three engineers.\n- Write design notes for the choices that last.\n\n## What you bring\n\n- 6 to 11 years of backend work, with Python at an expert level (5 of 5).\n- Django and PostgreSQL at an advanced level (4 of 5), including migrations at scale.\n- AWS at an advanced level: queues, storage, networking and cost.\n- System design and API design at an advanced level, shown in live systems.\n- A habit of writing and talking in plain words about trade-offs.\n\n## Nice to have\n\n- Redis and Observability tools at a proficient level, and Docker at an advanced level.\n- Strong Unit and integration testing habits.\n- Code review and Mentoring that people thank you for.\n\n## Tech stack\n\nPython, Django, PostgreSQL, Redis and Docker on AWS. Tests use pytest, and the team uses Git with short reviews.\n\n## Certifications and awards\n\n- Preferred certification: AWS Certified Solutions Architect - Associate.\n\n## What we offer\n\n- $165,000 to $185,000 a year, plus 12% superannuation.\n- Hybrid work: three days a week in our Sydney office and two at home.\n- Four weeks of annual leave and an extra day off when you finish a big release.\n- A $3,000 yearly budget for books, courses and conferences.\n- A light on-call rota of one week in seven.\n\n## About Bluebushworks\n\nBluebushworks makes planning and quoting software for solar and battery installers. It was founded in 2019 and has about 90 people, with its head office in Sydney. Its software is used on thousands of home installations each year.\n\n## How we hire\n\n- A call with the head of engineering.\n- A design talk about a platform that you built, with two engineers.\n- A pairing session on a Django and SQL problem.\n- A decision within five working days."
+    },
+    {
+      "key": "demo-ml-engineer-mid",
+      "ownerDemo": true,
+      "title": "Machine Learning Engineer, Solar Forecasting",
+      "company": "Bluebushworks",
+      "domain": "AI & Machine Learning",
+      "specialisation": "Machine learning engineering",
+      "level": "Mid",
+      "minYears": 2,
+      "maxYears": 5,
+      "type": "Full-time",
+      "workMode": "Hybrid",
+      "city": "Sydney",
+      "area": "Sydney NSW",
+      "salary": {
+        "min": 126000,
+        "max": 148000,
+        "unit": "year"
+      },
+      "occupation": {
+        "code": "261399",
+        "title": "Machine Learning Engineer"
+      },
+      "skills": [
+        {
+          "name": "Python",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "Machine learning",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "Time series forecasting",
+          "level": 3,
+          "must": true
+        },
+        {
+          "name": "scikit-learn",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "Feature engineering",
+          "level": 3,
+          "must": true
+        },
+        {
+          "name": "XGBoost",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Model evaluation",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "MLflow",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Docker",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "SQL",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Git",
+          "level": 3,
+          "must": false
+        }
+      ],
+      "certifications": {
+        "required": [],
+        "preferred": [
+          "AWS Certified Machine Learning Engineer - Associate"
+        ]
+      },
+      "awards": {
+        "preferred": [
+          "data-science-competition"
+        ]
+      },
+      "educationMin": "Bachelor's degree",
+      "postedDaysAgo": 17,
+      "closesInDays": 4,
+      "description": "## About the role\n\nBluebushworks tells installers how much power a home system will make on each day of the year, and its customers hold us to that number. The Forecasting team of four builds the models behind it, using weather, roof shape and the past output of thousands of live systems. We need a mid-level machine learning engineer to improve those forecasts and to move the training from notebooks to a scheduled pipeline. This is a Hybrid role in our Sydney office.\n\n## What you will do\n\n- Improve the solar output forecasts with Time series forecasting methods and better features.\n- Train and compare models in scikit-learn and XGBoost, and keep the best ones.\n- Build tests that show how each model behaves on cloudy weeks and on new roof types.\n- Track runs in MLflow and package models in Docker for the serving team.\n- Explain forecast errors to installers and to the customer support team.\n- Query system data with SQL to find new signals.\n\n## What you bring\n\n- 2 to 5 years of applied machine learning, with Python and scikit-learn at an advanced level (4 of 5).\n- Machine learning at an advanced level, with a focus on tabular and time series data.\n- Time series forecasting and Feature engineering at a proficient level (3 of 5).\n- Honest checking of results: you separate the training data from the test data with care.\n- Clear writing and a calm voice when a number is wrong.\n\n## Nice to have\n\n- XGBoost, Model evaluation and MLflow in daily work.\n- Docker, SQL and Git habits for shared code.\n- A result in a data science competition.\n\n## Tech stack\n\nPython, scikit-learn, XGBoost, MLflow, Docker and SQL on a cloud warehouse, with Git for all code.\n\n## Certifications and awards\n\n- Preferred certification: AWS Certified Machine Learning Engineer - Associate.\n- Preferred award kind: Data science competition.\n\n## What we offer\n\n- $126,000 to $148,000 a year, plus 12% superannuation.\n- Hybrid work: three days a week in our Sydney office and two at home.\n- Four weeks of annual leave and a short break between Christmas and New Year.\n- A learning budget of $2,500 a year.\n- Access to live solar data from thousands of homes, with private details removed.\n\n## About Bluebushworks\n\nBluebushworks makes planning and quoting software for solar and battery installers. It was founded in 2019 and has about 90 people, with its head office in Sydney. Its software is used on thousands of home installations each year.\n\n## How we hire\n\n- A 30-minute call with the forecasting lead.\n- A small modelling task on sample data, about two hours.\n- A talk with the team about your solution.\n- An offer within five working days."
+    },
+    {
+      "key": "demo-data-engineer-contract-closed",
+      "ownerDemo": true,
+      "title": "Contract Data Engineer, Billing Migration",
+      "company": "Bluebushworks",
+      "domain": "Data",
+      "specialisation": "Data engineering",
+      "level": "Mid",
+      "minYears": 3,
+      "maxYears": 8,
+      "type": "Contract",
+      "workMode": "Hybrid",
+      "city": "Sydney",
+      "area": "Sydney NSW",
+      "salary": {
+        "min": 760,
+        "max": 840,
+        "unit": "day"
+      },
+      "occupation": {
+        "code": "262111",
+        "title": "Data Engineer"
+      },
+      "skills": [
+        {
+          "name": "SQL",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "ETL and ELT pipelines",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "Azure Data Factory",
+          "level": 4,
+          "must": true
+        },
+        {
+          "name": "Python",
+          "level": 3,
+          "must": true
+        },
+        {
+          "name": "Data warehousing",
+          "level": 3,
+          "must": true
+        },
+        {
+          "name": "Microsoft SQL Server",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Azure",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Git",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Data quality",
+          "level": 3,
+          "must": false
+        },
+        {
+          "name": "Power BI",
+          "level": 2,
+          "must": false
+        }
+      ],
+      "certifications": {
+        "required": [],
+        "preferred": [
+          "Microsoft Certified: Azure Fundamentals"
+        ]
+      },
+      "awards": {
+        "preferred": []
+      },
+      "educationMin": "Bachelor's degree",
+      "postedDaysAgo": 40,
+      "closesInDays": -2,
+      "description": "## About the role\n\nBluebushworks is moving its billing and invoicing data from an old SQL Server system to a new cloud warehouse, and it needs a contract data engineer for four months. The work covers 45 pipelines in Azure Data Factory, plus the checks that prove the new numbers match the old ones. As a mid-level contractor, you will join a finance data team of four who are tired of month-end surprises. This is a Hybrid contract in our Sydney office.\n\n## What you will do\n\n- Rebuild the billing and invoice pipelines in Azure Data Factory.\n- Write SQL that returns the same totals as the old system, and prove it with checks.\n- Load the data into the new warehouse with clear logs and retries.\n- Report the migration status each week to the finance team.\n- Build a simple Power BI page that compares old and new totals.\n- Hand over the pipelines with short guides.\n\n## What you bring\n\n- 3 to 8 years in data engineering, with SQL and ETL and ELT pipelines at an advanced level (4 of 5).\n- Azure Data Factory at an advanced level, shown by a past migration.\n- Python at a proficient level (3 of 5), and Data warehousing at the same level.\n- Calm communication with finance teams, who care about every cent.\n- Clear weekly status notes for the finance lead and the project owner.\n\n## Nice to have\n\n- Microsoft SQL Server and Azure depth.\n- Git habits and Data quality checks that you built.\n- Power BI basics.\n\n## Tech stack\n\nAzure Data Factory, Microsoft SQL Server as the old source, a cloud warehouse as the target, Python for checks and Git for code.\n\n## Certifications and awards\n\n- Preferred certification: Microsoft Certified: Azure Fundamentals.\n\n## What we offer\n\n- A day rate of $760 to $840, paid through your company or an agency.\n- A four-month contract in a Hybrid pattern: three days in our Sydney office.\n- A clear scope and a friendly finance team.\n- Quick onboarding, with access ready on day one.\n\n## About Bluebushworks\n\nBluebushworks makes planning and quoting software for solar and battery installers. It was founded in 2019 and has about 90 people, with its head office in Sydney. Its software is used on thousands of home installations each year.\n\n## How we hire\n\n- A 30-minute call about the contract.\n- A technical chat on Azure Data Factory and SQL.\n- An answer within two working days."
+    }
+  ]
+}

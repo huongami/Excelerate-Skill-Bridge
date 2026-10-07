@@ -29,40 +29,24 @@ python3 run_tests.py
 
 ## 📁 Repository Structure
 
-The platform is organized into 4 side-by-side core folders:
+The repository is organized according to the required submission standard:
 
 ```
 Excelerate-Skill-Bridge/
 │
-├── START_HERE.md              # 👈 Start here: Complete setup and running instructions
-├── README.md                  # Master repository overview
+├── AI Rule/                   # 🛡️ AI Boundaries, Capabilities & 10 Core Governance Rules
+├── Skill/                     # ⚡ AI Skills (Extraction, Gap Analysis, Formulas, Zero-PII)
+├── SDD/                       # 📋 Software Design Description (PRD, Specs, User Flows, Stories)
+├── Prompt/                    # 💬 Prompt Engineering Principles, System Prompts & API Contract
+├── Readme/                    # 📖 Master Documentation Guides & Demo Walkthroughs
+├── Presentation/              # 🎨 Interactive Project Presentation & Mathematical Formula Decks
+├── Data/                      # 📊 Verified Synthetic Benchmarks & Australian Legal Provenance
+├── Document/                  # 📐 Architecture Details (Frontend, Backend, Data, Formulas, AI Test Plan)
 │
-├── jinder_platform/           # 🚀 The Running Platform Backend
-│   ├── start.py               # Launcher: python3 start.py [--demo] [--port 8095]
-│   ├── run_tests.py           # 729 automated tests (integration, DB, formulas)
-│   ├── jinder/                # Platform core: REST API, SQLite models, CV reader, server
-│   ├── var/                   # SQLite database (jinder.db) & upload storage
-│   └── docs/                  # Platform documentation, API notes, database spec
-│
-├── jinder_frontend/          # 🎨 The Frontend & Application Specifications
-│   ├── app/                   # Web frontend (HTML, CSS, JS) served by jinder_platform
-│   ├── Docs/                  # Design system (DESIGN.md), feature specs, user stories
-│   ├── AI_Rule.md             # Architecture, security & privacy rules
-│   └── prompt.md              # API contract between frontend & backend
-│
-├── jinder_backend_engine/     # 📐 Intelligence Engine & Data Taxonomies
-│   ├── intelligence_engine/   # 6 exact mathematical formulas (F-01 to F-06)
-│   ├── data/
-│   │   ├── reference/         # ICT Taxonomy (ict_taxonomy.json, 115KB)
-│   │   └── synthetic/         # 50 jobs, 50 talent profiles, 4 demo jobs
-│   └── formulas_presentation.html # Interactive formula visual presentation
-│
-├── spec/                      # 📋 Product Feature Specifications & User Flows
-│   ├── Jinder_Feature_Specs.md
-│   ├── Jinder_User_Flow_Spec.md
-│   └── Jinder_User_Stories.md
-│
-└── old_version/               # 📦 Archived Legacy Files (Pre-Jinder prototype)
+├── jinder_platform/           # 🚀 The Running Platform Backend & SQLite Database
+├── jinder_frontend/           # 🎨 Client Web Application (HTML/CSS/JS)
+├── jinder_backend_engine/     # 📐 Intelligence Engine (Formulas F-01 to F-06)
+└── old_version/               # 📦 Archived Legacy Files & Historical Prototypes
 ```
 
 ---

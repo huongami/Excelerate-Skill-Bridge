@@ -1,0 +1,34 @@
+[
+  {
+    "id": "business-operations-coordinator",
+    "label": "Business Operations Coordinator",
+    "industry": "Business Operations",
+    "decisionSource": "PRD §4.1 Minh Tran candidate persona",
+    "reviewedBy": "Jinder team",
+    "reviewedAt": "2026-08-23"
+  },
+  {
+    "id": "marketing-operations-manager",
+    "label": "Marketing Operations Manager",
+    "industry": "Marketing",
+    "decisionSource": "Team-selected from the static demo narrative",
+    "reviewedBy": "Jinder team",
+    "reviewedAt": "2026-08-23"
+  },
+  {
+    "id": "product-manager",
+    "label": "Product Manager",
+    "industry": "Technology",
+    "decisionSource": "PRD worked cross-border example",
+    "reviewedBy": "Jinder team",
+    "reviewedAt": "2026-08-23"
+  },
+  {
+    "id": "data-analyst",
+    "label": "Data Analyst",
+    "industry": "Data and Analytics",
+    "decisionSource": "PRD worked cross-industry example",
+    "reviewedBy": "Jinder team",
+    "reviewedAt": "2026-08-23"
+  }
+]
