@@ -114,7 +114,7 @@ The demo covers three domains: **Software Engineering**, **AI & Machine Learning
 - **Pay.** A job has a `salaryUnit` (year, day or hour). A day rate shows as "$900 per day".
 - **Premium insights of the talent** are level-aware (the skills to learn next and the demand for your skills use the asked level).
 - **Terms.** The word "Industry" is now **"Domain"**. The label "Licence readiness" is now **"Certification readiness"**.
-- **Tests.** `python run_tests.py` runs **729 unit and API tests** in about 74 seconds. `python run_tests.py --browser` runs **7 browser stages** (about 1,055 checks, about 12 minutes). `--browser-quick` runs the two journeys only (about 2 minutes). See `START_HERE.md`.
+- **Tests.** `python run_tests.py` runs **729 unit and API tests** in about 74 seconds. `python run_tests.py --browser` runs **7 browser stages** (about 1,055 checks, about 12 minutes). `--browser-quick` runs the two journeys only (about 2 minutes). See `Document/guides/01_GETTING_STARTED.md`.
 - **Colours.** The chart colours are darker, so that a line on white has a contrast of 3:1 or more. The Premium gold has its own colour set (see `Docs/DESIGN.md`).
 
 ## Quality check (QA, 2026-10-07)

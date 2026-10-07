@@ -1,7 +1,7 @@
 # Jinder — Autonomous Capability Alignment Platform
 
 > **Live Platform Repository & Source Code**  
-> For complete instructions on how to start and test the platform, see [**`START_HERE.md`**](START_HERE.md).
+> For complete instructions on how to start and test the platform, see [**`Document/guides/01_GETTING_STARTED.md`**](Document/guides/01_GETTING_STARTED.md).
 
 ---
 
