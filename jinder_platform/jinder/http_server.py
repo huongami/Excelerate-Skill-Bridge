@@ -144,6 +144,78 @@ def parse_multipart(content_type: str, body: bytes) -> Tuple[Dict[str, Any], Dic
 
 
 # =====================================================================
+# Traffic & Latency Metrics Telemetry
+# =====================================================================
+class TrafficMetrics:
+    """Thread-safe real-time HTTP traffic and latency telemetry collector."""
+
+    def __init__(self, window_size: int = 1000):
+        self.lock = threading.Lock()
+        self.start_time = time.monotonic()
+        self.total_requests = 0
+        self.status_counts: Dict[str, int] = {"2xx": 0, "3xx": 0, "4xx": 0, "5xx": 0}
+        self.endpoint_counts: Dict[str, int] = {}
+        self.latencies: List[float] = []
+        self.window_size = window_size
+        self.recent_requests: List[Dict[str, Any]] = []
+
+    def record(self, method: str, path: str, status: int, duration_ms: float) -> None:
+        with self.lock:
+            self.total_requests += 1
+            cat = f"{status // 100}xx"
+            self.status_counts[cat] = self.status_counts.get(cat, 0) + 1
+            ep = path[:40]
+            self.endpoint_counts[ep] = self.endpoint_counts.get(ep, 0) + 1
+            if len(self.latencies) >= self.window_size:
+                self.latencies.pop(0)
+            self.latencies.append(duration_ms)
+
+            if len(self.recent_requests) >= 50:
+                self.recent_requests.pop(0)
+            self.recent_requests.append({
+                "method": method,
+                "path": path,
+                "status": status,
+                "durationMs": round(duration_ms, 2),
+                "timestamp": time.time()
+            })
+
+    def snapshot(self) -> Dict[str, Any]:
+        with self.lock:
+            uptime = max(time.monotonic() - self.start_time, 1.0)
+            rpm = round((self.total_requests / uptime) * 60, 1)
+            sorted_lat = sorted(self.latencies) if self.latencies else [0.0]
+            n = len(sorted_lat)
+            p50 = sorted_lat[int(n * 0.50)] if n else 0.0
+            p95 = sorted_lat[int(n * 0.95)] if n else 0.0
+            p99 = sorted_lat[int(n * 0.99)] if n else 0.0
+            avg_lat = sum(sorted_lat) / n if n else 0.0
+
+            top_endpoints = [
+                {"path": k, "count": v}
+                for k, v in sorted(self.endpoint_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+            ]
+
+            return {
+                "uptimeSeconds": round(uptime, 1),
+                "totalRequests": self.total_requests,
+                "rpm": rpm,
+                "latency": {
+                    "avg": round(avg_lat, 2),
+                    "p50": round(p50, 2),
+                    "p95": round(p95, 2),
+                    "p99": round(p99, 2)
+                },
+                "statusCodes": dict(self.status_counts),
+                "topEndpoints": top_endpoints,
+                "recentRequests": list(reversed(self.recent_requests[-15:]))
+            }
+
+
+TRAFFIC = TrafficMetrics()
+
+
+# =====================================================================
 # The request handler
 # =====================================================================
 class Handler(BaseHTTPRequestHandler):
@@ -157,8 +229,10 @@ class Handler(BaseHTTPRequestHandler):
         pass
 
     def _log(self, status: int, started: float) -> None:
+        duration_ms = (time.monotonic() - started) * 1000
         path = urlsplit(self.path).path
-        log.info("%s %s -> %s (%d ms)", self.command, path, status, int((time.monotonic() - started) * 1000))
+        TRAFFIC.record(self.command, path, status, duration_ms)
+        log.info("%s %s -> %s (%d ms)", self.command, path, status, int(duration_ms))
 
     # ----- one method for all verbs -----
     def do_GET(self): self._handle()
