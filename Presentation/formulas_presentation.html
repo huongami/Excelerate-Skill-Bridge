@@ -17,7 +17,7 @@
 
   <style>
     /* ==========================================================================
-       JINDER DESIGN SYSTEM TOKENS (Identical to jinder_frontend styles.css)
+       JINDER DESIGN SYSTEM TOKENS (1:1 with app styles.css)
        ========================================================================== */
     :root {
       --primary: #151531;
@@ -82,7 +82,7 @@
       padding: 0;
     }
 
-    /* Strict 100vh Container, zero page scrolling */
+    /* Strict 100vh Shell, Zero Page Scroll */
     .app-screen {
       height: 100vh;
       max-height: 100vh;
@@ -379,19 +379,30 @@
       margin-bottom: 8px;
     }
 
-    /* Math Formula Stage */
+    /* Math Formula Stage with Gradient Left Accent Bar */
     .card-math-box {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
-      border-left: 3.5px solid var(--accent);
       border-radius: var(--r-md);
-      padding: 10px 14px;
+      padding: 10px 14px 10px 18px;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 48px;
       overflow-x: auto;
+      position: relative;
+    }
+    .card-math-box::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #6868f7 0%, #a855f7 50%, #ffa340 100%);
+      border-top-left-radius: var(--r-md);
+      border-bottom-left-radius: var(--r-md);
     }
     .card-math-box .katex {
       font-size: 1.25rem;
@@ -444,119 +455,23 @@
     }
 
     /* ==========================================================================
-       VIEW 2: CANONICAL DEEP-DIVE WORKBENCH (NO NEXT PAGE BUTTON)
+       VIEW 2: WORKBENCH (SLIDERS ON LEFT, SPECS & VARIABLES ON RIGHT)
        ========================================================================== */
     .deepdive-pane {
       flex: 1;
       height: 100%;
       display: none;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 0.92fr 1.08fr;
       gap: 20px;
       overflow: hidden;
     }
 
-    .deepdive-card {
-      background: var(--canvas);
-      border: 1px solid var(--hairline);
-      border-radius: var(--r-xxl);
-      padding: 24px 28px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--sh-md);
-      overflow-y: auto;
-    }
-
-    .deepdive-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .deepdive-title-group h2 {
-      font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.6px;
-      margin-bottom: 4px;
-    }
-
-    .deepdive-title-group p {
-      font-size: 14px;
-      color: var(--body);
-    }
-
-    .large-math-stage {
-      background: #fdfdfe;
-      border: 1.5px solid #dcdcfe;
-      border-left: 5px solid var(--accent);
-      border-radius: var(--r-lg);
-      padding: 18px 24px;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--sh-xs);
-    }
-    .large-math-stage .katex {
-      font-size: 1.6rem;
-      color: var(--ink-deep);
-    }
-
-    .spec-block {
-      background: var(--surface-subtle);
-      border: 1px solid var(--hairline);
-      border-radius: var(--r-lg);
-      padding: 16px 20px;
-      margin-bottom: 18px;
-    }
-
-    .spec-block h3 {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .spec-block p {
-      font-size: 14px;
-      color: var(--body);
-      line-height: 1.55;
-    }
-
-    /* Variable Table */
-    .variable-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13.5px;
-      margin-top: 10px;
-    }
-    .variable-table th {
-      text-align: left;
-      font-weight: 700;
-      color: var(--ink);
-      padding: 8px 10px;
-      border-bottom: 1.5px solid var(--hairline);
-      background: var(--surface-strong);
-    }
-    .variable-table td {
-      padding: 8px 10px;
-      border-bottom: 1px solid var(--hairline);
-      color: var(--body);
-    }
-
-    /* Simulator Panel */
+    /* Left Column: Interactive Real-Time Simulator */
     .sim-panel {
       background: #ffffff;
       border: 1px solid var(--hairline);
       border-radius: var(--r-xxl);
-      padding: 24px 26px;
+      padding: 22px 24px;
       display: flex;
       flex-direction: column;
       box-shadow: var(--sh-md);
@@ -564,7 +479,7 @@
     }
 
     .sim-header {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--hairline);
     }
@@ -574,6 +489,9 @@
       font-weight: 700;
       color: var(--ink);
       letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .sim-header p {
       font-size: 13px;
@@ -589,7 +507,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .control-label-row label {
@@ -608,75 +526,242 @@
       border-radius: var(--r-xs);
     }
 
+    /* Enhanced Range Slider with Gradient Track Fill */
     input[type="range"] {
       width: 100%;
-      height: 6px;
+      height: 8px;
       border-radius: 9999px;
-      background: var(--surface-strong);
+      background: #e9ecef;
       outline: none;
       -webkit-appearance: none;
       cursor: pointer;
+      margin: 6px 0;
+      transition: background 0.1s ease;
     }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      background: #ffffff;
+      border: 3.5px solid var(--accent);
+      box-shadow: 0 2px 6px rgba(104, 104, 247, 0.4);
       cursor: pointer;
-      transition: transform 0.1s var(--ease);
+      transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), border-color 0.15s var(--ease);
     }
     input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.15);
+      transform: scale(1.18);
+      border-color: var(--orange);
+      box-shadow: 0 4px 12px rgba(255, 163, 64, 0.5);
+    }
+
+    .sim-worked-math {
+      background: var(--surface-subtle);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 12.5px;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      word-break: break-all;
+      line-height: 1.45;
     }
 
     .sim-result-card {
-      background: var(--surface-subtle);
+      background: linear-gradient(135deg, #ffffff 0%, var(--surface-subtle) 100%);
       border: 1.5px solid var(--accent);
       border-radius: var(--r-lg);
-      padding: 16px 20px;
+      padding: 14px 18px;
       margin-top: auto;
       text-align: center;
+      box-shadow: var(--sh-xs);
     }
 
     .sim-result-label {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .sim-result-number {
       font-family: var(--font-display);
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 800;
-      letter-spacing: -1.5px;
+      letter-spacing: -1.2px;
       color: var(--ink);
-      line-height: 1;
+      line-height: 1.05;
     }
 
     .sim-result-status {
       display: inline-block;
-      margin-top: 8px;
-      font-size: 12.5px;
+      margin-top: 6px;
+      font-size: 12px;
       font-weight: 700;
       padding: 3px 10px;
       border-radius: var(--r-pill);
     }
 
-    .sim-worked-math {
-      background: #ffffff;
+    /* Right Column: Formula Documentation & Variable Table */
+    .deepdive-card {
+      background: var(--canvas);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-xxl);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--sh-md);
+      overflow-y: auto;
+    }
+
+    .deepdive-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .deepdive-title-group h2 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      margin-bottom: 3px;
+    }
+
+    .deepdive-title-group p {
+      font-size: 13.5px;
+      color: var(--body);
+    }
+
+    .large-math-stage {
+      background: #fdfdfe;
+      border: 1.5px solid #dcdcfe;
+      border-radius: var(--r-lg);
+      padding: 16px 22px 16px 26px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--sh-xs);
+      position: relative;
+    }
+    .large-math-stage::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, #6868f7 0%, #a855f7 50%, #ffa340 100%);
+      border-top-left-radius: var(--r-lg);
+      border-bottom-left-radius: var(--r-lg);
+    }
+    .large-math-stage .katex {
+      font-size: 1.55rem;
+      color: var(--ink-deep);
+    }
+
+    .spec-block {
+      background: var(--surface-subtle);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-lg);
+      padding: 14px 18px;
+      margin-bottom: 14px;
+    }
+
+    .spec-block h3 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .spec-block p {
+      font-size: 13.5px;
+      color: var(--body);
+      line-height: 1.5;
+    }
+
+    /* Redesigned High-Clarity Variable Table */
+    .variable-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 13px;
+      margin-top: 8px;
       border: 1px solid var(--hairline);
       border-radius: var(--r-md);
-      padding: 10px 14px;
-      margin-top: 12px;
-      font-size: 13px;
-      color: var(--ink);
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .variable-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #495057;
+      padding: 9px 12px;
+      background: var(--surface-strong);
+      border-bottom: 1.5px solid var(--hairline);
+    }
+    .variable-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--hairline);
+      color: var(--body);
+      vertical-align: middle;
+    }
+    .variable-table tr:last-child td {
+      border-bottom: none;
+    }
+    .variable-table tr:hover td {
+      background: rgba(104, 104, 247, 0.03);
+    }
+    
+    .var-symbol-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-tint);
+      border: 1px solid rgba(104, 104, 247, 0.25);
+      border-radius: var(--r-xs);
+      padding: 3px 8px;
+      color: var(--primary);
+      font-size: 13.5px;
+      min-width: 58px;
+      box-shadow: 0 1px 2px rgba(104, 104, 247, 0.06);
+    }
+    .var-symbol-badge .katex {
+      font-size: 1.05rem;
+    }
+
+    .val-badge {
+      display: inline-flex;
+      align-items: center;
       font-family: var(--font-mono);
-      word-break: break-all;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--r-xs);
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    .val-badge-accent {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
     }
   </style>
 </head>
@@ -699,7 +784,7 @@
         </div>
       </div>
 
-      <!-- Segmented Tab Navigation (Zero Next Page Buttons) -->
+      <!-- Segmented Tab Navigation -->
       <nav class="tab-segmented-bar" id="formulaTabs">
         <button class="tab-pill active" onclick="switchFormulaView('grid')" id="pill-grid">
           <span>⊞</span> All 6 Formulas (Grid)
@@ -908,11 +993,35 @@
       </div>
 
       <!-- =====================================================================
-           VIEW 2: CANONICAL DEEP-DIVE WORKBENCH (NO NEXT PAGE BUTTON)
+           VIEW 2: WORKBENCH (SLIDERS ON LEFT, SPECS & VARIABLES ON RIGHT)
            ===================================================================== -->
       <div class="deepdive-pane" id="deepdivePane">
         
-        <!-- Left Column: Formula Documentation & Rigor -->
+        <!-- Left Column: Interactive Real-Time Simulator with Gradient Sliders -->
+        <div class="sim-panel">
+          <div class="sim-header">
+            <h3>
+              <span>⚡</span> Live Interactive Parameter Workbench
+            </h3>
+            <p>Adjust live capability parameters to inspect instant deterministic score convergence.</p>
+          </div>
+
+          <div id="simControlsContainer">
+            <!-- Dynamic sliders injected via JS with live gradient tracks -->
+          </div>
+
+          <div class="sim-worked-math" id="simWorkedMath">
+            <!-- Numerical worked example -->
+          </div>
+
+          <div class="sim-result-card">
+            <div class="sim-result-label" id="simResultLabel">Calculated Canonical Score</div>
+            <div class="sim-result-number" id="simResultVal">78.6%</div>
+            <div class="sim-result-status chip-green" id="simResultBadge">Benchmark Case • Minh Tran (Silver Koala)</div>
+          </div>
+        </div>
+
+        <!-- Right Column: Formula Documentation & High-Clarity Variable Table -->
         <div class="deepdive-card">
           <div class="deepdive-header">
             <div class="deepdive-title-group">
@@ -936,42 +1045,20 @@
             </p>
           </div>
 
-          <div class="spec-block" style="margin-bottom:0;">
-            <h3><span>⚖️</span> Variable Definitions & Australian Industry Calibration</h3>
+          <div class="spec-block" style="margin-bottom:0; flex: 1; display: flex; flex-direction: column;">
+            <h3><span>⚖️</span> Variable Definitions & Calibrated Values</h3>
             <table class="variable-table">
               <thead>
                 <tr>
-                  <th>Variable</th>
-                  <th>Mathematical Definition</th>
-                  <th>Calibration & Range</th>
+                  <th style="width: 130px;">Variable</th>
+                  <th>Mathematical Definition & Role</th>
+                  <th style="width: 190px;">Calibration & Value</th>
                 </tr>
               </thead>
               <tbody id="ddVarTableBody">
-                <!-- Injected via JS -->
+                <!-- Injected via JS with KaTeX badges and styled tags -->
               </tbody>
             </table>
-          </div>
-        </div>
-
-        <!-- Right Column: Interactive Real-Time Simulator -->
-        <div class="sim-panel">
-          <div class="sim-header">
-            <h3>Live Mathematical Simulator</h3>
-            <p>Adjust parameters to observe instant deterministic score calculation.</p>
-          </div>
-
-          <div id="simControlsContainer">
-            <!-- Dynamic sliders injected via JS -->
-          </div>
-
-          <div class="sim-worked-math" id="simWorkedMath">
-            <!-- Numerical worked example -->
-          </div>
-
-          <div class="sim-result-card">
-            <div class="sim-result-label" id="simResultLabel">Calculated Canonical Score</div>
-            <div class="sim-result-number" id="simResultVal">78.6%</div>
-            <div class="sim-result-status chip-green" id="simResultBadge">Benchmark Case • Minh Tran (Silver Koala)</div>
           </div>
         </div>
 
@@ -993,10 +1080,10 @@
         latex: '\\displaystyle SMF = \\frac{\\sum_{i \\in S_{\\text{match}}} w_i \\cdot \\min\\left(1.0, \\frac{L_{c,i}}{L_{j,i}}\\right)}{\\sum_{k \\in S_{\\text{job}}} w_k} \\times 100',
         specText: 'Computes the weighted skill coverage between talent capabilities and job demands. Mandatory requirements (must: true) are assigned w=2.0; preferred requirements (must: false) are assigned w=1.0. Partial credit is granted proportionally if a talent level is below the required level, but capped at 1.0 if exceeded.',
         vars: [
-          { symbol: 'S_job', desc: 'Set of all skills demanded by the employer requisition', calib: 'Total requisition skill count' },
-          { symbol: 'S_match', desc: 'Overlap subset: S_talent ∩ S_job', calib: 'Verified common capabilities' },
-          { symbol: 'w_i', desc: 'Skill weighting coefficient: mandatory vs preferred', calib: 'w=2.0 (mandatory), w=1.0 (preferred)' },
-          { symbol: 'L_c,i / L_j,i', desc: 'Ratio of talent skill level to job required skill level', calib: 'Proficiency scale [1, 5]' }
+          { math: 'S_{\\text{job}}', desc: 'Set of all capability requirements demanded by the employer requisition', calib: 'Total Requisition Skills' },
+          { math: 'S_{\\text{match}}', desc: 'Intersection subset of common verified capabilities: S_talent ∩ S_job', calib: 'Verified Overlap Set' },
+          { math: 'w_i', desc: 'Skill weighting factor: mandatory (must) vs preferred (nice-to-have)', calib: 'w = 2.0 (must), 1.0 (nice)' },
+          { math: '\\frac{L_{c,i}}{L_{j,i}}', desc: 'Proficiency depth ratio: verified talent level over role required level', calib: 'Levels ∈ [1, 5] (Cap: 1.0)' }
         ],
         controls: [
           { id: 'must_matches', label: 'Mandatory Skills Matched (out of 3 required, w=2.0)', min: 0, max: 3, val: 3, step: 1, unit: ' skills' },
@@ -1004,7 +1091,6 @@
           { id: 'nice_matches', label: 'Preferred Skills Matched (out of 1 required, w=1.0)', min: 0, max: 1, val: 0, step: 1, unit: ' skills' }
         ],
         compute: function(vals) {
-          // Total weight = 3*2.0 + 1*1.0 = 7.0
           const totalWeight = 7.0;
           const matchWeight = (vals.must_matches * 2.0 * (vals.must_depth / 100)) + (vals.nice_matches * 1.0);
           const smf = Math.min(100.0, Math.max(0.0, (matchWeight / totalWeight) * 100));
@@ -1025,10 +1111,10 @@
         latex: '\\displaystyle GSI = \\sum_{g \\in S_{\\text{gaps}}} \\beta_g \\cdot \\text{Severity}(g), \\quad JRS = \\max(0.0, SMF - GSI)',
         specText: 'Penalises talent profiles for missing requirements by categorising gaps into Statutory Blockers (mandatory skills/licenses, β=15.0) versus Learnable Tools (frameworks learnable on the job, β=5.0). Severity is scaled by required proficiency level: Severity(g) = L_j,g / 5.0.',
         vars: [
-          { symbol: 'S_gaps', desc: 'Missing capabilities: S_job \\ S_talent', calib: 'Requisition requirements unmet' },
-          { symbol: 'β_g (Blocker)', desc: 'Penalty multiplier for mandatory requirements', calib: 'Fixed constant β = 15.0' },
-          { symbol: 'β_g (Learnable)', desc: 'Penalty multiplier for secondary learnable tools', calib: 'Fixed constant β = 5.0' },
-          { symbol: 'JRS', desc: 'Net Job Readiness Score after gap subtraction', calib: 'JRS = max(0.0, SMF - GSI)' }
+          { math: 'S_{\\text{gaps}}', desc: 'Unmet role requirements: S_job \\ S_talent', calib: 'Missing Capability Set' },
+          { math: '\\beta_{\\text{blocker}}', desc: 'Statutory blocker penalty coefficient for mandatory skills / licences', calib: 'Fixed β = 15.0 pts' },
+          { math: '\\beta_{\\text{tool}}', desc: 'Learnable tool penalty coefficient for frameworks acquirable on the job', calib: 'Fixed β = 5.0 pts' },
+          { math: 'JRS', desc: 'Net Job Readiness Score: guaranteed non-negative via max(0, SMF - GSI)', calib: 'Range: [0.0, 100.0]' }
         ],
         controls: [
           { id: 'smf_in', label: 'Base Capability Match (SMF)', min: 40, max: 100, val: 78.6, step: 0.1, unit: '%' },
@@ -1054,10 +1140,10 @@
         latex: '\\displaystyle JPI(J_A, J_B) = 100 \\times \\left( \\alpha \\cdot \\frac{|S_A \\cap S_B|}{|S_A \\cup S_B|} + (1 - \\alpha) \\cdot \\delta(\\text{Domain}_A, \\text{Domain}_B) \\right)',
         specText: 'Measures career mobility and skill transferability between two job roles using Jaccard vector distance with domain affinity modifiers (α=0.70). If jobs share the same ICT domain, δ=1.0; if related (e.g. Software Engineering and Data), δ=0.5; otherwise δ=0.0.',
         vars: [
-          { symbol: '|S_A ∩ S_B| / |S_A ∪ S_B|', desc: 'Jaccard capability intersection over union', calib: 'Continuous set ratio in [0.0, 1.0]' },
-          { symbol: 'α', desc: 'Weight of raw skill overlap vs domain affinity', calib: 'Fixed constant α = 0.70' },
-          { symbol: 'δ(Domain_A, Domain_B)', desc: 'Domain taxonomic affinity modifier', calib: '1.0 (Same), 0.5 (Related), 0.0 (Distinct)' },
-          { symbol: 'JPI', desc: 'Cross-role proximity index', calib: 'Bounded in [0.0, 100.0]' }
+          { math: '\\frac{|S_A \\cap S_B|}{|S_A \\cup S_B|}', desc: 'Jaccard capability intersection over union across two ICT job requisitions', calib: 'Continuous Set Ratio [0, 1]' },
+          { math: '\\alpha', desc: 'Balance weighting parameter between skill overlap and domain affinity', calib: 'Fixed constant α = 0.70' },
+          { math: '\\delta_{\\text{domain}}', desc: 'Domain taxonomic affinity modifier (Software, Data, AI/ML)', calib: '1.0 (Same), 0.5 (Related)' },
+          { math: 'JPI', desc: 'Cross-role proximity index and career pathway transferability', calib: 'Range: [0.0, 100.0]' }
         ],
         controls: [
           { id: 'jaccard', label: 'Jaccard Skill Overlap Ratio (|S_A ∩ S_B| / |S_A ∪ S_B|)', min: 10, max: 90, val: 55, step: 1, unit: '%' },
@@ -1083,10 +1169,10 @@
         latex: '\\displaystyle Z_c = \\frac{SMF_c - \\mu_{\\text{pool}}}{\\sigma_{\\text{pool}} + \\epsilon}, \\quad RMS_c = \\frac{1}{1 + e^{-1.702 \\cdot Z_c}} \\times 100',
         specText: 'Standardises an applicant raw match score relative to the current applicant pool for that specific job requisition, utilizing a Gaussian Z-score transformation with logistic CDF approximation. Excludes all demographic attributes to guarantee zero bias.',
         vars: [
-          { symbol: 'SMF_c', desc: 'Raw skill match score of applicant c', calib: 'Calculated via Formula F-01' },
-          { symbol: 'μ_pool', desc: 'Mean SMF score across all active applicants for job', calib: 'Cohort statistical mean' },
-          { symbol: 'σ_pool', desc: 'Standard deviation of applicant scores', calib: 'Cohort statistical spread' },
-          { symbol: 'RMS_c', desc: 'Relative percentile merit score in pool', calib: 'Normalized in [0.0, 100.0]' }
+          { math: 'SMF_c', desc: 'Raw capability match score of applicant c from Formula F-01', calib: 'Raw Score ∈ [0.0, 100.0]' },
+          { math: '\\mu_{\\text{pool}}', desc: 'Arithmetic mean SMF score across all active applicants for the specific role', calib: 'Cohort Statistical Mean' },
+          { math: '\\sigma_{\\text{pool}}', desc: 'Standard deviation of applicant scores reflecting cohort capability spread', calib: 'Cohort Spread (σ > 0)' },
+          { math: 'RMS_c', desc: 'Standardised percentile merit score computed via logistic Gaussian CDF', calib: 'Range: [0.0, 100.0]' }
         ],
         controls: [
           { id: 'smf_cand', label: 'Talent Raw Match (SMF_c)', min: 50, max: 95, val: 78.6, step: 0.1, unit: '%' },
@@ -1112,10 +1198,10 @@
         latex: '\\displaystyle FRS = 0.45 \\cdot SMF + 0.25 \\cdot JRS + 0.20 \\cdot \\text{ExpFit} + 0.10 \\cdot \\text{WorkMode}',
         specText: 'Ranks job cards in the talent discovery feed, balancing core skill coverage (45%), net job readiness (25%), experience bracket alignment (20%), and Australian work mode preferences (10% onsite/hybrid/remote).',
         vars: [
-          { symbol: 'SMF', desc: 'Core skill match frequency and coverage (F-01)', calib: 'Weight w1 = 0.45' },
-          { symbol: 'JRS', desc: 'Net job readiness after gap severity (F-02)', calib: 'Weight w2 = 0.25' },
-          { symbol: 'ExpFit', desc: 'Experience bracket Gaussian match', calib: 'Weight w3 = 0.20' },
-          { symbol: 'WorkMode', desc: 'Location and remote work preference affinity', calib: 'Weight w4 = 0.10' }
+          { math: 'w_1 \\cdot SMF', desc: 'Core capability coverage contribution in discovery feed', calib: 'Weight w1 = 0.45 (45%)' },
+          { math: 'w_2 \\cdot JRS', desc: 'Net job readiness contribution penalising statutory blockers', calib: 'Weight w2 = 0.25 (25%)' },
+          { math: 'w_3 \\cdot \\text{ExpFit}', desc: 'Experience bracket Gaussian alignment (minYears to maxYears)', calib: 'Weight w3 = 0.20 (20%)' },
+          { math: 'w_4 \\cdot \\text{Mode}', desc: 'Australian work mode alignment (Onsite, Hybrid, Remote)', calib: 'Weight w4 = 0.10 (10%)' }
         ],
         controls: [
           { id: 'frs_smf', label: 'Core Skill Coverage (SMF)', min: 40, max: 100, val: 78.6, step: 0.1, unit: '%' },
@@ -1141,10 +1227,10 @@
         latex: '\\displaystyle TSS = 0.40 \\cdot SMF + 0.25 \\cdot \\text{Seniority} + 0.20 \\cdot \\text{Credentials} + 0.15 \\cdot \\text{Recency}',
         specText: 'Ranks anonymous talent profiles for employers without revealing raw PII: 40% capability match (SMF), 25% seniority level alignment (|Level_talent - Level_job|), 20% Australian ICT certifications/awards, and 15% activity recency (90-day exponential decay).',
         vars: [
-          { symbol: 'SMF', desc: 'Core skill match frequency and coverage', calib: 'Weight w = 0.40' },
-          { symbol: 'Seniority', desc: '1.0 - 0.2 × |Level_talent - Level_job|', calib: 'Weight w = 0.25' },
-          { symbol: 'Credentials', desc: 'Verified Australian ICT certifications & awards', calib: 'Weight w = 0.20' },
-          { symbol: 'Recency', desc: 'Profile activity score with 90-day decay', calib: 'Weight w = 0.15' }
+          { math: 'w_{\\text{SMF}}', desc: 'Anonymous capability match factor in employer search ranking', calib: 'Weight w = 0.40 (40%)' },
+          { math: '\\text{Seniority}', desc: 'Seniority alignment penalty: 1.0 - 0.2 × |Level_talent - Level_job|', calib: 'Weight w = 0.25 (25%)' },
+          { math: '\\text{Credentials}', desc: 'Verified Australian ICT certifications and recognized hackathon awards', calib: 'Weight w = 0.20 (20%)' },
+          { math: '\\text{Recency}', desc: 'Platform activity recency factor with exponential decay over 90 days', calib: 'Weight w = 0.15 (15%)' }
         ],
         controls: [
           { id: 'tss_smf', label: 'Talent Capability Match (SMF)', min: 40, max: 100, val: 78.6, step: 0.1, unit: '%' },
@@ -1165,6 +1251,17 @@
     };
 
     let activeFormulaId = 'f1';
+
+    // Helper: Update slider track gradient fill dynamically
+    function updateSliderTrackGradient(el) {
+      if (!el) return;
+      const min = parseFloat(el.min) || 0;
+      const max = parseFloat(el.max) || 100;
+      const val = parseFloat(el.value) || min;
+      const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
+      // Vibrant Jinder gradient (Indigo -> Purple -> Coral) on the left side of thumb
+      el.style.background = `linear-gradient(to right, #6868f7 0%, #a855f7 ${pct * 0.5}%, #ffa340 ${pct}%, #e9ecef ${pct}%, #e9ecef 100%)`;
+    }
 
     // =========================================================================
     // VIEW SWITCHING (GRID VIEW vs DEEP DIVE WORKBENCH)
@@ -1207,16 +1304,32 @@
 
       // Render KaTeX in large math stage
       const mathStage = document.getElementById('ddMathStage');
-      mathStage.innerHTML = '$$' + data.latex + '$$';
+      if (window.katex) {
+        katex.render(data.latex, mathStage, { displayMode: true, throwOnError: false });
+      } else {
+        mathStage.innerHTML = '$$' + data.latex + '$$';
+      }
 
-      // Render Variable Table
+      // Render Variable Table with crisp KaTeX badges
       const varTableBody = document.getElementById('ddVarTableBody');
       varTableBody.innerHTML = '';
       data.vars.forEach(v => {
         const tr = document.createElement('tr');
-        tr.innerHTML = '<td><strong style="color:var(--accent); font-family:var(--font-mono);">' + v.symbol + '</strong></td>' +
-                       '<td>' + v.desc + '</td>' +
-                       '<td style="color:var(--ink); font-weight:500;">' + v.calib + '</td>';
+        
+        let mathHtml = v.math;
+        if (window.katex) {
+          try {
+            mathHtml = katex.renderToString(v.math, { displayMode: false, throwOnError: false });
+          } catch(e) {
+            mathHtml = v.math;
+          }
+        }
+        
+        tr.innerHTML = `
+          <td><span class="var-symbol-badge">${mathHtml}</span></td>
+          <td style="color:var(--ink); font-weight:500;">${v.desc}</td>
+          <td><span class="val-badge val-badge-accent">${v.calib}</span></td>
+        `;
         varTableBody.appendChild(tr);
       });
 
@@ -1226,39 +1339,41 @@
       data.controls.forEach(c => {
         const group = document.createElement('div');
         group.className = 'control-group';
-        group.innerHTML = '<div class="control-label-row">' +
-                          '  <label for="ctrl_' + c.id + '">' + c.label + '</label>' +
-                          '  <span class="control-val-badge" id="valLabel_' + c.id + '">' + c.val + c.unit + '</span>' +
-                          '</div>' +
-                          '<input type="range" id="ctrl_' + c.id + '" min="' + c.min + '" max="' + c.max + '" value="' + c.val + '" step="' + (c.step || 1) + '" oninput="updateSimulation(\'' + fid + '\')">';
+        group.innerHTML = `
+          <div class="control-label-row">
+            <label for="ctrl_${c.id}">${c.label}</label>
+            <span class="control-val-badge" id="valLabel_${c.id}">${c.val}${c.unit}</span>
+          </div>
+          <input type="range" id="ctrl_${c.id}" min="${c.min}" max="${c.max}" value="${c.val}" step="${c.step || 1}" oninput="updateSimulation('${fid}', this)">
+        `;
         ctrlContainer.appendChild(group);
+
+        const inputEl = group.querySelector('input');
+        updateSliderTrackGradient(inputEl);
       });
 
       updateSimulation(fid);
-
-      if (window.renderMathInElement) {
-        renderMathInElement(document.body, {
-          delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false}
-          ],
-          throwOnError: false
-        });
-      }
     }
 
-    function updateSimulation(fid) {
+    function updateSimulation(fid, changedInput) {
       const data = FORMULAS_DATA[fid];
       if (!data) return;
 
+      if (changedInput) {
+        updateSliderTrackGradient(changedInput);
+      }
+
       const currentVals = {};
       data.controls.forEach(c => {
-        const el = document.getElementById('ctrl_' + c.id);
+        const el = document.getElementById(`ctrl_${c.id}`);
         if (el) {
           const num = parseFloat(el.value);
           currentVals[c.id] = num;
-          const lbl = document.getElementById('valLabel_' + c.id);
+          const lbl = document.getElementById(`valLabel_${c.id}`);
           if (lbl) lbl.textContent = num + c.unit;
+          if (!changedInput) {
+            updateSliderTrackGradient(el);
+          }
         }
       });
 
