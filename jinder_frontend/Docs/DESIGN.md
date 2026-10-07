@@ -1,6 +1,6 @@
 ---
 name: Jinder
-description: Design system for Jinder (Job + Tinder), a skills-based job-matching platform. Based on June (june.so) colors and components, with Clay typography (Plain Black / Inter). White canvas, navy ink, pastel tint chips, flat and professional.
+description: Design system for Jinder (Job + Tinder), a skills-based job-matching platform. Based on June (june.so) colors and components, with Clay typography (Plain Black / Inter). Warm sand page with white cards, navy ink, pastel tint chips, flat and professional.
 colors:
   primary: "#151531"
   ink: "#151531"
@@ -13,6 +13,9 @@ colors:
   on-primary: "#ffffff"
   canvas: "#ffffff"
   surface-soft: "#fafafa"
+  sand: "#fdfbf8"
+  sand-strong: "#f8f4ed"
+  sand-line: "#f2ece3"
   surface-subtle: "#f8f9fa"
   surface-muted: "#f6f8f9"
   surface-strong: "#edf0f2"
@@ -114,7 +117,7 @@ June (june.so) is the friendliest-looking product analytics tool in the B2B SaaS
 Color voltage comes in small, controlled doses: a **periwinkle accent** (`{colors.accent}` — #6868f7), a **warm orange** (`{colors.orange}` — #ffa340), and a family of **pastel tinted chips** — pink, blue, green, yellow, rose — each paired with its own deep ink color of the same hue. These tints label report categories, plans and features. They are never used as large full-bleed blocks; the canvas stays white and calm, and the tints act like colored sticky notes on it.
 
 **Key Characteristics:**
-- White canvas (`{colors.canvas}`) with very light cool-gray bands (`{colors.surface-soft}` — #fafafa) for alternating sections.
+- A warm sand page (`{colors.sand}` — #fdfbf8) with white cards and panels on top. It is easier on the eyes than pure white in long sessions, and it matches the orange in the logo. The landing page has one white band ("How it works") and one darker sand band (`{colors.sand-strong}`).
 - Navy ink (`{colors.ink}` — #151531) for headlines, nav and the primary button — never #000.
 - Plain Black (or Inter 500 substitute) is the display voice at weight 500 with -0.5 to -2.5px letter-spacing. Inter handles body, navigation, buttons and UI.
 - Pastel tint + same-hue deep ink pairs (`{colors.tint-blue}` / `{colors.tint-blue-ink}`, etc.) for category labels and plan headers.
@@ -145,7 +148,10 @@ Always used as a pair — tint as background, same-hue ink as text. Never put bo
 
 ### Surface
 - **Canvas** (`{colors.canvas}` — #ffffff): Default page floor.
-- **Surface Soft** (`{colors.surface-soft}` — #fafafa): Alternating section bands.
+- **Sand** (`{colors.sand}` — #fdfbf8): The page background of the whole app: landing, sign in / create account (form side), legal pages and every signed-in screen.
+- **Sand Strong** (`{colors.sand-strong}` — #f8f4ed): A darker sand band on the landing page (audience cards).
+- **Sand Line** (`{colors.sand-line}` — #f2ece3): Hairlines on sand (top nav, market block, footer).
+- **Surface Soft** (`{colors.surface-soft}` — #fafafa): Not a page background any more. Kept for small fills inside white cards (for example compare tables).
 - **Surface Subtle** (`{colors.surface-subtle}` — #f8f9fa): Table headers, FAQ rows, inputs on soft bands.
 - **Surface Muted** (`{colors.surface-muted}` — #f6f8f9) / **Surface Strong** (`{colors.surface-strong}` — #edf0f2): Pressed states, skeletons, inactive tracks.
 - **Surface Dark** (`{colors.surface-dark}` — #151531): Announcement and closing CTA bands.
@@ -337,7 +343,7 @@ In the build, add the class `on-dark` to the parent. The mark reads its colors f
 
 ### Top Navigation
 
-**`top-nav`** — White bar at 92% opacity with a light blur, 64px tall, sticky, 1px `{colors.hairline}` bottom border. Logo at left. Menu links in `{typography.nav-link}`: "How it works", "For talent", "For employers". Each link has 8px × 12px padding and `{rounded.sm}`. The active link (`aria-current="page"`) has a `{colors.surface-muted}` background. At right: a "Sign in" text link and a `{component.button-primary}` "Get started".
+**`top-nav`** — Sand bar (`{colors.sand}`) at 92% opacity with a light blur, 64px tall, sticky, 1px `{colors.sand-line}` bottom border. Logo at left. Menu links in `{typography.nav-link}`: "How it works", "For talent", "For employers". Each link has 8px × 12px padding and `{rounded.sm}`. The active link (`aria-current="page"`) has a `{colors.surface-muted}` background. At right: a "Sign in" text link and a `{component.button-primary}` "Get started".
 
 ### Buttons
 
@@ -391,7 +397,7 @@ In the build, add the class `on-dark` to the parent. The mark reads its colors f
 
 **`cta-band-dark`** — `{colors.surface-dark}` background, `{rounded.xxl}`, padding 64px. h2 in `{typography.display-md}` white, sub-line in `{typography.lead}` at 80% white, `{component.button-on-dark}`.
 
-**`footer`** — White or `{colors.surface-soft}` with a top hairline; 4–5 link columns in 14px `{colors.muted}`, column heads `{typography.title-sm}` `{colors.ink}`.
+**`footer`** — `{colors.sand}` with a `{colors.sand-line}` top line; 4–5 link columns in 14px `{colors.muted}`, column heads `{typography.title-sm}` `{colors.ink}`.
 
 ## Jinder Components
 
@@ -514,7 +520,7 @@ The app is one page (`index.html`). Each screen is a view. The address bar shows
 |---|---|
 | Landing, Terms, Privacy, Page not found | `top-nav` + content + footer, on `{colors.canvas}` |
 | Sign in, Create account | `auth-split` |
-| All signed-in screens | `app-shell` with the screen in the main area, on `{colors.surface-soft}` |
+| All signed-in screens | `app-shell` with the screen in the main area, on `{colors.sand}` (the left pane and the cards stay white) |
 
 **`skip-link`** — The first item on the page: "Skip to content". It is above the page and not visible until it gets keyboard focus. Then it shows at the top left as a navy pill with white 14px / 600 text.
 
@@ -546,7 +552,7 @@ The app is one page (`index.html`). Each screen is a view. The address bar shows
 **`avatar`** — 32px circle, `{colors.accent-tint}` background, initials in `{colors.accent}` 13px / 600.
 
 ### Home (signed-in)
-The Home screen uses `{colors.surface-soft}` as its background, so white cards stand out.
+All signed-in screens use `{colors.sand}` as the background, so white cards stand out.
 
 **`dash-head`** — Greeting in `{typography.display-md}`, a sub-line in `{colors.muted}`, and the primary action button at right.
 
@@ -915,7 +921,7 @@ There is **no total score and no ranking of people** anywhere on the page. Every
 ## Do's and Don'ts
 
 ### Do
-- Keep the canvas white and calm; add color through tint chips, accents and product screenshots.
+- Keep the page calm: warm sand behind white cards; add color through tint chips, accents and product screenshots.
 - Use navy `{colors.ink}` for all headings and the primary button.
 - Set display headlines in Plain Black (or Inter 500 substitute) with negative letter-spacing.
 - Always pair a pastel tint with its own deep ink color.

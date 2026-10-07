@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- Source of 02_frontend_architecture.png. Built from jinder_frontend/app (index.html, js/main.js, js/core, js/views,
+     js/components, js/api) and jinder_platform/jinder/http_server.py.
+     Make the PNG again with headless Chrome (window 1600x1640, device scale 2). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jinder platform: frontend architecture</title>
+<style>
+  html, body { margin: 0; background: #fdfbf8; }
+  svg { display: block; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  .title { font-size: 34px; font-weight: 600; fill: #151531; letter-spacing: -0.5px; }
+  .sub { font-size: 16px; fill: #6b7280; }
+  .h { font-size: 17px; font-weight: 700; fill: #151531; }
+  .t { font-size: 13.5px; fill: #343a40; }
+  .m { font-size: 12.5px; fill: #6b7280; }
+  .b { font-weight: 600; fill: #151531; }
+  .lbl { font-size: 14px; font-weight: 700; fill: #2a2a63; }
+  .tag { font-size: 11.5px; font-weight: 700; letter-spacing: 1.2px; fill: #6868f7; }
+  .code { font-family: "JetBrains Mono", Consolas, monospace; font-size: 12.5px; }
+</style>
+</head>
+<body>
+<svg width="1600" height="1640" viewBox="0 0 1600 1640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6868f7"/>
+    </marker>
+    <filter id="s" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0d131b" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="60" y="66" class="title">Jinder platform — frontend architecture</text>
+  <text x="60" y="96" class="sub">jinder_frontend/app · plain HTML, CSS and JavaScript ES modules · no framework, no build step · one HTML page with hash routes</text>
+
+  <!-- ============ ROW A: page → entry → router · styles ============ -->
+  <rect x="60" y="130" width="340" height="212" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="82" y="160" class="tag">PAGE</text>
+  <text x="82" y="186" class="h">index.html</text>
+  <text x="82" y="212" class="t">The only HTML file</text>
+  <text x="82" y="234" class="t">#app root · #announcer live region</text>
+  <text x="82" y="256" class="t">Talent onboarding &lt;dialog&gt;</text>
+  <text x="82" y="278" class="t">5 CSS links · 1 module script</text>
+  <text x="82" y="308" class="m">&lt;script type="module" src="js/main.js"&gt;</text>
+
+  <rect x="440" y="130" width="320" height="212" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="462" y="160" class="tag">ENTRY</text>
+  <text x="462" y="186" class="h">js/main.js</text>
+  <text x="462" y="212" class="t">Registers 25 routes (addRoute)</text>
+  <text x="462" y="234" class="t">setForbidden · setNotFound</text>
+  <text x="462" y="256" class="t">Closes the dialog on hashchange</text>
+  <text x="462" y="278" class="t">Calls startRouter()</text>
+  <text x="462" y="308" class="m">route meta: auth, role, guestOnly, shell, nav</text>
+
+  <rect x="800" y="130" width="380" height="212" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="822" y="160" class="tag">HASH ROUTER · GUARDS</text>
+  <text x="822" y="186" class="h">js/core/router.js</text>
+  <text x="822" y="212" class="t">Reads location.hash, for example #/jobs/123</text>
+  <text x="822" y="234" class="t"><tspan class="b">guestOnly</tspan> and signed in → /home</text>
+  <text x="822" y="256" class="t"><tspan class="b">auth</tspan> and no token → /login?next=…</text>
+  <text x="822" y="278" class="t"><tspan class="b">role</tspan> is wrong → "No access" view</text>
+  <text x="822" y="300" class="t">Renders shell.js + view, focuses the &lt;h1&gt;</text>
+  <text x="822" y="320" class="m">jinder:unauthorized → /login?expired=1</text>
+
+  <rect x="1220" y="130" width="320" height="212" rx="18" fill="#f0f0fe"/>
+  <text x="1242" y="160" class="tag">STYLES · LINKED BY INDEX.HTML</text>
+  <text x="1242" y="186" class="h">5 CSS files + 1 sprite</text>
+  <text x="1242" y="212" class="t"><tspan class="b">styles.css</tspan> — tokens in :root</text>
+  <text x="1242" y="234" class="t"><tspan class="b">styles-core.css</tspan> — shared parts</text>
+  <text x="1242" y="256" class="t"><tspan class="b">styles-talent.css</tspan> · <tspan class="b">-employer.css</tspan></text>
+  <text x="1242" y="278" class="t"><tspan class="b">styles-compare.css</tspan> — cmp- classes</text>
+  <text x="1242" y="300" class="t"><tspan class="b">icons.svg</tspan> — 41 symbols</text>
+  <text x="1242" y="320" class="m">Inter from Google Fonts</text>
+
+  <line x1="400" y1="230" x2="436" y2="230" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="760" y1="230" x2="796" y2="230" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <!-- router → views -->
+  <line x1="990" y1="342" x2="990" y2="376" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1002" y="364" class="m">view(root, ctx)</text>
+
+  <!-- ============ ROW B: views ============ -->
+  <rect x="60" y="380" width="1480" height="326" rx="22" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="84" y="410" class="tag">VIEWS · JS/VIEWS/*.JS</text>
+  <text x="84" y="432" class="m">One async function for each screen. Views call api.* only. They never call fetch().</text>
+
+  <!-- Public -->
+  <rect x="84" y="446" width="343" height="222" rx="14" fill="#f0f0fe"/>
+  <text x="102" y="472" class="lbl">Public</text>
+  <text x="420" y="472" class="m" text-anchor="end">no sign-in</text>
+  <text x="102" y="498" class="t"><tspan class="b">landing.js</tspan>  /</text>
+  <text x="102" y="520" class="t"><tspan class="b">auth.js</tspan>  /login · /signup</text>
+  <text x="102" y="542" class="m">guests only</text>
+  <text x="102" y="564" class="t"><tspan class="b">legal.js</tspan>  /terms · /privacy</text>
+  <text x="102" y="586" class="t"><tspan class="b">system.js</tspan>  No access · Page not found</text>
+
+  <!-- Talent -->
+  <rect x="447" y="446" width="343" height="222" rx="14" fill="#f9e2fb"/>
+  <text x="465" y="472" class="lbl" style="fill:#560059">Talent</text>
+  <text x="772" y="472" class="m" text-anchor="end" style="fill:#560059">role "candidate"</text>
+  <text x="465" y="498" class="t"><tspan class="b">jobs.js</tspan></text>
+  <text x="465" y="520" class="t">/jobs · /jobs/:id · /bookmarks</text>
+  <text x="465" y="542" class="t"><tspan class="b">applications.js</tspan></text>
+  <text x="465" y="564" class="t">/jobs/:id/apply</text>
+  <text x="465" y="586" class="t">/applications · /applications/:id</text>
+
+  <!-- Employer -->
+  <rect x="810" y="446" width="343" height="222" rx="14" fill="#c9f0ff"/>
+  <text x="828" y="472" class="lbl" style="fill:#003d5a">Employer</text>
+  <text x="1135" y="472" class="m" text-anchor="end" style="fill:#003d5a">role "recruiter"</text>
+  <text x="828" y="498" class="t"><tspan class="b">recruiter.js</tspan></text>
+  <text x="828" y="520" class="t">/candidates · /candidates/:id</text>
+  <text x="828" y="542" class="t">/my-jobs · /my-jobs/new</text>
+  <text x="828" y="564" class="t">/my-jobs/:id · /my-jobs/:id/edit</text>
+  <text x="828" y="586" class="t">/my-jobs/:id/overview</text>
+  <text x="828" y="608" class="t">/review/:id</text>
+  <text x="828" y="640" class="m">overview: loaded with a dynamic import()</text>
+
+  <!-- Both roles -->
+  <rect x="1173" y="446" width="343" height="222" rx="14" fill="#daf9d4"/>
+  <text x="1191" y="472" class="lbl" style="fill:#005900">Talent and Employer</text>
+  <text x="1498" y="472" class="m" text-anchor="end" style="fill:#005900">signed in</text>
+  <text x="1191" y="498" class="t"><tspan class="b">home.js</tspan>  /home</text>
+  <text x="1191" y="520" class="m">Employer gets recruiterHomeView</text>
+  <text x="1191" y="542" class="t"><tspan class="b">compare.js</tspan>  /compare</text>
+  <text x="1191" y="564" class="m">Talent: 2–5 jobs · Employer: talent (Premium)</text>
+  <text x="1191" y="586" class="t"><tspan class="b">notifications.js</tspan>  /notifications</text>
+  <text x="1191" y="608" class="t"><tspan class="b">settings.js</tspan>  /settings</text>
+
+  <text x="84" y="692" class="m">/jobs/compare and /candidates/compare redirect to /compare · any other hash → Page not found · a hash without "/" (#how) is an anchor on the landing page</text>
+
+  <!-- views → components, views → api -->
+  <line x1="480" y1="706" x2="480" y2="746" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="492" y="731" class="m">builds the screen with</text>
+  <line x1="1250" y1="706" x2="1250" y2="746" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1262" y="731" class="m">api.* calls (async)</text>
+
+  <!-- ============ ROW C: components · api ============ -->
+  <rect x="60" y="750" width="840" height="270" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="84" y="780" class="tag">COMPONENTS · JS/COMPONENTS/*.JS</text>
+  <text x="84" y="808" class="t"><tspan class="b">shell.js</tspan> — left navigation, user block, badge</text>
+  <text x="84" y="830" class="t"><tspan class="b">job-card.js</tspan> — job card, bookmark, skip, paged list</text>
+  <text x="84" y="852" class="t"><tspan class="b">profile-card.js</tspan> — anonymous shared profile</text>
+  <text x="84" y="874" class="t"><tspan class="b">onboarding.js</tspan> — Talent onboarding dialog</text>
+  <text x="84" y="896" class="t"><tspan class="b">radar.js</tspan> · <tspan class="b">bridge.js</tspan> — SVG radar, fit, path</text>
+  <text x="490" y="808" class="t"><tspan class="b">charts.js</tspan> — CSS bars · <tspan class="b">premium.js</tspan> — locks</text>
+  <text x="490" y="830" class="t"><tspan class="b">status.js</tspan> — status ribbon, stepper, history</text>
+  <text x="490" y="852" class="t"><tspan class="b">modal.js</tspan> · <tspan class="b">combobox.js</tspan> · <tspan class="b">search-bar.js</tspan></text>
+  <text x="490" y="874" class="t"><tspan class="b">pagination.js</tspan> · <tspan class="b">sort-select.js</tspan> · <tspan class="b">jd-view.js</tspan></text>
+  <text x="490" y="896" class="t"><tspan class="b">compare-tray.js</tspan> — compare basket bar</text>
+  <line x1="84" y1="920" x2="876" y2="920" stroke="#e9ecef" stroke-width="1"/>
+  <text x="84" y="946" class="tag">SHARED HELPERS</text>
+  <text x="84" y="972" class="t"><tspan class="b">core/dom.js</tspan> — h(), esc(), icon(), announce()</text>
+  <text x="490" y="972" class="t"><tspan class="b">core/forms.js</tspan> — field errors, safeNext()</text>
+  <text x="84" y="996" class="t"><tspan class="b">data/reference.js</tspan> · <tspan class="b">data/levels.js</tspan> — pick-lists</text>
+  <text x="490" y="996" class="t"><tspan class="b">config.js</tspan> — API_MODE, API_BASE_URL</text>
+
+  <rect x="960" y="750" width="580" height="270" rx="18" fill="#fff" stroke="#151531" stroke-width="1.5" filter="url(#s)"/>
+  <text x="984" y="780" class="tag" style="fill:#151531">API LAYER · THE ONLY WAY TO THE DATA</text>
+  <text x="984" y="806" class="h">js/api/index.js</text>
+  <text x="984" y="832" class="t">One function for each endpoint: api.auth, api.me, api.jobs, api.recruiter, …</text>
+  <text x="984" y="854" class="t">Sends <tspan class="b">Authorization: Bearer &lt;token&gt;</tspan> from session.token()</text>
+  <text x="984" y="876" class="t">401 (not /auth/*) → clear the session, fire jinder:unauthorized</text>
+  <text x="984" y="898" class="t">Lists take { page, pageSize, sort } and return a page object</text>
+  <text x="984" y="920" class="t">Errors become ApiError(status, code, message, fields)</text>
+  <text x="984" y="952" class="t">Picks the adapter from config.js:</text>
+  <text x="984" y="974" class="t"><tspan class="b">API_MODE "http"</tspan> (default) or <tspan class="b">"mock"</tspan> when the address has ?mock=1</text>
+  <text x="984" y="1002" class="m">Rules (roles, privacy, Premium, scores) are decided by the backend</text>
+
+  <!-- api → adapters -->
+  <line x1="1100" y1="1020" x2="1100" y2="1066" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="1400" y1="1020" x2="1400" y2="1066" stroke="#6868f7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)"/>
+  <!-- api → storage (token) -->
+  <line x1="958" y1="1000" x2="906" y2="1088" stroke="#6868f7" stroke-width="2" marker-end="url(#a)"/>
+  <text x="922" y="1052" class="m" text-anchor="end">token</text>
+
+  <!-- ============ ROW D/E: adapters, backend, storage ============ -->
+  <rect x="960" y="1070" width="280" height="160" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="982" y="1100" class="tag">HTTP ADAPTER (DEFAULT)</text>
+  <text x="982" y="1126" class="h">js/api/http.js</text>
+  <text x="982" y="1152" class="t">fetch(API_BASE_URL + path)</text>
+  <text x="982" y="1174" class="t">API_BASE_URL = "/api"</text>
+  <text x="982" y="1196" class="t">JSON, or FormData for files</text>
+  <text x="982" y="1218" class="m">no network → NETWORK_ERROR</text>
+
+  <rect x="1260" y="1070" width="280" height="160" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="1282" y="1100" class="tag">MOCK ADAPTER · ?MOCK=1</text>
+  <text x="1282" y="1126" class="h">js/api/mock/adapter.js</text>
+  <text x="1282" y="1152" class="t">Same contract, in the browser</text>
+  <text x="1282" y="1174" class="t">Data in localStorage</text>
+  <text x="1282" y="1196" class="t">No Compare: 501 error</text>
+  <text x="1282" y="1218" class="m">Not secure · 150 ms delay</text>
+
+  <line x1="1100" y1="1230" x2="1100" y2="1276" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1112" y="1258" class="m">JSON /api/*</text>
+
+  <rect x="960" y="1280" width="280" height="140" rx="18" fill="#c9f0ff"/>
+  <text x="982" y="1310" class="tag" style="fill:#003d5a">BACKEND · PORT 8095</text>
+  <text x="982" y="1336" class="h" style="fill:#003d5a">jinder_platform</text>
+  <text x="982" y="1360" class="t">http_server.py, one address:</text>
+  <text x="982" y="1382" class="t">/api/* → JSON routes</text>
+  <text x="982" y="1402" class="t">other paths → files of app/</text>
+
+  <rect x="1260" y="1280" width="280" height="140" rx="18" fill="#f0f0fe"/>
+  <text x="1282" y="1310" class="tag">LOCAL STATIC SERVER</text>
+  <text x="1282" y="1336" class="h">serve.ps1 · port 5173</text>
+  <text x="1282" y="1360" class="t">PowerShell, no Node or Python</text>
+  <text x="1282" y="1382" class="t">Same CSP and headers</text>
+  <text x="1282" y="1402" class="t">No backend: use ?mock=1</text>
+
+  <!-- Storage -->
+  <rect x="60" y="1070" width="840" height="350" rx="18" fill="#fff5c7"/>
+  <text x="84" y="1100" class="tag" style="fill:#a68716">BROWSER STORAGE</text>
+  <text x="84" y="1126" class="h" style="fill:#151531">Only the session, the compare basket and UI preferences</text>
+
+  <rect x="84" y="1144" width="390" height="140" rx="12" fill="#fff"/>
+  <text x="102" y="1170" class="lbl">core/session.js</text>
+  <text x="102" y="1192" class="code" style="fill:#a68716">jinder.session</text>
+  <text x="102" y="1216" class="t">sessionStorage (one tab), or</text>
+  <text x="102" y="1236" class="t">localStorage with "Keep me signed in"</text>
+  <text x="102" y="1258" class="t">{ token, expiresAt }. Expired → cleared</text>
+  <text x="102" y="1276" class="m">The user from GET /me stays in memory only</text>
+
+  <rect x="486" y="1144" width="390" height="140" rx="12" fill="#fff"/>
+  <text x="504" y="1170" class="lbl">core/compare-store.js</text>
+  <text x="504" y="1192" class="code" style="fill:#a68716">jinder.compare.{userId}.{kind}</text>
+  <text x="504" y="1216" class="t">kind "job" (Talent) or "talent" (Employer)</text>
+  <text x="504" y="1236" class="t">Up to 5 items, ids and short text only</text>
+  <text x="504" y="1258" class="t">Each change fires jinder:compare-change</text>
+  <text x="504" y="1276" class="m">The storage event syncs other tabs</text>
+
+  <rect x="84" y="1298" width="390" height="92" rx="12" fill="#fff"/>
+  <text x="102" y="1324" class="lbl">UI preferences (shell, pager)</text>
+  <text x="102" y="1348" class="code" style="fill:#a68716">jinder.ui.nav · jinder.pagesize.*</text>
+  <text x="102" y="1372" class="m">Navigation open or hidden · page size of each list</text>
+
+  <rect x="486" y="1298" width="390" height="92" rx="12" fill="#fff"/>
+  <text x="504" y="1324" class="lbl">Mock mode only (?mock=1)</text>
+  <text x="504" y="1348" class="code" style="fill:#a68716">jinder.mock.db.v2</text>
+  <text x="504" y="1372" class="m">The whole mock database, read and saved per request</text>
+
+  <!-- ============ ROW F: security ============ -->
+  <rect x="60" y="1458" width="1480" height="160" rx="18" fill="#f0f0fe"/>
+  <text x="84" y="1488" class="tag">SECURITY RULES IN THE CODE</text>
+  <text x="84" y="1516" class="t"><tspan class="b">CSP</tspan> (http_server.py and serve.ps1): default-src 'self' · script-src 'self' · connect-src 'self'</text>
+  <text x="84" y="1538" class="t">style-src 'self' + fonts.googleapis.com · font-src fonts.gstatic.com · object-src 'none' · frame-ancestors 'none'</text>
+  <text x="84" y="1560" class="t">No &lt;script&gt; blocks, no style="…" and no onclick= in index.html or in HTML strings. JS sets sizes with CSSOM.</text>
+  <text x="84" y="1582" class="t">User text goes into the page with textContent, or esc() before innerHTML. No eval().</text>
+  <text x="820" y="1516" class="t"><tspan class="b">Headers:</tspan> X-Content-Type-Options nosniff · X-Frame-Options DENY</text>
+  <text x="820" y="1538" class="t">Referrer-Policy strict-origin-when-cross-origin · Permissions-Policy</text>
+  <text x="820" y="1560" class="t"><tspan class="b">Static files:</tspan> only listed file types · path traversal is blocked</text>
+  <text x="820" y="1582" class="t"><tspan class="b">CORS:</tspan> only origins in JINDER_CORS_ORIGINS (default: none)</text>
+  <text x="84" y="1606" class="m">The token travels only in the Authorization header. The frontend validates forms for a better experience. The API makes the final check.</text>
+</svg>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- Source of 01_system_architecture_overview.png. Open in a browser, or make the PNG again with headless Chrome (window 1600x1340). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jinder platform: system architecture overview</title>
+<style>
+  html, body { margin: 0; background: #fdfbf8; }
+  svg { display: block; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  .title { font-size: 34px; font-weight: 600; fill: #151531; letter-spacing: -0.5px; }
+  .sub { font-size: 16px; fill: #6b7280; }
+  .h { font-size: 17px; font-weight: 700; fill: #151531; }
+  .t { font-size: 13.5px; fill: #343a40; }
+  .m { font-size: 12.5px; fill: #6b7280; }
+  .b { font-weight: 600; fill: #151531; }
+  .lbl { font-size: 13px; font-weight: 600; fill: #2a2a63; }
+  .tag { font-size: 11.5px; font-weight: 700; letter-spacing: 1.2px; }
+</style>
+</head>
+<body>
+<svg width="1600" height="1340" viewBox="0 0 1600 1340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6868f7"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a68716"/>
+    </marker>
+    <filter id="s" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0d131b" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="60" y="70" class="title">Jinder platform — end-to-end system architecture</text>
+  <text x="60" y="100" class="sub">One Python process on port 8095 serves the web client and the REST API (prefix /api) · standard library only · SQLite in WAL mode</text>
+
+  <!-- ============ ROW 1: users, web client, mock mode ============ -->
+  <rect x="60" y="150" width="190" height="70" rx="14" fill="#f9e2fb"/>
+  <text x="80" y="180" class="h" style="fill:#560059">Talent</text>
+  <text x="80" y="202" class="m" style="fill:#560059">finds jobs, applies (alias only)</text>
+  <rect x="60" y="250" width="190" height="70" rx="14" fill="#c9f0ff"/>
+  <text x="80" y="280" class="h" style="fill:#003d5a">Employer</text>
+  <text x="80" y="302" class="m" style="fill:#003d5a">posts jobs, finds talent</text>
+
+  <!-- Web client -->
+  <rect x="330" y="140" width="700" height="190" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="352" y="170" class="tag" style="fill:#6868f7">WEB CLIENT · BROWSER · NO BUILD STEP</text>
+  <text x="352" y="196" class="h">jinder_frontend/app</text>
+  <text x="352" y="222" class="t"><tspan class="b">index.html</tspan> + <tspan class="b">js/main.js</tspan> · hash router (#/jobs/:id)</text>
+  <text x="352" y="244" class="t"><tspan class="b">js/views/</tspan> + <tspan class="b">js/components/</tspan> render the pages</text>
+  <text x="352" y="266" class="t"><tspan class="b">core/session.js</tspan> · token in sessionStorage or localStorage</text>
+  <text x="352" y="288" class="t"><tspan class="b">core/compare-store.js</tspan> · compare basket, up to 5 items</text>
+  <text x="352" y="310" class="t"><tspan class="b">api/index.js</tspan> → <tspan class="b">api/http.js</tspan> · fetch("/api" + path)</text>
+  <rect x="790" y="186" width="218" height="122" rx="12" fill="#f0f0fe"/>
+  <text x="806" y="212" class="lbl">admin.html</text>
+  <text x="806" y="236" class="t">Separate admin page</text>
+  <text x="806" y="258" class="t">tables, traffic, data flow,</text>
+  <text x="806" y="280" class="t">read-only SQL console</text>
+  <text x="806" y="298" class="m">calls /api/admin/*</text>
+
+  <!-- Mock mode -->
+  <rect x="1110" y="140" width="430" height="190" rx="18" fill="#fff5c7"/>
+  <text x="1132" y="170" class="tag" style="fill:#a68716">MOCK MODE · ADDRESS ENDS WITH ?mock=1</text>
+  <text x="1132" y="196" class="h">js/api/mock/</text>
+  <text x="1132" y="222" class="t">config.js sets API_MODE = "mock"</text>
+  <text x="1132" y="244" class="t">The same functions in api/index.js</text>
+  <text x="1132" y="266" class="t">Data is kept in browser localStorage</text>
+  <text x="1132" y="288" class="t">No backend is used</text>
+  <text x="1132" y="310" class="m">Static server: serve.ps1 (port 5173)</text>
+
+  <!-- arrows row 1 -->
+  <line x1="250" y1="185" x2="326" y2="215" stroke="#6868f7" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="250" y1="285" x2="326" y2="255" stroke="#6868f7" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1030" y1="246" x2="1106" y2="246" stroke="#a68716" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="1040" y="236" class="m">?mock=1</text>
+
+  <!-- client <-> API -->
+  <line x1="640" y1="330" x2="640" y2="396" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="720" y1="396" x2="720" y2="330" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="630" y="368" class="m" text-anchor="end">HTTP · JSON /api/* · Authorization: Bearer token</text>
+  <text x="730" y="368" class="m">JSON response · static files (index.html, js, css)</text>
+
+  <!-- ============ ROW 2: REST API ============ -->
+  <rect x="60" y="400" width="1480" height="460" rx="22" fill="#fff" stroke="#151531" stroke-width="1.5" filter="url(#s)"/>
+  <text x="84" y="432" class="tag" style="fill:#151531">REST API · PORT 8095 · PREFIX /api · START: python start.py</text>
+  <text x="84" y="458" class="h">jinder_platform/jinder</text>
+
+  <!-- layer 1 -->
+  <rect x="84" y="476" width="331" height="218" rx="14" fill="#f0f0fe"/>
+  <text x="100" y="502" class="lbl">1 · HTTP server</text>
+  <text x="100" y="522" class="m">http_server.py</text>
+  <text x="100" y="548" class="t">ThreadingHTTPServer</text>
+  <text x="100" y="569" class="t">one thread for each request</text>
+  <text x="100" y="590" class="t">/api/* → router · other paths → files</text>
+  <text x="100" y="611" class="t">of jinder_frontend/app (with CSP)</text>
+  <text x="100" y="632" class="t">JSON up to 1 MB · upload up to 25 MB</text>
+  <text x="100" y="653" class="t">one SQLite connection per request</text>
+  <text x="100" y="678" class="m">security headers on every response</text>
+
+  <!-- layer 2 -->
+  <rect x="451" y="476" width="331" height="218" rx="14" fill="#f8f9fa"/>
+  <text x="467" y="502" class="lbl">2 · Guards</text>
+  <text x="467" y="522" class="m">guards.py · security.py</text>
+  <text x="467" y="548" class="t">Bearer token → SHA-256 → sessions</text>
+  <text x="467" y="569" class="t">require_user → 401 without a session</text>
+  <text x="467" y="590" class="t">require_role → 403 for a wrong role</text>
+  <text x="467" y="611" class="t">passwords: scrypt + random salt</text>
+  <text x="467" y="632" class="t">sign-in limit: 5 failures in 15 min</text>
+  <text x="467" y="653" class="t">session 8 h · "keep me signed in" 30 d</text>
+  <text x="467" y="678" class="m">checks run on the server only</text>
+
+  <!-- layer 3 -->
+  <rect x="818" y="476" width="331" height="218" rx="14" fill="#f8f9fa"/>
+  <text x="834" y="502" class="lbl">3 · Routes</text>
+  <text x="834" y="522" class="m">routes/ · 65 routes in 6 files</text>
+  <text x="834" y="548" class="t">account.py 14 · jobs.py 10</text>
+  <text x="834" y="569" class="t">applications.py 8 · recruiter.py 20</text>
+  <text x="834" y="590" class="t">platform.py 6 · admin.py 7</text>
+  <text x="834" y="611" class="t">write: BEGIN IMMEDIATE … COMMIT</text>
+  <text x="834" y="632" class="t">then the after-commit tasks</text>
+  <text x="834" y="653" class="t">error → {"error": {"code", "message"}}</text>
+  <text x="834" y="678" class="m">GET /api/health checks DB + formulas</text>
+
+  <!-- layer 4 -->
+  <rect x="1185" y="476" width="331" height="218" rx="14" fill="#f8f9fa"/>
+  <text x="1201" y="502" class="lbl">4 · Data access and scoring</text>
+  <text x="1201" y="522" class="m">store.py · catalogue.py · engine_bridge.py · db.py</text>
+  <text x="1201" y="548" class="t"><tspan class="b">store.py</tspan> · accounts, profiles,</text>
+  <text x="1201" y="569" class="t">shared profile (an allowlist)</text>
+  <text x="1201" y="590" class="t"><tspan class="b">catalogue.py</tspan> · job lists and scores</text>
+  <text x="1201" y="611" class="t"><tspan class="b">engine_bridge.py</tspan> · calls F-01 … F-06</text>
+  <text x="1201" y="632" class="t"><tspan class="b">db.py</tspan> · schema.sql, WAL, foreign keys</text>
+  <text x="1201" y="653" class="t">scores are computed, never stored</text>
+  <text x="1201" y="678" class="m">no name or email goes to the formulas</text>
+
+  <!-- arrows between layers -->
+  <line x1="415" y1="585" x2="447" y2="585" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="782" y1="585" x2="814" y2="585" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="1149" y1="585" x2="1181" y2="585" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <!-- background workers -->
+  <rect x="84" y="714" width="460" height="124" rx="14" fill="#fff5c7"/>
+  <text x="100" y="740" class="tag" style="fill:#a68716">BACKGROUND · FILE READER POOL</text>
+  <text x="100" y="764" class="t"><tspan class="b">parsing.py</tspan> · ThreadPoolExecutor, 2 workers</text>
+  <text x="100" y="786" class="t">starts after commit · upload returns "parsing"</text>
+  <text x="100" y="808" class="t">textextract.py → cv_parser.py / jd_parser.py</text>
+  <text x="100" y="828" class="m">result in table parses · the browser polls for it</text>
+
+  <rect x="568" y="714" width="460" height="124" rx="14" fill="#daf9d4"/>
+  <text x="584" y="740" class="tag" style="fill:#005900">BACKGROUND · EMAIL OUTBOX</text>
+  <text x="584" y="764" class="t"><tspan class="b">mailer.py</tspan> · one thread, checks every 20 s</text>
+  <text x="584" y="786" class="t">email_outbox rows → SMTP (optional)</text>
+  <text x="584" y="808" class="t">no SMTP settings → status "recorded"</text>
+  <text x="584" y="828" class="m">a failed email is tried again, up to 5 times</text>
+
+  <rect x="1052" y="714" width="464" height="124" rx="14" fill="#f9e2fb"/>
+  <text x="1068" y="740" class="tag" style="fill:#560059">SKILL TRANSLATION · TAXONOMY</text>
+  <text x="1068" y="764" class="t"><tspan class="b">translation.py</tspan> · skills from the profile and CV</text>
+  <text x="1068" y="786" class="t">each with a reason and a level from 1 to 5</text>
+  <text x="1068" y="808" class="t"><tspan class="b">taxonomy.py</tspan> · reads the taxonomy file once</text>
+  <text x="1068" y="828" class="m">rule-based: no AI service, no CV text leaves the server</text>
+
+  <!-- ============ arrows API -> row 3 ============ -->
+  <line x1="275" y1="860" x2="275" y2="936" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="287" y="904" class="m">SQL read / write</text>
+  <line x1="655" y1="860" x2="655" y2="936" stroke="#a68716" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="667" y="904" class="m">store_upload()</text>
+  <line x1="1030" y1="860" x2="1030" y2="936" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1042" y="904" class="m">engine_bridge loads the files by path</text>
+  <line x1="1405" y1="860" x2="1405" y2="936" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1417" y="904" class="m">taxonomy.get()</text>
+
+  <!-- ============ ROW 3: storage, formulas, reference data ============ -->
+  <rect x="60" y="940" width="430" height="270" rx="18" fill="#fff" stroke="#151531" stroke-width="1.5" filter="url(#s)"/>
+  <text x="82" y="970" class="tag" style="fill:#151531">DATABASE · SQLITE (WAL) · 22 TABLES</text>
+  <text x="82" y="996" class="h">jinder_platform/var/jinder.db</text>
+  <text x="82" y="1024" class="t">users · sessions · plans · profiles</text>
+  <text x="82" y="1046" class="t">translated_skills · cv_files · parses</text>
+  <text x="82" y="1068" class="t">jobs · job_skills · bookmarks · skips</text>
+  <text x="82" y="1090" class="t">saved_candidates · skipped_candidates</text>
+  <text x="82" y="1112" class="t">applications + history, slots, feedback</text>
+  <text x="82" y="1134" class="t">reports · notifications · events</text>
+  <text x="82" y="1156" class="t">email_outbox · schema_info</text>
+  <text x="82" y="1186" class="m">foreign keys on · busy_timeout 8 s · see diagram 05</text>
+
+  <rect x="520" y="940" width="270" height="270" rx="18" fill="#fff5c7"/>
+  <text x="542" y="970" class="tag" style="fill:#a68716">PRIVATE FILES</text>
+  <text x="542" y="996" class="h">var/uploads/</text>
+  <text x="542" y="1024" class="t">CV and job description</text>
+  <text x="542" y="1046" class="t">files (PDF, DOCX)</text>
+  <text x="542" y="1068" class="t">up to 10 MB for each file</text>
+  <text x="542" y="1090" class="t">never served over HTTP</text>
+  <text x="542" y="1112" class="t">a job description file is</text>
+  <text x="542" y="1134" class="t">deleted after it is read</text>
+  <text x="542" y="1186" class="m">start-up deletes old unused files</text>
+
+  <rect x="820" y="940" width="420" height="270" rx="18" fill="#daf9d4"/>
+  <text x="842" y="970" class="tag" style="fill:#005900">FORMULAS · COMPUTE ONLY</text>
+  <text x="842" y="996" class="h">jinder_backend_engine/intelligence_engine</text>
+  <text x="842" y="1024" class="t"><tspan class="b">F-01</tspan> Skill match (SMF) and fit</text>
+  <text x="842" y="1046" class="t"><tspan class="b">F-02</tspan> Skill gap and readiness (SGF)</text>
+  <text x="842" y="1068" class="t"><tspan class="b">F-03</tspan> Job-to-job comparison (JJF)</text>
+  <text x="842" y="1090" class="t"><tspan class="b">F-04</tspan> Benchmarking (CCF)</text>
+  <text x="842" y="1112" class="t"><tspan class="b">F-05</tspan> Talent job feed ranking (JFR)</text>
+  <text x="842" y="1134" class="t"><tspan class="b">F-06</tspan> Employer talent search ranking (TSR)</text>
+  <text x="842" y="1156" class="t"><tspan class="b">engine_common.py</tspan> · shared helpers</text>
+  <text x="842" y="1186" class="m" style="fill:#005900">pure Python · no database access · see diagram 04</text>
+
+  <rect x="1270" y="940" width="270" height="270" rx="18" fill="#f0f0fe"/>
+  <text x="1292" y="970" class="tag" style="fill:#6868f7">REFERENCE DATA</text>
+  <text x="1292" y="996" class="h">ict_taxonomy.json</text>
+  <text x="1292" y="1018" class="m">jinder_backend_engine/data/reference</text>
+  <text x="1292" y="1046" class="t">The one list of names:</text>
+  <text x="1292" y="1068" class="t">skills, roles, levels,</text>
+  <text x="1292" y="1090" class="t">certifications, domains,</text>
+  <text x="1292" y="1112" class="t">cities, work modes</text>
+  <text x="1292" y="1186" class="m">also read by engine_common.py</text>
+
+  <!-- formulas read the taxonomy -->
+  <line x1="1240" y1="1170" x2="1266" y2="1170" stroke="#6868f7" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- footer -->
+  <rect x="60" y="1236" width="1480" height="74" rx="12" fill="#f0f0fe"/>
+  <text x="84" y="1266" class="t"><tspan class="b">Start-up:</tspan> app.py creates the database (schema.sql), cleans old uploads, starts the email outbox thread and then the HTTP server.</text>
+  <text x="84" y="1290" class="t"><tspan class="b">Privacy:</tspan> an employer sees talent only through the shared profile (no name, email, country, CV or CV lines). A score on a person is never sent to an employer.</text>
+</svg>
+</body>
+</html>

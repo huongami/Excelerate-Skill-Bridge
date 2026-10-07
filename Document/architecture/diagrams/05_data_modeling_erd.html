@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Source of 05_data_modeling_erd.png. Built from jinder_platform/jinder/schema.sql (schema version 2, 22 tables).
+     Make the PNG again with headless Chrome (window 1600 x the height in the title bar of the page, device scale 2). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jinder: database ERD (schema version 2)</title>
+<style>
+  html, body { margin: 0; background: #fdfbf8; }
+  svg { display: block; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  .title { font-size: 32px; font-weight: 600; fill: #151531; letter-spacing: -0.5px; }
+  .sub { font-size: 15px; fill: #6b7280; }
+  .tname { font-family: "JetBrains Mono", Consolas, monospace; font-size: 14px; font-weight: 700; }
+  .col { font-family: "JetBrains Mono", Consolas, monospace; font-size: 12px; fill: #151531; }
+  .typ { font-size: 11.5px; fill: #6b7280; }
+  .flag { font-size: 10px; font-weight: 700; letter-spacing: 0.4px; }
+  .grp { font-size: 12px; font-weight: 700; letter-spacing: 1.2px; }
+  .rel { font-size: 11.5px; font-weight: 600; fill: #6868f7; }
+  .t { font-size: 13px; fill: #343a40; }
+  .b { font-weight: 600; fill: #151531; }
+</style>
+</head>
+<body>
+<svg id="erd" width="1600" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6868f7"/></marker>
+    <filter id="s" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0d131b" flood-opacity="0.08"/></filter>
+  </defs>
+  <text x="40" y="58" class="title">Jinder database — entity relationship diagram</text>
+  <text x="40" y="86" class="sub">SQLite (WAL, foreign keys on) · schema version 2 · 22 tables · dates are ISO 8601 text in UTC · lists are JSON text</text>
+</svg>
+<script>
+// Groups (colors match the design system tint pairs)
+const G = {
+  acc: { label: "ACCOUNTS",          fill: "#edf0f2", ink: "#151531" },
+  tal: { label: "TALENT PROFILE",    fill: "#f9e2fb", ink: "#560059" },
+  job: { label: "JOBS",              fill: "#c9f0ff", ink: "#003d5a" },
+  act: { label: "ACTIONS",           fill: "#f0f0fe", ink: "#2a2a63" },
+  hir: { label: "HIRING",            fill: "#daf9d4", ink: "#005900" },
+  alr: { label: "ALERTS AND EVENTS", fill: "#fff5c7", ink: "#7a5c00" },
+};
+// [column, type or note, flags]  flags: PK FK UQ JSON PRIV
+const T = [
+  // ---- column A
+  { id: "users", g: "acc", c: 0, cols: [
+    ["id", "TEXT", "PK"], ["role", "candidate | recruiter"], ["name", "TEXT", "PRIV"], ["email", "lower case", "UQ PRIV"],
+    ["company", "employers only"], ["alias", "talent only · NOCASE", "UQ"], ["password_hash", "scrypt · '!' = no sign-in"],
+    ["onboarding", "done | dismissed"], ["is_sample", "0 | 1"], ["created_at", "TEXT"] ] },
+  { id: "sessions", g: "acc", c: 0, cols: [["token_hash", "SHA-256 of the token", "PK"], ["user_id", "→ users", "FK"], ["expires_at", "TEXT"], ["created_at", "TEXT"]] },
+  { id: "plans", g: "acc", c: 0, cols: [["user_id", "→ users", "PK FK"], ["plan", "basic | premium"]] },
+  { id: "schema_info", g: "acc", c: 0, cols: [["key", "schema_version, seed_version", "PK"], ["value", "TEXT"]] },
+  { id: "reports", g: "act", c: 0, cols: [["id", "TEXT", "PK"], ["user_id", "→ users", "FK"], ["target_type", "job | candidate"], ["target_id", "TEXT"], ["reason · details", "TEXT"], ["(user, type, target)", "one report each", "UQ"]] },
+  // ---- column B
+  { id: "profiles", g: "tal", c: 1, cols: [
+    ["user_id", "→ users (1:1)", "PK FK"], ["qualification · field_of_study", "lists", "JSON"], ["study_country", "AQF note only", "JSON PRIV"],
+    ["current_role · industry", "lists", "JSON"], ["skills", "list", "JSON"], ["target_role · target_industries", "lists", "JSON"],
+    ["locations · work_types", "lists", "JSON"], ["work_modes", "list", "JSON"], ["level", "Intern … Principal"], ["years_exact · years", "0–40 · band"],
+    ["specialisation", "taxonomy"], ["certifications", "[{name, issuer, year}]", "JSON"], ["awards", "[{name, kind, year}]", "JSON"],
+    ["evidence", "CV lines", "JSON PRIV"], ["updated_at", "TEXT"] ] },
+  { id: "translated_skills", g: "tal", c: 1, cols: [
+    ["user_id · skill_id", "→ users", "PK FK"], ["position", "INTEGER"], ["source", "role | skill | qualification"], ["original → mapped", "TEXT"],
+    ["kind", "cross-border | cross-industry | direct"], ["anzsco · occupation", "TEXT"], ["reason", "plain language"],
+    ["evidence", "Strong | Moderate | Limited"], ["status", "suggested | accepted | edited | removed"], ["level · years", "1–5 · 0–40"] ] },
+  { id: "cv_files", g: "tal", c: 1, cols: [["id", "TEXT", "PK"], ["user_id", "→ users", "FK"], ["name · size", "TEXT · INTEGER"], ["stored_name", "file in var/uploads", "PRIV"], ["added_at", "TEXT"]] },
+  { id: "parses", g: "tal", c: 1, cols: [["id", "TEXT", "PK"], ["kind", "cv | jd"], ["user_id", "→ users", "FK"], ["file_name · stored_name", "TEXT"], ["status", "parsing | done | failed"], ["result", "parse result", "JSON PRIV"], ["created_at · finished_at", "TEXT"]] },
+  // ---- column C
+  { id: "jobs", g: "job", c: 2, cols: [
+    ["id", "job-<key>", "PK"], ["owner_id", "→ users · NULL = catalogue", "FK"], ["title · company · category", "TEXT"], ["location · area · type", "TEXT"],
+    ["level · specialisation", "taxonomy"], ["min_years · max_years", "0–40"], ["work_mode", "Onsite | Hybrid | Remote"],
+    ["salary_min · salary_max", "REAL"], ["salary_unit", "year | day | hour"], ["summary · description", "≤ 200 · ≤ 10,000 chars"],
+    ["certs_required · _preferred", "lists", "JSON"], ["awards_preferred", "list", "JSON"], ["target_applicants", "INTEGER"],
+    ["posted_at · closes_at · edited_at", "TEXT"] ] },
+  { id: "job_skills", g: "job", c: 2, cols: [["job_id · position", "→ jobs", "PK FK"], ["skill", "taxonomy name"], ["level", "1–5"], ["must", "1 required · 0 nice to have"]] },
+  { id: "bookmarks · skips", g: "act", c: 2, cols: [["user_id · job_id", "→ users", "PK FK"], ["created_at", "TEXT"]], note: "two tables, same shape" },
+  { id: "saved_ · skipped_candidates", g: "act", c: 2, cols: [["recruiter_id · candidate_id", "", "PK FK"], ["created_at", "TEXT"]], note: "two tables, same shape · both → users" },
+  // ---- column D
+  { id: "applications", g: "hir", c: 3, cols: [
+    ["id", "TEXT", "PK"], ["job_id", "→ jobs"], ["candidate_id · recruiter_id", "→ users", "FK"], ["origin", "applied | contacted"],
+    ["status", "9 states · CHECK"], ["note · message", "contact details removed"], ["snapshot", "frozen shared profile", "JSON"],
+    ["match_json", "{coverage, skills[]}", "JSON"], ["chosen_slot_id · slot_confirmed", "TEXT · 0 | 1"],
+    ["identity_shared", "1 = talent consented"], ["offer_text · offer_sent_at", "TEXT"], ["(job_id, candidate_id)", "one per pair", "UQ"],
+    ["created_at · updated_at", "TEXT"] ] },
+  { id: "application_history", g: "hir", c: 3, cols: [["id", "AUTOINCREMENT", "PK"], ["application_id", "→ applications", "FK"], ["status · at", "every change"], ["actor", "candidate | recruiter | system"], ["note", "TEXT"]] },
+  { id: "application_slots", g: "hir", c: 3, cols: [["application_id · id", "→ applications", "PK FK"], ["start", "UTC"], ["position", "1–3"]] },
+  { id: "application_feedback", g: "hir", c: 3, cols: [["application_id · side", "→ applications", "PK FK"], ["to_other", "the other side"], ["to_team", "Jinder team only", "PRIV"], ["at", "TEXT"]] },
+  // ---- column E
+  { id: "notifications", g: "alr", c: 4, cols: [["id", "TEXT", "PK"], ["user_id", "→ users", "FK"], ["type · title · body", "TEXT"], ["link", "app path"], ["email · read", "0 | 1"], ["created_at", "TEXT"]] },
+  { id: "events", g: "alr", c: 4, cols: [["id", "AUTOINCREMENT", "PK"], ["type", "job_* · profile_*"], ["target_type · target_id", "TEXT"], ["actor_id", "TEXT"], ["at", "counts only"]] },
+  { id: "email_outbox", g: "alr", c: 4, cols: [["id", "TEXT", "PK"], ["user_id", "→ users", "FK"], ["notification_id", "TEXT"], ["subject · body", "TEXT"], ["status", "pending|sent|failed|recorded"], ["attempts · next_attempt_at", "retry"]] },
+];
+const COLX = [40, 350, 690, 1010, 1330], COLW = [290, 320, 300, 300, 230];
+const TOP = 172, GAP = 26, HEAD = 30, ROW = 19;
+const svg = document.getElementById("erd"), NS = "http://www.w3.org/2000/svg";
+const el = (n, a, txt) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; };
+const FLAG = { PK: ["#a68716", "#fff5c7"], FK: ["#003d5a", "#c9f0ff"], UQ: ["#2a2a63", "#f0f0fe"], JSON: ["#005900", "#daf9d4"], PRIV: ["#800000", "#ffd2e1"] };
+const pos = {}; const colY = [TOP, TOP, TOP, TOP, TOP];
+for (const t of T) {
+  const x = COLX[t.c], w = COLW[t.c], y = colY[t.c], h = HEAD + t.cols.length * ROW + (t.note ? 18 : 0) + 10, g = G[t.g];
+  el("rect", { x, y, width: w, height: h, rx: 12, fill: "#fff", stroke: "#e2e5ea", filter: "url(#s)" });
+  el("path", { d: `M${x} ${y + 12} a12 12 0 0 1 12 -12 h${w - 24} a12 12 0 0 1 12 12 v${HEAD - 12} h${-w} z`, fill: g.fill });
+  el("text", { x: x + 12, y: y + 20, class: "tname", fill: g.ink }, t.id);
+  t.cols.forEach(([name, typ, flags], i) => {
+    const ry = y + HEAD + 14 + i * ROW;
+    let fx = x + 10;
+    for (const f of (flags || "").split(" ").filter(Boolean)) {
+      const [ink, bg] = FLAG[f]; const fw = f.length * 6.4 + 8;
+      el("rect", { x: fx, y: ry - 10, width: fw, height: 14, rx: 4, fill: bg });
+      el("text", { x: fx + 4, y: ry, class: "flag", fill: ink }, f);
+      fx += fw + 3;
+    }
+    el("text", { x: Math.max(fx + 2, x + 10), y: ry, class: "col" }, name);
+    el("text", { x: x + w - 10, y: ry, class: "typ", "text-anchor": "end" }, typ || "");
+  });
+  if (t.note) el("text", { x: x + 12, y: y + h - 12, class: "typ" }, t.note);
+  pos[t.id] = { x, y, w, h, rowY: (i) => y + HEAD + 10 + i * ROW };
+  colY[t.c] = y + h + GAP;
+}
+function link(a, ar, b, br, label) {
+  const A = pos[a], B = pos[b]; const x1 = A.x + A.w, y1 = A.rowY(ar), x2 = B.x, y2 = B.rowY(br); const mx = (x1 + x2) / 2;
+  el("path", { d: `M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2 - 2} ${y2}`, stroke: "#6868f7", "stroke-width": 2, fill: "none", "marker-end": "url(#a)" });
+  if (label) el("text", { x: mx - 14, y: (y1 + y2) / 2 - 6, class: "rel" }, label);
+}
+link("users", 0, "profiles", 0, "1 : 1");
+link("jobs", 0, "applications", 1, "1 : N");
+// Same-column brackets (parent → child) on the left side
+function bracket(a, b, label, side) {
+  const A = pos[a], B = pos[b]; const xo = side === "r" ? A.x + A.w : A.x; const d = side === "r" ? 14 : -14;
+  const y1 = A.rowY(0), y2 = B.rowY(0);
+  el("path", { d: `M${xo} ${y1} h${d} V${y2} h${-d + (side === "r" ? -2 : 2)}`, stroke: "#6868f7", "stroke-width": 1.6, fill: "none", "marker-end": "url(#a)" });
+  }
+bracket("users", "sessions", "1 : N", "l");
+bracket("users", "plans", null, "l");
+bracket("profiles", "translated_skills", "1 : N", "l");
+bracket("jobs", "job_skills", "1 : N", "l");
+bracket("applications", "application_history", "1 : N", "r");
+bracket("applications", "application_slots", null, "r");
+bracket("applications", "application_feedback", null, "r");
+// Legend and notes
+const maxY = Math.max(...colY) + 4;
+const leg = [["PK", "primary key"], ["FK", "foreign key (→ table)"], ["UQ", "unique"], ["JSON", "JSON text"], ["PRIV", "private: never in an employer response"]];
+let lx = 40;
+el("text", { x: 40, y: 128, class: "grp", fill: "#151531" }, "KEY");
+lx = 80;
+for (const [f, txt] of leg) { const [ink, bg] = FLAG[f]; const fw = f.length * 6.4 + 8; el("rect", { x: lx, y: 117, width: fw, height: 14, rx: 4, fill: bg }); el("text", { x: lx + 4, y: 127, class: "flag", fill: ink }, f === "PRIV" ? "PRIV" : f); el("text", { x: lx + fw + 6, y: 128, class: "typ" }, txt); lx += fw + 18 + txt.length * 6.2; }
+let gx = lx + 30;
+for (const k in G) { el("rect", { x: gx, y: 116, width: 14, height: 14, rx: 3, fill: G[k].fill }); el("text", { x: gx + 20, y: 128, class: "typ" }, G[k].label.toLowerCase()); gx += 30 + G[k].label.length * 6.3; }
+el("text", { x: 40, y: 150, class: "typ" }, "Arrow = parent → child (1 : N unless marked 1 : 1). Most tables also have an FK to users.id (shown as → users).");
+el("rect", { x: 40, y: maxY, width: 1520, height: 106, rx: 16, fill: "#f0f0fe" });
+const notes = [
+  ["Most tables point to users.id", " (FK → users, ON DELETE CASCADE): deleting a user deletes the profile, sessions, applications and alerts."],
+  ["Privacy:", " employers read a talent only through store.shared_profile() (allowlist). PRIVATE columns never leave it; applications.snapshot is a frozen copy of it."],
+  ["Rules in the data:", " one application per talent and job (UQ) · status values are CHECKed · every status change writes application_history · scores are never stored."],
+  ["Lists:", " profile and job lists are JSON text; names come from the taxonomy (ict_taxonomy.json); a value not in the taxonomy is cleaned when it is saved."],
+];
+notes.forEach(([b, t], i) => { const e = el("text", { x: 64, y: maxY + 28 + i * 22, class: "t" }); const s1 = document.createElementNS(NS, "tspan"); s1.setAttribute("class", "b"); s1.textContent = b; e.appendChild(s1); e.appendChild(document.createTextNode(t)); });
+const H = maxY + 130;
+svg.setAttribute("height", H); svg.setAttribute("viewBox", `0 0 1600 ${H}`);
+document.title = `Jinder ERD — window 1600x${H}`;
+</script>
+</body>
+</html>

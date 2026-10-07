@@ -15,7 +15,7 @@ These three files are enough to build the same frontend on a different computer:
 3. Open your AI coding assistant (for example, Claude Code) in the project folder.
 4. Tell the assistant: "Read `prompt.md`, `AI_Rule.md` and `Docs/DESIGN.md` fully, then follow everything below the line **PROMPT STARTS HERE** in `prompt.md`." (The file is large because of the embedded files, so ask the assistant to read it; do not paste it.)
 
-> **Read-only documents:** do not edit `Docs/Skill_Bridge_PRD.md`, `Docs/Skill_Bridge_Feature_Specs.md`, `Docs/Skill_Bridge_User_Flow_Spec.md` or `Docs/Skill_Bridge_User_Stories.md` (see `AI_Rule.md` Rule 9). Read them only.
+> **Read-only documents:** do not edit `../Document/sdd/01_SYSTEM_OVERVIEW.md`, `../Document/sdd/02_PRODUCT_REQUIREMENTS_DOCUMENT.md`, `../Document/sdd/03_FEATURE_SPECIFICATIONS.md`, `../Document/sdd/04_USER_FLOW_SPECIFICATION.md`, `../Document/sdd/05_USER_STORIES_AND_ACCEPTANCE_CRITERIA.md` or `../Document/sdd/06_TECHNICAL_REQUIREMENTS.md` (see `AI_Rule.md` Rule 9). Read them only.
 
 ---
 
@@ -191,7 +191,7 @@ Router behaviour:
 
 ### Visual style
 
-Flat, minimal, professional and trustworthy. White canvas, navy ink, small doses of color through pastel tint chips. Almost no shadows. No gradients, no glassmorphism, no emoji. Full details: `Docs/DESIGN.md`.
+Flat, minimal, professional and trustworthy. Warm sand page background (`--sand`) with white cards, navy ink, small doses of color through pastel tint chips. Almost no shadows. No gradients, no glassmorphism, no emoji. Full details: `Docs/DESIGN.md`.
 
 ### Design tokens (put all of them in `:root`)
 
@@ -200,6 +200,7 @@ Flat, minimal, professional and trustworthy. White canvas, navy ink, small doses
 primary/ink #151531   ink-deep #0d131b   ink-soft #2a2a63
 body #343a40   muted #868e96   muted-soft #adb5bd   disabled #ced4da
 canvas #ffffff   surface-soft #fafafa   surface-subtle #f8f9fa
+page background (option B "warm sand"): sand #fdfbf8 (body, app main, auth form side, landing hero, market block, footer)   sand-strong #f8f4ed (landing audience band)   sand-line #f2ece3 (hairlines on sand: top nav, market, footer)
 surface-muted #f6f8f9   surface-strong #edf0f2   surface-dark #151531
 hairline #e9ecef   separator #e6ecf0
 accent #6868f7   accent-tint #f0f0fe   orange #ffa340
@@ -276,7 +277,7 @@ New paths: home `M3 10.5 12 3l9 7.5` + `M5 9.5V21h14V9.5` + `M10 21v-6h4v6`; sea
 - **Tint chip:** 4×8 padding, radius 6, 13/500, tint pair colors. **Icon tile:** 44px square, radius 12.
 - **Text input:** 40px, radius 8, hairline border; focus = accent border + 3px accent-tint ring; error = error border.
 - **App shell (`components/shell.js`)** — for every signed-in route (`meta.shell`):
-  - Grid: left pane `--sidebar-w` 248px (72px when collapsed) + main. Main background surface-soft (`body.page-soft`). The page content (`.dash`) is max 1200px, centered.
+  - Grid: left pane `--sidebar-w` 248px (72px when collapsed) + main. Main background sand (`body.page-soft` → `--sand`). Cards, panels, the left pane and the mobile top bar stay white. The page content (`.dash`) is max 1200px, centered.
   - Pane (white, hairline right border, sticky full height): top row = logo + "panel-left" icon button (`aria-controls="sidebar"`, `aria-expanded`, label "Hide navigation"/"Show navigation"); `<nav aria-label="Main">` list of nav items; bottom (hairline top) = the **user block** and a "Sign out" nav item. The user block is **one link** (`a#shellUser.sidebar-user-link`) to `#/settings`. Its accessible name is "Account settings, {name}". It has the initials avatar (wrapped in `.avatar-wrap`), the name, a role chip (pink "Talent" / blue "Employer") and, for candidates, a 12px muted line "Alias: {alias}" with the alias in pink ink 600 (`data-shell-alias`, `title="Employers see you by this alias"`). On the Settings page it is the current page (`aria-current="page"`).
   - **Premium user (the "Highlight Premium" rule, a/b/c):** (a) the link has the class `is-premium`: a crown (`i-crown`, `.avatar-crown`) at the top right of the avatar, a gold ring round the avatar (2px gap, 2px `--gold`) and a small gold chip "Premium" after the role chip; a hidden text "Premium plan" (`#shellPlanNote`) describes the link; the crown also shows when the pane is collapsed. (b) The account area (Settings) lists the benefits, used or not used yet. (c) A Basic user sees a lock and a gold badge on Premium features.
   - The plan comes from `api.entitlements.get()` (`crown` or `plan === "premium"`) and is cached in memory. The window event `jinder:plan-change` (detail = the entitlements) updates the crown and the lock at once. `api.entitlements.set` fires it. `shell.js` exports `NAV`, `initials(name)` and `updateShellUser(user)` (call it after a name change in Settings).
@@ -334,14 +335,14 @@ New paths: home `M3 10.5 12 3l9 7.5` + `M5 9.5V21h14V9.5` + `M10 21v-6h4v6`; sea
 ### Screens
 
 **1. Landing — `/` (`views/landing.js`)**
-1. Sticky top nav (white 92% + blur, hairline bottom): logo (`#/`) · links (How it works `#how`, For talent `#talent`, For employers `#employers`) · "Sign in" (`#/login`) + primary "Get started" (`#/signup`). If signed in: one primary button "Go to my workspace" (`#/home`).
+1. Sticky top nav (sand at 92% + blur, sand-line bottom): logo (`#/`) · links (How it works `#how`, For talent `#talent`, For employers `#employers`) · "Sign in" (`#/login`) + primary "Get started" (`#/signup`). If signed in: one primary button "Go to my workspace" (`#/home`).
 2. `<main>`: centered hero: eyebrow pill "Skills-based hiring for **Australia**" (`.hero-eyebrow`: white pill, hairline, shadow xs; "Australia" is an `.au-chip` inside it — orange-tint pill, map-pin icon in orange, ink 700 text); h1 "Every skill, *recognised* — wherever it was built" (the key word in accent); lead; buttons "Create free account →" (`#/signup`, primary, large) and "See how it works" (`#how`, secondary, large); note "Free for talent and employers during the pilot."
 3. Product preview in a browser frame (3 gray dots, fake URL "jinder.app / talent / translation"). Panels: a translation table ("Product Owner, Hanoi → Agile delivery lead", "BI Specialist, HCMC → Data Analyst", "Informatica developer → ETL and ELT pipelines", "B.Econ (VNU) → AQF Level 7 equivalent") and a match card ("Data Analyst · Sydney", "Strong match" green chip, "86%", accent meter `.meter-86`, 2 green check reasons ("Built Power BI dashboards for 6 teams", "SQL and Python for weekly reporting"), 1 yellow gap ("Gap: Apache Airflow, about 1 month to learn")). `role="img"` + descriptive `aria-label`.
 4. **Australian market block** (`section.market`, centred, hairline bottom): eyebrow with a map-pin icon "The Australian job market", h2 (display 32px, 26px ≤768px) "Skilled talent is here. Employers can't find it.", then **2 highlight cards** side by side (max 420px each, 1 column ≤768px; radius 20, 24px padding; icon tile on white at the left): pink card (graduation icon) "680,582" (display 48px) / "international students in Australia" / "Source: Dept. of Education, Jan–May 2026"; blue card (briefcase icon) "69%" / "of employers struggle to find skilled talent" / "Source: ManpowerGroup, 2024". Do not add a third stat (no "black-box" stat).
-5. "How it works" (`id="how"`): 3 step cards (01 Translate experience / 02 Check the gaps / 03 Decide with context), icon tiles pink / yellow / blue.
-6. Two audience cards on a soft band: "For international talent" (`id="talent"`, button "Create my profile" → `#/signup?role=candidate`) and "For Australian employers" (`id="employers"`, button "Start hiring" → `#/signup?role=recruiter`).
+5. "How it works" (`id="how"`, white band — the only white section, so the step cards read as one group): 3 step cards (01 Translate experience / 02 Check the gaps / 03 Decide with context), icon tiles pink / yellow / blue.
+6. Two audience cards on a sand-strong band: "For international talent" (`id="talent"`, button "Create my profile" → `#/signup?role=candidate`) and "For Australian employers" (`id="employers"`, button "Start hiring" → `#/signup?role=recruiter`).
 7. Dark navy CTA band: "No qualified person filtered out" + white button (`#/signup`).
-8. Footer on surface-soft: logo + slogan + mission line; columns Product (anchors), Account (`#/login`, `#/signup`), Company (About `#/`, Privacy `#/privacy`, Terms `#/terms`); copyright row.
+8. Footer on sand (sand-line top border): logo + slogan + mission line; columns Product (anchors), Account (`#/login`, `#/signup`), Company (About `#/`, Privacy `#/privacy`, Terms `#/terms`); copyright row.
 
 **2. Sign in — `/login` (`views/auth.js`)**
 Split layout, 5 : 7 columns, full height.
@@ -3840,7 +3841,7 @@ Follow `AI_Rule.md` Rules 5–7 and 10. Minimum requirements:
 
 ## Build phases (roadmap)
 
-Source: `Docs/Skill_Bridge_Feature_Specs.md` and `Docs/Skill_Bridge_User_Flow_Spec.md` (read-only). Decisions taken: match = per-skill result + coverage % (backend computes it); job skills = suggested by the API, edited by the recruiter; top N = from the API (mock 5); anonymity ends only with the candidate's consent; rejected applications go to "Past applications"; mock seed data is embedded in this file. Decisions of version 2 (the file `jinder_platform/docs/V2_PLAN.md`): D1 new synthetic data (50 jobs, 50 talent); D2 three domains only; D4 six levels; D5 certifications and awards are shared with employers at once (names and years only); D6 "time" sort = the profile updated most recently (talent list) and the posting date (jobs); D7 "Your path to this job" = a radar with two layers + a Fit list + a Gap list, and the 12-month chart is removed; D8 the user block opens Settings and Premium is highlighted; D9 a Compare menu item, a basket of up to 5, and a full page for both roles. Defaults F1 to F12 (page sizes 10, 20, 50; sort only; the JD markup; the basket in `localStorage`; "Domain" instead of "Industry"; optional exact years; skill levels 1 to 5; new features with the real backend only; the old database is renamed to a backup file; an unstated desired role stays empty; sample profiles are updated over 60 days) are defaults that the user can change (open item O2 in `V2_PLAN.md`). The CV that the scan could not read is still needed (open item O1).
+Source: `../Document/sdd/03_FEATURE_SPECIFICATIONS.md` and `../Document/sdd/04_USER_FLOW_SPECIFICATION.md` (read-only). Decisions taken: match = per-skill result + coverage % (backend computes it); job skills = suggested by the API, edited by the recruiter; top N = from the API (mock 5); anonymity ends only with the candidate's consent; rejected applications go to "Past applications"; mock seed data is embedded in this file. Decisions of version 2 (the file `jinder_platform/docs/V2_PLAN.md`): D1 new synthetic data (50 jobs, 50 talent); D2 three domains only; D4 six levels; D5 certifications and awards are shared with employers at once (names and years only); D6 "time" sort = the profile updated most recently (talent list) and the posting date (jobs); D7 "Your path to this job" = a radar with two layers + a Fit list + a Gap list, and the 12-month chart is removed; D8 the user block opens Settings and Premium is highlighted; D9 a Compare menu item, a basket of up to 5, and a full page for both roles. Defaults F1 to F12 (page sizes 10, 20, 50; sort only; the JD markup; the basket in `localStorage`; "Domain" instead of "Industry"; optional exact years; skill levels 1 to 5; new features with the real backend only; the old database is renamed to a backup file; an unstated desired role stays empty; sample profiles are updated over 60 days) are defaults that the user can change (open item O2 in `V2_PLAN.md`). The CV that the scan could not read is still needed (open item O1).
 
 | Phase | Status | Scope |
 |---|---|---|

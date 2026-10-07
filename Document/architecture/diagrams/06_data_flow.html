@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- Source of 06_data_flow.png. Open in a browser, or make the PNG again with headless Chrome (window 1600x1626). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jinder platform: data flow</title>
+<style>
+  html, body { margin: 0; background: #fdfbf8; }
+  svg { display: block; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  .title { font-size: 34px; font-weight: 600; fill: #151531; letter-spacing: -0.5px; }
+  .sub { font-size: 16px; fill: #6b7280; }
+  .h { font-size: 17px; font-weight: 700; fill: #151531; }
+  .t { font-size: 13.5px; fill: #343a40; }
+  .m { font-size: 12.5px; fill: #6b7280; }
+  .b { font-weight: 600; fill: #151531; }
+  .lbl { font-size: 13px; font-weight: 600; fill: #2a2a63; }
+  .tag { font-size: 11.5px; font-weight: 700; letter-spacing: 1.2px; }
+  .step { font-size: 13.5px; fill: #151531; }
+  .num { font-size: 13px; font-weight: 700; fill: #fff; }
+</style>
+</head>
+<body>
+<svg width="1600" height="1626" viewBox="0 0 1600 1626" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6868f7"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a68716"/>
+    </marker>
+    <filter id="s" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0d131b" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="60" y="70" class="title">Jinder platform — how data flows</text>
+  <text x="60" y="100" class="sub">SQLite file var/jinder.db · facts are stored · scores are computed on each request and never stored</text>
+
+  <!-- ============ ROW 1: users → frontend → API ============ -->
+  <!-- Talent -->
+  <rect x="60" y="140" width="190" height="64" rx="14" fill="#f9e2fb"/>
+  <text x="80" y="168" class="h" style="fill:#560059">Talent</text>
+  <text x="80" y="189" class="m" style="fill:#560059">job seeker (alias only)</text>
+  <!-- Employer -->
+  <rect x="60" y="220" width="190" height="64" rx="14" fill="#c9f0ff"/>
+  <text x="80" y="248" class="h" style="fill:#003d5a">Employer</text>
+  <text x="80" y="269" class="m" style="fill:#003d5a">recruiter / hiring team</text>
+
+  <!-- Frontend -->
+  <rect x="330" y="140" width="380" height="144" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="352" y="170" class="tag" style="fill:#6868f7">FRONTEND</text>
+  <text x="352" y="196" class="h">jinder_frontend/app</text>
+  <text x="352" y="220" class="t">One page app (HTML, CSS, JavaScript)</text>
+  <text x="352" y="242" class="t">Views call only <tspan class="b">js/api/index.js</tspan></text>
+  <text x="352" y="264" class="m">No data is kept in the browser except the session</text>
+
+  <!-- API -->
+  <rect x="790" y="140" width="420" height="144" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="812" y="170" class="tag" style="fill:#6868f7">REST API · PORT 8095</text>
+  <text x="812" y="196" class="h">jinder_platform</text>
+  <text x="812" y="220" class="t">routes/ · guards (role, session, rate limit)</text>
+  <text x="812" y="242" class="t">store.py · <tspan class="b">shared_profile()</tspan> allowlist</text>
+  <text x="812" y="264" class="m">Rules live here: state machine, privacy, Premium</text>
+
+  <!-- Files -->
+  <rect x="1290" y="140" width="250" height="144" rx="18" fill="#fff5c7"/>
+  <text x="1312" y="170" class="tag" style="fill:#a68716">PRIVATE FILES</text>
+  <text x="1312" y="196" class="h">var/uploads/</text>
+  <text x="1312" y="220" class="t">CV and job description</text>
+  <text x="1312" y="242" class="t">files (PDF, DOCX)</text>
+  <text x="1312" y="264" class="m">Read in the background → parses</text>
+
+  <!-- arrows row 1 -->
+  <line x1="250" y1="172" x2="326" y2="190" stroke="#6868f7" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="250" y1="252" x2="326" y2="234" stroke="#6868f7" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="710" y1="200" x2="786" y2="200" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="786" y1="232" x2="710" y2="232" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="718" y="190" class="m">JSON /api/*</text>
+  <text x="726" y="252" class="m">response</text>
+  <line x1="1210" y1="212" x2="1286" y2="212" stroke="#a68716" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="1218" y="202" class="m">upload</text>
+
+  <!-- ============ ROW 2: sources → DB ← → formulas ============ -->
+  <!-- Sources -->
+  <rect x="60" y="370" width="300" height="300" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="82" y="400" class="tag" style="fill:#6868f7">SOURCE DATA (FILES)</text>
+  <text x="82" y="426" class="h">jinder_backend_engine/data</text>
+  <rect x="82" y="446" width="256" height="92" rx="12" fill="#f0f0fe"/>
+  <text x="98" y="472" class="b" style="font-size:14px">reference/ict_taxonomy.json</text>
+  <text x="98" y="494" class="t">The one list of names: skills,</text>
+  <text x="98" y="514" class="t">roles, certifications, levels, cities</text>
+  <rect x="82" y="552" width="256" height="80" rx="12" fill="#f0f0fe"/>
+  <text x="98" y="578" class="b" style="font-size:14px">synthetic/</text>
+  <text x="98" y="600" class="t">jobs.json — job catalogue</text>
+  <text x="98" y="620" class="t">talents.json — initial talent profiles</text>
+
+  <!-- DB -->
+  <rect x="440" y="340" width="720" height="470" rx="22" fill="#fff" stroke="#151531" stroke-width="1.5" filter="url(#s)"/>
+  <text x="464" y="372" class="tag" style="fill:#151531">DATABASE · SQLITE (WAL) · 22 TABLES</text>
+  <text x="464" y="398" class="h">jinder_platform/var/jinder.db</text>
+
+  <!-- group cards: 3 x 2 -->
+  <g>
+    <rect x="464" y="418" width="216" height="172" rx="14" fill="#f8f9fa"/>
+    <text x="480" y="444" class="lbl">1 · Accounts</text>
+    <text x="480" y="468" class="t">users <tspan class="m">— talent + employer</tspan></text>
+    <text x="480" y="490" class="t">sessions <tspan class="m">— token hash only</tspan></text>
+    <text x="480" y="512" class="t">plans <tspan class="m">— basic / premium</tspan></text>
+    <text x="480" y="548" class="m">email + alias unique</text>
+    <text x="480" y="568" class="m">password = scrypt hash</text>
+  </g>
+  <g>
+    <rect x="692" y="418" width="216" height="172" rx="14" fill="#f9e2fb"/>
+    <text x="708" y="444" class="lbl" style="fill:#560059">2 · Talent profile</text>
+    <text x="708" y="468" class="t">profiles <tspan class="m">— private</tspan></text>
+    <text x="708" y="490" class="t">translated_skills</text>
+    <text x="708" y="512" class="t">cv_files · parses</text>
+    <rect x="708" y="522" width="150" height="20" rx="6" fill="#fff5c7"/>
+    <text x="716" y="536" class="m" style="fill:#a68716;font-size:11.5px">files in var/uploads/</text>
+    <text x="708" y="560" class="m">only accepted / edited</text>
+    <text x="708" y="578" class="m">skills are shared</text>
+  </g>
+  <g>
+    <rect x="920" y="418" width="216" height="172" rx="14" fill="#c9f0ff"/>
+    <text x="936" y="444" class="lbl" style="fill:#003d5a">3 · Jobs</text>
+    <text x="936" y="468" class="t">jobs <tspan class="m">— catalogue + posted</tspan></text>
+    <text x="936" y="490" class="t">job_skills <tspan class="m">— level, must</tspan></text>
+    <text x="936" y="548" class="m">owner_id empty =</text>
+    <text x="936" y="568" class="m">catalogue job (no owner)</text>
+  </g>
+  <g>
+    <rect x="464" y="604" width="216" height="182" rx="14" fill="#f8f9fa"/>
+    <text x="480" y="630" class="lbl">4 · Actions</text>
+    <text x="480" y="654" class="t">bookmarks · skips</text>
+    <text x="480" y="676" class="t">reports</text>
+    <text x="480" y="698" class="t">saved_candidates</text>
+    <text x="480" y="720" class="t">skipped_candidates</text>
+    <text x="480" y="756" class="m">what each side saves,</text>
+    <text x="480" y="774" class="m">hides or reports</text>
+  </g>
+  <g>
+    <rect x="692" y="604" width="216" height="182" rx="14" fill="#daf9d4"/>
+    <text x="708" y="630" class="lbl" style="fill:#005900">5 · Hiring</text>
+    <text x="708" y="654" class="t">applications <tspan class="m">— 1 per job</tspan></text>
+    <text x="708" y="676" class="t">application_history</text>
+    <text x="708" y="698" class="t">application_slots</text>
+    <text x="708" y="720" class="t">application_feedback</text>
+    <text x="708" y="756" class="m">frozen snapshot of the</text>
+    <text x="708" y="774" class="m">shared profile at apply</text>
+  </g>
+  <g>
+    <rect x="920" y="604" width="216" height="182" rx="14" fill="#fff5c7"/>
+    <text x="936" y="630" class="lbl" style="fill:#a68716">6 · Alerts &amp; events</text>
+    <text x="936" y="654" class="t">notifications</text>
+    <text x="936" y="676" class="t">events <tspan class="m">— counts only</tspan></text>
+    <text x="936" y="698" class="t">email_outbox <tspan class="m">— retry</tspan></text>
+    <text x="936" y="756" class="m">never shows who did</text>
+    <text x="936" y="774" class="m">an event to the other side</text>
+  </g>
+
+  <!-- Formulas -->
+  <rect x="1240" y="370" width="300" height="300" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="1262" y="400" class="tag" style="fill:#6868f7">FORMULAS (COMPUTE ONLY)</text>
+  <text x="1262" y="426" class="h">intelligence_engine</text>
+  <text x="1262" y="458" class="t"><tspan class="b">F-01</tspan> Fit score, per-skill match</text>
+  <text x="1262" y="484" class="t"><tspan class="b">F-02</tspan> Gaps + path to the job</text>
+  <text x="1262" y="510" class="t"><tspan class="b">F-03</tspan> Similar jobs</text>
+  <text x="1262" y="536" class="t"><tspan class="b">F-04</tspan> Compare talent (no total)</text>
+  <text x="1262" y="562" class="t"><tspan class="b">F-05</tspan> Job feed order</text>
+  <text x="1262" y="588" class="t"><tspan class="b">F-06</tspan> Talent search order</text>
+  <rect x="1262" y="608" width="256" height="44" rx="10" fill="#ffd2e1"/>
+  <text x="1278" y="635" class="t" style="fill:#800000;font-weight:600">Scores are never stored</text>
+
+  <!-- arrows row 2 -->
+  <line x1="360" y1="520" x2="436" y2="520" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="368" y="508" class="m">seed</text>
+  <text x="368" y="542" class="m">(at start)</text>
+  <!-- API <-> DB -->
+  <line x1="960" y1="284" x2="960" y2="336" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="1020" y1="336" x2="1020" y2="284" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="866" y="316" class="m">read / write</text>
+  <text x="1030" y="316" class="m">rows</text>
+  <!-- DB -> formulas via engine_bridge -->
+  <path d="M1160 470 L1236 470" stroke="#6868f7" stroke-width="2.5" fill="none" marker-end="url(#a)"/>
+  <text x="1166" y="458" class="m">engine_bridge</text>
+  <!-- formulas -> API (scores) -->
+  <path d="M1390 370 L1390 300 L1214 260" stroke="#6868f7" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#a)"/>
+  <text x="1400" y="344" class="m">scores → response</text>
+  <!-- uploads -> parses: shown as a chip in the Talent profile card (no line, so it does not cross the Jobs card) -->
+  <!-- taxonomy -> formulas (names) -->
+  <path d="M210 670 L210 840 L1390 840 L1390 674" stroke="#adb5bd" stroke-width="1.8" fill="none" stroke-dasharray="4 5" marker-end="url(#a)"/>
+  <text x="640" y="832" class="m">the same taxonomy names are used by the CV reader, the API and the formulas</text>
+
+  <!-- ============ ROW 3: journey ============ -->
+  <rect x="60" y="880" width="1480" height="716" rx="22" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="84" y="914" class="tag" style="fill:#6868f7">EXAMPLE · A TALENT APPLIES FOR A JOB</text>
+
+  <g>
+    <circle cx="104" cy="960" r="15" fill="#6868f7"/><text x="99" y="965" class="num">1</text>
+    <text x="130" y="958" class="step"><tspan class="b">Upload CV</tspan></text>
+    <text x="130" y="980" class="m">cv_files + parses (parsing → done)</text>
+    <text x="130" y="1000" class="m">fills profiles + translated_skills</text>
+
+    <circle cx="404" cy="960" r="15" fill="#6868f7"/><text x="399" y="965" class="num">2</text>
+    <text x="430" y="958" class="step"><tspan class="b">Accept skills</tspan></text>
+    <text x="430" y="980" class="m">translated_skills.status = accepted</text>
+    <text x="430" y="1000" class="m">now in the shared profile</text>
+
+    <circle cx="704" cy="960" r="15" fill="#6868f7"/><text x="699" y="965" class="num">3</text>
+    <text x="730" y="958" class="step"><tspan class="b">Open a job</tspan></text>
+    <text x="730" y="980" class="m">events: job_watch</text>
+    <text x="730" y="1000" class="m">F-01 / F-02 compute fit + path</text>
+
+    <circle cx="1004" cy="960" r="15" fill="#6868f7"/><text x="999" y="965" class="num">4</text>
+    <text x="1030" y="958" class="step"><tspan class="b">Apply</tspan></text>
+    <text x="1030" y="980" class="m">applications (snapshot, match_json)</text>
+    <text x="1030" y="1000" class="m">history: applied · notification → employer</text>
+
+    <circle cx="1304" cy="960" r="15" fill="#6868f7"/><text x="1299" y="965" class="num">5</text>
+    <text x="1330" y="958" class="step"><tspan class="b">Interview</tspan></text>
+    <text x="1330" y="980" class="m">application_slots (1–3 times)</text>
+    <text x="1330" y="1000" class="m">status → interview + history</text>
+  </g>
+  <line x1="330" y1="960" x2="384" y2="960" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="630" y1="960" x2="684" y2="960" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="930" y1="960" x2="984" y2="960" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1230" y1="960" x2="1284" y2="960" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+
+
+  <!-- ============ Example 2: an employer finds talent ============ -->
+  <line x1="84" y1="1030" x2="1516" y2="1030" stroke="#e9ecef" stroke-width="1"/>
+  <text x="84" y="1064" class="tag" style="fill:#003d5a">EXAMPLE · AN EMPLOYER FINDS TALENT</text>
+
+  <g>
+    <circle cx="104" cy="1110" r="15" fill="#003d5a"/><text x="99" y="1115" class="num">1</text>
+    <text x="130" y="1108" class="step"><tspan class="b">Post a job</tspan></text>
+    <text x="130" y="1130" class="m">jobs + job_skills (level, must)</text>
+    <text x="130" y="1150" class="m">from a PDF: parses (kind = jd) → form</text>
+
+    <circle cx="404" cy="1110" r="15" fill="#003d5a"/><text x="399" y="1115" class="num">2</text>
+    <text x="430" y="1108" class="step"><tspan class="b">Open the talent list</tspan></text>
+    <text x="430" y="1130" class="m">F-06 orders profiles · shared_profile()</text>
+    <text x="430" y="1150" class="m">events: profile_appear · Basic = top 5</text>
+
+    <circle cx="704" cy="1110" r="15" fill="#003d5a"/><text x="699" y="1115" class="num">3</text>
+    <text x="730" y="1108" class="step"><tspan class="b">Open and save a profile</tspan></text>
+    <text x="730" y="1130" class="m">F-01 per-skill match · profile_watch</text>
+    <text x="730" y="1150" class="m">saved_candidates · profile_saved</text>
+
+    <circle cx="1004" cy="1110" r="15" fill="#003d5a"/><text x="999" y="1115" class="num">4</text>
+    <text x="1030" y="1108" class="step"><tspan class="b">Invite or review</tspan></text>
+    <text x="1030" y="1130" class="m">Premium invite: origin = contacted</text>
+    <text x="1030" y="1150" class="m">or applicant → review + history</text>
+
+    <circle cx="1304" cy="1110" r="15" fill="#003d5a"/><text x="1299" y="1115" class="num">5</text>
+    <text x="1330" y="1108" class="step"><tspan class="b">Interview</tspan></text>
+    <text x="1330" y="1130" class="m">application_slots → talent picks</text>
+    <text x="1330" y="1150" class="m">name + email only with consent</text>
+  </g>
+  <line x1="330" y1="1110" x2="384" y2="1110" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="630" y1="1110" x2="684" y2="1110" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="930" y1="1110" x2="984" y2="1110" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1230" y1="1110" x2="1284" y2="1110" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+
+
+  <!-- ============ Example 3: after the interview (both sides) ============ -->
+  <line x1="84" y1="1180" x2="1516" y2="1180" stroke="#e9ecef" stroke-width="1"/>
+  <text x="84" y="1214" class="tag" style="fill:#005900">AFTER THE INTERVIEW · BOTH SIDES · EVERY STEP WRITES application_history + A NOTIFICATION</text>
+
+  <g>
+    <circle cx="104" cy="1260" r="15" fill="#005900"/><text x="99" y="1265" class="num">6</text>
+    <text x="130" y="1258" class="step"><tspan class="b">Confirm the time</tspan></text>
+    <text x="130" y="1280" class="m">Employer · slot_confirmed = 1</text>
+    <text x="130" y="1300" class="m">notification → talent</text>
+
+    <circle cx="404" cy="1260" r="15" fill="#005900"/><text x="399" y="1265" class="num">7</text>
+    <text x="430" y="1258" class="step"><tspan class="b">Record the result</tspan></text>
+    <text x="430" y="1280" class="m">Employer · accepted or not selected</text>
+    <text x="430" y="1300" class="m">notification + email_outbox</text>
+
+    <circle cx="704" cy="1260" r="15" fill="#005900"/><text x="699" y="1265" class="num">8</text>
+    <text x="730" y="1258" class="step"><tspan class="b">Send an offer</tspan></text>
+    <text x="730" y="1280" class="m">Employer · offer_text, offer_sent_at</text>
+    <text x="730" y="1300" class="m">notification + email_outbox</text>
+
+    <circle cx="1004" cy="1260" r="15" fill="#005900"/><text x="999" y="1265" class="num">9</text>
+    <text x="1030" y="1258" class="step"><tspan class="b">Answer the offer</tspan></text>
+    <text x="1030" y="1280" class="m">Talent · confirmed or rejected</text>
+    <text x="1030" y="1300" class="m">events: job_respond · notification</text>
+
+    <circle cx="1304" cy="1260" r="15" fill="#005900"/><text x="1296" y="1265" class="num">10</text>
+    <text x="1330" y="1258" class="step"><tspan class="b">Give feedback</tspan></text>
+    <text x="1330" y="1280" class="m">both · application_feedback</text>
+    <text x="1330" y="1300" class="m">to_other · to_team (team only)</text>
+  </g>
+  <line x1="330" y1="1260" x2="384" y2="1260" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="630" y1="1260" x2="684" y2="1260" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="930" y1="1260" x2="984" y2="1260" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="1230" y1="1260" x2="1284" y2="1260" stroke="#adb5bd" stroke-width="2" marker-end="url(#a)"/>
+  <text x="84" y="1326" class="m">The employer can mark "not selected" at any open step. A Premium invitation (origin = contacted) can be declined by the talent (status declined). Final states: confirmed, rejected, declined.</text>
+
+  <!-- ============ Other flows ============ -->
+  <line x1="84" y1="1346" x2="1516" y2="1346" stroke="#e9ecef" stroke-width="1"/>
+  <text x="84" y="1378" class="tag" style="fill:#6868f7">OTHER FLOWS</text>
+
+  <rect x="84" y="1394" width="272" height="96" rx="12" fill="#fff5c7"/>
+  <text x="100" y="1420" class="step"><tspan class="b">Email</tspan></text>
+  <text x="100" y="1442" class="m">email_outbox → worker every 20 s</text>
+  <text x="100" y="1460" class="m">→ SMTP, or "recorded" without SMTP</text>
+  <text x="100" y="1478" class="m">retry with backoff, up to 5 tries</text>
+
+  <rect x="370" y="1394" width="272" height="96" rx="12" fill="#f0f0fe"/>
+  <text x="386" y="1420" class="step"><tspan class="b">Charts</tspan></text>
+  <text x="386" y="1442" class="m">events → GET /api/stats</text>
+  <text x="386" y="1460" class="m">counts only, never per person</text>
+  <text x="386" y="1478" class="m">Premium: advanced charts</text>
+
+  <rect x="656" y="1394" width="272" height="96" rx="12" fill="#f0f0fe"/>
+  <text x="672" y="1420" class="step"><tspan class="b">Compare</tspan></text>
+  <text x="672" y="1442" class="m">Talent: 2–5 jobs · F-03 (JPI)</text>
+  <text x="672" y="1460" class="m">Employer: 2–5 profiles · F-04 (Premium)</text>
+  <text x="672" y="1478" class="m">no total, no ranking of people</text>
+
+  <rect x="942" y="1394" width="272" height="96" rx="12" fill="#f0f0fe"/>
+  <text x="958" y="1420" class="step"><tspan class="b">Skip, save, report</tspan></text>
+  <text x="958" y="1442" class="m">talent: bookmarks, skips, reports</text>
+  <text x="958" y="1460" class="m">employer: saved_ / skipped_candidates</text>
+  <text x="958" y="1478" class="m">saves and skips change the order (F-05)</text>
+
+  <rect x="1228" y="1394" width="288" height="96" rx="12" fill="#ffd2e1"/>
+  <text x="1244" y="1420" class="step" style="fill:#800000"><tspan class="b" style="fill:#800000">Privacy rights</tspan></text>
+  <text x="1244" y="1442" class="m" style="fill:#800000">GET /me/export: the user's own data</text>
+  <text x="1244" y="1460" class="m" style="fill:#800000">delete account: rows cascade,</text>
+  <text x="1244" y="1478" class="m" style="fill:#800000">CV files in var/uploads are removed</text>
+
+  <rect x="84" y="1506" width="1432" height="74" rx="12" fill="#f0f0fe"/>
+  <text x="104" y="1536" class="t"><tspan class="b">Privacy:</tspan> employers read talent only through the shared-profile allowlist — no name, email, country, CV or CV lines.</text>
+  <text x="104" y="1560" class="t"><tspan class="b">Identity:</tspan> name and email are shown only when the talent ticks the consent box (applications.identity_shared = 1).</text>
+</svg>
+</body>
+</html>

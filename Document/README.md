@@ -34,7 +34,9 @@ Document/
 | [**`SYSTEM_ARCHITECTURE_DIAGRAMS.md`**](architecture/SYSTEM_ARCHITECTURE_DIAGRAMS.md) | System Blueprints | End-to-end architecture diagrams, Mermaid specifications, and PNG diagram exports. |
 | [**`FRONTEND_ARCHITECTURE_DETAIL.md`**](architecture/FRONTEND_ARCHITECTURE_DETAIL.md) | Client Tier | Zero-build Vanilla ES6 SPA, reactive stores (`Session`, `CompareStore`), hash routing, and CSP compliance. |
 | [**`BACKEND_ARCHITECTURE_DETAIL.md`**](architecture/BACKEND_ARCHITECTURE_DETAIL.md) | Server Tier | Python standard library REST API, route dispatcher, sliding-window rate limiting, and RBAC guards. |
-| [**`DATA_MODELING_ARCHITECTURE_DETAIL.md`**](architecture/DATA_MODELING_ARCHITECTURE_DETAIL.md) | Persistence Tier | SQLite WAL relational schemas (`users`, `talents`, `employers`, `jobs`, `applications`), 22 tables explorer, and taxonomy inverted index. |
+| [**`DATA_MODELING_ARCHITECTURE_DETAIL.md`**](architecture/DATA_MODELING_ARCHITECTURE_DETAIL.md) | Persistence Tier | The 22 SQLite tables (schema version 2) in 6 groups, an ERD built from `schema.sql`, the core columns, JSON shapes (snapshot, match, parse result), application status values, data rules and the taxonomy in memory. |
+| [**`CLOUD_MIGRATION_PLAN.md`**](architecture/CLOUD_MIGRATION_PLAN.md) | Cloud (proposal) | Plan to move to AWS (Sydney): CloudFront, ECS Fargate, RDS PostgreSQL, S3, SQS, SES, Bedrock; a Bronze / Silver / Gold data lake; a 12-week migration plan and monthly cost estimates (Pilot, Growth, Scale). |
+| [**`DATA_FLOW_ARCHITECTURE.md`**](architecture/DATA_FLOW_ARCHITECTURE.md) | Data Flow | How data moves from the source files to the screen: the five layers, read and write flows, file parsing, scores on read, the privacy projection, the steps after the interview (offer, answer, feedback), compare, export and delete, notifications, events, and data classes. |
 | [**`FORMULA_ARCHITECTURE_DETAIL.md`**](architecture/FORMULA_ARCHITECTURE_DETAIL.md) | Intelligence Engine | Mathematical definitions, variables, bounds, and worked examples for Formulas F-01 to F-06. |
 | [**`PLAN_TEST_FOR_AI.md`**](architecture/PLAN_TEST_FOR_AI.md) | AI Test Plan | 5-tier QA hierarchy, risk-based validation matrix, and behavioral eval suite benchmarked on Project-Aegis. |
 
@@ -50,6 +52,8 @@ Document/
 | [**`04_USER_FLOW_SPECIFICATION.md`**](sdd/04_USER_FLOW_SPECIFICATION.md) | End-to-end state machines and screen transition diagrams for Talent and Employer personas. |
 | [**`05_USER_STORIES_AND_ACCEPTANCE_CRITERIA.md`**](sdd/05_USER_STORIES_AND_ACCEPTANCE_CRITERIA.md) | Formal agile user stories with Gherkin-style Given/When/Then acceptance criteria. |
 | [**`06_TECHNICAL_REQUIREMENTS.md`**](sdd/06_TECHNICAL_REQUIREMENTS.md) | Security constraints, performance SLAs, browser compatibility matrices, and storage quotas. |
+
+**Gap analysis:** [**`GAP_ANALYSIS.md`**](GAP_ANALYSIS.md) lists what the current app does not have yet, compared with `06_TECHNICAL_REQUIREMENTS.md` (P0, P1, P2, with code evidence). Checked on 8 October 2026.
 
 ---
 

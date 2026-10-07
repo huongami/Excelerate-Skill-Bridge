@@ -32,7 +32,7 @@
       }
     ],
     "sources": [
-      { "publisher": "Team decision based on PRD §4.1 Minh persona", "url": "Docs/Skill_Bridge_PRD.md", "capturedAt": "2026-08-23" }
+      { "publisher": "Team decision based on PRD §4.1 Minh persona", "url": "Document/sdd/02_PRODUCT_REQUIREMENTS_DOCUMENT.md", "capturedAt": "2026-08-23" }
     ],
     "reviewedBy": "Jinder team",
     "reviewedAt": "2026-08-23"
@@ -70,7 +70,7 @@
       }
     ],
     "sources": [
-      { "publisher": "Team decision based on PRD worked example", "url": "Docs/Skill_Bridge_PRD.md", "capturedAt": "2026-08-23" }
+      { "publisher": "Team decision based on PRD worked example", "url": "Document/sdd/02_PRODUCT_REQUIREMENTS_DOCUMENT.md", "capturedAt": "2026-08-23" }
     ],
     "reviewedBy": "Jinder team",
     "reviewedAt": "2026-08-23"

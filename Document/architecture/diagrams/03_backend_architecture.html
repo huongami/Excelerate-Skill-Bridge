@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!-- Source of 03_backend_architecture.png. Built from jinder_platform/jinder/ (http_server.py, guards.py, security.py, routes/, db.py,
+     parsing.py, mailer.py, engine_bridge.py). Make the PNG again with headless Chrome (window 1600x1680, device scale 2). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jinder platform: backend architecture</title>
+<style>
+  html, body { margin: 0; background: #fdfbf8; }
+  svg { display: block; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  .title { font-size: 34px; font-weight: 600; fill: #151531; letter-spacing: -0.5px; }
+  .sub { font-size: 16px; fill: #6b7280; }
+  .h { font-size: 17px; font-weight: 700; fill: #151531; }
+  .t { font-size: 13.5px; fill: #343a40; }
+  .m { font-size: 12.5px; fill: #6b7280; }
+  .s { font-size: 12.5px; fill: #343a40; }
+  .b { font-weight: 600; fill: #151531; }
+  .lbl { font-size: 13.5px; font-weight: 700; fill: #2a2a63; }
+  .tag { font-size: 11.5px; font-weight: 700; letter-spacing: 1.2px; }
+  .code { font-family: "JetBrains Mono", Consolas, monospace; font-size: 12px; fill: #343a40; }
+</style>
+</head>
+<body>
+<svg width="1600" height="1680" viewBox="0 0 1600 1680" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6868f7"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a68716"/>
+    </marker>
+    <filter id="s" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0d131b" flood-opacity="0.08"/></filter>
+  </defs>
+
+  <!-- Title -->
+  <text x="60" y="70" class="title">Jinder platform — backend: one request, end to end</text>
+  <text x="60" y="100" class="sub">jinder_platform/jinder · Python standard library only · port 8095 · every API path starts with /api (no version prefix)</text>
+
+  <!-- ============ ROW 1: client → HTTP server → dispatch · guards ============ -->
+  <!-- Client -->
+  <rect x="60" y="140" width="220" height="300" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="82" y="170" class="tag" style="fill:#6868f7">CLIENT</text>
+  <text x="82" y="196" class="h">Browser</text>
+  <rect x="82" y="212" width="176" height="52" rx="12" fill="#f9e2fb"/>
+  <text x="98" y="236" class="b" style="fill:#560059;font-size:14px">Talent</text>
+  <text x="98" y="254" class="m" style="fill:#560059">role = candidate</text>
+  <rect x="82" y="274" width="176" height="52" rx="12" fill="#c9f0ff"/>
+  <text x="98" y="298" class="b" style="fill:#003d5a;font-size:14px">Employer</text>
+  <text x="98" y="316" class="m" style="fill:#003d5a">role = recruiter</text>
+  <text x="82" y="354" class="s">jinder_frontend/app</text>
+  <text x="82" y="376" class="m">Header on each API call:</text>
+  <text x="82" y="396" class="code">Authorization:</text>
+  <text x="82" y="414" class="code">Bearer &lt;token&gt;</text>
+
+  <!-- HTTP server -->
+  <rect x="320" y="140" width="360" height="300" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="342" y="170" class="tag" style="fill:#6868f7">HTTP SERVER · http_server.py</text>
+  <text x="342" y="196" class="h">JinderServer (ThreadingHTTPServer)</text>
+  <text x="342" y="222" class="t">One thread for each request (daemon)</text>
+  <text x="342" y="244" class="t">Idle connection closes after 30 s</text>
+  <text x="342" y="266" class="t">Path <tspan class="b">/api/*</tspan> → API dispatch</text>
+  <text x="342" y="288" class="t">Other paths → static frontend files</text>
+  <rect x="342" y="304" width="316" height="114" rx="12" fill="#f0f0fe"/>
+  <text x="358" y="328" class="lbl">Body limits</text>
+  <text x="358" y="350" class="s">JSON body 1 MB · multipart body 25 MB</text>
+  <text x="358" y="370" class="s">One CV or job file 10 MB (PDF, DOCX)</text>
+  <text x="358" y="390" class="s">Upload with no token → 401 before</text>
+  <text x="358" y="408" class="s">the server reads the body</text>
+
+  <!-- API dispatch -->
+  <rect x="720" y="140" width="400" height="300" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="742" y="170" class="tag" style="fill:#6868f7">API DISPATCH · http_server.py</text>
+  <text x="742" y="196" class="h">find_route(method, path) → handler(ctx)</text>
+  <text x="742" y="222" class="t">Regex routes, checked in registration order</text>
+  <text x="742" y="244" class="t">Ctx: body, files, token, IP, own DB connection</text>
+  <text x="742" y="266" class="t">Write verbs: BEGIN IMMEDIATE … COMMIT</text>
+  <text x="742" y="288" class="t">Error → ROLLBACK · after_commit tasks run</text>
+  <text x="742" y="310" class="t">tx=False: hash first, then own transaction</text>
+  <rect x="742" y="326" width="356" height="92" rx="12" fill="#f8f9fa"/>
+  <text x="758" y="350" class="lbl">Answers (JSON)</text>
+  <text x="758" y="372" class="s">{"error": {"code", "message"}} · no stack trace</text>
+  <text x="758" y="392" class="s">404 NOT_FOUND · 413 TOO_LARGE</text>
+  <text x="758" y="410" class="s">503 BUSY (database lock) · 500 INTERNAL</text>
+
+  <!-- Guards -->
+  <rect x="1160" y="140" width="380" height="300" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="1182" y="170" class="tag" style="fill:#6868f7">GUARDS · guards.py · store.py</text>
+  <text x="1182" y="196" class="h">Checks inside each handler</text>
+  <text x="1182" y="222" class="t"><tspan class="b">require_user</tspan> → 401 UNAUTHORIZED</text>
+  <text x="1182" y="244" class="t"><tspan class="b">require_role</tspan> → 403 FORBIDDEN</text>
+  <text x="1182" y="266" class="t"><tspan class="b">require_premium</tspan> → 403 PREMIUM_REQUIRED</text>
+  <rect x="1182" y="284" width="336" height="134" rx="12" fill="#f0f0fe"/>
+  <text x="1198" y="308" class="lbl">Session lookup</text>
+  <text x="1198" y="330" class="s">store.user_for_token(): SHA-256 of the token</text>
+  <text x="1198" y="350" class="s">is looked up in the sessions table</text>
+  <text x="1198" y="370" class="s">An expired session is deleted</text>
+  <text x="1198" y="390" class="s">The user row is cached for the request</text>
+  <text x="1198" y="408" class="s">No cookies: the token is a header</text>
+
+  <!-- arrows row 1 -->
+  <line x1="280" y1="250" x2="316" y2="250" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="680" y1="250" x2="716" y2="250" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="1120" y1="250" x2="1156" y2="250" stroke="#6868f7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)"/>
+
+  <!-- ============ ROW 2: static files · route modules ============ -->
+  <rect x="60" y="490" width="300" height="300" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="82" y="520" class="tag" style="fill:#6868f7">STATIC FILES</text>
+  <text x="82" y="546" class="h">jinder_frontend/app</text>
+  <text x="82" y="572" class="t">GET and HEAD only (else 405)</text>
+  <text x="82" y="594" class="t">Allowed types: html, css, js,</text>
+  <text x="82" y="616" class="t">svg, png, jpg, ico, json</text>
+  <text x="82" y="638" class="t">Path must stay in the folder</text>
+  <text x="82" y="660" class="t">(no path traversal) · else 404</text>
+  <text x="82" y="682" class="t">Content-Security-Policy header</text>
+  <text x="82" y="704" class="t">Cache-Control: no-cache</text>
+  <text x="82" y="740" class="m">The folder is set by JINDER_APP_DIR</text>
+  <text x="82" y="760" class="m">var/uploads is never served</text>
+
+  <!-- Route modules -->
+  <rect x="400" y="490" width="1140" height="300" rx="22" fill="#fff" stroke="#151531" stroke-width="1.5" filter="url(#s)"/>
+  <text x="424" y="520" class="tag" style="fill:#151531">ROUTE MODULES · jinder/routes/ · 65 ROUTES</text>
+  <text x="424" y="540" class="m">Importing routes/__init__.py registers them in this order: account, jobs, applications, recruiter, platform, admin</text>
+
+  <g>
+    <rect x="424" y="554" width="172" height="216" rx="14" fill="#f8f9fa"/>
+    <text x="438" y="578" class="lbl">account.py · 14</text>
+    <text x="438" y="596" class="tag" style="fill:#6b7280;font-size:10.5px">PUBLIC + SIGNED IN</text>
+    <text x="438" y="618" class="code">/auth/signup</text>
+    <text x="438" y="636" class="code">/auth/login, logout</text>
+    <text x="438" y="654" class="code">/aliases/suggest</text>
+    <text x="438" y="672" class="code">/aliases/check</text>
+    <text x="438" y="690" class="code">/me, /me/password</text>
+    <text x="438" y="708" class="code">/me/export, delete</text>
+    <text x="438" y="726" class="code">/cv, /cv/parse/:id</text>
+    <text x="438" y="744" class="code">/profile/translate</text>
+    <text x="438" y="762" class="code">/me/shared-profile</text>
+  </g>
+  <g>
+    <rect x="608" y="554" width="172" height="216" rx="14" fill="#f9e2fb"/>
+    <text x="622" y="578" class="lbl" style="fill:#560059">jobs.py · 10</text>
+    <text x="622" y="596" class="tag" style="fill:#560059;font-size:10.5px">TALENT</text>
+    <text x="622" y="618" class="code">/jobs</text>
+    <text x="622" y="636" class="code">/jobs/recommended</text>
+    <text x="622" y="654" class="code">/jobs/compare</text>
+    <text x="622" y="672" class="code">/jobs/:id</text>
+    <text x="622" y="690" class="code">/jobs/:id/skip</text>
+    <text x="622" y="708" class="code">/bookmarks</text>
+    <text x="622" y="726" class="code">/bookmarks/:jobId</text>
+    <text x="622" y="744" class="code">/reports</text>
+    <text x="622" y="762" class="m" style="font-size:11.5px">(/reports: any user)</text>
+  </g>
+  <g>
+    <rect x="792" y="554" width="172" height="216" rx="14" fill="#f9e2fb"/>
+    <text x="806" y="578" class="lbl" style="fill:#560059">applications.py · 8</text>
+    <text x="806" y="596" class="tag" style="fill:#560059;font-size:10.5px">TALENT</text>
+    <text x="806" y="618" class="code">/applications</text>
+    <text x="806" y="636" class="code">/applications/:id</text>
+    <text x="806" y="654" class="code">  .../slot</text>
+    <text x="806" y="672" class="code">  .../offer-reply</text>
+    <text x="806" y="690" class="code">  .../decline</text>
+    <text x="806" y="708" class="code">  .../feedback</text>
+    <text x="806" y="744" class="m" style="font-size:11.5px">apply, list, edit note,</text>
+    <text x="806" y="762" class="m" style="font-size:11.5px">pick slot, reply, decline</text>
+  </g>
+  <g>
+    <rect x="976" y="554" width="172" height="216" rx="14" fill="#c9f0ff"/>
+    <text x="990" y="578" class="lbl" style="fill:#003d5a">recruiter.py · 20</text>
+    <text x="990" y="596" class="tag" style="fill:#003d5a;font-size:10.5px">EMPLOYER</text>
+    <text x="990" y="618" class="code">/recruiter/jobs</text>
+    <text x="990" y="636" class="code">  /:id, /import</text>
+    <text x="990" y="654" class="code">  /suggest-skills</text>
+    <text x="990" y="672" class="code">  /:id/applications</text>
+    <text x="990" y="690" class="code">/recruiter/</text>
+    <text x="990" y="708" class="code">  applications/:id</text>
+    <text x="990" y="726" class="code">/recruiter/candidates</text>
+    <text x="990" y="744" class="code">/recruiter/compare</text>
+    <text x="990" y="762" class="m" style="font-size:11.5px">Premium: contact, compare</text>
+  </g>
+  <g>
+    <rect x="1160" y="554" width="172" height="216" rx="14" fill="#daf9d4"/>
+    <text x="1174" y="578" class="lbl" style="fill:#005900">platform.py · 6</text>
+    <text x="1174" y="596" class="tag" style="fill:#005900;font-size:10.5px">SIGNED IN</text>
+    <text x="1174" y="618" class="code">/health (public)</text>
+    <text x="1174" y="636" class="code">/notifications</text>
+    <text x="1174" y="654" class="code">/notifications/read</text>
+    <text x="1174" y="672" class="code">/entitlements</text>
+    <text x="1174" y="690" class="code">  GET, PUT</text>
+    <text x="1174" y="708" class="code">/stats</text>
+    <text x="1174" y="744" class="m" style="font-size:11.5px">health: database and</text>
+    <text x="1174" y="762" class="m" style="font-size:11.5px">formula files load</text>
+  </g>
+  <g>
+    <rect x="1344" y="554" width="172" height="216" rx="14" fill="#ffd2e1"/>
+    <text x="1358" y="578" class="lbl" style="fill:#800000">admin.py · 7</text>
+    <text x="1358" y="596" class="tag" style="fill:#800000;font-size:10.5px">NO ACCESS CHECK</text>
+    <text x="1358" y="618" class="code">/admin/overview</text>
+    <text x="1358" y="636" class="code">/admin/tables</text>
+    <text x="1358" y="654" class="code">/admin/table-data</text>
+    <text x="1358" y="672" class="code">/admin/traffic</text>
+    <text x="1358" y="690" class="code">/admin/dataflow</text>
+    <text x="1358" y="708" class="code">/admin/sql</text>
+    <text x="1358" y="726" class="code">/admin/action</text>
+    <text x="1358" y="762" class="m" style="font-size:11.5px;fill:#800000">Known gap (see below)</text>
+  </g>
+
+  <!-- arrows row 1 → row 2 -->
+  <line x1="340" y1="440" x2="340" y2="486" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="350" y="470" class="m">not /api</text>
+  <line x1="920" y1="440" x2="920" y2="486" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="930" y="470" class="m">handler(ctx)</text>
+  <line x1="1350" y1="440" x2="1350" y2="486" stroke="#6868f7" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)"/>
+  <text x="1360" y="470" class="m">called by handlers</text>
+
+  <!-- ============ ROW 3: store/db · SQLite · domain modules · engine ============ -->
+  <rect x="60" y="850" width="380" height="220" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="82" y="880" class="tag" style="fill:#6868f7">DATA ACCESS · store.py · db.py</text>
+  <text x="82" y="906" class="h">Queries and rules</text>
+  <text x="82" y="932" class="t">store.py: users, profiles, shared_profile(),</text>
+  <text x="82" y="954" class="t">notify(), plans and Premium flags</text>
+  <text x="82" y="976" class="t">db.py: one connection for each request</text>
+  <text x="82" y="998" class="t">foreign_keys ON · busy_timeout 8 s</text>
+  <text x="82" y="1020" class="t">schema.sql · schema version 2</text>
+  <text x="82" y="1048" class="m">Old version 1 file is renamed to .v1.bak</text>
+
+  <rect x="480" y="850" width="300" height="220" rx="18" fill="#daf9d4"/>
+  <text x="502" y="880" class="tag" style="fill:#005900">DATABASE · SQLITE</text>
+  <text x="502" y="906" class="h" style="fill:#005900">var/jinder.db</text>
+  <text x="502" y="932" class="t" style="fill:#005900">journal_mode = WAL</text>
+  <text x="502" y="954" class="t" style="fill:#005900">22 tables (schema.sql)</text>
+  <text x="502" y="976" class="t" style="fill:#005900">Many readers, one writer</text>
+  <text x="502" y="998" class="t" style="fill:#005900">Writes: BEGIN IMMEDIATE</text>
+  <text x="502" y="1020" class="t" style="fill:#005900">Path set by JINDER_DB_PATH</text>
+  <text x="502" y="1048" class="m" style="fill:#005900">seed.py fills the catalogue at start</text>
+
+  <rect x="820" y="850" width="300" height="220" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="842" y="880" class="tag" style="fill:#6868f7">DOMAIN MODULES</text>
+  <text x="842" y="906" class="h">Shared logic</text>
+  <text x="842" y="932" class="t">catalogue.py: job feed and fit</text>
+  <text x="842" y="954" class="t">skills.py · translation.py</text>
+  <text x="842" y="976" class="t">taxonomy.py: ict_taxonomy.json</text>
+  <text x="842" y="998" class="t">aliases.py · reference.py</text>
+  <text x="842" y="1020" class="t">util.py: ApiError, ids, dates</text>
+  <text x="842" y="1048" class="m">No module has its own HTTP code</text>
+
+  <rect x="1160" y="850" width="380" height="220" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="1182" y="880" class="tag" style="fill:#6868f7">FORMULAS · engine_bridge.py</text>
+  <text x="1182" y="906" class="h">intelligence_engine (6 files)</text>
+  <text x="1182" y="932" class="t">Loads each file by path (importlib), once</text>
+  <text x="1182" y="954" class="t">Folder set by JINDER_ENGINE_DIR</text>
+  <text x="1182" y="976" class="t">Builds talent and job dictionaries:</text>
+  <text x="1182" y="998" class="t">no name, email, country or visa</text>
+  <g>
+    <rect x="1182" y="1014" width="50" height="24" rx="8" fill="#f0f0fe"/><text x="1191" y="1031" class="s b">F-01</text>
+    <rect x="1238" y="1014" width="50" height="24" rx="8" fill="#f0f0fe"/><text x="1247" y="1031" class="s b">F-02</text>
+    <rect x="1294" y="1014" width="50" height="24" rx="8" fill="#f0f0fe"/><text x="1303" y="1031" class="s b">F-03</text>
+    <rect x="1350" y="1014" width="50" height="24" rx="8" fill="#f0f0fe"/><text x="1359" y="1031" class="s b">F-04</text>
+    <rect x="1406" y="1014" width="50" height="24" rx="8" fill="#f0f0fe"/><text x="1415" y="1031" class="s b">F-05</text>
+    <rect x="1462" y="1014" width="50" height="24" rx="8" fill="#f0f0fe"/><text x="1471" y="1031" class="s b">F-06</text>
+  </g>
+  <text x="1182" y="1058" class="m">The API never sends a talent score to an employer</text>
+
+  <!-- arrows row 2 → row 3 -->
+  <line x1="420" y1="790" x2="420" y2="846" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="430" y="822" class="m">read / write</text>
+  <line x1="970" y1="790" x2="970" y2="846" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="1350" y1="790" x2="1350" y2="846" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="1360" y="822" class="m">scores for this request</text>
+  <line x1="440" y1="960" x2="476" y2="960" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="1120" y1="960" x2="1156" y2="960" stroke="#6868f7" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <!-- ============ ROW 4: background work ============ -->
+  <text x="60" y="1112" class="tag" style="fill:#6868f7">BACKGROUND WORK · STARTED BY app.py</text>
+
+  <rect x="60" y="1130" width="320" height="210" rx="18" fill="#fff5c7"/>
+  <text x="82" y="1160" class="tag" style="fill:#a68716">PRIVATE FILES</text>
+  <text x="82" y="1186" class="h">var/uploads/</text>
+  <text x="82" y="1212" class="t">From POST /cv and</text>
+  <text x="82" y="1234" class="t">POST /recruiter/jobs/import</text>
+  <text x="82" y="1256" class="t">Server makes the file name</text>
+  <text x="82" y="1278" class="t">Mode 600 · never served</text>
+  <text x="82" y="1300" class="t">Job file deleted after reading</text>
+  <text x="82" y="1324" class="m">Start: unused files older than 1 day go</text>
+
+  <rect x="420" y="1130" width="380" height="210" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="442" y="1160" class="tag" style="fill:#6868f7">PARSE POOL · parsing.py</text>
+  <text x="442" y="1186" class="h">ThreadPoolExecutor · 2 workers</text>
+  <text x="442" y="1212" class="t">Starts after COMMIT (after_commit task)</text>
+  <text x="442" y="1234" class="t">textextract.py → cv_parser.py or jd_parser.py</text>
+  <text x="442" y="1256" class="t">parses.status: parsing → done or failed</text>
+  <text x="442" y="1278" class="t">The upload answers at once (status parsing)</text>
+  <text x="442" y="1300" class="t">The browser polls GET /cv/parse/:id</text>
+  <text x="442" y="1324" class="m">At start, a stopped parse is marked failed</text>
+
+  <rect x="840" y="1130" width="340" height="210" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="862" y="1160" class="tag" style="fill:#6868f7">EMAIL OUTBOX · mailer.py</text>
+  <text x="862" y="1186" class="h">Thread jinder-outbox · every 20 s</text>
+  <text x="862" y="1212" class="t">Up to 20 due rows from email_outbox</text>
+  <text x="862" y="1234" class="t">SMTP with STARTTLS, if JINDER_SMTP_HOST</text>
+  <text x="862" y="1256" class="t">No SMTP host → status recorded</text>
+  <text x="862" y="1278" class="t">Failure: retry after 2^n minutes</text>
+  <text x="862" y="1300" class="t">After 5 tries → status failed</text>
+  <text x="862" y="1324" class="m">store.notify(email=True) writes the row</text>
+
+  <rect x="1220" y="1130" width="320" height="210" rx="18" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="1242" y="1160" class="tag" style="fill:#6868f7">LOGGING · app.py</text>
+  <text x="1242" y="1186" class="h">Queue thread for log lines</text>
+  <text x="1242" y="1212" class="t">QueueHandler → QueueListener</text>
+  <text x="1242" y="1234" class="t">A slow output never stops</text>
+  <text x="1242" y="1256" class="t">a request</text>
+  <text x="1242" y="1278" class="t">One line: method, path, status, ms</text>
+  <text x="1242" y="1300" class="t">No query, body or token</text>
+  <text x="1242" y="1324" class="m">Also counted in memory: /admin/traffic</text>
+
+  <!-- arrows row 3 → row 4 -->
+  <line x1="640" y1="1070" x2="640" y2="1126" stroke="#6868f7" stroke-width="2" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="650" y="1102" class="m">parses rows</text>
+  <path d="M760 1070 L760 1094 L1010 1094 L1010 1126" stroke="#6868f7" stroke-width="2" fill="none" marker-end="url(#a)"/>
+  <text x="850" y="1086" class="m">pending emails</text>
+  <line x1="416" y1="1235" x2="384" y2="1235" stroke="#a68716" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+
+  <!-- ============ ROW 5: security ============ -->
+  <rect x="60" y="1380" width="1480" height="270" rx="22" fill="#fff" stroke="#e9ecef" filter="url(#s)"/>
+  <text x="84" y="1414" class="tag" style="fill:#6868f7">SECURITY · security.py · http_server.py</text>
+
+  <rect x="84" y="1432" width="346" height="196" rx="14" fill="#f0f0fe"/>
+  <text x="100" y="1458" class="lbl">Sign-in rate limits (in memory)</text>
+  <text x="100" y="1482" class="s">Address + email: 5 failures in 15 min</text>
+  <text x="100" y="1502" class="s">Address: 20 failures in 15 min</text>
+  <text x="100" y="1522" class="s">Email: 30 failures in 15 min</text>
+  <text x="100" y="1542" class="s">Own password check: 5 in 15 min</text>
+  <text x="100" y="1562" class="s">Only failed tries count → 429 RATE_LIMITED</text>
+  <text x="100" y="1586" class="m">A deque of failure times for each key</text>
+  <text x="100" y="1606" class="m">One process · lost at a restart</text>
+
+  <rect x="446" y="1432" width="346" height="196" rx="14" fill="#f8f9fa"/>
+  <text x="462" y="1458" class="lbl">Passwords and sessions</text>
+  <text x="462" y="1482" class="s">scrypt N=2^14, r=8, p=1, 16-byte salt</text>
+  <text x="462" y="1502" class="s">Constant-time compare (hmac)</text>
+  <text x="462" y="1522" class="s">Token: secrets.token_urlsafe(32)</text>
+  <text x="462" y="1542" class="s">The database keeps only SHA-256</text>
+  <text x="462" y="1562" class="s">Session 8 h · 30 days with remember</text>
+  <text x="462" y="1586" class="m">A password change ends the other</text>
+  <text x="462" y="1606" class="m">sessions of the user</text>
+
+  <rect x="808" y="1432" width="346" height="196" rx="14" fill="#c9f0ff"/>
+  <text x="824" y="1458" class="lbl" style="fill:#003d5a">Response headers</text>
+  <text x="824" y="1482" class="s">All: X-Content-Type-Options nosniff,</text>
+  <text x="824" y="1502" class="s">X-Frame-Options DENY, Referrer-Policy,</text>
+  <text x="824" y="1522" class="s">Permissions-Policy</text>
+  <text x="824" y="1542" class="s">Static files: Content-Security-Policy</text>
+  <text x="824" y="1562" class="s">API JSON: Cache-Control no-store</text>
+  <text x="824" y="1586" class="m" style="fill:#003d5a">CORS only for JINDER_CORS_ORIGINS</text>
+  <text x="824" y="1606" class="m" style="fill:#003d5a">(empty by default)</text>
+
+  <rect x="1170" y="1432" width="346" height="196" rx="14" fill="#ffd2e1"/>
+  <text x="1186" y="1458" class="lbl" style="fill:#800000">Known gap · routes/admin.py</text>
+  <text x="1186" y="1482" class="s" style="fill:#800000">/admin/* has no session or role check</text>
+  <text x="1186" y="1502" class="s" style="fill:#800000">A caller can read every table and</text>
+  <text x="1186" y="1522" class="s" style="fill:#800000">run SELECT, PRAGMA or EXPLAIN</text>
+  <text x="1186" y="1542" class="s" style="fill:#800000">(POST /admin/sql, 100 rows at most)</text>
+  <text x="1186" y="1562" class="s" style="fill:#800000">Default host 127.0.0.1 limits the risk</text>
+  <text x="1186" y="1586" class="m" style="fill:#800000">Fix before a shared or public server:</text>
+  <text x="1186" y="1606" class="m" style="fill:#800000">GAP_ANALYSIS.md, section 1</text>
+</svg>
+</body>
+</html>

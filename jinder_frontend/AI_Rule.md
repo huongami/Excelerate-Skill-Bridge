@@ -101,7 +101,7 @@ Apply STE strictly by default. You can soften it to approximately **80%** when s
 
 ## Rule 4: Keep the facts correct
 
-- Use data from `Docs/Skill_Bridge_PRD.md` for product facts and statistics.
+- Use data from `../Document/sdd/02_PRODUCT_REQUIREMENTS_DOCUMENT.md` for product facts and statistics.
 - Always show the source of a statistic.
 - Do not show placeholder quotes or sample data as real data.
 
@@ -214,12 +214,14 @@ Another person copies only these three files to a different computer and builds 
 
 ## Rule 9: Do not change the source documents
 
-These files are the team's source documents. They are **read-only** for AI assistants:
+These files are the team's source documents (in `../Document/sdd/`, the SDD package). They are **read-only** for AI assistants:
 
-- `Docs/Jinder_PRD.md`
-- `Docs/Jinder_Feature_Specs.md`
-- `Docs/Jinder_User_Flow_Spec.md`
-- `Docs/Jinder_User_Stories.md`
+- `../Document/sdd/01_SYSTEM_OVERVIEW.md` (System Overview)
+- `../Document/sdd/02_PRODUCT_REQUIREMENTS_DOCUMENT.md` (PRD)
+- `../Document/sdd/03_FEATURE_SPECIFICATIONS.md` (Feature Specs)
+- `../Document/sdd/04_USER_FLOW_SPECIFICATION.md` (User Flow Spec)
+- `../Document/sdd/05_USER_STORIES_AND_ACCEPTANCE_CRITERIA.md` (User Stories)
+- `../Document/sdd/06_TECHNICAL_REQUIREMENTS.md` (Technical Requirements)
 
 1. Read these files to understand the product. Do not edit, rename, move or delete them.
 2. Do not change them with a script, a find-and-replace or a rename of the brand (for example, "Skill Bridge" → "Jinder").

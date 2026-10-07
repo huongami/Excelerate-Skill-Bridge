@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!-- Source of 04_intelligence_engine_pipeline.png. Built from jinder_backend_engine/intelligence_engine (01_ to 06_*.py, engine_common.py)
+     and jinder_platform/jinder (engine_bridge.py, catalogue.py, routes/jobs.py, routes/recruiter.py).
+     Make the PNG again with headless Chrome (window 1600 x the height of the svg, device scale 2). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jinder: intelligence engine pipeline (F-01 to F-06)</title>
+<style>
+  html, body { margin: 0; background: #fdfbf8; }
+  svg { display: block; font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+  .title { font-size: 34px; font-weight: 600; fill: #151531; letter-spacing: -0.5px; }
+  .sub { font-size: 16px; fill: #6b7280; }
+  .h { font-size: 17px; font-weight: 700; fill: #151531; }
+  .t { font-size: 13.5px; fill: #343a40; }
+  .f { font-size: 13px; fill: #151531; font-family: "JetBrains Mono", Consolas, monospace; }
+  .m { font-size: 12.5px; fill: #6b7280; }
+  .b { font-weight: 600; fill: #151531; }
+  .lbl { font-size: 13px; font-weight: 600; fill: #2a2a63; }
+  .tag { font-size: 11.5px; font-weight: 700; letter-spacing: 1.2px; }
+  .chip { font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<svg id="p" width="1600" height="1660" viewBox="0 0 1600 1660" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6868f7"/>
+    </marker>
+    <filter id="s" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#0d131b" flood-opacity="0.08"/></filter>
+  </defs>
+  <text x="60" y="70" class="title">Jinder intelligence engine — scoring pipeline (F-01 to F-06)</text>
+  <text x="60" y="100" class="sub">jinder_backend_engine/intelligence_engine · smooth functions · every score is from 0 to 100 · computed on each request and never stored</text>
+</svg>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("p");
+const C = {
+  talent: { fill: "#f9e2fb", ink: "#560059" }, employer: { fill: "#c9f0ff", ink: "#003d5a" },
+  green: { fill: "#daf9d4", ink: "#005900" }, yellow: { fill: "#fff5c7", ink: "#a68716" }, accent: { fill: "#f0f0fe", ink: "#2a2a63" },
+};
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  (parent || svg).appendChild(e);
+  return e;
+}
+// Text with **bold** parts.
+function text(x, y, cls, str, style) {
+  const t = el("text", { x, y, class: cls });
+  if (style) t.setAttribute("style", style);
+  str.split(/(\*\*[^*]+\*\*)/).forEach(part => {
+    if (!part) return;
+    const s = el("tspan", {}, t);
+    if (part.startsWith("**")) { s.setAttribute("class", "b"); s.textContent = part.slice(2, -2); } else s.textContent = part;
+  });
+  return t;
+}
+function card(x, y, w, h, fill, rx) {
+  const r = el("rect", { x, y, width: w, height: h, rx: rx || 18, fill: fill || "#fff" });
+  if (!fill || fill === "#fff") { r.setAttribute("stroke", "#e9ecef"); r.setAttribute("filter", "url(#s)"); }
+  return r;
+}
+function arrow(d, dashed) {
+  const p = el("path", { d, stroke: "#6868f7", "stroke-width": 2.5, fill: "none", "marker-end": "url(#a)" });
+  if (dashed) p.setAttribute("stroke-dasharray", "7 5");
+}
+function lines(x, y, list, step) {
+  list.forEach(([cls, s, style], i) => text(x, y + i * (step || 22), cls, s, style));
+}
+
+// ============ ROW 1: the three inputs ============
+const R1 = 140, R1H = 236, CW = 470, X = [60, 565, 1070];
+const inputs = [
+  { c: C.talent, tag: "INPUT 1 · TALENT", head: "Talent profile and translated skills", rows: [
+    ["t", "Skills from translated_skills, each with a level 1 to 5"],
+    ["t", "No level set: the evidence gives it (Strong 4, Moderate 3, Limited 2)"],
+    ["t", "Level Intern to Principal (rank 0 to 5) and the exact years"],
+    ["t", "Certifications, awards, qualification, field of study"],
+    ["t", "Target roles, domain, specialisation, cities, work modes"],
+    ["m", "Talent screens: the whole profile · Employer screens: shared profile only"]] },
+  { c: C.employer, tag: "INPUT 2 · EMPLOYER JOB", head: "jobs and job_skills", rows: [
+    ["t", "job_skills: name, level 1 to 5, must (required) or not"],
+    ["t", "Level, minimum and maximum years, specialisation"],
+    ["t", "City, work mode (Onsite, Hybrid, Remote), work type"],
+    ["t", "Pay min and max with its unit: year, day or hour"],
+    ["t", "Required and preferred certifications, awards, education"],
+    ["m", "days_old = the age of the posting · no data about a person"]] },
+  { c: C.yellow, tag: "INPUT 3 · REFERENCE", head: "data/reference/ict_taxonomy.json", rows: [
+    ["t", "172 skills: aliases, related skills, group, kind"],
+    ["t", "monthsToLearn and rarity for each skill"],
+    ["t", "17 occupations: ANZSCO-style codes and core skills"],
+    ["t", "6 levels, 3 domains, 7 skill groups"],
+    ["t", "38 certifications (tier, prepMonths), 12 award kinds"],
+    ["m", "Made by hand for the 3 ICT domains · not an official standard"]] },
+];
+inputs.forEach((d, i) => {
+  card(X[i], R1, CW, R1H, d.c.fill);
+  text(X[i] + 24, R1 + 32, "tag", d.tag, `fill:${d.c.ink}`);
+  text(X[i] + 24, R1 + 60, "h", d.head, `fill:${d.c.ink}`);
+  lines(X[i] + 24, R1 + 90, d.rows);
+  arrow(`M${X[i] + CW / 2} ${R1 + R1H} L${X[i] + CW / 2} ${R1 + R1H + 40}`);
+});
+
+// ============ ROW 2: the bridge and the shared analysis ============
+const R2 = R1 + R1H + 44, R2H = 196;
+card(60, R2, 1480, R2H);
+text(84, R2 + 32, "tag", "PLATFORM → ENGINE", "fill:#6868f7");
+text(84, R2 + 60, "h", "jinder/engine_bridge.py builds the dictionaries");
+lines(84, R2 + 90, [
+  ["t", "**candidate_dict(private=True)** for the Talent's own screens"],
+  ["t", "**shared_candidate_dict()** for Employer screens: no CV, no evidence lines"],
+  ["t", "**job_dict()**: job facts only; the pay goes with its unit"],
+  ["m", "Loads the six files by path and calls them. No score math in the platform."],
+]);
+arrow(`M700 ${R2 + 100} L796 ${R2 + 100}`);
+card(810, R2 + 18, 706, R2H - 36, C.accent.fill, 14);
+text(832, R2 + 46, "tag", "ONE SHARED ANALYSIS · engine_common.py + 01.analyse()", `fill:${C.accent.ink}`);
+lines(832, R2 + 74, [
+  ["t", "**prepare_candidate / prepare_job**: names → taxonomy keys, levels, ranks, yearly pay"],
+  ["t", "Per-skill credit, level fit, years fit, occupation closeness O, domain,"],
+  ["t", "location, work type, education, certification and award credit (each 0 to 1)"],
+  ["m", "Smooth functions: sat(x, a) = 1 − e^(−x/a) · logistic · e^(−b·x^p) · (h/n)^1.3 · Σmin / Σmax"],
+  ["m", "No fixed step decides a score. Ties are broken by the id."],
+]);
+
+// ============ ROW 3: the six formulas ============
+const R3 = R2 + R2H + 44, FH = 268, GAPV = 24;
+const COLX = [60, 565, 1070];
+arrow(`M${COLX[0] + CW / 2} ${R2 + R2H} L${COLX[0] + CW / 2} ${R3 - 4}`);
+arrow(`M${COLX[1] + CW / 2} ${R2 + R2H} L${COLX[1] + CW / 2} ${R3 - 4}`);
+arrow(`M${COLX[2] + CW / 2} ${R2 + R2H} L${COLX[2] + CW / 2} ${R3 - 4}`);
+const F = [
+  { col: 0, row: 0, side: "talent", id: "F-01 · 01_skill_matching_model.py", head: "Skill match (SMF) and product fit", rows: [
+      ["f", "fit = 100·Σ w·p / Σ w + 7(G − 0.45) + 3A"],
+      ["t", "skills 0.39 · occupation 0.16 · level 0.10 · domain 0.10 ·"],
+      ["t", "experience 0.09 · location 0.07 · methods 0.04 ·"],
+      ["t", "education 0.03 · work type 0.02 (a part that does not apply is out)"],
+      ["f", "SMF = (0.25 S_tree + 0.50 S_direct + 0.25 S_trans) · Φ"]],
+    reads: "Reads: skills and levels, level, years, roles, places, certifications, awards",
+    used: ["Fit part of the score on the job card and Job detail", "Per-skill match; radar: Occupation fit, Skills, Work methods"] },
+  { col: 0, row: 1, side: "talent", id: "F-02 · 02_skill_gap_analysis.py", head: "Gaps, readiness (JRS) and path", rows: [
+      ["f", "T = monthsToLearn · (E(n) − E(h)) · speed · λ, 0.25 to 18"],
+      ["f", "S = Σ w·(16·sat(T, 2.5) + 3·ln(1 + T)) + 6(1 − O)"],
+      ["f", "JRS = 100·e^(−S/70)    GSI = 100 − JRS"],
+      ["f", "months = max T + 0.18·(Σ T − max T)"],
+      ["t", "A missing certification is a gap with months, not a block"]],
+    reads: "Reads: the F-01 analysis, monthsToLearn, prepMonths",
+    used: ["Job detail: Readiness axis, gap list with months", "\"Your path to this job\" (Talent only)"] },
+  { col: 1, row: 0, side: "talent", id: "F-03 · 03_job_to_job_comparison.py", head: "Job proximity index (JPI)", rows: [
+      ["f", "JPI = Σ w_k·S_k / Σ w_k    (symmetric)"],
+      ["t", "requirements 0.34 · occupation 0.20 · place and mode 0.14"],
+      ["t", "salary 0.12 · level 0.12 · sector 0.08"],
+      ["f", "S_comp = 100·e^(−|ln(Ma/Mb)| / 0.5)"],
+      ["t", "Yearly pay: day x 220, hour x 1950 (annual_salary)"]],
+    reads: "Reads: two jobs only (no data about a person)",
+    used: ["Similar jobs on Job detail (up to 3, by JPI)", "Talent Compare: index and 5 parts for each pair"] },
+  { col: 1, row: 1, side: "talent", id: "F-05 · 05_job_seeker_ranking_feed.py", head: "Feed ranking score (FRS)", rows: [
+      ["f", "FRS = (0.43 S_cap + 0.21 S_wage + 0.18 S_loc"],
+      ["f", "       + 0.18 S_rec) · (1 − min(0.40, 0.15k))"],
+      ["f", "S_cap = 0.53 SMF + 0.27 JRS + 0.20 level/years fit"],
+      ["f", "S_wage = 100·logistic(z, 4.3)   S_rec = 100·e^(−0.044 D)"],
+      ["t", "k = jobs of the same employer above this job"]],
+    reads: "Reads: the Talent and ALL open jobs; uses F-01 and F-02",
+    used: ["Feed order: score = round(0.55 fit + 0.45 FRS*, 1)", "Radar: Capability, Pay upside, Location, Freshness"] },
+  { col: 2, row: 0, side: "employer", id: "F-04 · 04_candidate_benchmarking.py", head: "Merit areas (RMS)", rows: [
+      ["t", "Skill depth, experience 100·sat(Y, 6.5), level standing"],
+      ["t", "100·(r/5)^0.9, evidence, transferable skills,"],
+      ["t", "certifications, awards, qualification level"],
+      ["f", "RMS = 0.30 D + 0.20 E + 0.22 V + 0.12 T + 0.16 L + bonus"],
+      ["t", "RMS is computed but never sent and never ranks people"]],
+    reads: "Reads: the shared profile and the chosen job · no CV text",
+    used: ["Employer Compare (Premium): 5 radar axes", "and the position of each profile inside ONE area"] },
+  { col: 2, row: 1, side: "employer", id: "F-06 · 06_recruiter_candidate_ranking.py", head: "Talent search score (TSS)", rows: [
+      ["f", "TSS = 0.44 S_req + 0.25 S_sen + 0.18 S_evid"],
+      ["f", "      + 0.08 S_reg + 0.05 S_audit"],
+      ["f", "S_sen = 100·(0.55 level fit + 0.45 years fit)"],
+      ["f", "order = 0.6·coverage + 0.4·TSS   (stays on the server)"],
+      ["t", "Seniority uses the level rank and years, not title words"]],
+    reads: "Reads: the shared profile and one job; uses F-01 and F-04",
+    used: ["Talent list order (Best fit for this job), per-skill match", "Application snapshot; Compare: 3 F-06 axes"] },
+];
+F.forEach(d => {
+  const x = COLX[d.col], y = R3 + d.row * (FH + GAPV), c = C[d.side];
+  card(x, y, CW, FH);
+  text(x + 24, y + 32, "tag", d.id, "fill:#6868f7");
+  const chipW = d.side === "talent" ? 74 : 92;
+  el("rect", { x: x + CW - 24 - chipW, y: y + 17, width: chipW, height: 22, rx: 11, fill: c.fill });
+  text(x + CW - 24 - chipW / 2, y + 32, "chip", d.side === "talent" ? "TALENT" : "EMPLOYER", `fill:${c.ink};text-anchor:middle`);
+  text(x + 24, y + 60, "h", d.head);
+  lines(x + 24, y + 88, d.rows, 21);
+  text(x + 24, y + 200, "m", d.reads);
+  el("rect", { x: x + 16, y: y + 212, width: CW - 32, height: 44, rx: 10, fill: c.fill });
+  text(x + 28, y + 230, "t", d.used[0], `fill:${c.ink};font-size:12.5px`);
+  text(x + 28, y + 248, "t", d.used[1], `fill:${c.ink};font-size:12.5px`);
+});
+
+// ============ ROW 4: what the API sends ============
+const R3END = R3 + 2 * FH + GAPV;
+const R4 = R3END + 44, R4H = 176;
+arrow(`M${COLX[0] + CW / 2} ${R3END} L${COLX[0] + CW / 2} ${R4 - 4}`);
+arrow(`M${COLX[1] + CW / 2} ${R3END} L${COLX[1] + CW / 2} ${R4 - 4}`);
+arrow(`M${COLX[2] + CW / 2} ${R3END} L${COLX[2] + CW / 2} ${R4 - 4}`);
+card(60, R4, 975, R4H, C.talent.fill);
+text(84, R4 + 32, "tag", "TO THE TALENT · /jobs · /jobs/:id · /jobs/compare · /bookmarks", `fill:${C.talent.ink}`);
+text(84, R4 + 60, "h", "A guide for the Talent: Fit score, reasons, path", `fill:${C.talent.ink}`);
+lines(84, R4 + 90, [
+  ["t", "**match.score** = round(0.55 × fit + 0.45 × FRS*, 1) on the job card and Job detail (FRS* = FRS after saves and skips)"],
+  ["t", "Recommended when the score is 45 or more · sorts: Best match, Newest posted · equal values ordered by job id"],
+  ["t", "**bridge**: 8 radar axes, occupation tier, readiness tier, gaps with months, the path object (radar, Fit list, Gap list)"],
+  ["t", "**similar**: up to 3 jobs by JPI · **Compare**: the same 8 axes for each job and 5 parts for each pair of jobs"],
+]);
+card(1070, R4, 470, R4H, C.employer.fill);
+text(1094, R4 + 32, "tag", "TO THE EMPLOYER · /recruiter/*", `fill:${C.employer.ink}`);
+text(1094, R4 + 60, "h", "An order and a per-skill match only", `fill:${C.employer.ink}`);
+lines(1094, R4 + 90, [
+  ["t", "Talent list in order of 0.6 × coverage + 0.4 × TSS"],
+  ["t", "Each card: skill coverage and per-skill status"],
+  ["t", "Basic plan: the first 5 · Premium: all, and Compare"],
+  ["t", "Compare: 9 radar axes, positions inside one area"],
+]);
+
+// ============ ROW 5: the product rules ============
+const R5 = R4 + R4H + 24, R5H = 132;
+card(60, R5, 1480, R5H, C.accent.fill, 18);
+text(84, R5 + 32, "tag", "PRODUCT RULES · jinder_platform/docs/FORMULAS_IN_THE_PRODUCT.md", `fill:${C.accent.ink}`);
+const rules = [
+  ["1 · No single score on a person to an Employer", "The API never sends TSS, RMS, the order value", "or a rank number to an Employer."],
+  ["2 · No total in Compare", "Radar axes and positions inside one area only.", "The axes are never added up."],
+  ["3 · Scores are never stored", "Computed on each request. An application keeps", "a snapshot of the per-skill match only."],
+  ["4 · No protected attributes", "No name, email, phone, country, nationality,", "visa, age, gender or photo in any formula."],
+];
+rules.forEach((r, i) => {
+  const x = 84 + i * 366;
+  text(x, R5 + 64, "lbl", r[0]);
+  text(x, R5 + 88, "t", r[1]);
+  text(x, R5 + 108, "t", r[2]);
+});
+
+const H = R5 + R5H + 40;
+svg.setAttribute("height", H);
+svg.setAttribute("viewBox", `0 0 1600 ${H}`);
+document.title = document.title + " · height " + H;
+</script>
+</body>
+</html>
