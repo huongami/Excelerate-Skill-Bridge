@@ -1,4 +1,4 @@
-# Skill Bridge: Story Breakdown
+# Jinder: Story Breakdown
 
 **Created:** 2026-10-06
 **Companion to:** Skill_Bridge_User_Stories.md

@@ -2,17 +2,17 @@
 
 Jinder translates overseas and cross-industry experience into skills that Australian employers recognise.
 This version of the demo covers **three domains only**: Software Engineering, AI & Machine Learning and Data.
-This folder is the **running product**: it joins the Skill Bridge frontend, a REST API, a SQLite database and the six Jinder formulas.
+This folder is the **running product**: it joins the Jinder frontend, a REST API, a SQLite database and the six Jinder formulas.
 
 ```
 Hackathon/
-├── Skill Bridge/            The frontend (HTML, CSS and JavaScript), the design system and the product specifications
+├── jinder_frontend/         The frontend (HTML, CSS and JavaScript), the design system and the product specifications
 ├── jinder_backend_engine/   The six formulas (intelligence_engine/), the taxonomy and the synthetic data (data/)
 ├── spec/                    Copies of the feature specifications
 └── jinder_platform/         THIS FOLDER: the API, the database, the sample data loader and the tests
 ```
 
-The platform does not copy the other folders. It reads the frontend from `Skill Bridge/app`, the formulas from
+The platform does not copy the other folders. It reads the frontend from `jinder_frontend/app`, the formulas from
 `jinder_backend_engine/intelligence_engine`, and the taxonomy and the sample data from `jinder_backend_engine/data`.
 It needs only **Python 3.9 or later** (tested on 3.12). It has **no third-party package**.
 
@@ -104,7 +104,7 @@ Set an environment variable, or write it in a `.env` file in this folder (see `.
 | `JINDER_DB_PATH` | `var/jinder.db` | The SQLite file |
 | `JINDER_VAR_DIR` | `var` | The folder of the database and the uploads |
 | `JINDER_UPLOAD_DIR` | `var/uploads` | The private folder of uploaded files |
-| `JINDER_APP_DIR` | `../Skill Bridge/app` | The frontend folder |
+| `JINDER_APP_DIR` | `../jinder_frontend/app` | The frontend folder |
 | `JINDER_ENGINE_DIR` | `../jinder_backend_engine/intelligence_engine` | The formula folder |
 | `JINDER_DATA_DIR` | `../jinder_backend_engine/data` | The data folder (it has `reference/` and `synthetic/`) |
 | `JINDER_TAXONOMY_PATH` | `<data>/reference/ict_taxonomy.json` | The taxonomy file: the one list of names for skills, roles, certifications, domains and levels |
@@ -120,10 +120,10 @@ Set an environment variable, or write it in a `.env` file in this folder (see `.
 
 ## Use the frontend on its own address
 
-The frontend can also run from `Skill Bridge/app/serve.ps1` (port 5173). Then:
+The frontend can also run from `jinder_frontend/app/serve.ps1` (port 5173). Then:
 
 1. Start the platform with `JINDER_CORS_ORIGINS=http://localhost:5173`.
-2. In `Skill Bridge/app/js/config.js`, set `API_BASE_URL` to `http://localhost:8095/api`.
+2. In `jinder_frontend/app/js/config.js`, set `API_BASE_URL` to `http://localhost:8095/api`.
 3. Start the frontend with `serve.ps1 -ApiOrigin http://localhost:8095`.
 
 Add `?mock=1` to the address (`http://localhost:5173/?mock=1`) to use the browser-only mock API without a backend.

@@ -1,5 +1,5 @@
 """Reference lists. The lists of the product come from the taxonomy (`taxonomy.py`), so that the API, the forms, the formulas and the
-CV reader use the same names. The Skill Bridge frontend has the same lists in `js/data/reference.js`.
+CV reader use the same names. The Jinder frontend has the same lists in `js/data/reference.js`.
 
 The product covers three domains only: Software Engineering, AI & Machine Learning and Data.
 Do not add lists for sensitive data (nationality, visa status, age, gender). See AI_Rule Rule 5.

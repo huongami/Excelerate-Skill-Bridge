@@ -1,4 +1,4 @@
-# Skill Bridge: Feature Specifications
+# Jinder: Feature Specifications
 
 **Created:** 2026-10-06
 **Status:** In Specification (drafts for review)

@@ -1,6 +1,6 @@
-# Skill Bridge: Technical Requirements
+# Jinder: Technical Requirements
 
-Derived from the Skill Bridge User Flow Specification. Futura Remix Hackathon, international round.
+Derived from the Jinder User Flow Specification. Futura Remix Hackathon, international round.
 
 **Terminology:** Talent and Employer replace candidate, job seeker, recruiter and HR throughout. Requirement IDs such as TR-JS and TR-R keep their original prefixes for traceability.
 

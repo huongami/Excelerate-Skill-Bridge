@@ -1,7 +1,7 @@
 # MockICT: the browser-only mock backend is ICT only
 
 Owner: the MOCK-ICT agent. This file is for the Docs agent (merge into `prompt.md`, `AI_Rule.md`, `README.md`) and for the QA agent.
-The plan is `docs/V2_PLAN.md` (decision D2). The mock is the backend that runs in the browser with `?mock=1`. All paths are in `Skill Bridge/app/js/`.
+The plan is `docs/V2_PLAN.md` (decision D2). The mock is the backend that runs in the browser with `?mock=1`. All paths are in `jinder_frontend/app/js/`.
 Text is written in simple English.
 
 ## 1. What changed

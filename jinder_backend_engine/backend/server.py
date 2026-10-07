@@ -1,7 +1,7 @@
 """
-Skill Bridge 2.0 — Product REST API & Protocol Mock Server
-Path: product_api/server.py
-Follows specification in app/spec/05_API_SPEC.md
+Jinder Platform — Product REST API & Protocol Mock Server
+Path: backend/server.py
+Follows specification in docs/05_API_SPEC.md
 Runs on port 8095 (or custom PORT env). Direct integration with SQLite DB and Intelligence Engine.
 """
 
@@ -968,7 +968,7 @@ class APIHandler(BaseHTTPRequestHandler):
             job_id, title, company, short_desc, desc, body.get("location", "Sydney, NSW"),
             "Sydney", "NSW", body.get("category", "Technology & Data"), anzsco_code,
             body.get("anzsco_title", "Software Engineer"), 110000, 160000, "$110,000 - $160,000 AUD",
-            json.dumps(body.get("requirements", [])), "Skill Bridge Direct"
+            json.dumps(body.get("requirements", [])), "Jinder Direct"
         ))
         conn.commit()
         conn.close()
@@ -1224,7 +1224,7 @@ class APIHandler(BaseHTTPRequestHandler):
 def run_server():
     server_address = ("", PORT)
     httpd = HTTPServer(server_address, APIHandler)
-    print(f"Skill Bridge 2.0 Product API running on http://localhost:{PORT}")
+    print(f"Jinder Platform API running on http://localhost:{PORT}")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

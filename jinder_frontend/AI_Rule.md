@@ -216,10 +216,10 @@ Another person copies only these three files to a different computer and builds 
 
 These files are the team's source documents. They are **read-only** for AI assistants:
 
-- `Docs/Skill_Bridge_PRD.md`
-- `Docs/Skill_Bridge_Feature_Specs.md`
-- `Docs/Skill_Bridge_User_Flow_Spec.md`
-- `Docs/Skill_Bridge_User_Stories.md`
+- `Docs/Jinder_PRD.md`
+- `Docs/Jinder_Feature_Specs.md`
+- `Docs/Jinder_User_Flow_Spec.md`
+- `Docs/Jinder_User_Stories.md`
 
 1. Read these files to understand the product. Do not edit, rename, move or delete them.
 2. Do not change them with a script, a find-and-replace or a rename of the brand (for example, "Skill Bridge" → "Jinder").

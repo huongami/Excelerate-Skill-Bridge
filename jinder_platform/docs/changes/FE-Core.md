@@ -1,7 +1,7 @@
 # FE-Core: what changed (Jinder V2, wave 1)
 
 Owner: FE-Core agent. This file is for the Docs agent (merge into `prompt.md`, `DESIGN.md`, `README.md`) and for the other frontend agents (they call the shared components).
-All paths are in `Skill Bridge/app/`. Text is written in simple English.
+All paths are in `jinder_frontend/app/`. Text is written in simple English.
 
 ## 1. Files
 

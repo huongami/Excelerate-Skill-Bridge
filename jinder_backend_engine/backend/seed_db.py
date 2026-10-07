@@ -1,6 +1,6 @@
 """
-Skill Bridge 2.0 (Jinder) — Database Seeding Pipeline
-Path: product_api/seed_db.py
+Jinder Platform — Database Seeding Pipeline
+Path: backend/seed_db.py
 Populates 461 Australian jobs and 320 candidate CVs with realistic statuses and cleanly parsed skills.
 """
 
@@ -61,7 +61,7 @@ def parse_location(location: str) -> tuple[str, str]:
 
 
 def seed_database():
-    print("Beginning Jinder (Skill Bridge) Database Seeding...")
+    print("Beginning Jinder Database Seeding...")
     init_db()
     conn = get_db()
     cursor = conn.cursor()

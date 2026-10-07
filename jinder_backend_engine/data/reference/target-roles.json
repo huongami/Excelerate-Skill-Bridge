@@ -4,7 +4,7 @@
     "label": "Business Operations Coordinator",
     "industry": "Business Operations",
     "decisionSource": "PRD §4.1 Minh Tran candidate persona",
-    "reviewedBy": "Skill Bridge team",
+    "reviewedBy": "Jinder team",
     "reviewedAt": "2026-08-23"
   },
   {
@@ -12,7 +12,7 @@
     "label": "Marketing Operations Manager",
     "industry": "Marketing",
     "decisionSource": "Team-selected from the static demo narrative",
-    "reviewedBy": "Skill Bridge team",
+    "reviewedBy": "Jinder team",
     "reviewedAt": "2026-08-23"
   },
   {
@@ -20,7 +20,7 @@
     "label": "Product Manager",
     "industry": "Technology",
     "decisionSource": "PRD worked cross-border example",
-    "reviewedBy": "Skill Bridge team",
+    "reviewedBy": "Jinder team",
     "reviewedAt": "2026-08-23"
   },
   {
@@ -28,7 +28,7 @@
     "label": "Data Analyst",
     "industry": "Data and Analytics",
     "decisionSource": "PRD worked cross-industry example",
-    "reviewedBy": "Skill Bridge team",
+    "reviewedBy": "Jinder team",
     "reviewedAt": "2026-08-23"
   }
 ]

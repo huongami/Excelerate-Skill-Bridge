@@ -1,6 +1,6 @@
 # API notes
 
-The API follows the contract in `Skill Bridge/prompt.md` (section "API contract"). The frontend (`js/api/http.js`) calls it at `/api`.
+The API follows the contract in `jinder_frontend/prompt.md` (section "API contract"). The frontend (`js/api/http.js`) calls it at `/api`.
 This document lists only what the platform **adds** or **decides**. Version 2 changes are in the sections "Lists", "Compare", "Premium benefits" and "Job detail".
 
 ## Base address and errors
@@ -124,7 +124,7 @@ A user sees only their own counts. No answer has the id or the alias of the othe
 - `salaryUnit` is `year`, `day` or `hour`. `salaryMin` and `salaryMax` stay private. `salary` is the text, for example `$900 per day` or `$150,000 – $170,000 per year`.
   The platform never changes a day or hour rate to a yearly pay. The formula engine does it (`annual_salary`: day x 220, hour x 1950).
 - An employer job gets its numbers and unit from the salary text: "per day", "a day", "daily" or "day rate" gives `day`; "per hour", "an hour" or "hourly" gives `hour`; else `year`. A text with no amount ("Market competitive") gives no numbers.
-- `POST /recruiter/jobs` and `PATCH /recruiter/jobs/:id` accept the new job keys. The old short body still works (a new job without `level` gets `"Mid"`). The checks are in `Skill Bridge/prompt.md`.
+- `POST /recruiter/jobs` and `PATCH /recruiter/jobs/:id` accept the new job keys. The old short body still works (a new job without `level` gets `"Mid"`). The checks are in `jinder_frontend/prompt.md`.
   `skillRequirements` is `[{name, level 1 to 5, must}]` (1 to 12 skills). If it has items, the job skills come from it. `certifications` is `{required: [name], preferred: [name]}` (up to 10 in each list). `awards` is `{preferred: [kind]}` (kinds of the taxonomy).
 - `POST /recruiter/jobs/suggest-skills` keeps `skills` (names) and adds `skillRequirements` (`[{name, level: 3, must: true}]`). It also reads `category` (a domain) from the body.
 - A posted job gets its ANZSCO code and occupation from the taxonomy (the longest role of the role list found in the title, else the occupation of the specialisation). The codes are a demo mapping.

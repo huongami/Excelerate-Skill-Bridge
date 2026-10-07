@@ -1,7 +1,7 @@
 # FE-Talent: what changed (Jinder V2, wave 3)
 
 Owner: FE-Talent agent. This file is for the Docs agent (merge into `prompt.md`, `DESIGN.md`, `README.md`).
-All paths are in `Skill Bridge/app/`. Text is written in simple English. The plan is `docs/V2_PLAN.md`.
+All paths are in `jinder_frontend/app/`. Text is written in simple English. The plan is `docs/V2_PLAN.md`.
 
 ## 1. Files
 

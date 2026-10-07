@@ -1,7 +1,7 @@
 # FE-Compare: what changed (Jinder V2, wave 3)
 
 Owner: FE-Compare agent. This file is for the Docs agent (merge into `prompt.md`, `DESIGN.md`, `README.md`) and for the other agents.
-All paths are in `Skill Bridge/app/` unless a path says otherwise. Text is written in simple English.
+All paths are in `jinder_frontend/app/` unless a path says otherwise. Text is written in simple English.
 
 ## 1. Files
 

@@ -194,7 +194,7 @@ Fixed by QA, among others: the Settings box "What employers see" now shows the l
 
 ## Source documents that are now out of date
 
-The folder `spec` and the files `Skill Bridge/Docs/Skill_Bridge_*.md` are the original specification. AI assistants must not change them (`AI_Rule.md` Rule 9). These statements no longer match the product:
+The folder `spec` and the files in `jinder_frontend/Docs/` are the original specification. AI assistants must not change them (`AI_Rule.md` Rule 9). These statements no longer match the product:
 
 | Statement in the spec | What is true now |
 |---|---|
@@ -212,5 +212,5 @@ The folder `spec` and the files `Skill Bridge/Docs/Skill_Bridge_*.md` are the or
 
 - `docs/V2_PLAN.md`: the plan, the decisions and the defaults.
 - `docs/DATABASE.md`, `docs/API_NOTES.md`, `docs/FORMULAS_IN_THE_PRODUCT.md`: the technical documents.
-- `Skill Bridge/prompt.md`, `Skill Bridge/Docs/DESIGN.md`, `Skill Bridge/AI_Rule.md`: how to build the frontend, how it looks, and the rules.
+- `jinder_frontend/prompt.md`, `jinder_frontend/Docs/DESIGN.md`, `jinder_frontend/AI_Rule.md`: how to build the frontend, how it looks, and the rules.
 - `docs/changes/*.md`: the notes of each part of the work.

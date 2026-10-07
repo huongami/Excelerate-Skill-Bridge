@@ -1,4 +1,4 @@
-# Skill Bridge: User Flow Specification
+# Jinder: User Flow Specification
 
 Futura Remix Hackathon, international round. Working draft from the team's flow discussion.
 

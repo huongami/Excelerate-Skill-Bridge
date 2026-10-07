@@ -99,7 +99,7 @@ Words searched in the whole project: nurse, nursing, AHPRA, accountant, accounti
 | `app/serve.ps1` | The route that served the old CSV file | Removed |
 | `AI_Rule.md` Rule 2 last bullet | It said that the mock has non-ICT data | Rewritten |
 | `jinder_backend_engine/docs/01_BACKEND_DEVELOPMENT_GUIDE.md`, `03_API_SPEC.md` | Documents of the earlier prototype: nurse examples, AHPRA, `/api/seeker/projection` | A note at the top: earlier prototype, version 1, the product API is in `jinder_platform/docs/API_NOTES.md` |
-| `Skill Bridge/prompt.md` Appendix | 7 embedded copies were different from the files (`landing.js`, `onboarding.js`, 5 mock files) | Copied from the files. All 19 embedded copies are now equal (checked) |
+| `jinder_frontend/prompt.md` Appendix | 7 embedded copies were different from the files (`landing.js`, `onboarding.js`, 5 mock files) | Copied from the files. All 19 embedded copies are now equal (checked) |
 
 ### Kept, with the reason
 

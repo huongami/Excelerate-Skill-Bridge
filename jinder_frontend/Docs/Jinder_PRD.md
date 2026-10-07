@@ -1,6 +1,6 @@
 **FUTURA REMIX HACKATHON**
 
-**Skill Bridge**
+**Jinder**
 
 *Product Vision, Goal & Requirements Document*
 

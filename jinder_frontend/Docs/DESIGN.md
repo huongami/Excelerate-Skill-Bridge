@@ -279,7 +279,7 @@ The logo mark is a rounded square (`{rounded.md}` at 40px). Use the same softnes
 **Jinder** = **J**ob + T**inder**. Talent and jobs "match", as on a swipe app. The tone stays professional: the match is based on skills, and every match is explained.
 
 - Write the name as one word with a capital J: **Jinder**. Do not write "JINDER", "jinder" or "Jin-der" in UI text.
-- The project folder and some internal keys (for example, `sb_users` in `localStorage`) still use the old name "Skill Bridge". Users do not see them.
+- Some internal keys (for example, `sb_users` in `localStorage`) still use the legacy prefix `sb_`. Users do not see them.
 
 ### Logo mark
 The mark is two swiped cards on a rounded square, with a check badge where the cards overlap:

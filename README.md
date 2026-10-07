@@ -1,4 +1,4 @@
-# Jinder (Skill Bridge 2.0) — Autonomous Capability Alignment Platform
+# Jinder — Autonomous Capability Alignment Platform
 
 > **Live Platform Repository & Source Code**  
 > For complete instructions on how to start and test the platform, see [**`START_HERE.md`**](START_HERE.md).
@@ -44,7 +44,7 @@ Excelerate-Skill-Bridge/
 │   ├── var/                   # SQLite database (jinder.db) & upload storage
 │   └── docs/                  # Platform documentation, API notes, database spec
 │
-├── Skill Bridge/              # 🎨 The Frontend & Application Specifications
+├── jinder_frontend/          # 🎨 The Frontend & Application Specifications
 │   ├── app/                   # Web frontend (HTML, CSS, JS) served by jinder_platform
 │   ├── Docs/                  # Design system (DESIGN.md), feature specs, user stories
 │   ├── AI_Rule.md             # Architecture, security & privacy rules
@@ -58,9 +58,9 @@ Excelerate-Skill-Bridge/
 │   └── formulas_presentation.html # Interactive formula visual presentation
 │
 ├── spec/                      # 📋 Product Feature Specifications & User Flows
-│   ├── Skill_Bridge_Feature_Specs.md
-│   ├── Skill_Bridge_User_Flow_Spec.md
-│   └── Skill_Bridge_User_Stories.md
+│   ├── Jinder_Feature_Specs.md
+│   ├── Jinder_User_Flow_Spec.md
+│   └── Jinder_User_Stories.md
 │
 └── old_version/               # 📦 Archived Legacy Files (Pre-Jinder prototype)
 ```

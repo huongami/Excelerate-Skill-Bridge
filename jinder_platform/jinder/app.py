@@ -58,7 +58,7 @@ def main(argv=None) -> int:
 
     listener = _setup_logging()
     if not config.APP_DIR.joinpath("index.html").is_file():
-        print(f"The frontend folder was not found: {config.APP_DIR}\nSet JINDER_APP_DIR to the 'app' folder of Skill Bridge.", file=sys.stderr)
+        print(f"The frontend folder was not found: {config.APP_DIR}\nSet JINDER_APP_DIR to the 'app' folder of jinder_frontend.", file=sys.stderr)
         return 2
     if not config.ENGINE_DIR.joinpath("01_skill_matching_model.py").is_file():
         print(f"The formula folder was not found: {config.ENGINE_DIR}\nSet JINDER_ENGINE_DIR to 'intelligence_engine'.", file=sys.stderr)

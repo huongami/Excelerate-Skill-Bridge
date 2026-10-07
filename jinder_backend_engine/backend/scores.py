@@ -1,7 +1,7 @@
 """
-Skill Bridge 2.0 — Intelligence Engine Wrapper & Behavioural Scoring
-Path: product_api/scores.py
-Follows specification in app/spec/04_DATA_AND_SCORING_SPEC.md § 5 & § 6
+Jinder Platform — Intelligence Engine Wrapper & Behavioural Scoring
+Path: backend/scores.py
+Follows specification in docs/04_DATA_AND_SCORING_SPEC.md § 5 & § 6
 Directly imports Formulas 1 through 6 without weight tampering or client approximation.
 """
 

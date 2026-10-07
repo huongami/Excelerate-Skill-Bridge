@@ -5,7 +5,7 @@ This package has four folders. Keep them side by side. Do not move or rename the
 | Folder | What it has |
 |---|---|
 | `jinder_platform` | The server (REST API), the database code, the sample data loader and the tests. **Start here.** |
-| `Skill Bridge` | The frontend (`app/`), the design system (`Docs/DESIGN.md`), the rules for AI assistants (`AI_Rule.md`), the build prompt and API contract (`prompt.md`) and the product specifications |
+| `jinder_frontend` | The frontend (`app/`), the design system (`Docs/DESIGN.md`), the rules for AI assistants (`AI_Rule.md`), the build prompt and API contract (`prompt.md`) and the product specifications |
 | `jinder_backend_engine` | The six formulas (`intelligence_engine/`), the taxonomy (`data/reference/ict_taxonomy.json`) and the synthetic data (`data/synthetic/`) |
 | `spec` | Copies of the feature specifications (not needed to run) |
 
@@ -68,7 +68,7 @@ The result of the last full check (QA) is in `jinder_platform/docs/CHANGELOG_V2.
 
 - `jinder_platform/README.md`: what the product does, the settings, the folders
 - `jinder_platform/docs/`: the database, the formulas in the product, the API notes, and `CHANGELOG_V2.md` (what changed in version 2 and the known limits)
-- `Skill Bridge/prompt.md`: the API contract between the frontend and the backend, and how to build the frontend
+- `jinder_frontend/prompt.md`: the API contract between the frontend and the backend, and how to build the frontend
 - `jinder_backend_engine/data/reference/README_taxonomy.md` and `jinder_backend_engine/data/synthetic/README.md`: the taxonomy and the synthetic data
 
 > **Warning:** The server uses plain HTTP and the demo switch for Premium. Use it on your own computer.

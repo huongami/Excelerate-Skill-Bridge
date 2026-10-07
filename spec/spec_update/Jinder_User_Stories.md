@@ -1,4 +1,4 @@
-# Skill Bridge: User Stories (full set, every story broken down)
+# Jinder: User Stories (full set, every story broken down)
 
 **Created:** 2026-10-06
 **Terminology:** Talent and Employer replace candidate, job seeker, recruiter and HR.

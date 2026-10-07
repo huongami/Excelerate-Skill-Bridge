@@ -40,7 +40,8 @@ def _env_int(name: str, default: int) -> int:
 # The formulas, the datasets and the frontend stay in their own folders. The platform only reads them.
 ENGINE_DIR = _env_path("JINDER_ENGINE_DIR", WORKSPACE_DIR / "jinder_backend_engine" / "intelligence_engine")
 DATA_DIR = _env_path("JINDER_DATA_DIR", WORKSPACE_DIR / "jinder_backend_engine" / "data")
-APP_DIR = _env_path("JINDER_APP_DIR", WORKSPACE_DIR / "Skill Bridge" / "app")
+APP_DIR = _env_path("JINDER_APP_DIR", WORKSPACE_DIR / "jinder_frontend" / "app")
+
 
 # The taxonomy: the one list of names (skills, roles, certifications, domains ...). The formulas and the CV reader load the same file.
 TAXONOMY_PATH = _env_path("JINDER_TAXONOMY_PATH", DATA_DIR / "reference" / "ict_taxonomy.json")

@@ -5,7 +5,7 @@ and does not change a contract (sections 4 to 7) without telling the lead. If so
 
 ## 0. Rules for every agent
 
-1. Read `Skill Bridge/AI_Rule.md` (privacy and security rules) and this file before you write code.
+1. Read `jinder_frontend/AI_Rule.md` (privacy and security rules) and this file before you write code.
 2. Only edit the files that you own (section 8). If you need a change in a file of another agent, write it in your final report ("Needs from X: ..."). Do not edit it.
 3. Use the Write and Edit tools for files. Do not write code with shell heredocs or `echo` (this caused NUL and backspace bugs before). Keep LF line endings. Python 3.9 compatible, standard library only.
 4. Privacy does not change: an employer never gets a name, an email, a country, a visa, an age, a gender, the CV text, the evidence lines, or a single score on a person.
