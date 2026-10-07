@@ -7,14 +7,15 @@ The repository is modularized into specialized tiers:
 ```
 Excelerate-Skill-Bridge/
 │
-├── AI Rule/                # AI boundaries, capabilities, 10 core safety rules
-├── Skill/                  # Modular AI skills (Extraction, Gap Analysis, Formulas, PII Masking)
-├── SDD/                    # Software Design Description (PRD, Specs, User Flows, Stories)
-├── Prompt/                 # Prompt Engineering principles, system templates, API contract
-├── Readme/                 # Comprehensive documentation guides and walkthroughs
-├── Presentation/           # Interactive HTML pitch decks and mathematical formula presentations
-├── Data/                   # Verified synthetic benchmarks and Australian legal provenance statement
-├── Document/               # Deep Architecture Details (Frontend, Backend, Data, Formulas, AI Test Plan)
+├── Document/               # 📚 Master Documentation Hub (guides, architecture, sdd, prompt, ai_rule)
+│   ├── guides/             # Quick start, system guide, and demo walkthroughs
+│   ├── architecture/       # Deep specifications, SQLite schema, formula proofs, diagrams
+│   ├── sdd/                # Software Design Description (PRD, specs, user flows, stories)
+│   ├── prompt/             # Prompt engineering principles & API contracts
+│   └── ai_rule/            # AI governance, safety boundaries & 10 core rules
+├── Presentation/           # 🎨 Interactive Portals (Pitch Deck, Formulas Deck, Admin Telemetry)
+├── Skill/                  # ⚡ 5 Antigravity & Agentic Skills
+├── Data/                   # 📊 Verified Synthetic Benchmarks & Australian Legal Provenance
 │
 ├── jinder_platform/        # Running Python HTTP/REST Backend Server & SQLite Database
 ├── jinder_frontend/        # Client Single Page Application (HTML/CSS/JS)

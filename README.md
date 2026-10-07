@@ -29,19 +29,20 @@ python3 run_tests.py
 
 ## 📁 Repository Structure
 
-The repository is organized according to the required submission standard:
+The repository is organized into a clean, modular structure centered around the unified `Document/` hub:
 
 ```
 Excelerate-Skill-Bridge/
 │
-├── AI Rule/                   # 🛡️ AI Boundaries, Capabilities & 10 Core Governance Rules
-├── Skill/                     # ⚡ AI Skills (Extraction, Gap Analysis, Formulas, Zero-PII)
-├── SDD/                       # 📋 Software Design Description (PRD, Specs, User Flows, Stories)
-├── Prompt/                    # 💬 Prompt Engineering Principles, System Prompts & API Contract
-├── Readme/                    # 📖 Master Documentation Guides & Demo Walkthroughs
+├── Document/                  # 📚 Master Documentation Hub (guides, architecture, sdd, prompt, ai_rule)
+│   ├── guides/                # 🚀 Quick start, system architecture guide, demo walkthroughs
+│   ├── architecture/          # 📐 Deep specifications, schemas, formulas, diagrams, AI test plan
+│   ├── sdd/                   # 📋 Software Design Description (PRD, specs, user flows, stories)
+│   ├── prompt/                # 💬 Prompt engineering principles, guardrails & API contracts
+│   └── ai_rule/               # 🛡️ AI governance boundaries, ethical limits & 10 core safety rules
 ├── Presentation/              # 🎨 Interactive Portals (Pitch Deck, Formulas Deck, Admin Telemetry)
+├── Skill/                     # ⚡ 5 Antigravity & Agentic Skills
 ├── Data/                      # 📊 Verified Synthetic Benchmarks & Australian Legal Provenance
-├── Document/                  # 📐 Architecture Details (Frontend, Backend, Data, Formulas, AI Test Plan)
 │
 ├── jinder_platform/           # 🚀 The Running Platform Backend & SQLite Database
 ├── jinder_frontend/           # 🎨 Client Web Application (HTML/CSS/JS)
@@ -70,7 +71,7 @@ The `Presentation/` directory hosts two zero-build, standalone web applications 
 
 ## 📐 The 6 Canonical Mathematical Formulas
 
-Documented in [**`Document/FORMULA_ARCHITECTURE_DETAIL.md`**](Document/FORMULA_ARCHITECTURE_DETAIL.md) and implemented in `jinder_backend_engine/intelligence_engine/`:
+Documented in [**`Document/architecture/FORMULA_ARCHITECTURE_DETAIL.md`**](Document/architecture/FORMULA_ARCHITECTURE_DETAIL.md) and implemented in `jinder_backend_engine/intelligence_engine/`:
 
 1. **F-01 (SMF):** Skill Match Frequency & Coverage (weighted mandatory $w=2.0$ vs preferred $w=1.0$ with proficiency depth).
 2. **F-02 (GSI & JRS):** Gap Severity Index & Net Job Readiness Score (distinguishes statutory blockers $\beta=15.0$ from learnable tools $\beta=5.0$).

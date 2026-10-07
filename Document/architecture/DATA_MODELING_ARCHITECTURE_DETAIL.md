@@ -210,7 +210,7 @@ This enables the platform to rank 1,000+ candidates in under 15ms without invoki
 
 Administrative inspection and relational database telemetry are available in the standalone admin portal:
 
-- **Portal Location:** [`Presentation/admin.html`](../Presentation/admin.html) (also deployed at `jinder_frontend/app/admin.html`).
+- **Portal Location:** [**`Presentation/admin.html`**](../../Presentation/admin.html) (also deployed at `jinder_frontend/app/admin.html`).
 - **Live SQLite WAL Telemetry:** Real-time database metrics including page counts, WAL file size, journal mode (`WAL`), and cache performance.
 - **Verified Entity Breakdown:** Monitors active database population (**51 Talents**, **1 Demo Employer**, 54 Job Requisitions, 31 Top Australian Tech Employers).
 - **Interactive 5-Stage Data Flow Pipeline:** Click-to-inspect pipeline stages (Ingestion $\to$ Taxonomy Translation $\to$ Mathematical Engine $\to$ SQLite WAL $\to$ Shortlist Delivery) with live sample telemetry.

@@ -15,4 +15,4 @@ This directory contains the operational AI skills utilized across the **Jinder P
 ---
 
 ## Architectural Alignment
-All skills adhere to the governance rules defined in [`../AI Rule/AI_GOVERNANCE_AND_BOUNDARIES.md`](../AI%20Rule/AI_GOVERNANCE_AND_BOUNDARIES.md).
+All skills adhere to the governance rules defined in [`../Document/ai_rule/AI_GOVERNANCE_AND_BOUNDARIES.md`](../Document/ai_rule/AI_GOVERNANCE_AND_BOUNDARIES.md).

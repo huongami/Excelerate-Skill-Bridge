@@ -43,7 +43,7 @@ Jinder implements a **5-Tier Quality Assurance Hierarchy** with **Priority Tiers
   - Verify database schema version checks (`v1` to `v2` automatic migration without data loss).
 
 ### Tier 3: Contract & Schema Verification (Priority: P1)
-- **Objective:** Validate that all API request and response payloads adhere to the rigid contracts specified in `Prompt/API_CONTRACT_PROMPT.md` and `prompt.md`.
+- **Objective:** Validate that all API request and response payloads adhere to the rigid contracts specified in [`../prompt/API_CONTRACT_PROMPT.md`](../prompt/API_CONTRACT_PROMPT.md) and `prompt.md`.
 - **Test Strategy:**
   - Validate response status codes: `413 TOO_LARGE` (>1MB JSON), `429 RATE_LIMITED` (>5 failed logins), `401 UNAUTHORIZED`, `403 FORBIDDEN`.
   - Negative payload testing: Malformed JSON, missing mandatory keys, type mismatches (string passed where integer 1-5 expected).

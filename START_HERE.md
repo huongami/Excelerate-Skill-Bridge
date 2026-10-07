@@ -66,6 +66,7 @@ The result of the last full check (QA) is in `jinder_platform/docs/CHANGELOG_V2.
 
 ## Read more
 
+- `Document/README.md`: Master Documentation Hub (guides, architecture specifications, SDD, prompt principles, and AI governance)
 - `Presentation/formulas_presentation.html`: Canonical Mathematical Intelligence Engine deck (100vh single-screen view of all 6 formulas, interactive parameter workbench with continuous gradient sliders, ASD-STE100 certified)
 - `Presentation/admin.html`: Admin Control Center & Data Flow Telemetry portal (live SQLite WAL metrics, 5-stage interactive pipeline chart, 22-table database explorer, safe SQL runner)
 - `Presentation/README.md`: Master guide and viewing instructions for all presentation and admin portals

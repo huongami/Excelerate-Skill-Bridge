@@ -186,7 +186,7 @@ Where:
 
 ## 4. Interactive Mathematical Presentation & Workbench
 
-The complete canonical mathematical engine can be explored live in [`Presentation/formulas_presentation.html`](../Presentation/formulas_presentation.html):
+The complete canonical mathematical engine can be explored live in [**`Presentation/formulas_presentation.html`**](../../Presentation/formulas_presentation.html):
 
 - **100vh Single-Screen Layout:** Displays all 6 formulas simultaneously on a 3×2 grid with zero vertical page scrolling.
 - **Interactive Parameter Workbench:** Live input parameters with continuous gradient sliders (`#6868f7` $\to$ `#a855f7` $\to$ `#ffa340`), real-time recalculation, and step-by-step arithmetic verification.
