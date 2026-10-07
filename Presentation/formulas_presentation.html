@@ -106,14 +106,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 24px;
+      padding: 0 20px;
       z-index: 50;
+      gap: 12px;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
+      flex-shrink: 0;
+      min-width: 0;
     }
 
     .brand-logo {
@@ -122,35 +125,41 @@
       gap: 8px;
       text-decoration: none;
       color: var(--ink);
+      flex-shrink: 0;
     }
 
     .logo-mark {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       flex-shrink: 0;
       display: block;
-      border-radius: 9px;
+      border-radius: 8px;
       box-shadow: 0 1px 4px rgba(21, 21, 49, 0.18);
     }
 
     .logo-word {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       letter-spacing: -0.5px;
       color: var(--ink);
+      white-space: nowrap;
     }
     .logo-word span { color: var(--accent); }
 
     .brand-divider {
       width: 1px;
-      height: 24px;
+      height: 26px;
       background: var(--hairline);
+      flex-shrink: 0;
     }
 
     .portal-tag {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+      line-height: 1.25;
     }
 
     .portal-title {
@@ -161,12 +170,14 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
     }
 
     .portal-sub {
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--muted);
       font-weight: 500;
+      white-space: nowrap;
     }
 
     /* Segmented Tab Bar */
@@ -177,6 +188,7 @@
       padding: 3px;
       border-radius: var(--r-md);
       gap: 2px;
+      flex-shrink: 0;
     }
 
     .tab-pill {
@@ -843,10 +855,10 @@
         <div class="brand-divider"></div>
         <div class="portal-tag">
           <div class="portal-title">
-            Mathematical Intelligence Engine
-            <span class="chip chip-accent" style="font-size: 10.5px; padding: 1px 7px;">ASD-STE100 Certified</span>
+            Mathematical Engine
+            <span class="chip chip-accent" style="font-size: 10px; padding: 2px 7px; font-weight: 700;">ASD-STE100</span>
           </div>
-          <div class="portal-sub">6 Deterministic Algebraic Formulations • Australian Talent & Employer Matching</div>
+          <div class="portal-sub">6 Deterministic Formulas • Talent & Employer Matching</div>
         </div>
       </div>
 
