@@ -10,6 +10,20 @@
 
 In employment technology, black-box AI scores (e.g., arbitrary neural probability numbers) exacerbate recruitment bias and cannot be audited by regulators or users. Jinder replaces opaque scoring with **6 transparent, deterministic mathematical formulas (F-01 through F-06)**.
 
+### Intelligence Engine V2 Scoring Pipeline
+![Intelligence Engine Pipeline](diagrams/04_intelligence_engine_pipeline.png)
+
+```mermaid
+flowchart TD
+    In[Candidate Vector C & Job Vector J] --> Pre[Taxonomy Alignment & Smooth Operators]
+    Pre --> F1[F-01: SMF & Fit]
+    Pre --> F2[F-02: SGF & JRS]
+    Pre --> F3[F-03: JPI Proximity]
+    Pre --> F4[F-04: RMS Merit]
+    F1 & F2 --> F5[F-05: FRS Seeker Feed]
+    F1 & F2 --> F6[F-06: TSS Recruiter Search]
+```
+
 ```
        Candidate Competency Vector [C]        Job Requirement Vector [J]
                      \                                   /

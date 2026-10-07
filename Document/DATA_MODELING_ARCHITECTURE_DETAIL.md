@@ -8,6 +8,19 @@
 
 ## 1. Relational Entity-Relationship Diagram (ERD)
 
+### Data Architecture Blueprint
+![Data Modeling ERD](diagrams/05_data_modeling_erd.png)
+
+```mermaid
+erDiagram
+    USERS ||--o| TALENTS : "has profile"
+    USERS ||--o| EMPLOYERS : "manages"
+    USERS ||--o{ SESSIONS : "authenticates"
+    EMPLOYERS ||--o{ JOBS : "publishes"
+    TALENTS ||--o{ APPLICATIONS : "submits"
+    JOBS ||--o{ APPLICATIONS : "receives"
+```
+
 ```
        +------------------+
        |      users       |

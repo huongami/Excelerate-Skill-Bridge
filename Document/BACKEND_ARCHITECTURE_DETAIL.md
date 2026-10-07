@@ -11,6 +11,19 @@
 
 The backend of the Jinder platform is designed for **extreme portability, high operational determinism, and zero environment friction**. By leveraging exclusively Python 3.9+ built-in modules, Jinder can be run anywhere from air-gapped evaluation environments to lightweight serverless containers without `pip install` or native compilation dependencies.
 
+### Backend Architecture Blueprint
+![Backend Architecture](diagrams/03_backend_architecture.png)
+
+```mermaid
+flowchart LR
+    Client["Client Request"] --> Server["server.py (BaseHTTP)"]
+    Server --> Middlewares["RateLimiter + AuthGuard"]
+    Middlewares --> App["app.py (Dispatcher)"]
+    App --> Routes["Routes (Auth, Jobs, Talents, Compare)"]
+    Routes --> Engine["Intelligence Engine V2"]
+    Routes --> DB[("SQLite WAL (db.py)")]
+```
+
 ---
 
 ## 2. Directory Layout & Module Structure

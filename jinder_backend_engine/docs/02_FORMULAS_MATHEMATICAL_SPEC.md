@@ -201,5 +201,4 @@ The taxonomy (`monthsToLearn`, `rarity`, `prepMonths`) is a list that people mad
 | Shared helpers | `intelligence_engine/engine_common.py` (must stay next to the six files; `run_verification.py` and the legacy `backend/scores.py` load the formulas, so they use it too) | this file, section 1 |
 | Architecture | `intelligence_engine/MASTER_PLAN.md` | |
 | Tests | `jinder_platform/tests/test_formulas.py`, `test_differentiation.py`, `run_verification.py` | |
-
-The file `intelligence_engine/formulas_presentation.html` still shows the formulas of version 1. See the note at the top of that file.
+The interactive slide presentation `Presentation/formulas_presentation.html` (and `intelligence_engine/formulas_presentation.html`) presents the complete Version 2 continuous formulas, worked examples, and interactive live calculators.

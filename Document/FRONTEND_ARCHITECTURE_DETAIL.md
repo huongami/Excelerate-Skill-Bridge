@@ -15,6 +15,18 @@ The Jinder frontend is engineered with three core architectural constraints:
    - No inline scripts (`<script>...</script>` or `onclick="..."` event attributes are banned). All event binding is done via `addEventListener` in JavaScript controllers.
 3. **Reactive In-Memory State Containers:** Unidirectional data flow managed by explicit singleton stores (`Session`, `CompareStore`) with pub/sub event broadcasting.
 
+### Frontend Architecture Blueprint
+![Frontend Architecture](diagrams/02_frontend_architecture.png)
+
+```mermaid
+flowchart TD
+    HTML["index.html"] --> Router["Hash Router"]
+    Router --> Views["Views (Home, Jobs, Recruiter, Compare)"]
+    Views --> Components["Components (JobCard, RadarSVG, CompareTray)"]
+    Components <--> Stores["Stores (SessionStore, CompareStore)"]
+    Stores <--> API["API Client (Fetch + Bearer Token)"]
+```
+
 ---
 
 ## 2. Directory Layout & Module Structure
