@@ -264,13 +264,12 @@
       height: calc(100vh - 60px);
       max-height: calc(100vh - 60px);
       overflow: hidden;
-      padding: 16px 24px 20px;
+      padding: 12px 20px 14px;
       display: flex;
       flex-direction: column;
       box-sizing: border-box;
-      max-width: 1720px;
       width: 100%;
-      margin: 0 auto;
+      max-width: 100%;
     }
 
     /* Header Context Banner */
@@ -279,30 +278,46 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      gap: 16px;
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .banner-title-group {
+      min-width: 0;
+      overflow: hidden;
     }
 
     .banner-title-group h1 {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--ink);
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .banner-title-group p {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--body);
-      margin-top: 2px;
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .banner-meta-pills {
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-shrink: 0;
     }
 
     /* ==========================================================================
@@ -312,17 +327,20 @@
       flex: 1;
       height: 100%;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 12px;
       overflow: hidden;
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .formula-card {
       background: var(--canvas);
       border: 1px solid var(--hairline);
       border-radius: var(--r-xl);
-      padding: 18px 20px;
+      padding: 14px 16px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -330,6 +348,9 @@
       transition: all 0.2s var(--ease);
       position: relative;
       cursor: pointer;
+      min-width: 0;
+      overflow: hidden;
+      box-sizing: border-box;
     }
 
     .formula-card:hover {
@@ -340,10 +361,12 @@
 
     .card-top {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
+      min-width: 0;
+      width: 100%;
     }
 
     .card-formula-code {
@@ -351,8 +374,10 @@
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.5px;
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: var(--r-xs);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .f1-badge { background: #e0e7ff; color: #3730a3; }
     .f2-badge { background: #fce7f3; color: #831843; }
@@ -366,16 +391,22 @@
       font-size: 11px;
       color: var(--muted);
       font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .card-title {
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 15.5px;
       font-weight: 700;
       color: var(--ink);
       letter-spacing: -0.3px;
       line-height: 1.25;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* Math Formula Stage with Gradient Left Accent Bar */
@@ -383,14 +414,20 @@
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
       border-radius: var(--r-md);
-      padding: 10px 14px 10px 18px;
-      margin-bottom: 10px;
+      padding: 8px 12px 8px 16px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
+      min-height: 44px;
+      max-width: 100%;
       overflow-x: auto;
+      overflow-y: hidden;
       position: relative;
+      scrollbar-width: none;
+    }
+    .card-math-box::-webkit-scrollbar {
+      display: none;
     }
     .card-math-box::before {
       content: '';
@@ -404,53 +441,77 @@
       border-bottom-left-radius: var(--r-md);
     }
     .card-math-box .katex {
-      font-size: 1.25rem;
+      font-size: 1.05rem;
       color: var(--ink);
+      white-space: nowrap;
     }
 
     /* Plain English Description */
     .card-desc {
-      font-size: 13.5px;
+      font-size: 12.5px;
       color: var(--body);
-      line-height: 1.45;
-      margin-bottom: 10px;
+      line-height: 1.4;
+      margin-bottom: 8px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      min-width: 0;
     }
 
-    /* Parameter Meta Row */
-    .card-params-row {
+    /* Parameter Meta Row & Footer */
+    .card-footer-wrap {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
       gap: 6px;
-      padding-top: 10px;
+      padding-top: 8px;
       border-top: 1px solid var(--hairline);
+      min-width: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .card-params-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      min-width: 0;
+      overflow: hidden;
     }
 
     .param-pill {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 600;
-      padding: 2px 7px;
+      padding: 2px 6px;
       border-radius: 4px;
       background: var(--surface-strong);
       color: var(--ink);
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .param-pill strong { color: var(--accent); font-family: var(--font-mono); }
 
     .card-footer-action {
-      margin-left: auto;
-      font-size: 12px;
-      font-weight: 600;
+      flex-shrink: 0;
+      font-size: 11.5px;
+      font-weight: 700;
       color: var(--accent);
+      background: var(--accent-tint);
+      padding: 2px 7px;
+      border-radius: var(--r-xs);
       display: inline-flex;
       align-items: center;
       gap: 3px;
+      white-space: nowrap;
+      transition: all 0.15s var(--ease);
+    }
+    .formula-card:hover .card-footer-action {
+      background: var(--accent);
+      color: #ffffff;
     }
 
     /* ==========================================================================
@@ -848,7 +909,7 @@
           <div>
             <div class="card-top">
               <span class="card-formula-code f1-badge">F-01 • SKILL COVERAGE</span>
-              <span class="card-sla-badge">Latency: 0.82 ms</span>
+              <span class="card-sla-badge">0.82 ms SLA</span>
             </div>
             <h3 class="card-title">Skill Match Frequency & Coverage (SMF)</h3>
             <div class="card-math-box">
@@ -858,13 +919,13 @@
               Weighted capability coverage separating mandatory requirements (w=2.0) from preferred skills (w=1.0) with verified proficiency level depth.
             </p>
           </div>
-          <div>
-            <div class="card-params-row">
-              <span class="param-pill">Must Weight <strong>w = 2.0</strong></span>
-              <span class="param-pill">Nice Weight <strong>w = 1.0</strong></span>
-              <span class="param-pill">Range <strong>[0.0, 100.0]</strong></span>
-              <div class="card-footer-action">Deep Dive ↗</div>
+          <div class="card-footer-wrap">
+            <div class="card-params-group">
+              <span class="param-pill">Must <strong>w = 2.0</strong></span>
+              <span class="param-pill">Nice <strong>w = 1.0</strong></span>
+              <span class="param-pill">Range <strong>[0, 100]</strong></span>
             </div>
+            <div class="card-footer-action">Deep Dive ↗</div>
           </div>
         </div>
 
@@ -873,7 +934,7 @@
           <div>
             <div class="card-top">
               <span class="card-formula-code f2-badge">F-02 • GAP SEVERITY</span>
-              <span class="card-sla-badge">Latency: 0.45 ms</span>
+              <span class="card-sla-badge">0.45 ms SLA</span>
             </div>
             <h3 class="card-title">Gap Severity Index & Job Readiness (GSI / JRS)</h3>
             <div class="card-math-box">
@@ -883,13 +944,13 @@
               Penalises missing capabilities by categorising statutory blockers (β=15.0) vs learnable tools (β=5.0) to safeguard employers from foundational gaps.
             </p>
           </div>
-          <div>
-            <div class="card-params-row">
-              <span class="param-pill">Blocker <strong>β = 15.0</strong></span>
-              <span class="param-pill">Learnable <strong>β = 5.0</strong></span>
-              <span class="param-pill">Severity <strong>L/5.0</strong></span>
-              <div class="card-footer-action">Deep Dive ↗</div>
+          <div class="card-footer-wrap">
+            <div class="card-params-group">
+              <span class="param-pill">Blocker <strong>β = 15</strong></span>
+              <span class="param-pill">Tool <strong>β = 5</strong></span>
+              <span class="param-pill">Severity <strong>L/5</strong></span>
             </div>
+            <div class="card-footer-action">Deep Dive ↗</div>
           </div>
         </div>
 
@@ -898,22 +959,22 @@
           <div>
             <div class="card-top">
               <span class="card-formula-code f3-badge">F-03 • PROXIMITY INDEX</span>
-              <span class="card-sla-badge">Latency: 0.65 ms</span>
+              <span class="card-sla-badge">0.65 ms SLA</span>
             </div>
             <h3 class="card-title">Job Proximity Index (JPI) Mobility</h3>
             <div class="card-math-box">
-              $$\displaystyle JPI = 100 \times \left( \alpha \cdot \frac{|S_A \cap S_B|}{|S_A \cup S_B|} + (1 - \alpha) \cdot \delta(\text{Domain}_A, \text{Domain}_B) \right)$$
+              $$\displaystyle JPI = 100 \left[ 0.70 \frac{|S_A \cap S_B|}{|S_A \cup S_B|} + 0.30 \, \delta_{\text{domain}} \right]$$
             </div>
             <p class="card-desc">
               Quantifies cross-career mobility across Australian ICT occupations using Jaccard vector similarity combined with domain taxonomy affinity modifiers.
             </p>
           </div>
-          <div>
-            <div class="card-params-row">
-              <span class="param-pill">Jaccard Weight <strong>α = 0.70</strong></span>
-              <span class="param-pill">Domain Bonus <strong>δ ∈ {0, 0.5, 1}</strong></span>
-              <div class="card-footer-action">Deep Dive ↗</div>
+          <div class="card-footer-wrap">
+            <div class="card-params-group">
+              <span class="param-pill">Jaccard <strong>α = 0.70</strong></span>
+              <span class="param-pill">Domain <strong>δ ∈ {0, 0.5, 1}</strong></span>
             </div>
+            <div class="card-footer-action">Deep Dive ↗</div>
           </div>
         </div>
 
@@ -922,22 +983,23 @@
           <div>
             <div class="card-top">
               <span class="card-formula-code f4-badge">F-04 • RELATIVE MERIT</span>
-              <span class="card-sla-badge">Latency: 1.10 ms</span>
+              <span class="card-sla-badge">1.10 ms SLA</span>
             </div>
             <h3 class="card-title">Relative Merit Score (RMS - Zero-PII Pool)</h3>
             <div class="card-math-box">
-              $$\displaystyle Z_c = \frac{SMF_c - \mu_{\text{pool}}}{\sigma_{\text{pool}} + \epsilon}, \quad RMS_c = \frac{1}{1 + e^{-1.702 \cdot Z_c}} \times 100$$
+              $$\displaystyle Z_c = \frac{SMF_c - \mu}{\sigma + \epsilon}, \quad RMS_c = \frac{100}{1 + e^{-1.702 Z_c}}$$
             </div>
             <p class="card-desc">
               Standardises an applicant's raw match score relative to the active requisition talent pool via Gaussian Z-score transformation with zero demographic attributes.
             </p>
           </div>
-          <div>
-            <div class="card-params-row">
-              <span class="param-pill">Distribution <strong>Gaussian Z</strong></span>
-              <span class="param-pill">CDF Logistic <strong>1.702</strong></span>
-              <div class="card-footer-action">Deep Dive ↗</div>
+          <div class="card-footer-wrap">
+            <div class="card-params-group">
+              <span class="param-pill">Gaussian <strong>Z-Score</strong></span>
+              <span class="param-pill">Scale <strong>1.702</strong></span>
+              <span class="param-pill">Bias <strong>0.000</strong></span>
             </div>
+            <div class="card-footer-action">Deep Dive ↗</div>
           </div>
         </div>
 
@@ -946,24 +1008,23 @@
           <div>
             <div class="card-top">
               <span class="card-formula-code f5-badge">F-05 • TALENT FEED</span>
-              <span class="card-sla-badge">Latency: 1.82 ms</span>
+              <span class="card-sla-badge">1.82 ms SLA</span>
             </div>
             <h3 class="card-title">Feed Ranking Score (FRS - Talent Feed)</h3>
             <div class="card-math-box">
-              $$\displaystyle FRS = 0.45 \cdot SMF + 0.25 \cdot JRS + 0.20 \cdot \text{ExpFit} + 0.10 \cdot \text{WorkMode}$$
+              $$\displaystyle FRS = 0.45 SMF + 0.25 JRS + 0.20 \text{Exp} + 0.10 \text{Mode}$$
             </div>
             <p class="card-desc">
               Ranks open market vacancies in the talent discovery feed, balancing skill coverage, net job readiness, experience brackets, and Australian work modes.
             </p>
           </div>
-          <div>
-            <div class="card-params-row">
+          <div class="card-footer-wrap">
+            <div class="card-params-group">
               <span class="param-pill">SMF <strong>45%</strong></span>
               <span class="param-pill">JRS <strong>25%</strong></span>
               <span class="param-pill">Exp <strong>20%</strong></span>
-              <span class="param-pill">Mode <strong>10%</strong></span>
-              <div class="card-footer-action">Deep Dive ↗</div>
             </div>
+            <div class="card-footer-action">Deep Dive ↗</div>
           </div>
         </div>
 
@@ -972,24 +1033,23 @@
           <div>
             <div class="card-top">
               <span class="card-formula-code f6-badge">F-06 • EMPLOYER SEARCH</span>
-              <span class="card-sla-badge">Latency: 1.35 ms</span>
+              <span class="card-sla-badge">1.35 ms SLA</span>
             </div>
             <h3 class="card-title">Employer Talent Search Score (TSS)</h3>
             <div class="card-math-box">
-              $$\displaystyle TSS = 0.40 \cdot SMF + 0.25 \cdot \text{Seniority} + 0.20 \cdot \text{Credentials} + 0.15 \cdot \text{Recency}$$
+              $$\displaystyle TSS = 0.40 SMF + 0.25 \text{Sen} + 0.20 \text{Cred} + 0.15 \text{Rec}$$
             </div>
             <p class="card-desc">
               Ranks anonymised talent profiles for hiring employers: 40% capability match, 25% seniority level alignment, 20% Australian ICT credentials, 15% activity recency.
             </p>
           </div>
-          <div>
-            <div class="card-params-row">
-              <span class="param-pill">Coverage <strong>40%</strong></span>
-              <span class="param-pill">Seniority <strong>25%</strong></span>
+          <div class="card-footer-wrap">
+            <div class="card-params-group">
+              <span class="param-pill">Match <strong>40%</strong></span>
+              <span class="param-pill">Level <strong>25%</strong></span>
               <span class="param-pill">Creds <strong>20%</strong></span>
-              <span class="param-pill">Recency <strong>15%</strong></span>
-              <div class="card-footer-action">Deep Dive ↗</div>
             </div>
+            <div class="card-footer-action">Deep Dive ↗</div>
           </div>
         </div>
 
