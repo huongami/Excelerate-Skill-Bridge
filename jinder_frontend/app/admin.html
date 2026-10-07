@@ -986,10 +986,10 @@
       <div class="info-callout">
         <div class="icon-badge">💡</div>
         <div>
-          <strong>Account & Market Data Architecture (51 Candidates / 1 Demo Recruiter / 31 Australian Enterprises):</strong><br>
-          • <strong>51 Candidate Accounts:</strong> Comprises <strong>50 benchmark profiles</strong> (from <code>talents.json</code>) representing diverse qualifications, international study backgrounds, and ANZSCO codes to audit matching algorithms + <strong>1 active demo candidate</strong> (Teal Heron, overseas BI Specialist transitioning to Data Engineer in Melbourne).<br>
-          • <strong>1 Demo Recruiter Account:</strong> Alex Morgan (<code>recruiter@demo.jinder.app</code>) representing Australian employer <strong>Bluebushworks</strong>, directly owning 4 live requisitions.<br>
-          • <strong>31 Australian Tech Employers:</strong> The remaining 50 market vacancies (from <em>Dingocreek Labs, Marrowgate Labs, Saltbushworks, etc.</em>) are open market requisitions (<code>owner_id = NULL</code>), creating a realistic national job landscape for candidate discovery.
+          <strong>Account & Market Data Architecture (51 Talents / 1 Demo Employer / 31 Australian Enterprises):</strong><br>
+          • <strong>51 Talent Accounts:</strong> Comprises <strong>50 benchmark profiles</strong> (from <code>talents.json</code>) representing diverse qualifications, international study backgrounds, and ANZSCO codes to audit matching algorithms + <strong>1 active demo talent</strong> (Teal Heron, overseas BI Specialist transitioning to Data Engineer in Melbourne).<br>
+          • <strong>1 Demo Employer Account:</strong> Alex Morgan (<code>employer@demo.jinder.app</code>) representing Australian employer <strong>Bluebushworks</strong>, directly owning 4 live requisitions.<br>
+          • <strong>31 Australian Tech Employers:</strong> The remaining 50 market vacancies (from <em>Dingocreek Labs, Marrowgate Labs, Saltbushworks, etc.</em>) are open market requisitions (<code>owner_id = NULL</code>), creating a realistic national job landscape for talent discovery.
         </div>
       </div>
 
@@ -1001,8 +1001,8 @@
           </div>
           <div class="stat-val" id="statUsers">52</div>
           <div class="stat-meta">
-            <span class="badge badge-accent" id="statCandidates">51 Candidates</span>
-            <span class="badge badge-coral" id="statRecruiters">1 Demo Recruiter</span>
+            <span class="badge badge-accent" id="statCandidates">51 Talents</span>
+            <span class="badge badge-coral" id="statRecruiters">1 Demo Employer</span>
           </div>
         </div>
 
@@ -1372,13 +1372,13 @@
         <div class="inspector-grid">
           <div class="inspector-desc-box">
             <h4>Pipeline Architecture & Execution Logic</h4>
-            <p id="inspectStageDesc">Multi-source ingestion pipeline processing candidate CVs (PDF, DOCX) and active employer requisitions (JDs). Extracts plain text, structural experience history, qualifications, and capabilities with zero raw PII retention.</p>
+            <p id="inspectStageDesc">Multi-source ingestion pipeline processing talent CVs (PDF, DOCX) and active employer requisitions (JDs). Extracts plain text, structural experience history, qualifications, and capabilities with zero raw PII retention.</p>
             <p id="inspectStageFormula"><strong>Mathematical / Algorithmic Mechanism:</strong> Pure regex tokenization + Rule-based entity extraction, zero hallucination.</p>
           </div>
           <div class="inspector-meta-list">
             <div class="meta-item-box">
               <div class="meta-item-lbl">Throughput Volume</div>
-              <div class="meta-item-val" id="inspectMetaThroughput">51 Candidates • 54 Active Requisitions</div>
+              <div class="meta-item-val" id="inspectMetaThroughput">51 Talents • 54 Active Requisitions</div>
             </div>
             <div class="meta-item-box">
               <div class="meta-item-lbl">Processing Time (p50)</div>
@@ -1691,7 +1691,7 @@ const STAGE_DETAILS = {
   ],
   "scoring": [
     {
-      "candidate": "Teal Heron (Demo)",
+      "talent": "Teal Heron (Demo)",
       "job": "Senior Data Engineer, Lakehouse",
       "s_must": "0.884",
       "s_bonus": "0.742",
@@ -1700,7 +1700,7 @@ const STAGE_DETAILS = {
       "verdict": "Strong Match"
     },
     {
-      "candidate": "Ruby Falcon",
+      "talent": "Ruby Falcon",
       "job": "Lead Machine Learning Engineer",
       "s_must": "0.920",
       "s_bonus": "0.810",
@@ -1709,7 +1709,7 @@ const STAGE_DETAILS = {
       "verdict": "Top Recommended"
     },
     {
-      "candidate": "Azure Kingfisher",
+      "talent": "Azure Kingfisher",
       "job": "Cloud Security Specialist",
       "s_must": "0.780",
       "s_bonus": "0.690",
@@ -1718,7 +1718,7 @@ const STAGE_DETAILS = {
       "verdict": "Competency Fit"
     },
     {
-      "candidate": "Golden Wattle",
+      "talent": "Golden Wattle",
       "job": "Full-Stack Developer, React/Python",
       "s_must": "0.950",
       "s_bonus": "0.880",
@@ -1727,7 +1727,7 @@ const STAGE_DETAILS = {
       "verdict": "High Affinity"
     },
     {
-      "candidate": "Silver Gull",
+      "talent": "Silver Gull",
       "job": "Data Platform Architect",
       "s_must": "0.810",
       "s_bonus": "0.700",
@@ -1951,8 +1951,8 @@ function renderOverview(data) {
   if (!data) return;
   const c = data.counts || {};
   document.getElementById('statUsers').textContent = c.users || 52;
-  document.getElementById('statCandidates').textContent = `${data.users_by_role?.candidate || 51} Candidates`;
-  document.getElementById('statRecruiters').textContent = `${data.users_by_role?.recruiter || 1} Demo Recruiter`;
+  document.getElementById('statCandidates').textContent = `${data.users_by_role?.candidate || 51} Talents`;
+  document.getElementById('statRecruiters').textContent = `${data.users_by_role?.recruiter || 1} Demo Employer`;
   document.getElementById('statSkills').textContent = c.translated_skills || 738;
   document.getElementById('statApps').textContent = c.applications || 7;
 
@@ -1990,13 +1990,13 @@ const STAGE_CONFIGS = {
     tag: 'STAGE 1 • MULTI-SOURCE INGESTION & CV PARSING',
     name: '1. Multi-Source Ingestion & Profile Parsing',
     status: 'SLA: <120ms • Active',
-    desc: 'Multi-source ingestion pipeline for candidate CVs (PDF, DOCX) and active employer requisitions (JDs). Extracts plain text, structural experience history, qualifications, and capabilities with zero raw PII retention.',
+    desc: 'Multi-source ingestion pipeline for talent CVs (PDF, DOCX) and active employer requisitions (JDs). Extracts plain text, structural experience history, qualifications, and capabilities with zero raw PII retention.',
     formula: 'Deterministic regex tokenisation + structural entity extraction, preserving exact years of experience and skill levels.',
-    throughput: '51 Candidates (50 benchmark + 1 demo) • 54 Requisitions',
+    throughput: '51 Talents (50 benchmark + 1 demo) • 54 Requisitions',
     latency: '0.82 ms (p50)',
     accuracy: '100% Deterministic',
     targetTable: 'profiles',
-    sampleTitle: 'Parsed Candidate Profiles (Sampled from `profiles` table)',
+    sampleTitle: 'Parsed Talent Profiles (Sampled from `profiles` table)',
     renderSample: (thead, tbody) => {
       thead.innerHTML = '<tr><th>ID</th><th>Alias</th><th>Current Role</th><th>Qualification</th><th>Study Country</th><th>Years Exp</th><th>Level</th></tr>';
       tbody.innerHTML = '';
@@ -2054,14 +2054,14 @@ const STAGE_CONFIGS = {
     latency: '3.82 ms (p50)',
     accuracy: '100% Deterministic (Zero Drift)',
     targetTable: 'jobs',
-    sampleTitle: 'Evaluated Candidate-Job Pair Scores (Continuous Formulas F1 - F6)',
+    sampleTitle: 'Evaluated Talent-Role Pair Scores (Continuous Formulas F1 - F6)',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>Candidate Alias</th><th>Job Requisition</th><th>Core Score (S_must)</th><th>Bonus Score (S_bonus)</th><th>Continuous Fit</th><th>Latency SLA</th><th>Verdict</th></tr>';
+      thead.innerHTML = '<tr><th>Talent Alias</th><th>Job Requisition</th><th>Core Score (S_must)</th><th>Bonus Score (S_bonus)</th><th>Continuous Fit</th><th>Latency SLA</th><th>Verdict</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.scoring || []).forEach(sc => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td><strong>${sc.candidate}</strong></td>
+          <td><strong>${sc.talent || sc.candidate}</strong></td>
           <td>${sc.job}</td>
           <td><span class="cell-mono">${sc.s_must}</span></td>
           <td><span class="cell-mono">${sc.s_bonus}</span></td>
@@ -2101,15 +2101,15 @@ const STAGE_CONFIGS = {
     tag: 'STAGE 5 • ZERO-BIAS REQUISITION FUNNEL & AUDIT LOGS',
     name: '5. Zero-Bias Matching Funnel & Event Distribution',
     status: 'SLA: Real-Time Stream • Active',
-    desc: 'Facilitates blind anonymised candidate progression. Recruiters evaluate pure capability fit before accessing identifying contact details. Every interaction records a tamper-evident audit event.',
+    desc: 'Facilitates blind anonymised talent progression. Employers evaluate pure capability fit before accessing identifying contact details. Every interaction records a tamper-evident audit event.',
     formula: 'State Machine: submitted ➔ reviewing ➔ shortlisted ➔ offer. 217 tamper-evident system audit events recorded.',
     throughput: '7 Application Lifecycles • 217 System Audit Events',
     latency: '1.20 ms (p50)',
     accuracy: '100% Audit Trail',
     targetTable: 'applications',
-    sampleTitle: 'Active Candidate Funnel Lifecycles (`applications` table)',
+    sampleTitle: 'Active Talent Funnel Lifecycles (`applications` table)',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>ID</th><th>Candidate</th><th>Applied Requisition</th><th>Funnel Stage</th><th>Date Submitted</th></tr>';
+      thead.innerHTML = '<tr><th>ID</th><th>Talent</th><th>Applied Requisition</th><th>Funnel Stage</th><th>Date Submitted</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.apps || []).forEach(a => {
         const tr = document.createElement('tr');
@@ -2270,7 +2270,8 @@ function renderTableData(data) {
         td.textContent = JSON.stringify(val).slice(0, 36) + '...';
       } else if (col === 'role') {
         const badgeClass = val === 'recruiter' ? 'badge-coral' : 'badge-accent';
-        td.innerHTML = `<span class="badge ${badgeClass}">${val}</span>`;
+        const displayRole = val === 'recruiter' ? 'Employer' : (val === 'candidate' ? 'Talent' : val);
+        td.innerHTML = `<span class="badge ${badgeClass}">${displayRole}</span>`;
       } else if (col === 'status') {
         const badgeClass = val === 'active' || val === 'offer' ? 'badge-success' : 'badge-blue';
         td.innerHTML = `<span class="badge ${badgeClass}">${val}</span>`;
