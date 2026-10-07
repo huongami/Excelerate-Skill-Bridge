@@ -8,3 +8,14 @@ test-results/
 .env.*.local
 *.tsbuildinfo
 .DS_Store
+
+# Python & runtime data
+__pycache__/
+*.py[cod]
+*$py.class
+var/
+*.db
+*.db-wal
+*.db-shm
+*.bak
+uploads/

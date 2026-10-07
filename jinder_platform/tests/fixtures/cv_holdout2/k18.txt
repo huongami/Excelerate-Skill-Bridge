@@ -1,0 +1,29 @@
+WEI-LIN CHUA
+Melbourne VIC | weilin.chua@example.test | +61 400 000 018
+
+About
+I am a final-year computer science student at Harbourview University and I am looking for a Software Engineer internship starting in
+December 2026. I like back-end systems and testing, and I enjoy explaining what I built.
+
+Education
+Bachelor of Science (Computer Science), Harbourview University, 2024 - Dec 2026 (expected)
+Exchange semester, Lakeside Institute of Technology, Jul 2025 - Nov 2025
+Relevant courses: algorithms, databases, operating systems, software testing
+
+Projects
+Library room booking app (Mar 2025 - Jun 2025): React front end, Node.js API, PostgreSQL; used by 300 students in a trial
+Unit test generator for Python (Aug 2025 - Oct 2025): course project, parses functions and drafts pytest cases
+
+Volunteering
+Peer tutor for first-year programming, Harbourview University (2025 - present)
+
+Certificates
+Coursera Machine Learning Specialization (2025)
+
+Awards
+Merit Scholarship (2024)
+Dean's List (2025)
+2nd place, Campus Hack (2025)
+
+Skills
+Python, Java, C, Git, SQL, React

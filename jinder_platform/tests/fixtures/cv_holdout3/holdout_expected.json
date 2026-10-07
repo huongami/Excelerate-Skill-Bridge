@@ -1,0 +1,416 @@
+{
+  "asOf": "2026-10-06",
+  "cvs": {
+    "m01.txt": {
+      "layout": "Jake's Resume (Overleaf/LaTeX): education first, then Experience, Projects, Technical Skills; dates at the right margin; software engineer, no summary or objective",
+      "currentRole": "Software Engineer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 4.0,
+      "certifications": ["AWS Certified Cloud Practitioner"],
+      "awards": [
+        {"name": "Dean's List", "kind": "academic-excellence", "year": 2021},
+        {"name": "Runner-up, Sydney Harbour Hackathon", "kind": "hackathon", "year": 2024}
+      ],
+      "skills": ["Java", "Python", "TypeScript", "SQL", "Spring Boot", "React", "Docker", "AWS"]
+    },
+    "m02.txt": {
+      "layout": "Jake's Resume (Overleaf/LaTeX): machine learning engineer, two degrees, Experience, Projects with Present date, Technical Skills; no summary or objective",
+      "currentRole": "Machine Learning Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.4,
+      "certifications": ["TensorFlow Developer Certificate", "AWS Certified Machine Learning - Specialty"],
+      "awards": [
+        {"name": "Silver Medal, Kaggle Store Sales Forecasting", "kind": "data-science-competition", "year": 2022},
+        {"name": "ACM ICPC Regional Contest, 9th Place", "kind": "competitive-programming", "year": 2018}
+      ],
+      "skills": ["Python", "PyTorch", "TensorFlow", "MLflow", "Airflow", "Kubernetes", "Docker", "SQL"]
+    },
+    "m03.txt": {
+      "layout": "Word 'Modern' template: big caps name, headline with 'Software Engineer III', contact line, Professional Summary, Title, Company - City with dates at the right",
+      "currentRole": "Software Engineer III",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.3,
+      "certifications": ["Certified Kubernetes Administrator (CKA)", "HashiCorp Certified: Terraform Associate", "AWS Certified Solutions Architect - Associate"],
+      "awards": [
+        {"name": "Employee of the Quarter", "kind": "employer-recognition", "year": 2023},
+        {"name": "Conference Speaker, GopherCon Australia", "kind": "conference-talk", "year": 2022}
+      ],
+      "skills": ["Go", "Java", "PostgreSQL", "Kafka", "Kubernetes", "Terraform", "AWS", "gRPC"]
+    },
+    "m04.txt": {
+      "layout": "Word 'Executive' template: Executive Profile, Areas of Expertise, Professional Experience with long month names and year-only dates, director of data engineering, no wish",
+      "currentRole": "Director of Data Engineering",
+      "level": "Principal",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 16.8,
+      "certifications": ["SnowPro Core Certification", "Databricks Certified Data Engineer Professional", "Project Management Professional (PMP)", "ITIL Foundation"],
+      "awards": [
+        {"name": "Innovation Award, NZ Data & Analytics Summit", "kind": "innovation-award", "year": 2022},
+        {"name": "Chair's Award for Leadership", "kind": "employer-recognition", "year": 2023}
+      ],
+      "skills": ["Snowflake", "Databricks", "dbt", "Apache Airflow", "Azure", "SQL", "Python"]
+    },
+    "m05.txt": {
+      "layout": "Word 'Professional' template: Career Objective with a stated wish, title line then dates at the right, company on the next line, Education, Technical Skills",
+      "currentRole": "Machine Learning Engineer",
+      "level": "Senior",
+      "targetRole": "MLOps Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 6.8,
+      "certifications": ["Google Cloud Professional Machine Learning Engineer", "Certified Kubernetes Application Developer (CKAD)"],
+      "awards": [
+        {"name": "Kaggle Silver Medal, Housing Demand Forecasting Challenge", "kind": "data-science-competition", "year": 2021},
+        {"name": "Winner, Internal Hack Week", "kind": "hackathon", "year": 2024}
+      ],
+      "skills": ["Python", "PyTorch", "MLflow", "Kubernetes", "Docker", "Airflow", "Terraform", "SQL"]
+    },
+    "m06.txt": {
+      "layout": "Google Docs two-column template read sidebar first (Contact, Skills, Languages, Certifications) then name, Profile with '4 years of experience', Experience",
+      "currentRole": "Business Intelligence Analyst",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 4.3,
+      "certifications": ["Microsoft Certified: Power BI Data Analyst Associate", "Tableau Desktop Specialist", "dbt Fundamentals"],
+      "awards": [
+        {"name": "Employee Spotlight Award", "kind": "employer-recognition", "year": 2023}
+      ],
+      "skills": ["SQL", "Power BI", "Tableau", "DAX", "Python", "Excel", "dbt", "Snowflake"]
+    },
+    "m07.txt": {
+      "layout": "resume.io two-column template: Details/Links/Skills/Languages/Hobbies sidebar, 'Title at Company, City' with month-year dates on the next line using an em dash",
+      "currentRole": "Frontend Team Lead",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.1,
+      "certifications": ["Professional Scrum Master I (PSM I)"],
+      "awards": [
+        {"name": "Best Speaker Award, ReactDublin Conference", "kind": "conference-talk", "year": 2023},
+        {"name": "Winner, DublinTech Hack", "kind": "hackathon", "year": 2019}
+      ],
+      "skills": ["JavaScript", "TypeScript", "React", "Next.js", "GraphQL", "CSS", "Jest", "Webpack"]
+    },
+    "m08.txt": {
+      "layout": "Novoresume/Canva style single flow: name, headline with 'II' title, Summary with 'Open to ...' wish, Work Experience, then Skills, Certificates, Achievements, Languages",
+      "currentRole": "Machine Learning Engineer II",
+      "level": "Mid",
+      "targetRole": "Computer Vision Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 5.8,
+      "certifications": ["Deep Learning Specialization", "TensorFlow Developer Certificate"],
+      "awards": [
+        {"name": "Winner, Merlion Vision Hackathon", "kind": "hackathon", "year": 2022},
+        {"name": "Best Paper Award, Singapore Vision Workshop", "kind": "conference-talk", "year": 2024}
+      ],
+      "skills": ["Python", "PyTorch", "OpenCV", "C++", "TensorRT", "CUDA", "Docker", "ONNX"]
+    },
+    "m09.txt": {
+      "layout": "LinkedIn 'Save to PDF' export: Contact, Top Skills, Languages, Certifications, Honors-Awards sidebar, then headline, Summary, Experience with a company group holding two positions and durations, Education",
+      "currentRole": "Senior Data Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 8.1,
+      "certifications": ["Databricks Certified Data Engineer Professional", "SnowPro Core Certification", "Google Cloud Certified - Professional Data Engineer"],
+      "awards": [
+        {"name": "Data Mesh Hackathon Winner", "kind": "hackathon", "year": null},
+        {"name": "Engineering Excellence Award", "kind": "employer-recognition", "year": null}
+      ],
+      "skills": ["Apache Spark", "Data Warehousing", "Apache Airflow", "dbt", "Python", "SQL", "Snowflake"]
+    },
+    "m10.txt": {
+      "layout": "LinkedIn 'Save to PDF' export: sidebar with Top Skills, Certifications, Honors-Awards; headline 'Software Engineer at ...'; two employers with durations; Page 1 of 2 marker",
+      "currentRole": "Software Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 5.5,
+      "certifications": ["Certified Kubernetes Administrator (CKA)", "HashiCorp Certified: Terraform Associate"],
+      "awards": [
+        {"name": "ACM ICPC Eastern Canada Regional Finalist", "kind": "competitive-programming", "year": null}
+      ],
+      "skills": ["Kubernetes", "Terraform", "Go", "Python", "AWS", "Prometheus"]
+    },
+    "m11.txt": {
+      "layout": "LinkedIn 'Save to PDF' export: sidebar with Certifications, Honors-Awards and Patents; headline 'Staff Machine Learning Engineer at ...'; three separate employers with durations",
+      "currentRole": "Staff Machine Learning Engineer",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.2,
+      "certifications": ["Google Cloud Professional Machine Learning Engineer", "Deep Learning Specialization"],
+      "awards": [
+        {"name": "Best Paper Award - ReproML Workshop", "kind": "conference-talk", "year": null},
+        {"name": "Adaptive request batching for GPU inference serving", "kind": "patent", "year": null}
+      ],
+      "skills": ["Machine Learning", "PyTorch", "Distributed Systems", "Python", "Kubernetes", "Ray"]
+    },
+    "m12.txt": {
+      "layout": "Europass CV (2013 and older format): label/value rows, DD/MM/YYYY date ranges, Work experience, Education and training, Personal skills, Digital skills, Driving licence",
+      "currentRole": "Java Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 13.4,
+      "certifications": ["Oracle Certified Professional, Java SE 11 Developer", "ITIL Foundation Certificate in IT Service Management", "Professional Scrum Master I"],
+      "awards": [
+        {"name": "Merit Scholarship, Hellenic Foundation for Education", "kind": "scholarship", "year": 2010}
+      ],
+      "skills": ["Java", "Spring Boot", "SQL", "Oracle Database", "Hibernate", "Maven", "Jenkins", "Docker"]
+    },
+    "m13.txt": {
+      "layout": "Europass CV (2013 and older format): last job ended 30/06/2026 so the current role is the job with the latest end date; language certificates listed but not counted",
+      "currentRole": "Senior Data Analyst",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 6.8,
+      "certifications": ["Microsoft Certified: Azure Data Fundamentals", "Tableau Desktop Specialist"],
+      "awards": [
+        {"name": "Rector's Scholarship for Outstanding Students", "kind": "scholarship", "year": 2016}
+      ],
+      "skills": ["SQL", "Power BI", "Tableau", "Python", "R", "Excel"]
+    },
+    "m14.txt": {
+      "layout": "Indian style CV: Career Objective (generic), Professional Summary, Technical Skills, Work Experience with 'Till date', Academic Projects, Strengths, Hobbies, Personal Details, Declaration",
+      "currentRole": "Associate Software Engineer",
+      "level": "Junior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 3.3,
+      "certifications": ["Oracle Certified Associate, Java SE 8 Programmer", "AWS Certified Cloud Practitioner"],
+      "awards": [
+        {"name": "Star Performer of the Quarter", "kind": "employer-recognition", "year": 2024},
+        {"name": "Winner, Smart India Hackathon", "kind": "hackathon", "year": 2022}
+      ],
+      "skills": ["Java", "Spring Boot", "Hibernate", "MySQL", "REST APIs", "Git", "Jenkins", "JUnit"]
+    },
+    "m15.txt": {
+      "layout": "Indian style fresher CV: Objective with a stated wish (Data Analyst), Education with CGPA, two internships, Academic Projects, Strengths, Hobbies, Personal Details, Declaration",
+      "currentRole": "Data Analyst Intern",
+      "level": "Intern",
+      "targetRole": "Data Analyst",
+      "statesUnknownTarget": false,
+      "yearsExperience": 0.6,
+      "certifications": ["Google Data Analytics Professional Certificate", "HackerRank SQL (Advanced) Certificate", "Python for Data Science"],
+      "awards": [
+        {"name": "Winner, Inter-College Data Quest", "kind": "data-science-competition", "year": 2025},
+        {"name": "Merit Scholarship", "kind": "scholarship", "year": 2023}
+      ],
+      "skills": ["Python", "SQL", "Power BI", "Excel", "pandas", "scikit-learn", "Tableau"]
+    },
+    "m16.txt": {
+      "layout": "Vietnamese style CV: Personal Information block (date of birth, marital status), generic Career Objective, MM/YYYY work experience, Skills, Certifications including TOEIC, Hobbies, Declaration",
+      "currentRole": "QA Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 8.2,
+      "certifications": ["ISTQB Certified Tester Foundation Level (CTFL)", "ISTQB Certified Tester Advanced Level - Test Automation Engineer"],
+      "awards": [
+        {"name": "Employee of the Year", "kind": "employer-recognition", "year": 2023},
+        {"name": "Third Prize, Southern Region Informatics Olympiad for Students", "kind": "competitive-programming", "year": 2016}
+      ],
+      "skills": ["Selenium", "Java", "TestNG", "Postman", "JMeter", "SQL", "Jira", "Cypress"]
+    },
+    "m17.txt": {
+      "layout": "Philippine style resume: ALL-CAPS job titles, Career Objective (generic), Educational Background with Tertiary/Secondary/Primary, Personal Data (civil status, religion, height), Character References",
+      "currentRole": "Business Intelligence Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 8.4,
+      "certifications": ["Microsoft Certified: Power BI Data Analyst Associate", "ITIL 4 Foundation"],
+      "awards": [
+        {"name": "Service Excellence Award", "kind": "employer-recognition", "year": 2023},
+        {"name": "Dean's Lister", "kind": "academic-excellence", "year": 2015}
+      ],
+      "skills": ["SQL Server", "T-SQL", "Power BI", "SSIS", "SSRS", "Excel", "Tableau"]
+    },
+    "m18.txt": {
+      "layout": "Academic CV of an ML researcher with an industry job: Research Interests, Education (PhD), Industry Experience, Research Experience (graduate research assistant = study), Publications with years, Projects, Teaching, Awards and Fellowships, Service",
+      "currentRole": "Research Scientist",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 3.4,
+      "certifications": [],
+      "awards": [
+        {"name": "Best Paper Award, ICLR Workshop on Time Series", "kind": "conference-talk", "year": 2022},
+        {"name": "Doctoral Scholarship, Helvetia Research Council", "kind": "scholarship", "year": 2019}
+      ],
+      "skills": ["Python", "PyTorch", "JAX", "C++", "CUDA", "Slurm"]
+    },
+    "m19.txt": {
+      "layout": "Academic CV of a PhD candidate with no jobs at all: research assistant, teaching assistant and mentor roles are study, so no current role; Publications, Awards and Fellowships",
+      "currentRole": null,
+      "level": "Intern",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": [],
+      "awards": [
+        {"name": "Best Paper Award, ICML Workshop on Efficient Systems", "kind": "conference-talk", "year": 2025},
+        {"name": "First Place, ML4Climate Downscaling Challenge", "kind": "data-science-competition", "year": 2024},
+        {"name": "Doctoral Excellence Fellowship", "kind": "scholarship", "year": 2023}
+      ],
+      "skills": ["Python", "PyTorch", "JAX", "CUDA", "NumPy", "Weights & Biases"]
+    },
+    "m20.txt": {
+      "layout": "Bootcamp graduate and career changer (former teacher): Summary with a wish, short bootcamp and a 'Junior Web Developer (Contract)' job after 7 years of teaching, Bootcamp Projects",
+      "currentRole": "Junior Web Developer",
+      "level": "Junior",
+      "targetRole": "Full Stack Developer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.3,
+      "certifications": ["freeCodeCamp Responsive Web Design Certification", "Northwind Code Academy Full-Stack Web Development Certificate"],
+      "awards": [
+        {"name": "Teacher of the Year", "kind": "employer-recognition", "year": 2021},
+        {"name": "Best UX Award, Northwind Demo Day Hackathon", "kind": "hackathon", "year": 2026}
+      ],
+      "skills": ["JavaScript", "React", "Node.js", "Express", "MongoDB", "HTML", "CSS", "Git"]
+    },
+    "m21.txt": {
+      "layout": "Zety-style chronological CV of a bootcamp career changer (accountant to data analyst): Professional Summary with a wish for an unlisted role, Employment History with MM/YYYY dates, Skills in two columns",
+      "currentRole": "Junior Data Analyst",
+      "level": "Junior",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 9.2,
+      "certifications": ["IBM Data Science Professional Certificate", "Microsoft Certified: Power BI Data Analyst Associate"],
+      "awards": [
+        {"name": "Bronze Medal, Kaggle Playground Series", "kind": "data-science-competition", "year": 2025}
+      ],
+      "skills": ["Python", "pandas", "SQL", "Tableau", "scikit-learn", "Excel", "Power BI"]
+    },
+    "m22.txt": {
+      "layout": "Markdown / Notion export: '#' and '##' headings, '**Title** | Company | 2020 - present' lines with year-only dates, '-' bullets",
+      "currentRole": "Senior Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 12.3,
+      "certifications": ["AWS Certified Developer - Associate", "Confluent Certified Developer for Apache Kafka"],
+      "awards": [
+        {"name": "Open Source Contributor of the Year, Gothenburg JVM Community", "kind": "open-source", "year": 2022}
+      ],
+      "skills": ["Java", "Kotlin", "Spring Boot", "PostgreSQL", "Kafka", "Docker", "AWS"]
+    },
+    "m23.txt": {
+      "layout": "Plain-text freelancer profile with ALL-CAPS headings and undated 'Selected Engagements': no job dates, no stated years, so no level and no years; the headline gives the role",
+      "currentRole": "Data Engineer",
+      "level": null,
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": ["AWS Certified Data Engineer - Associate", "dbt Analytics Engineering Certification", "Google Cloud Professional Data Engineer"],
+      "awards": [],
+      "skills": ["Python", "SQL", "Apache Airflow", "dbt", "Spark", "Kafka", "AWS", "PostgreSQL"]
+    },
+    "m24.txt": {
+      "layout": "Fresh graduate Word CV: education first (graduated June 2026), two summer internships, projects, skills, no current job",
+      "currentRole": "Machine Learning Intern",
+      "level": "Intern",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 0.5,
+      "certifications": ["Deep Learning Specialization", "TensorFlow Developer Certificate"],
+      "awards": [
+        {"name": "Best Use of Machine Learning, HackMadrid", "kind": "hackathon", "year": 2025},
+        {"name": "Dean's List", "kind": "academic-excellence", "year": 2024}
+      ],
+      "skills": ["Python", "PyTorch", "scikit-learn", "TensorFlow", "OpenCV", "SQL", "Git"]
+    },
+    "m25.txt": {
+      "layout": "Dense one-page CV of a senior engineer with 18+ years: Objective naming Staff Engineer (not in the known list), pipe-separated job lines, Patents and Awards",
+      "currentRole": "Senior Software Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 18.8,
+      "certifications": ["AWS Certified Solutions Architect - Professional", "Oracle Certified Professional, Java SE 8 Programmer"],
+      "awards": [
+        {"name": "Distributed lock lease renewal for edge devices", "kind": "patent", "year": 2019},
+        {"name": "Technical Excellence Award", "kind": "employer-recognition", "year": 2020}
+      ],
+      "skills": ["Java", "Spring Boot", "Kafka", "PostgreSQL", "Kubernetes", "AWS", "Terraform"]
+    },
+    "m26.txt": {
+      "layout": "One-page executive CV of a data leader with 14 years: Profile naming VP of Data / Chief Data Officer wish (not in the known list), three companies with promotion in title, Awards",
+      "currentRole": "Head of Analytics",
+      "level": "Principal",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 14.3,
+      "certifications": ["Certified Analytics Professional (CAP)", "Databricks Certified Machine Learning Professional"],
+      "awards": [
+        {"name": "1st Place, Insurance Risk Modelling Challenge", "kind": "data-science-competition", "year": 2017},
+        {"name": "CEO Award", "kind": "employer-recognition", "year": 2023}
+      ],
+      "skills": ["Python", "R", "SQL", "Spark", "Snowflake", "XGBoost"]
+    },
+    "m27.txt": {
+      "layout": "Contractor CV: seven short contracts with '(Contract)' tags, one overlap and gaps, an open contract at the top, 'Available for contract and permanent roles' (no specific wish)",
+      "currentRole": "Android Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.4,
+      "certifications": ["Google Associate Android Developer Certification", "Certified ScrumMaster (CSM)"],
+      "awards": [
+        {"name": "Winner, Pocket Jam Mobile Game Hackathon", "kind": "hackathon", "year": 2018}
+      ],
+      "skills": ["Kotlin", "Java", "Swift", "Jetpack Compose", "Android SDK", "Firebase", "REST APIs"]
+    },
+    "m28.txt": {
+      "layout": "Word chronological CV with a promotion path: one company header (Aug 2018 - Present) with three stacked titles and their own dates, plus an earlier graduate job",
+      "currentRole": "Lead Data Scientist",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 9.1,
+      "certifications": ["Microsoft Certified: Azure Data Scientist Associate", "Databricks Certified Machine Learning Associate"],
+      "awards": [
+        {"name": "Values in Action Award", "kind": "employer-recognition", "year": 2022},
+        {"name": "Speaker, Texas Data Science Summit", "kind": "conference-talk", "year": 2023}
+      ],
+      "skills": ["Python", "SQL", "scikit-learn", "XGBoost", "Spark", "Databricks", "Azure Machine Learning"]
+    },
+    "m29.txt": {
+      "layout": "Return-to-work CV with a dated 'Career Break (family care)' entry between jobs and a 'Software Engineer (Returnship)' current job; no wish",
+      "currentRole": "Software Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 8.9,
+      "certifications": ["AWS Certified Developer - Associate", "Certified Kubernetes Application Developer (CKAD)"],
+      "awards": [
+        {"name": "Women in Technology Scholarship", "kind": "scholarship", "year": 2012}
+      ],
+      "skills": ["Java", "Spring Boot", "PostgreSQL", "Kubernetes", "Docker", "REST APIs", "JUnit"]
+    },
+    "m30.txt": {
+      "layout": "Fresh graduate one-page CV with no jobs: Objective (generic), Education (graduated June 2026), Projects, Volunteering (not a job), Awards and Scholarships",
+      "currentRole": null,
+      "level": "Junior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": ["Microsoft Certified: Azure Fundamentals", "Google Data Analytics Professional Certificate"],
+      "awards": [
+        {"name": "Winner, UniHack Data Track", "kind": "hackathon", "year": 2025},
+        {"name": "Dean's Honour List", "kind": "academic-excellence", "year": 2025},
+        {"name": "Vice-Chancellor's Merit Scholarship", "kind": "scholarship", "year": 2022}
+      ],
+      "skills": ["Python", "SQL", "R", "Tableau", "pandas", "Excel", "Git"]
+    }
+  }
+}

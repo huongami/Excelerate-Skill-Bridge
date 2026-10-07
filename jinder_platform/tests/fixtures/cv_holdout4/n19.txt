@@ -1,0 +1,49 @@
+OMAR HADDAD-DEMO
+SEEKING: Data Engineer role (Snowflake, dbt, Airflow)
+omar.haddad@example.test | +971 00 555 0142 | Dubai (Demo)
+
+PROFILE
+Data analyst moving towards data engineering. I already own the SQL transformations behind
+our finance dashboards and I now want to build and run the pipelines that feed them.
+
+EXPERIENCE
+
+Data Analyst                                                  Mar 2024 - Present
+Gulf Retail Group Demo, Dubai
+- Own 120 SQL models in Snowflake and orchestrate them with Apache Airflow
+- Rebuilt the daily sales ETL pipeline in Python and dbt; run time down from 3 hours to 25 minutes
+- Added data validation tests that catch bad loads before they reach Power BI
+- Support 40 analysts with pandas notebooks and review their queries
+- Documented the data dictionary for 85 tables and the lineage of the finance marts
+- Moved the nightly refresh from a cron server to Airflow with retries and alerting
+- Agreed data contracts with the source system owners in weekly meetings
+
+Junior Data Analyst                                           Sep 2022 - Feb 2024
+Desert Rose Telecom Demo, Abu Dhabi
+- Weekly KPI reports in Excel and Power BI for the marketing team
+- Wrote SQL queries to join billing and CRM data
+- Cleaned and reconciled subscriber data before every monthly board report
+- Automated three recurring reports with Python scripts
+
+EDUCATION
+BSc Information Systems, Demo University of Sharjah, 2018 - 2022
+
+CERTIFICATIONS
+SnowPro Core Certification, Snowflake, 2025
+dbt Analytics Engineering Certification - in progress, exam planned for 2027
+Google Data Analytics course (completion statement), 2021
+IELTS Academic 7.5 (2022)
+
+RECOGNITION
+Employee of the Month, October 2025
+
+PERSONAL PROJECTS
+- Open data pipeline: loads city transport data into Snowflake every night with Airflow
+- dbt models and tests for a public football statistics dataset (repository on GitHub)
+- Small Python tool that checks CSV files against a schema before loading
+
+LANGUAGES
+Arabic (native), English (fluent), French (basic)
+
+TECHNICAL SKILLS
+SQL, Python, pandas, Snowflake, dbt, Apache Airflow, ETL and ELT pipelines, Power BI, Git

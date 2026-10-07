@@ -1,0 +1,36 @@
+Minh Anh Tran | Senior Data Engineer
+minhanh.tran@example.test | +61 400 000 011 | Melbourne, VIC | linkedin.com/in/minhanh-tran-example
+
+SUMMARY
+Data engineer who builds batch and streaming platforms for analytics teams. Comfortable owning a pipeline from ingestion through to the dashboards that depend on it.
+
+EXPERIENCE
+
+Senior Data Engineer | Kestrel Analytics | Jan 2021 – Present
+- Own the lakehouse ingestion layer: 140 Airflow DAGs moving data from SaaS APIs and operational databases into Snowflake.
+- Rebuilt the nightly customer-360 job in Spark, cutting its runtime from 6 hours to 55 minutes.
+- Introduced dbt tests and data contracts; failed-load incidents fell by 60 percent.
+- Mentor two junior engineers and run the fortnightly data-quality review.
+
+Data Engineer | Bluegum Software Pty Ltd | Mar 2018 – Dec 2020
+- Migrated 30 on-premise SQL Server ETL jobs to a cloud warehouse with no reporting downtime.
+- Built a Kafka-based event feed for the product analytics team.
+- Wrote the team's first CI pipeline for SQL and Python code.
+
+Junior Developer | Tallow & Finch Digital | Feb 2016 – Feb 2018
+- Maintained reporting scripts and a small Django admin tool for the finance team.
+- Fixed data-quality defects raised by account managers.
+
+KEY ACHIEVEMENTS
+- Reduced monthly warehouse spend by 38 percent through clustering and query tuning.
+- Delivered the regulatory reporting feed two weeks ahead of the deadline.
+
+EDUCATION
+Bachelor of Information Technology, Westbridge University, 2012 – 2015
+
+CERTIFICATIONS
+AWS Certified Data Analytics - Specialty (2022)
+Databricks Certified Data Engineer Professional (2023)
+
+SKILLS
+Python, SQL, Apache Spark, Airflow, dbt, Snowflake

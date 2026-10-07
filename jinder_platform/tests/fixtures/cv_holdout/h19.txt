@@ -1,0 +1,38 @@
+EUROPASS
+Curriculum Vitae
+
+PERSONAL INFORMATION
+Võ Thị Hoa
+E-mail: hoa.vo@example.test
+Phone: +61 400 000 029
+Nationality: Vietnamese
+Date of birth: 14/05/2004
+
+PREFERRED JOB
+Software Developer
+
+WORK EXPERIENCE
+01/06/2026 – Current
+Backend Engineering Intern
+Lumenfield Software, Sydney
+- Add endpoints and unit tests to the order-management API (Java, Spring).
+- Fixed 18 bugs from the team backlog and wrote two internal how-to guides.
+
+01/12/2025 – 28/02/2026
+Software Engineering Intern
+Emberly Games, Melbourne
+- Built a Python tool that validates level-configuration files before release.
+- Took part in daily stand-ups and code reviews with a team of 8.
+
+EDUCATION AND TRAINING
+2023 – 2027 (expected)
+Bachelor of Software Engineering
+Harcourt University
+
+PERSONAL SKILLS
+Mother tongue: Vietnamese
+Foreign languages: English (C1)
+Digital skills: Python, Java, SQL, Git, Linux
+
+ADDITIONAL INFORMATION
+Honours and awards: Finalist, University Capture The Flag (2025)

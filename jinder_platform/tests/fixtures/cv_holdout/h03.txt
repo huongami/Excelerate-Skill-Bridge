@@ -1,0 +1,27 @@
+Nguyễn Thùy Linh - Data Analyst
+linh.nguyen@example.test · +61 400 000 013 · Brisbane, QLD
+
+Career Objective
+Seeking a Business Intelligence Analyst role where I can turn messy retail and supply-chain data into dashboards that operations managers actually use.
+
+Work Experience
+
+Data Analyst, Redfern Retail Insights (2022–Present)
+• Maintain 25 Tableau dashboards used by store operations and merchandising.
+• Replaced a weekly manual Excel pack with an automated SQL and Power BI report, saving about 12 hours a week.
+• Partner with finance to reconcile sales and stock figures every month-end.
+
+Junior Analyst, Tallowood Logistics (2019–2022)
+• Built daily on-time-delivery reports from the warehouse system.
+• Cleaned and merged carrier invoices to find billing errors worth AUD 90k.
+• Trained six dispatchers to read the new dashboards.
+
+Education
+Bachelor of Commerce (Business Analytics), Harcourt University, 2015 – 2018
+
+Courses
+Google Data Analytics Professional Certificate, Coursera, 2021
+Excel Skills for Business Specialization, Coursera, 2020
+
+Skills
+SQL, Tableau, Excel, Power BI, Python

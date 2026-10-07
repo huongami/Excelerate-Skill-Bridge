@@ -1,0 +1,24 @@
+Hye-jin Choi                              SENIOR QA ENGINEER
+hyejin.choi@example.test                  Quality engineer with 9 years in healthcare and print
++61 400 000 027                           software. Looking for a Test Automation Engineer role
+Melbourne, VIC                            where I can build frameworks as well as use them.
+
+SKILLS                                    EXPERIENCE
+Selenium                                  Senior QA Engineer
+Cypress                                   Beacon Health Software
+Postman                                   Aug 2020 – Present
+Java                                      - Own the regression suite: 1,800 automated checks,
+Jenkins                                   run on every merge in 14 minutes.
+TestRail                                  - Replaced flaky Selenium waits with a Cypress-based
+                                          framework; flakiness fell from 12% to 1%.
+CERTIFICATIONS                            - Coach 5 developers on writing testable code.
+ISTQB Foundation Level (CTFL)
+2018                                      QA Analyst
+                                          Meridian Print Group
+LANGUAGES                                 Feb 2017 – Jul 2020
+Korean (native)                           - Wrote and executed manual and exploratory test plans
+English (fluent)                          for the web-to-print ordering system.
+                                          - Introduced bug-triage meetings and a defect dashboard.
+EDUCATION
+Bachelor of Information Technology
+Eastgate University, 2012 – 2016

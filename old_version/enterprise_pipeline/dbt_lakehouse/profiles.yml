@@ -1,0 +1,7 @@
+skill_bridge_duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'enterprise_pipeline/storage/warehouse.duckdb'
+      threads: 4

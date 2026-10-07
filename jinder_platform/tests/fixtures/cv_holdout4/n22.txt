@@ -1,0 +1,50 @@
+MAYA CHEN-SAMPLE
+Information Systems student (3rd year) | Westbrook (Demo)
+maya.chen@example.test | +44 0000 555 0120
+
+OBJECTIVE
+Looking for a graduate Data Analyst role starting in summer 2027. I enjoy turning messy
+numbers into clear charts and I have worked part-time since I was 16.
+
+EDUCATION
+BSc Information Systems, Westbrook University Demo                    2024 - 2027 (expected)
+Modules: Databases, Statistics, Systems Analysis, Programming in Python
+Westbrook Sixth Form College                                           2022 - 2024
+A-levels: Mathematics A, Economics A, Computer Science B
+
+PART-TIME WORK (alongside studies)
+
+Student Helpdesk Assistant (part-time)                                 Feb 2025 - Present
+Westbrook University Demo IT Services
+- Answer 25 tickets per week from students and staff (accounts, Wi-Fi, printing)
+- Basic troubleshooting of laptops and software installs
+- Wrote 12 short how-to guides for the university knowledge base
+- Communication with users by phone, chat and in person
+
+Barista (weekends)                                                     Sep 2023 - Present
+Bean There Demo Cafe, Westbrook
+- Serve up to 150 customers on a Saturday, handle cash and card payments
+- Train new starters; team player in a fast shift
+
+Sales Assistant (part-time)                                            Oct 2022 - Aug 2023
+Corner Mart Demo, Westbrook
+- Stock counts and weekly sales sheet in Excel with pivot tables
+
+PROJECTS
+Coursework dashboard: Python, SQL and Excel analysis of 40,000 bike-share trips
+
+CERTIFICATIONS AND TRAINING
+Microsoft Office Specialist: Excel Associate, 2023
+CompTIA A+ - studying, exam not booked yet
+University short course: Introduction to Statistics (credit-bearing)
+
+EXTRA-CURRICULAR
+- Dean's List, 2025
+- Entrance Scholarship, 2024
+- Member of the university data society
+
+SKILLS
+Excel, SQL, Python, communication, teamwork, problem-solving, troubleshooting
+
+LANGUAGES
+English (native), Mandarin (conversational)

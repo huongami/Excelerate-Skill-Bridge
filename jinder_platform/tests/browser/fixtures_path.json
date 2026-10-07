@@ -1,0 +1,145 @@
+{
+  "note": "Fixtures of bridge.path for the browser check of FE-Talent. They follow the shape of plan section 5.3 (axes, fit, gaps, summary). All names and numbers are made up.",
+  "paths": {
+    "axes10": {
+      "axes": [
+        { "key": "languages", "label": "Languages", "group": "languages", "required": 80, "have": 90, "status": "above" },
+        { "key": "frameworks", "label": "Frameworks & libraries", "group": "frameworks", "required": 70, "have": 70, "status": "fit" },
+        { "key": "cloud", "label": "Cloud & DevOps", "group": "cloud", "required": 75, "have": 40, "status": "gap" },
+        { "key": "data", "label": "Data & storage", "group": "data", "required": 60, "have": 62.5, "status": "fit" },
+        { "key": "ml", "label": "ML & AI", "group": "ml", "required": 40, "have": 20, "status": "gap" },
+        { "key": "practices", "label": "Engineering practices", "group": "practices", "required": 65, "have": 80, "status": "above" },
+        { "key": "collab", "label": "Collaboration", "group": "collab", "required": 50, "have": 55, "status": "fit" },
+        { "key": "experience", "label": "Experience", "group": "experience", "required": 70, "have": 60, "status": "gap" },
+        { "key": "level", "label": "Level", "group": "level", "required": 60, "have": 60, "status": "fit" },
+        { "key": "certifications", "label": "Certifications", "group": "certifications", "required": 50, "have": 0, "status": "gap" }
+      ],
+      "fit": [
+        { "kind": "skill", "label": "Python", "have": "Advanced", "need": "Proficient", "note": "" },
+        { "kind": "skill", "label": "PostgreSQL", "have": "Proficient", "need": "Proficient", "note": "" },
+        { "kind": "skill", "label": "Git", "have": "Advanced", "need": "Working", "note": "" },
+        { "kind": "skill", "label": "Unit and integration testing", "have": "Proficient", "need": "Proficient", "note": "" },
+        { "kind": "level", "label": "Level", "have": "Senior", "need": "Senior", "note": "" },
+        { "kind": "award", "label": "Hackathon", "have": "Hackathon Winner 2024", "need": "Preferred", "note": "A preferred award." },
+        { "kind": "skill", "label": "Teamwork", "have": "Advanced", "need": "Working", "note": "" }
+      ],
+      "gaps": [
+        { "kind": "missing", "label": "Kubernetes", "have": "none", "need": "Proficient", "months": 3.5, "must": true, "note": "" },
+        { "kind": "below_level", "label": "Docker", "have": "Working", "need": "Advanced", "months": 1.5, "must": true, "note": "" },
+        { "kind": "experience", "label": "Years of experience", "have": "4 years", "need": "5 to 9 years", "months": 8, "must": false, "note": "Experience grows with time." },
+        { "kind": "certification", "label": "AWS Certified Solutions Architect - Associate", "have": "none", "need": "Required", "months": 3, "must": true, "note": "" }
+      ],
+      "summary": { "fitCount": 7, "gapCount": 4, "monthsToClose": 5.5, "readinessTier": "Moderate gap (fast-track upskilling)" }
+    },
+    "axes8": {
+      "axes": [
+        { "key": "languages", "label": "Languages", "group": "languages", "required": 85, "have": 70, "status": "gap" },
+        { "key": "frameworks", "label": "Frameworks & libraries", "group": "frameworks", "required": 60, "have": 65, "status": "fit" },
+        { "key": "cloud", "label": "Cloud & DevOps", "group": "cloud", "required": 70, "have": 30, "status": "gap" },
+        { "key": "data", "label": "Data & storage", "group": "data", "required": 55, "have": 75, "status": "above" },
+        { "key": "ml", "label": "ML & AI", "group": "ml", "required": 30, "have": 30, "status": "fit" },
+        { "key": "practices", "label": "Engineering practices", "group": "practices", "required": 60, "have": 60, "status": "fit" },
+        { "key": "collab", "label": "Collaboration", "group": "collab", "required": 50, "have": 58, "status": "fit" },
+        { "key": "experience", "label": "Experience", "group": "experience", "required": 60, "have": 75, "status": "above" }
+      ],
+      "fit": [
+        { "kind": "skill", "label": "SQL", "have": "Expert", "need": "Advanced", "note": "" },
+        { "kind": "skill", "label": "Python", "have": "Proficient", "need": "Proficient", "note": "" }
+      ],
+      "gaps": [
+        { "kind": "missing", "label": "Terraform", "have": "none", "need": "Working", "months": 0.5, "must": false, "note": "" },
+        { "kind": "below_level", "label": "Go", "have": "Beginner", "need": "Proficient", "months": 4, "must": true, "note": "" },
+        { "kind": "level", "label": "Level", "have": "Mid", "need": "Senior", "months": 12, "must": false, "note": "" }
+      ],
+      "summary": { "fitCount": 2, "gapCount": 3, "monthsToClose": 4.5, "readinessTier": "Moderate gap" }
+    },
+    "axes6": {
+      "axes": [
+        { "key": "languages", "label": "Languages", "group": "languages", "required": 90, "have": 90, "status": "fit" },
+        { "key": "frameworks", "label": "Frameworks & libraries", "group": "frameworks", "required": 80, "have": 95, "status": "above" },
+        { "key": "cloud", "label": "Cloud & DevOps", "group": "cloud", "required": 40, "have": 60, "status": "above" },
+        { "key": "data", "label": "Data & storage", "group": "data", "required": 50, "have": 50, "status": "fit" },
+        { "key": "practices", "label": "Engineering practices", "group": "practices", "required": 70, "have": 70, "status": "fit" },
+        { "key": "collab", "label": "Collaboration", "group": "collab", "required": 60, "have": 62, "status": "fit" }
+      ],
+      "fit": [
+        { "kind": "skill", "label": "TypeScript", "have": "Expert", "need": "Advanced", "note": "" },
+        { "kind": "skill", "label": "React", "have": "Expert", "need": "Advanced", "note": "" },
+        { "kind": "experience", "label": "Years of experience", "have": "9 years", "need": "5 to 9 years", "note": "" }
+      ],
+      "gaps": [],
+      "summary": { "fitCount": 3, "gapCount": 0, "monthsToClose": 0, "readinessTier": "Ready" }
+    },
+    "axes3": {
+      "axes": [
+        { "key": "languages", "label": "Languages", "group": "languages", "required": 80, "have": 30, "status": "gap" },
+        { "key": "cloud", "label": "Cloud & DevOps", "group": "cloud", "required": 60, "have": 60, "status": "fit" },
+        { "key": "practices", "label": "Engineering practices", "group": "practices", "required": 40, "have": 55, "status": "above" }
+      ],
+      "fit": [
+        { "kind": "skill", "label": "Git", "have": "Advanced", "need": "Working", "note": "" }
+      ],
+      "gaps": [
+        { "kind": "missing", "label": "Rust", "have": "none", "need": "Proficient", "months": 6, "must": true, "note": "" }
+      ],
+      "summary": { "fitCount": 1, "gapCount": 1, "monthsToClose": 6, "readinessTier": "Large gap" }
+    },
+    "emptyFit": {
+      "axes": [
+        { "key": "languages", "label": "Languages", "group": "languages", "required": 70, "have": 0, "status": "gap" },
+        { "key": "cloud", "label": "Cloud & DevOps", "group": "cloud", "required": 70, "have": 0, "status": "gap" },
+        { "key": "data", "label": "Data & storage", "group": "data", "required": 70, "have": 0, "status": "gap" },
+        { "key": "ml", "label": "ML & AI", "group": "ml", "required": 70, "have": 0, "status": "gap" }
+      ],
+      "fit": [],
+      "gaps": [
+        { "kind": "missing", "label": "Python", "have": "none", "need": "Advanced", "months": 4, "must": true, "note": "" },
+        { "kind": "missing", "label": "PyTorch", "have": "none", "need": "Proficient", "months": 5, "must": true, "note": "" }
+      ],
+      "summary": { "fitCount": 0, "gapCount": 2, "monthsToClose": 7.5, "readinessTier": "Large gap" }
+    },
+    "emptyGap": {
+      "axes": [
+        { "key": "languages", "label": "Languages", "group": "languages", "required": 60, "have": 80, "status": "above" },
+        { "key": "cloud", "label": "Cloud & DevOps", "group": "cloud", "required": 60, "have": 60, "status": "fit" },
+        { "key": "data", "label": "Data & storage", "group": "data", "required": 60, "have": 60, "status": "fit" },
+        { "key": "practices", "label": "Engineering practices", "group": "practices", "required": 60, "have": 70, "status": "above" }
+      ],
+      "fit": [
+        { "kind": "skill", "label": "SQL", "have": "Advanced", "need": "Proficient", "note": "" },
+        { "kind": "skill", "label": "dbt", "have": "Proficient", "need": "Proficient", "note": "" }
+      ],
+      "gaps": [],
+      "summary": { "fitCount": 2, "gapCount": 0, "monthsToClose": 0, "readinessTier": "Ready" }
+    },
+    "longLabels": {
+      "axes": [
+        { "key": "a", "label": "Distributed training and GPU computing for very large language models", "group": "ml", "required": 90, "have": 35, "status": "gap" },
+        { "key": "b", "label": "Authentication and authorisation across microservices", "group": "frameworks", "required": 55, "have": 60, "status": "fit" },
+        { "key": "c", "label": "Infrastructure_as_code_with_a_very_long_unbroken_label_name", "group": "cloud", "required": 40, "have": 80, "status": "above" },
+        { "key": "d", "label": "Data privacy and compliance", "group": "data", "required": 45, "have": 20, "status": "gap" },
+        { "key": "e", "label": "Technical leadership and mentoring of other engineers", "group": "collab", "required": 70, "have": 70, "status": "fit" }
+      ],
+      "fit": [
+        { "kind": "certification", "label": "Microsoft Certified: Power BI Data Analyst Associate", "have": "Held, 2023", "need": "Preferred", "note": "You hold this certification. It is a preferred one for this job and it shows your skill in reporting and visual analytics work." },
+        { "kind": "skill", "label": "Technical leadership and mentoring of other engineers", "have": "Proficient", "need": "Proficient", "note": "" }
+      ],
+      "gaps": [
+        { "kind": "below_level", "label": "Distributed training and GPU computing for very large language models", "have": "Beginner", "need": "Advanced", "months": 9.5, "must": true, "note": "" },
+        { "kind": "certification", "label": "Google Cloud Professional Machine Learning Engineer", "have": "none", "need": "Required", "months": 4, "must": true, "note": "" },
+        { "kind": "missing", "label": "Data privacy and compliance", "have": "none", "need": "Working", "months": 0.8, "must": false, "note": "<b>not bold</b> & safe" }
+      ],
+      "summary": { "fitCount": 2, "gapCount": 3, "monthsToClose": 11.5, "readinessTier": "Large gap (a long programme of upskilling is needed before you apply)" }
+    },
+    "bothEmpty": {
+      "axes": [
+        { "key": "languages", "label": "Languages", "group": "languages", "required": 50, "have": 50, "status": "fit" },
+        { "key": "cloud", "label": "Cloud & DevOps", "group": "cloud", "required": 50, "have": 50, "status": "fit" },
+        { "key": "data", "label": "Data & storage", "group": "data", "required": 50, "have": 50, "status": "fit" }
+      ],
+      "fit": [],
+      "gaps": [],
+      "summary": { "fitCount": 0, "gapCount": 0, "monthsToClose": 0, "readinessTier": "Ready" }
+    }
+  }
+}

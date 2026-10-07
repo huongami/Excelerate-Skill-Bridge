@@ -1,0 +1,25 @@
+Khadija Rahman
+Graduate Data Analyst
+khadija.rahman@example.test | 0400 000 023 | Hobart, TAS
+
+Aiming to become a Data Scientist. I am building the statistics and machine-learning foundations through a part-time postgraduate course and regular Kaggle practice.
+
+EXPERIENCE
+Graduate Data Analyst, Seabright Council, 2026-02 – present
+- Maintain the council's service-request dashboard (SQL, Tableau) used by 6 departments.
+- Automated the monthly rates-arrears extract with Python and pandas, replacing a 4-hour manual task.
+- Document data definitions in the new data catalogue.
+
+Data Analytics Intern, Kookaburra Insurance, 2024-11 – 2025-02
+- Cleaned and joined claims extracts for a fraud-flag analysis.
+- Presented findings on claim-processing delays to a team of 15.
+
+EDUCATION
+Bachelor of Data Science, Eastgate University, 2022 – 2025
+
+AWARDS & SCHOLARSHIPS
+Dean's List, Faculty of Science (2024)
+Eastgate University Merit Scholarship (2022)
+
+SKILLS
+Python, SQL, pandas, Tableau, R

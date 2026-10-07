@@ -1,0 +1,30 @@
+Dmitri Volkov
+Back-end Developer
+dmitri.volkov@example.test | +61 400 000 041 | Darwin, NT
+
+PROFILE
+Back-end developer who likes small services, readable SQL and solid monitoring. Comfortable working alone or in distributed teams.
+
+EXPERIENCE
+
+Freelance Web Developer (contract) — 2012 – 2014
+- Built and hosted ordering sites for restaurants and cafes (PHP, MySQL), later rewritten in Django.
+- Handled invoicing, support and weekend deployments for 15 clients.
+
+2014 – 2017: career break. Travelled and worked on open-source projects.
+
+Back-end Developer, Yarrow Freight Systems, 2017 - current
+- Own the consignment-tracking API (Python, Django, PostgreSQL) used by 40 depots.
+- Introduced Redis caching for rate lookups; average response time fell from 900 ms to 120 ms.
+- Built the Docker-based staging environment and the blue-green release script.
+- Wrote the on-call guide and the database-migration checklist.
+
+OPEN SOURCE
+Maintainer, quillpack open-source library
+Python packaging helper with 800+ GitHub stars and 30 contributors.
+
+EDUCATION
+Bachelor of Information Technology, Southbank University, 2008 – 2011
+
+SKILLS
+Python, Django, PostgreSQL, Redis, Docker, REST

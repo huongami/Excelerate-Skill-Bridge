@@ -1,0 +1,47 @@
+NINA OSTROWSKA-DEMO
+Senior QA Automation Engineer
+nina.ostrowska@example.test | +48 000 555 142 | Krakow (Demo), Poland
+
+SUMMARY
+Quality engineer who builds test frameworks that developers trust. 5 years in web and
+payments products. Owner of the end-to-end regression suite (1,800 tests, 11 min run time).
+
+SKILLS MATRIX
+Skill                    Level        Years    Last used
+Selenium WebDriver       Expert       5        2026
+Playwright               Advanced     2        2026
+Cypress                  4 of 5       3        2025
+Java                     Advanced     5        2026
+JUnit / TestNG           Expert       5        2026
+REST API testing         Advanced     4        2026
+Jenkins CI/CD            3 of 5       3        2026
+Manual and exploratory   Expert       5        2026
+Performance (JMeter)     ●●●○○        1        2024
+SQL                      ●●●●○        4        2026
+
+EXPERIENCE
+Jul-24 to now       Senior QA Automation Engineer, Tessellate Pay Demo
+                    - Rebuilt the UI test framework on Playwright, flaky tests down from 9% to 1%
+                    - Added contract tests for 22 payment APIs; wired all suites into Jenkins pipelines
+                    - Mentor for 3 manual testers moving into automation
+Mar-21 to Jun-24   QA Engineer, Orchard Mobile Demo
+                    - Selenium and Java framework for the web admin; 600 regression tests
+                    - Weekly exploratory testing sessions, bug reporting in Jira
+                    - Test plans and UAT support for 15 releases
+
+EDUCATION
+MSc Computer Science, Demo University of Krakow, 2018 - 2020
+BSc Computer Science, Demo University of Krakow, 2015 - 2018
+
+CERTIFICATIONS
+ISTQB Certified Tester Foundation Level (CTFL), 2022
+ISTQB Certified Tester Test Automation Engineer: exam booked 12/2026
+Udemy course: Postman API testing (certificate of completion)
+
+LANGUAGES
+Polish: native | English: C1 | German: A2
+
+INTERESTS
+Bouldering, board games, open-source test tooling
+
+Page 1 of 1

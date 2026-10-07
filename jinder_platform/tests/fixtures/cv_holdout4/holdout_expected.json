@@ -1,0 +1,420 @@
+{
+  "asOf": "2026-10-06",
+  "cvs": {
+    "n01.txt": {
+      "layout": "German-style Lebenslauf in English: personal data block, dd.mm.yyyy dates (04.2022 - today), working-student job, certificates with 'valid until', seminar, language test and driving licence as non-certifications",
+      "currentRole": "DevOps Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 9.2,
+      "certifications": ["Certified Kubernetes Administrator (CKA)", "HashiCorp Certified: Terraform Associate"],
+      "awards": [],
+      "skills": ["Kubernetes", "Terraform", "Docker", "Linux", "Ansible", "Prometheus", "Grafana", "GitLab CI/CD"]
+    },
+    "n02.txt": {
+      "layout": "French-style CV: photo placeholder, age and family status, 'Since October 2023' open end, year-only second job, certificate with credential ID, training and language score as non-certifications",
+      "currentRole": "BI Developer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 4.1,
+      "certifications": ["Microsoft Certified: Power BI Data Analyst Associate (PL-300)"],
+      "awards": [],
+      "skills": ["Power BI", "SQL", "Microsoft SQL Server", "Data warehousing", "Data modelling", "Tableau", "Microsoft Excel", "ETL and ELT pipelines"]
+    },
+    "n03.txt": {
+      "layout": "Nigerian CV: Career Summary, Key Competencies, Duties lists, Achievements and Referees; '2021 - Date' open end with year-only dates; attendance certificate is not a certification",
+      "currentRole": "Senior Backend Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 9.3,
+      "certifications": ["Oracle Certified Professional: Java SE 17 Developer"],
+      "awards": [
+        {"name": "Best Staff of the Year", "kind": "employer-recognition", "year": 2023},
+        {"name": "Best Graduating Student, Department of Computer Science", "kind": "academic-excellence", "year": 2016}
+      ],
+      "skills": ["Java", "Spring Boot", "API design", "PostgreSQL", "Apache Kafka", "Docker", "Jenkins", "Git"]
+    },
+    "n04.txt": {
+      "layout": "Kenyan CV: personal details block, generic career objective (no target), profile, referees; full month names; Udemy course and driving licence are not certifications",
+      "currentRole": "Android Developer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 3.8,
+      "certifications": ["AWS Certified Cloud Practitioner"],
+      "awards": [
+        {"name": "Winner, Nairobi Fintech Hackathon", "kind": "hackathon", "year": 2024},
+        {"name": "Organiser, DevFest Nairobi Demo", "kind": "community-leadership", "year": 2023}
+      ],
+      "skills": ["Kotlin", "Java", "Android development", "API design", "Git", "Unit and integration testing", "Agile delivery", "AWS"]
+    },
+    "n05.txt": {
+      "layout": "Ghanaian CV: Professional Profile, Core Competencies, Recognition, Referees; 'Junior' in the current title; booked exam and course certificate are not certifications",
+      "currentRole": "Junior Data Steward",
+      "level": "Junior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 3.7,
+      "certifications": ["Certified Data Management Professional (CDMP) Associate"],
+      "awards": [
+        {"name": "Employee of the Quarter", "kind": "employer-recognition", "year": 2024}
+      ],
+      "skills": ["Data governance", "Data quality", "SQL", "Microsoft Excel", "Power BI", "Stakeholder management"]
+    },
+    "n06.txt": {
+      "layout": "South African CV: ID number, driver's licence code, notice period, reason for leaving per job, references; 'Level 2' in the title beats 12 years of experience; first aid and planned exam are not certifications",
+      "currentRole": "Level 2 Service Desk Analyst",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 12.8,
+      "certifications": ["CompTIA A+", "ITIL 4 Foundation", "Microsoft Certified: Azure Fundamentals (AZ-900)"],
+      "awards": [
+        {"name": "Employee of the Month", "kind": "employer-recognition", "year": 2022},
+        {"name": "Top Performer", "kind": "employer-recognition", "year": 2020}
+      ],
+      "skills": ["Debugging and troubleshooting", "Networking fundamentals", "PowerShell", "Azure", "Incident response", "Technical documentation", "Communication", "Microsoft Excel"]
+    },
+    "n07.txt": {
+      "layout": "Brazilian CV in English: personal information (marital status, nationality), Mon/YYYY dates, 'Mid-level' in title, Honours and Awards with Kaggle medal; university extension course is not a certification",
+      "currentRole": "Mid-level Data Scientist",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.8,
+      "certifications": ["Microsoft Certified: Azure Data Scientist Associate (DP-100)", "Machine Learning Specialization"],
+      "awards": [
+        {"name": "Kaggle Silver Medal, Tabular Playground Series", "kind": "data-science-competition", "year": 2023},
+        {"name": "Merit Scholarship", "kind": "scholarship", "year": 2015}
+      ],
+      "skills": ["Python", "scikit-learn", "XGBoost", "Pandas", "SQL", "Statistics", "Time series forecasting", "Machine learning"]
+    },
+    "n08.txt": {
+      "layout": "UK graduate scheme CV: application heading, personal statement with wish, A-levels and GCSEs, one summer internship that ended Sep 2025 (current role is the intern title), mixed extra-curricular list of awards and activities",
+      "currentRole": "Software Engineering Intern",
+      "level": "Intern",
+      "targetRole": "Software Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 0.3,
+      "certifications": ["AWS Certified Cloud Practitioner"],
+      "awards": [
+        {"name": "Vice-Chancellor's Scholarship", "kind": "scholarship", "year": 2022},
+        {"name": "Dean's List", "kind": "academic-excellence", "year": 2023},
+        {"name": "Winner, Northfield Hackathon", "kind": "hackathon", "year": 2024},
+        {"name": "Chair, Northfield Computing Society", "kind": "community-leadership", "year": 2024},
+        {"name": "Duke of Edinburgh's Gold Award", "kind": "", "year": 2021}
+      ],
+      "skills": ["Java", "Python", "JavaScript", "React", "SQL", "Git", "JUnit", "Agile delivery"]
+    },
+    "n09.txt": {
+      "layout": "NHS-style public sector CV: band in brackets after the title, 'Duties:' paragraphs, supporting information, referees; booked PRINCE2 exam and mandatory training are not certifications",
+      "currentRole": "Database Administrator",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 12.3,
+      "certifications": ["Oracle Certified Professional (OCP)", "Microsoft Certified: Azure Database Administrator Associate (DP-300)"],
+      "awards": [
+        {"name": "Trust Staff Recognition Award", "kind": "employer-recognition", "year": 2022}
+      ],
+      "skills": ["Oracle Database", "Microsoft SQL Server", "SQL", "Database design and tuning", "PowerShell", "Shell scripting", "PostgreSQL", "Data privacy and compliance"]
+    },
+    "n10.txt": {
+      "layout": "US federal-style resume: series/grade, salary, hours per week, supervisor with may-contact, MM/YYYY dates, duties and accomplishments, KSA list; exam scheduled and graduate certificate are not certifications",
+      "currentRole": "Information Security Analyst",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 11.9,
+      "certifications": ["Certified Information Systems Security Professional (CISSP)", "CompTIA Security+ (SY0-701)"],
+      "awards": [
+        {"name": "Special Act Award", "kind": "employer-recognition", "year": 2021},
+        {"name": "Hall of Fame entry, Demo Bug Bounty Programme", "kind": "security-competition", "year": 2022},
+        {"name": "DemoCon CTF, 2nd place", "kind": "security-competition", "year": 2023}
+      ],
+      "skills": ["Incident response", "Threat modelling", "Cloud security", "Networking fundamentals", "Linux", "Python", "Penetration testing", "Observability"]
+    },
+    "n11.txt": {
+      "layout": "Military-to-civilian CV: objective with a role wish that is not on the list, civilian job 'Network Engineer II' plus translated military service as a job; clearance, military course and booked exam are not certifications; honours are military medals",
+      "currentRole": "Network Engineer II",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 14.6,
+      "certifications": ["Cisco Certified Network Associate (CCNA)", "Cisco Certified Network Professional Enterprise (CCNP Enterprise)", "CompTIA Network+"],
+      "awards": [
+        {"name": "Army Commendation Medal", "kind": "employer-recognition", "year": 2018},
+        {"name": "Soldier of the Year, Signal Battalion", "kind": "employer-recognition", "year": 2015}
+      ],
+      "skills": ["Networking fundamentals", "Linux", "Python", "Ansible", "Shell scripting", "Incident response", "Team leadership", "Observability"]
+    },
+    "n12.txt": {
+      "layout": "ATS-style CV with a pipe-table 'Core Competencies' block and pipe-table certifications, patents and recognition; 'Principal' in the title; MBA in progress is not a certification",
+      "currentRole": "Principal Cloud Architect",
+      "level": "Principal",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 11.7,
+      "certifications": ["AWS Certified Solutions Architect - Professional", "AWS Certified Security - Specialty", "TOGAF 9 Certified"],
+      "awards": [
+        {"name": "Granted Patent: Multi-region Failover Orchestration Method", "kind": "patent", "year": 2023},
+        {"name": "Innovation Award", "kind": "innovation-award", "year": 2021}
+      ],
+      "skills": ["AWS", "Azure", "Terraform", "Kubernetes", "Cloud security", "AWS CloudFormation", "System design", "Networking fundamentals"]
+    },
+    "n13.txt": {
+      "layout": "Skills-matrix CV with Expert / Advanced / '4 of 5' / dot ratings and Mon-YY dates (Mar-21 to Jun-24, Jul-24 to now); booked exam and Udemy course are not certifications",
+      "currentRole": "Senior QA Automation Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 5.7,
+      "certifications": ["ISTQB Certified Tester Foundation Level (CTFL)"],
+      "awards": [],
+      "skills": ["Selenium", "Playwright", "Cypress", "Test automation", "Java", "JUnit", "CI/CD", "Manual testing"]
+    },
+    "n14.txt": {
+      "layout": "Timeline-sidebar CV: dates sit in a separate TIMELINE block before the jobs, in the same order as jobs and education; Udemy course certificate is not a certification",
+      "currentRole": "Full-stack Developer",
+      "level": "Junior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 1.8,
+      "certifications": [],
+      "awards": [
+        {"name": "Dean's List", "kind": "academic-excellence", "year": 2023},
+        {"name": "Core Contributor, Open Grid Toolkit", "kind": "open-source", "year": 2025}
+      ],
+      "skills": ["React", "TypeScript", "Node.js", "PostgreSQL", "Docker", "Tailwind CSS", "GraphQL", "Jest"]
+    },
+    "n15.txt": {
+      "layout": "ML engineer CV with 'Selected achievements' bullets inside every job that carry the awards; quarter dates (Q2 2023 - Present, Q2 2022 - Q1 2023, Q3 2019 - Q1 2022)",
+      "currentRole": "Lead Machine Learning Engineer",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.3,
+      "certifications": ["AWS Certified Machine Learning Engineer - Associate", "Databricks Certified Generative AI Engineer Associate"],
+      "awards": [
+        {"name": "Won the internal hackathon", "kind": "hackathon", "year": 2023},
+        {"name": "Innovation Award", "kind": "innovation-award", "year": 2024},
+        {"name": "Top Performer", "kind": "employer-recognition", "year": 2022},
+        {"name": "Kaggle Bronze Medal", "kind": "data-science-competition", "year": 2020}
+      ],
+      "skills": ["Python", "PyTorch", "Hugging Face Transformers", "Apache Spark", "MLOps", "Amazon SageMaker", "Docker", "Retrieval-augmented generation"]
+    },
+    "n16.txt": {
+      "layout": "One-line-per-job CV with ISO year-month dates (2022-03 to now); Scrum/PO certifications; short course and booked exam are not certifications; Accomplishments section",
+      "currentRole": "Product Owner",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 12.8,
+      "certifications": ["Professional Scrum Master I (PSM I)", "Certified ScrumMaster (CSM)", "Professional Scrum Product Owner I (PSPO I)"],
+      "awards": [
+        {"name": "Delivery Excellence Award", "kind": "employer-recognition", "year": 2021},
+        {"name": "Speaker, Product Camp Demo", "kind": "conference-talk", "year": 2023}
+      ],
+      "skills": ["Agile delivery", "Product thinking", "Requirements analysis", "Stakeholder management", "Facilitation", "Estimation and planning"]
+    },
+    "n17.txt": {
+      "layout": "Job titles in lower case only (junior front-end developer, web design intern, freelance web designer); online certification line; hackathon and scholarship under Achievements",
+      "currentRole": "junior front-end developer",
+      "level": "Junior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 3.8,
+      "certifications": ["freeCodeCamp Responsive Web Design Certification"],
+      "awards": [
+        {"name": "Winner, West Coast Web Hackathon", "kind": "hackathon", "year": 2025},
+        {"name": "Women in Tech Scholarship", "kind": "scholarship", "year": 2022}
+      ],
+      "skills": ["HTML and CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS", "Git", "Jest", "Web accessibility"]
+    },
+    "n18.txt": {
+      "layout": "ALL CAPS CV; 'SINCE 2019' start date without a month; a nomination line that is not an award; game jam and contest honours; Unity certification",
+      "currentRole": "LEAD GAME DEVELOPER",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.3,
+      "certifications": ["UNITY CERTIFIED PROFESSIONAL: PROGRAMMER"],
+      "awards": [
+        {"name": "WINNER, INDIE GAME JAM", "kind": "hackathon", "year": 2021},
+        {"name": "SILVER MEDAL, REGIONAL PROGRAMMING CONTEST", "kind": "competitive-programming", "year": 2014}
+      ],
+      "skills": ["C++", "C#", "Python", "Git", "Object-oriented design", "Data structures and algorithms", "Debugging and troubleshooting", "Agile delivery"]
+    },
+    "n19.txt": {
+      "layout": "Wish headline 'SEEKING: Data Engineer role' above a CV whose current job is Data Analyst; in-progress certification and course completion statement are not certifications",
+      "currentRole": "Data Analyst",
+      "level": "Mid",
+      "targetRole": "Data Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 4.2,
+      "certifications": ["SnowPro Core Certification"],
+      "awards": [
+        {"name": "Employee of the Month", "kind": "employer-recognition", "year": 2025}
+      ],
+      "skills": ["SQL", "Python", "Apache Airflow", "dbt", "Snowflake", "Pandas", "Power BI", "ETL and ELT pipelines"]
+    },
+    "n20.txt": {
+      "layout": "Returnship CV after a seven-year career break (not a job); current job is the returnship placement with a bracket tag; wish for a Backend Engineer role in the summary; patent and user group organiser lines",
+      "currentRole": "Software Engineer",
+      "level": "Senior",
+      "targetRole": "Backend Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.6,
+      "certifications": ["AWS Certified Developer - Associate"],
+      "awards": [
+        {"name": "Patent Filed: Method for Retrying Failed Batch Jobs", "kind": "patent", "year": 2017},
+        {"name": "Organiser, Manchester Java User Group", "kind": "community-leadership", "year": 2015}
+      ],
+      "skills": ["Java", "Spring Boot", "PostgreSQL", "Docker", "Git", "Kotlin", "AWS", "API design"]
+    },
+    "n21.txt": {
+      "layout": "Two open-ended jobs (employee plus own business) with 'Sept. 2019 - ongoing' and 'Mar. 2022 - ongoing'; the current role is the later-started side business; Trailhead rank and in-progress cert are not certifications",
+      "currentRole": "Freelance Salesforce Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.1,
+      "certifications": ["Salesforce Certified Administrator", "Salesforce Certified Platform Developer I", "Salesforce Certified Sales Cloud Consultant"],
+      "awards": [
+        {"name": "Organiser, Trailblazer Community Group Cluj", "kind": "community-leadership", "year": 2023},
+        {"name": "Top Contributor, Open Apex Utilities", "kind": "open-source", "year": 2024}
+      ],
+      "skills": ["JavaScript", "SQL", "API design", "Git", "Requirements analysis", "Stakeholder management", "Agile delivery", "Data modelling"]
+    },
+    "n22.txt": {
+      "layout": "Student CV with a part-time job list (helpdesk, barista, shop) and a known wish for a graduate Data Analyst role; 'Student' in the current job title; booked or studying exams and a university short course are not certifications",
+      "currentRole": "Student Helpdesk Assistant",
+      "level": "Intern",
+      "targetRole": "Data Analyst",
+      "statesUnknownTarget": false,
+      "yearsExperience": 4.1,
+      "certifications": ["Microsoft Office Specialist: Excel Associate"],
+      "awards": [
+        {"name": "Dean's List", "kind": "academic-excellence", "year": 2025},
+        {"name": "Entrance Scholarship", "kind": "scholarship", "year": 2024}
+      ],
+      "skills": ["Microsoft Excel", "SQL", "Python", "Communication", "Teamwork", "Problem solving", "Debugging and troubleshooting"]
+    },
+    "n23.txt": {
+      "layout": "Architect CV with year-only dates, a Chief Technology Officer wish (not on the role list) in the objective, a certification with an en dash and 'valid until 2028', separate PUBLICATIONS section; executive education is not a certification",
+      "currentRole": "Solutions Architect",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 18.3,
+      "certifications": ["AWS Certified Solutions Architect – Professional", "TOGAF 9.2 Certified"],
+      "awards": [
+        {"name": "Innovation Award", "kind": "innovation-award", "year": 2021},
+        {"name": "Speaker, Cloud Native Summit", "kind": "conference-talk", "year": 2023}
+      ],
+      "skills": ["System design", "Microservices architecture", "AWS", "Java", "Apache Kafka", "Kubernetes", "Cloud security", "API design"]
+    },
+    "n24.txt": {
+      "layout": "Analytics engineer CV with ISO year-month dates (2024-02 to now), a LOOKING FOR block with a Data Product Manager wish (not on the role list); language certificate, online course and IELTS are not certifications",
+      "currentRole": "Analytics Engineer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 4.3,
+      "certifications": ["dbt Analytics Engineering Certification"],
+      "awards": [
+        {"name": "Winner, City Open Data Challenge", "kind": "data-science-competition", "year": 2023},
+        {"name": "Top contributor to the Valencia Analytics Meetup repository", "kind": "open-source", "year": 2024}
+      ],
+      "skills": ["dbt", "SQL", "Snowflake", "Apache Airflow", "Data modelling", "Looker", "Git", "Data quality"]
+    },
+    "n25.txt": {
+      "layout": "Technical writer CV with 'Sept. 2021 - ongoing' and an 'Awards and Publications' section that mixes awards (maintainer, best paper, speaker) with plain publications; course badge and university certificate programme are not certifications",
+      "currentRole": "Staff Technical Writer",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 8.8,
+      "certifications": ["Certified Professional Technical Communicator (CPTC)"],
+      "awards": [
+        {"name": "Maintainer, Open Docs Toolkit", "kind": "open-source", "year": 2022},
+        {"name": "Best Paper, DocsConf Workshop", "kind": "conference-talk", "year": 2022},
+        {"name": "Speaker, Write the Docs Meetup", "kind": "conference-talk", "year": 2023}
+      ],
+      "skills": ["Technical documentation", "API design", "Git", "Python", "Communication", "Agile delivery", "Mentoring", "CI/CD"]
+    },
+    "n26.txt": {
+      "layout": "IT head CV with year-only dates, a Chief Information Officer wish (not on the role list) as career objective, PMP with credential ID and expiry; in-progress CISM, college diploma and seminar are not certifications",
+      "currentRole": "Head of IT",
+      "level": "Principal",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 12.3,
+      "certifications": ["ITIL 4 Foundation", "Project Management Professional (PMP)"],
+      "awards": [
+        {"name": "Employee of the Year", "kind": "employer-recognition", "year": 2019},
+        {"name": "Mentor of the Year, Coding Bootcamp Demo", "kind": "community-leadership", "year": 2024}
+      ],
+      "skills": ["Project management", "Team leadership", "Stakeholder management", "Azure", "PowerShell", "Incident response", "Data privacy and compliance"]
+    },
+    "n27.txt": {
+      "layout": "Junior embedded CV with 'June 2025 till date', a summer internship, an Extra-curricular list with contest medal, society chair and best project; language tests are not certifications",
+      "currentRole": "Embedded Firmware Engineer",
+      "level": "Junior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 1.7,
+      "certifications": ["Arm Accredited Engineer (AAE)"],
+      "awards": [
+        {"name": "Silver Medal, University Programming Contest", "kind": "competitive-programming", "year": 2023},
+        {"name": "Chair, Demo University Robotics Society", "kind": "community-leadership", "year": 2023},
+        {"name": "Best Final Year Project, Electrical Engineering Department", "kind": "academic-excellence", "year": 2025}
+      ],
+      "skills": ["C", "C++", "Python", "Linux", "MATLAB", "Git", "Jenkins", "Debugging and troubleshooting"]
+    },
+    "n28.txt": {
+      "layout": "Indian-style resume with a promotion path of three titles in one company (Developer, Senior Developer, Technical Lead), generic career objective, Accomplishments, declaration with place and date; ITIL training without exam is not a certification",
+      "currentRole": "ServiceNow Technical Lead",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 8.3,
+      "certifications": ["ServiceNow Certified System Administrator (CSA)", "ServiceNow Certified Application Developer (CAD)", "ServiceNow Certified Implementation Specialist - IT Service Management"],
+      "awards": [
+        {"name": "Star Performer Award", "kind": "employer-recognition", "year": 2022},
+        {"name": "Spot Award", "kind": "employer-recognition", "year": 2020},
+        {"name": "Winner, Halcyon Hackathon", "kind": "hackathon", "year": 2021}
+      ],
+      "skills": ["JavaScript", "API design", "Agile delivery", "Requirements analysis", "Technical leadership", "Mentoring", "Git", "Code review"]
+    },
+    "n29.txt": {
+      "layout": "Contractor CV: two contracts with the title tag (Contract) before a permanent job; award mentioned inside a job bullet; part-qualified ACCA and lapsed PRINCE2 are not certifications",
+      "currentRole": "SAP FI/CO Consultant",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.6,
+      "certifications": ["SAP Certified Application Associate - Financial Accounting with SAP S/4HANA", "SAP Certified Application Associate - Management Accounting with SAP S/4HANA"],
+      "awards": [
+        {"name": "Client Excellence Award", "kind": "employer-recognition", "year": 2024}
+      ],
+      "skills": ["Requirements analysis", "Stakeholder management", "SQL", "Microsoft Excel", "Technical documentation", "Agile delivery", "Communication", "Project management"]
+    },
+    "n30.txt": {
+      "layout": "Functional CV with no dates at all: plain headline title, summary of qualifications, accomplishments list and an employment history of employers and titles only; wish for a Site Reliability Engineer role; exam booked is not a certification",
+      "currentRole": "Systems Administrator",
+      "level": null,
+      "targetRole": "Site Reliability Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": ["Red Hat Certified System Administrator (RHCSA)", "Certified Kubernetes Administrator (CKA)"],
+      "awards": [
+        {"name": "Capture the Flag Finalist", "kind": "security-competition", "year": 2023}
+      ],
+      "skills": ["Linux", "Shell scripting", "Ansible", "Docker", "Kubernetes", "Prometheus", "Grafana", "Incident response"]
+    }
+  }
+}

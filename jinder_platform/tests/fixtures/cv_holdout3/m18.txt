@@ -1,0 +1,53 @@
+Matteo Rinaldi-Eze, PhD
+Research Scientist, Halcyon AI Lab, Zurich, Switzerland
+matteo.rinaldi@example.test  |  +41 79 000 00 18  |  scholar.example.test/matteorinaldi
+
+RESEARCH INTERESTS
+Efficient transformers, uncertainty estimation, representation learning for time series, probabilistic forecasting
+
+EDUCATION
+PhD in Computer Science, Rhine University, Basel                                         2019 – 2023
+  Thesis: "Efficient and Calibrated Sequence Models for Time Series"
+  Advisor: Prof. Katarina Lindqvist
+MSc in Data Science, Rhine University                                                    2017 – 2019
+BSc in Mathematics, University of Padua-Lombardy                                         2013 – 2016
+
+INDUSTRY EXPERIENCE
+Research Scientist, Halcyon AI Lab, Zurich                                               Sep 2023 – Present
+  Lead a four-person project on efficient long-context models for sensor and financial time series.
+  Trained 1.3B-parameter forecasting models on 64 GPUs; released two of them as open-weight checkpoints.
+Research Intern, Aurora Labs, Amsterdam                                                  Jun 2021 – Sep 2021
+  Developed a conformal prediction method for demand forecasting that was integrated into a customer pilot.
+
+RESEARCH EXPERIENCE
+Graduate Research Assistant, Machine Learning Group, Rhine University                    2019 – 2023
+  Research on sparse attention, calibration and time-series foundation models.
+
+PUBLICATIONS
+[C6] M. Rinaldi-Eze, K. Aoki, L. Brandt. "Sparse Attention for Long Time Series." NeurIPS 2024.
+[C5] M. Rinaldi-Eze, T. Okeke. "Calibrated Uncertainty for Probabilistic Forecasting Transformers." ICML 2023.
+[J1] M. Rinaldi-Eze, K. Lindqvist. "A Survey of Efficient Sequence Models for Forecasting." Journal of Machine
+     Learning Research, 2023.
+[C4] M. Rinaldi-Eze. "Linear-Time Attention with Learned Sparsity." ICLR Workshop on Time Series, 2022.
+[C3] M. Rinaldi-Eze, D. Haas. "Conformal Intervals for Demand Forecasting." AISTATS 2021.
+[P1] M. Rinaldi-Eze et al. "Scaling Laws for Forecasting Models." Under review, 2026.
+
+SELECTED PROJECTS
+tsfast: open-source library for efficient time-series transformers (PyTorch), 1.8k GitHub stars.
+conformal-forecast: reproducible benchmark of conformal methods on 40 forecasting datasets.
+
+TEACHING
+Teaching Assistant, Deep Learning (graduate course), Rhine University, 2021 and 2022
+Guest lecturer, "Uncertainty in Machine Learning", Halcyon AI Lab seminar series, 2024
+Co-supervised 3 MSc theses
+
+AWARDS AND FELLOWSHIPS
+Best Paper Award, ICLR Workshop on Time Series (2022)
+Doctoral Scholarship, Helvetia Research Council (2019)
+
+PROFESSIONAL SERVICE
+Reviewer: NeurIPS (2022–2025), ICML (2023–2025), ICLR (2024–2026)
+Organiser, Workshop on Efficient Sequence Models, 2025
+
+TECHNICAL SKILLS
+Python, PyTorch, JAX, C++, CUDA, Slurm, LaTeX

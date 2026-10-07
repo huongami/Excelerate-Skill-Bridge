@@ -1,0 +1,363 @@
+{
+  "asOf": "2026-10-06",
+  "cvs": {
+    "h01.txt": {
+      "layout": "Headline 'Name | Title'; job lines 'Title | Company | Jan 2021 – Present'; 'Key achievements' bullets (not awards); Certifications section with years",
+      "currentRole": "Senior Data Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.7,
+      "certifications": ["AWS Certified Data Analytics - Specialty", "Databricks Certified Data Engineer Professional"],
+      "awards": [],
+      "skills": ["Python", "SQL", "Apache Spark", "Airflow", "dbt", "Snowflake"]
+    },
+    "h02.txt": {
+      "layout": "NEARLY-EMPTY: name, contact and four skills only; empty Experience and Education headings (skills are the only content; all other fields null)",
+      "currentRole": null,
+      "level": null,
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": [],
+      "awards": [],
+      "skills": ["Python", "SQL", "Excel", "Git"]
+    },
+    "h03.txt": {
+      "layout": "Headline 'Name - Title'; job lines 'Title, Company (2022–Present)' with year-only dates; 'Career Objective' with 'Seeking a Business Intelligence Analyst role'; certificates listed under a 'Courses' heading; level only from years (7.3)",
+      "currentRole": "Data Analyst",
+      "level": "Senior",
+      "targetRole": "Business Intelligence Analyst",
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.3,
+      "certifications": ["Google Data Analytics Professional Certificate", "Excel Skills for Business Specialization"],
+      "awards": [],
+      "skills": ["SQL", "Tableau", "Excel", "Power BI", "Python"]
+    },
+    "h04.txt": {
+      "layout": "Headline 'Name · Junior Full-Stack Developer' (level word only in the headline, not in the job title); job lines 'Title at Company (2023–2025)' with the most recent job already ended; 'Looking for a Backend Engineer role' in the profile; AWS certification written inline in the profile; 'Projects' line is not an award",
+      "currentRole": "Full-Stack Developer",
+      "level": "Junior",
+      "targetRole": "Backend Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 3.0,
+      "certifications": ["AWS Certified Developer - Associate"],
+      "awards": [],
+      "skills": ["JavaScript", "TypeScript", "React", "Node.js", "PostgreSQL"]
+    },
+    "h05.txt": {
+      "layout": "BAD-EXTRACTION: two-column PDF where the whole sidebar (contact, skills, certifications, awards, languages) comes first, then the name and the main column; ISO dates 2022-09 – present; certification expiry 'valid until 2027' on its own line",
+      "currentRole": "Application Security Engineer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 4.6,
+      "certifications": ["CISSP", "OSCP"],
+      "awards": [{"name": "Finalist - Southern Cross CTF", "kind": "security-competition", "year": 2022}],
+      "skills": ["Burp Suite", "OWASP Top 10", "Python", "Threat modeling", "AWS IAM", "SAST / DAST"]
+    },
+    "h06.txt": {
+      "layout": "Name then title on the next line; stacked 3-line jobs (Company / TITLE IN CAPITALS / dates); second job titled 'SRE'; 'DESIRED ROLE: Cloud Architect' label; certificate abbreviations (CKA, AWS SAA); open-source maintainer recognition",
+      "currentRole": "Senior Site Reliability Engineer",
+      "level": "Senior",
+      "targetRole": "Cloud Architect",
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.3,
+      "certifications": ["CKA", "AWS SAA", "HashiCorp Certified: Terraform Associate"],
+      "awards": [{"name": "Maintainer, tidewatch open-source project", "kind": "open-source", "year": 2021}],
+      "skills": ["Kubernetes", "Terraform", "Prometheus", "Go", "Linux", "AWS"]
+    },
+    "h07.txt": {
+      "layout": "Title ABOVE the name; date-first job lines '03/2020 – now  ML Engineer — Company'; 'Interested in moving into an MLOps Engineer role'; certificate with 'valid until 2027' (expiry year is not the year); Kaggle medal",
+      "currentRole": "ML Engineer",
+      "level": "Senior",
+      "targetRole": "MLOps Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 9.1,
+      "certifications": ["Deep Learning Specialization", "AWS Certified Machine Learning - Specialty"],
+      "awards": [{"name": "Kaggle Silver Medal, Bird Call Identification Challenge", "kind": "data-science-competition", "year": 2021}],
+      "skills": ["Python", "PyTorch", "TensorFlow", "MLflow", "Docker", "Kubernetes"]
+    },
+    "h08.txt": {
+      "layout": "LinkedIn export: headline 'Staff Engineer at Larkspur Payments'; stacked Title / Company · Full-time / dates with durations; 'Licenses & Certifications' with Issued/Expires lines; 'Honors & Awards' conference talk; trap 'looking after a team of 5 engineers' (not a wish)",
+      "currentRole": "Staff Engineer",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 13.3,
+      "certifications": ["Certified Kubernetes Application Developer (CKAD)", "Professional Scrum Master I (PSM I)"],
+      "awards": [{"name": "Talk: Idempotency at Scale, Southern Cross DevConf", "kind": "conference-talk", "year": 2023}],
+      "skills": ["Go", "Kafka", "PostgreSQL", "Kubernetes", "gRPC"]
+    },
+    "h09.txt": {
+      "layout": "NEARLY-EMPTY: cover-letter paragraphs with no role, no years, no skills; trap 'Looking forward to hearing from you'",
+      "currentRole": null,
+      "level": null,
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": [],
+      "awards": [],
+      "skills": []
+    },
+    "h10.txt": {
+      "layout": "No headline at all (name and contact, then a summary); title 'Sr. Software Engineer (Contract)' with a bracketed tag (expected currentRole drops the '(Contract)' tag); 'Company, City — Sept 2019 to date'; '11 years' sentence plus dates; trap 'Seeking new challenges' (no role); certificates as bare abbreviations AZ-900 and PSM I",
+      "currentRole": "Sr. Software Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 11.7,
+      "certifications": ["AZ-900", "PSM I"],
+      "awards": [],
+      "skills": ["Java", "Spring Boot", "Kafka", "PostgreSQL", "Docker"]
+    },
+    "h11.txt": {
+      "layout": "No headline; 'Company — Title' lines with DD/MM/YYYY dates on the next line; 'Mid-level BI Developer' (title level wins over 7.7 years); 'Professional Summary' with no wish; 'Employee of the Year' recognition; PL-300 certificate",
+      "currentRole": "Mid-level BI Developer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.7,
+      "certifications": ["Microsoft Certified: Power BI Data Analyst Associate (PL-300)"],
+      "awards": [{"name": "Employee of the Year", "kind": "employer-recognition", "year": 2024}],
+      "skills": ["Power BI", "DAX", "SQL Server", "SSIS", "Excel"]
+    },
+    "h12.txt": {
+      "layout": "BAD-EXTRACTION: two-column PDF with sidebar and main-column lines strictly alternating line by line (sentences broken in the middle, section headings mixed with skill names)",
+      "currentRole": "Frontend Developer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 4.3,
+      "certifications": ["Web Accessibility Specialist (WAS)"],
+      "awards": [{"name": "Runner-up, CivicHack Brisbane", "kind": "hackathon", "year": 2023}],
+      "skills": ["JavaScript", "TypeScript", "React", "CSS", "Storybook", "Jest"]
+    },
+    "h13.txt": {
+      "layout": "Title 'Graduate Data Analyst' under the name; ISO dates '2026-02 – present' and '2024-11 – 2025-02' (internship); 'Aiming to become a Data Scientist'; Dean's List and merit scholarship",
+      "currentRole": "Graduate Data Analyst",
+      "level": "Junior",
+      "targetRole": "Data Scientist",
+      "statesUnknownTarget": false,
+      "yearsExperience": 1.0,
+      "certifications": [],
+      "awards": [
+        {"name": "Dean's List, Faculty of Science", "kind": "academic-excellence", "year": 2024},
+        {"name": "Eastgate University Merit Scholarship", "kind": "scholarship", "year": 2022}
+      ],
+      "skills": ["Python", "SQL", "pandas", "Tableau", "R"]
+    },
+    "h14.txt": {
+      "layout": "Headline 'Dr. Priya Raman, Principal Engineer' (Name, Title); open job 'since 2018' plus a year-only range 2012–2018; 'Open to Software Architect roles'; patent",
+      "currentRole": "Principal Engineer",
+      "level": "Principal",
+      "targetRole": "Software Architect",
+      "statesUnknownTarget": false,
+      "yearsExperience": 14.3,
+      "certifications": ["TOGAF 9 Certified"],
+      "awards": [{"name": "Patent: Adaptive request batching in distributed queues", "kind": "patent", "year": 2019}],
+      "skills": ["C++", "Rust", "Distributed Systems", "Kafka", "Linux"]
+    },
+    "h15.txt": {
+      "layout": "No headline (name, contact, free-text summary); company line then 'Software Engineer II (Remote) | Mar '22 - Present' and apostrophe dates ('Jun '19 - Feb '22'); 'II' gives Mid despite 7.3 years; trap 'Interested in data science' (a field, not a role); 'Key achievements' bullets are not awards; 'Certified Scrum Master'",
+      "currentRole": "Software Engineer II",
+      "level": "Mid",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.3,
+      "certifications": ["Certified Scrum Master"],
+      "awards": [],
+      "skills": ["Java", "Kotlin", "Spring Boot", "PostgreSQL", "AWS", "Terraform"]
+    },
+    "h16.txt": {
+      "layout": "Name, then one line 'Software Engineer III • city • e-mail • phone'; date-first lines with year-only dates ('2021 – present'); title 'Software Engineer III (Platform)' with a bracketed specialisation (dropped in expected currentRole); wish for 'Product Manager' (not a known role, so unknown target)",
+      "currentRole": "Software Engineer III",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 8.3,
+      "certifications": ["AWS Certified Cloud Practitioner"],
+      "awards": [],
+      "skills": ["Python", "Django", "PostgreSQL", "Docker", "AWS", "REST"]
+    },
+    "h17.txt": {
+      "layout": "BAD-EXTRACTION: two-column PDF text where left and right columns are merged on the same lines with wide gaps, wrapped sentences cut across lines; headline in capitals on the right; '9 years' sentence (dates give 9.7)",
+      "currentRole": "Senior QA Engineer",
+      "level": "Senior",
+      "targetRole": "Test Automation Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 9.7,
+      "certifications": ["ISTQB Foundation Level (CTFL)"],
+      "awards": [],
+      "skills": ["Selenium", "Cypress", "Postman", "Java", "Jenkins", "TestRail"]
+    },
+    "h18.txt": {
+      "layout": "Title 'Jr Frontend Developer' under the name; job lines 'Title — Company — 2025 – present' with em dashes; internship overlapping nothing; 'CAREER OBJECTIVE: To grow into a Full-stack Engineer'; course certificates under 'Courses'; hackathon win under 'Achievements'",
+      "currentRole": "Jr Frontend Developer",
+      "level": "Junior",
+      "targetRole": "Full-stack Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 1.8,
+      "certifications": ["Responsive Web Design Certification", "JavaScript Algorithms and Data Structures Certification"],
+      "awards": [{"name": "1st Place, Open City Hackathon", "kind": "hackathon", "year": 2024}],
+      "skills": ["JavaScript", "React", "HTML", "CSS", "TypeScript", "Git"]
+    },
+    "h19.txt": {
+      "layout": "Europass-style: 'PREFERRED JOB Software Developer' label; dates on their own line above the title (DD/MM/YYYY – Current); two internships only; date of birth line as a date trap; honours under 'Additional information'",
+      "currentRole": "Backend Engineering Intern",
+      "level": "Intern",
+      "targetRole": "Software Developer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 0.6,
+      "certifications": [],
+      "awards": [{"name": "Finalist, University Capture The Flag", "kind": "security-competition", "year": 2025}],
+      "skills": ["Python", "Java", "SQL", "Git", "Linux"]
+    },
+    "h20.txt": {
+      "layout": "NEARLY-EMPTY: truncated CV ('Page 2 of 2') with only education from 2008-2011, languages, interests and references; 'Higher School Certificate' is not a certification",
+      "currentRole": null,
+      "level": null,
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": [],
+      "awards": [],
+      "skills": []
+    },
+    "h21.txt": {
+      "layout": "Headline 'Aspiring Data Scientist' (wish and, with no jobs, the headline title per the currentRole rule); student with no jobs (level Intern, years null); Kaggle bronze and a scholarship; projects are not jobs",
+      "currentRole": "Aspiring Data Scientist",
+      "level": "Intern",
+      "targetRole": "Data Scientist",
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": [],
+      "awards": [
+        {"name": "Kaggle Bronze Medal, House Prices Playground", "kind": "data-science-competition", "year": 2025},
+        {"name": "Bellmont Community Scholarship", "kind": "scholarship", "year": 2024}
+      ],
+      "skills": ["Python", "R", "pandas", "scikit-learn", "SQL"]
+    },
+    "h22.txt": {
+      "layout": "Headline on the next line 'Tech Lead – Data Platform'; 'Company — Title (specialisation)' lines with year-only dates on the next line; both a '9 years of experience' sentence (bigger than the 8.3 from dates) and dates; trap 'Looking after a team of 5 engineers'; certificate with 'valid until 2027'",
+      "currentRole": "Tech Lead",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 9.0,
+      "certifications": ["Google Cloud Professional Data Engineer"],
+      "awards": [],
+      "skills": ["Python", "BigQuery", "Airflow", "Kafka", "dbt", "Terraform"]
+    },
+    "h23.txt": {
+      "layout": "Name then 'Engineering Manager'; jobs listed with NO dates (only '(current)' on the first); 'over a decade' as the only years claim; traps 'open to feedback' and 'looking forward to hearing from you'; 'Key achievements' are not awards; certificate 'PMP'",
+      "currentRole": "Engineering Manager",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 10.0,
+      "certifications": ["PMP"],
+      "awards": [],
+      "skills": ["Java", "AWS", "Scrum", "Kubernetes", "PostgreSQL"]
+    },
+    "h24.txt": {
+      "layout": "Headline 'Name | Head of Data | City'; job lines 'Title, Company, 2022 - current'; '8+ years of experience in data' (bigger than the 7.3 from dates); wish for 'Chief Data Officer' (not a known role, so unknown target); trap 'award-winning analytics team' (not an award)",
+      "currentRole": "Head of Data",
+      "level": "Principal",
+      "targetRole": null,
+      "statesUnknownTarget": true,
+      "yearsExperience": 8.0,
+      "certifications": [],
+      "awards": [],
+      "skills": ["Python", "SQL", "Snowflake", "dbt", "Tableau", "Machine Learning"]
+    },
+    "h25.txt": {
+      "layout": "Name then 'Director of Engineering'; 'Title — Company' then dates on the next line ('Oct 2019 – to date'); explicit career break between jobs (gap); year-only older job; 'CEO Award for Outstanding Leadership' under Recognition",
+      "currentRole": "Director of Engineering",
+      "level": "Principal",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 15.3,
+      "certifications": [],
+      "awards": [{"name": "CEO Award for Outstanding Leadership", "kind": "employer-recognition", "year": 2023}],
+      "skills": ["Java", "AWS", "Kubernetes", "Microservices", "Agile delivery"]
+    },
+    "h26.txt": {
+      "layout": "Capitalised name then plain title 'Software Developer'; employers listed with NO dates; years only as '22 years of experience' sentence (level Senior from years alone); 'Aiming to become a Solutions Architect'; certificate with issuer and year after a dash",
+      "currentRole": "Software Developer",
+      "level": "Senior",
+      "targetRole": "Solutions Architect",
+      "statesUnknownTarget": false,
+      "yearsExperience": 22.0,
+      "certifications": ["Oracle Certified Professional Java SE 8 Programmer"],
+      "awards": [],
+      "skills": ["Java", "C#", "Oracle", "SQL", "SOAP"]
+    },
+    "h27.txt": {
+      "layout": "BAD-EXTRACTION: two-column PDF where short chunks of sidebar lines (contact, skills, certifications, awards) are interleaved irregularly with main-column lines; a sentence of the wish ('Open to Machine Learning Engineer or Data Engineer roles') is split across sidebar lines; two jobs at the same company",
+      "currentRole": "Analytics Engineer",
+      "level": "Senior",
+      "targetRole": "Machine Learning Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 5.8,
+      "certifications": ["dbt Analytics Engineering Certification", "SnowPro Core Certification"],
+      "awards": [{"name": "Innovation Award", "kind": "innovation-award", "year": 2024}],
+      "skills": ["SQL", "dbt", "Snowflake", "Python", "Looker", "Airflow"]
+    },
+    "h28.txt": {
+      "layout": "Name then 'Lead Data Scientist'; pipe-separated job lines with a freelance/contract job fully overlapping the previous employer (union of dates 7.6); trap '5 years of Python experience' (skill-only claim); 2nd place in a data-science competition; Azure certificate with issuer prefix",
+      "currentRole": "Lead Data Scientist",
+      "level": "Lead",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 7.6,
+      "certifications": ["Microsoft Certified: Azure Data Scientist Associate (DP-100)"],
+      "awards": [{"name": "2nd Place, Australasia DataFest Challenge", "kind": "data-science-competition", "year": 2022}],
+      "skills": ["Python", "R", "PyTorch", "scikit-learn", "SQL", "Spark"]
+    },
+    "h29.txt": {
+      "layout": "Headline 'Name — SWE' (abbreviation as title); job lines 'SWE @ Company · 2023 – Present' and an intern job; 'Looking for a Firmware Engineer or Embedded Engineer position' (first named role wins); hackathon winner",
+      "currentRole": "SWE",
+      "level": "Mid",
+      "targetRole": "Firmware Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 3.5,
+      "certifications": [],
+      "awards": [{"name": "Winner, Robotics Hack Weekend", "kind": "hackathon", "year": 2024}],
+      "skills": ["C++", "Python", "ROS", "Embedded Linux", "RTOS", "Git"]
+    },
+    "h30.txt": {
+      "layout": "NEARLY-EMPTY: template CV with only personal details, driver licence (not a certification), interests, referees and a declaration with a date; no work, education or skills",
+      "currentRole": null,
+      "level": null,
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": null,
+      "certifications": [],
+      "awards": [],
+      "skills": []
+    },
+    "h31.txt": {
+      "layout": "Name then 'Back-end Developer'; jobs listed oldest first (freelance/contract 2012 – 2014, then career break, then '2017 - current'); gap of three years; open-source maintainer entry with no year; no certifications",
+      "currentRole": "Back-end Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesUnknownTarget": false,
+      "yearsExperience": 11.3,
+      "certifications": [],
+      "awards": [{"name": "Maintainer, quillpack open-source library", "kind": "open-source", "year": null}],
+      "skills": ["Python", "Django", "PostgreSQL", "Redis", "Docker", "REST"]
+    },
+    "h32.txt": {
+      "layout": "Headline 'Senior Database Administrator (returning to work)'; most recent job ended in 2014 (long-ago, long career break); date-first lines with DD/MM/YYYY ranges; 'Looking for a Data Engineer role'; 'Courses' with one real certificate and one completed course without certificate; community volunteer award",
+      "currentRole": "Senior Database Administrator",
+      "level": "Senior",
+      "targetRole": "Data Engineer",
+      "statesUnknownTarget": false,
+      "yearsExperience": 9.8,
+      "certifications": ["Data Engineering Foundations Certificate", "Oracle Database 11g Administrator Certified Professional"],
+      "awards": [{"name": "Community Volunteer Award, Hillcrest Junior Football Club", "kind": "community-leadership", "year": 2019}],
+      "skills": ["Oracle", "SQL Server", "PL/SQL", "Python", "Linux"]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+STEFAN KOVALENKO
+Software Engineer III • Brisbane, QLD • stefan.kovalenko@example.test • +61 400 000 026
+
+Looking for a Product Manager role: I have spent two years translating customer pain points into engineering plans and want to do that full time.
+
+WORK EXPERIENCE
+2021 – present    Software Engineer III (Platform), Wattlecreek Software
+                  - Own the billing and entitlements service (Python, Django, PostgreSQL).
+                  - Led the zero-downtime migration of 4 million customer records to a new schema.
+                  - Run weekly customer-feedback sessions with support to prioritise engineering work.
+2018 – 2021       Software Engineer I, Cinderbrook Hosting
+                  - Built provisioning APIs for virtual servers and the first self-service portal.
+                  - Introduced Docker-based local environments, halving new-starter setup time.
+
+EDUCATION
+Bachelor of Engineering (Software), Northgate University, 2014 – 2017
+
+CERTIFICATIONS
+AWS Certified Cloud Practitioner (2022, valid until 2027)
+
+SKILLS
+Python, Django, PostgreSQL, Docker, AWS, REST

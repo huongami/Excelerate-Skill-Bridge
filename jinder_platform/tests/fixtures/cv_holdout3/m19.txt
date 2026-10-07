@@ -1,0 +1,45 @@
+Priya Narayanan-Cho
+PhD Candidate, Department of Computer Science, Ashworth University
+priya.narayanan@example.test | +1 555 000 0019 | priyanc.example.test
+
+Research Interests
+Efficient deep learning, model compression, machine learning for climate and weather
+
+Education
+Ashworth University, Boston, MA
+PhD in Computer Science (expected May 2027) 2022 – present
+  Advisor: Prof. Elena Marchetti. Thesis topic: Compressing large neural networks for on-device inference
+MSc in Computer Science, Eastlake University, 2020 – 2022
+BSc in Computer Science and Statistics, Eastlake University, 2016 – 2020
+
+Publications
+1. P. Narayanan-Cho, E. Marchetti. "Pruning Without Retraining: A Layer-wise Perspective." ICML 2025.
+2. P. Narayanan-Cho, S. Ito, E. Marchetti. "Low-Rank Adapters for On-Device Weather Models." NeurIPS 2024 (Spotlight).
+3. P. Narayanan-Cho, J. Weiss. "Benchmarking Quantisation for Edge Inference." MLSys Workshop on Efficient Systems, 2024.
+4. S. Ito, P. Narayanan-Cho. "Downscaling Reanalysis Data with Diffusion Models." ML4Climate Workshop, 2023.
+5. P. Narayanan-Cho et al. "Structured Sparsity at Scale." Under review, 2026.
+
+Research Experience
+Graduate Research Assistant, Efficient ML Lab, Ashworth University 2022 – present
+  - Develop pruning and quantisation methods; run experiments on a 128-GPU academic cluster
+  - Maintain the lab's open-source model compression toolkit (2.1k stars)
+Research Assistant, Statistical Learning Group, Eastlake University 2019 – 2020
+
+Selected Projects
+climate-lite: compact weather-forecast model that runs on a phone; used by two partner universities
+squeezekit: PyTorch toolkit for structured pruning, adopted by 6 external labs
+
+Teaching
+Teaching Assistant, CS 6410 Deep Learning, Fall 2023 and Fall 2024 (course rating 4.8/5)
+Mentor, Undergraduate Research Programme, 2024 and 2025 (4 mentees)
+
+Awards and Fellowships
+Best Paper Award, ICML Workshop on Efficient Systems (2025)
+First Place, ML4Climate Downscaling Challenge (2024)
+Doctoral Excellence Fellowship, Ashworth University (2023)
+
+Academic Service
+Reviewer for NeurIPS, ICML and ICLR; co-organiser of the Ashworth ML reading group
+
+Technical Skills
+Python, PyTorch, JAX, CUDA, NumPy, Weights & Biases

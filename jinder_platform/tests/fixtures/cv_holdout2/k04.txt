@@ -1,0 +1,41 @@
+Rosalind Achterberg
+Canberra ACT · rosalind.achterberg@example.test · +61 400 000 004
+Passionate about turning numbers into stories
+
+What I Have Done
+
+Larkspur Health Services — Junior Data Analyst
+Mar 2025 – Present
+* Build weekly outpatient wait-time reports in Power BI for six clinics
+* Clean and join referral data from three systems with SQL and Python (pandas)
+* Present findings to clinical managers; two of my recommendations changed rostering
+Tools: SQL, Power BI, Python, Excel
+
+Maple Grove Primary School — Primary School Teacher
+Feb 2014 – Dec 2024
+* Taught Years 3 to 6 and ran the school's first data-informed reading intervention
+* Tracked assessment results for 120 students in spreadsheets, which is where my interest in data started
+* Led the maths curriculum team of five teachers (2021 – 2024)
+* Wrote parent reports that used charts instead of paragraphs, and parents noticed
+
+Bright Minds Tutoring — Maths Tutor (casual)
+Jan 2012 – Dec 2013
+* Weekend tutoring for high-school students
+
+Brindle Street Primary — Teaching Assistant
+Feb 2011 – Dec 2013
+* Supported literacy groups and students with additional needs
+
+Study
+Graduate Diploma in Data Analytics, Capital Online College, 2023 – 2024 (part-time, evenings)
+Bachelor of Primary Education, 2007 – 2010
+
+Courses and Certificates
+Google Data Analytics Professional Certificate (Coursera), 2023
+Working With Children Check, valid until 2027
+
+Honours
+Dean's List, Capital Online College, 2024
+
+Other
+Full driver's licence (C)

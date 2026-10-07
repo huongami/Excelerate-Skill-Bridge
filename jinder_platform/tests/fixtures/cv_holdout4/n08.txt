@@ -1,0 +1,49 @@
+AISHA RAHMAN-TEST
+12 Sample Road, Northfield, NF1 0AA (Demo) | +44 0000 555142 | aisha.rahman@example.test
+linkedin.com/in/example-aisha
+
+APPLICATION FOR: 2027 GRADUATE SOFTWARE ENGINEERING PROGRAMME
+
+PERSONAL STATEMENT
+I have just graduated from the University of Northfield (Demo) with a BSc (Hons) in
+Computer Science and I am looking for a graduate scheme place as a Software Engineer.
+During my placement at Halbury Digital I shipped a feature used by 20,000 customers and
+I learned how much I enjoy working in a team that reviews each other's code.
+
+EDUCATION
+University of Northfield (Demo)                                   2022 - 2026
+BSc (Hons) Computer Science - First Class Honours
+Modules: Algorithms, Databases, Software Engineering, Distributed Systems, Machine Learning
+Dissertation: "Scheduling lecture rooms with constraint solvers" (Python)
+
+Northfield Sixth Form College                                     2020 - 2022
+A-levels: Mathematics A*, Computer Science A, Physics A
+GCSEs: 10 at grades 9-6 including Maths and English
+
+WORK EXPERIENCE
+Software Engineering Intern                                       Jun 2025 - Sep 2025
+Halbury Digital Demo Ltd, Northfield
+- Added a delivery-slot picker to the checkout (React and Java REST service)
+- Wrote JUnit tests and Playwright checks, raised coverage in the module to 82%
+- Worked in a Scrum team, daily stand-ups and sprint reviews
+- Presented the feature at the intern showcase
+
+TECHNICAL SKILLS
+Java, Python, JavaScript, React, SQL, Git, JUnit, Agile (Scrum)
+
+CERTIFICATIONS
+AWS Certified Cloud Practitioner, 2025
+Cisco CCNA - studying, exam not yet taken
+
+EXTRA-CURRICULAR ACTIVITIES AND AWARDS
+- Vice-Chancellor's Scholarship, 2022
+- Dean's List, 2023
+- Winner, Northfield Hackathon, 2024
+- Chair, Northfield Computing Society, 2024
+- Duke of Edinburgh's Gold Award, 2021
+- Volunteer coding club leader for 30 school pupils, weekends
+- Captain of the university badminton team
+
+REFERENCES
+Dr. Helen Placeholder, Dissertation supervisor, University of Northfield (Demo)
+Mr. Sam Testwright, Engineering Manager, Halbury Digital Demo Ltd

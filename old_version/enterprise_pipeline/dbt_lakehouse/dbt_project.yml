@@ -1,0 +1,20 @@
+name: 'skill_bridge_lakehouse'
+version: '1.0.0'
+config-version: 2
+
+profile: 'skill_bridge_duckdb'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  skill_bridge_lakehouse:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

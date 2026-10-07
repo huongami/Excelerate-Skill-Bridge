@@ -1,0 +1,25 @@
+Rafaela Ortiz · Junior Full-Stack Developer
+rafaela.ortiz@example.test · +61 400 000 014 · Sydney (hybrid or remote)
+
+PROFILE
+Developer with a taste for APIs and data models. Looking for a Backend Engineer role on a product team that values testing and code review. AWS Certified Developer - Associate.
+
+EXPERIENCE
+
+Full-Stack Developer at Harbourline Systems (2023–2025)
+ - Built booking and invoicing features in React and Node.js for a marine-services portal.
+ - Moved the reporting queries from ad-hoc scripts to PostgreSQL views, halving page load times.
+ - Added contract tests between the front end and the REST API.
+
+Web Developer at Pixelfern Studio (2022–2023)
+ - Delivered 9 marketing and e-commerce sites for small businesses.
+ - Introduced a shared TypeScript component kit and a deployment checklist.
+
+EDUCATION
+Bachelor of Computer Science, Marlowe University, 2018 – 2021
+
+PROJECTS
+- Tidepool: open-source tide and swell tracker (Node.js, PostgreSQL)
+
+SKILLS
+JavaScript, TypeScript, React, Node.js, PostgreSQL

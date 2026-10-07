@@ -1,0 +1,65 @@
+Contact
+sakura.tanabe@example.test
+www.linkedin.com/in/sakuratanabeholm
+(LinkedIn)
+
+Top Skills
+Machine Learning
+PyTorch
+Distributed Systems
+
+Languages
+Japanese (Native or Bilingual)
+English (Full Professional)
+Swedish (Limited Working)
+
+Certifications
+Google Cloud Professional Machine Learning Engineer
+Deep Learning Specialization
+
+Honors-Awards
+Best Paper Award - ReproML Workshop
+
+Patents
+Adaptive request batching for GPU inference serving
+US11234567B2
+
+Sakura Tanabe-Holm
+Staff Machine Learning Engineer at Corvid Mobility
+Stockholm, Sweden
+
+Summary
+Machine learning engineer focused on training and serving large models efficiently. I have shipped ranking,
+forecasting and speech models to millions of users, and I enjoy the unglamorous parts of ML: data quality,
+reproducibility and on-call.
+
+Experience
+
+Corvid Mobility
+Staff Machine Learning Engineer
+January 2024 - Present (2 years 10 months)
+Stockholm, Sweden
+Technical lead for the ML platform group. Designed a distributed training service on Kubernetes and Ray that cut
+time-to-train for the largest ranking model from 5 days to 19 hours. Defined the inference-serving standard
+(Triton, adaptive batching) now used by 14 teams.
+
+Hollis & Wray AI
+Senior Machine Learning Engineer
+October 2019 - December 2023 (4 years 3 months)
+London, United Kingdom
+Built and operated speech-recognition pipelines in PyTorch and Python. Led a team of four, reduced word error
+rate by 12% relative, and introduced reproducible experiment tracking across the lab.
+
+Page 1 of 2
+
+Orbital Retail
+Machine Learning Engineer
+August 2016 - September 2019 (3 years 2 months)
+Gothenburg, Sweden
+Developed demand-forecasting and price-optimisation models and the data pipelines behind them. Moved the first
+models from notebooks to production services with Docker and Jenkins.
+
+Education
+Uppland Institute of Technology
+Master of Science - MS, Computer Science
+2014 - 2016

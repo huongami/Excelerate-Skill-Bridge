@@ -1,0 +1,64 @@
+Rafael Montenegro-Ito
+Staff Software Engineer
+Canberra ACT  ·  rafael.mi@example.test  ·  +61 400 000 032
+
+Summary
+Systems programmer who has built storage and messaging services in Go and Rust. I like deleting code, writing design documents
+that people read, and making on-call boring. Senior colleagues often ask me to review designs outside my team.
+
+Experience
+
+Staff Software Engineer at Lumora Labs; since June 2023
+1) Technical owner of the metadata store: 3 million writes per second, 5 petabytes, four nines
+2) Lead cross-team design reviews and the quarterly reliability review
+3) Designed the multi-region replication protocol and proved it with a TLA+ model before writing code
+4) Mentor three engineers towards promotion
+5) Wrote the incident command guide that the whole engineering department now follows
+6) Interview for the staff-level hiring panel and calibrate feedback with other staff engineers
+Tech: Go, Rust, gRPC, Kubernetes, Terraform
+
+Senior Software Engineer, Lumora Labs — Q2 2020 – Q1 2023
+1) Built the compaction scheduler; tail latency of reads fell by 60%
+2) Moved the team's builds and releases to Bazel and a canary pipeline
+3) Ran a game day each quarter that found three single points of failure before customers did
+Tech: Go, PostgreSQL, gRPC
+
+Software Engineer | Brightwell Apps | 2016/08 - 2020/03
+1) Backend for a messaging app with 2 million users: push, presence, search
+2) Reduced message delivery cost per million by 40% after profiling the fan-out service
+3) Wrote the load test harness that replayed a day of production traffic in 20 minutes
+Tech: Go, Redis, PostgreSQL, Kafka
+
+Software Developer (contract, 5 months), Kestrel Retail, Mar-2016 to Jul-2016
+1) Stock synchronisation between 90 stores and the central system
+
+Junior Developer – Tanglewood Cloud – Sep. 2014 - Feb 2016
+1) Customer-facing control panel (Python and JavaScript)
+2) First on-call rotation and first incident write-up
+
+Games Tester (casual), Pixelworks Studio, Jun 2013 – Dec 2013
+1) Found and reported crashes on 6 console titles
+
+Maths Tutor (part-time), Eastern Tutoring Centre, Feb 2012 – Nov 2013
+1) After-school tutoring for senior high-school students
+
+Intern, Corvane Schools Trust, summer 2013
+1) Fixed small bugs in the timetable app
+
+Barista (casual), Mill Street Coffee, 2011-2014
+1) Weekend shifts during university
+
+Volunteering
+Organiser, Canberra Systems Programming Meetup (2019 – 2023), monthly talks and a yearly one-day conference
+
+Side project
+A small embeddable key-value store in Rust (Jan 2021 – Dec 2021), published as open source
+
+Education
+Bachelor of Computer Science (Honours), Lakeside Institute of Technology, 2010 – 2014
+
+Awards
+2nd place, Rustacean Weekend Hack (hackathon), 2022
+
+Skills
+Go, Rust, gRPC, PostgreSQL, Kubernetes, Terraform

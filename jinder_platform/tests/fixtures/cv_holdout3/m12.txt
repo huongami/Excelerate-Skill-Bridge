@@ -1,0 +1,60 @@
+Curriculum Vitae                                                                        Europass
+
+Personal information
+First name(s) / Surname(s)      Dimitrios Katsaros
+Address(es)                     Vesterbrogade 14, 4. th, 1620 Copenhagen V, Denmark
+Telephone(s)                    +45 00 00 00 12            Mobile: +45 00 00 00 13
+E-mail                          dimitrios.katsaros@example.test
+Nationality                     Greek
+Date of birth                   14/05/1988
+Gender                          Male
+
+Work experience
+Dates                           01/03/2018 – Present
+Occupation or position held     Java Developer
+Main activities and responsibilities
+                                Design and development of back-end services for a card-payments platform.
+                                Implementation of REST APIs with Spring Boot and Hibernate; performance tuning of
+                                Oracle Database queries; automation of builds and releases with Maven and Jenkins;
+                                containerisation of services with Docker. Participation in code reviews and 24/7 support.
+Name and address of employer    Nordhavn Systems A/S, Sundkrogsgade 21, 2100 Copenhagen (Denmark)
+Type of business or sector      Banking software
+
+Dates                           01/09/2013 – 28/02/2018
+Occupation or position held     Junior Software Developer
+Main activities and responsibilities
+                                Development of Java EE web applications for retail banking; maintenance of SQL
+                                stored procedures; writing unit and integration tests; second-level support.
+Name and address of employer    Aegean Soft SA, Egnatia 105, 54635 Thessaloniki (Greece)
+Type of business or sector      Information technology
+
+Dates                           01/07/2012 – 30/09/2012
+Occupation or position held     Trainee Software Developer
+Main activities and responsibilities
+                                Summer internship: development of a billing-report module in Java.
+Name and address of employer    Thermaikos Telecom, Thessaloniki (Greece)
+Type of business or sector      Telecommunications
+
+Education and training
+Dates                           01/09/2006 – 30/06/2012
+Title of qualification awarded  Diploma in Electrical and Computer Engineering (5 years, equivalent to MEng)
+Name and type of organisation   Macedonian Polytechnic School, Thessaloniki (Greece)
+providing education and training
+
+Personal skills and competences
+Mother tongue(s)                Greek
+Other language(s)               English (C1), Danish (B1), German (A2)
+Self-assessment                 Understanding / Speaking / Writing
+
+Digital skills                  Java, Spring Boot, SQL, Oracle Database, Hibernate, Maven, Jenkins, Docker, Git
+                                Good command of Microsoft Office tools
+
+Certifications                  Oracle Certified Professional, Java SE 11 Developer (2020)
+                                ITIL Foundation Certificate in IT Service Management (2019)
+                                Professional Scrum Master I (2021)
+                                Cambridge English: Proficiency (CPE), 2011
+
+Driving licence                 B
+
+Additional information
+Awards                          Merit Scholarship, Hellenic Foundation for Education (2010)

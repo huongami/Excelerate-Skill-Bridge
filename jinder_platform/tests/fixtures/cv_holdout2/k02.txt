@@ -1,0 +1,39 @@
+lucía fernández-ortega
+android developer
+brisbane, qld  |  lucia.fernandez@example.test  |  +61 400 000 002
+
+profile
+mobile developer who has shipped consumer apps since 2017, from tiny agency projects to a ride-sharing product used in 12 cities.
+i want to work as a machine learning engineer: the on-device models are the part of my job i enjoy most.
+
+experience
+
+senior android developer / orbitrail apps / 2022 - present
+* led the rewrite of the booking flow to jetpack compose; crash-free sessions went from 97.1% to 99.6%
+* introduced baseline profiles, which cut cold start by 30% on mid-range phones
+* built a small on-device model for address autocomplete with tensorflow lite
+* mentor three developers, pair on the hardest bugs each friday
+tech: kotlin, jetpack compose, firebase, tensorflow lite, gradle
+
+android developer / paperkite studio / 2019-2022
+* shipped 9 client apps (retail, fitness, ticketing), 4 of them with offline sync
+* moved the team from asynctask and callbacks to coroutines and flow
+* wrote the release checklist and automated play store uploads
+tech: kotlin, java, room, retrofit
+
+junior mobile developer / pixel & pine / 2017-2019
+* fixed bugs on a 6-year-old java codebase and then took over the push notification module
+* built an ar furniture preview prototype that won the studio an enterprise client
+tech: java, android sdk, sqlite
+
+education
+bachelor of information technology, queensland coast university, 2013-2016
+
+certifications
+tensorflow developer certificate (2024)
+
+awards
+pocket apps hackathon winner, brisbane, 2023
+
+skills
+kotlin, jetpack compose, java, firebase, tensorflow lite, gradle, retrofit

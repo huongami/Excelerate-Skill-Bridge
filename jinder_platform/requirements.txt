@@ -1,0 +1,3 @@
+# The platform needs no third-party package (Python 3.9 or later).
+# Optional: a better PDF reader for unusual files. The built-in reader is used first.
+# pypdf==5.1.0

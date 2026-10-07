@@ -1,0 +1,28 @@
+Daniyar Seitkali
+Sydney · daniyar.s@example.test · +61 400 000 010
+
+Profile
+Financial analyst turning into an analytics engineer. 3 years 6 months of experience in retail banking analytics,
+and I work with senior leadership every week. Targeting analytics engineering roles where I can own the dbt layer
+between raw tables and the dashboards that the business reads.
+
+Experience
+
+Analyst II @ Cobalt Ridge Bank | Apr 2023 - Present
+> Rebuilt the credit-card spend mart as 38 dbt models with tests; reporting errors fell from about 6 a month to none
+> Present monthly findings to the Head of Retail Banking and other senior leaders
+> Wrote the SQL style guide now used by 7 analysts
+> Replaced a 9-hour Excel close process with a scheduled Snowflake task (35 minutes)
+Stack: dbt, Snowflake, SQL, Looker
+
+Data Intern @ Kestrel Retail | summer 2022
+> Cleaned loyalty data and built the first sales funnel report for the e-commerce team
+
+Education
+Bachelor of Commerce (Finance), a 3-year degree, Harbourview University, 2019 - 2022
+
+Certification
+dbt Analytics Engineering (dbt Labs, 2025)
+
+Skills
+dbt, SQL, Snowflake, Looker, Python

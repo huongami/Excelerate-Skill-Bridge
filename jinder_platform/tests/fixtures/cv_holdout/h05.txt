@@ -1,0 +1,41 @@
+CONTACT
+ahmad.karim@example.test
++61 400 000 015
+Perth, WA
+linkedin.com/in/ahmad-karim-example
+SKILLS
+Burp Suite
+OWASP Top 10
+Python
+Threat modeling
+AWS IAM
+SAST / DAST
+CERTIFICATIONS
+CISSP
+valid until 2027
+OSCP
+2022
+AWARDS
+Finalist - Southern Cross CTF
+2022
+LANGUAGES
+English
+Urdu
+Ahmad Karim
+Application Security Engineer
+PROFILE
+Security engineer who works with developers, not against them. Threat modelling, code review and automated scanning in CI.
+EXPERIENCE
+Application Security Engineer
+Ravenscar Cyber
+2022-09 – present
+- Run threat-modelling workshops for 8 product squads.
+- Wired SAST and dependency scanning into 60 pipelines; mean time to fix criticals dropped from 21 to 6 days.
+- Triage findings from the annual external penetration test.
+Penetration Testing Intern
+Ironvale Consulting
+2022-01 – 2022-06
+- Assisted on web application assessments and wrote the reproduction steps for 30 findings.
+EDUCATION
+Bachelor of Cyber Security, Eastgate University
+2019 – 2021

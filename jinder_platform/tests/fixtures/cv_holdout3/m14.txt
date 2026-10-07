@@ -1,0 +1,73 @@
+RESUME
+
+ROHAN DESHMUKH
+Mobile: +91 90000 00014
+Email: rohan.deshmukh@example.test
+Address: Flat 304, Sai Residency, Kothrud, Pune - 411038, Maharashtra, India
+
+CAREER OBJECTIVE
+To obtain a challenging position in a reputed organization where I can utilize my technical skills and contribute
+to the growth of the organization while continuously enhancing my knowledge.
+
+PROFESSIONAL SUMMARY
+ 3+ years of experience in developing and maintaining Java based web applications.
+ Good knowledge of Core Java, Spring Boot, Hibernate and RESTful web services.
+ Experience in working with MySQL and writing complex SQL queries.
+ Worked in Agile methodology and participated in daily stand-ups, sprint planning and retrospectives.
+
+TECHNICAL SKILLS
+Programming Languages   :  Java, SQL
+Frameworks              :  Spring Boot, Hibernate, JUnit
+Databases               :  MySQL, PostgreSQL
+Tools                   :  Git, Maven, Jenkins, Postman, JIRA
+Web Technologies        :  HTML, CSS, JavaScript, REST APIs
+
+WORK EXPERIENCE
+Tarangini Infotech Pvt. Ltd., Pune                                              July 2023 – Till date
+Designation : ASSOCIATE SOFTWARE ENGINEER
+Project     : Order Management System (Retail domain)
+Roles and Responsibilities:
+ Developed REST APIs using Spring Boot and Hibernate for order, inventory and invoice modules.
+ Wrote complex SQL queries and optimized slow queries in MySQL.
+ Wrote unit test cases using JUnit and fixed defects reported by the QA team.
+ Participated in code reviews and deployments through Jenkins pipelines.
+
+ACADEMIC PROJECTS
+1. Online Examination Portal (Final year project)
+   Developed a web based examination system using Java, Servlets, JSP and MySQL with automatic result generation.
+2. Library Management System
+   Desktop application with Java Swing and JDBC for issuing and returning books.
+
+EDUCATION
+B.E. in Computer Engineering, Sahyadri Institute of Technology, Pune University      2019 – 2023     CGPA 8.4
+HSC (12th), Modern Junior College, Pune                                               2019            82%
+SSC (10th), St. Xavier's High School, Pune                                            2017            91%
+
+CERTIFICATIONS
+ Oracle Certified Associate, Java SE 8 Programmer
+ AWS Certified Cloud Practitioner
+
+ACHIEVEMENTS
+ Star Performer of the Quarter (Q3 2024), Tarangini Infotech Pvt. Ltd.
+ Winner, Smart India Hackathon 2022 (Software Edition) at college level and national grand finale.
+
+STRENGTHS
+ Quick learner and good team player
+ Positive attitude and strong problem solving skills
+
+HOBBIES
+Playing cricket, chess, reading technology blogs
+
+PERSONAL DETAILS
+Father's Name      : Mr. Sunil Deshmukh
+Date of Birth      : 12 March 2001
+Gender             : Male
+Marital Status     : Single
+Nationality        : Indian
+Languages Known    : English, Hindi, Marathi
+
+DECLARATION
+I hereby declare that the above-mentioned information is true and correct to the best of my knowledge and belief.
+
+Place: Pune                                                                       (Rohan Deshmukh)
+Date:  06/10/2026

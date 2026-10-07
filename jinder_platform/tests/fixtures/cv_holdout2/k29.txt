@@ -1,0 +1,32 @@
+DMITRI VOLKOV-HAINES
+Perth WA  /  dmitri.vh@example.test  /  +61 400 000 029
+
+EXPERIENCE
+
+Sr. .NET Developer | Calloway Press | 02/2021 - to date
+* Lead the .NET team's work on the ad booking platform: 12 microservices on Azure App Service and AKS
+* Moved the billing database from on-prem SQL Server to Azure SQL with 9 minutes of downtime
+* Improved API response times by 45% with caching and async I/O
+* Review every pull request touching payments
+Technologies: C#, .NET 8, Azure, SQL Server, Docker
+
+.NET Developer | Bluefen Telecom | 04/2017 - 01/2021
+* Built the customer self-service portal (ASP.NET MVC, later Blazor)
+* Introduced Entity Framework migrations and nightly integration tests
+* Wrote a CSV import tool that replaced three weeks of manual work each year
+Technologies: C#, ASP.NET, Entity Framework, SQL Server
+
+Junior C# Developer | Pinecrest Software | 09/2014 - 03/2017
+* Desktop and web tools for inventory management, mostly bug fixing and small features
+
+EDUCATION
+Bachelor of Computer Science, 2010 - 2013
+
+CERTIFICATIONS
+Azure Developer Associate (AZ-204), 2022
+
+CAREER GOAL
+Looking for a Cloud Architect role in the Azure space, where I can design platforms for several teams.
+
+SKILLS
+C#, .NET, Azure, SQL Server, Entity Framework, Docker

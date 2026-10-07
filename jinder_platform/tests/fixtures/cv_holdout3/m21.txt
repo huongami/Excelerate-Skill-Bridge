@@ -1,0 +1,39 @@
+Farid Al-Sayegh
+Sydney, NSW  •  +61 400 000 021  •  farid.alsayegh@example.test  •  linkedin.com/in/faridalsayegh
+
+Professional Summary
+Data analyst who moved from finance into analytics after completing a data science bootcamp. I combine seven years
+of accounting discipline with Python, SQL and dashboarding to deliver numbers people can trust. Aiming to grow into a
+Data Product Manager role over the next few years.
+
+Employment History
+Junior Data Analyst, Waratah Logistics, Sydney, NSW                          08/2024 – Present
+ • Maintain 12 Tableau dashboards on delivery performance, fuel cost and depot utilisation
+ • Wrote SQL and Python (pandas) pipelines that replaced three manual Excel reports
+ • Built a route-delay model with scikit-learn that flagged 70% of late deliveries a day ahead
+ • Present weekly insights to the operations manager and depot leads
+
+Financial Accountant, Hartley & Pryce Chartered Accountants, Sydney, NSW     01/2017 – 12/2023
+ • Prepared financial statements, tax returns and management reports for 60 small-business clients
+ • Reconciled ledgers and automated month-end journals with Excel macros
+ • Trained and supervised two graduate accountants
+
+Education
+Data Science Immersive, Summit Data School (full time, 6 months)                01/2024 – 06/2024
+ • Capstone: predicting customer churn for a subscription business (Python, scikit-learn, Streamlit)
+Bachelor of Commerce (Accounting and Finance), Harbourview University           2012 – 2015
+
+Skills
+ • Python (pandas, scikit-learn)         • Tableau
+ • SQL                                   • Power BI
+ • Excel (advanced)                      • Data storytelling
+
+Certifications
+ • IBM Data Science Professional Certificate (Coursera), 2024
+ • Microsoft Certified: Power BI Data Analyst Associate, 2025
+
+Honors
+ • Bronze Medal, Kaggle Playground Series (2025)
+
+Languages
+ English, Arabic

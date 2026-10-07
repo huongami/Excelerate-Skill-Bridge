@@ -1,0 +1,50 @@
+YUKI TANAKA-DEMO
+Embedded Firmware Engineer
+yuki.tanaka@example.test | +81 00 5550 0142 | Osaka (Demo), Japan
+
+PROFILE
+Firmware engineer for battery-powered sensors. I write C for small microcontrollers, test on
+hardware-in-the-loop rigs and like to keep the memory budget honest.
+
+EXPERIENCE
+
+Embedded Firmware Engineer                          June 2025 till date
+Voltaire Sensors Demo K.K., Osaka
+- Firmware for a low-power environmental sensor (ARM Cortex-M, FreeRTOS, MISRA C)
+- Wrote drivers for I2C and SPI devices and a bootloader with signed updates
+- Automated hardware-in-the-loop tests in Python and Jenkins on every commit
+- Used embedded Linux (Yocto) for the gateway; debugging with logic analysers and JTAG
+- Reduced standby current from 85 uA to 31 uA
+
+Embedded Software Intern                            Jun 2024 - Aug 2024
+Orbitek Demo Co., Kobe
+- Ported a sensor library from C to C++17 and wrote unit tests
+- Simulink models of a PID controller checked against bench measurements
+
+EDUCATION
+MEng Electrical and Electronic Engineering, Demo University of Osaka, 2020 - 2025
+Final year project: "Energy-aware scheduling for sensor nodes" (C, MATLAB)
+
+CERTIFICATIONS
+Arm Accredited Engineer (AAE), 2025
+JLPT N2 (language test), TOEIC 880
+
+EXTRA-CURRICULAR
+Silver Medal, University Programming Contest, 2023
+Chair, Demo University Robotics Society, 2023
+Best Final Year Project, Electrical Engineering Department, 2025
+Member of the maker space; 3D printing
+
+TECHNICAL SKILLS
+C (MISRA C), C++, Python, Linux, MATLAB / Simulink, Git, Jenkins, debugging with JTAG,
+unit testing
+
+HARDWARE AND TOOLS
+Oscilloscope, logic analyser, JTAG debuggers, Nordic and STM32 boards, KiCad (reading schematics)
+
+LANGUAGES
+Japanese (native), English (business level)
+
+PERSONAL
+Nationality: Japanese | Visa: not required | Available for relocation within Japan
+References available on request

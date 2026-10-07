@@ -1,0 +1,54 @@
+DAVID K. TESTWORTH
+Network Engineer | Former Army Signals NCO
+Harbourtown (Demo) | +00 000 555 0142 | david.testworth@example.test
+
+OBJECTIVE
+Seeking a Cybersecurity Consultant role where my network and incident handling background
+from military and civilian service can protect client environments.
+
+PROFESSIONAL SUMMARY
+Network engineer with 14 years of experience, 11 of them in the Demoland Army Signal Corps
+and 3 in the telecom sector. Built and defended networks for up to 2,500 users in
+deployed and home-station settings. Comfortable leading teams of 6 to 20 people.
+
+CIVILIAN EXPERIENCE
+
+Network Engineer II                                                Nov 2023 - Present
+Harbor Telecom Demo Ltd, Harbourtown
+- Operate the enterprise WAN and data centre network (BGP, OSPF, VLANs, firewalls, VPN)
+- Automated configuration backups and compliance checks with Python and Ansible
+- Monitoring with SolarWinds and Zabbix; cut mean time to repair by 30%
+- First responder for network security incidents, wrote the incident handling playbook
+
+MILITARY SERVICE (translated to civilian terms)
+
+Senior Communications Sergeant (Network Operations)                Mar 2012 - Sep 2023
+Demoland Army Signal Corps
+Civilian equivalent: Network Operations Supervisor / Team Leader
+- Led a section of 12 soldiers operating tactical and garrison networks
+- Planned and installed TCP/IP, radio and satellite links for 3 deployments
+- Managed a 1.2 million budget of equipment; zero losses in 3 audits
+- Wrote Bash scripts and Linux configurations for field servers
+- Instructor for the Signal Corps network course (40 students per year)
+
+TRAINING AND CERTIFICATIONS
+Cisco Certified Network Associate (CCNA), 2013, renewed 2024
+Cisco Certified Network Professional Enterprise (CCNP Enterprise), 2024, valid until 2027
+CompTIA Network+, 2012
+Cisco CCIE written exam: booked for March 2027
+Military training: Signal Corps Advanced Leaders Course, 2016 (not a civilian qualification)
+Security clearance: Secret (active)
+
+HONOURS
+Army Commendation Medal, 2018
+Soldier of the Year, Signal Battalion, 2015
+
+EDUCATION
+Diploma in Telecommunications, Demo Technical Institute, 2010 - 2011
+
+SKILLS
+Networking: TCP/IP, BGP, OSPF, firewalls, VPN, load balancers
+Systems: Linux, Python, Ansible, Bash
+Operations: monitoring, incident response, leading teams
+
+References on request

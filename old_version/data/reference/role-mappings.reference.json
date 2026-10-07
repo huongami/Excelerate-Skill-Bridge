@@ -1,0 +1,154 @@
+[
+  {
+    "id": "map-operations-lead-business-operations",
+    "sourceTitle": "Operations Team Lead",
+    "sourceCountry": "Vietnam",
+    "targetRoleId": "business-operations-coordinator",
+    "auEquivalentFunction": "Business Operations Coordinator / Customer Operations Lead",
+    "skills": [
+      {
+        "id": "team-operations",
+        "label": "Team operations",
+        "group": "direct",
+        "sharedCompetency": "Coordinating people and daily service delivery",
+        "rationale": "Managed a 12-person operations and customer service team in Ho Chi Minh City → demonstrates team coordination and service delivery leadership.",
+        "aliases": ["team coordination", "people leadership", "service operations"]
+      },
+      {
+        "id": "data-informed-decisions",
+        "label": "Data-informed decisions",
+        "group": "transferable",
+        "sharedCompetency": "Using operational evidence to improve decisions",
+        "rationale": "Tracked service volumes and customer issues in weekly spreadsheets → demonstrates evidence-based staffing and operational decisions.",
+        "aliases": ["operational reporting", "data analysis", "spreadsheet analysis"]
+      },
+      {
+        "id": "cross-functional-coordination",
+        "label": "Cross-functional coordination",
+        "group": "transferable",
+        "sharedCompetency": "Resolving work across multiple business teams",
+        "rationale": "Coordinated escalations across warehouse, sales and customer support → demonstrates cross-functional problem solving.",
+        "aliases": ["stakeholder coordination", "issue escalation", "business support"]
+      }
+    ],
+    "sources": [
+      { "publisher": "Team decision based on PRD §4.1 Minh persona", "url": "Docs/Skill_Bridge_PRD.md", "capturedAt": "2026-08-23" }
+    ],
+    "reviewedBy": "Skill Bridge team",
+    "reviewedAt": "2026-08-23"
+  },
+  {
+    "id": "map-product-owner-marketing-ops",
+    "sourceTitle": "Product Owner",
+    "sourceCountry": "Vietnam",
+    "targetRoleId": "marketing-operations-manager",
+    "auEquivalentFunction": "Product Manager / Product Operations",
+    "skills": [
+      {
+        "id": "cross-functional-planning",
+        "label": "Cross-functional planning",
+        "group": "direct",
+        "sharedCompetency": "Coordinating priorities across delivery teams",
+        "rationale": "Led quarterly roadmaps with engineering, sales and design → demonstrates coordinated campaign planning across teams.",
+        "aliases": ["stakeholder alignment", "campaign planning"]
+      },
+      {
+        "id": "data-informed-decisions",
+        "label": "Data-informed decisions",
+        "group": "transferable",
+        "sharedCompetency": "Using evidence to prioritise work",
+        "rationale": "Used funnel analytics to prioritise product experiments → transfers to measuring and optimising campaign performance.",
+        "aliases": ["performance analytics", "analytics", "reporting"]
+      },
+      {
+        "id": "stakeholder-communication",
+        "label": "Stakeholder communication",
+        "group": "transferable",
+        "sharedCompetency": "Communicating trade-offs and results",
+        "rationale": "Presented trade-offs to regional executives → demonstrates clear communication of priorities and results.",
+        "aliases": ["stakeholder management", "executive communication"]
+      }
+    ],
+    "sources": [
+      { "publisher": "Team decision based on PRD worked example", "url": "Docs/Skill_Bridge_PRD.md", "capturedAt": "2026-08-23" }
+    ],
+    "reviewedBy": "Skill Bridge team",
+    "reviewedAt": "2026-08-23"
+  },
+  {
+    "id": "map-proxy-product-owner-product-manager",
+    "sourceTitle": "Proxy Product Owner | Data Analyst",
+    "sourceCountry": "Vietnam",
+    "targetRoleId": "product-manager",
+    "auEquivalentFunction": "Product Manager / Product Owner",
+    "skills": [
+      {
+        "id": "backlog-management",
+        "label": "Backlog management",
+        "group": "direct",
+        "sharedCompetency": "Prioritising customer and business value across a product backlog",
+        "rationale": "Owned the Data Mart 2.0 backlog from problem definition to release, demonstrating end-to-end backlog ownership and value prioritisation.",
+        "aliases": ["product backlog", "prioritisation", "requirements management"]
+      },
+      {
+        "id": "product-discovery",
+        "label": "Product discovery",
+        "group": "direct",
+        "sharedCompetency": "Turning ambiguous problems into validated product direction",
+        "rationale": "Led problem framing, user research, solution design and roadmap planning for client-sponsored innovation programs.",
+        "aliases": ["user research", "problem framing", "roadmap planning"]
+      },
+      {
+        "id": "stakeholder-management",
+        "label": "Stakeholder management",
+        "group": "transferable",
+        "sharedCompetency": "Aligning delivery teams and senior decision makers",
+        "rationale": "Defined dashboard requirements for senior stakeholders and coordinated delivery priorities across teams.",
+        "aliases": ["stakeholder alignment", "cross-functional communication"]
+      }
+    ],
+    "sources": [
+      { "publisher": "User-provided CV, privacy-minimised for consented demo use", "url": "data/demo/[CV] Phung Dang Khoa.docx.pdf", "capturedAt": "2026-08-23" }
+    ],
+    "reviewedBy": "Skill Bridge team",
+    "reviewedAt": "2026-08-23"
+  },
+  {
+    "id": "map-proxy-product-owner-data-analyst",
+    "sourceTitle": "Proxy Product Owner | Data Analyst",
+    "sourceCountry": "Vietnam",
+    "targetRoleId": "data-analyst",
+    "auEquivalentFunction": "Data Analyst / Analytics Product Owner",
+    "skills": [
+      {
+        "id": "data-analysis",
+        "label": "Data analysis",
+        "group": "direct",
+        "sharedCompetency": "Using structured data to answer business questions",
+        "rationale": "Owned a data-mart product and delivered enterprise dashboards that improved stakeholder access to insights.",
+        "aliases": ["analytics", "business analysis", "data insights"]
+      },
+      {
+        "id": "dashboard-development",
+        "label": "Dashboard development",
+        "group": "direct",
+        "sharedCompetency": "Defining and delivering decision-ready reporting",
+        "rationale": "Defined requirements and prioritised delivery of more than 10 enterprise dashboards for senior stakeholders.",
+        "aliases": ["data visualisation", "business intelligence", "reporting"]
+      },
+      {
+        "id": "process-improvement",
+        "label": "Process improvement",
+        "group": "transferable",
+        "sharedCompetency": "Measuring and improving operational performance",
+        "rationale": "Redesigned backlog and sprint processes, increasing efficiency by 30% and reducing rework by 20%.",
+        "aliases": ["continuous improvement", "workflow optimisation"]
+      }
+    ],
+    "sources": [
+      { "publisher": "User-provided CV, privacy-minimised for consented demo use", "url": "data/demo/[CV] Phung Dang Khoa.docx.pdf", "capturedAt": "2026-08-23" }
+    ],
+    "reviewedBy": "Skill Bridge team",
+    "reviewedAt": "2026-08-23"
+  }
+]

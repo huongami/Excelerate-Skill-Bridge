@@ -1,0 +1,42 @@
+ISABELA MORETTI-VANCE
+Bristol, United Kingdom  |  +44 7700 000029  |  isabela.moretti@example.test  |  linkedin.com/in/isabelamorettivance
+
+PROFILE
+Backend software engineer who returned to work in 2026 after a career break to care for my family. Strong Java and
+Spring Boot background, with refreshed cloud and Kubernetes skills and a record of mentoring and clear documentation.
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineer (Returnship)                                                            Jan 2026 – Present
+Cinder Analytics, Bristol
+•  Joined a paid 6-month returner programme that became a permanent role; work on the billing-events service
+•  Implemented idempotent REST endpoints in Java 17 and Spring Boot; added 90 unit and integration tests
+•  Containerised two services with Docker and deployed them to Kubernetes with Helm
+
+Career Break (family care)                                                                Sep 2021 – Dec 2025
+•  Full-time carer for two young children and a family member
+•  Kept skills current: completed Kubernetes and cloud courses, built a small booking API as a personal project,
+   and mentored two students through a volunteer coding scheme
+
+Software Engineer, Tern Freight Systems, Bristol                                          Mar 2016 – Aug 2021
+•  Developed Java and Spring services for a freight-booking platform used by 500 hauliers
+•  Designed the PostgreSQL schema and REST API for the new quoting module; handled 2,000 quotes a day
+•  Led the upgrade from Java 8 to 11 and introduced JUnit-based contract tests
+•  Mentored graduate hires and ran the team's sprint retrospectives
+
+Junior Developer, Kingfisher Web, Bath                                                    Aug 2013 – Feb 2016
+•  Built customer websites and back-office tools in Java and MySQL
+•  Fixed 200+ defects and introduced automated builds with Maven
+
+EDUCATION
+BSc Computer Science (2:1), University of Westmere                                        2010 – 2013
+
+SKILLS
+Java, Spring Boot, PostgreSQL, Kubernetes, Docker, REST APIs, JUnit
+
+CERTIFICATIONS
+AWS Certified Developer - Associate (2021, expired 2024)
+Certified Kubernetes Application Developer (CKAD), Linux Foundation (2025)
+
+AWARDS
+Women in Technology Scholarship (2012)

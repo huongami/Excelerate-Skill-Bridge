@@ -1,0 +1,49 @@
+HELEN M. BRAMWELL-DEMO
+Software Engineer - returning after a career break
+helen.bramwell@example.test | +44 0000 555 0166 | Manchester (Demo)
+
+SUMMARY
+Backend software engineer with seven years of Java experience in logistics and payments,
+followed by a seven-year career break to care for my family. I joined a returnship at Hollin
+Systems in June and I am looking for a Backend Engineer role where I can use my systems
+experience and keep learning.
+
+EXPERIENCE
+
+Software Engineer (Returnship Programme)                       Jun 2026 - Present
+Hollin Systems Demo, Manchester
+- 16-week paid returnship; extended to a permanent trial period
+- Added idempotency keys to a payment API built with Spring Boot and PostgreSQL
+- Containerised two services with Docker and set up GitHub Actions
+- Pair programming with a mentor; weekly code reviews
+
+Career break (family care)                                     Apr 2019 - May 2026
+- Part-time courses: Kotlin for Java developers (online, 2024), cloud basics (2025)
+- Chair of the school parents' association
+
+Software Engineer                                              Feb 2012 - Mar 2019
+Bramble Soft Demo Ltd, Manchester
+- Built a Java and Spring Boot booking service handling 30,000 requests per hour
+- Designed REST APIs and message queues for partner integrations
+- Migrated the order database from MySQL to PostgreSQL with no downtime
+- Mentored two graduates; ran the monthly release
+
+EDUCATION
+BSc Computer Science, University of Mancunia Demo, 2008 - 2011
+
+CERTIFICATIONS
+AWS Certified Developer - Associate, 2026 (renewed after the break)
+Oracle Certified Professional: Java SE 17 Developer - exam booked for December 2026
+
+PATENTS AND COMMUNITY
+Patent Filed: Method for Retrying Failed Batch Jobs, 2017
+Organiser, Manchester Java User Group, 2015
+
+SKILLS
+Java, Spring Boot, PostgreSQL, MySQL, Docker, Git, Kotlin (learning), AWS, REST APIs
+
+PERSONAL
+Right to work in the UK: yes
+Availability: from the end of the returnship, flexible working preferred
+Languages: English (native), Welsh (basic)
+References available on request

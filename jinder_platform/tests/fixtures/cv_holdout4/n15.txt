@@ -1,0 +1,48 @@
+PRIYA R. VASUDEVAN-DEMO
+Machine Learning Engineer - retrieval, ranking and model serving
+priya.vasudevan@example.test | +91 00000 55501 | Bengaluru (Demo) / remote
+github.com/example-priya | scholar profile on request
+
+PROFILE
+Applied ML engineer who takes models from notebook to production. Seven years of work in
+insurance, robotics and enterprise search. Comfortable with PyTorch, Spark and cloud MLOps.
+
+EXPERIENCE
+
+Lead Machine Learning Engineer | Quillstone Analytics Demo | Q2 2023 - Present
+Owner of the ML platform and the search assistant team (6 engineers).
+Selected achievements:
+ * Won the internal hackathon 2023 with a retrieval-augmented support assistant; it is now
+   used by 1,100 agents and answers 40% of tier-1 questions
+ * Innovation Award 2024 for the real-time feature store design (latency from 400 ms to 35 ms)
+ * Moved training and serving to Amazon SageMaker pipelines with Docker images and CI/CD
+ * Mentored two engineers to promotion
+
+Machine Learning Engineer | Fernhill Robotics Demo | Q2 2022 - Q1 2023
+Selected achievements:
+ * Top Performer 2022 (top 5% of 400 engineers)
+ * Cut object detection inference cost by 45% with quantised PyTorch models
+ * Wrote the Hugging Face fine-tuning scripts for the voice command model
+
+Data Scientist | Meadowbank Insurance Demo | Q3 2019 - Q1 2022
+Selected achievements:
+ * Kaggle Bronze Medal 2020 in a claims prediction competition (team of three)
+ * Lapse prediction model in Python and Spark; 3.2% uplift in retention
+ * Built the first model monitoring dashboards
+ * Presented model results to underwriting and pricing leaders each quarter
+ * Documented the modelling standards used by the 12-person analytics team
+
+LANGUAGES
+English (fluent), Hindi (native), Kannada (native), German (basic)
+
+EDUCATION
+M.Tech Data Science, Demo Institute of Technology, 2017 - 2019
+B.E. Computer Science, Test University, 2013 - 2017
+
+CERTIFICATIONS
+AWS Certified Machine Learning Engineer - Associate, 2025
+Databricks Certified Generative AI Engineer Associate, 2025
+
+SKILLS
+Python, PyTorch, Hugging Face Transformers, Apache Spark, MLOps, Amazon SageMaker,
+Docker, retrieval-augmented generation, Kubernetes, SQL

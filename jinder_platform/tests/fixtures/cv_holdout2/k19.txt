@@ -1,0 +1,25 @@
+Kiran Bhattacharya
+iOS · Swift · Accessibility
+kiran.b@example.test | +61 400 000 019 | Sydney NSW
+
+Summary
+Early-career developer on a consumer banking app. 5 years of Java experience from school, university and side projects,
+and since last year mostly Swift and SwiftUI. My goal is an iOS Engineer position on a product team that cares about accessibility.
+
+Experience
+
+Software Engineer I @ Brightwell Apps — Jun 2025 – Present
+* Build screens and flows in SwiftUI for a banking app with 400k users
+* Fixed 60+ VoiceOver and Dynamic Type issues, raising the app's accessibility audit score from 72 to 94
+* Write unit and snapshot tests; coverage on my modules is 85%
+* Pair with a senior engineer every week and present a lunch talk each quarter
+Technologies: Swift, SwiftUI, Core Data, Xcode
+
+Engineering Intern (summer 2024) @ Orbitrail
+* Added offline support to the Android companion app (Java), shipped to production
+
+Education
+BSc Computer Science (a 3-year degree), Eastern Plains University, 2021 – 2024
+
+Skills
+Swift, SwiftUI, Java, Xcode, Core Data, Git

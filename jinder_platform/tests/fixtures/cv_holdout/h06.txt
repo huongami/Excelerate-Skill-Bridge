@@ -1,0 +1,32 @@
+Henrik Larsson
+Senior Site Reliability Engineer
+henrik.larsson@example.test | +61 400 000 016 | Adelaide, SA
+
+DESIRED ROLE: Cloud Architect
+
+PROFESSIONAL EXPERIENCE
+
+Tidewater Cloud Services
+SENIOR SITE RELIABILITY ENGINEER
+March 2020 – Present
+- On-call lead for a 60-service Kubernetes platform; availability moved from 99.5% to 99.95%.
+- Wrote Terraform modules adopted by 11 product teams.
+- Introduced SLOs and error budgets and ran the blameless post-incident reviews.
+
+Ferrous Networks
+SRE
+June 2016 – February 2020
+- Built Prometheus and Grafana monitoring for a fleet of 400 Linux hosts.
+- Automated certificate rotation and cut paging alerts by half.
+- Wrote the incident runbooks used by the 24/7 support desk.
+
+RECOGNITION
+Maintainer, tidewatch open-source project (2021)
+
+CERTIFICATIONS
+CKA (2022)
+AWS SAA (2021)
+HashiCorp Certified: Terraform Associate (2023)
+
+SKILLS
+Kubernetes, Terraform, Prometheus, Go, Linux, AWS

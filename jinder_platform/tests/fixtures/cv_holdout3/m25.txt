@@ -1,0 +1,37 @@
+OTTOLINE BRZEZINSKI
+Calgary, Alberta  |  +1 403 000 0025  |  ottoline.brzezinski@example.test  |  linkedin.com/in/ottolinebrzezinski
+
+OBJECTIVE
+Seeking a Staff Engineer position where I can set technical direction across several teams and keep building hands-on.
+
+EXPERIENCE
+Senior Software Engineer | Ardent Freight Technologies | Calgary, AB                                  Sep 2017 – Present
+• Technical owner of the shipment-events platform (Java, Spring Boot, Kafka, PostgreSQL) processing 80M events a day
+• Led the move from a monolith to 14 services on Kubernetes with Terraform-managed AWS infrastructure
+• Designed the multi-region failover that took availability from 99.9% to 99.99% and survived two regional outages
+• Reduced infrastructure cost by CAD 1.2M a year through right-sizing, caching and a data-retention policy
+• Mentor six engineers; author of the company's API design guidelines and architecture decision record process
+
+Software Developer | Prairie Insurance Systems | Calgary, AB                                             Jun 2012 – Aug 2017
+• Developed policy-administration and claims services in Java EE and Oracle for 12 provincial insurers
+• Introduced automated regression testing (Selenium, JUnit) that cut release testing from 3 weeks to 4 days
+• Led a team of five on the rewrite of the quoting engine; delivered 6 weeks ahead of schedule
+
+Programmer Analyst | Foothills Municipal Services | Calgary, AB                                         Jan 2008 – May 2012
+• Maintained utilities billing applications in Java and Oracle PL/SQL for 400,000 households
+• Built the web self-service portal that moved 35% of customer enquiries online
+
+TECHNICAL SKILLS
+Languages: Java, Kotlin, SQL, Bash        Frameworks: Spring Boot, Hibernate        Messaging: Kafka, RabbitMQ
+Data: PostgreSQL, Oracle, Redis        Cloud and DevOps: AWS, Kubernetes, Terraform, Jenkins, Prometheus
+
+EDUCATION
+Bachelor of Science in Computer Science, Prairie Coast University                                        2003 – 2007
+
+CERTIFICATIONS
+AWS Certified Solutions Architect - Professional (2022, valid through 2028)
+Oracle Certified Professional, Java SE 8 Programmer (2016)
+
+PATENTS AND AWARDS
+US Patent 10,456,789, "Distributed lock lease renewal for edge devices" (granted 2019)
+Technical Excellence Award, Ardent Freight Technologies (2020)

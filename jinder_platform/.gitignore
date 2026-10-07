@@ -1,0 +1,13 @@
+# Runtime data. Never commit the database, uploads or secrets (AI_Rule Rule 6).
+var/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+uploads/
+__pycache__/
+*.pyc
+*.db
+*.db-wal
+*.db-shm

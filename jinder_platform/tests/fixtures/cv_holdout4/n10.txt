@@ -1,0 +1,50 @@
+RESUME
+
+JORDAN T. EXEMPLAR
+1234 Demo Lane, Testville, ST 00000 | (555) 010-0142 | jordan.exemplar@example.test
+Citizenship: United States | Highest grade held: GS-12 | Clearance: Public Trust (demo)
+
+WORK EXPERIENCE
+
+Information Security Analyst                                          03/2019 - Present
+Department of Example Services, Testville, ST
+Series/Grade: 2210 / GS-12    Salary: $00,000 per year    Hours per week: 40
+Supervisor: Dana Placeholder, (555) 010-0199 (may be contacted)
+Duties and accomplishments:
+ - Lead incident response for a network of 9,000 endpoints; average time to contain reduced
+   from 14 hours to 5 hours
+ - Perform risk assessments and vulnerability scans, report findings to system owners
+ - Review cloud security configurations in the agency AWS and Azure environments
+ - Write Python scripts to parse logs in Splunk and automate indicator searches
+ - Brief the Authorizing Official each quarter on the agency threat picture
+
+Cybersecurity Analyst                                                 12/2014 - 02/2019
+Example Revenue Office, Testville, ST
+Series/Grade: 2210 / GS-9 to GS-11    Hours per week: 40
+Supervisor: Robert Specimen, (555) 010-0177 (may be contacted)
+Duties and accomplishments:
+ - Monitored the network with intrusion detection sensors and firewalls; triaged 60 alerts a day
+ - Performed vulnerability assessment and basic penetration testing of internal web applications
+ - Maintained Linux jump hosts and TCP/IP network diagrams
+
+EDUCATION
+B.S. Information Technology, State University of Demo, 2010 - 2014
+Graduate Certificate in Information Assurance (university programme), 2016
+
+LICENSES AND CERTIFICATIONS
+Certified Information Systems Security Professional (CISSP), ISC2, 2018, expires 2027
+CompTIA Security+ (SY0-701), 2024
+GIAC Certified Incident Handler (GCIH): exam scheduled, not yet passed
+
+AWARDS
+Special Act Award, 2021
+Hall of Fame entry, Demo Bug Bounty Programme, 2022
+DemoCon CTF, 2nd place, 2023
+
+TRAINING
+SANS course: Advanced Incident Response (5 days, 2022)
+Annual cybersecurity awareness training (mandatory)
+
+KNOWLEDGE, SKILLS AND ABILITIES
+Incident response, threat modelling, risk assessment, cloud security, penetration testing,
+networking fundamentals, Linux, Python, Splunk

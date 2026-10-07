@@ -1,0 +1,39 @@
+ADEBAYO OKORO-HANSEN
+Data Engineer
+Cape Town, South Africa | +27 60 000 0023 | adebayo.okoro@example.test | github.com/aokoro
+
+PROFILE
+Independent data engineer. I design and build batch and streaming pipelines for small and mid-sized companies
+that have outgrown spreadsheets and cron jobs, and I hand them over with tests, documentation and monitoring.
+
+CORE SKILLS
+- Pipelines and orchestration: Apache Airflow, dbt, Spark, Kafka
+- Languages: Python, SQL
+- Platforms: AWS, PostgreSQL, Snowflake
+- Practices: data modelling, data quality testing, CI/CD for data, cost control
+
+SELECTED ENGAGEMENTS
+Logistics client
+- Replaced nightly CSV exports with an Airflow and dbt pipeline loading Snowflake; reports now ready by 6 am
+- Added 150 automated data-quality tests that caught duplicate shipments before they reached finance
+
+Online retailer
+- Built a Kafka and Spark streaming job that keeps stock levels in sync across three sales channels
+- Cut the monthly AWS data bill by 35% by compacting files and tuning partitioning
+
+Agricultural cooperative
+- Designed a PostgreSQL reporting database for 4,000 member farms and trained two staff to maintain it
+
+Fintech start-up
+- Set up CI/CD for dbt models and a staging environment so analysts could ship changes safely
+
+CERTIFICATIONS
+AWS Certified Data Engineer - Associate
+dbt Analytics Engineering Certification
+Google Cloud Professional Data Engineer
+
+EDUCATION
+BSc Information Systems, University of the Western Peninsula, 2013 - 2016
+
+LANGUAGES
+English, Afrikaans, Yoruba

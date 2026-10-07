@@ -1,0 +1,55 @@
+CURRICULUM VITAE
+
+Name:            Priya Nandakumar-Demo
+Address:         22 Test Lane, Eastshire, ES2 0XX (Demo)
+Telephone:       0000 555 0142
+Email:           priya.nandakumar@example.test
+Professional registration: not applicable
+
+PERSONAL PROFILE
+Database administrator working in a community health trust. I look after the databases that
+hold appointment, referral and bed-management data and I take pride in keeping them safe,
+fast and available for clinical staff.
+
+EMPLOYMENT HISTORY
+
+Eastshire Community Health Trust (Demo)                      April 2018 to present
+Database Administrator (Band 6)
+Duties: Responsible for the administration and performance tuning of 45 Oracle and SQL Server
+databases that support patient administration, referrals and reporting. Plan and carry out
+upgrades, backup and recovery tests and disaster recovery exercises. Write PowerShell and
+shell scripts to automate checks. Investigate slow queries with clinical system suppliers and
+advise on indexing and schema changes. Work with the Information Governance team so that
+access to patient data follows GDPR and Trust policy. Act as incident lead for database
+outages out of hours on a shared rota.
+
+Eastshire Community Health Trust (Demo)                      August 2014 to March 2018
+Systems Support Officer (Band 5)
+Duties: First and second line support for clinical applications. Created user accounts,
+ran daily database jobs and prepared management reports using SQL. Supported the move of
+the appointment system to a new Oracle platform and wrote the user guides.
+
+QUALIFICATIONS
+BSc (Hons) Information Systems, University of Eastshire (Demo), 2011 - 2014
+A levels: Mathematics, Physics, Business Studies
+
+PROFESSIONAL CERTIFICATES
+Oracle Certified Professional (OCP) - Oracle, 2021
+Microsoft Certified: Azure Database Administrator Associate (DP-300) - 2022
+PRINCE2 Foundation - exam booked for 12 November 2026
+Mandatory training: Information Governance, Fire Safety, Safeguarding (renewed annually)
+
+RECOGNITION
+Trust Staff Recognition Award, 2022, for the zero-downtime migration of the appointment system
+
+SUPPORTING INFORMATION
+I am committed to the values of the Trust: care, respect, teamwork. I am comfortable working
+with non-technical colleagues and explaining technical problems clearly.
+
+TECHNICAL SKILLS
+Oracle Database, Microsoft SQL Server, SQL, PostgreSQL, database administration,
+performance tuning, PowerShell, Bash, GDPR
+
+REFEREES
+Mr. David Samplewood, Head of Digital Services, Eastshire Community Health Trust (Demo)
+Mrs. Joanna Testfield, Clinical Systems Manager, Eastshire Community Health Trust (Demo)

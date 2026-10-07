@@ -1,0 +1,41 @@
+JUN HAO TEO
+Machine Learning Engineer II
+Singapore  |  +65 8000 0008  |  junhao.teo@example.test  |  linkedin.com/in/junhaoteo
+
+SUMMARY
+Machine learning engineer with experience in visual inspection and industrial imaging. Open to Computer Vision
+Engineer opportunities in robotics, autonomous inspection and edge AI.
+
+WORK EXPERIENCE
+Machine Learning Engineer II
+Lumen Optics Pte Ltd, Singapore
+Jul 2023 - Present
+• Develop defect-detection models for semiconductor wafer images; recall improved from 91% to 97.5%
+• Optimised YOLO-based detectors with TensorRT and ONNX, reaching 38 ms latency on edge devices
+• Built the labelling and active-learning pipeline that reduced annotation effort by 45%
+• Packaged models as Docker services and supported deployment at two customer sites
+
+Junior Software Engineer
+Rafflesia Systems, Singapore
+Jan 2021 - Jun 2023
+• Developed C++ image-acquisition services for factory cameras
+• Wrote Python tools with OpenCV for camera calibration and quality checks
+• Took over model-evaluation scripts and moved them into a CI pipeline
+
+EDUCATION
+Bachelor of Engineering (Computer Engineering), Marina Bay Institute of Technology
+2016 - 2020
+
+SKILLS
+Python, PyTorch, OpenCV, C++, TensorRT, CUDA, Docker, ONNX
+
+CERTIFICATES
+Deep Learning Specialization, DeepLearning.AI (Coursera)
+TensorFlow Developer Certificate
+
+ACHIEVEMENTS
+Winner, Merlion Vision Hackathon (2022)
+Best Paper Award, Singapore Vision Workshop (2024)
+
+LANGUAGES
+English, Mandarin, Malay

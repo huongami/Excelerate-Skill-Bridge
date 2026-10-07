@@ -1,0 +1,40 @@
+Tomás Brennick
++61 400 000 011 | tomas.brennick@example.test | linkedin.com/in/tomasbrennick | github.com/tbrennick
+
+Education
+University of Wollongong Wollongong, NSW
+Bachelor of Computer Science (Honours), WAM 78.4 Feb. 2019 – Dec. 2022
+
+Experience
+Software Engineer Jan. 2023 – Present
+Harbourlight Logistics Sydney, NSW
+• Designed and built a shipment-tracking REST API in Java and Spring Boot that serves 1.2M requests per day
+• Cut p95 latency of the booking service from 820 ms to 240 ms by adding Redis caching and tuning
+PostgreSQL queries
+• Migrated 14 services from Jenkins pipelines to GitHub Actions, reducing average build time by 35%
+• Mentored two graduate engineers and ran weekly code review sessions for the routing team
+Software Engineering Intern Dec. 2021 – Feb. 2022
+Brindabella Software Sydney, NSW
+• Developed a React dashboard for support staff that replaced a manual spreadsheet process
+• Wrote 120 unit tests with JUnit and Mockito, raising coverage of the billing module from 54% to 81%
+
+Projects
+RouteSight | Python, Flask, React, PostgreSQL Jun. 2022 – Sep. 2022
+• Capstone project: route-optimisation tool for local couriers, deployed on AWS Elastic Beanstalk
+• Implemented a nearest-neighbour heuristic with 2-opt improvement that shortened test routes by 18%
+Pocketledger | TypeScript, Node.js, Docker 2024
+• Personal-finance API with JWT authentication, 90% test coverage and a docker-compose development setup
+• Released under the MIT licence; 140 stars on GitHub
+
+Technical Skills
+Languages: Java, Python, TypeScript, SQL, Go
+Frameworks: Spring Boot, React, Node.js, Flask
+Developer Tools: Git, Docker, Kubernetes, Jenkins, GitHub Actions, AWS
+Libraries: JUnit, Mockito, pandas
+
+Certifications
+AWS Certified Cloud Practitioner, Amazon Web Services, 2023
+
+Honors and Awards
+Dean's List, University of Wollongong (2021)
+Runner-up, Sydney Harbour Hackathon (2024)

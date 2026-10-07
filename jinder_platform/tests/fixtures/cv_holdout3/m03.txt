@@ -1,0 +1,40 @@
+DELPHINE OKONKWO-REYES
+Software Engineer III
+Melbourne, VIC  |  +61 400 000 031  |  delphine.okonkwo@example.test  |  linkedin.com/in/delphine-okonkwo
+
+PROFESSIONAL SUMMARY
+Backend engineer with a decade of experience building high-volume payment and billing systems. Strong focus on
+API design, reliability and mentoring. Comfortable leading design reviews, on-call rotations and the migration
+of legacy services to cloud-native platforms.
+
+CORE SKILLS
+Go  •  Java  •  PostgreSQL  •  Kafka  •  Kubernetes  •  Terraform  •  AWS  •  gRPC
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineer III, Meridian Payments – Melbourne, VIC                                  Mar 2022 – Present
+•  Lead the design of a ledger service in Go that settles 4 million transactions a day with 99.99% availability
+•  Introduced idempotency keys and an outbox pattern on Kafka, eliminating duplicate settlements
+•  Run the team's on-call rotation and cut mean time to recovery from 48 to 15 minutes through better runbooks and alerts
+•  Mentor four engineers and chair the fortnightly architecture review
+
+Software Engineer, Tallowfield Digital – Melbourne, VIC                                    Feb 2018 – Feb 2022
+•  Built the subscription billing API in Java and PostgreSQL for 60,000 small-business customers
+•  Moved infrastructure from hand-configured servers to Terraform and Kubernetes on AWS
+•  Wrote the integration test suite that caught 30+ regressions before release
+
+Junior Developer, Kestrel Web Studio – Geelong, VIC                                        Jul 2016 – Jan 2018
+•  Delivered e-commerce sites for regional retailers using PHP and MySQL
+•  Automated deployments with shell scripts and Jenkins, saving the team around 6 hours a week
+
+EDUCATION
+Bachelor of Information Technology, Eastgate University – Melbourne, VIC                  2012 – 2015
+
+CERTIFICATIONS
+•  Certified Kubernetes Administrator (CKA), Cloud Native Computing Foundation, 2023
+•  HashiCorp Certified: Terraform Associate, HashiCorp, 2022
+•  AWS Certified Solutions Architect - Associate, Amazon Web Services, 2021 (Credential ID AWS-ASA-004417)
+
+AWARDS AND RECOGNITION
+•  Employee of the Quarter, Meridian Payments, Q2 2023
+•  Conference Speaker, GopherCon Australia (2022): "Idempotency in payment APIs"

@@ -1,0 +1,49 @@
+ANDREI POPESCU-DEMO
+Salesforce Consultant and Developer
+andrei.popescu@example.test | +40 000 555 014 | Cluj (Demo), Romania | Trailblazer profile on request
+
+SUMMARY
+Salesforce professional with 10 years across administration, consulting and development.
+By day I advise enterprise clients on Sales Cloud and Service Cloud; in the evenings I run
+my own small studio building custom Lightning components and integrations.
+
+PROFESSIONAL EXPERIENCE
+
+Freelance Salesforce Developer (own business)         Mar. 2022 - ongoing
+Cloudleaf Studio Demo, sole proprietor
+- Custom Lightning Web Components (JavaScript) and Apex triggers for 12 small clients
+- REST API integrations between Salesforce, accounting tools and e-commerce shops
+- Data migration scripts, SOQL and SQL checks, reusable data model templates
+
+Senior Salesforce Consultant                          Sept. 2019 - ongoing
+Brightwater Advisory Demo GmbH, remote
+- Requirements workshops, user stories and acceptance criteria for 6 enterprise rollouts
+- Led the design of the account and opportunity data model for a 4,000-user org
+- Sprint planning and Scrum ceremonies as the delivery consultant; stakeholder reporting
+- Git-based deployment with scratch orgs and pull requests
+
+Salesforce Administrator                              Oct. 2016 - Aug. 2019
+Granite Utilities Demo SA, Cluj
+- Administered an org of 800 users; flows, validation rules and reports
+- Cleaned and merged 150,000 duplicate accounts
+
+EDUCATION
+BSc Economic Informatics, Demo University of Cluj, 2012 - 2016
+
+CERTIFICATIONS
+Salesforce Certified Administrator (2017)
+Salesforce Certified Platform Developer I (2019)
+Salesforce Certified Sales Cloud Consultant (2021)
+Salesforce Certified Advanced Administrator - in progress
+Trailhead: Ranger rank, 500 badges (learning platform, not a certification)
+
+COMMUNITY
+Organiser, Trailblazer Community Group Cluj, 2023
+Top Contributor, Open Apex Utilities (open source), 2024
+
+SKILLS
+JavaScript, SQL, REST APIs, Git, requirements gathering, stakeholder management, Scrum,
+data modelling
+
+LANGUAGES
+Romanian (native), English (C1), German (B1)

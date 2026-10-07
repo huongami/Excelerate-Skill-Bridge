@@ -1,0 +1,41 @@
+AROHA WALKER
+Analytics Engineer
+PROFILE
+aroha.walker@example.test
+Analytics engineer who turns raw product events into trusted
++61 400 000 038
+marts. Open to Machine Learning Engineer or Data Engineer roles
+Melbourne, VIC
+that make use of my modelling and testing background.
+SKILLS
+EXPERIENCE
+SQL
+Analytics Engineer — Fernwood Subscription Co.
+dbt
+Nov 2022 – Present
+Snowflake
+- Own the dbt project (420 models) on Snowflake; added tests and
+Python
+docs that took test coverage from 20% to 85%.
+Looker
+- Designed the subscription-revenue marts used by finance,
+Airflow
+product and marketing.
+CERTIFICATIONS
+- Moved orchestration from cron to Airflow and cut late-data
+dbt Analytics Engineering Certification
+incidents by two thirds.
+2023
+SnowPro Core Certification
+Data Analyst — Fernwood Subscription Co.
+2022
+Jan 2021 – Oct 2022
+AWARDS
+- Built the weekly retention dashboards in Looker.
+Innovation Award
+- Wrote 60+ SQL reports for customer support and finance.
+Fernwood Subscription Co.
+2024
+EDUCATION
+Bachelor of Commerce (Information Systems)
+Eastgate University, 2016 – 2019

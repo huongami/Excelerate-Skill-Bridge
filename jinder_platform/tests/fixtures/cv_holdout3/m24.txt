@@ -1,0 +1,42 @@
+LUCÍA FERNÁNDEZ-OKAFOR
+Valencia, Spain  |  +34 600 000 024  |  lucia.fernandez@example.test  |  linkedin.com/in/luciafernandezokafor
+
+PROFILE
+Recent artificial intelligence graduate with two industry internships in machine learning and computer vision.
+Looking for an entry-level opportunity to apply machine learning in a collaborative team.
+
+EDUCATION
+BSc in Artificial Intelligence, Mediterranean Technical University                       2022 – 2026
+Graduated June 2026 with First Class Honours (GPA 9.1/10)
+Relevant coursework: Deep Learning, Computer Vision, Reinforcement Learning, Probabilistic Models, Databases
+
+INTERNSHIPS
+Machine Learning Intern                                                                  Jun 2025 – Aug 2025
+Verdant Robotics Ltd, Valencia
+•  Trained a PyTorch segmentation model that detects crop rows in drone images (mIoU 0.83)
+•  Reduced inference time by 40% with mixed precision and model pruning
+•  Documented the training pipeline and presented results to the engineering team
+
+Data Science Intern                                                                      Jun 2024 – Aug 2024
+Tallis Health, Valencia
+•  Built a gradient-boosting model to predict appointment no-shows (AUC 0.77) using scikit-learn
+•  Created Power BI-ready summary tables with SQL for the clinic operations team
+
+PROJECTS
+Bachelor's thesis: Self-supervised pre-training for small medical-image datasets (PyTorch, OpenCV)
+Plant disease classifier: mobile app (TensorFlow Lite) classifying 12 diseases with 91% accuracy
+Chess engine: Monte Carlo tree search in Python, rated around 1800 Elo
+
+TECHNICAL SKILLS
+Python, PyTorch, scikit-learn, TensorFlow, OpenCV, SQL, Git
+
+CERTIFICATIONS
+Deep Learning Specialization, DeepLearning.AI (Coursera)
+TensorFlow Developer Certificate
+
+AWARDS
+Best Use of Machine Learning, HackMadrid (2025)
+Dean's List (2024)
+
+LANGUAGES
+Spanish (native), English (C1), Valencian (native)

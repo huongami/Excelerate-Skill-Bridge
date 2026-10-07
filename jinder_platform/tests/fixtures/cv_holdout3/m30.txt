@@ -1,0 +1,41 @@
+EZRA KOWALCZYK-MBEKI
+Melbourne, VIC  |  0400 000 030  |  ezra.kowalczyk@example.test  |  github.com/ekowalczyk
+
+OBJECTIVE
+Motivated data science graduate looking for an opportunity to apply analytical and programming skills to real
+business problems and to learn from experienced colleagues.
+
+EDUCATION
+Bachelor of Science (Data Science), Southgate University                                    2023 – 2026
+Graduated June 2026 | WAM 82.6 | Major in Machine Learning, minor in Statistics
+Relevant units: Data Structures, Databases, Statistical Modelling, Machine Learning, Data Visualisation
+
+PROJECTS
+Public Transport Delay Explorer (capstone)
+•  Combined timetable and real-time feeds for 3 cities; built a Tableau dashboard and a Python delay predictor
+•  Random forest reached MAE of 1.9 minutes on held-out data
+Energy Usage Forecasting
+•  Forecast household electricity use with Prophet and LSTM models; reported results in a 15-page write-up
+Student Housing Price Scraper
+•  Python scraper and SQL database collecting 8,000 listings; analysed rent trends with pandas
+
+VOLUNTEERING
+Data Volunteer, Foodshare Community Pantry                                                  2024 – Present
+•  Cleaned donation records and built a simple Excel dashboard that helped plan weekly food drives
+Coding Mentor, Girls Who Build Meetup                                                       2025
+•  Ran four Python workshops for high-school students
+
+TECHNICAL SKILLS
+Python, SQL, R, Tableau, pandas, Excel, Git
+
+CERTIFICATIONS
+Microsoft Certified: Azure Fundamentals (AZ-900), 2025
+Google Data Analytics Professional Certificate, 2025
+
+AWARDS AND SCHOLARSHIPS
+Winner, UniHack Data Track (2025)
+Dean's Honour List (2025)
+Vice-Chancellor's Merit Scholarship (2022)
+
+ACTIVITIES
+Treasurer, University Data Science Society; weekend football

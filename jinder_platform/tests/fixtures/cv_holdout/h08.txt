@@ -1,0 +1,49 @@
+Daniela Marchetti
+Staff Engineer at Larkspur Payments
+Melbourne, Victoria, Australia · 500+ connections · Contact info
+
+About
+Staff engineer working on payment ledgers and reconciliation. I enjoy mentoring, design reviews and deleting code. Currently looking after a team of 5 engineers across two time zones.
+
+Experience
+
+Staff Engineer
+Larkspur Payments · Full-time
+Jan 2022 - Present · 4 yrs 9 mos
+Melbourne, Victoria, Australia
+Designed the double-entry ledger service that settles 12 million transactions a day.
+Led the migration from nightly reconciliation batches to a streaming design; discrepancies are now found in minutes.
+Skills: Go, Kafka, PostgreSQL
+
+Senior Software Engineer
+Mapleton Fintech · Full-time
+Aug 2017 - Dec 2021 · 4 yrs 5 mos
+Sydney, New South Wales, Australia
+Built the card-authorisation gateway in Go; p99 latency under 40 ms.
+Introduced contract testing between 14 services.
+
+Software Engineer
+Brightwater Labs · Full-time
+Jul 2013 - Jul 2017 · 4 yrs 1 mo
+Melbourne, Victoria, Australia
+Developed the invoicing module of a subscription-billing product.
+Wrote the first automated deployment scripts for the team.
+
+Education
+Eastgate University
+Bachelor of Engineering (Software Engineering) · 2009 - 2012
+
+Licenses & Certifications
+Certified Kubernetes Application Developer (CKAD)
+Cloud Native Computing Foundation
+Issued Mar 2021 · Expires Mar 2024
+Professional Scrum Master I (PSM I)
+Scrum.org
+Issued Jun 2019 · No Expiration Date
+
+Honors & Awards
+Talk: Idempotency at Scale, Southern Cross DevConf
+Issued by Southern Cross DevConf · Oct 2023
+
+Top Skills
+Go · Kafka · PostgreSQL · Kubernetes · gRPC

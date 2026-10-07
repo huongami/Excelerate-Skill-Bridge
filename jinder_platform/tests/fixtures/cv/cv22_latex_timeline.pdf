@@ -1,0 +1,60 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [7 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222 222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 500 500 334 260 334 584] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [294 294 376 589 589 942 707 202 352 352 412 619 294 352 294 294 589 589 589 589 589 589 589 589 589 589 294 294 619 619 619 589 1075 707 707 765 765 707 647 824 765 294 530 707 589 882 765 824 707 824 765 707 647 765 707 1000 707 707 647 294 294 294 497 589 352 589 589 530 589 589 294 589 589 235 235 530 235 882 589 589 589 589 352 530 294 589 530 765 530 530 530 354 275 354 619] >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /FirstChar 32 /LastChar 126 /Widths [278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222 222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 500 500 334 260 334 584] /Encoding << /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [127 /bullet /endash /emdash /fi /fl] >> >>
+endobj
+6 0 obj
+<< /Length 1978 >>
+stream
+BT /F4 24 Tf 1 0 0 1 206.31 790.00 Tm [(YUKI) -278 (TYPESET)] TJ ET
+BT /F4 12 Tf 1 0 0 1 224.13 770.00 Tm [(Machine) -278 (Learning) -278 (Engineer)] TJ ET
+BT /F4 9 Tf 1 0 0 1 165.24 755.00 Tm [(Sydney,) -278 (Australia) -278 (\200) -278 (yuki.typeset@example.test) -278 (\200) -278 (+61) -278 (400) -278 (000) -278 (022)] TJ ET
+BT /F4 13 Tf 1 0 0 1 40.00 725.00 Tm [(Experience)] TJ ET
+BT /F4 10 Tf 1 0 0 1 40.00 705.00 Tm [(2022) -278 (\200) -278 (present)] TJ ET
+BT /F4 10 Tf 1 0 0 1 150.00 705.00 Tm [(Machine) -278 (Learning) -278 (Engineer,) -278 (Fernhill) -278 (Systems)] TJ ET
+BT /F4 9 Tf 1 0 0 1 150.00 692.00 Tm [(Sydney,) -278 (Australia)] TJ ET
+BT /F4 10 Tf 1 0 0 1 150.00 679.00 Tm [(Trained) -278 (ranking) -278 (models) -278 (with) -278 (PyTorch) -278 (and) -278 (served) -278 (them) -278 (with) -278 (Kubernetes.)] TJ ET
+BT /F4 10 Tf 1 0 0 1 40.00 655.00 Tm [(2019) -278 (\200) -278 (2022)] TJ ET
+BT /F4 10 Tf 1 0 0 1 150.00 655.00 Tm [(Data) -278 (Scientist,) -278 (Quokka) -278 (Labs)] TJ ET
+BT /F4 9 Tf 1 0 0 1 150.00 642.00 Tm [(Melbourne,) -278 (Australia)] TJ ET
+BT /F4 10 Tf 1 0 0 1 150.00 629.00 Tm [(Forecast) -278 (demand) -278 (with) -278 (scikit-learn) -278 (and) -278 (tracked) -278 (runs) -278 (in) -278 (MLflow.)] TJ ET
+BT /F4 13 Tf 1 0 0 1 40.00 605.00 Tm [(Education)] TJ ET
+BT /F4 10 Tf 1 0 0 1 40.00 585.00 Tm [(2017) -278 (\200) -278 (2019)] TJ ET
+BT /F4 10 Tf 1 0 0 1 150.00 585.00 Tm [(Master) -278 (of) -278 (Science) -278 (in) -278 (Computer) -278 (Science,) -278 (University) -278 (of) -278 (Westbank)] TJ ET
+BT /F4 13 Tf 1 0 0 1 40.00 560.00 Tm [(Honours)] TJ ET
+BT /F4 10 Tf 1 0 0 1 40.00 540.00 Tm [(2018)] TJ ET
+BT /F4 10 Tf 1 0 0 1 150.00 540.00 Tm [(Gold) -278 (medal,) -278 (ICPC) -278 (Regional) -278 (Programming) -278 (Contest)] TJ ET
+BT /F4 13 Tf 1 0 0 1 40.00 515.00 Tm [(Skills)] TJ ET
+BT /F4 10 Tf 1 0 0 1 150.00 515.00 Tm [(Python,) -278 (PyTorch,) -278 (scikit-learn,) -278 (MLflow,) -278 (Kubernetes,) -278 (SQL)] TJ ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 6 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F4 5 0 R >> >> >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000637 00000 n 
+0000001159 00000 n 
+0000001762 00000 n 
+0000003792 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3938
+%%EOF

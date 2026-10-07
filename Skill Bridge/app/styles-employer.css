@@ -1,0 +1,98 @@
+/* owned by FE-Employer. Employer screens of Jinder V2: talent list and detail (level, years, certifications, awards, skill levels),
+   the skill by skill table, the job form (new fields, description template and preview), and the job overview page.
+   Colours and spacing come from the design tokens in styles.css and styles-core.css. */
+
+/* ---------- Lists: toolbar, compare note, talent card ---------- */
+.list-toolbar { row-gap: var(--sp-xs); }
+.list-toolbar .sort-select { margin: 0 0 0 auto; }
+.job-overview-link { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; }
+.job-overview-link .icon { width: 16px; height: 16px; }
+.compare-note { margin: 0; font-size: 13px; font-weight: 600; color: var(--tint-rose-ink); }
+.compare-note:not(:empty) { margin: 0 0 var(--sp-sm); }
+.cand-facts { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-xs); margin: 4px 0 0; }
+.cand-facts .chip { font-size: 12px; padding: 2px 8px; }
+.cand-updated { margin: 0; }
+.cand-card .job-meta { margin: 6px 0 var(--sp-sm); }
+.cand-main .job-tags { margin-bottom: var(--sp-xs); }
+.cand-creds { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 var(--sp-xs); }
+.cand-creds .hint { margin: 0; }
+.cred-chip { white-space: normal; font-size: 12px; padding: 2px 8px; }
+.cred-chip .icon { width: 13px; height: 13px; }
+.btn .locked-badge { margin-left: 2px; }
+.chip-need { margin-left: 6px; padding-left: 6px; border-left: 1px solid var(--hairline-alpha); font-size: 12px; font-weight: 400; }
+
+/* ---------- Skill by skill table (job needs, talent level, result) ---------- */
+.skills-wide { margin-bottom: var(--sp-lg); }
+.dash .jd-grid + .skills-wide { margin-top: var(--sp-lg); }
+.skills-wide .muted { margin-bottom: var(--sp-sm); }
+.skill-table td, .skill-table th { vertical-align: middle; }
+.skill-table .result-cell { font-weight: 600; white-space: nowrap; }
+.skill-table .result-cell .icon { width: 14px; height: 14px; margin-right: 4px; vertical-align: -2px; }
+.skill-table .result-cell .hint { margin: 0 0 0 4px; color: inherit; font-weight: 400; }
+.skill-table .res-meets .result-cell, .skill-table .res-has .result-cell { background: var(--tint-green); color: var(--tint-green-ink); }
+.skill-table .res-related .result-cell { background: var(--tint-blue); color: var(--tint-blue-ink); }
+.skill-table .res-below .result-cell { background: var(--gold-tint); color: var(--gold-ink); }
+.skill-table .res-missing .result-cell { background: var(--tint-rose); color: var(--tint-rose-ink); }
+.result-counts { list-style: none; margin: var(--sp-sm) 0; padding: 0; display: grid; gap: 4px; font-size: 14px; font-weight: 600; }
+.result-counts li { display: flex; align-items: center; gap: 6px; }
+.result-counts .icon { width: 16px; height: 16px; }
+.result-counts .res-meets, .result-counts .res-has { color: var(--tint-green-ink); }
+.result-counts .res-related { color: var(--tint-blue-ink); }
+.result-counts .res-below { color: var(--gold-ink); }
+.result-counts .res-missing { color: var(--tint-rose-ink); }
+
+/* ---------- Job form ---------- */
+.job-form { max-width: 960px; }
+.jd-editor-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-md); flex-wrap: wrap; }
+.jd-editor-head .hint { margin: 0; }
+.jd-textarea { min-height: 18rem; line-height: 1.6; }
+.jd-editor-actions { display: flex; justify-content: flex-end; margin-top: var(--sp-xs); }
+.jd-preview { margin-top: var(--sp-sm); }
+.skill-add-combo { flex: 1; min-width: 200px; }
+.skill-req-list { list-style: none; padding: 0; margin: var(--sp-xs) 0; display: grid; gap: var(--sp-xs); }
+.skill-req { display: grid; grid-template-columns: minmax(120px, 1fr) 160px auto 36px; gap: var(--sp-sm); align-items: center; padding: var(--sp-xs) var(--sp-sm); border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--canvas); }
+.skill-req-name { font-size: 14px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.skill-req-level .text-input { height: 36px; padding: 4px 32px 4px 10px; font-size: 14px; background-position: calc(100% - 16px) 15px, calc(100% - 11px) 15px; }
+/* ".field label" makes a label a block. A check box row needs a flex row again (gap between the box and the text). */
+.skills-editor .check, .award-editor .check { display: flex; align-items: center; gap: var(--sp-xs); margin: 0; font-size: 14px; font-weight: 400; color: var(--body); }
+.skill-req-must { white-space: nowrap; }
+#jf-years-hint { margin: 0 0 var(--sp-md); }
+.skill-req .btn-icon { height: 36px; }
+.cert-editor, .award-editor { border: 0; padding: 0; margin: 0 0 var(--sp-md); min-width: 0; }
+.cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-lg); margin-top: var(--sp-xs); }
+.cert-col { min-width: 0; }
+.cert-col .field-label { display: block; }
+.cert-col .input-row > [data-cert-combo] { flex: 1; min-width: 0; }
+.cert-col .chip-edit .chip { white-space: normal; }
+.award-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--sp-xs) var(--sp-md); margin-top: var(--sp-xs); }
+
+/* ---------- Job overview ---------- */
+.jo-head { align-items: flex-start; }
+.jo-chips { margin: var(--sp-sm) 0 0; }
+.jo-chips .hint { margin: 0; }
+.jo-banner { margin-bottom: var(--sp-lg); }
+.jo-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--sp-lg); margin-bottom: var(--sp-lg); }
+.jo-grid { margin-bottom: var(--sp-lg); }
+.jo-grid .panel > h2 { margin-bottom: var(--sp-sm); }
+.jo-facts { margin-top: var(--sp-sm); }
+.fact-empty { font-weight: 400; }
+.jo-stats .cov-mini { align-items: flex-start; }
+.interest-list { margin: var(--sp-sm) 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-xs) var(--sp-md); }
+.interest-list dt { font-size: 12px; color: var(--muted); }
+.interest-list dd { margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--ink); }
+.jo-lock { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-xs); margin-top: var(--sp-sm); }
+.jo-lock .meta { margin: 0; }
+.chip-row { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-row .chip { white-space: normal; }
+.job-overview .jd-sub:first-of-type { margin-top: var(--sp-xs); }
+
+@media (max-width: 1024px) {
+  .cert-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .list-toolbar .sort-select { margin-left: 0; }
+  .skill-req { grid-template-columns: 1fr auto; }
+  .skill-req-name { grid-column: 1 / -1; }
+  .skill-req .btn-icon { width: 44px; height: 44px; }
+  .skill-table .result-cell { white-space: normal; }
+}

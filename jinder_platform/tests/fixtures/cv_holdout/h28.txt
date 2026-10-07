@@ -1,0 +1,34 @@
+Fatima Al-Sayed
+Lead Data Scientist
+
+fatima.alsayed@example.test | +61 400 000 039 | Hobart, TAS
+
+SUMMARY
+Data scientist who ships models into clinical-research workflows. 5 years of Python experience, plus R for statistical modelling and reporting.
+
+EXPERIENCE
+
+Lead Data Scientist | Wombat Genomics | Sep 2023 – Present
+- Lead a team of 4 scientists building variant-prioritisation models for rare-disease research.
+- Introduced model cards and reproducible training pipelines (MLflow, Docker).
+- Cut the time from new sequencing batch to ranked variant list from 3 days to 6 hours.
+
+Data Scientist | Pinecrest Bank | Mar 2019 – Aug 2023
+- Built credit-risk and early-arrears models (gradient boosting, logistic regression) used by the collections team.
+- Replaced a spreadsheet scorecard with a Python service; reduced manual reviews by 30 percent.
+
+Freelance Data Science Consultant (contract) | Self-employed | Jun 2020 – Dec 2022
+- Demand forecasting for two regional food producers (Prophet, scikit-learn).
+- Churn analysis for a subscription start-up; delivered a dashboard and a 20-page report.
+
+EDUCATION
+Master of Science (Statistics), Ashgrove University, 2016 – 2018
+
+CERTIFICATIONS
+Microsoft Certified: Azure Data Scientist Associate (DP-100), 2022
+
+COMPETITIONS
+2nd Place, Australasia DataFest Challenge (2022)
+
+SKILLS
+Python, R, PyTorch, scikit-learn, SQL, Spark

@@ -1,0 +1,41 @@
+TAKUMI OKABE-REYES
+Applied scientist: language models, retrieval, evaluation
+Sydney NSW | takumi.or@example.test | +61 400 000 023
+
+About
+I turn research ideas into things that run in production and measure whether they helped. Hoping to move into a Research Scientist role
+where I can spend more time on new methods and still ship.
+
+Experience
+
+Applied Scientist, Lumora Labs, Q1 2024 - now
+o Own the retrieval and re-ranking stack behind the support assistant (12 million queries a month)
+o Built an evaluation harness with 3,000 labelled queries; offline metrics now predict online resolution rate within 2 points
+o Applied Principal Component Analysis and UMAP to compress 768-d embeddings, cutting index size by 60% at the same recall
+o Lead the quarterly model review with product and legal
+Tools: PyTorch, Hugging Face Transformers, CUDA, SQL
+
+Research Engineer, Orbitrail, Q2 2021 - Q4 2023
+o Trained multilingual text classifiers on 40 languages with a distillation pipeline; 5x cheaper to serve
+o Co-authored two workshop papers with the research team
+o Built the experiment tracker used by 20 researchers
+Tools: PyTorch, Python, Kubernetes
+
+Data Scientist, Moonbeam Foods, Q3 2019 - Q1 2021
+o Forecasting and promotion-effect models for the fresh category
+o Shifted the team from notebooks to tested, scheduled pipelines
+Tools: Python, scikit-learn, SQL
+
+Machine Learning Intern, Tessera Vision, summer 2018
+o Prototype defect classifier on factory camera images
+
+Education
+MSc Computer Science (Machine Learning), Eastern Plains University, 2017 - 2019
+BSc Mathematics, 2013 - 2016
+
+Awards and Papers
+Best Paper Award, Workshop on Efficient NLP (2022)
+Kaggle Silver Medal, Product Matching Challenge (2022)
+
+Skills
+PyTorch, Python, Hugging Face Transformers, CUDA, SQL, Kubernetes

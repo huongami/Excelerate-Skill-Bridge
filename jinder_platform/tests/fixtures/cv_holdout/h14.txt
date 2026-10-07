@@ -1,0 +1,28 @@
+Dr. Priya Raman, Principal Engineer
+priya.raman@example.test | +61 400 000 024 | Melbourne, VIC
+
+SUMMARY
+Systems engineer focused on storage and messaging infrastructure for latency-sensitive services. Open to Software Architect roles where I can set technical direction across several teams.
+
+EXPERIENCE
+
+Principal Engineer, Cobalt Quay Systems — since 2018
+- Technical owner of the message-routing layer: 2 million messages a second at peak, p99 under 15 ms.
+- Authored the cross-team RFC process and reviewed about 60 design documents a year.
+- Mentor four senior engineers.
+
+Senior Software Engineer, Mulberry Digital, 2012–2018
+- Wrote the C++ storage engine behind the company's time-series product.
+- Led the move from in-house RPC to gRPC, removing 20k lines of custom code.
+
+EDUCATION
+PhD (Distributed Systems), Ashgrove University, 2008 – 2012
+
+PATENTS
+Patent: Adaptive request batching in distributed queues (2019)
+
+CERTIFICATIONS
+TOGAF 9 Certified (2016)
+
+SKILLS
+C++, Rust, Distributed Systems, Kafka, Linux

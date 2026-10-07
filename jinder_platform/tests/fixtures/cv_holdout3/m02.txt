@@ -1,0 +1,42 @@
+Anselm Vuković
++1 555 000 0002 | anselm.vukovic@example.test | linkedin.com/in/anselmvukovic | github.com/avukovic
+
+Education
+Brookfield State University Austin, TX
+Master of Science in Computer Science (Machine Learning track), GPA 3.9/4.0 Aug. 2017 – May 2019
+Lakeshore Institute of Technology Chicago, IL
+Bachelor of Science in Mathematics and Computer Science Aug. 2013 – May 2017
+
+Experience
+Machine Learning Engineer Aug. 2021 – Present
+Cobalt Retail Analytics Austin, TX
+• Own the demand-forecasting platform for 2,400 stores; models are retrained nightly through Airflow DAGs
+• Reduced forecast WAPE from 21.4% to 16.9% by adding hierarchical reconciliation and promotion-aware features
+• Built a model registry and canary-deployment workflow on MLflow and Kubernetes, cutting model release
+time from two weeks to one day
+• Wrote a Python feature-store client library that is now used by five teams
+Software Engineer Jun. 2019 – Jul. 2021
+Pinecrest Systems Austin, TX
+• Developed backend services in Python and Java for an order-management product used by 300+ B2B customers
+• Profiled and rewrote slow PostgreSQL queries, bringing nightly invoice generation from 3 hours to 25 minutes
+• Prototyped a cross-sell recommender with scikit-learn that lifted revenue by 6% in an A/B test
+
+Projects
+feature-store-lite | Python, Redis, FastAPI 2022 – Present
+• Lightweight open-source feature store with point-in-time joins; 410 stars and 9 external contributors
+Store Sales Forecasting | Python, LightGBM, Kaggle Feb. 2022 – Mar. 2022
+• Gradient-boosted ensemble with lag and holiday features; finished in the top 4% of 600+ teams
+
+Technical Skills
+Languages: Python, SQL, C++, Bash
+ML/AI: PyTorch, TensorFlow, scikit-learn, XGBoost, LightGBM
+MLOps: MLflow, Airflow, Kubernetes, Docker, AWS SageMaker
+Data: PostgreSQL, Spark, Redis
+
+Certifications
+TensorFlow Developer Certificate, Google, 2020
+AWS Certified Machine Learning - Specialty, Amazon Web Services, 2022
+
+Honors and Awards
+Silver Medal, Kaggle Store Sales Forecasting (2022)
+ACM ICPC Regional Contest, 9th Place (2018)

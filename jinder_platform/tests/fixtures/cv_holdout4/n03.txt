@@ -1,0 +1,57 @@
+CURRICULUM VITAE
+
+CHIDERA N. OKAFOR-DEMO
+Address: 14 Sample Close, Off Test Avenue, Lagos, Nigeria
+Phone: +234 000 555 0171  |  Email: chidera.okafor@example.test
+Nationality: Nigerian    State of origin: Anambra    Marital status: Single
+
+CAREER SUMMARY
+Result-oriented backend developer with over 9 years of experience designing and
+maintaining payment APIs and transaction platforms for fintech companies in Nigeria.
+Strong in Java, Spring Boot and PostgreSQL. Proven record of delivering high-availability
+systems, handling production incidents and mentoring junior developers.
+
+KEY COMPETENCIES
+- Java and Spring Boot microservices
+- Designing RESTful APIs for mobile wallets and card processors
+- PostgreSQL schema design and query tuning
+- Apache Kafka for event-driven payment workflows
+- Docker, Jenkins pipelines and Git
+- Troubleshooting production incidents under pressure
+
+WORK EXPERIENCE
+
+Senior Backend Developer                                              2021 - Date
+Lagos Fintech Demo Ltd, Victoria Island, Lagos
+Duties:
+- Led the redesign of the settlement service handling 2 million transactions daily
+- Reduced average API response time from 900 ms to 240 ms
+- Introduced Kafka topics for transaction events and reconciliation
+- Reviewed code, mentored 4 junior developers
+
+Software Developer                                                    2017 - 2021
+Kano Digital Works Ltd, Kano
+Duties:
+- Built and maintained loan-processing REST APIs in Java
+- Wrote SQL reports and stored procedures for the finance team
+- Set up Jenkins build jobs and Docker images for 6 services
+
+EDUCATION
+B.Sc. Computer Science (Second Class Upper), University of Demo, Enugu, 2012 - 2016
+Completed National Youth Service Corps (NYSC), 2016/2017 batch
+WASSCE, Demo Comprehensive College, 2011
+
+CERTIFICATIONS
+Oracle Certified Professional: Java SE 17 Developer (Oracle, 2023)
+Training attended: Project Management Basics, Demo Academy Lagos (certificate of attendance, 2019)
+
+ACHIEVEMENTS
+- Best Staff of the Year, 2023 (Lagos Fintech Demo Ltd)
+- Best Graduating Student, Department of Computer Science, 2016
+
+TECHNICAL SKILLS
+Java, Spring Boot, PostgreSQL, Apache Kafka, Docker, Jenkins, Git, Linux
+
+REFEREES
+1. Dr. Ngozi Samplewood, Head of Engineering, Lagos Fintech Demo Ltd, +234 000 555 0188
+2. Mr. Bala Testman, Managing Director, Kano Digital Works Ltd, +234 000 555 0199

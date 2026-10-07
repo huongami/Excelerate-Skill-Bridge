@@ -1,0 +1,42 @@
+Beatriz Calderón-Hughes
+Houston, TX  |  +1 713 000 0028  |  beatriz.calderon@example.test  |  linkedin.com/in/beatrizcalderonhughes
+
+SUMMARY
+Data scientist with 9 years of experience applying machine learning to energy operations. Built forecasting and
+predictive-maintenance models that run in production, and grew from analyst to team lead inside one company.
+
+SKILLS
+Python, SQL, scikit-learn, XGBoost, Spark, Databricks, Azure Machine Learning
+
+EXPERIENCE
+
+Marlowe Ridge Energy, Houston, TX                                                         Aug 2018 – Present
+
+Lead Data Scientist                                                                       Jan 2024 – Present
+•  Lead a team of seven data scientists and two ML engineers working on turbine health and load forecasting
+•  Set modelling standards, review all models before release and run the monthly model-risk review
+•  Delivered a predictive-maintenance model that prevented an estimated 14 unplanned outages in its first year
+
+Senior Data Scientist                                                                     Jan 2021 – Dec 2023
+•  Built the day-ahead load-forecasting model (XGBoost with weather features); MAPE improved from 6.8% to 4.1%
+•  Moved model training to Databricks and Azure Machine Learning with automated retraining
+
+Data Scientist                                                                            Aug 2018 – Dec 2020
+•  Developed the first anomaly-detection models for turbine sensors using scikit-learn and Spark
+•  Automated 25 weekly reports in Python, replacing a manual Excel process
+
+Pembroke & Sloane Advisory, Houston, TX                                                   Sep 2017 – Jul 2018
+Graduate Analyst
+•  Prepared market and pricing analyses for energy clients using SQL and Excel
+
+EDUCATION
+MS in Applied Statistics, Gulf Coast University                                           2015 – 2017
+BS in Mathematics, Gulf Coast University                                                  2011 – 2015
+
+CERTIFICATIONS
+Microsoft Certified: Azure Data Scientist Associate (DP-100), 2022
+Databricks Certified Machine Learning Associate, 2023
+
+AWARDS AND TALKS
+Values in Action Award, Marlowe Ridge Energy (2022)
+Speaker, Texas Data Science Summit (2023): "Forecasting turbine failures in production"

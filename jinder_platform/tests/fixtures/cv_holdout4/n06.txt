@@ -1,0 +1,56 @@
+CURRICULUM VITAE OF THABO M. SAMPLE-DEMO
+
+PERSONAL DETAILS
+ID number:           000000 0000 000 (available on request)
+Nationality:         South African
+Driver's licence:    Code 08 (own transport)
+Languages:           English, Afrikaans, isiZulu
+Contact:             +27 00 555 0142 | thabo.sample@example.test
+Residence:           Bellville, Western Cape (Demo)
+Availability:        One calendar month notice
+
+CAREER PROFILE
+Reliable IT support professional with more than 12 years in end-user and service desk
+support for a logistics group. Calm under pressure, good with difficult users, strong
+communication skills and thorough documentation.
+
+EMPLOYMENT HISTORY
+
+Level 2 Service Desk Analyst                       December 2018 - Present
+Cape Harbour Logistics Demo (Pty) Ltd, Cape Town
+Reporting to: IT Service Delivery Manager
+Duties:
+  - Resolve escalated incidents from 1,200 users across 14 branches
+  - Troubleshooting of Windows 11, Microsoft 365, VPN, DNS and printer problems
+  - Manage accounts and groups in Azure AD with PowerShell scripts
+  - Write knowledge base articles; first-time-fix rate raised from 61% to 78%
+  - Coach three level 1 agents and run the weekly incident management review
+Reason for leaving: Seeking a more technical role
+
+IT Technician                                      February 2014 - November 2018
+Karoo Demo Retail Group (Pty) Ltd, Worcester
+Reporting to: Branch IT Manager
+Duties:
+  - Installed and maintained PCs, tills, switches and Wi-Fi in 30 stores
+  - Backup checks and patching of 12 Windows servers
+  - Asset register kept in Excel
+Reason for leaving: Company relocated its IT team
+
+QUALIFICATIONS
+National Diploma: Information Technology, Demo University of Technology, 2013
+Matric (Grade 12), Test Secondary School, 2009
+
+CERTIFICATES
+CompTIA A+ (2015)
+ITIL 4 Foundation (2021)
+Microsoft Certified: Azure Fundamentals (AZ-900), 2023
+First Aid Level 1 (2022), workplace first aider
+CompTIA Network+: planned for 2027
+
+ACHIEVEMENTS
+Employee of the Month, March 2022
+Top Performer 2020, Cape Harbour Logistics Demo
+
+REFERENCES
+Mr. Pieter Voorbeeld, IT Service Delivery Manager, +27 00 555 0177
+Mrs. Naledi Proefman, Branch IT Manager, +27 00 555 0188

@@ -1,0 +1,63 @@
+STANISŁAW KACZMAREK
+Embedded and firmware engineer
+Geelong VIC | stanislaw.k@example.test | +61 400 000 026
+
+Employment history
+
+Firmware Engineer (Contract), Zephyrine Devices — Aug 2025 to Present
+• Bring-up and low-power tuning of a BLE soil-moisture sensor; battery life from 14 to 26 months
+• Wrote the over-the-air update module with signed images and rollback after a failed boot
+• Set up hardware-in-the-loop tests on a bench of 8 boards, run on every merge
+• Wrote the production flashing and calibration tool used by the contract manufacturer
+Technologies: C, Zephyr RTOS, BLE, Python (test tools)
+
+Embedded Systems Engineer (part-time), Keystone Rail — Jan 2021 to Present
+• Two days a week on the trackside axle-counter firmware (safety-related, IEC 61508 process)
+• Reviewed 300+ change requests and maintained the traceability matrix
+• Introduced static analysis (MISRA checks) into the build
+• Support the field team with log analysis when a unit trips in the field
+Technologies: C, ARM Cortex-M, CAN bus, Polyspace
+
+Embedded Software Engineer, Ostrava Digital — Mar 2016 to Dec 2020
+• Developed the gateway firmware for an industrial IoT product shipped to 4,000 sites
+• Moved the team from a bare-metal super loop to FreeRTOS and halved field-reported hangs
+• Wrote the manufacturing test tool used on the production line
+• Ran the monthly firmware release and kept the release notes for the support team
+• Worked with the hardware team on two board revisions, including a brown-out fix
+Technologies: C, C++, FreeRTOS, Embedded Linux, Modbus
+
+Firmware Developer, Tidewater Medical Devices — Aug 2012 to Feb 2016
+• Infusion pump firmware: motor control, alarms and the user interface
+• Took part in two regulatory audits with complete design history files
+• Wrote unit tests for the dosing algorithm that found an off-by-one rounding error
+• Spent a month in a hospital ward watching nurses use the pump, which changed the alarm design
+Technologies: C, ARM Cortex-M, IEC 62304 process
+
+Electronics Technician, Redpine Mining — Jan 2010 to Jul 2012
+• Repaired and calibrated underground communications and gas-monitoring equipment
+• Wrote my first embedded code: a logger for conveyor vibration
+
+Apprentice Electronics Technician, Mapleton Controls — Feb 2007 to Dec 2009
+• Four-year apprenticeship, finished early after passing all trade exams
+• PLC wiring, panel building and commissioning
+
+Weekend Pizza Delivery Driver (casual), Corner Slice Pizza — Mar 2005 to Jan 2007
+• Evenings and weekends while at school
+
+Education
+Bachelor of Engineering (Electronics), Bay Technical University, part-time, 2008 – 2013
+
+Volunteering
+Mentor, high-school robotics team, Bay Technical University outreach (2017 – 2019)
+
+Side project
+Open-source e-paper weather display with a solar-powered ESP32 (Jan 2022 – Aug 2022), published on GitHub
+
+Languages
+Polish (native), English (fluent)
+
+Patents
+Low-power sleep scheduler for battery sensors (AU 2018901234), granted 2018
+
+Skills
+C, C++, FreeRTOS, ARM Cortex-M, Embedded Linux, CAN bus, Python

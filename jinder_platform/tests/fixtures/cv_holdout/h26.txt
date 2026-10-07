@@ -1,0 +1,29 @@
+GERALD WHITFIELD
+Software Developer
+gerald.whitfield@example.test  |  +61 400 000 037  |  Hobart, TAS
+
+SUMMARY
+Software developer with 22 years of experience in insurance and government systems. Aiming to become a Solutions Architect, designing integrations between long-lived core systems and cloud platforms.
+
+EMPLOYERS
+
+Software Developer — Marlin Insurance Group
+- Maintain the policy-administration platform (Java, Oracle) and its SOAP and REST interfaces.
+- Moved batch settlement jobs to a message queue; the overnight window shrank from 5 hours to 90 minutes.
+- Mentor new graduates and review all database changes.
+
+Analyst Programmer — Tasman Revenue Office
+- Built the electronic lodgement module for business activity statements.
+- Supported the move from mainframe reports to a data warehouse.
+
+Programmer — Kingfisher Systems
+- Wrote and tested C and SQL components for a stock-control product.
+
+QUALIFICATIONS
+Diploma of Computing, Hobart Technical University, 2002
+
+CERTIFICATIONS
+Oracle Certified Professional Java SE 8 Programmer - Oracle, 2017
+
+SKILLS
+Java, C#, Oracle, SQL, SOAP

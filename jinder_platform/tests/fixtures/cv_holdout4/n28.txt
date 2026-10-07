@@ -1,0 +1,53 @@
+RESUME
+
+KARTHIK VENKATARAMAN-DEMO
+Mobile: +91 00000 55502 | Email: karthik.venkataraman@example.test
+Pune, Maharashtra (Demo), India
+
+CAREER OBJECTIVE
+To work in a challenging environment where my technical and leadership skills help the
+organisation grow.
+
+PROFESSIONAL SUMMARY
+- 8 years of experience in ServiceNow design, development and delivery
+- Delivered ITSM, ITOM and HRSD implementations for 11 clients
+- Strong in JavaScript, REST integrations, Scrum and requirement analysis
+
+WORK EXPERIENCE
+Halcyon IT Services Demo Pvt. Ltd., Pune (Jul 2018 - Present)
+
+Designation history in the company:
+  ServiceNow Technical Lead              Jan 2024 - Present
+  Senior ServiceNow Developer            Jan 2021 - Dec 2023
+  ServiceNow Developer                   Jul 2018 - Dec 2020
+
+Roles and responsibilities (current)
+- Lead a team of 7 developers and 2 testers across three client accounts
+- Own the technical design, code reviews and release plans for ITSM incident management, change and request flows
+- Build integrations with REST and SOAP APIs, Flow Designer and scripted business rules in JavaScript
+- Gather requirements in workshops with process owners and write user stories
+- Mentoring of new joiners; run the weekly knowledge sharing session
+- Version control with Git and instance migration with update sets
+
+Key projects
+1. Global ITSM rollout for a manufacturing client (14,000 users)
+2. HR service delivery portal for a bank (6 countries)
+3. Event management and CMDB discovery for a telecom client
+
+ACADEMIC QUALIFICATION
+B.E. Computer Engineering, Demo University of Pune, 2014 - 2018
+
+CERTIFICATIONS
+ServiceNow Certified System Administrator (CSA), 2019
+ServiceNow Certified Application Developer (CAD), 2021
+ServiceNow Certified Implementation Specialist - IT Service Management, 2022
+ITIL 4 Managing Professional - training attended, exam not taken
+
+ACCOMPLISHMENTS
+Star Performer Award, Q4 2022
+Spot Award, 2020
+Winner, Halcyon Hackathon, 2021
+
+DECLARATION
+I hereby declare that the above information is true to the best of my knowledge.
+Place: Pune                                   Date: 06/10/2026

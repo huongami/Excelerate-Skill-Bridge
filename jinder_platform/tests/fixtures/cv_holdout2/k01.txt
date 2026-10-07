@@ -1,0 +1,71 @@
+Mateusz Wójcik
+Perth, Western Australia | mateusz.wojcik@example.test | +61 400 000 001
+
+Career Snapshot
+Business intelligence developer who turns messy operational data into reports people actually open.
+Eight years in insurance and finance reporting, now drawn to the engineering side of the data stack:
+pipelines, orchestration and warehouse design. My next step is a Data Engineer position where I can
+build the pipelines behind the dashboards I have been maintaining for years.
+
+Roles Held
+
+Fernhill Insurance, Perth — Senior BI Developer (Feb 2023 to Present)
+o Own the claims reporting model: 140 measures, 22 certified datasets, about 600 weekly users
+o Cut the nightly refresh from one 5-hour SSIS package to nine parallel loads (70 minutes)
+o Mentor two junior developers and run the fortnightly report review with the claims team
+o Agreed a data dictionary with Finance, Claims and Underwriting after six workshops
+Technologies: SQL Server, SSIS, Power BI, DAX, Azure Data Factory
+
+Fernhill Insurance, Perth — BI Developer (Aug 2019 to Jan 2023)
+o Built the first self-service sales dashboards; weekly users grew from 15 to 220
+o Rewrote 60+ legacy stored procedures, removing cursors and duplicated logic
+o Introduced Git and code review for the reporting team (there was no version control before)
+o Moved the month-end pack from Excel macros to a governed Power BI report
+Tech: T-SQL, Power BI, SSIS
+
+Harbourline Credit Union, Perth — Reporting Analyst, part-time (Mar 2017 to Sep 2019)
+o Two days a week while studying part-time
+o Produced the monthly board pack and automated 11 Excel reports with VBA
+o Reconciled loan books against the general ledger every quarter
+
+Oakridge Retail Systems, Fremantle — Junior SQL Developer (Jun 2015 to Feb 2017)
+o Maintained store-level sales databases for 40 retail clients
+o Wrote the nightly reconciliation job that caught pricing errors before the stores opened
+o Answered ad-hoc data requests from account managers
+
+Pellam Logistics, Perth — Data Entry Clerk, casual (Jan 2014 to May 2015)
+o Keyed and checked consignment records, then taught myself SQL to audit them
+
+Corvane Schools Trust, Perth — IT Support Technician, 6-month contract (Jul 2013 to Dec 2013)
+o Imaged laptops, reset accounts and kept the helpdesk queue under 24 hours
+
+Mill Street Coffee, Perth — Barista, casual (Feb 2011 to Dec 2012)
+o Weekend and holiday shifts during university
+
+Bayview Cinema, Perth — Usher, casual (Mar 2009 to Jan 2011)
+o Evening and weekend shifts while at school and then university
+
+Volunteering
+Code Club Mentor, Eastside Library (2018 – 2021): weekly after-school Scratch and Python sessions for ages 10 to 13
+
+Side Projects
+Bus-O-Meter, an open-data bus tracker (Jan 2020 – Nov 2022): Python scraper, SQLite and a small Flask page
+Not employment, just a hobby that taught me about scheduling and data quality.
+
+Formal Learning
+BSc Information Systems (a 3-year degree), University of Western Ridge, 2008 – 2011
+Graduate Diploma in Data Analytics, Western Ridge Online, 2018 – 2019 (part-time)
+
+Credentials
+- Azure DP-203, renewed March 2026, valid until March 2027
+- PL-300 Power BI Data Analyst Associate, 2020
+
+Papers & Prizes
+- Best Paper, Perth Data Summit 2021: "Semantic models at scale: lessons from claims reporting"
+- Employee of the Quarter, Fernhill Insurance (Q2 2022)
+
+Toolbox
+T-SQL, SSIS, Power BI, DAX, Azure Data Factory, Python (pandas), Git
+
+Aims
+A role where I design and run data pipelines end to end, with a team that reviews each other's code.

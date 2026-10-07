@@ -1,0 +1,37 @@
+chiara bellini — mlops engineer
+Turin → Melbourne | chiara.bellini@example.test | +61 400 000 025
+
+What I do
+I make machine learning boring: reproducible training, one-click deploys, honest monitoring.
+
+Roles
+MLOps Engineer, Lantern Health, Nov 2022 – current
+– Built the model platform used by 9 data science teams: feature store, registry, canary deploys on Kubernetes
+– Cut the time from approved model to production from 6 weeks to 2 days
+– Added drift monitoring with automatic rollback; two bad models were stopped before reaching patients
+Tech: Kubernetes, Kubeflow, MLflow, Terraform, Python
+
+DevOps Engineer, Pinecrest Software, Mar 2019 – Oct 2022
+– Ran CI/CD for 60 services on GitLab and Argo CD
+– Introduced infrastructure as code for all non-production environments
+– Took part in a rotating on-call; 3 major incidents, all with written post-mortems
+Tech: Docker, Terraform, GitLab CI, Airflow
+
+Build Engineer (contract), Redpine Mining, Aug 2018 – Feb 2019
+– Contract to stabilise a flaky build of the fleet management software; build success rate from 70% to 98%
+
+Volunteer work
+Maintainer of the open-source project featherml, a small feature store library (2021 – present)
+
+Education
+Laurea in Computer Engineering, 2012 – 2017
+
+Certifications
+Google Professional Machine Learning Engineer (2023)
+Certified Kubernetes Application Developer (CKAD), 2021
+
+Recognition
+Open Source Maintainer of the Year, Datakite community (2024)
+
+Toolbox
+Kubernetes, Kubeflow, MLflow, Terraform, Python, Airflow, Docker

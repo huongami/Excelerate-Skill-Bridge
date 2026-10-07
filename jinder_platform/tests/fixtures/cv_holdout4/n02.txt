@@ -1,0 +1,56 @@
+CURRICULUM VITAE
+
+[Photo]
+
+Camille Dufresne-Demo
+34 years old - Married, 2 children
+12 rue de l'Exemple, 00000 Villetest
++33 0 00 00 00 00 | camille.dufresne@example.test
+Driving licence: category B
+
+BI DEVELOPER
+Power BI - SQL - data warehousing
+
+PROFESSIONAL EXPERIENCE
+
+Since October 2023        BI Developer
+                          Societe Lumiere Conseil, Lyon-Demo
+  Design of Power BI dashboards for retail and logistics clients (12 projects)
+  Modelling of star schema data marts in Microsoft SQL Server
+  SSIS ETL packages for the nightly loads, about 3 million rows per day
+  Migration of 80 Excel reports to Power BI Service with row-level security
+  Training of 25 business users, support during month-end closing
+
+2022 - 2023               Reporting Analyst
+                          Banque Fictive de l'Ouest, Nantes-Demo
+  Monthly management reporting with Excel and VBA macros
+  First dashboards in Tableau Desktop for the credit risk team
+  Reconciliation of figures between finance and risk
+
+EDUCATION
+
+2019 - 2021    Master's degree in Information Systems
+               Universite Imaginaire de Test
+2016 - 2019    Bachelor's degree in Applied Mathematics (Licence)
+               Universite Imaginaire de Test
+
+TRAINING AND CERTIFICATES
+
+2024   Microsoft Certified: Power BI Data Analyst Associate (PL-300)
+       Issued by Microsoft, credential ID DEMO-0000-1234
+2023   Training: Dimensional modelling with Kimball method, 3 days (attendance only)
+2021   TOEIC 910 points
+
+COMPUTER SKILLS
+Power BI, DAX, Power Query, Microsoft SQL Server, SSIS, Tableau
+Excel (pivot tables, VBA), SQL, data modelling, data warehouse design
+
+LANGUAGES
+French: native
+English: fluent (TOEIC 910)
+Spanish: school level
+
+INTERESTS
+Rowing (treasurer of the local club), chess, cooking
+
+Page 1 of 1

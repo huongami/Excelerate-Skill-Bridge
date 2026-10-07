@@ -1,0 +1,123 @@
+/* owned by FE-Talent. Talent screens of Jinder V2: list toolbar and pager spacing, job card facts and compare box, job detail facts,
+   certifications and awards, "Your path to this job", and the new onboarding fields (certifications, awards, levels, "from your CV" hints).
+   Colours and spacing come from the design tokens in styles.css (and the tokens of styles-core.css). No colour is the only signal. */
+
+/* ---------- Lists with a sort and a pager (R5, R6) ---------- */
+.list-toolbar { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: var(--sp-sm); margin-top: var(--sp-sm); }
+.list-toolbar:empty { display: none; }
+.list-toolbar .sort-select { margin-bottom: 0; }
+[data-list][aria-busy="true"] { opacity: 0.55; transition: opacity .15s var(--ease); }
+.panel h2[tabindex="-1"] { scroll-margin-top: var(--sp-xl); }
+.recs-more { margin-top: var(--sp-md); font-size: 14px; }
+.recs-more .text-link { font-weight: 600; }
+
+/* ---------- Job card: level, experience, work mode, compare box (R2, R9) ---------- */
+/* A long code chip (ANZSCO ...) or a long title must wrap on a small screen, not push the card out of the page */
+.job-card, .job-main, .job-score, .card-foot { min-width: 0; }
+.job-main .chip { white-space: normal; }
+.job-card h3, .job-meta { overflow-wrap: anywhere; }
+.job-facts { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--sp-sm); padding: 0; }
+.job-facts .chip { font-size: 12px; padding: 2px 8px; }
+.card-actions .compare-pick { margin: 0 var(--sp-xs) 0 0; color: var(--body); min-height: 32px; font-weight: 500; }
+.compare-note { margin: 0 var(--sp-xs); color: var(--body); font-size: 12px; }
+.compare-note:empty { display: none; }
+
+/* The Compare button of the job detail. Pressed = in the basket: tinted, with a check mark (not colour alone). */
+.compare-btn .icon:last-child { display: none; }
+.compare-btn[aria-pressed="true"] { background: var(--accent-tint); border-color: var(--accent); color: var(--ink); }
+.compare-btn[aria-pressed="true"] .icon:last-child { display: inline-block; color: var(--accent); }
+.jd-actions .compare-btn { height: 44px; padding: 12px 18px; }
+
+/* ---------- Job detail: facts, certifications, awards, the description box (R2, R4) ---------- */
+.jd-grid > * { min-width: 0; }
+.jd-main { display: grid; gap: var(--sp-lg); }
+.jd-about .jd-view { max-height: min(32rem, 70vh); margin-top: var(--sp-sm); }
+.fact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); gap: var(--sp-md) var(--sp-lg); margin: var(--sp-md) 0 0; }
+.fact-grid > div { display: grid; gap: 2px; min-width: 0; }
+.fact-grid dt { font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--body); }
+.fact-grid dd { margin: 0; font-size: 15px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.cred-group { margin: 0 0 var(--sp-sm); }
+.cred-label { margin: 0 0 4px; font-size: 13px; font-weight: 600; color: var(--ink); }
+.cred-list { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.cred-list .chip { white-space: normal; }
+.cred-none { margin: 0; font-size: 14px; }
+
+/* ---------- "Your path to this job" (R10, D7) ---------- */
+.path-summary { list-style: none; display: flex; flex-wrap: wrap; gap: var(--sp-xs); margin: var(--sp-md) 0 0; padding: 0; }
+.path-summary .chip { white-space: normal; font-size: 13px; }
+.path-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: var(--sp-xl); margin-top: var(--sp-lg); align-items: start; }
+.path-chart > .radar { margin: 0 auto var(--sp-md); }
+.path-table th, .path-table td { overflow-wrap: anywhere; }
+.path-table td { font-variant-numeric: tabular-nums; }
+.path-status { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; white-space: nowrap; }
+.path-status .icon { width: 16px; height: 16px; }
+.path-status-fit { color: var(--tint-green-ink); }
+.path-status-above { color: var(--tint-blue-ink); }
+.path-status-gap { color: var(--tint-rose-ink); }
+.path-lists { display: grid; gap: var(--sp-lg); min-width: 0; }
+.path-col .jd-sub { margin-top: 0; }
+.path-list { list-style: none; display: grid; gap: var(--sp-xs); margin: 0; padding: 0; }
+.path-item { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: var(--sp-xs); padding: var(--sp-sm); border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--canvas); }
+.path-fit { border-left: 3px solid var(--success); }
+.path-gap { border-left: 3px solid var(--tint-yellow-ink); }
+.path-icon { line-height: 0; padding-top: 3px; }
+.path-icon .icon { width: 16px; height: 16px; }
+.path-fit .path-icon { color: var(--tint-green-ink); }
+.path-gap .path-icon { color: var(--tint-yellow-ink); }
+.path-body { min-width: 0; }
+.path-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; font-size: 14px; color: var(--ink); overflow-wrap: anywhere; }
+.path-kind { font-size: 11px; padding: 1px 6px; }
+.path-required { font-size: 11px; font-weight: 600; padding: 1px 6px; background: var(--canvas); color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.path-detail { margin: 2px 0 0; font-size: 13px; color: var(--body); overflow-wrap: anywhere; }
+.path-months { display: flex; align-items: center; gap: 4px; margin: 2px 0 0; font-size: 13px; font-weight: 600; color: var(--ink); }
+.path-months .icon { width: 14px; height: 14px; }
+.path-note { margin: 2px 0 0; overflow-wrap: anywhere; }
+.path-empty, .path-empty-note { margin: var(--sp-xs) 0 0; font-size: 14px; }
+
+/* ---------- Profile card: skill levels ---------- */
+.pf-skill-level { font-weight: 400; }
+
+/* ---------- Onboarding: "from your CV" hints, the summary, level, exact years, certifications, awards ---------- */
+.cv-hint { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 12px; color: var(--body); }
+.cv-hint:empty { display: none; }
+.cv-hint .icon { width: 12px; height: 12px; color: var(--accent); }
+.cv-hint-missing { color: var(--body); }
+.cv-found { margin: 0 0 var(--sp-md); padding: var(--sp-md); border: 1px solid var(--hairline); border-radius: var(--r-lg); background: var(--surface-subtle); }
+.cv-found-title { margin: 0 0 var(--sp-xs); font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--ink); }
+.cv-found-list { list-style: none; display: grid; gap: 4px; margin: 0 0 var(--sp-xs); padding: 0; font-size: 14px; }
+.cv-found-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.cv-found-list .icon { width: 14px; height: 14px; align-self: center; }
+.cv-found-list .is-found .icon { color: var(--tint-green-ink); }
+.cv-found-list .is-missing .icon { color: var(--tint-yellow-ink); }
+.cv-found-label { color: var(--body); }
+.cv-found .hint { margin: 0; color: var(--body); }
+#ob-yearsExperience { max-width: 10rem; }
+
+.cred-field { min-width: 0; margin: 0 0 var(--sp-lg); padding: 0; border: 0; }
+.cred-field > legend { width: 100%; padding: 0; }
+.cred-hint { margin: 2px 0 var(--sp-sm); color: var(--body); }
+.cred-field .cred-none { margin: 0 0 var(--sp-sm); font-size: 14px; }
+.cred-rows { list-style: none; display: grid; gap: var(--sp-sm); margin: 0 0 var(--sp-sm); padding: 0; }
+.cred-row { display: grid; grid-template-columns: minmax(0, 1fr) 8rem; gap: 0 var(--sp-sm); align-items: start; padding: var(--sp-sm) var(--sp-md); border: 1px solid var(--hairline); border-radius: var(--r-lg); background: var(--canvas); }
+.cred-row .field { margin-bottom: var(--sp-xs); }
+.cred-row .cred-remove { align-self: start; justify-self: start; margin-top: 22px; }
+.cred-add { margin-bottom: var(--sp-xs); }
+
+/* A level for one skill (translation step) */
+.tr-level { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-xs); margin-top: var(--sp-sm); }
+.tr-level label { font-size: 13px; font-weight: 500; color: var(--ink); }
+.tr-level-from:not([hidden]) { display: inline-flex; align-items: center; gap: 4px; margin: 0; color: var(--body); }
+.tr-level-from .icon { width: 12px; height: 12px; color: var(--accent); }
+.tr-level-select { width: auto; min-width: 15rem; max-width: 100%; height: 36px; padding-top: 4px; padding-bottom: 4px; font-size: 14px; background-position: calc(100% - 18px) 15px, calc(100% - 13px) 15px; }
+
+@media (max-width: 1024px) {
+  .path-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .list-toolbar { justify-content: flex-start; }
+  .card-actions .compare-pick { min-height: 44px; }
+  .cred-row { grid-template-columns: 1fr; }
+  .cred-row .cred-remove { margin-top: 0; }
+  .tr-level-select { height: 44px; background-position: calc(100% - 18px) 19px, calc(100% - 13px) 19px; }
+  .path-status { white-space: normal; }
+}

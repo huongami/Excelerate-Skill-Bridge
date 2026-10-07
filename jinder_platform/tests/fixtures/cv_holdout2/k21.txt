@@ -1,0 +1,33 @@
+OLUWASEUN ADEYEMI-PARK
+10+ years in software delivery
+Adelaide SA / oluwaseun.ap@example.test / +61 400 000 021
+
+Management experience
+1) Engineering Manager,	Tidewater Health		Jan 2023 – Present
+	Manage two squads (11 engineers) building the patient scheduling platform
+	Hired 7 engineers in two years and cut first-year attrition to zero
+	Own the delivery roadmap with the product director; on-time delivery rose from 58% to 91%
+	Stack: Kotlin, Java, AWS, Kubernetes, PostgreSQL
+
+2) Tech Lead,	Tidewater Health		Mar 2021 – Dec 2022
+	Led the design of the appointment reminder service and the rollout to 40 clinics
+	Introduced trunk-based development and a weekly production release
+
+3) Senior Software Engineer,	Ostrava Digital		Jan 2020 – Feb 2021
+	Payment integrations and a retry framework for failed transactions
+	Stack: Java, Spring, PostgreSQL
+
+Roles before 2020 omitted for brevity; the full list is available on request.
+
+Certifications and courses
+Scrum.org PSM I, 2020
+Certificate in Spanish, Level B1, Instituto Lingua, 2022 (language course)
+
+Education
+BEng Software Engineering, 2008 – 2012
+
+Awards
+Innovation Award, Tidewater Health, 2024
+
+Skills
+Kotlin, Java, AWS, Kubernetes, PostgreSQL

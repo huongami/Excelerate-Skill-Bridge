@@ -1,0 +1,67 @@
+Nasrin Haidari-Cole
+Java Developer
+Melbourne VIC  •  nasrin.hc@example.test  •  +61 400 000 007
+
+PROFILE
+Backend developer with 5 years of Java experience in the Spring ecosystem (before that PHP, then C#), senior in everything
+but title according to my last three reviews, and after leading a four-person squad through two platform rewrites and designing three
+services from scratch I would like my next role to be a Software Architect position where design decisions are the main job, while I stay
+close to the code and keep reviewing pull requests.
+
+EXPERIENCE
+
+Java Developer (Fenwick Payments) from March 2020 until now
+Fenwick Payments was founded in 2012 and processes card transactions for small merchants.
+• Designed the idempotent payment capture API (Spring Boot, Kafka); duplicate charges fell to zero
+• Acted as team lead for four developers during a six-month absence of the manager
+• Split a 400k-line monolith into 7 services, one team-owned module at a time
+• Reduced p95 latency of settlement queries from 2.4 s to 380 ms with PostgreSQL partitioning
+• Run the weekly incident review and write the post-incident notes for the whole department
+• Interviewed about 30 candidates for the backend team over three years
+Technologies: Java 17, Spring Boot, PostgreSQL, Kafka, Docker
+
+Software Developer (Calloway Press), from June 2016 to February 2020
+Calloway Press is a 20 years old publisher with a print and digital catalogue.
+• Built the subscription and paywall service used by 180,000 readers
+• Ported the content API from PHP to Java and kept it live during the move
+• Introduced contract tests between the web and the API teams
+• Mentored two graduates and ran the Friday code clinic for the whole floor
+• Cut the nightly export job from 3 hours to 25 minutes by batching database writes
+Technologies: Java 8, Spring, MySQL, Redis
+
+Graduate Developer (Pellam Logistics), from February 2014 to May 2016
+• Maintained the consignment tracking site and fixed 300+ tickets in two years
+• Wrote the first automated deployment script for the team
+• Presented the new tracking site to 12 depot managers and collected their feedback
+Technologies: PHP, jQuery, MySQL
+
+Web Developer, part-time (Mapleton Florists), 2012 to 2014
+• Online shop for a family florist: catalogue, checkout, delivery calendar
+• Two days a week alongside the final year of university
+
+Freelance Web Developer (self-employed), Oct 2010 to Jan 2012
+• Brochure sites and small shops for local businesses; 14 clients in 16 months
+
+Retail Assistant, casual (Kilby's Hardware), Jan 2009 to Sep 2010
+• Weekends and school holidays
+
+Side projects
+ledgerlint, a small open-source command-line checker for double-entry ledgers (2019 – 2021)
+• About 400 stars; not a job, I maintained it in the evenings
+
+Volunteering
+Coach, junior robotics club, Northcote Library (2018 – 2020), one evening a week
+
+Education
+BSc Computer Science (a 3-year degree), Melbourne Eastern University, 2010 – 2013
+
+Certifications
+Oracle Certified Professional Java SE 11 Developer, 2021
+
+Talks
+Conference talk: "Idempotency in payment APIs", JVM Day Melbourne, 2022
+
+Skills
+Java, Spring Boot, PostgreSQL, Kafka, Docker, REST
+
+References available on request

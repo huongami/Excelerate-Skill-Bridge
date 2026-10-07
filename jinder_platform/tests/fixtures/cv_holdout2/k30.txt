@@ -1,0 +1,24 @@
+Y A S M I N   H A D D A D
+DataAnalyst|Sydney|yasmin.haddad@example.test|+61400000030
+
+P R O F I L E
+Dataanalyst with six years in logistics reporting. I want to work as a BusinessIntelligence Analyst, building self-service
+dashboards that people trust and use.
+
+E X P E R I E N C E
+SeniorData Analyst,HalcyonFreight  Mar2021–Present
+• Own thefreight cost and on-time delivery dashboards in Tableau, usedby 150 managers
+• Cut the weekly reporting cycle from 3 days to 4 hours by moving Excel mergesinto SQL
+• Defined the KPI glossary with operations and finance
+ReportingAnalyst,PellamLogistics  Jan2018–Feb2021
+• Prepared the monthly board pack and ad-hoc analyses
+• Built thefirst route-profitability model in Excel and SQL
+
+E D U C A T I O N
+Bachelor of Business Information Systems,2013–2016
+
+C E R T I F I C A T I O N S
+Tableau Desktop Specialist(2019)
+
+S K I L L S
+Tableau, SQL, Excel, Python

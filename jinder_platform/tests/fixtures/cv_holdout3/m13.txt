@@ -1,0 +1,51 @@
+Curriculum Vitae                                                                        Europass
+
+Personal information
+First name(s) / Surname(s)      Anneliese Wójcik
+Address(es)                     ul. Wiślana 12/8, 00-001 Warsaw, Poland
+Mobile                          +48 500 000 013
+E-mail                          anneliese.wojcik@example.test
+Nationality                     Polish
+Date of birth                   03/11/1992
+Gender                          Female
+
+Work experience
+Dates                           03/01/2023 – 30/06/2026
+Occupation or position held     Senior Data Analyst
+Main activities and responsibilities
+                                Responsible for customer-churn and network-quality analytics for the consumer
+                                division. Built and maintained Power BI reports for 300 users, wrote SQL on a Teradata
+                                warehouse, and developed Python scripts for segmentation and forecasting. Coached
+                                two junior analysts.
+Name and address of employer    Brightline Telecom S.A., Aleje Jerozolimskie 100, Warsaw (Poland)
+Type of business or sector      Telecommunications
+
+Dates                           01/10/2019 – 31/12/2022
+Occupation or position held     Data Analyst
+Main activities and responsibilities
+                                Weekly sales, margin and stock reporting for 450 stores; ad-hoc analysis for category
+                                managers; automation of reports in Excel VBA and later in Tableau.
+Name and address of employer    Vistula Retail Group, ul. Marszałkowska 50, Warsaw (Poland)
+Type of business or sector      Retail
+
+Education and training
+Dates                           01/10/2014 – 30/06/2019
+Title of qualification awarded  Master's degree in Quantitative Methods and Information Systems
+Name and type of organisation   Warsaw School of Quantitative Studies, Warsaw (Poland)
+providing education and training
+
+Personal skills and competences
+Mother tongue(s)                Polish
+Other language(s)               English (C1), German (B1)
+
+Digital skills                  SQL (advanced), Power BI, Tableau, Python, R, Excel (VBA)
+                                Teradata, basic knowledge of Azure Synapse
+
+Certifications                  Microsoft Certified: Azure Data Fundamentals (2022)
+                                Tableau Desktop Specialist (2021)
+                                Cambridge English: Advanced (CAE), 2014
+
+Driving licence                 B
+
+Additional information
+Awards                          Rector's Scholarship for Outstanding Students (2016)

@@ -1,0 +1,42 @@
+MARCUS OYELARAN-WHITFIELD
+Leeds, United Kingdom  |  +44 7700 000020  |  marcus.oyelaran@example.test  |  github.com/moyelaran
+
+SUMMARY
+Former secondary school science teacher turned web developer. I completed a 16-week full-time bootcamp in
+2026 and now build React and Node.js applications. Seeking a junior Full Stack Developer role in a collaborative
+product team where I can keep learning and also mentor others.
+
+TECHNICAL SKILLS
+JavaScript, React, Node.js, Express, MongoDB, HTML, CSS, Git
+
+EXPERIENCE
+Junior Web Developer (Contract)                                                         Jun 2026 – Present
+Lantern Studio, Leeds
+•  Build and maintain React components and Express endpoints for a booking application used by 3,000 customers
+•  Fixed 40+ front-end bugs and improved accessibility to WCAG 2.1 AA on the main flows
+•  Work in two-week sprints with designers and a senior developer; take part in code reviews
+
+Secondary School Science Teacher                                                        Feb 2019 – Dec 2025
+Ridgeview Secondary College, Leeds
+•  Taught biology and chemistry to students aged 11 to 18; led a department of five as Head of Year 9
+•  Built a spreadsheet-based tracking tool for assessment data that the whole science department adopted
+•  Ran an after-school coding club of 25 students using Python and Scratch
+
+BOOTCAMP PROJECTS
+Plantwise | React, Node.js, Express, MongoDB                                            Mar 2026 – Apr 2026
+•  Capstone: plant-care reminder app with authentication, image upload and push notifications
+RecipeBox | JavaScript, REST API, CSS                                                  Feb 2026
+•  Recipe search app using a public API with debounced search and local-storage favourites
+
+EDUCATION
+Full-Stack Web Development Bootcamp, Northwind Code Academy (16 weeks, full time)       Jan 2026 – Apr 2026
+Postgraduate Certificate in Education (Secondary Science), Midland University           2018 – 2019
+BSc Biology (2:1), Midland University                                                   2013 – 2016
+
+CERTIFICATIONS
+freeCodeCamp Responsive Web Design Certification (2025)
+Northwind Code Academy Full-Stack Web Development Certificate (2026)
+
+AWARDS
+Teacher of the Year, Ridgeview Secondary College (2021)
+Best UX Award, Northwind Demo Day Hackathon (2026)

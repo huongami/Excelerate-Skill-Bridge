@@ -1,0 +1,31 @@
+Walter Haddad
+Senior Database Administrator (returning to work)
+walter.haddad@example.test | +61 400 000 042 | Newcastle, NSW
+
+Looking for a Data Engineer role as I return to the workforce after a career break to raise my children. I bring deep SQL and performance-tuning experience and I have been retraining on modern data tooling.
+
+EXPERIENCE
+01/06/2009 – 31/10/2014   Senior Database Administrator, Oakhaven Utilities
+ - Administered 40 Oracle and SQL Server databases supporting billing and metering.
+ - Designed the backup and disaster-recovery plan that met a 2-hour recovery target.
+ - Tuned the 20 slowest billing queries, cutting the month-end run from 11 to 4 hours.
+
+01/02/2005 – 29/05/2009   Database Administrator, Oakhaven Utilities
+ - Managed user access, patching and nightly jobs for the customer database.
+ - Wrote PL/SQL packages for meter-read validation.
+
+CAREER BREAK 2014 – 2026
+Full-time parenting; volunteer treasurer of a junior football club.
+
+COURSES (2025)
+Data Engineering Foundations Certificate, Coursera
+SQL for Data Science, Coursera (completed, no certificate)
+
+CERTIFICATIONS
+Oracle Database 11g Administrator Certified Professional (2011)
+
+COMMUNITY
+Community Volunteer Award, Hillcrest Junior Football Club (2019)
+
+SKILLS
+Oracle, SQL Server, PL/SQL, Python, Linux

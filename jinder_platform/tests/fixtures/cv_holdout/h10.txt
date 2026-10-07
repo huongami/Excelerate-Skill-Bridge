@@ -1,0 +1,28 @@
+Tomás Herrera
+tomas.herrera@example.test | +61 400 000 020 | Sydney, NSW
+
+Backend engineer with 11 years of experience building logistics and e-commerce systems in Java. Seeking new challenges where I can keep learning and shipping.
+
+EXPERIENCE
+
+Sr. Software Engineer (Contract)
+Ironbark Logistics Tech, Sydney — Sept 2019 to date
+- Designed the parcel-tracking event pipeline (Kafka, Spring Boot) handling 3 million events a day.
+- Replaced a fragile nightly batch with idempotent consumers; lost-scan incidents went to near zero.
+- Reviewed pull requests for a team of 9 contractors and permanent staff.
+
+Software Engineer
+Pellucid Media, Newcastle — Feb 2015 – Aug 2019
+- Built the ad-booking API and its PostgreSQL schema.
+- Moved the monolith's batch jobs to a queue-based worker design.
+- Wrote integration tests that caught the invoice rounding defect before release.
+
+EDUCATION
+Bachelor of Engineering (Software), Northgate University, 2009 – 2013
+
+CERTIFICATIONS
+AZ-900
+PSM I
+
+SKILLS
+Java, Spring Boot, Kafka, PostgreSQL, Docker

@@ -1,0 +1,49 @@
+PAULO N. SAMPLER-DEMO
+Systems Administrator
+paulo.sampler@example.test | +351 000 555 014 | Porto (Demo), Portugal
+
+I am looking for a Site Reliability Engineer role. I want to move from running servers by
+hand to engineering reliability with code, metrics and on-call practice.
+
+SUMMARY OF QUALIFICATIONS (functional CV; dates on request)
+- Linux administration of mixed Debian and RHEL estates, including patching, backups and
+  capacity planning
+- Automation of repetitive work with Bash and Ansible playbooks
+- Container platforms: Docker and a small Kubernetes cluster for internal tools
+- Monitoring with Prometheus, Grafana and Zabbix; alert tuning to cut noise
+- Calm incident handling: runbooks, post-mortems, and an on-call rota for 20 servers
+
+SELECTED ACCOMPLISHMENTS
+- Replaced a manual deployment checklist with an Ansible pipeline; releases went from 4 hours
+  to 25 minutes
+- Built dashboards and alerts that reduced night-time pages by 60%
+- Migrated 35 virtual machines into containers without customer downtime
+- Wrote the disaster recovery runbook and tested it twice a year
+- Taught 10 colleagues how to read metrics and logs
+
+EMPLOYMENT HISTORY
+Systems Administrator - Port Demo Logistics, Porto
+IT Technician - Greenfield Demo Council, Braga
+Help Desk Analyst - Atlantic Demo Telecom, Lisbon
+
+EDUCATION
+Technical degree in Computer Networks, Demo Polytechnic of Porto
+
+CERTIFICATIONS
+Red Hat Certified System Administrator (RHCSA)
+Certified Kubernetes Administrator (CKA), valid until 2028
+AWS Certified Solutions Architect - Associate: exam booked, not taken yet
+
+HONOURS
+Capture the Flag Finalist 2023, Harbour CTF (team of 4)
+
+TECHNICAL SKILLS
+Linux, Bash, Ansible, Docker, Kubernetes, Prometheus, Grafana, Zabbix, Git, incident response
+
+LANGUAGES
+Portuguese (native), English (fluent), Spanish (good)
+
+PERSONAL
+Driving licence: category B
+Availability: one month notice, open to relocation within Europe
+References available on request

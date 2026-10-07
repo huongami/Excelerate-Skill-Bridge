@@ -1,0 +1,49 @@
+GRAHAM T. ELLISWORTH-DEMO
+Head of IT
+graham.ellisworth@example.test | 0000 555 0182 | Leicester (Demo)
+
+CAREER OBJECTIVE
+Seeking a Chief Information Officer role in a mid-sized organisation that sees IT as a
+partner to the business.
+
+PROFESSIONAL SUMMARY
+IT leader with 12 years in small and mid-sized companies. Runs a team of 9 across service
+desk, infrastructure and applications. Delivered a full move to Microsoft 365 and Azure,
+a new ISO 27001 information security system and a three-year IT roadmap.
+
+EMPLOYMENT
+
+2019 - Present    Head of IT
+                  Marlowe & Finch Demo Group, Leicester
+                  - Budget of 2.4M a year; 9 staff and 4 suppliers
+                  - Moved 600 users and 40 servers to Azure and Microsoft 365
+                  - Rolled out MFA, endpoint protection and a firewall refresh; zero major incidents in 3 years
+                  - Led the ISO 27001 certification and the GDPR data protection review
+                  - Report monthly to the board and manage stakeholder expectations
+
+2014 - 2019       IT Manager
+                  Kestrel Demo Foods Ltd, Nottingham
+                  - Managed a team of 4 and the ERP support contract
+                  - Ran the office move for 250 staff, on time and on budget
+                  - Wrote the incident management and backup procedures; PowerShell automation
+
+EDUCATION
+BSc Business Information Systems, University of Midlands Demo, 2006 - 2010
+
+CERTIFICATIONS AND TRAINING
+ITIL 4 Foundation, 2020
+Project Management Professional (PMP), PMI, 2021, credential ID 0000000, valid until 2027
+Certified Information Security Manager (CISM) - in progress
+Management and Leadership Level 5 diploma (college programme), 2018
+Cisco networking basics seminar, 1 day, 2019
+
+RECOGNITION
+Employee of the Year 2019, Kestrel Demo Foods Ltd
+Mentor of the Year, Coding Bootcamp Demo, 2024
+
+SKILLS
+Project management, team leadership, stakeholder management, Azure, PowerShell,
+networking, incident response, GDPR, ISO 27001, vendor management, budgeting
+
+REFERENCES
+Provided on request

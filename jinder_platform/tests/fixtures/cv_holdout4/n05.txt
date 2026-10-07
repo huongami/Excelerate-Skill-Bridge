@@ -1,0 +1,52 @@
+CURRICULUM VITAE
+
+KWABENA A. ASANTE-SAMPLE
+House No. 12, Test Estate, Accra, Ghana
+Tel: +233 000 555 0142 | Email: kwabena.asante@example.test
+Nationality: Ghanaian | Languages: English, Twi
+
+PROFESSIONAL PROFILE
+Detail-minded data steward who looks after the quality, definitions and ownership of customer
+and billing data in a telecom company. Experienced in data stewardship, data profiling
+and working with business owners to fix root causes of bad data.
+
+CORE COMPETENCIES
+- Data governance and data catalogue maintenance (Collibra)
+- Data quality rules, data profiling and issue tracking
+- Writing SQL queries to find duplicates and missing values
+- Excel and Power BI quality scorecards
+- Stakeholder engagement with finance, billing and customer care teams
+
+WORK EXPERIENCE
+
+Junior Data Steward                                         Jan 2025 - Present
+Accra Telecom Demo Ltd
+- Own the definitions of 60 critical data elements in the business glossary
+- Run weekly data quality checks and report failures to data owners
+- Cut duplicate customer records by 38% in nine months
+- Maintain master data management rules for customer and product data
+- Build quality scorecards in Power BI for the Chief Data Office
+
+Data Entry Clerk                                            Mar 2023 - Dec 2024
+Gold Coast Billing Services Demo
+- Captured and verified 500+ billing records per day
+- Prepared monthly accuracy reports in Excel
+- Recognised for accuracy and reliability by the operations manager
+
+EDUCATION
+BSc Statistics, University of Demo, Legon, 2018 - 2022
+Senior High School Certificate, Test Senior High School, 2017
+
+CERTIFICATIONS
+Certified Data Management Professional (CDMP) Associate - DAMA International, 2025
+CDMP Practitioner exam - booked for November 2026
+Microsoft Excel Intermediate course (certificate of completion, 2023)
+
+RECOGNITION
+- Employee of the Quarter, Q3 2024
+
+REFEREES
+Mrs. Abena Testfield, Head of Data Governance, Accra Telecom Demo Ltd
+Tel: +233 000 555 0177
+Mr. Yaw Demoson, Operations Manager, Gold Coast Billing Services Demo
+Tel: +233 000 555 0188

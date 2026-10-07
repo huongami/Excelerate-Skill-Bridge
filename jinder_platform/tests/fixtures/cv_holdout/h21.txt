@@ -1,0 +1,26 @@
+IBRAHIM HASSAN
+Aspiring Data Scientist
+ibrahim.hassan@example.test | 0400 000 031 | Adelaide, SA
+
+PROFILE
+Third-year statistics student who enjoys turning messy data into clear answers. Comfortable with regression, resampling and writing up results for non-technical readers.
+
+EDUCATION
+Bachelor of Science (Statistics), Southbank University, 2024 – 2027 (expected)
+Relevant units: Probability, Linear Models, Machine Learning, Databases, Time Series
+Weighted average mark: 84
+
+PROJECTS
+Bushfire smoke forecasting (course project, 2026)
+- Compared ARIMA and gradient boosting on 6 years of air-quality readings; boosting cut error by 18 percent.
+Movie rating predictor (personal project, 2025)
+- Built a matrix-factorisation recommender in Python and wrote a short blog post about the results.
+
+COMPETITIONS
+Kaggle Bronze Medal, House Prices Playground (2025)
+
+SCHOLARSHIPS
+Bellmont Community Scholarship (2024)
+
+SKILLS
+Python, R, pandas, scikit-learn, SQL

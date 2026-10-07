@@ -1,0 +1,64 @@
+Dr Henrik Vandersteen
+Head of Data | Make the data earn its keep
+Melbourne  |  henrik.v@example.test  |  +61 400 000 008
+
+Roles Held
+
+Marrow & Finch, Melbourne (consumer goods and retail)
+
+Head of Data ............................. Jan 2022 – to date
+▪ Lead a team of 14 data scientists, analysts and engineers across three product lines
+▪ Set the yearly data strategy and own a budget of 3.1 million
+▪ Introduced a feature store and model registry; time from idea to production fell from 5 months to 6 weeks
+▪ Report to the COO and sit on the risk committee
+▪ Hired nine people in two years and started a graduate rotation that has placed six graduates
+▪ Negotiated the move to a single cloud data platform, replacing four legacy warehouses
+
+Senior Data Scientist ........................ Jul 2018 – Dec 2021
+▪ Built the demand forecasting system used by 600 stores (gradient boosting, hierarchical reconciliation)
+▪ Used Principal Component Analysis and clustering to group 2,000 products into 40 ranges
+▪ Ran 60 online experiments with the marketing team
+▪ Mentored five junior scientists and introduced model cards for every production model
+Tools: Python, R, Spark, Databricks, Airflow
+
+Data Scientist ............................... Mar 2015 – Jun 2018
+▪ Churn and next-best-offer models for the loyalty programme (4 million members)
+▪ Moved the team from SAS licences to open-source tooling
+Tools: Python, scikit-learn, SQL
+
+Data Analyst ................................. Mar 2012 – Feb 2015
+▪ Weekly trading dashboards and ad-hoc analysis for category managers
+▪ Built the first automated stock availability report, replacing a three-day manual process
+
+Bayside Pharma Trials, Melbourne
+Statistical Programmer (Jan 2010 to Feb 2012)
+▪ Produced tables, listings and figures for phase II and III studies in SAS
+
+Eastern Plains University
+Sessional Tutor in Statistics, casual (Feb 2016 – Nov 2019)
+▪ Evening tutorials for second-year students, 6 hours a week alongside the day job
+
+Research Assistant, part-time (Feb 2009 – Dec 2009)
+▪ Cleaned survey data and ran regressions for a health economics group
+
+Volunteering
+Board member, Open Data Melbourne (2019 – 2022): ran the annual civic data challenge
+
+Side project
+Weather-adjusted footfall model for local markets (Jan 2018 – Dec 2018), evenings and weekends, not part of any job
+
+Education
+PhD Statistics, Eastern Plains University, 2010 – 2014 (part-time)
+BSc (Honours) Mathematics and Statistics, 2005 – 2008
+
+Certifications
+Databricks Data Engineer Associate (2024)
+Coursera Machine Learning Specialization (2019)
+
+Patents and Talks
+Patent: Method for imputing missing sensor readings (AU 2021900123), granted 2021
+Conference talk: "Forecasting at Scale", DataFest Melbourne 2022
+3rd place, Retail Basket Prediction Challenge (Kaggle), 2017
+
+Skills
+Python, R, SQL, Spark, Databricks, scikit-learn, Airflow

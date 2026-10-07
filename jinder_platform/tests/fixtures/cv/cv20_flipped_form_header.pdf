@@ -1,0 +1,63 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [7 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222 222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 500 500 334 260 334 584] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [294 294 376 589 589 942 707 202 352 352 412 619 294 352 294 294 589 589 589 589 589 589 589 589 589 589 294 294 619 619 619 589 1075 707 707 765 765 707 647 824 765 294 530 707 589 882 765 824 707 824 765 707 647 765 707 1000 707 707 647 294 294 294 497 589 352 589 589 530 589 589 294 589 589 235 235 530 235 882 589 589 589 589 352 530 294 589 530 765 530 530 530 354 275 354 619] >>
+endobj
+5 0 obj
+<< /Type /XObject /Subtype /Form /BBox [0 0 595 842] /Matrix [1 0 0 1 0 0] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Length 231 >>
+stream
+BT /F2 22 Tf 1 0 0 -1 50.00 52.00 Tm (IMANI SAMPLE) Tj ET
+BT /F1 13 Tf 1 0 0 -1 50.00 72.00 Tm (Staff Software Engineer) Tj ET
+BT /F1 9 Tf 1 0 0 -1 50.00 86.00 Tm (Melbourne, VIC | imani.sample@example.test | +61 400 000 020) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Length 1241 >>
+stream
+q 1 0 0 -1 0 842 cm
+/Fm1 Do
+BT /F2 11 Tf 1 0 0 -1 50.00 137.18 Tm (SUMMARY) Tj ET
+BT /F1 10 Tf 1 0 0 -1 50.00 150.98 Tm (Engineer who designs reliable distributed systems.) Tj ET
+BT /F2 11 Tf 1 0 0 -1 50.00 176.16 Tm (EXPERIENCE) Tj ET
+BT /F2 10 Tf 1 0 0 -1 50.00 192.96 Tm (Staff Software Engineer | Fernhill Systems | Apr 2021 \226 Present) Tj ET
+BT /F1 10 Tf 1 0 0 -1 50.00 206.76 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 -1 64.00 206.76 Tm (Designed the event backbone on Apache Kafka for 9 teams.) Tj ET
+BT /F1 10 Tf 1 0 0 -1 50.00 220.56 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 -1 64.00 220.56 Tm (Set the design review process for 40 engineers.) Tj ET
+BT /F2 10 Tf 1 0 0 -1 50.00 240.36 Tm (Senior Software Engineer | Quokka Labs | Jun 2017 \226 Mar 2021) Tj ET
+BT /F1 10 Tf 1 0 0 -1 50.00 254.16 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 -1 64.00 254.16 Tm (Built a Go service that handles 5,000 requests per second.) Tj ET
+BT /F2 11 Tf 1 0 0 -1 50.00 279.34 Tm (EDUCATION) Tj ET
+BT /F1 10 Tf 1 0 0 -1 50.00 293.14 Tm (Bachelor of Computer Science, University of Westbank, 2012 \226 2016) Tj ET
+BT /F2 11 Tf 1 0 0 -1 50.00 318.32 Tm (SKILLS) Tj ET
+BT /F1 10 Tf 1 0 0 -1 50.00 332.12 Tm (Go, Apache Kafka, Kubernetes, PostgreSQL, System design) Tj ET
+Q
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 6 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Fm1 5 0 R >> >> >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000637 00000 n 
+0000001159 00000 n 
+0000001562 00000 n 
+0000002855 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3017
+%%EOF

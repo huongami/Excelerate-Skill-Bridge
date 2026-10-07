@@ -1,0 +1,59 @@
+Details
+14 Harcourt Terrace
+Dublin, Ireland
++353 85 000 0007
+sorcha.brennan@example.test
+
+Links
+LinkedIn
+GitHub
+Personal site
+
+Skills
+JavaScript
+TypeScript
+React
+Next.js
+GraphQL
+CSS
+Jest
+Webpack
+
+Languages
+English
+Irish
+
+Hobbies
+Hill walking, photography, board games
+
+Sorcha Brennan
+Frontend Team Lead
+
+Profile
+Frontend engineer with 10 years of experience building accessible, fast web applications for e-commerce and retail.
+I lead a team of six, own our design system and care about performance budgets, testing and good code review.
+
+Employment History
+Frontend Team Lead at Bluefin Commerce, Dublin
+March 2021 — Present
+• Lead six frontend engineers across the storefront, checkout and account areas
+• Rebuilt the checkout in React and Next.js, improving conversion by 7% and Lighthouse performance from 54 to 92
+• Created the company design system (60 components, Storybook) now used by four product teams
+• Introduced visual regression testing with Jest and Playwright; production UI incidents fell by half
+
+Frontend Developer at Glasshouse Interactive, Cork
+September 2016 — February 2021
+• Built single-page applications in JavaScript and React for retail and travel clients
+• Migrated a large AngularJS code base to React and TypeScript over 14 months
+• Set up Webpack build pipelines and GraphQL data fetching for three client projects
+
+Education
+BSc in Computer Applications, Lee Valley College, Cork
+September 2012 — June 2016
+
+Certifications
+Professional Scrum Master I (PSM I), Scrum.org, 2022
+
+Awards
+Best Speaker Award, ReactDublin Conference (2023)
+Winner, DublinTech Hack (2019)

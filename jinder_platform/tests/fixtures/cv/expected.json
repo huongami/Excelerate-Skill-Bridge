@@ -1,0 +1,552 @@
+{
+  "asOf": "2026-10-06",
+  "note": "TRUE values of the fixture CVs (what a person sees), made by tests/fixtures/make_cv_fixtures.py. All people and employers are made up.",
+  "fixtures": {
+    "cv01_single_classic.pdf": {
+      "layout": "One column. Header with name and contact line. Caps headings. Job lines 'Title | Company | Mon YYYY – Present'. Bullets. Skills with years.",
+      "currentRole": "Senior Data Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 10.7,
+      "certifications": [
+        "AWS Certified Data Engineer - Associate",
+        "Databricks Certified Data Engineer Associate"
+      ],
+      "awards": [],
+      "skills": [
+        "Python",
+        "SQL",
+        "Apache Spark",
+        "Apache Airflow",
+        "Snowflake",
+        "Docker",
+        "Terraform"
+      ],
+      "skillLevels": {
+        "Python": 5,
+        "SQL": 5
+      }
+    },
+    "cv02_two_column_interleaved.pdf": {
+      "layout": "Full-width header (name, title, contact). Then two columns. The stream alternates a left line and a right line, so the text of the columns is mixed in file order.",
+      "currentRole": "Machine Learning Engineer",
+      "level": "Senior",
+      "targetRole": "MLOps Engineer",
+      "statesTarget": true,
+      "yearsExperience": 7.3,
+      "certifications": [
+        "Google Cloud Professional Machine Learning Engineer"
+      ],
+      "awards": [
+        {
+          "name": "1st place, AI Hackathon",
+          "kind": "hackathon",
+          "year": 2023
+        }
+      ],
+      "skills": [
+        "Python",
+        "PyTorch",
+        "TensorFlow",
+        "scikit-learn",
+        "Docker",
+        "MLflow",
+        "Amazon SageMaker",
+        "SQL"
+      ],
+      "skillLevels": {}
+    },
+    "cv03_sidebar_first.pdf": {
+      "layout": "Narrow sidebar on the left (contact, skills, education) is written first in the file. The name is in the wide right column.",
+      "currentRole": "Full Stack Developer",
+      "level": "Mid",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 4.8,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Docker"
+      ],
+      "skillLevels": {}
+    },
+    "cv04_header_pipe_objective.pdf": {
+      "layout": "Name and title on one line separated by '|'. 'Career objective' says 'Seeking a ... position'. Dates end with 'to date'. Years only.",
+      "currentRole": "Software Engineer",
+      "level": "Mid",
+      "targetRole": "Site Reliability Engineer",
+      "statesTarget": true,
+      "yearsExperience": 4.7,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "Python",
+        "Go",
+        "Kubernetes",
+        "Terraform",
+        "Prometheus",
+        "Linux"
+      ],
+      "skillLevels": {}
+    },
+    "cv05_title_above_name_vi.pdf": {
+      "layout": "The title 'DATA SCIENTIST' is ABOVE the name. Vietnamese name and place with diacritics (Type0 font). The jobs list the employer and dates but no title. 'Open to ... roles'.",
+      "currentRole": "Data Scientist",
+      "level": "Mid",
+      "targetRole": "Machine Learning Engineer",
+      "statesTarget": true,
+      "yearsExperience": 4.3,
+      "certifications": [
+        "Machine Learning Specialization",
+        "Microsoft Certified: Azure Data Scientist Associate"
+      ],
+      "awards": [],
+      "skills": [
+        "Python",
+        "scikit-learn",
+        "PyTorch",
+        "SQL",
+        "Pandas"
+      ],
+      "skillLevels": {}
+    },
+    "cv06_caps_bullets_mixed.pdf": {
+      "layout": "All-caps headings and all-caps job lines. Bullet glyphs '▪', '●', '–' and '•' (Type0 font). Dates 'MM/YYYY – now'. Skill ratings written with dots.",
+      "currentRole": "Senior Frontend Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 9.2,
+      "certifications": [],
+      "awards": [
+        {
+          "name": "Employee of the Year",
+          "kind": "employer-recognition",
+          "year": 2022
+        }
+      ],
+      "skills": [
+        "React",
+        "TypeScript",
+        "GraphQL",
+        "Cypress"
+      ],
+      "skillLevels": {
+        "React": 5,
+        "TypeScript": 4,
+        "GraphQL": 3
+      }
+    },
+    "cv07_linkedin_export.pdf": {
+      "layout": "LinkedIn-style export: sidebar with Contact, Top Skills, Certifications, Honors-Awards is written first. Main column: name, headline 'Title at Company | ...', Summary, Experience in the order company / title / dates, two roles in one company.",
+      "currentRole": "Lead Machine Learning Engineer",
+      "level": "Lead",
+      "targetRole": "AI Research Scientist",
+      "statesTarget": true,
+      "yearsExperience": 7.3,
+      "certifications": [
+        "Machine Learning Specialization",
+        "Certified Kubernetes Administrator"
+      ],
+      "awards": [
+        {
+          "name": "Regional Hackathon Winner",
+          "kind": "hackathon",
+          "year": null
+        },
+        {
+          "name": "Best Paper, Applied AI Workshop",
+          "kind": "conference-talk",
+          "year": null
+        }
+      ],
+      "skills": [
+        "Natural language processing",
+        "PyTorch",
+        "MLOps"
+      ],
+      "skillLevels": {}
+    },
+    "cv08_europass_like.pdf": {
+      "layout": "Europass-like: 'JOB APPLIED FOR' label with a role. Work experience lines start with the date range 'DD/MM/YYYY – Present' and then the title. Employer on the next line. Label 'Job-related skills'.",
+      "currentRole": "Software Engineer",
+      "level": "Senior",
+      "targetRole": "Backend Engineer",
+      "statesTarget": true,
+      "yearsExperience": 7.1,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "Git",
+        "CI/CD",
+        "Docker"
+      ],
+      "skillLevels": {}
+    },
+    "cv09_docx_simple.docx": {
+      "layout": "DOCX, one column. Title under the name. Job line with a tab and the date on the right. List bullets are Symbol glyphs. Sentence 'I aspire to grow into a ... role'.",
+      "currentRole": "Graduate Software Developer",
+      "level": "Junior",
+      "targetRole": "Software Engineer",
+      "statesTarget": true,
+      "yearsExperience": 2.3,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "Java",
+        "React",
+        "Python",
+        "JUnit",
+        "Git"
+      ],
+      "skillLevels": {}
+    },
+    "cv10_docx_table_two_column.docx": {
+      "layout": "DOCX two-column layout made with a table. The left cell (small text: contact, skills, certifications) comes first in the file. The name is in the right cell with the big font.",
+      "currentRole": "Data Analyst",
+      "level": "Mid",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 4.8,
+      "certifications": [
+        "Microsoft Certified: Power BI Data Analyst Associate"
+      ],
+      "awards": [],
+      "skills": [
+        "SQL",
+        "Power BI",
+        "Tableau",
+        "Python",
+        "Microsoft Excel"
+      ],
+      "skillLevels": {}
+    },
+    "cv11_docx_textbox_header.docx": {
+      "layout": "DOCX where the name and the title are in the page HEADER part, and the contact details are in a TEXT BOX that Word stores twice (Choice and Fallback). Title with the abbreviation 'Sr.'.",
+      "currentRole": "Sr. Cloud Engineer",
+      "level": "Senior",
+      "targetRole": "Solutions Architect",
+      "statesTarget": true,
+      "yearsExperience": 8.8,
+      "certifications": [
+        "AWS Certified Solutions Architect - Associate",
+        "HashiCorp Certified: Terraform Associate"
+      ],
+      "awards": [],
+      "skills": [
+        "AWS",
+        "Terraform",
+        "Kubernetes",
+        "Docker",
+        "Linux",
+        "Python"
+      ],
+      "skillLevels": {}
+    },
+    "cv12_student_intern.pdf": {
+      "layout": "Student CV. Current role is an internship that ended (latest end date). Objective: 'Looking for a graduate ... role'. Awards and a certification.",
+      "currentRole": "Software Engineering Intern",
+      "level": "Intern",
+      "targetRole": "Software Engineer",
+      "statesTarget": true,
+      "yearsExperience": 0.8,
+      "certifications": [
+        "AWS Certified Cloud Practitioner"
+      ],
+      "awards": [
+        {
+          "name": "Dean's List",
+          "kind": "academic-excellence",
+          "year": 2024
+        },
+        {
+          "name": "Winner, University Hackathon",
+          "kind": "hackathon",
+          "year": 2025
+        }
+      ],
+      "skills": [
+        "Python",
+        "JavaScript",
+        "React",
+        "Git",
+        "SQL"
+      ],
+      "skillLevels": {}
+    },
+    "cv13_no_target_awards.pdf": {
+      "layout": "No wish for a job. Words 'Looking after a team' and 'Looking forward to hearing from you' must NOT give a target role. Awards section with three kinds. Lead by title.",
+      "currentRole": "Data Platform Technical Lead",
+      "level": "Lead",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 11.3,
+      "certifications": [
+        "Certified Kubernetes Administrator"
+      ],
+      "awards": [
+        {
+          "name": "Excellence in Delivery Award",
+          "kind": "employer-recognition",
+          "year": 2023
+        },
+        {
+          "name": "Speaker, Data Engineering Summit",
+          "kind": "conference-talk",
+          "year": 2024
+        },
+        {
+          "name": "Top 10, National Forecasting Challenge",
+          "kind": "data-science-competition",
+          "year": 2022
+        }
+      ],
+      "skills": [
+        "Databricks",
+        "Apache Kafka",
+        "Apache Spark",
+        "Python",
+        "SQL",
+        "Terraform"
+      ],
+      "skillLevels": {}
+    },
+    "cv14_principal.pdf": {
+      "layout": "Principal level from the title word. 'Open to Head of AI roles' names a role that is not in the role list: the reader must leave the target empty.",
+      "currentRole": "Principal Applied Scientist",
+      "level": "Principal",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 16.3,
+      "certifications": [],
+      "awards": [
+        {
+          "name": "Best Paper Award, Applied AI Workshop",
+          "kind": "conference-talk",
+          "year": 2023
+        },
+        {
+          "name": "Patent Filed: Low-latency Model Serving Method",
+          "kind": "patent",
+          "year": 2025
+        }
+      ],
+      "skills": [
+        "PyTorch",
+        "Python",
+        "MLflow"
+      ],
+      "skillLevels": {}
+    },
+    "cv15_oldest_first.pdf": {
+      "layout": "Jobs are listed from the oldest to the newest. The current job (Present) is the LAST one.",
+      "currentRole": "Senior Software Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 8.7,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "C#",
+        ".NET",
+        "SQL",
+        "Docker",
+        "Azure"
+      ],
+      "skillLevels": {}
+    },
+    "cv16_ligatures_hyphen_pua.pdf": {
+      "layout": "Ligature glyphs (ﬁ, ﬂ), bullets that are private-use characters, words cut with a hyphen at the end of a line, words drawn one by one with no space glyph, spaces written as TJ numbers. Title 'Sr Backend Developer'.",
+      "currentRole": "Sr Backend Developer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 7.3,
+      "certifications": [
+        "Certified Kubernetes Administrator"
+      ],
+      "awards": [],
+      "skills": [
+        "Go",
+        "Java",
+        "PostgreSQL",
+        "Redis",
+        "Kubernetes"
+      ],
+      "skillLevels": {}
+    },
+    "cv17_no_dates_statement.pdf": {
+      "layout": "No dates at all. The role and the years come from the summary sentence 'Data analyst with 6 years of experience'. 'Interested in moving into ... roles'.",
+      "currentRole": "Data Analyst",
+      "level": "Senior",
+      "targetRole": "Analytics Engineer",
+      "statesTarget": true,
+      "yearsExperience": 6.0,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "SQL",
+        "Power BI",
+        "Python",
+        "Microsoft Excel",
+        "Tableau"
+      ],
+      "skillLevels": {}
+    },
+    "cv18_minimal.pdf": {
+      "layout": "Almost empty CV: name, contact, a degree with dates, and three skills. Nothing about jobs. Every field must stay empty (no guess).",
+      "currentRole": null,
+      "level": null,
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": null,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "Python",
+        "SQL",
+        "Git"
+      ],
+      "skillLevels": {}
+    },
+    "cv19_docx_stacked_open_to.docx": {
+      "layout": "DOCX. Jobs are stacked: company, title, dates (full month names), place. 'Open to A or B roles': two target roles. Mixed-case headings. Skills with labels.",
+      "currentRole": "BI Developer",
+      "level": "Mid",
+      "targetRole": "Analytics Engineer",
+      "statesTarget": true,
+      "yearsExperience": 4.8,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "SQL",
+        "Python",
+        "dbt",
+        "Snowflake",
+        "Power BI",
+        "Git"
+      ],
+      "skillLevels": {}
+    },
+    "cv20_flipped_form_header.pdf": {
+      "layout": "The page is drawn with a flipped y axis (1 0 0 -1 0 842 cm, like Cairo). The name and the title are in a form XObject. Title 'Staff ...' is the Lead level.",
+      "currentRole": "Staff Software Engineer",
+      "level": "Lead",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 9.3,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "Go",
+        "Apache Kafka",
+        "Kubernetes",
+        "PostgreSQL",
+        "System design"
+      ],
+      "skillLevels": {}
+    },
+    "cv21_inline_at_dates.pdf": {
+      "layout": "Job lines 'Title at Company (YYYY–YYYY)'. Sentence 'Currently looking for roles in MLOps' names no known role (MLOps alone is a skill, not a role). Skills in 'Label: items' lines.",
+      "currentRole": "Data Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 7.3,
+      "certifications": [],
+      "awards": [],
+      "skills": [
+        "Python",
+        "SQL",
+        "AWS",
+        "Google Cloud Platform",
+        "Apache Airflow",
+        "Snowflake",
+        "dbt"
+      ],
+      "skillLevels": {}
+    },
+    "cv22_latex_timeline.pdf": {
+      "layout": "LaTeX-like (moderncv): centred name and title, a timeline with the DATES in a left column and the text in a right column, spaces as TJ kerning numbers, font with an /Encoding /Differences list (en dash, fi).",
+      "currentRole": "Machine Learning Engineer",
+      "level": "Senior",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 7.3,
+      "certifications": [],
+      "awards": [
+        {
+          "name": "Gold medal, ICPC Regional Programming Contest",
+          "kind": "competitive-programming",
+          "year": 2018
+        }
+      ],
+      "skills": [
+        "Python",
+        "PyTorch",
+        "scikit-learn",
+        "MLflow",
+        "Kubernetes",
+        "SQL"
+      ],
+      "skillLevels": {}
+    },
+    "cv23_two_equal_columns_right_first.pdf": {
+      "layout": "Two equal columns under a full-width header with a headline 'Junior Data Analyst | skills'. The right column (education, skills, certifications) is written first in the file.",
+      "currentRole": "Junior Data Analyst",
+      "level": "Junior",
+      "targetRole": null,
+      "statesTarget": false,
+      "yearsExperience": 1.8,
+      "certifications": [
+        "Microsoft Certified: Azure Fundamentals"
+      ],
+      "awards": [],
+      "skills": [
+        "Python",
+        "SQL",
+        "Power BI",
+        "Microsoft Excel"
+      ],
+      "skillLevels": {}
+    },
+    "cv24_two_page_band.pdf": {
+      "layout": "One column on two pages with a band of two columns (CERTIFICATIONS | LANGUAGES) at the end of page 1 that goes on at the top of page 2 (certifications on the left, WORK RIGHTS AND AVAILABILITY on the right). No gutter for the whole page: most lines cross the middle.",
+      "currentRole": "Senior Data Analyst",
+      "level": "Senior",
+      "targetRole": "Data Analyst",
+      "statesTarget": true,
+      "yearsExperience": 8.8,
+      "certifications": [
+        "Microsoft Certified: Azure Data Scientist Associate",
+        "Northwind Analytics Professional Certificate"
+      ],
+      "awards": [
+        {
+          "name": "Winner, Sydney Open Data Hackathon",
+          "kind": "hackathon",
+          "year": 2023
+        }
+      ],
+      "skills": [
+        "SQL",
+        "Power BI",
+        "Tableau",
+        "Python",
+        "Git",
+        "Microsoft Excel"
+      ],
+      "skillLevels": {}
+    }
+  }
+}

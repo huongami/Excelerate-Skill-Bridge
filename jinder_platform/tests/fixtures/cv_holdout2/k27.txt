@@ -1,0 +1,35 @@
+MARGUERITE OYELARAN
+Sydney NSW   marguerite.o@example.test   +61 400 000 027
+
+SUMMARY
+Data and BI professional who likes making finance and operations numbers easy to trust.
+
+EXPERIENCE
+2023 - Present
+2020 - 2023
+2017 - 2020
+2015 - 2017
+Business Intelligence Analyst
+Reporting Analyst
+Data Analyst
+Finance Assistant
+Redpine Mining
+Redpine Mining
+Moonbeam Foods
+Kilby's Hardware
+Owns the executive KPI pack and the Power BI tenant; trained 40 managers to build their own views.
+Automated month-end reporting across three business units, saving about 120 hours a month.
+Replaced weekly spreadsheet merges with SQL views and a scheduled refresh for the sales team.
+Reconciled supplier invoices and learned early why data quality matters.
+
+SKILLS
+Power BI
+SQL
+DAX
+Excel
+SSRS
+
+EDUCATION
+2011 - 2014
+Bachelor of Commerce
+Eastern Plains University

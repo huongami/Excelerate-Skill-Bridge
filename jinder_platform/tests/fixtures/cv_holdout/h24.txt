@@ -1,0 +1,24 @@
+Sipho Ndlovu | Head of Data | Melbourne, VIC
+sipho.ndlovu@example.test | +61 400 000 035
+
+PROFILE
+Data leader with 8+ years of experience in data across analytics, data science and platform engineering. Seeking a Chief Data Officer position in a mid-sized organisation. Built and led the award-winning analytics team at Quokka Analytics (12 people).
+
+EXPERIENCE
+
+Head of Data, Quokka Analytics, 2022 - current
+- Own data strategy, a 12-person team and a AUD 2.5M budget across data engineering, BI and data science.
+- Consolidated four legacy warehouses into one Snowflake platform with dbt and a governed metrics layer.
+- Introduced a data-quality scorecard reviewed monthly by the executive team.
+
+Lead Data Scientist, Bellbird Media, 2019 - 2022
+- Led 4 scientists on audience segmentation and ad-forecasting models.
+- Moved model scoring from notebooks to scheduled, monitored pipelines.
+
+Earlier: freelance analytics projects for retailers and non-profits (not dated).
+
+EDUCATION
+Master of Data Science, Ashgrove University
+
+SKILLS
+Python, SQL, Snowflake, dbt, Tableau, Machine Learning

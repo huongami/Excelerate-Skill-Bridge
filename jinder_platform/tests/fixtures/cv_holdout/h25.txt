@@ -1,0 +1,33 @@
+Anneliese Brandt
+Director of Engineering
+anneliese.brandt@example.test | +61 400 000 036 | Sydney, NSW
+
+EXPERIENCE
+
+Director of Engineering — Saltmarsh Commerce
+Oct 2019 – to date
+- Lead 5 engineering managers and about 55 engineers across payments, catalogue and fulfilment.
+- Reduced release lead time from 3 weeks to 2 days by funding a platform team and a deployment pipeline.
+- Own the engineering budget and the annual hiring plan.
+
+Career break (Apr 2018 – Sep 2019)
+Relocated interstate and cared for a family member. Mentored at a community coding club.
+
+Engineering Manager — Redgum Commerce
+Jan 2015 – Mar 2018
+- Managed a team of 8 building the online catalogue and search services.
+- Introduced trunk-based development and weekly releases.
+
+Senior Developer — Fernhill Systems
+2009 – 2014
+- Built the order-management back end in Java and Oracle.
+- Wrote the performance test harness used before every major release.
+
+RECOGNITION
+CEO Award for Outstanding Leadership, Saltmarsh Commerce (2023)
+
+EDUCATION
+Bachelor of Engineering (Software), Ashgrove University, 2005 – 2008
+
+SKILLS
+Java, AWS, Kubernetes, Microservices, Agile delivery

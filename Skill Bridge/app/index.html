@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jinder — Where skills meet their match.</title>
+  <meta name="description" content="Jinder translates cross-border and cross-industry experience into skills Australian employers recognise." />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- One CSS file for each frontend owner. They load after styles.css, so they can add to it. -->
+  <link rel="stylesheet" href="styles-core.css" />
+  <link rel="stylesheet" href="styles-talent.css" />
+  <link rel="stylesheet" href="styles-employer.css" />
+  <link rel="stylesheet" href="styles-compare.css" />
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+
+  <!-- The router renders every view (landing, sign-in, app screens) in here -->
+  <div id="app" tabindex="-1"></div>
+
+  <!-- Polite live region for short status messages (js/core/dom.js announce) -->
+  <div id="announcer" class="sr-only" role="status" aria-live="polite"></div>
+
+  <!-- Onboarding dialog (candidate accounts). js/components/onboarding.js fills it. -->
+  <dialog class="modal" id="onboarding" aria-labelledby="ob-title">
+    <div class="modal-head">
+      <div class="modal-progress">
+        <span class="modal-step" id="obStep"></span>
+        <div class="meter meter-sm"><span id="obBar"></span></div>
+      </div>
+      <button type="button" class="btn btn-ghost btn-icon" id="obClose" aria-label="Close">
+        <svg class="icon" aria-hidden="true"><use href="icons.svg#x"/></svg>
+      </button>
+    </div>
+    <form id="obForm" novalidate>
+      <div class="modal-body" id="obBody"></div>
+      <div class="modal-foot" id="obFoot"></div>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

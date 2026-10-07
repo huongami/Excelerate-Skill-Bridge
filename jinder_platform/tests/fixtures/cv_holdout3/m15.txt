@@ -1,0 +1,67 @@
+CURRICULUM VITAE
+
+ANANYA SUBRAMANIAN
+Mobile: +91 90000 00015 | Email: ananya.subramanian@example.test
+Address: 22, Lake View Road, Jayanagar, Bengaluru - 560041, Karnataka
+
+OBJECTIVE
+To secure a Data Analyst position in a dynamic organization where I can apply my knowledge of SQL, Python and
+data visualization to turn data into useful business insights, and grow with the team.
+
+EDUCATION
+B.Tech in Computer Science and Engineering (Data Science), Kaveri Institute of Technology, Bengaluru
+2022 – 2026                                                                          CGPA: 8.9 / 10
+Pre-University (PCMC), Vidya Mandir PU College, Bengaluru, 2022                       94%
+SSLC, Vidya Mandir High School, Bengaluru, 2020                                       96%
+
+INTERNSHIPS
+Data Analyst Intern                                                                  Jan 2026 – Apr 2026
+Sarasvati Analytics Pvt. Ltd., Bengaluru
+• Cleaned and analysed 1.5 million rows of e-commerce order data using SQL and pandas.
+• Built a Power BI dashboard tracking delivery delays, which the operations team used in weekly reviews.
+• Wrote Python scripts to automate daily sales reports, saving about 5 hours per week.
+
+Data Science Intern                                                                  Jun 2025 – Aug 2025
+Lotus Health Informatics, Hyderabad (Remote)
+• Prepared a patient-readmission dataset and trained a logistic regression model (AUC 0.78).
+• Presented findings to a team of 12 clinicians and data scientists.
+
+TECHNICAL SKILLS
+Languages        : Python, SQL, R (basic)
+Libraries        : pandas, NumPy, scikit-learn, Matplotlib
+BI Tools         : Power BI, Tableau, Excel
+Databases        : MySQL, PostgreSQL
+
+ACADEMIC PROJECTS
+Customer Churn Prediction – Python, scikit-learn: compared 4 classifiers on telecom data, achieving 84% accuracy.
+Sales Dashboard – Power BI: interactive dashboard with DAX measures for regional sales and profit.
+Sentiment Analysis of Product Reviews – NLTK: classified 20,000 reviews into positive, neutral, negative.
+
+CERTIFICATIONS
+• Google Data Analytics Professional Certificate (Coursera)
+• HackerRank SQL (Advanced) Certificate
+• Python for Data Science – NPTEL
+
+ACHIEVEMENTS
+• Winner, Inter-College Data Quest 2025, Kaveri Institute of Technology
+• Merit Scholarship (2023) for being in the top 5% of the batch
+
+STRENGTHS
+• Analytical thinking, attention to detail, quick learner
+• Good communication and presentation skills
+
+HOBBIES
+Classical dance, chess, volunteering at the college NSS unit
+
+PERSONAL DETAILS
+Date of Birth      : 18 July 2004
+Gender             : Female
+Marital Status     : Unmarried
+Nationality        : Indian
+Languages Known    : English, Kannada, Tamil, Hindi
+
+DECLARATION
+I hereby declare that all the information furnished above is true to the best of my knowledge.
+
+Place: Bengaluru                                                                     Ananya Subramanian
+Date: 06/10/2026

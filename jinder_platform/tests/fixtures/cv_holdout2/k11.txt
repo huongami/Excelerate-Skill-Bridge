@@ -1,0 +1,47 @@
+Joaquim Sá
+Brisbane QLD, joaquim.sa@example.test, +61 400 000 011
+
+Dear Hiring Manager,
+
+I am applying for the Solutions Architect position at your company (reference ARC-117). Over the last decade I have moved from
+racks and routers to cloud landing zones, and I would like to use that range on customer-facing design work.
+
+Where I am today. I work as a Cloud Engineer on a contract at Vantora Networks, where I design the network and identity layout
+for a platform used by 12 government departments. Before that I spent five years running the WAN for a freight company.
+I enjoy explaining trade-offs to people who do not read diagrams for fun, and I have written the reference architecture that
+three delivery teams now follow.
+
+I have attached my details below.
+
+Yours sincerely,
+Joaquim Sá
+
+--------------------------------------------------------------
+
+Aims
+Customer-facing architecture work with cloud and network design.
+
+Experience
+
+Cloud Engineer (Contract), Vantora Networks — Jan 2025 to Present
+ - Designed hub-and-spoke networking in AWS for 12 departments, with shared logging and central egress control
+ - Built Terraform modules for VPCs, transit gateways and identity roles; 90 accounts now use them
+ - Wrote the reference architecture and the decision records behind it
+
+Network Engineer, Halcyon Freight — Jun 2019 to Dec 2024
+ - Ran the WAN for 46 depots (BGP, SD-WAN); availability 99.95%
+ - Led the move from MPLS to SD-WAN, saving 38% of annual carrier costs
+ - Automated router configuration checks with Python and Ansible
+
+Network Technician, Corvane Schools Trust — Mar 2016 to May 2019
+ - Wi-Fi roll-out for 14 schools and a central firewall policy
+
+Support Engineer, Ostrava Digital — Sep. 2014 to Feb 2016
+ - Second-line support for a managed hosting product
+
+Certifications
+AWS Certified Solutions Architect - Associate (2023)
+Cisco CCNP Enterprise (2021)
+
+Skills
+AWS, Terraform, BGP, Cisco, Python, Ansible

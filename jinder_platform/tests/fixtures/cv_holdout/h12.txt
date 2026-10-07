@@ -1,0 +1,43 @@
+Sofia Marchetti
+Frontend Developer
+sofia.marchetti@example.test
+SUMMARY
++61 400 000 022
+Frontend developer who cares about accessible, fast interfaces and
+Brisbane, QLD
+well-documented design systems. Happy in both Figma and the browser
+SKILLS
+dev tools.
+JavaScript
+EXPERIENCE
+TypeScript
+Frontend Developer
+React
+Lumen & Loom Studio
+CSS
+Mar 2024 – Present
+Storybook
+- Built a React component library now used by six product
+Jest
+teams; duplicated UI code fell by about a third.
+CERTIFICATIONS
+- Led the WCAG 2.1 AA audit and fixed 140 issues across
+Web Accessibility Specialist (WAS)
+the checkout flow.
+2023
+- Cut the largest bundle from 1.2 MB to 380 KB using code
+AWARDS
+splitting and image optimisation.
+Runner-up, CivicHack Brisbane
+Web Developer
+2023
+Saltbush Creative
+LANGUAGES
+Jul 2022 – Feb 2024
+English
+- Built 14 marketing and booking sites in HTML, CSS and
+Italian
+JavaScript for hospitality clients.
+- Introduced a Sass design-token setup shared between projects.
+EDUCATION
+Diploma of Web Development, Southbank Institute, 2021 – 2022

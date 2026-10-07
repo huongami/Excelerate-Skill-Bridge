@@ -1,0 +1,37 @@
+THANDIWE MOKOENA
+Johannesburg, South Africa  |  +27 82 000 0026  |  thandiwe.mokoena@example.test  |  linkedin.com/in/thandiwemokoena
+
+PROFILE
+Analytics leader who builds pricing, claims and customer-risk models and the teams that run them.
+Seeking a VP of Data or Chief Data Officer position in a company that treats data as a core product.
+
+EXPERIENCE
+
+Head of Analytics, Rivermark Insurance, Johannesburg                                           Jan 2021 – Present
+  Lead 22 data scientists, analysts and ML engineers across pricing, claims and fraud
+  Delivered a gradient-boosted pricing model that improved loss ratio by 2.1 points (about ZAR 340m a year)
+  Built the group's first ML platform on Databricks and Snowflake; 40 models in production with monitoring
+  Report to the CFO; own a ZAR 60m analytics budget
+
+Lead Data Scientist, Brightwell Consulting, Cape Town                                          Mar 2016 – Dec 2020
+  Led engagements in insurance, mining and retail for 12 clients; grew the practice from 4 to 15 people
+  Developed demand forecasting and credit-risk models in Python and R that were adopted by three banks
+
+Data Scientist, Copperline Research, Pretoria                                                  Jul 2012 – Feb 2016
+  Built statistical models for survey weighting and small-area estimation used in national reports
+  Automated the analysis pipeline in R and SQL, cutting turnaround from 3 weeks to 4 days
+
+EDUCATION
+MSc Statistics (cum laude), Highveld University                                                2010 – 2012
+BSc Mathematical Statistics, Highveld University                                               2007 – 2010
+
+CERTIFICATIONS
+Certified Analytics Professional (CAP), INFORMS, 2019
+Databricks Certified Machine Learning Professional, 2024
+
+AWARDS
+1st Place, Insurance Risk Modelling Challenge (Kaggle), 2017
+CEO Award, Rivermark Insurance, 2023
+
+TOOLS
+Python, R, SQL, Spark, Snowflake, XGBoost

@@ -1,0 +1,55 @@
+CONTACT
+Toronto, Ontario
++1 416 000 0006
+mei.tavares@example.test
+linkedin.com/in/meilintavares
+
+SKILLS
+SQL
+Power BI
+Tableau
+DAX
+Python (pandas, matplotlib)
+Excel (Power Query, pivot tables)
+dbt
+Snowflake
+Data modelling
+Stakeholder reporting
+
+LANGUAGES
+English – Native
+Portuguese – Fluent
+Mandarin – Conversational
+
+CERTIFICATIONS
+Microsoft Certified: Power BI Data Analyst Associate
+Tableau Desktop Specialist
+dbt Fundamentals
+
+MEI LIN TAVARES
+Business Intelligence Analyst
+
+PROFILE
+Data analyst with 4 years of experience turning messy operational data into dashboards that managers actually use.
+Experienced in healthcare and food-manufacturing reporting, from SQL modelling to executive Power BI packs.
+
+EXPERIENCE
+Business Intelligence Analyst
+Fernhill Health Partners | Jan 2025 – Present
+• Own 18 Power BI dashboards on wait times, bed occupancy and referrals used by 9 clinical directors
+• Built a Snowflake reporting layer with dbt models and tests, reducing report refresh time from 40 to 6 minutes
+• Reconciled three source systems and cut monthly data-quality exceptions by 60%
+• Run a fortnightly "report clinic" to train staff in self-service analytics
+
+Data Analyst
+Orchard Bay Foods | Jul 2022 – Dec 2024
+• Produced weekly production-yield and waste reports in SQL and Tableau for four factories
+• Automated the monthly board pack with Python and Excel, saving 15 hours of manual work
+• Forecast seasonal demand for 30 product lines, improving planning accuracy by 11%
+
+EDUCATION
+Bachelor of Commerce (Business Analytics)
+Lakeshore University | 2018 – 2022
+
+AWARDS
+Employee Spotlight Award, Orchard Bay Foods (2023)

@@ -1,0 +1,40 @@
+Beatriz Almeida-Quigley
+beatriz.aq@example.test
++61 400 000 022
+Sydney NSW
+
+Papers & Prizes
+Conference talk: "Causal Inference in Retail", Analytics Forum Sydney, 2020
+
+Credentials
+Certified Analytics Professional (CAP), 2015
+
+What I Have Done
+
+Associate Director of Analytics at Vantora Networks, since February 2024
+Lead the analytics function of 22 people across customer, network and finance analytics
+Built the experimentation programme: 45 tests a quarter, with a shared decision log
+Present quarterly results to the executive team and the board risk committee
+
+Analytics Manager, Vantora Networks, Mar 2020 to Jan 2024
+Grew the team from 6 to 15 analysts
+Introduced a causal-inference approach to churn campaigns, saving 2.4 million in retention offers
+Replaced 200 spreadsheets with a governed set of 30 dashboards
+
+Senior Business Analyst, Pinecrest Software, Aug 2016 to Feb 2020
+Pricing and packaging analysis for a SaaS product with 9,000 customers
+Mentored four analysts
+
+Business Analyst, Mapleton Systems, Jun 2014 to Jul 2016
+Operational reporting for finance and operations
+
+Summary
+Analytics leader with over 15 years of experience in telecommunications and software, including consulting work before 2014.
+I work best where analysts are close to decisions and trusted by the business.
+
+Education
+MBA, 2012 – 2014
+BCom (Economics), 2005 – 2008
+
+Tools
+SQL, Tableau, R, Python, A/B testing, causal inference

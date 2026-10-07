@@ -1,0 +1,47 @@
+MARCUS V. DEMETRIOS-TEST
+Principal Cloud Architect
+Remote | +1 555 010 0188 | marcus.demetrios@example.test | linkedin.com/in/example-test
+
+CORE COMPETENCIES
+| Cloud Architecture      | Solution Architecture   | Cost Optimisation     | Cloud Migration       |
+| Terraform               | AWS CloudFormation      | Kubernetes            | Zero Trust            |
+| Stakeholder Management  | Disaster Recovery       | Landing Zones         | Technical Leadership  |
+| Networking (VPC, DNS)   | AWS                     | Azure                 | Cloud Security        |
+
+PROFESSIONAL SUMMARY
+Cloud architect with 11 years of experience designing and migrating regulated workloads to
+AWS and Azure. Owner of the multi-account landing zone used by 60 product teams.
+
+PROFESSIONAL EXPERIENCE
+
+Principal Cloud Architect | Altair Cloudworks Demo Inc. | Jan 2020 - Present
+* Defined the reference architecture for 140 workloads across 3 regions
+* Cut cloud spend by 27% (4.1M per year) through right-sizing and savings plans
+* Designed the zero trust network model and the KMS-based encryption standard
+* Led a 7-person architecture guild; reviewed 200+ design documents
+* Introduced Terraform and CloudFormation guardrails into the platform pipelines
+
+Cloud Engineer | Brightline Hosting Demo | Mar 2015 - Dec 2019
+* Built the first IaaS offering on AWS EC2 and later migrated 90 customers
+* Wrote Terraform modules and Python tooling for provisioning
+* Ran the on-call rota and post-incident reviews
+
+EDUCATION
+M.Sc. Computer Networks, Demo Institute of Technology, 2012 - 2014
+B.Sc. Computer Engineering, Demo Institute of Technology, 2008 - 2012
+
+CERTIFICATIONS
+| AWS Certified Solutions Architect - Professional | 2022 | ID: AWS-DEMO-0001 |
+| AWS Certified Security - Specialty | 2023 | valid until 2028 |
+| TOGAF 9 Certified | 2019 | The Open Group |
+| MBA, part-time | in progress | expected 2027 |
+
+PATENTS AND RECOGNITION
+| Granted Patent: Multi-region Failover Orchestration Method | 2023 |
+| Innovation Award, Altair Cloudworks Demo | 2021 |
+
+ADDITIONAL
+Languages: English (native), Greek (conversational)
+Work authorisation: no sponsorship needed
+Availability: 30 days notice
+Volunteering: STEM mentor at a local school (weekends)

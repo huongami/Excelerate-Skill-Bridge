@@ -1,0 +1,49 @@
+MARGUERITE DELACROIX-HANSEN
+Director of Data Engineering
+Wellington, New Zealand  •  +64 21 000 0004  •  marguerite.delacroix@example.test  •  linkedin.com/in/mdelacroix-hansen
+
+EXECUTIVE PROFILE
+Data and analytics leader who has built and run engineering teams of up to 40 people across insurance and retail.
+Known for turning fragmented reporting estates into governed cloud data platforms, and for developing managers
+and engineers who stay. Trusted adviser to the executive team on data strategy, privacy and cost.
+
+AREAS OF EXPERTISE
+Data platform strategy  |  Cloud data warehousing  |  Data governance and privacy  |  Team building and coaching
+Vendor and budget management  |  Regulatory reporting
+
+TECHNOLOGY
+Snowflake, Databricks, dbt, Apache Airflow, Azure, SQL, Python
+
+PROFESSIONAL EXPERIENCE
+
+Director of Data Engineering                                                          April 2020 – Present
+Northgate Insurance Group, Wellington
+•  Lead 5 teams (38 people) delivering the enterprise data platform, claims analytics and regulatory reporting
+•  Moved 120 TB of on-premises warehouse workloads to Snowflake and Databricks, reducing run cost by 31%
+•  Established the data governance council and a company-wide data catalogue covering 900 datasets
+•  Manage an annual budget of NZD 9.5 million and four strategic vendor relationships
+
+Senior Manager, Data Platform                                                         January 2015 – March 2020
+Kauri Mutual, Wellington
+•  Grew the data platform group from 6 to 22 engineers and introduced agile delivery
+•  Delivered the first self-service reporting layer, used by 1,100 staff
+•  Led the replacement of nightly batch ETL with Airflow-orchestrated pipelines
+
+Data Warehouse Developer                                                              2009 – 2014
+Ironbark Retail, Auckland
+•  Designed star-schema models and ETL for merchandising, loyalty and supply-chain reporting
+•  Tuned SQL workloads that shortened the overnight batch window from 9 hours to 4
+
+EDUCATION
+Master of Business Administration, Rimutaka University                                2012 – 2014
+Bachelor of Science (Computer Science), Pōneke Institute of Technology               2005 – 2008
+
+CERTIFICATIONS
+SnowPro Core Certification, Snowflake, 2021
+Databricks Certified Data Engineer Professional, Databricks, 2023
+Project Management Professional (PMP), Project Management Institute, 2018
+ITIL Foundation, AXELOS, 2014
+
+AWARDS
+Innovation Award, NZ Data & Analytics Summit (2022)
+Chair's Award for Leadership, Northgate Insurance Group (2023)

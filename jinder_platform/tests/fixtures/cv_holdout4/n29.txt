@@ -1,0 +1,49 @@
+ELENA VASQUEZ-DEMO
+SAP FI/CO Consultant (S/4HANA) - contractor, available for remote and onsite
+elena.vasquez@example.test | +34 000 555 0191 | Madrid (Demo)
+
+SUMMARY
+Finance-focused SAP consultant with 10 years of experience in the record-to-report process.
+Works as an independent contractor on S/4HANA rollouts: gathers requirements, writes
+functional specifications, configures FI and CO and supports user acceptance testing.
+
+CONTRACT HISTORY
+
+SAP FI/CO Consultant (Contract)                    Feb 2025 - Present
+Meridian Retail Demo S.A., Madrid
+- Finance lead for the S/4HANA migration of 4 company codes; gap analysis and fit-gap workshops
+- Wrote 35 functional specifications and the business requirements document for new reports
+- Cost centre and profit centre accounting design; allocation cycles
+- Managed stakeholders in finance, tax and IT; weekly status reporting
+
+SAP FI/CO Consultant (Contract)                    Jan 2023 - Dec 2024
+Orbit Foods Demo Ltd, Dublin
+- Group reporting and intercompany processes for 12 entities
+- Data migration with SQL checks and Excel reconciliation templates
+- Trained 40 key users; documented 25 process flows
+- Client Excellence Award 2024 for a clean quarter-end close
+
+SAP Finance Analyst                                Mar 2016 - Dec 2022
+Calderon Manufacturing Demo S.A., Valencia
+- Month-end closing, asset accounting and the ECC support desk
+- Agile support team: tickets in Jira, 2-week sprints, project management of small changes
+- Wrote user guides and test scripts
+
+EDUCATION
+BSc Business Administration, Demo University of Madrid, 2008 - 2012
+ACCA qualification: 11 of 13 papers passed (part qualified)
+
+CERTIFICATIONS
+SAP Certified Application Associate - Financial Accounting with SAP S/4HANA, SAP, 2022
+SAP Certified Application Associate - Management Accounting with SAP S/4HANA, SAP, 2023
+PRINCE2 Practitioner: lapsed, not renewed
+
+LANGUAGES
+Spanish (native), English (C1), French (B1)
+
+AVAILABILITY
+Remote or hybrid; onsite in Madrid, Dublin or Lisbon; notice 2 weeks
+
+KEY SKILLS
+Requirements gathering, gap analysis, functional specifications, stakeholder management, SQL,
+Excel, technical documentation, Agile, communication

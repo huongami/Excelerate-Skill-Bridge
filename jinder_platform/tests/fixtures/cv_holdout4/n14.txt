@@ -1,0 +1,55 @@
+NOELLE ARCHER-DEMO
+Full-stack Developer
+noelle.archer@example.test
++44 0000 555 014 | Leeds (Demo)
+github.com/example-noelle
+
+TIMELINE
+Jun 2025 - now
+Jan 2025 - May 2025
+Sep 2021 - Jul 2024
+2019 - 2021
+
+SKILLS
+React
+TypeScript
+Node.js
+PostgreSQL
+Docker
+Tailwind CSS
+GraphQL
+Jest
+Git
+
+LANGUAGES
+English - native
+Welsh - fluent
+
+EXPERIENCE
+
+Full-stack Developer
+Lumen Retail Demo, Leeds
+Build and run the customer account area: React and TypeScript front end, Node.js GraphQL API,
+PostgreSQL database. Ship to production several times a week with GitHub Actions. Wrote the
+Jest and Cypress tests for the checkout flow and fixed 60+ accessibility issues (WCAG 2.2).
+
+Web Developer (placement)
+Pixelhaus Demo Studio, Leeds
+Built five client websites with Tailwind CSS and Next.js. Set up Docker for local development.
+Paired with designers every week and presented finished sites to the clients.
+
+EDUCATION
+
+BSc Digital Media and Computing, University of Leeds Demo
+Dissertation: A browser-based tool for planning accessible routes. Dean's List 2023.
+
+College Diploma in IT, Demo College Leeds
+Merit grade; project: inventory app in JavaScript.
+
+AWARDS AND OPEN SOURCE
+Dean's List, 2023
+Core Contributor, Open Grid Toolkit, 2025
+Course certificate (not a qualification): Udemy "The Complete Node Bootcamp", 2024
+
+INTERESTS
+Climbing, volunteering at a code club, baking

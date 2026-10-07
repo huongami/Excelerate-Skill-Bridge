@@ -1,0 +1,58 @@
+Contact
+bastien.lefevre@example.test
+www.linkedin.com/in/bastien-lefevre-adeyemi
+(LinkedIn)
+github.com/blefevre-dev (Other)
+
+Top Skills
+Kubernetes
+Terraform
+Go
+
+Languages
+French (Native or Bilingual)
+English (Full Professional)
+
+Certifications
+Certified Kubernetes Administrator (CKA)
+HashiCorp Certified: Terraform Associate
+
+Honors-Awards
+ACM ICPC Eastern Canada Regional Finalist
+
+Bastien Lefèvre-Adeyemi
+Software Engineer at Tidewater Software
+Montréal, Québec, Canada
+
+Summary
+I build and operate cloud infrastructure and the internal tooling that lets product teams ship safely. Most of
+my time goes to Kubernetes, Terraform and Go services running on AWS, with Python for automation and
+Prometheus for observability.
+Outside work I mentor first-generation computer science students and help organise a monthly infrastructure
+meetup in Montréal.
+
+Experience
+
+Tidewater Software
+Software Engineer
+January 2023 - Present (3 years 10 months)
+Montréal, Québec, Canada
+- Maintain the internal deployment platform used by 25 teams: Go services on Kubernetes, provisioned with
+Terraform modules on AWS
+- Rolled out Prometheus and Grafana alerting that reduced noisy pages by 70%
+- Wrote a Python CLI that scaffolds new services with CI, dashboards and runbooks in ten minutes
+
+Foxglove Labs
+Associate Software Engineer
+April 2021 - December 2022 (1 year 9 months)
+Montréal, Québec, Canada
+- Developed REST APIs in Go and Python for a logistics tracking product
+- Containerised the monolith and moved it to Kubernetes, shortening release cycles from monthly to weekly
+- Added integration tests that increased coverage from 35% to 78%
+
+Page 1 of 2
+
+Education
+Laurentide University
+Bachelor of Engineering - BEng, Software Engineering
+2016 - 2020

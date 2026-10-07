@@ -1,0 +1,64 @@
+FELIX ANDRADE-MOSS
+felix.am@example.test / +61 400 000 006 / Hobart, Tasmania
+
+Summary
+Infrastructure engineer returning to work after a four-year career break (family care, 2020 to 2024).
+Before the break I ran Linux fleets, CI/CD and on-call rotations in retail and mining, and I have used the break
+to refresh my cloud skills. I am ready for the next role, ideally a Staff Engineer or Principal Engineer role in
+platform reliability.
+
+Where I Worked
+
+Site Reliability Engineer, Quillon Retail. 02.2017 - 11.2019
+§ Took on-call for 140 production services; cut paging volume by 55% by fixing the ten noisiest alerts
+§ Lead the migration of 60 VMs to containers on a self-managed cluster with zero customer downtime
+§ Defined SLOs for checkout and search together with the product owners
+§ Ran blameless post-incident reviews and tracked every action item to closure
+Stack: Linux, Kubernetes, Terraform, Prometheus, Grafana
+
+Systems Administrator, Quillon Retail. 06.2014 - 01.2017
+§ Looked after 220 Linux servers across two data centres and a growing cloud account
+§ Replaced hand-built servers with Puppet-managed images, patching time down from 3 weeks to 2 days
+§ Wrote the backup and restore runbooks that were used in the 2016 storm outage
+Stack: RHEL, Puppet, Nagios, Bash
+
+Linux Administrator (Contract), Redpine Mining. 09.2013 - 05.2014
+§ Nine-month contract to migrate fleet-tracking servers from Solaris to Linux
+§ Documented every service before moving it; nothing was lost on cutover night
+
+Help Desk Analyst, Ostrava Digital. 03.2012 - 08.2013
+§ Resolved 40+ tickets a day with a 96% satisfaction rating
+§ Moved from first line to the server team after passing the internal Linux exam
+
+Night Operator (casual), Tanglewood Energy. 01.2011 - 02.2012
+§ Monitored the data centre overnight and escalated alarms
+§ Learned shell scripting by automating my own handover notes
+
+Sales Assistant (Saturdays, part-time), Mill Street Books. 05.2008 - 12.2010
+§ Weekend shifts while studying, including stocktake and online order picking
+
+IT Intern (summer 2008), Keystone Rail
+§ Two months imaging desktops and helping staff with their accounts
+
+Career Break
+2020 - 2024: full-time carer for a family member. No paid work in this period.
+
+Volunteering
+Treasurer, Hobart Hackerspace (2016 – 2019): ran the budget and the membership list
+
+Side Projects
+Home weather station with a Raspberry Pi and Grafana (2015 – 2016)
+
+Education
+Diploma of Information Technology, Harbour TAFE, 2006 - 2007
+Self-study 2025 - 2026: cloud and infrastructure as code (see certifications)
+
+Certifications
+AWS Certified Cloud Practitioner (2025)
+Terraform Associate (HashiCorp), 2026
+
+Awards
+Top performer 2018, Quillon Retail
+
+Skills
+Linux, Kubernetes, Terraform, Prometheus, Grafana, Bash, AWS

@@ -1,0 +1,47 @@
+LUCIA FERNANDEZ-TEST
+Analytics Engineer
+lucia.fernandez@example.test | +34 000 555 014 | Valencia (Demo) | github.com/example-lucia
+
+LOOKING FOR
+Seeking a Data Product Manager role where I can combine analytics engineering with product work.
+
+SUMMARY
+Analytics engineer who treats data models as products. I design tested dbt layers on
+Snowflake, document them for the business and measure how people use them.
+
+EXPERIENCE
+2024-02 to now        Analytics Engineer, Solmar Travel Demo S.L.
+                      - Own the dbt project (310 models, 2,400 tests) on Snowflake, orchestrated in Airflow
+                      - Dimensional modelling of bookings, pricing and customer journeys (star schema)
+                      - Reduced warehouse cost by 31% by rewriting incremental models
+                      - Looker semantic layer with 90 certified explores for 200 business users
+                      - Data quality checks in CI; code review for 4 analysts on Git pull requests
+                      - Wrote the metric definitions handbook and ran monthly office hours for analysts
+                      - Worked with product managers to define usage metrics for the data models
+2022-08 to 2024-01    Data Analyst, Rioja Wines Demo S.A.
+                      - SQL reporting, Looker Studio dashboards, weekly sales analysis
+                      - Moved 60 spreadsheets into a governed warehouse
+                      - Agreed definitions of revenue and margin with finance
+
+EDUCATION
+MSc Statistics and Data Science, Demo University of Valencia, 2020 - 2022
+BSc Mathematics, Demo University of Valencia, 2016 - 2020
+
+CERTIFICATIONS
+dbt Analytics Engineering Certification, dbt Labs, 2025
+Product Management Essentials (online course by a business school, 2025)
+DELE C1 Spanish language certificate - not an IT certification
+IELTS 7.0 (2021)
+
+AWARDS
+Winner, City Open Data Challenge, 2023
+Top contributor to the Valencia Analytics Meetup repository, 2024
+
+LANGUAGES
+Spanish (native), Valencian (native), English (C1), French (A2)
+
+INTERESTS
+Trail running, board games, volunteering at a food bank
+
+TOOLS
+dbt, SQL, Snowflake, Apache Airflow, Looker, Git, Python, data modelling, data quality

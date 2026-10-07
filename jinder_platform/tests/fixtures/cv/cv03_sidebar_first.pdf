@@ -1,0 +1,66 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222 222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 500 500 334 260 334 584] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [294 294 376 589 589 942 707 202 352 352 412 619 294 352 294 294 589 589 589 589 589 589 589 589 589 589 294 294 619 619 619 589 1075 707 707 765 765 707 647 824 765 294 530 707 589 882 765 824 707 824 765 707 647 765 707 1000 707 707 647 294 294 294 497 589 352 589 589 530 589 589 294 589 589 235 235 530 235 882 589 589 589 589 352 530 294 589 530 765 530 530 530 354 275 354 619] >>
+endobj
+5 0 obj
+<< /Length 2053 >>
+stream
+BT /F2 11 Tf 1 0 0 1 30.00 774.82 Tm (CONTACT) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 761.02 Tm (Melbourne, VIC) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 747.22 Tm (sofia.example@example.test) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 733.42 Tm (+61 400 000 003) Tj ET
+BT /F2 11 Tf 1 0 0 1 30.00 704.24 Tm (SKILLS) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 690.44 Tm (JavaScript) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 676.64 Tm (TypeScript) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 662.84 Tm (React) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 649.04 Tm (Node.js) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 635.24 Tm (PostgreSQL) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 621.44 Tm (Docker) Tj ET
+BT /F2 11 Tf 1 0 0 1 30.00 592.26 Tm (EDUCATION) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 578.46 Tm (Bachelor of Software) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 564.66 Tm (Engineering) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 550.86 Tm (University of Westbank) Tj ET
+BT /F1 10 Tf 1 0 0 1 30.00 537.06 Tm (2017 \226 2020) Tj ET
+BT /F2 24 Tf 1 0 0 1 210.00 756.88 Tm (SOFIA EXAMPLE) Tj ET
+BT /F1 13 Tf 1 0 0 1 210.00 738.94 Tm (Full Stack Developer) Tj ET
+BT /F2 11 Tf 1 0 0 1 210.00 711.76 Tm (PROFILE) Tj ET
+BT /F1 10 Tf 1 0 0 1 210.00 697.96 Tm (Full stack developer who builds web apps with React, Node.js and PostgreSQL.) Tj ET
+BT /F1 10 Tf 1 0 0 1 210.00 684.16 Tm (I like small teams that ship every week.) Tj ET
+BT /F2 11 Tf 1 0 0 1 210.00 656.98 Tm (WORK EXPERIENCE) Tj ET
+BT /F2 10 Tf 1 0 0 1 210.00 643.18 Tm (Full Stack Developer | Tidewater Digital | Aug 2023 \226 Present) Tj ET
+BT /F1 10 Tf 1 0 0 1 210.00 629.38 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 222.00 629.38 Tm (Built a booking app in React and Node.js used by 40 clinics.) Tj ET
+BT /F1 10 Tf 1 0 0 1 210.00 615.58 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 222.00 615.58 Tm (Cut page load time by 45% with caching in Redis.) Tj ET
+BT /F2 10 Tf 1 0 0 1 210.00 595.78 Tm (Junior Web Developer | Marlin Cloud Pty Ltd | Jan 2022 \226 Jul 2023) Tj ET
+BT /F1 10 Tf 1 0 0 1 210.00 581.98 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 222.00 581.98 Tm (Wrote REST APIs in Node.js and tests in Jest.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000637 00000 n 
+0000001159 00000 n 
+0000003264 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3400
+%%EOF

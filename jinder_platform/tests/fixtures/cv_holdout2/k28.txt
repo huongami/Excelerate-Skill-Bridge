@@ -1,0 +1,26 @@
+Aisha Rahmani
+Hobart TAS | aisha.rahmani@example.test | +61 400 000 028
+
+Objective
+Next role: Backend Developer on a payments or logistics team, where I can keep learning from experienced engineers.
+
+Experience
+
+Mapleton Systems, Hobart — Associate Software Engineer (Aug 2024 to Present)
+- Develop REST endpoints in Java and Spring Boot for an order management system
+- Wrote 300+ unit and integration tests; the module I own has not had a production defect in 9 months
+- Moved two batch jobs from cron to a queue, which removed duplicate runs
+- Take part in code review with senior engineers every day
+Technologies: Java, Spring Boot, MySQL, Docker, JUnit
+
+Calloway Press, Hobart — Software Engineering Intern (summer 2023)
+- Built a small internal tool that checks image sizes before publishing
+
+Education
+BSc Software Engineering (a 3-year degree), Island State University, 2020 - 2023
+
+Scholarship
+Merit Scholarship (2020)
+
+Skills
+Java, Spring Boot, MySQL, Git, JUnit, Docker

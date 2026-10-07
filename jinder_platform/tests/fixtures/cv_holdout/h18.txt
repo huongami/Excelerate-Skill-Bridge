@@ -1,0 +1,29 @@
+Mateo Fernández
+Jr Frontend Developer
+mateo.fernandez@example.test | +61 400 000 028 | Gold Coast, QLD
+
+CAREER OBJECTIVE
+To grow into a Full-stack Engineer by deepening my back-end skills (Node.js, SQL) while shipping accessible, well-tested interfaces.
+
+EXPERIENCE
+Jr Frontend Developer — Pebblebrook Digital — 2025 – present
+- Build and maintain React and TypeScript features for a property-listing platform.
+- Fixed 40 accessibility issues flagged by an external audit.
+- Pair weekly with a senior developer; my pull requests are reviewed within a day.
+
+Web Development Intern — Sunbird Media — Jan 2024 – Jun 2024
+- Converted 12 Figma pages to responsive HTML and CSS.
+- Wrote the first Cypress smoke tests for the marketing site.
+
+EDUCATION
+Diploma of Information Technology, Coastline TAFE, 2022 – 2023
+
+COURSES
+Responsive Web Design Certification, freeCodeCamp, 2023
+JavaScript Algorithms and Data Structures Certification, freeCodeCamp, 2023
+
+ACHIEVEMENTS
+1st Place, Open City Hackathon (2024)
+
+SKILLS
+JavaScript, React, HTML, CSS, TypeScript, Git

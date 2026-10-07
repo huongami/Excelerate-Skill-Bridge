@@ -1,0 +1,47 @@
+DEBORAH L. FINCH-DEMO
+Staff Technical Writer | Developer Advocacy
+deborah.finch@example.test | +1 555 010 0123 | Portland (Demo) | docs portfolio: example-finch.test
+
+PROFILE
+Technical writer with eight years of experience documenting APIs and cloud tools for
+developers. I run docs-as-code workflows, mentor writers and speak about developer experience.
+
+EXPERIENCE
+
+Staff Technical Writer                                          Sept. 2021 - ongoing
+Quillflow Cloud Demo Inc., remote
+- Own the API reference and tutorials (OpenAPI), 1.5M monthly readers
+- Built the docs-as-code pipeline: Markdown in Git, continuous integration checks in
+  GitHub Actions, previews on every pull request
+- Cut support tickets about authentication by 35% with a rewritten OAuth guide
+- Mentor 4 writers; run office hours with the engineering teams; give conference talks
+
+Technical Writer                                                Jan 2018 - Aug 2021
+Parcelio Demo Software, Seattle (Demo)
+- User guides, release notes and knowledge base articles for a logistics SaaS product
+- Wrote Python scripts to generate reference pages from code comments
+- Introduced Agile documentation sprints with the product team
+
+EDUCATION
+BA English Literature, Demo College of the Pacific, 2009 - 2013
+Certificate programme: Technical Communication (university extension), 2017
+
+CERTIFICATIONS
+Certified Professional Technical Communicator (CPTC), Society for Technical Communication, 2020
+Google Technical Writing course (completion badge)
+
+AWARDS AND PUBLICATIONS
+Maintainer, Open Docs Toolkit (open source project, 4,000 stars), 2022
+Best Paper, DocsConf Workshop, 2022
+Speaker, Write the Docs Meetup, 2023
+Publication: "Docs as Code in Practice", Journal of Technical Communication Demo, 2021
+Publication: "Writing API errors people can fix", company blog, 2022
+Publication: "Style guides that developers read" (conference proceedings), 2019
+
+SKILLS
+Technical writing, API documentation, Git, Python, communication, Agile, mentoring,
+continuous integration, OpenAPI
+
+LANGUAGES
+English (native), Spanish (professional working)
+Availability: remote, US time zones

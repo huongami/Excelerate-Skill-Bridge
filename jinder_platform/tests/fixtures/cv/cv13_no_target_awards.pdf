@@ -1,0 +1,61 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222 222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 500 500 334 260 334 584] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [294 294 376 589 589 942 707 202 352 352 412 619 294 352 294 294 589 589 589 589 589 589 589 589 589 589 294 294 619 619 619 589 1075 707 707 765 765 707 647 824 765 294 530 707 589 882 765 824 707 824 765 707 647 765 707 1000 707 707 647 294 294 294 497 589 352 589 589 530 589 589 294 589 589 235 235 530 235 882 589 589 589 589 352 530 294 589 530 765 530 530 530 354 275 354 619] >>
+endobj
+5 0 obj
+<< /Length 1990 >>
+stream
+BT /F2 20 Tf 1 0 0 1 50.00 762.40 Tm (OMAR SAMPLETON) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 745.84 Tm (Data Platform Technical Lead) Tj ET
+BT /F1 9 Tf 1 0 0 1 50.00 733.42 Tm (Canberra, ACT | omar.sampleton@example.test | +61 400 000 013) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 708.24 Tm (SUMMARY) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 694.44 Tm (Technical lead who has worked on lakehouse platforms for 11 years.) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 669.26 Tm (EXPERIENCE) Tj ET
+BT /F2 10 Tf 1 0 0 1 50.00 652.46 Tm (Data Platform Technical Lead | Kestrel Analytics | 2020 \226 Present) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 638.66 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 64.00 638.66 Tm (Looking after a team of 5 engineers and 2 analysts.) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 624.86 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 64.00 624.86 Tm (Moved 300 tables to Delta Lake on Databricks.) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 611.06 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 64.00 611.06 Tm (Set the roadmap and the on-call rules for the platform.) Tj ET
+BT /F2 10 Tf 1 0 0 1 50.00 591.26 Tm (Senior Data Engineer | Redfern Data Co | 2015 \226 2020) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 577.46 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 64.00 577.46 Tm (Built Apache Kafka streams for 20 million events a day.) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 552.28 Tm (AWARDS) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 538.48 Tm (Excellence in Delivery Award, Kestrel Analytics, 2023) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 524.68 Tm (Speaker, Data Engineering Summit, 2024) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 510.88 Tm (Top 10, National Forecasting Challenge, 2022) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 485.70 Tm (CERTIFICATIONS) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 471.90 Tm (Certified Kubernetes Administrator \(CKA\) \227 2021) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 446.72 Tm (SKILLS) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 432.92 Tm (Databricks, Apache Kafka, Apache Spark, Python, SQL, Terraform) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 409.12 Tm (Looking forward to hearing from you.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000637 00000 n 
+0000001159 00000 n 
+0000003201 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3337
+%%EOF

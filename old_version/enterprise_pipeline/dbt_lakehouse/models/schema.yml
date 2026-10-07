@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_adzuna_jobs
+    description: "Staging view of live Australian job vacancies"
+    columns:
+      - name: job_id
+        description: "Primary key of the job vacancy"
+        tests:
+          - unique
+          - not_null
+      - name: job_title
+        description: "Job title of the vacancy"
+        tests:
+          - not_null
+
+  - name: stg_international_resumes
+    description: "Staging view of international candidate resumes with scrubbed PII"
+    columns:
+      - name: candidate_id
+        description: "Primary key of the candidate"
+        tests:
+          - unique
+          - not_null
+      - name: full_name
+        description: "Full name or pseudonym of candidate"
+        tests:
+          - not_null
+
+  - name: fct_capability_alignment_matrix
+    description: "Gold fact table of capability alignments between candidates and Australian jobs"
+    columns:
+      - name: candidate_id
+        tests:
+          - not_null
+      - name: job_id
+        tests:
+          - not_null
+      - name: match_tier
+        tests:
+          - accepted_values:
+              values: ['Direct Industry Alignment', 'Transferable Cross-Sector Capability']
+
+  - name: dim_australian_market_demand
+    description: "Gold dimension table summarizing market demand by sector"
+    columns:
+      - name: sector
+        tests:
+          - not_null
+          - unique

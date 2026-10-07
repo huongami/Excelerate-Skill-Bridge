@@ -1,0 +1,62 @@
+fiona mcallister-dube  |  fiona.md@example.test  |  +61 400 000 031
+
+Roles Held
+
+Business Systems Analyst III		Vantora Networks		Jul 2022 – Present
+• Lead requirements for the billing replacement programme (budget 18 million, 6 delivery teams)
+• Model the future-state process in BPMN and keep a single traceable backlog in Jira
+• Run weekly workshops with Finance, Customer Care and the vendor's solution architects
+• Wrote the data migration acceptance criteria; 4.2 million accounts reconciled with 99.98% accuracy
+• Facilitate the fortnightly programme risk review and escalate vendor delays with evidence
+• Coach two analysts on writing testable requirements
+Tools: Jira, Confluence, Visio, SQL
+
+Business Systems Analyst II		Vantora Networks		Apr 2019 – Jun 2022
+• Analysed and documented 40 integration points between the CRM and billing systems
+• Owned the UAT plan for three releases and trained 60 business testers
+• Introduced story mapping, which cut the average requirement rework by a third
+• Produced the data dictionary for 220 billing fields, signed off by Finance
+• Stood in as product owner for the invoice portal for four months
+Tools: Jira, SQL, UML
+
+Business Analyst		Vantora Networks		Jan 2017 – Mar 2019
+- Gathered requirements for the customer self-service app
+- Wrote use cases and acceptance tests for 120 user stories
+- Mapped current-state processes and found 9 manual hand-offs to automate
+- Ran the first customer survey on the app and turned the results into a prioritised backlog
+
+Project Coordinator		Tidewater Health		Feb 2015 – Dec 2016
+– Coordinated a clinic scheduling rollout across 12 sites
+– Kept the RAID log and the weekly steering committee pack
+– Trained 80 clinic staff on the new scheduling screens
+
+Operations Officer		Cobalt Ridge Bank		Jan 2013 – Jan 2015
+o Processed and checked 150 business loan applications a month
+o Moved the team's tracking from paper to a shared spreadsheet and then to a small Access database
+
+Customer Service Representative (part-time)		Bluefen Telecom		Aug 2010 – Dec 2012
+▪ Evenings and weekends while studying
+▪ Handled billing queries, which is where I first saw how badly systems and process could fit
+
+Library Page (casual)		Ashford Library		Mar 2008 – Jul 2010
+* Shelving and the returns desk, 8 hours a week during school and the first year of university
+
+Formal Learning
+Bachelor of Business (Information Systems), 3 years, Harbourview University, 2008 – 2010
+Business Analysis short course, 2016
+
+Credentials
+ITIL 4 Foundation, 2020
+CBAP (IIBA), 2021
+Certificate in Italian, Level 3, Dante Language Institute, 2021
+Full driver's licence (C), no demerit points
+
+Papers & Prizes
+Merit Scholarship, 2008
+Employee of the Quarter, Vantora Networks (Q1 2021)
+
+Toolbox
+SQL, Jira, BPMN, UML, Confluence, Visio
+
+Volunteer
+Treasurer, Parents and Friends Association, Ashford Primary (2019 – 2022): budget of 40,000

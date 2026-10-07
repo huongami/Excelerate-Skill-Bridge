@@ -1,0 +1,36 @@
+Marguerite Lefèvre
+Engineering Manager
+marguerite.lefevre@example.test | +61 400 000 033 | Canberra, ACT
+
+PROFILE
+Engineering manager with over a decade in software delivery, equally comfortable in code reviews and budget conversations. I am open to feedback and looking forward to hearing from you.
+
+CAREER
+
+Engineering Manager, Driftwood Apps (current)
+- Manage 3 teams (14 engineers) delivering a mobile and web ordering platform.
+- Introduced quarterly roadmaps and a lightweight incident review process.
+- Hired 9 engineers and promoted 4, with attrition under 8 percent.
+
+Senior Developer, Copperline Insurance
+- Led the rebuild of the claims-lodgement service in Java and Spring.
+- Coordinated releases across four teams during the regulatory change programme.
+
+Developer, Marram Bay Software
+- Built reporting modules and batch jobs for a payroll product.
+
+Trainee Programmer, Fitzroy Data Services
+- First role after university: maintained COBOL and SQL scripts and learned source control.
+
+KEY ACHIEVEMENTS
+- Delivered the digital claims programme on budget (AUD 3.2M).
+- Reduced production incidents by 55 percent in two years.
+
+CERTIFICATIONS
+PMP (2018)
+
+EDUCATION
+Bachelor of Computer Science, Northgate University
+
+SKILLS
+Java, AWS, Scrum, Kubernetes, PostgreSQL

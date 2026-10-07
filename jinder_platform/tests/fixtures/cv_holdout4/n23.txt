@@ -1,0 +1,50 @@
+VICTOR LINDQVIST-DEMO
+Solutions Architect
+victor.lindqvist@example.test | +46 00 555 01 42 | Gothenburg (Demo)
+
+OBJECTIVE
+Seeking a Chief Technology Officer role in a growth-stage company where I can combine
+architecture, delivery and people leadership.
+
+PROFILE
+Architect with 18 years in enterprise software. Known for turning vague business goals into
+systems that survive their first million users.
+
+EXPERIENCE
+
+Solutions Architect                                                    2018 - Present
+Cobalt Peak Demo AB, Gothenburg
+- Architecture owner for a payments platform on AWS with 40 microservices on Kubernetes
+- Defined API standards, event-driven integration with Apache Kafka and the security model
+- Reviewed 150 design documents; ran architecture decision records for 9 teams
+- Presented the platform to customers and regulators
+
+Senior Software Engineer                                               2012 - 2018
+Fjord Systems Demo AB, Gothenburg
+- Java backend and API development for logistics software
+- Introduced event sourcing and cut batch processing time by 70%
+
+Software Engineer                                                      2008 - 2012
+Nordic Soft Demo AB, Malmo
+- Developed Java enterprise applications and database schemas
+
+EDUCATION
+MSc Software Engineering, Demo University of Technology Gothenburg, 2003 - 2008
+
+CERTIFICATIONS
+AWS Certified Solutions Architect – Professional, valid until 2028
+TOGAF 9.2 Certified, The Open Group, 2020
+Executive education: Leadership for Technologists (business school short programme), 2022
+
+ACCOMPLISHMENTS
+- Innovation Award 2021, Cobalt Peak Demo AB
+- Speaker, Cloud Native Summit 2023
+
+PUBLICATIONS
+"Event-driven payments", Software Architecture Review Demo, 2019
+
+TECHNICAL SKILLS
+System design, microservices, AWS, Java, Apache Kafka, Kubernetes, cloud security,
+API design, PostgreSQL
+
+Languages: Swedish (native), English (fluent), German (basic)

@@ -1,0 +1,11 @@
+# Jinder — Dependencies & Runtime Requirements
+# ============================================
+
+# The core backend server, intelligence engine formulas, and SQLite database
+# run on Python 3.9+ with ZERO external third-party dependencies!
+# Pure standard library: sqlite3, http.server, math, json, uuid, urllib
+
+# Optional: If your team prefers running an ASGI server in production:
+# fastapi>=0.109.0
+# uvicorn[standard]>=0.27.0
+# pydantic>=2.5.0

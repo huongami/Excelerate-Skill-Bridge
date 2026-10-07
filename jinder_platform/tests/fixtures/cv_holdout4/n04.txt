@@ -1,0 +1,57 @@
+CURRICULUM VITAE
+
+PERSONAL DETAILS
+Name:             Brian K. Mwangi-Demo
+P.O. Box:         00000-00100, Nairobi, Kenya
+Mobile:           +254 000 555 014
+Email:            brian.mwangi@example.test
+Nationality:      Kenyan
+Date of birth:    3rd June 1999
+Gender:           Male
+
+CAREER OBJECTIVE
+To secure a challenging position in a progressive organisation where I can apply my skills
+and grow professionally while contributing to the success of the company.
+
+PROFILE
+Android developer with 3+ years of hands-on experience building consumer and payments apps
+used by more than 400,000 people. Comfortable with Kotlin, Java and Jetpack Compose.
+Hard working, a team player and a fast learner.
+
+EMPLOYMENT HISTORY
+
+Android Developer                                         July 2023 - Present
+Savannah Pay Demo Ltd, Nairobi
+- Developed the wallet and bill-payment screens in Kotlin with Jetpack Compose
+- Integrated REST APIs and handled offline caching
+- Wrote unit tests and raised code coverage from 35% to 70%
+- Worked in a Scrum team with two-week sprints and used Git for version control
+- Published 14 app releases to the Play Store
+
+Android Developer Intern                                  January 2023 - June 2023
+Mombasa Mobile Labs, Mombasa
+- Fixed bugs in a ticketing app written in Java
+- Helped with release testing on 12 device types
+
+EDUCATION
+2018 - 2022   Bachelor of Science in Information Technology, Demo University of Nairobi
+2014 - 2017   Kenya Certificate of Secondary Education (KCSE), Test High School
+
+CERTIFICATES AND COURSES
+AWS Certified Cloud Practitioner, Amazon Web Services, 2024
+Course: Advanced Kotlin Coroutines (Udemy, 2024)
+Driving licence: Class B, clean record
+
+ACHIEVEMENTS
+- Winner, Nairobi Fintech Hackathon 2024
+- Organiser, DevFest Nairobi Demo 2023
+
+TECHNICAL SKILLS
+Kotlin, Java, Android SDK, Jetpack Compose, REST APIs, Git, Firebase, AWS, SQLite
+
+REFEREES
+Ms. Wanjiru Sampleton, Engineering Manager, Savannah Pay Demo Ltd
+Tel: +254 000 555 021   Email: w.sampleton@example.test
+
+Mr. Otieno Mockley, Lecturer, Demo University of Nairobi
+Tel: +254 000 555 033   Email: o.mockley@example.test

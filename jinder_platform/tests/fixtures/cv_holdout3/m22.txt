@@ -1,0 +1,54 @@
+# Jonas Ekström-Bell
+
+Backend Engineer
+Gothenburg, Sweden · jonas.ekstrom@example.test · github.com/jekstrom-dev
+
+---
+
+## About
+
+I build payment and messaging back-ends on the JVM. I like small services, boring technology and
+well-written post-mortems. Interested in distributed systems problems where correctness matters.
+
+## Experience
+
+### Skerry Payments
+
+**Senior Developer** | Skerry Payments | 2020 - present
+
+- Own the card-authorisation service (Kotlin, Spring Boot, PostgreSQL) handling ~900 requests per second
+- Replaced a polling integration with Kafka events, cutting settlement delay from 15 minutes to under 10 seconds
+- Introduced contract tests between 11 services and a canary release process on AWS
+- Interview and onboard new engineers; wrote the team's incident-review template
+
+### Nordic Mapworks
+
+**Developer** | Nordic Mapworks | 2016 - 2020
+
+- Developed Java back-ends for a fleet-routing product serving 40 municipalities
+- Migrated the database from MySQL to PostgreSQL with zero downtime using logical replication
+- Wrote the Docker-based local environment that cut new-joiner setup time from 2 days to 2 hours
+
+### Hexa Telecom
+
+**Support Engineer** | Hexa Telecom | 2014 - 2016
+
+- Second-line support for a billing platform; wrote SQL reports and fixed defects in the Java code base
+
+## Skills
+
+Java, Kotlin, Spring Boot, PostgreSQL, Kafka, Docker, AWS
+
+## Certifications
+
+- AWS Certified Developer - Associate (credential ID 7F2K9Q, 2021)
+- Confluent Certified Developer for Apache Kafka, 2022
+
+## Community
+
+- Open Source Contributor of the Year, Gothenburg JVM Community (2022)
+- Maintainer of `tiny-retry`, a small retry library (3k GitHub stars)
+
+## Education
+
+- BSc Computer Science, Älvsborg Institute of Technology, 2010 - 2014

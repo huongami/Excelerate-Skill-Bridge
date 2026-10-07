@@ -1,0 +1,40 @@
+Ingrid Solheim
+SeniorData Engineer | Oslo-born, Melbourne-based
+ingrid.solheim@example.test | +61 400 000 020
+
+Profile
+Data engineer who loves reliable pipe-
+lines more than clever ones. Looking for a data role with more design
+ownership, ideally in a platform team.
+
+Experience
+SeniorData Engineer, Vantora Networks   May 2021 – Present
+• Designed and imple-
+mented a streaming pipe-
+line that processes 40 mil-
+lion events a day with Kafka and Spark
+• Led the move of 180 batch jobs to Airflow; failed runs per week went from 35 to 3
+• Built data qual-
+ity checks that block bad data before it reaches the warehouse
+Tech: Kafka, Spark, Airflow, Python, Delta Lake
+
+DataEngineer, Pinecrest Software   Feb 2018 – Apr 2021
+• Built the ingestion layer for 60 partner feeds
+• Reduced warehouse costs by 30% through partition-
+ing and compaction
+Tech: SQL, Python, Airflow
+
+ETL Developer, Corvane Schools Trust   Aug 2015 – Jan 2018
+• Nightly loads from 9 student systems into one repor-
+ting database
+
+Certifications
+Google Professional DataEngineer (2022)
+DatabricksData Engineer Associate (2023)
+
+Awards
+Employee of the Quar-
+ter (Q4 2022), Vantora Networks
+
+Skills
+Kafka, Spark, Airflow, Python, SQL, Delta Lake

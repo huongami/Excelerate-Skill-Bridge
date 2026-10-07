@@ -1,0 +1,23 @@
+Ngozi Eze — SWE
+ngozi.eze@example.test | +61 400 000 040 | Newcastle, NSW
+
+OBJECTIVE
+Looking for a Firmware Engineer or Embedded Engineer position working close to the hardware on robotics or industrial devices.
+
+EXPERIENCE
+SWE @ Pelican Robotics · 2023 – Present
+ * Write C++ control software for warehouse picking arms (ROS 2, real-time Linux).
+ * Bring up new sensor boards and write drivers over SPI and I2C.
+ * Added hardware-in-the-loop tests that run nightly on 3 test rigs.
+
+SWE Intern @ Cinder Labs · Jun 2022 – Aug 2022
+ * Wrote a CAN-bus logger in Python for an electric-bike prototype.
+
+EDUCATION
+Bachelor of Engineering (Mechatronics), Ironstone University, 2019 – 2022
+
+AWARDS
+Winner, Robotics Hack Weekend (2024)
+
+SKILLS
+C++, Python, ROS, Embedded Linux, RTOS, Git

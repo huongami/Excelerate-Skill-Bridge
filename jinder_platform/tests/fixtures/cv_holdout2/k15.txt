@@ -1,0 +1,36 @@
+Callum Reyes-Whitford
+Python | AWS | Docker | React
+Sydney  ·  callum.rw@example.test  ·  +61 400 000 015
+
+About me
+I build web products from the database to the button. I also like the part that happens after launch: monitoring, rollbacks,
+cost. I would like to grow towards a Senior MLOps Engineer role, where the models I deploy are the product.
+
+Work History
+
+Software Engineer at Lumora Labs; Sept-2018 to Present
+– Built the customer portal (React, TypeScript) and the Django APIs behind it, 70k monthly users
+– Own the AWS setup: ECS services, RDS, CloudFront, with infrastructure in Terraform
+– Added a recommendation service that serves a gradient-boosted model; click-through up 11%
+– Reduced container build times from 14 to 3 minutes with layer caching
+Tech: Python, Django, React, AWS, Docker, PostgreSQL
+
+Web Developer at Tanglewood Energy; Feb-2016 to Aug-2018
+– Rebuilt the energy usage dashboards for 30,000 households
+– Wrote the importer for smart-meter files and kept it running through a 4x data growth
+Tech: Python, Flask, jQuery, MySQL
+
+Web Design Intern (summer 2015) at Pixel Barn
+– Landing pages and email templates for small clients
+
+Education
+Bachelor of Information Technology, Western Plains University, 2012 – 2015
+
+Certifications
+AWS Certified Developer - Associate (2021)
+
+Awards
+Green Energy Hack winner (hackathon), Sydney, 2019
+
+Skills
+Python, Django, React, TypeScript, AWS, Docker, PostgreSQL

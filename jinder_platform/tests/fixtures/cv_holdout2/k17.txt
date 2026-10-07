@@ -1,0 +1,28 @@
+Priscilla Nwosu-Hartley
+Gold Coast QLD   priscilla.nh@example.test   +61 400 000 017
+
+Track Record
+
+Solutions Engineer, Tanglewood Cloud ................ Mar 2025 — Present
+Run technical discovery and proof-of-concept builds for enterprise prospects together with the account team
+Built a reusable demo environment (Terraform and Postman collections) that 12 colleagues use every week
+Answered 40 security questionnaires and wrote the integration guide for the REST API
+Part of an award-winning sales and engineering team in the 2025 regional ranking
+
+Account Executive, Tanglewood Cloud ................ Jan 2024 — Feb 2025
+Won a new client worth 1.2 million in my first year
+Presidents Club 2024 for the top 5% of sales in the region
+Moved to Solutions Engineering after the product team asked me to demo the API myself
+
+Sales Development Representative, Bluefen Telecom ................ Mar 2023 — Dec 2023
+Booked 25 qualified meetings a month
+
+Learning
+Evening course in SQL and Python for analysts, 2022 (not a degree)
+Google Cloud Digital Leader (2025)
+
+Where I want to go
+I am keen to move into a Product Manager role, working closely with developers and customers.
+
+Tools
+REST APIs, SQL, Python, Postman, Terraform

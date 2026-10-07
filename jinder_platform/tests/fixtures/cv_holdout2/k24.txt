@@ -1,0 +1,33 @@
+Gustavo Pereira
+Backend Team Lead — ship it, then make it better
+Darwin NT  |  gustavo.p@example.test  |  +61 400 000 024
+
+Summary
+Working in software since 2016, mostly on logistics systems. I like small teams, boring technology and clear ownership.
+I am interested in Backend Engineer or Platform Engineer roles on a product that touches the physical world.
+
+Experience
+
+Backend Team Lead at Kestrel Logistics; Jan-2023 to Present
+- Lead a team of six building the dispatch and routing services (Python, FastAPI)
+- Cut route recalculation time from 9 seconds to 1.2 with caching and a smarter graph index
+- Run hiring, planning and the on-call rota; two team members were promoted this year
+Tech: Python, FastAPI, PostgreSQL, Redis, RabbitMQ
+
+Python Developer at Kestrel Logistics; Jun-2018 to Dec-2022
+- Wrote the driver app API and the proof-of-delivery service
+- Moved background jobs from cron to a proper queue, with retries and dead-letter handling
+- Cut the cloud bill for the tracking service by 35%
+Tech: Python, Flask, PostgreSQL, Docker
+
+Junior Developer at Pellam Logistics; Jul-2016 to May-2018
+- Fixed defects on the customer portal and learned how freight actually moves
+
+Education
+Bachelor of Software Engineering, Territory Northern University, 2012 – 2015
+
+Recognition
+Top performer 2023, Kestrel Logistics
+
+Skills
+Python, FastAPI, PostgreSQL, Redis, Docker, RabbitMQ

@@ -1,0 +1,26 @@
+CONTACT                           Priya Raghunathan
+priya.r@example.test              Machine Learning Engineer
++61 400 000 005
+Sydney NSW                        WORK EXPERIENCE
+                                  Machine Learning Engineer
+OBJECTIVE                         Tessera Vision, Sydney
+Seeking a Computer Vision         Jan 2023 - Present
+Engineer role in robotics         - Trained defect-detection models for
+or manufacturing, where           3 camera lines; recall up from 81%
+vision models run on the          to 94%
+factory floor.                    - Deployed models to edge boxes with
+                                  ONNX Runtime and Docker
+SKILLS                            - Built the labelling pipeline and a classi-
+Python, PyTorch                   fication review tool
+OpenCV, ONNX                      Technologies: PyTorch, OpenCV, ONNX
+Docker, Kubernetes
+SQL                               Data Analyst
+                                  Moonbeam Foods, Sydney
+CERTIFICATES                      Jul 2022 - Dec 2022
+TensorFlow Developer              - Built weekly sales dashboards in
+Certificate (2023)                Tableau for 35 stores
+                                  - Moved 12 Excel reports into SQL views
+AWARDS
+Kaggle 12th place - Retail        EDUCATION
+Demand Forecasting                BSc Mathematics
+Challenge (2023)                  University of the Bay, 2018 - 2021

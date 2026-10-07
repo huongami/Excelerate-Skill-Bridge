@@ -1,0 +1,53 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [278 278 355 556 556 889 667 191 333 333 389 584 278 333 278 278 556 556 556 556 556 556 556 556 556 556 278 278 584 584 584 556 1015 667 667 722 722 667 611 778 722 278 500 667 556 833 722 778 667 778 722 667 611 722 667 944 667 667 611 278 278 278 469 556 333 556 556 500 556 556 278 556 556 222 222 500 222 833 556 556 556 556 333 500 278 556 500 722 500 500 500 334 260 334 584] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /FirstChar 32 /LastChar 126 /Widths [294 294 376 589 589 942 707 202 352 352 412 619 294 352 294 294 589 589 589 589 589 589 589 589 589 589 294 294 619 619 619 589 1075 707 707 765 765 707 647 824 765 294 530 707 589 882 765 824 707 824 765 707 647 765 707 1000 707 707 647 294 294 294 497 589 352 589 589 530 589 589 294 589 589 235 235 530 235 882 589 589 589 589 352 530 294 589 530 765 530 530 530 354 275 354 619] >>
+endobj
+5 0 obj
+<< /Length 1444 >>
+stream
+BT /F2 16 Tf 1 0 0 1 50.00 767.92 Tm (KENJI EXAMPLE | Software Engineer) Tj ET
+BT /F1 9 Tf 1 0 0 1 50.00 755.50 Tm (Brisbane, QLD \267 kenji.example@example.test \267 +61 400 000 004) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 730.32 Tm (CAREER OBJECTIVE) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 716.52 Tm (Seeking a Site Reliability Engineer position where I can improve system reliability and automate operations.) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 691.34 Tm (EXPERIENCE) Tj ET
+BT /F2 10 Tf 1 0 0 1 50.00 674.54 Tm (Software Engineer, Redfern Data Co, Brisbane \227 2024 \226 to date) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 660.74 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 64.00 660.74 Tm (Ran the on-call rota for 12 services and cut incidents by 35%.) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 646.94 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 64.00 646.94 Tm (Wrote Terraform modules and Prometheus alerts.) Tj ET
+BT /F2 10 Tf 1 0 0 1 50.00 627.14 Tm (Junior Developer, Kestrel Analytics, Brisbane \227 2022 \226 2024) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 613.34 Tm (\225) Tj ET
+BT /F1 10 Tf 1 0 0 1 64.00 613.34 Tm (Built internal tools in Python and Go.) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 588.16 Tm (EDUCATION) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 574.36 Tm (Bachelor of Information Technology, University of Westbank, 2018 \226 2021) Tj ET
+BT /F2 11 Tf 1 0 0 1 50.00 549.18 Tm (SKILLS) Tj ET
+BT /F1 10 Tf 1 0 0 1 50.00 535.38 Tm (Python, Go, Kubernetes, Terraform, Prometheus, Linux) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000637 00000 n 
+0000001159 00000 n 
+0000002655 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2791
+%%EOF

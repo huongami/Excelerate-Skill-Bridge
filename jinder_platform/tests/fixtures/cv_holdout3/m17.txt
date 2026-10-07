@@ -1,0 +1,64 @@
+RESUME
+
+MA. CRISTINA R. VILLANUEVA
+Blk 12 Lot 5 Sampaguita St., Brgy. San Antonio, Pasig City 1605
+Mobile No.: +63 900 000 0017
+Email Address: cristina.villanueva@example.test
+
+CAREER OBJECTIVE
+To be part of a progressive organization where I can contribute my knowledge and skills in data and reporting,
+and grow both personally and professionally.
+
+WORK EXPERIENCE
+
+BUSINESS INTELLIGENCE DEVELOPER
+Pasig Data Solutions Inc., Ortigas Center, Pasig City
+January 2022 - Present
+ Design and maintain data marts and ETL packages using SQL Server, T-SQL and SSIS for banking and insurance clients.
+ Develop Power BI dashboards and SSRS paginated reports used by 200+ business users.
+ Optimize stored procedures that reduced the nightly load from 5 hours to 2 hours.
+ Coordinate with business analysts to gather requirements and conduct user training.
+
+REPORTING ANALYST
+Luzon Freight Corporation, Makati City
+June 2018 - December 2021
+ Prepared daily, weekly and monthly operations and billing reports using Excel and SQL.
+ Automated shipment-tracking reports with macros and Power Query, saving 12 hours per week.
+ Maintained data accuracy by reconciling reports with the finance and warehouse departments.
+
+TECHNICAL SKILLS
+SQL Server, T-SQL, Power BI, SSIS, SSRS, Excel, Tableau (basic)
+
+EDUCATIONAL BACKGROUND
+Tertiary:   Bachelor of Science in Information Technology
+            Mapayapa State University, Quezon City
+            2014 - 2018
+Secondary:  Pasig Science High School
+            2010 - 2014
+Primary:    San Antonio Elementary School
+            2004 - 2010
+
+TRAININGS AND CERTIFICATIONS
+ Microsoft Certified: Power BI Data Analyst Associate (PL-300), 2022
+ ITIL 4 Foundation, 2023
+ Seminar on Data Privacy Act of 2012 compliance, 2021
+
+AWARDS AND RECOGNITION
+ Service Excellence Award, Pasig Data Solutions Inc. (2023)
+ Dean's Lister (2015)
+
+PERSONAL DATA
+Date of Birth     : March 8, 1996
+Place of Birth    : Pasig City
+Age               : 30
+Civil Status      : Single
+Citizenship       : Filipino
+Religion          : Roman Catholic
+Height / Weight   : 5'3" / 52 kg
+
+CHARACTER REFERENCES
+Available upon request.
+
+I hereby certify that the above information is true and correct to the best of my knowledge.
+
+                                                                                  Ma. Cristina R. Villanueva

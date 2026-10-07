@@ -1,0 +1,51 @@
+Kofi Mensah-Demo
+kofi.mensah@example.test  |  +44 0000 555 0177  |  Bristol (Demo)  |  portfolio: example-kofi.test
+
+About me
+Self-taught developer turned professional. I build accessible, fast interfaces with React and
+TypeScript and I care about details such as keyboard navigation and colour contrast.
+
+Experience
+
+junior front-end developer
+Brightpixel Demo Agency, Bristol                                  Mar 2025 - Present
+- Build marketing sites and a component library with React, TypeScript and Tailwind CSS
+- Reduced the largest page weight by 55% and reached a Lighthouse score of 98
+- Audit pages against WCAG 2.2 and fix screen reader problems
+- Write unit tests with Vitest and React Testing Library
+- Review pull requests in Git with two other developers
+
+web design intern
+Brightpixel Demo Agency, Bristol                                  Sep 2024 - Feb 2025
+- Turned Figma designs into responsive HTML and CSS
+- Fixed cross-browser bugs in the client sites
+
+freelance web designer
+Self-employed, Bristol                                            Jan 2023 - Aug 2024
+- Small business sites for 9 clients with HTML5, CSS3 and JavaScript
+- Hosting, domains and simple contact forms
+
+Education
+Access to Higher Education Diploma in Computing, Demo College Bristol, 2021 - 2022
+Course (university extension): Introduction to Human-Computer Interaction, 2023
+
+Certifications
+freeCodeCamp Responsive Web Design Certification, 2023
+Driving licence (full, UK)
+
+Achievements
+- Winner, West Coast Web Hackathon, 2025
+- Women in Tech Scholarship, 2022 (bursary for career changers)
+
+Skills
+HTML and CSS, JavaScript, TypeScript, React, Tailwind CSS, Git, Vitest, WCAG 2.2, Figma
+Languages: English (native), Twi (fluent)
+
+Projects
+- Open-source accessible date picker, 300 GitHub stars
+- Personal budgeting app built with React and a small Node.js API
+
+Interests
+Cycling, community radio, pottery
+
+References available on request

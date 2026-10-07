@@ -1,0 +1,49 @@
+CONTACT
+amara.ol@example.test
++61 400 000 009
+Newcastle NSW
+LANGUAGES
+English (native)
+Swedish (fluent)
+TOOLKIT
+AWS, Terraform
+Kubernetes, Helm
+Python, Bash
+GitHub Actions
+Prometheus
+CERTIFICATIONS
+Certified Kubernetes Administrator (CKA), 2024
+Azure Administrator Associate (AZ-104), 2023
+Amara Okafor-Lindqvist
+Cloud Engineer
+PROFILE
+Cloud engineer who likes boring, reproducible infrastructure. I describe everything in code, review it like any other
+software and keep the on-call phone quiet.
+EXPERIENCE
+Cloud Engineer — Bluefen Telecom
+Jun 2024 – Present
+- Run the landing zone for 38 AWS accounts with Terraform modules and policy checks in CI
+- Cut the monthly cloud bill by 22% through rightsizing and scheduled shutdown of test environments
+- Built a self-service namespace workflow on EKS so teams get a cluster
+Page 2 of 3  Amara Okafor-Lindqvist  CV
+  slot in minutes instead of days
+- Own the Prometheus and Grafana stack; paging alerts reduced from 60 to 9 a week
+Technologies: AWS, Terraform, Kubernetes, Helm, Prometheus
+
+DevOps Engineer — Halcyon Freight
+Jan 2023 – May 2024
+- Moved 14 services from hand-deployed VMs to containers with GitHub Actions pipelines
+- Introduced blue-green releases; failed deployments fell from 1 in 12 to 1 in 80
+- Wrote the incident runbooks used by the first-line support
+Page 3 of 3  Amara Okafor-Lindqvist  CV
+- Trained 20 developers in basic Kubernetes and Helm in four workshops
+
+Cloud Intern — Pinecrest Software
+summer 2021
+- Automated nightly snapshots and tagged unowned resources
+
+EDUCATION
+Bachelor of Engineering (Software), Hunter Coast University, 2018 – 2022
+
+AWARDS
+Employee of the Quarter, Halcyon Freight (Q3 2023)

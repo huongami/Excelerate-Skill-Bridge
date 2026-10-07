@@ -1,0 +1,43 @@
+INGRID SOLHEIM
+Oslo, Norway  |  +47 400 00 005  |  ingrid.solheim@example.test  |  linkedin.com/in/ingridsolheim
+
+CAREER OBJECTIVE
+Seeking an MLOps Engineer position where I can combine my modelling background with production engineering to
+ship and operate reliable machine learning systems.
+
+PROFESSIONAL EXPERIENCE
+
+Machine Learning Engineer                                                  Aug 2022 – Present
+Fjordline Mobility, Oslo, Norway
+•  Develop and deploy ETA and demand-prediction models for a fleet of 3,000 shared vehicles
+•  Containerised training and serving with Docker and moved 12 models to Kubernetes with automated rollbacks
+•  Built experiment tracking and model versioning on MLflow, used by all 9 data scientists in the team
+•  Reduced cloud training cost by 38% through spot instances and smarter scheduling in Airflow
+•  Defined monitoring for data drift and latency with Grafana dashboards and alerts
+
+Data Analyst                                                               Jan 2020 – Jul 2022
+Nordvik Retail Group, Oslo, Norway
+•  Built weekly sales and stock reports in SQL and Python for 140 stores
+•  Developed the first churn model for the loyalty programme (AUC 0.81) and handed it over to production
+•  Automated month-end reporting, saving the finance team 20 hours a month
+
+EDUCATION
+MSc in Statistics, Hardanger University                                    2017 – 2019
+BSc in Mathematics, Hardanger University                                   2014 – 2017
+
+TECHNICAL SKILLS
+Languages: Python, SQL, Bash
+Machine learning: PyTorch, scikit-learn, XGBoost
+MLOps and infrastructure: MLflow, Kubernetes, Docker, Airflow, Terraform
+Cloud: Google Cloud Platform
+
+CERTIFICATIONS
+Google Cloud Professional Machine Learning Engineer (2023)
+Certified Kubernetes Application Developer (CKAD), Cloud Native Computing Foundation (2024)
+
+HONOURS AND AWARDS
+Kaggle Silver Medal, Housing Demand Forecasting Challenge (2021)
+Winner, Internal Hack Week, Fjordline Mobility (2024)
+
+LANGUAGES
+Norwegian (native), English (fluent), German (basic)

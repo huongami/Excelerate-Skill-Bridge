@@ -1,0 +1,29 @@
+Aisha Okonkwo
+aisha.okonkwo@example.test | +61 400 000 025 | Remote (Perth, WA)
+
+Backend developer working on healthcare scheduling systems. Interested in data science and statistics outside of work (weekly paper-reading group, local meetups).
+
+Experience
+
+Tarragon Health
+Software Engineer II (Remote) | Mar '22 - Present
+- Maintain the appointment-scheduling service (Java, Spring Boot) used by 300 clinics.
+- Designed the reminder-notification queue; no-show rates dropped 11 percent.
+- On the on-call rota; wrote most of the team's runbooks.
+
+Associate Software Engineer | Jun '19 - Feb '22
+- Built REST endpoints and database migrations for the patient-portal API.
+- Raised unit-test coverage of the billing module from 35 to 80 percent.
+
+Key achievements
+- Cut CI build times by 45 percent by splitting the monolith build.
+- Led the migration from a self-hosted database to a managed PostgreSQL cluster with 15 minutes of downtime.
+
+Certifications
+Certified Scrum Master (Scrum Alliance, 2020)
+
+Education
+Bachelor of Software Engineering, Marlowe University, 2015 – 2018
+
+Skills
+Java, Kotlin, Spring Boot, PostgreSQL, AWS, Terraform

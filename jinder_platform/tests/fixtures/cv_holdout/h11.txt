@@ -1,0 +1,30 @@
+PRIYANKA VENKATARAMAN
+priyanka.v@example.test | +61 400 000 021 | Melbourne, VIC
+
+PROFESSIONAL SUMMARY
+Reporting and BI developer who enjoys making numbers understandable. Strong in DAX modelling, star schemas and stakeholder workshops.
+
+WORK HISTORY
+
+Brightfold Energy — Mid-level BI Developer
+14/03/2022 – Present
+- Own the Power BI semantic model for retail energy sales (12 fact tables, 40 reports).
+- Cut dataset refresh time from 90 to 20 minutes by redesigning incremental refresh and partitions.
+- Run monthly report-clinic sessions for 30 business users.
+
+Corvid Telecom — Reporting Analyst
+01/02/2019 – 11/03/2022
+- Produced weekly churn and ARPU reports from SQL Server and SSIS packages.
+- Built the first self-service Excel pivot pack for the sales team.
+
+RECOGNITION
+Employee of the Year, Brightfold Energy (2024)
+
+CERTIFICATIONS
+Microsoft Certified: Power BI Data Analyst Associate (PL-300), 2023
+
+EDUCATION
+Bachelor of Information Systems, Westbridge University, 2015 – 2018
+
+SKILLS
+Power BI, DAX, SQL Server, SSIS, Excel

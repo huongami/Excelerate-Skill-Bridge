@@ -1,0 +1,64 @@
+Contact
+noor.hadid@example.test
+www.linkedin.com/in/noorhadid-dataeng
+(LinkedIn)
+
+Top Skills
+Apache Spark
+Data Warehousing
+Apache Airflow
+
+Languages
+English (Native or Bilingual)
+Arabic (Professional Working)
+
+Certifications
+Databricks Certified Data Engineer Professional
+SnowPro Core Certification
+Google Cloud Certified - Professional Data Engineer
+
+Honors-Awards
+Data Mesh Hackathon Winner
+Engineering Excellence Award
+
+Noor Hadid
+Senior Data Engineer | Spark, Airflow, dbt | Building reliable data platforms
+Toronto, Ontario, Canada
+
+Summary
+I design and operate batch and streaming data platforms for energy and utilities companies. My day-to-day is
+Python, SQL and Spark on Databricks, with Airflow for orchestration and dbt for transformations on Snowflake.
+I like making pipelines boring: well tested, observable and cheap to run.
+
+Experience
+
+Brightmoor Energy
+6 years 4 months
+
+Senior Data Engineer
+March 2022 - Present (4 years 8 months)
+Toronto, Ontario, Canada
+Lead the redesign of the smart-meter ingestion platform: 2 billion readings a day processed with Spark
+Structured Streaming and Delta Lake. Cut pipeline cost by 28% and introduced data contracts between producers
+and consumers. Mentor three engineers and run the team's design reviews.
+
+Data Engineer
+July 2020 - February 2022 (1 year 8 months)
+Toronto, Ontario, Canada
+Built the Airflow-based orchestration layer and migrated 70 legacy SQL Server jobs to Snowflake and dbt.
+Added automated data-quality checks that caught schema drift before it reached reporting.
+
+Cedar & Pine Consulting
+ETL Developer
+September 2018 - June 2020 (1 year 10 months)
+Mississauga, Ontario, Canada
+Developed ETL packages and reporting marts for retail and logistics clients using SQL Server Integration
+Services, then moved two clients to cloud data warehouses.
+
+Page 1 of 2
+
+Education
+Northshore University
+Bachelor of Science - BS, Computer Science
+2014 - 2018
+Activities and Societies: Women in Computing Society, Data Science Club

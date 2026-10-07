@@ -1,0 +1,50 @@
+RAFAEL ALMEIDA-TESTE
+Mid-level Data Scientist
+
+PERSONAL INFORMATION
+Date of birth: 10/05/1996 | Marital status: Single | Nationality: Brazilian
+Location: Sao Paulo (Demo), Brazil | Phone: +55 00 5550 0142
+E-mail: rafael.almeida@example.test | LinkedIn: linkedin.com/in/example-teste
+
+OBJECTIVE
+Data scientist focused on forecasting and customer analytics for financial services.
+
+PROFESSIONAL EXPERIENCE
+
+Mid-level Data Scientist | Rio Verde Analytics S.A.                     Jan/2021 - present
+ - Built demand forecasting models for 300 retail stores (error cut by 18%)
+ - Churn model with XGBoost and LightGBM, deployed as a batch job each night
+ - Hypothesis testing and uplift analysis for 25 marketing campaigns
+ - Python, pandas, scikit-learn, SQL on a BigQuery warehouse
+ - Mentored two junior analysts and ran the monthly model review
+ - Presented results to the executive committee every quarter
+
+Junior Data Analyst | Banco Aurora Demo                                  Jan/2020 - Dec/2020
+ - Credit risk dashboards and monthly reports
+ - Wrote SQL queries for the collections team
+
+Data Analyst Intern | Cafe Brasa Demo Group                             Feb/2019 - Dec/2019
+ - Cleaned sales data and built weekly reports in Excel
+
+EDUCATION
+Bachelor in Statistics, Universidade Demo do Sul, 2015 - 2019
+Postgraduate course (university extension): Bayesian Statistics, 2022
+
+CERTIFICATIONS
+Microsoft Certified: Azure Data Scientist Associate (DP-100), 2023
+Machine Learning Specialization - DeepLearning.AI and Stanford Online, 2021
+
+LANGUAGES
+Portuguese (native), English (advanced, TOEFL 100), Spanish (basic)
+
+HONOURS AND AWARDS
+Kaggle Silver Medal, Tabular Playground Series, 2023
+Merit Scholarship (full tuition), Universidade Demo do Sul, 2015
+
+SKILLS
+Python | scikit-learn | XGBoost | pandas | SQL | Statistics | Time series forecasting
+Machine learning | BigQuery | Git | Docker
+
+REFERENCES
+Available on request
+Contact details of two former managers can be provided

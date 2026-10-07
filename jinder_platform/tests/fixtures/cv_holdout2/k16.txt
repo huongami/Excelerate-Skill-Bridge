@@ -1,0 +1,33 @@
+Anouk Verbruggen
+Security Engineer
+Wellington Point QLD | anouk.v@example.test | +61 400 000 016
+
+Experience
+
+Application Security Engineer | Keystone Rail | 2021/01 - now
+– Run the secure development programme for 25 teams: threat models, code review, dependency policy
+– Cut the median time to fix critical vulnerabilities from 41 days to 6 with automated SAST and SCA in CI
+– Built an internal training lab on the top ten web risks; 300 developers have completed it
+Tools: Burp Suite, Semgrep, Python, Splunk
+
+Security Analyst | Redpine Mining | 2018/09 - 2020/12
+– Triaged alerts, tuned detections and led the response to two phishing incidents
+– Wrote the first incident response playbooks for the plant network
+Tools: Splunk, Wireshark, Python
+
+SOC Analyst (night shift) | Marrow Managed Services | 2016/05 - 2018/08
+– Monitored 60 customer environments around the clock and escalated confirmed incidents in under 15 minutes
+
+Education
+Bachelor of Cyber Security, 2012 - 2015
+
+Certifications
+CISSP (2022)
+CompTIA Security+ (2017)
+Offensive Security Certified Professional (OSCP), 2020
+
+Awards
+1st place, Harbour City CTF (2021)
+
+Skills
+Burp Suite, Python, Semgrep, Splunk, threat modelling, OWASP

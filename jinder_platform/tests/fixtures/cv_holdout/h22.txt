@@ -1,0 +1,30 @@
+Joon-ho Park
+Tech Lead – Data Platform
+joonho.park@example.test | +61 400 000 032 | Sydney, NSW
+
+SUMMARY
+9 years of experience in data engineering, the last four leading a platform squad. Looking after a team of 5 engineers and 2 analysts; I like clear runbooks and boring, reliable pipelines.
+
+EXPERIENCE
+
+Halcyon Mobility — Tech Lead (Data Platform)
+2022 – Present
+- Set the architecture for the streaming ingestion platform (Kafka, BigQuery) serving 20 product teams.
+- Defined the on-call rota, SLAs and runbooks for the platform squad.
+- Cut cloud spend by 30 percent by moving cold data to cheaper storage tiers and right-sizing clusters.
+- Interview and onboard new engineers; hired 6 in two years.
+
+Sunstone Retail — Senior Data Engineer
+2018 – 2022
+- Built the inventory and pricing data marts in BigQuery with dbt.
+- Migrated 200 Airflow DAGs from a self-managed cluster to a managed service.
+- Wrote the data-quality framework adopted by three other teams.
+
+EDUCATION
+Bachelor of Engineering (Computer), Ironstone University, 2013 – 2016
+
+CERTIFICATIONS
+Google Cloud Professional Data Engineer (issued 2025, valid until 2027)
+
+SKILLS
+Python, BigQuery, Airflow, Kafka, dbt, Terraform

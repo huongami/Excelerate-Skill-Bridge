@@ -1,0 +1,50 @@
+HARUTO WHITCOMBE
+Mobile Developer
+Brisbane, QLD  |  0400 000 027  |  haruto.whitcombe@example.test  |  github.com/hwhitcombe
+
+Available for contract and permanent roles.
+
+SKILLS
+Kotlin, Java, Swift, Jetpack Compose, Android SDK, Firebase, REST APIs
+
+CONTRACT AND EMPLOYMENT HISTORY
+
+Android Developer (Contract)                                                    Jun 2026 – Present
+Pinnacle Mobility, Brisbane
+- Adding offline mode and background sync to a vehicle-tracking app (Kotlin, Room, WorkManager)
+
+Mobile Developer (Contract)                                                     Sep 2025 – May 2026
+Harbor City Council, Digital Services
+- Delivered a ratepayer self-service app for Android and iOS; 60,000 downloads in the first quarter
+
+iOS Developer (Contract)                                                        Mar 2025 – Oct 2025
+Bayside Health Network
+- Built appointment-booking screens in Swift and SwiftUI; integrated with the hospital's FHIR API
+
+Android Developer (Contract)                                                    Sep 2024 – Feb 2025
+Zephyr Fintech
+- Implemented biometric login and card controls in Kotlin; reduced crash rate from 1.8% to 0.4%
+
+Software Developer (Contract)                                                   Mar 2024 – Aug 2024
+Orrin Education
+- Developed quiz features for a learning app in Kotlin with Jetpack Compose
+
+Mobile Developer (Contract)                                                     Jul 2023 – Dec 2023
+Kelpie Games
+- Ported a casual puzzle game from Android to iOS and optimised start-up time by 45%
+
+Software Developer                                                              Apr 2019 – Jun 2023
+Sable Interactive, Brisbane
+- Developed Android and backend features for a fitness app with 400k users using Java, Kotlin and Firebase
+- Moved the code base from Java to Kotlin and introduced Jetpack Compose for new screens
+- Set up CI with Gradle and GitHub Actions; releases went from monthly to weekly
+
+EDUCATION
+Bachelor of Software Engineering, Moreton Bay University                         2015 – 2018
+
+CERTIFICATIONS
+Google Associate Android Developer Certification (2020)
+Certified ScrumMaster (CSM), Scrum Alliance (2021)
+
+AWARDS
+Winner, Pocket Jam Mobile Game Hackathon (2018)

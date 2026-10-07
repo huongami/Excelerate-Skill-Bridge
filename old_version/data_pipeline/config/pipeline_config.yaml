@@ -1,0 +1,42 @@
+# On-Premises Data Pipeline Configuration for Skill Bridge Australia
+# Architecture: Medallion Architecture (Bronze -> Silver -> Gold)
+# Analytical Engine: DuckDB Embedded Warehouse
+# Audit & Metadata: SQLite ACID Ledger
+
+pipeline:
+  name: "SkillBridge-OnPrem-DataEngine"
+  environment: "on-premises"
+  version: "1.0.0"
+  timezone: "Australia/Sydney"
+
+storage:
+  base_dir: "data_pipeline/storage"
+  bronze_dir: "data_pipeline/storage/bronze"
+  silver_dir: "data_pipeline/storage/silver"
+  gold_dir: "data_pipeline/storage/gold"
+  duckdb_path: "data_pipeline/storage/warehouse.duckdb"
+  audit_db_path: "data_pipeline/storage/pipeline_audit.db"
+
+sources:
+  adzuna:
+    app_id: "e53715ce"
+    app_key: "075eb766a5b9cb69a9c026fbbeaa9283"
+    country: "au"
+    base_url: "https://api.adzuna.com/v1/api/jobs/au/search/1"
+    target_locations: ["sydney", "melbourne", "brisbane", "perth"]
+    fallback_file: "data/australian_jobs.json"
+  
+  resumes:
+    raw_csv: "data/real_resumes_livecareer.csv"
+    processed_dataset: "data/real_resumes_dataset.csv"
+    json_dataset: "data/australian_candidates.json"
+
+quality_thresholds:
+  min_completeness_pct: 95.0
+  max_unmapped_anzsco_pct: 5.0
+  require_valid_salary_bounds: true
+  min_evidence_character_length: 30
+
+web_dashboard:
+  host: "127.0.0.1"
+  port: 8085
