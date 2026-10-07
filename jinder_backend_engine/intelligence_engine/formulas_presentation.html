@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jinder Intelligence Engine — Mathematical Architecture & Formulas (ASD-STE100)</title>
   
-  <!-- Organic / Natural Typography: Fraunces (Headings) + Nunito (Body) + JetBrains Mono (Metrics) -->
+  <!-- Plus Jakarta Sans & JetBrains Mono Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600..800;1,9..144,600&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- KaTeX for Mathematical Formula Rendering (Local Assets with CDN Fallback) -->
   <link rel="stylesheet" href="assets/katex/katex.min.css">
@@ -23,6 +23,402 @@
   </script>
 
   <style>
+    /* =====================================================================
+       1. DESIGN TOKENS (JINDER LIGHT PALETTE)
+       ===================================================================== */
+    :root {
+      --bg-rice: #F8F9FA;
+      --fg-loam: #151531;
+      --moss: #6868F7;
+      --moss-light: #F0F0FE;
+      --moss-dark: #3730A3;
+      --terracotta: #F27C0D;
+      --terracotta-light: #FFE9C8;
+      --sand: #EDF0F2;
+      --stone: #E9ECEF;
+      --timber: #E9ECEF;
+      --bark: #495057;
+      --dried-grass: #868E96;
+      --sienna-danger: #EF4444;
+      --sienna-light: #FEE2E2;
+      --flame: #F97316;
+      --flame-light: #FFEDD5;
+      --amber: #D97706;
+      --amber-light: #FEF3C7;
+      --rose: #E11D48;
+
+      --purple: #6868F7;
+      --purple-light: #8282FA;
+      --purple-soft: #F0F0FE;
+      --indigo: #4F46E5;
+      --indigo-light: #6868F7;
+      --cyan: #0284C7;
+      --cyan-light: #0284C7;
+      --emerald: #16A34A;
+      --emerald-light: #DAF9D4;
+
+      --surface: #FFFFFF;
+      --surface-elevated: #FFFFFF;
+      --surface-alt: #F8F9FA;
+      --border-subtle: #E9ECEF;
+      --border-strong: rgba(104, 104, 247, 0.40);
+
+      --shadow-moss: 0 4px 20px -2px rgba(104, 104, 247, 0.15);
+      --shadow-terracotta: 0 8px 30px -4px rgba(242, 124, 13, 0.12);
+      --shadow-soft: 0 2px 10px rgba(21, 21, 49, 0.05), 0 1px 3px rgba(21, 21, 49, 0.04);
+      --shadow-float: 0 16px 40px -8px rgba(21, 21, 49, 0.12);
+
+      --font-display: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --sidebar-w: 268px;
+      --ease: cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html, body {
+      background-color: var(--bg-rice);
+      color: var(--fg-loam);
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* APP SHELL: LEFT SIDEBAR + RIGHT CONTENT */
+    .app-shell {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      min-height: 100vh;
+    }
+
+    /* LEFT SIDEBAR */
+    aside.sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border-right: 1px solid var(--border-subtle);
+      padding: 16px 12px;
+      z-index: 40;
+      overflow-y: auto;
+    }
+
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 8px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 16px;
+    }
+
+    .logo-word {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--fg-loam);
+    }
+    .logo-word span { color: var(--moss); }
+
+    .brand-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hackathon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #daf9d4;
+      color: #166534;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      letter-spacing: 0.4px;
+      width: fit-content;
+    }
+    .hackathon-badge .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #22c55e;
+      display: inline-block;
+    }
+
+    .track-subtitle {
+      font-size: 11px;
+      color: var(--dried-grass);
+      font-weight: 500;
+    }
+
+    .sidebar-nav {
+      flex: 1;
+    }
+    .sidebar-menu-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--dried-grass);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 6px 12px 8px;
+      font-family: var(--font-mono);
+    }
+    .sidebar-nav ul {
+      list-style: none;
+      display: grid;
+      gap: 4px;
+    }
+
+    .sidebar-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--bark);
+      background: transparent;
+      border: 1px solid transparent;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      transition: all 0.15s var(--ease);
+      outline: none;
+      user-select: none;
+    }
+    .sidebar-nav-item * {
+      pointer-events: none;
+    }
+    .sidebar-nav-item:hover {
+      background: var(--moss-light);
+      color: var(--fg-loam);
+    }
+    .sidebar-nav-item.active {
+      background: var(--moss-light);
+      color: #4343d8;
+      font-weight: 600;
+      border-color: rgba(104, 104, 247, 0.25);
+    }
+
+    .sidebar-nav-item .nav-icon {
+      width: 18px;
+      height: 18px;
+      flex: none;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .sidebar-nav-item.active .nav-icon {
+      stroke: var(--moss);
+    }
+
+    .sidebar-nav-item .nav-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--dried-grass);
+      margin-left: auto;
+      background: #EDF0F2;
+      padding: 1px 6px;
+      border-radius: 6px;
+    }
+    .sidebar-nav-item.active .nav-num {
+      background: #e1e1fc;
+      color: #4343d8;
+      font-weight: 600;
+    }
+
+    /* Sidebar Bottom Footer */
+    .sidebar-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .user-alias-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+    }
+    .avatar-alias {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fee2e2;
+      color: #991b1b;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      flex: none;
+    }
+    .alias-text {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .alias-title {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--fg-loam);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .alias-sub {
+      font-size: 11px;
+      color: var(--dried-grass);
+    }
+
+    .sidebar-actions {
+      display: grid;
+      gap: 6px;
+    }
+    .sidebar-actions .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.15s var(--ease);
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--fg-loam); color: #fff; }
+    .btn-primary:hover { background: #26264d; }
+    .btn-secondary { background: #EDF0F2; color: var(--fg-loam); }
+    .btn-secondary:hover { background: #e2e6ea; }
+
+    /* RIGHT CONTENT PANE */
+    main.main-content {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: var(--bg-rice);
+    }
+
+    .content-top-bar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 30;
+    }
+    .top-progress-bar {
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--moss) 0%, var(--terracotta) 100%);
+      width: 12.5%;
+      transition: width 0.3s var(--ease);
+    }
+    .breadcrumb-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--fg-loam);
+    }
+    .top-nav-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-nav-arrow {
+      background: var(--surface-alt);
+      border: 1px solid var(--border-subtle);
+      color: var(--fg-loam);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s var(--ease);
+      outline: none;
+    }
+    .btn-nav-arrow:hover:not(:disabled) {
+      background: var(--moss);
+      color: #fff;
+      border-color: var(--moss);
+    }
+    .btn-nav-arrow:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      background: transparent;
+      color: var(--dried-grass);
+      border-color: var(--border-subtle);
+    }
+    .slide-counter {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--dried-grass);
+      font-weight: 600;
+    }
+
+    .slide-viewport {
+      flex: 1;
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px 32px 48px;
+    }
+
+    .slide-pane {
+      display: none;
+      animation: fadeInSlide 0.22s var(--ease) forwards;
+    }
+    .slide-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeInSlide {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-top: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    
     /* =====================================================================
        1. DESIGN TOKENS (JINDER LIGHT PALETTE - INTER / PLUS JAKARTA SANS)
        ===================================================================== */
@@ -113,45 +509,7 @@
     .blob-2 { bottom: 8%; right: -80px; width: 500px; height: 440px; background: rgba(255, 163, 64, 0.06); }
     .blob-3 { top: 40%; right: 15%; width: 380px; height: 350px; background: rgba(104, 104, 247, 0.05); opacity: 0.2; }
 
-    /* FIXED TOP PRESENTATION BAR & TABS STRIP */
-    .navbar-sticky {
-      position: sticky;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-subtle);
-      box-shadow: 0 1px 4px rgba(21, 21, 49, 0.04);
-    }
-    .header-top {
-      padding: 10px 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .brand-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .badge-pill {
-      background: var(--moss-light);
-      color: var(--moss);
-      border: 1px solid rgba(104, 104, 247, 0.25);
-      padding: 4px 10px;
-      border-radius: 9999px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      font-family: var(--font-mono);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* SLIDE NAVIGATION CONTROLS */
+    
     .slide-nav {
       display: flex;
       align-items: center;
@@ -197,55 +555,7 @@
       font-weight: 600;
     }
 
-    /* SLIDE TABS STRIP - ALWAYS FIXED IN PLACE */
-    .tabs-strip {
-      display: flex;
-      gap: 6px;
-      padding: 8px 28px;
-      background: #F8F9FA;
-      overflow-x: auto;
-      scrollbar-width: none;
-      align-items: center;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .tabs-strip::-webkit-scrollbar { display: none; }
-    .tab-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      color: var(--bark);
-      padding: 6px 14px;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      font-family: var(--font-mono);
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-      user-select: none;
-      outline: none !important;
-      -webkit-tap-highlight-color: transparent;
-      transition: color 0.16s ease, background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
-    }
-    .tab-btn:hover {
-      color: var(--fg-loam);
-      background: rgba(104, 104, 247, 0.08);
-    }
-    .tab-btn:focus {
-      outline: none !important;
-      box-shadow: none !important;
-    }
-    .tab-btn:focus-visible {
-      outline: 2px solid var(--moss) !important;
-      outline-offset: 1px;
-    }
-    .tab-btn.active {
-      background: var(--surface);
-      border-color: var(--moss);
-      color: var(--moss);
-      font-weight: 700;
-      box-shadow: 0 2px 8px rgba(104, 104, 247, 0.16);
-    }
-
-    /* PROGRESS TRACK */
+    
     .progress-track {
       height: 3px;
       background: var(--border-subtle);
@@ -259,14 +569,7 @@
       transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* MAIN CONTAINER */
-    .presentation-container {
-      max-width: 1340px;
-      margin: 0 auto;
-      padding: 32px 24px 80px;
-      position: relative;
-      z-index: 1;
-    }
+    
 
     /* SLIDE WRAPPER & TRANSITIONS */
     .slide {
@@ -666,70 +969,150 @@
       .grid-2col { grid-template-columns: 1fr; }
       .grid-3col { grid-template-columns: 1fr; }
     }
+  
   </style>
 </head>
 <body>
 
-  <!-- AMBIENT ORGANIC WABI-SABI BLOBS -->
-  <div class="ambient-blob blob-1"></div>
-  <div class="ambient-blob blob-2"></div>
-  <div class="ambient-blob blob-3"></div>
+  <div class="app-shell">
 
-  <!-- FIXED TOP PRESENTATION BAR & TABS -->
-  <header class="navbar-sticky">
-    <div class="header-top">
-      <div class="brand-title">
-        <span style="font-family:var(--font-display); font-weight:800; font-size:1.35rem; color:var(--fg-loam); letter-spacing:-0.02em;">Jinder</span>
-        <span style="font-size:0.88rem; color:var(--dried-grass); font-weight:600; font-family:var(--font-body);">Intelligence Engine</span>
-        <span class="badge-pill">ASD-STE100 Compliant</span>
+    <!-- =====================================================================
+         LEFT SIDEBAR NAVIGATION (Strict Jinder App Spec)
+         ===================================================================== -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <!-- Official Jinder Logo Mark -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <rect width="40" height="40" rx="10" fill="#151531"/>
+          <rect x="8.5" y="9" width="13" height="18" rx="3" fill="#6868f7" transform="rotate(-12 15 18)"/>
+          <rect x="18.5" y="9" width="13" height="18" rx="3" fill="#ffa340" transform="rotate(12 25 18)"/>
+          <circle cx="20" cy="27" r="6" fill="#fff" stroke="#151531" stroke-width="1.5"/>
+          <path d="M17.4 27.1l1.8 1.8 3.4-3.6" stroke="#151531" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-meta">
+          <div class="logo-word">Jinder<span>.</span></div>
+          <span class="hackathon-badge"><span class="dot"></span> HACKATHON 2026</span>
+          <span class="track-subtitle">Intelligence Engine V2</span>
+        </div>
       </div>
 
-      <div class="slide-nav">
-        <button class="nav-btn" onclick="prevSlide()" title="Previous slide (Left Arrow)">
-          &larr; Prev
-        </button>
-        <div class="slide-counter" id="slideIndicator">1 / 8</div>
-        <button class="nav-btn" onclick="nextSlide()" title="Next slide (Right Arrow)">
-          Next &rarr;
-        </button>
+      <!-- Left Vertical Menu -->
+      <nav class="sidebar-nav" aria-label="Formula Slide Navigation">
+        <div class="sidebar-menu-title">Mathematical Formulas (V2)</div>
+        <ul>
+          <li>
+            <button type="button" class="sidebar-nav-item active" id="nav-btn-0" data-slide="0" onclick="selectSlide(0)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              <span>00. Pipeline &amp; V2 Math</span>
+              <span class="nav-num">0/7</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-nav-item" id="nav-btn-1" data-slide="1" onclick="selectSlide(1)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+              <span>01. SMF Skill Match</span>
+              <span class="nav-num">1/7</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-nav-item" id="nav-btn-2" data-slide="2" onclick="selectSlide(2)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <span>02. SGF Gap Severity</span>
+              <span class="nav-num">2/7</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-nav-item" id="nav-btn-3" data-slide="3" onclick="selectSlide(3)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              <span>03. JPI Job Distance</span>
+              <span class="nav-num">3/7</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-nav-item" id="nav-btn-4" data-slide="4" onclick="selectSlide(4)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>04. RMS Merit Score</span>
+              <span class="nav-num">4/7</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-nav-item" id="nav-btn-5" data-slide="5" onclick="selectSlide(5)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              <span>05. FRS Seeker Feed</span>
+              <span class="nav-num">5/7</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-nav-item" id="nav-btn-6" data-slide="6" onclick="selectSlide(6)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <span>06. TSS Recruiter Search</span>
+              <span class="nav-num">6/7</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="sidebar-nav-item" id="nav-btn-7" data-slide="7" onclick="selectSlide(7)">
+              <svg class="nav-icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span>07. Quality &amp; Audit</span>
+              <span class="nav-num">7/7</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar Bottom Block -->
+      <div class="sidebar-bottom">
+        <div class="user-alias-card">
+          <div class="avatar-alias">SK</div>
+          <div class="alias-text">
+            <span class="alias-title">SilverKangaroo84</span>
+            <span class="alias-sub">Zero-PII Talent Persona</span>
+          </div>
+        </div>
+
+        <div class="sidebar-actions">
+          <a href="project_presentation.html" class="btn btn-primary">
+            Architecture Deck &rarr;
+          </a>
+          <a href="http://localhost:8095/" class="btn btn-secondary" target="_blank">
+            Launch App (8095) &rarr;
+          </a>
+        </div>
       </div>
-    </div>
+    </aside>
 
-    <!-- QUICK JUMP TABS STRIP (FIXED IN PLACE) -->
-    <nav class="tabs-strip" id="tabsStrip" aria-label="Formula slides navigation">
-      <button class="tab-btn active" onclick="goToSlide(0)">0. Architecture</button>
-      <button class="tab-btn" onclick="goToSlide(1)">1. SMF Skill Match</button>
-      <button class="tab-btn" onclick="goToSlide(2)">2. SGF Gap Severity</button>
-      <button class="tab-btn" onclick="goToSlide(3)">3. JPI Job Distance</button>
-      <button class="tab-btn" onclick="goToSlide(4)">4. RMS Candidate Merit</button>
-      <button class="tab-btn" onclick="goToSlide(5)">5. FRS Seeker Feed</button>
-      <button class="tab-btn" onclick="goToSlide(6)">6. TSS Recruiter Search</button>
-      <button class="tab-btn" onclick="goToSlide(7)">7. System Audit</button>
-    </nav>
+    <!-- =====================================================================
+         RIGHT MAIN CONTENT PANE
+         ===================================================================== -->
+    <main class="main-content">
 
-    <!-- PROGRESS TRACK -->
-    <div class="progress-track">
-      <div class="progress-fill" id="progressBar"></div>
-    </div>
-  </header>
-
-  <!-- MAIN SLIDES CONTAINER -->
-  <main class="presentation-container">
-
-    <!-- ACTIVE VERSION 2 BANNER -->
-    <div role="note" style="margin:12px auto; max-width:1100px; padding:14px 20px; border:1px solid rgba(104, 104, 247, 0.35); background:#F0F0FE; color:#151531; border-radius:12px; font-size:0.92rem; line-height:1.55; display:flex; align-items:center; gap:14px; box-shadow:0 2px 8px rgba(104, 104, 247, 0.08);">
-      <div style="background:#6868F7; color:#FFFFFF; font-weight:800; font-size:0.75rem; padding:4px 10px; border-radius:6px; font-family:var(--font-mono); letter-spacing:0.05em; text-transform:uppercase; white-space:nowrap;">
-        VERSION 2 ACTIVE
+      <!-- Sticky Top Progress Sub-Header -->
+      <div class="content-top-bar">
+        <div class="top-progress-bar" id="topProgressBar"></div>
+        <div class="breadcrumb-title" id="currentSlideTitle">00. Mathematical Architecture &amp; V2 Continuous Foundations</div>
+        <div class="top-nav-controls">
+          <button type="button" class="btn-nav-arrow" id="topPrevBtn" onclick="prevSlide()" title="Previous slide (←)">&larr; Prev</button>
+          <span class="slide-counter" id="slideIndicator">Slide 1 of 8</span>
+          <button type="button" class="btn-nav-arrow" id="topNextBtn" onclick="nextSlide()" title="Next slide (→)">Next &rarr;</button>
+        </div>
       </div>
-      <div>
-        <strong>Latest Continuous Mathematical Architecture:</strong> These slides specify the active Version 2 scoring engine from <code>02_FORMULAS_MATHEMATICAL_SPEC.md</code>. Operating on continuous smooth functions (Saturation, Logistic, Exponential decay, Power credit, Weighted Jaccard), granular level ranks (0:Intern to 5:Principal), exact experience years, skill mastery, certifications, and awards. Zero PII leakage and zero arbitrary step cliffs.
-      </div>
-    </div>
 
-    <!-- ================================================================= -->
-    <!-- SLIDE 0: ARCHITECTURAL FOUNDATION & ASD-STE100 PRINCIPLES -->
-    <!-- ================================================================= -->
-    <section class="slide active" id="slide-0">
+      <div class="slide-viewport">
+
+        <!-- ACTIVE VERSION 2 BANNER -->
+        <div role="note" style="margin-bottom:24px; padding:14px 20px; border:1px solid rgba(104, 104, 247, 0.35); background:#F0F0FE; color:#151531; border-radius:12px; font-size:0.92rem; line-height:1.55; display:flex; align-items:center; gap:14px; box-shadow:0 2px 8px rgba(104, 104, 247, 0.08);">
+          <div style="background:#6868F7; color:#FFFFFF; font-weight:800; font-size:0.75rem; padding:4px 10px; border-radius:6px; font-family:var(--font-mono); letter-spacing:0.05em; text-transform:uppercase; white-space:nowrap;">
+            VERSION 2 ACTIVE
+          </div>
+          <div>
+            <strong>Latest Continuous Mathematical Architecture:</strong> These slides specify the active Version 2 scoring engine from <code>02_FORMULAS_MATHEMATICAL_SPEC.md</code>. Operating on continuous smooth functions (Saturation, Logistic, Exponential decay, Power credit, Weighted Jaccard), granular level ranks (0:Intern to 5:Principal), exact experience years, skill mastery, certifications, and awards. Zero PII leakage and zero arbitrary step cliffs.
+          </div>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- SLIDE 0 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane active" id="slide-pane-0" style="display:block;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--indigo-light)">
           DOCUMENT IE-SPEC-000 &bull; STANDARD ASD-STE100 ISSUE 8 &bull; VERSION 2.0
@@ -823,12 +1206,14 @@
           </div>
         </div>
       </div>
-    </section>
+    
+        </section>
 
-    <!-- ================================================================= -->
-    <!-- SLIDE 1: FORMULA 1 — SKILL MATCH & COMPOSITE PRODUCT FIT (SMF) -->
-    <!-- ================================================================= -->
-    <section class="slide" id="slide-1">
+        <!-- ============================================================= -->
+        <!-- SLIDE 1 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane" id="slide-pane-1" style="display:none;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--cyan-light)">
           FORMULA 1 &bull; DOCUMENT IE-SPEC-001 &bull; REQ-S08, REQ-S09 &bull; V2 SPEC
@@ -986,12 +1371,14 @@
           </div>
         </div>
       </div>
-    </section>
+    
+        </section>
 
-    <!-- ================================================================= -->
-    <!-- SLIDE 2: FORMULA 2 — SKILL GAP SEVERITY & JOB READINESS (SGF) -->
-    <!-- ================================================================= -->
-    <section class="slide" id="slide-2">
+        <!-- ============================================================= -->
+        <!-- SLIDE 2 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane" id="slide-pane-2" style="display:none;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--amber-light)">
           FORMULA 2 &bull; DOCUMENT IE-SPEC-002 &bull; REQ-S10, REQ-S12 &bull; V2 SPEC
@@ -1133,12 +1520,14 @@
           </div>
         </div>
       </div>
-    </section>
+    
+        </section>
 
-    <!-- ================================================================= -->
-    <!-- SLIDE 3: FORMULA 3 — JOB-TO-JOB PROXIMITY MATRIX (JPI) -->
-    <!-- ================================================================= -->
-    <section class="slide" id="slide-3">
+        <!-- ============================================================= -->
+        <!-- SLIDE 3 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane" id="slide-pane-3" style="display:none;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--emerald-light)">
           FORMULA 3 &bull; DOCUMENT IE-SPEC-003 &bull; REQ-S21, REQ-S22 &bull; V2 SPEC
@@ -1290,12 +1679,14 @@
           </div>
         </div>
       </div>
-    </section>
+    
+        </section>
 
-    <!-- ================================================================= -->
-    <!-- SLIDE 4: FORMULA 4 — MERIT AREAS & BENCHMARKING (RMS) -->
-    <!-- ================================================================= -->
-    <section class="slide" id="slide-4">
+        <!-- ============================================================= -->
+        <!-- SLIDE 4 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane" id="slide-pane-4" style="display:none;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--purple)">
           FORMULA 4 &bull; DOCUMENT IE-SPEC-004 &bull; REQ-H12 &bull; V2 SPEC
@@ -1446,12 +1837,14 @@
           </div>
         </div>
       </div>
-    </section>
+    
+        </section>
 
-    <!-- ================================================================= -->
-    <!-- SLIDE 5: FORMULA 5 — JOB SEEKER FEED RANKING (FRS) -->
-    <!-- ================================================================= -->
-    <section class="slide" id="slide-5">
+        <!-- ============================================================= -->
+        <!-- SLIDE 5 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane" id="slide-pane-5" style="display:none;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--cyan-light)">
           FORMULA 5 &bull; DOCUMENT IE-SPEC-005 &bull; REQ-S01, REQ-S16 &bull; V2 SPEC
@@ -1599,11 +1992,14 @@
           </div>
         </div>
       </div>
-    </section>
-    <!-- ================================================================= -->
-    <!-- SLIDE 6: FORMULA 6 — RECRUITER TALENT SEARCH RANKING (TSR / TSS) -->
-    <!-- ================================================================= -->
-    <section class="slide" id="slide-6">
+    
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- SLIDE 6 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane" id="slide-pane-6" style="display:none;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--rose)">
           FORMULA 6 &bull; DOCUMENT IE-SPEC-006 &bull; REQ-H09, REQ-H10 &bull; V2 SPEC
@@ -1737,12 +2133,14 @@
           </div>
         </div>
       </div>
-    </section>
+    
+        </section>
 
-    <!-- ================================================================= -->
-    <!-- SLIDE 7: CONTINUOUS DIFFERENTIATION & SYSTEM AUDIT MATRIX -->
-    <!-- ================================================================= -->
-    <section class="slide" id="slide-7">
+        <!-- ============================================================= -->
+        <!-- SLIDE 7 -->
+        <!-- ============================================================= -->
+        <section class="slide-pane" id="slide-pane-7" style="display:none;">
+
       <div class="slide-header">
         <div class="slide-spec-tag" style="color:var(--emerald-light)">
           SECTION 7 &bull; SYSTEM AUDIT &amp; DIFFERENTIATION VERIFICATION (VERSION 2)
@@ -1836,64 +2234,138 @@
           </ul>
         </div>
       </div>
-    </section>
+    
+        </section>
 
-  </main>
+        <!-- Bottom Controls Bar -->
+        <div class="bottom-bar">
+          <button type="button" class="btn btn-secondary" onclick="prevSlide()" id="prevBtn">&larr; Previous Slide</button>
+          <div class="key-tip" style="font-size:12px; color:var(--dried-grass);">
+            Navigate with keyboard <span style="font-family:var(--font-mono); background:#edf0f2; padding:2px 6px; border-radius:4px;">&larr;</span> <span style="font-family:var(--font-mono); background:#edf0f2; padding:2px 6px; border-radius:4px;">&rarr;</span> or <span style="font-family:var(--font-mono); background:#edf0f2; padding:2px 6px; border-radius:4px;">Space</span>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="nextSlide()" id="nextBtn">Next Slide &rarr;</button>
+        </div>
 
+      </div>
+    </main>
+
+  </div>
+
+  <!-- =====================================================================
+       JAVASCRIPT: ROBUST TAB SWITCHING + SIMULATOR CALCULATORS
+       ===================================================================== -->
   <script>
-    // =====================================================================
-    // SLIDE PRESENTATION ROUTER
-    // =====================================================================
     let currentSlide = 0;
     const totalSlides = 8;
+    const slideTitles = [
+      "00. Mathematical Architecture & V2 Continuous Foundations",
+      "01. SMF Skill Matching Model (Continuous Hierarchy & Experience)",
+      "02. SGF Gap Severity & Readiness Index (Continuous S Curves)",
+      "03. JPI Proximity Index (Log-Ratio Compensation & Multi-Factor)",
+      "04. RMS Candidate Merit Score (Asymptotic Depth & Evidence)",
+      "05. FRS Seeker Job Feed Recommendation (Dual-Log Sigmoid)",
+      "06. TSS Recruiter Talent Search Ranking (Continuous Seniority)",
+      "07. Mathematical Verification, ASD-STE100 & Audit Summary"
+    ];
 
-    function showSlide(idx) {
-      if (idx < 0) idx = 0;
-      if (idx >= totalSlides) idx = totalSlides - 1;
-      currentSlide = idx;
+    function selectSlide(index) {
+      if (typeof index !== 'number') index = parseInt(index, 10);
+      if (isNaN(index)) index = 0;
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+      currentSlide = index;
 
-      // Blur any focused element so no button retains a focus ghost outline/mark
-      if (document.activeElement && typeof document.activeElement.blur === 'function') {
-        document.activeElement.blur();
-      }
-
-      // Update tab buttons cleanly
-      const tabBtns = document.querySelectorAll('.tab-btn');
-      tabBtns.forEach((b, i) => {
-        const isActive = (i === currentSlide);
-        b.classList.toggle('active', isActive);
-        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        if (isActive) {
-          b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      // 1. Update all slides visibility
+      const slides = document.querySelectorAll('.slide-pane');
+      slides.forEach((s, i) => {
+        if (i === currentSlide) {
+          s.classList.add('active');
+          s.style.display = 'block';
+        } else {
+          s.classList.remove('active');
+          s.style.display = 'none';
         }
       });
 
-      // Update slide visibility
-      document.querySelectorAll('.slide').forEach((s, i) => {
-        s.classList.toggle('active', i === currentSlide);
+      // 2. Update sidebar navigation items
+      const navItems = document.querySelectorAll('.sidebar-nav-item');
+      navItems.forEach((btn, i) => {
+        if (i === currentSlide) {
+          btn.classList.add('active');
+          btn.setAttribute('aria-current', 'page');
+        } else {
+          btn.classList.remove('active');
+          btn.removeAttribute('aria-current');
+        }
       });
 
-      // Update indicators
-      document.getElementById('slideIndicator').textContent = `${currentSlide + 1} / ${totalSlides}`;
-      document.getElementById('progressBar').style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+      // 3. Update top breadcrumbs & progress
+      const titleEl = document.getElementById('currentSlideTitle');
+      if (titleEl) titleEl.textContent = slideTitles[currentSlide];
 
-      // Scroll to top instantly without jitter
-      window.scrollTo(0, 0);
+      const indEl = document.getElementById('slideIndicator');
+      if (indEl) indEl.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
 
-      // Trigger formula re-rendering if KaTeX is present
+      const progEl = document.getElementById('topProgressBar');
+      if (progEl) progEl.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+
+      // 4. Update button states (bottom bar & top bar)
+      const prevBtn = document.getElementById('prevBtn');
+      if (prevBtn) prevBtn.disabled = (currentSlide === 0);
+
+      const topPrevBtn = document.getElementById('topPrevBtn');
+      if (topPrevBtn) topPrevBtn.disabled = (currentSlide === 0);
+
+      const nextBtn = document.getElementById('nextBtn');
+      if (nextBtn) nextBtn.textContent = (currentSlide === totalSlides - 1) ? "Back to Start \u21BA" : "Next Slide \u2192";
+
+      const topNextBtn = document.getElementById('topNextBtn');
+      if (topNextBtn) topNextBtn.innerHTML = (currentSlide === totalSlides - 1) ? "Start \u21BA" : "Next \u2192";
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       triggerKaTeX();
     }
 
-    function nextSlide() { showSlide(currentSlide + 1); }
-    function prevSlide() { showSlide(currentSlide - 1); }
-    function goToSlide(idx) { showSlide(idx); }
+    function nextSlide() {
+      if (currentSlide === totalSlides - 1) {
+        selectSlide(0);
+      } else {
+        selectSlide(currentSlide + 1);
+      }
+    }
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
-      if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
-      if (e.key === 'Home') showSlide(0);
-      if (e.key === 'End') showSlide(totalSlides - 1);
-    });
+    function prevSlide() {
+      selectSlide(currentSlide - 1);
+    }
+
+    function goToSlide(idx) {
+      selectSlide(idx);
+    }
+
+    // Expose globally for inline onclick handlers
+    window.selectSlide = selectSlide;
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+    window.goToSlide = goToSlide;
+
+    // Keyboard navigation
+    function handleKeyNav(e) {
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA')) return;
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        selectSlide(0);
+      } else if (e.key === 'End') {
+        selectSlide(totalSlides - 1);
+      } else if (e.key >= '0' && e.key <= '7') {
+        selectSlide(parseInt(e.key));
+      }
+    }
+    window.addEventListener('keydown', handleKeyNav);
 
     function triggerKaTeX() {
       if (window.renderMathInElement) {
@@ -1908,9 +2380,23 @@
       }
     }
 
-    // =====================================================================
-    // FORMULA 1 CALCULATOR (V2)
-    // =====================================================================
+    // Attach click listeners to all sidebar items and initialize
+    function initPresentation() {
+      document.querySelectorAll('.sidebar-nav-item').forEach((btn, idx) => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          selectSlide(idx);
+        });
+      });
+      selectSlide(0);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPresentation);
+    } else {
+      initPresentation();
+    }
+
     function runF1() {
       const tree = parseFloat(document.getElementById('f1_tree').value);
       const dir = parseFloat(document.getElementById('f1_dir').value);
