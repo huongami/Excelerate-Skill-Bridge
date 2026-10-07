@@ -9,33 +9,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-base: #0B0F19;
-      --bg-surface: #111827;
-      --bg-surface-elevated: #1F2937;
-      --bg-card: rgba(17, 24, 39, 0.75);
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(104, 104, 247, 0.35);
+      --bg-base: #F8F9FA;
+      --bg-surface: #FFFFFF;
+      --bg-surface-elevated: #F1F3F5;
+      --bg-card: #FFFFFF;
+      --border-subtle: #E9ECEF;
+      --border-accent: rgba(104, 104, 247, 0.40);
       
-      --ink-primary: #F9FAFB;
-      --ink-secondary: #9CA3AF;
-      --ink-muted: #6B7280;
+      --ink-primary: #151531;
+      --ink-secondary: #495057;
+      --ink-muted: #868E96;
       
       --accent: #6868F7;
-      --accent-gradient: linear-gradient(135deg, #6868F7 0%, #8E8EFC 100%);
-      --accent-soft: rgba(104, 104, 247, 0.12);
+      --accent-gradient: linear-gradient(135deg, #6868F7 0%, #8282FA 100%);
+      --accent-soft: #F0F0FE;
       
-      --coral: #FFA340;
-      --coral-gradient: linear-gradient(135deg, #FFA340 0%, #FF6B6B 100%);
-      --coral-soft: rgba(255, 163, 64, 0.12);
+      --coral: #F27C0D;
+      --coral-gradient: linear-gradient(135deg, #FFA340 0%, #F27C0D 100%);
+      --coral-soft: #FFE9C8;
       
-      --emerald: #10B981;
-      --emerald-soft: rgba(16, 185, 129, 0.12);
+      --emerald: #298040;
+      --emerald-soft: #DAF9D4;
       
-      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-main: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
       
-      --shadow-glow: 0 0 35px rgba(104, 104, 247, 0.20);
-      --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      --shadow-glow: 0 4px 20px rgba(104, 104, 247, 0.15);
+      --shadow-card: 0 2px 10px rgba(21, 21, 49, 0.05), 0 1px 3px rgba(21, 21, 49, 0.04);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,8 +48,8 @@
       overflow-x: hidden;
       min-height: 100vh;
       background-image: 
-        radial-gradient(circle at 15% 10%, rgba(104, 104, 247, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(255, 163, 64, 0.08) 0%, transparent 45%);
+        radial-gradient(circle at 10% 5%, rgba(104, 104, 247, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(255, 163, 64, 0.04) 0%, transparent 40%);
     }
 
     /* Fixed Navigation Header */
@@ -57,7 +57,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 72px;
-      background: rgba(11, 15, 25, 0.85);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
@@ -66,6 +66,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 40px;
+      box-shadow: 0 1px 4px rgba(21, 21, 49, 0.03);
     }
 
     .brand-logo {
@@ -73,7 +74,7 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: #fff;
+      color: var(--ink-primary);
     }
 
     .logo-badge {
@@ -85,13 +86,14 @@
       font-weight: 800;
       font-size: 20px;
       color: #fff;
-      box-shadow: 0 4px 14px rgba(104, 104, 247, 0.35);
+      box-shadow: 0 3px 10px rgba(104, 104, 247, 0.30);
     }
 
     .brand-title {
       font-size: 20px;
       font-weight: 800;
       letter-spacing: -0.5px;
+      color: var(--ink-primary);
     }
 
     .brand-subtitle {
@@ -106,7 +108,7 @@
     .nav-tabs {
       display: flex;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.04);
+      background: #EEF1F4;
       padding: 5px;
       border-radius: 12px;
       border: 1px solid var(--border-subtle);
@@ -122,18 +124,18 @@
       padding: 8px 16px;
       border-radius: 8px;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .tab-btn:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.06);
+      color: var(--ink-primary);
+      background: rgba(255, 255, 255, 0.7);
     }
 
     .tab-btn.active {
       color: #fff;
       background: var(--accent);
-      box-shadow: 0 2px 10px rgba(104, 104, 247, 0.4);
+      box-shadow: 0 2px 8px rgba(104, 104, 247, 0.35);
     }
 
     .header-actions {
@@ -144,7 +146,7 @@
 
     .badge-track {
       background: var(--coral-soft);
-      border: 1px solid rgba(255, 163, 64, 0.3);
+      border: 1px solid rgba(242, 124, 13, 0.3);
       color: var(--coral);
       padding: 5px 12px;
       border-radius: 20px;
@@ -179,7 +181,6 @@
     /* Hero Banner */
     .hero-banner {
       background: var(--bg-card);
-      backdrop-filter: blur(20px);
       border: 1px solid var(--border-subtle);
       border-radius: 24px;
       padding: 56px 48px;
@@ -194,7 +195,7 @@
       position: absolute;
       top: -100px; right: -100px;
       width: 320px; height: 320px;
-      background: radial-gradient(circle, rgba(104, 104, 247, 0.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(104, 104, 247, 0.10) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -203,8 +204,8 @@
       align-items: center;
       gap: 8px;
       background: var(--accent-soft);
-      border: 1px solid var(--border-accent);
-      color: #9D9DFA;
+      border: 1px solid rgba(104, 104, 247, 0.25);
+      color: #4C4CF0;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 13px;
@@ -218,10 +219,11 @@
       line-height: 1.15;
       letter-spacing: -1.2px;
       margin-bottom: 16px;
+      color: var(--ink-primary);
     }
 
     .hero-title span.gradient-text {
-      background: linear-gradient(135deg, #FFF 30%, #A5A5FF 100%);
+      background: linear-gradient(135deg, #151531 30%, #6868F7 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -265,18 +267,18 @@
     /* Glass Cards */
     .card {
       background: var(--bg-card);
-      backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: 20px;
       padding: 32px 28px;
       box-shadow: var(--shadow-card);
-      transition: transform 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       position: relative;
     }
 
     .card:hover {
       transform: translateY(-3px);
       border-color: var(--border-accent);
+      box-shadow: 0 8px 24px rgba(21, 21, 49, 0.08);
     }
 
     .card-icon {
@@ -287,17 +289,20 @@
       font-size: 24px;
       margin-bottom: 20px;
       background: var(--accent-soft);
-      border: 1px solid var(--border-accent);
+      border: 1px solid rgba(104, 104, 247, 0.25);
+      color: #4C4CF0;
     }
 
     .card-icon.coral {
       background: var(--coral-soft);
-      border-color: rgba(255, 163, 64, 0.3);
+      border-color: rgba(242, 124, 13, 0.3);
+      color: var(--coral);
     }
 
     .card-icon.emerald {
       background: var(--emerald-soft);
-      border-color: rgba(16, 185, 129, 0.3);
+      border-color: rgba(41, 128, 64, 0.3);
+      color: var(--emerald);
     }
 
     .card-title {
@@ -305,6 +310,7 @@
       font-weight: 700;
       margin-bottom: 12px;
       letter-spacing: -0.3px;
+      color: var(--ink-primary);
     }
 
     .card-text {
@@ -315,7 +321,7 @@
 
     /* Stat Box */
     .stat-card {
-      background: rgba(17, 24, 39, 0.6);
+      background: #F8F9FA;
       border: 1px solid var(--border-subtle);
       border-radius: 16px;
       padding: 24px;
@@ -330,13 +336,13 @@
       margin-bottom: 4px;
     }
 
-    .stat-number.violet { color: #8E8EFC; }
+    .stat-number.violet { color: #5656E8; }
     .stat-number.coral { color: var(--coral); }
     .stat-number.emerald { color: var(--emerald); }
 
     .stat-label {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--ink-muted);
@@ -350,12 +356,12 @@
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border-subtle);
-      background: var(--bg-card);
+      background: #FFFFFF;
       margin-bottom: 32px;
     }
 
     .matrix-table th {
-      background: rgba(31, 41, 55, 0.7);
+      background: #F1F3F5;
       padding: 16px 20px;
       font-size: 13px;
       font-weight: 700;
@@ -369,7 +375,7 @@
     .matrix-table td {
       padding: 16px 20px;
       font-size: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid var(--border-subtle);
       color: var(--ink-primary);
     }
 
@@ -378,7 +384,7 @@
     }
 
     .matrix-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+      background: #FAFBFD;
     }
 
     .badge-pill {
@@ -394,18 +400,18 @@
 
     .badge-pill.success {
       background: var(--emerald-soft);
-      color: #34D399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #1E6634;
+      border: 1px solid rgba(41, 128, 64, 0.3);
     }
 
     .badge-pill.warning {
       background: var(--coral-soft);
-      color: #FBBF24;
-      border: 1px solid rgba(251, 191, 36, 0.3);
+      color: #B85600;
+      border: 1px solid rgba(242, 124, 13, 0.3);
     }
 
     .badge-pill.neutral {
-      background: rgba(255, 255, 255, 0.06);
+      background: #EEF1F4;
       color: var(--ink-secondary);
       border: 1px solid var(--border-subtle);
     }
@@ -423,28 +429,28 @@
       text-decoration: none;
       cursor: pointer;
       border: none;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
 
     .btn-primary {
       background: var(--accent-gradient);
       color: #fff;
-      box-shadow: 0 4px 18px rgba(104, 104, 247, 0.35);
+      box-shadow: 0 4px 14px rgba(104, 104, 247, 0.30);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(104, 104, 247, 0.5);
+      box-shadow: 0 6px 20px rgba(104, 104, 247, 0.45);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.06);
-      color: #fff;
+      background: #EEF1F4;
+      color: var(--ink-primary);
       border: 1px solid var(--border-subtle);
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: #E4E7EB;
     }
 
     /* Footer */
@@ -638,19 +644,19 @@
           <h2 class="card-title">Talent Experience (Candidate Journey)</h2>
           <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
             <div class="stat-card">
-              <strong style="color: #fff;">1. CV Upload & De-identification</strong>
+              <strong style="color: var(--ink-primary);">1. CV Upload & De-identification</strong>
               <p class="card-text">Uploads any unformatted resume. The engine strips PII and extracts skills verified against the Australian ICT taxonomy.</p>
             </div>
             <div class="stat-card">
-              <strong style="color: #fff;">2. Personalized Discovery Feed (F-05 FRS)</strong>
+              <strong style="color: var(--ink-primary);">2. Personalized Discovery Feed (F-05 FRS)</strong>
               <p class="card-text">Receives live job cards with transparent fit badges (e.g., 94% Fit) and explicit matched skill tags.</p>
             </div>
             <div class="stat-card">
-              <strong style="color: #fff;">3. Capability Roadmap ("Your Path to this Job")</strong>
+              <strong style="color: var(--ink-primary);">3. Capability Roadmap ("Your Path to this Job")</strong>
               <p class="card-text">Reveals missing learnable tools (e.g., Terraform: 1.5 months) and recommended Australian certifications.</p>
             </div>
             <div class="stat-card">
-              <strong style="color: #fff;">4. Job Comparison (Free)</strong>
+              <strong style="color: var(--ink-primary);">4. Job Comparison (Free)</strong>
               <p class="card-text">Compares 2 to 5 job openings side by side to choose the most achievable career transition pathway.</p>
             </div>
           </div>
@@ -661,19 +667,19 @@
           <h2 class="card-title">Employer Experience (Recruiter Journey)</h2>
           <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
             <div class="stat-card">
-              <strong style="color: #fff;">1. Weighted Requisition Builder</strong>
+              <strong style="color: var(--ink-primary);">1. Weighted Requisition Builder</strong>
               <p class="card-text">Selects title from ANZSCO roles, marks skills as mandatory (must: true) or preferred, and specifies required certifications.</p>
             </div>
             <div class="stat-card">
-              <strong style="color: #fff;">2. Anonymized Talent Review (F-06 TSS)</strong>
+              <strong style="color: var(--ink-primary);">2. Anonymized Talent Review (F-06 TSS)</strong>
               <p class="card-text">Reviews applicants represented strictly by wildlife aliases (e.g., "Silver Koala") with verified skill radar charts.</p>
             </div>
             <div class="stat-card">
-              <strong style="color: #fff;">3. Premium Multi-Talent Comparison</strong>
+              <strong style="color: var(--ink-primary);">3. Premium Multi-Talent Comparison</strong>
               <p class="card-text">Compares 2 to 5 candidate profiles side by side on competency levels (1-5), verified experience years, and awards.</p>
             </div>
             <div class="stat-card">
-              <strong style="color: #fff;">4. Human-in-the-Loop Actioning</strong>
+              <strong style="color: var(--ink-primary);">4. Human-in-the-Loop Actioning</strong>
               <p class="card-text">Human recruiter makes 100% of shortlisting and interview decisions. Contact details revealed only upon mutual agreement.</p>
             </div>
           </div>
