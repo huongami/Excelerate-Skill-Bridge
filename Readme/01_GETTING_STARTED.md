@@ -59,3 +59,23 @@ python3 run_tests.py
 Ran 729 tests in ~24s
 OK
 ```
+
+---
+
+## 4. Opening the Interactive Presentation & Administrative Portals
+
+The platform includes two zero-build HTML applications built using the Jinder Design System:
+
+### 1. Canonical Mathematical Intelligence Engine (`formulas_presentation.html`)
+Interactive presentation of Formulas F-01 to F-06 with ASD-STE100 technical documentation, 100vh single-screen view, and continuous gradient parameter sliders:
+```bash
+open Presentation/formulas_presentation.html
+```
+
+### 2. Admin Control Center & Data Flow Telemetry (`admin.html`)
+Real-time SQLite WAL database metrics, 5-stage interactive Data Flow Pipeline, and 22-table relational database explorer:
+```bash
+open Presentation/admin.html
+```
+*(Also accessible directly within the frontend app at `http://localhost:8095/admin.html` when the server is running).*
+

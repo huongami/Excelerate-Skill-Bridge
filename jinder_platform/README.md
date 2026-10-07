@@ -193,7 +193,7 @@ The screenshots of the QA walk-through are in `docs/changes/qa-shots/`. The resu
 - Email needs SMTP settings. Password reset and email verification are not built (they are in the specification backlog).
 - The sign-in rate limit and the parse queue live in the memory of one server process.
 - The taxonomy, the ANZSCO-style codes, the pay benchmarks, the 220 working days of a day rate and the weights of the formulas are **demo values**. People made them by hand. They are not official data and not statistics.
-- `jinder_backend_engine/intelligence_engine/formulas_presentation.html` still shows the formulas of version 1 (a note at the top says so).
+- `Presentation/formulas_presentation.html` (and `jinder_backend_engine/intelligence_engine/formulas_presentation.html`) presents the canonical Version 2 formulas (F-01 through F-06) with ASD-STE100 technical documentation, 100vh layout, and interactive parameter workbench.
 - The screens were tested in Chrome only. Screen readers (NVDA, VoiceOver) were not tested.
 - Colour contrast: 55 kinds of text on 10 screens are below 4.5:1 (the token `--muted` 3.3:1, accent text 4.1 to 4.3:1, white text on the accent colour 3.7:1, `chip-yellow` 3.1:1). This is old design debt in the design tokens, and the decision to change them is open (see `docs/CHANGELOG_V2.md`).
 - `start.py` prints the address as `http://localhost:PORT/`. A script on Windows that uses this address can wait 2 seconds for each request (the server listens on 127.0.0.1 only). A browser is not affected. Use `http://127.0.0.1:PORT/` in a script.

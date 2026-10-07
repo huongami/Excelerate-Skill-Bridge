@@ -129,3 +129,22 @@ All styling is centralized in `styles-core.css` using native CSS Custom Properti
 - **Secondary Accent:** `#FFA340` (Warm Coral)
 - **Status Mint:** `#10B981` (Verified Match / Active)
 - **Micro-animations:** `cubic-bezier(0.16, 1, 0.3, 1)` transitions for silky tab switches, drawer slide-overs, and card hover lifts.
+
+---
+
+## 6. Standalone Presentation & Administrative Portals
+
+Beyond the core SPA, the frontend architecture encompasses two standalone HTML5 web applications built with the exact same design system tokens and zero build requirements:
+
+### 6.1 Canonical Formulas Technical Deck (`Presentation/formulas_presentation.html`)
+- **100vh Single-Screen Design:** 0 vertical scrolling; all 6 formulas visible concurrently in an executive 3×2 grid.
+- **Interactive Parameter Workbench:** Left-hand simulation panel featuring smooth continuous gradient sliders (`#6868f7` $\to$ `#a855f7` $\to$ `#ffa340`), real-time calculation, and step-by-step arithmetic verification.
+- **KaTeX Vector Equations:** High-fidelity typographic rendering of mathematical formulas with styled variable badges.
+- **Standards:** 100% Australian English (`en-AU`), Talent / Employer terminology, and official Jinder SVG vector branding.
+
+### 6.2 Admin Control Center & Data Flow Telemetry (`Presentation/admin.html` & `app/admin.html`)
+- **Live SQLite WAL Telemetry:** Real-time database metrics (page counts, WAL file size, journal mode) and verified user breakdown (**51 Talents**, **1 Demo Employer**).
+- **Interactive 5-Stage Data Flow Pipeline Chart:** Real-time visual pipeline (Ingestion $\to$ Taxonomy Translation $\to$ Mathematical Engine $\to$ SQLite WAL $\to$ Shortlist Delivery) with clickable stage inspection.
+- **22 Tables SQLite Explorer:** Tabular explorer with instant search, schema viewer, and pagination across all 22 database tables.
+- **Safe SQL Runner:** In-browser query terminal with read-only validation.
+

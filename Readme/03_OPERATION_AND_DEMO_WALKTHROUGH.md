@@ -46,6 +46,24 @@ This guide details the step-by-step walkthrough script for evaluating the **Jind
 
 ---
 
-## 3. Mathematical Presentations
+## 3. Interactive Portals & Administrative Telemetry Walkthrough
 
-Open [`Presentation/formulas_presentation.html`](../Presentation/formulas_presentation.html) in any web browser to interact with live formula parameter sliders and review the ASD-STE100 technical specification of Formulas F-01 through F-06.
+### 3.1 Canonical Mathematical Engine Deck (`Presentation/formulas_presentation.html`)
+1. **Launch:** Open `Presentation/formulas_presentation.html` in your browser.
+2. **Executive Overview (100vh Single-Screen):**
+   - Review all 6 canonical formulas (F-01 through F-06) displayed simultaneously in a balanced 3×2 grid with zero vertical page scrolling.
+3. **Interactive Simulation:**
+   - Use the **Parameter Simulation Workbench** on the left panel with continuous gradient sliders (`#6868f7` $\to$ `#a855f7` $\to$ `#ffa340`).
+   - Drag sliders (e.g., Mandatory Weight, Statutory Beta, Recency Decay) to observe immediate real-time recalculation of match percentages.
+   - Inspect the KaTeX variable definitions and step-by-step worked numerical examples.
+
+### 3.2 Admin Control Center & Data Flow Telemetry (`Presentation/admin.html`)
+1. **Launch:** Open `Presentation/admin.html` (or `http://localhost:8095/admin.html` when the server is active).
+2. **Overview & System Health:**
+   - Inspect live SQLite WAL performance telemetry (WAL size, active pages, cache hits) and verified entity counts (**51 Talents**, **1 Demo Employer**, 54 Job Requisitions).
+3. **Interactive 5-Stage Data Flow Pipeline:**
+   - Click on each pipeline stage (Ingestion $\to$ Taxonomy Translation $\to$ Mathematical Engine $\to$ SQLite WAL $\to$ Shortlist Delivery) to inspect latency SLAs, sample payload records, and throughput metrics.
+4. **22 Tables Relational Explorer & Safe SQL Runner:**
+   - Switch to the **Database Explorer** tab to browse schemas, paginate through tables, and filter records.
+   - Execute read-only SQL queries in the built-in terminal with safety checks and tabular result formatting.
+

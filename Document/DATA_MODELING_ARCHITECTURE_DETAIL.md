@@ -203,3 +203,22 @@ For sub-millisecond candidate-to-job matching, `taxonomy.py` compiles an in-memo
 - `skill_to_jobs_map`: `Dict[str, Set[job_id]]`
 - `domain_occupations_map`: `Dict[str, List[Occupation]]`
 This enables the platform to rank 1,000+ candidates in under 15ms without invoking expensive table scans.
+
+---
+
+## 5. Relational Explorer & Live WAL Telemetry Portal
+
+Administrative inspection and relational database telemetry are available in the standalone admin portal:
+
+- **Portal Location:** [`Presentation/admin.html`](../Presentation/admin.html) (also deployed at `jinder_frontend/app/admin.html`).
+- **Live SQLite WAL Telemetry:** Real-time database metrics including page counts, WAL file size, journal mode (`WAL`), and cache performance.
+- **Verified Entity Breakdown:** Monitors active database population (**51 Talents**, **1 Demo Employer**, 54 Job Requisitions, 31 Top Australian Tech Employers).
+- **Interactive 5-Stage Data Flow Pipeline:** Click-to-inspect pipeline stages (Ingestion $\to$ Taxonomy Translation $\to$ Mathematical Engine $\to$ SQLite WAL $\to$ Shortlist Delivery) with live sample telemetry.
+- **22 Tables SQLite Explorer:** Live search, schema inspection, pagination, and text filtering across all 22 database tables.
+- **Safe SQL Runner:** In-browser query terminal with read-only validation and execution safety guards.
+
+```bash
+# Open the admin control center
+open Presentation/admin.html
+```
+

@@ -15,17 +15,17 @@ In employment technology, black-box AI scores (e.g., arbitrary neural probabilit
 
 ```mermaid
 flowchart TD
-    In[Candidate Vector C & Job Vector J] --> Pre[Taxonomy Alignment & Smooth Operators]
+    In[Talent Vector T & Job Vector J] --> Pre[Taxonomy Alignment & Smooth Operators]
     Pre --> F1[F-01: SMF & Fit]
-    Pre --> F2[F-02: SGF & JRS]
+    Pre --> F2[F-02: GSI & JRS]
     Pre --> F3[F-03: JPI Proximity]
     Pre --> F4[F-04: RMS Merit]
-    F1 & F2 --> F5[F-05: FRS Seeker Feed]
-    F1 & F2 --> F6[F-06: TSS Recruiter Search]
+    F1 & F2 --> F5[F-05: FRS Talent Feed]
+    F1 & F2 --> F6[F-06: TSS Employer Search]
 ```
 
 ```
-       Candidate Competency Vector [C]        Job Requirement Vector [J]
+         Talent Competency Vector [T]          Job Requirement Vector [J]
                      \                                   /
                       \                                 /
                        v                               v
@@ -146,7 +146,7 @@ Calculates the search ranking of anonymous talent profiles for employers:
 $$TSS = 0.40 \cdot SMF + 0.25 \cdot \text{SeniorityAlignment} + 0.20 \cdot \text{CredentialScore} + 0.15 \cdot \text{Recency}$$
 
 Where:
-- $\text{SeniorityAlignment} = 1.0 - 0.2 \cdot |\text{Level}_{\text{candidate}} - \text{Level}_{\text{job}}|$.
+- $\text{SeniorityAlignment} = 1.0 - 0.2 \cdot |\text{Level}_{\text{talent}} - \text{Level}_{\text{job}}|$.
 - $\text{CredentialScore}$: Verified Australian ICT certifications and recognized hackathon awards.
 - $\text{Recency}$: Profile activity score with exponential decay over 90 days.
 
@@ -154,7 +154,7 @@ Where:
 
 ## 3. Worked Numerical Demonstration
 
-### Candidate Profile: Minh Tran (Silver Koala)
+### Talent Profile: Minh Tran (Silver Koala)
 - **Skills:** Python (L4), Docker (L3), PostgreSQL (L3)
 - **Target Job Requisition:** Senior Backend Engineer
   - Requirements:
@@ -180,4 +180,21 @@ Where:
      $$JRS = 78.6 - 3.0 = \mathbf{75.6\%}$$
 5. **Mitigation Feedback:**
    - Missing Kubernetes classified as **Learnable Tool** (Estimated study time: 1.5 months).
-   - Zero statutory blockers. Candidate recommended for shortlist!
+   - Zero statutory blockers. Talent recommended for shortlist!
+
+---
+
+## 4. Interactive Mathematical Presentation & Workbench
+
+The complete canonical mathematical engine can be explored live in [`Presentation/formulas_presentation.html`](../Presentation/formulas_presentation.html):
+
+- **100vh Single-Screen Layout:** Displays all 6 formulas simultaneously on a 3×2 grid with zero vertical page scrolling.
+- **Interactive Parameter Workbench:** Live input parameters with continuous gradient sliders (`#6868f7` $\to$ `#a855f7` $\to$ `#ffa340`), real-time recalculation, and step-by-step arithmetic verification.
+- **KaTeX Vector Typography:** Mathematical notation rendered with high-precision KaTeX and calibrated Australian ICT benchmarks.
+- **Strict Role Terminology:** 100% Australian English (`en-AU`) with strict **Talent** and **Employer** designations.
+
+```bash
+# Launch the interactive mathematical deck
+open Presentation/formulas_presentation.html
+```
+

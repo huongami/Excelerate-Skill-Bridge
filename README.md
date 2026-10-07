@@ -39,7 +39,7 @@ Excelerate-Skill-Bridge/
 ├── SDD/                       # 📋 Software Design Description (PRD, Specs, User Flows, Stories)
 ├── Prompt/                    # 💬 Prompt Engineering Principles, System Prompts & API Contract
 ├── Readme/                    # 📖 Master Documentation Guides & Demo Walkthroughs
-├── Presentation/              # 🎨 Interactive Project Presentation & Mathematical Formula Decks
+├── Presentation/              # 🎨 Interactive Portals (Pitch Deck, Formulas Deck, Admin Telemetry)
 ├── Data/                      # 📊 Verified Synthetic Benchmarks & Australian Legal Provenance
 ├── Document/                  # 📐 Architecture Details (Frontend, Backend, Data, Formulas, AI Test Plan)
 │
@@ -51,16 +51,35 @@ Excelerate-Skill-Bridge/
 
 ---
 
-## 📐 The 6 Core Mathematical Formulas
+## 🖥️ Interactive Presentation & Administrative Portals
 
-Located in `jinder_backend_engine/intelligence_engine/`:
+The `Presentation/` directory hosts two zero-build, standalone web applications built with the **Jinder Design System**:
 
-1. **F-01 (SMF):** Candidate vs ANZSCO Skill Match Model.
-2. **F-02 (GSI & JRS):** Skill Gap Severity & Job Readiness Score (distinguishes statutory blockers from learnable tools).
-3. **F-03 (JPI):** Job Proximity Index & Multi-Job Distance Matrix.
-4. **F-04 (RMS):** Candidate Benchmarking & Relative Merit Score (Zero-PII).
-5. **F-05 (FRS):** Job Seeker Feed Ranking Score + Behavioral Affinity Loop.
-6. **F-06 (TSS):** Recruiter Talent Search Score + Wildlife Animal Aliases.
+1. [**`Presentation/formulas_presentation.html`**](Presentation/formulas_presentation.html) — **Canonical Mathematical Engine Deck (ASD-STE100)**:
+   - **All 6 Formulas Grid:** 100vh single-screen view displaying all 6 canonical formulas (F-01 through F-06) simultaneously with zero page scrolling.
+   - **Live Parameter Workbench:** Interactive simulation panel on the left with continuous gradient sliders (`#6868f7` $\to$ `#a855f7` $\to$ `#ffa340`), real-time calculation, and step-by-step worked numerical examples.
+   - **KaTeX Variable Table:** Crisp vector mathematical variables with calibrated Australian industry values.
+   - **Strict Standards:** 100% Australian English (`en-AU`), Talent / Employer terminology, and official Jinder SVG branding.
 
-For interactive equation sliders and ASD-STE100 technical documentation, open:
-[`jinder_backend_engine/formulas_presentation.html`](jinder_backend_engine/formulas_presentation.html) in your browser.
+2. [**`Presentation/admin.html`**](Presentation/admin.html) — **Admin Control Center & Data Flow Telemetry**:
+   - **Live SQLite WAL Metrics:** Active page count, database file size (0.95 MB), journal mode, and verified role breakdown (**51 Talents**, **1 Demo Employer**).
+   - **5-Stage Data Flow Pipeline Chart:** Visual pipeline (Ingestion $\to$ Taxonomy Translation $\to$ Mathematical Engine $\to$ SQLite WAL $\to$ Shortlist Delivery) with interactive stage inspection and live query telemetry.
+   - **22 Tables SQLite Explorer:** Filter, search, and paginate through all 22 database tables with a built-in Safe SQL runner.
+
+---
+
+## 📐 The 6 Canonical Mathematical Formulas
+
+Documented in [**`Document/FORMULA_ARCHITECTURE_DETAIL.md`**](Document/FORMULA_ARCHITECTURE_DETAIL.md) and implemented in `jinder_backend_engine/intelligence_engine/`:
+
+1. **F-01 (SMF):** Skill Match Frequency & Coverage (weighted mandatory $w=2.0$ vs preferred $w=1.0$ with proficiency depth).
+2. **F-02 (GSI & JRS):** Gap Severity Index & Net Job Readiness Score (distinguishes statutory blockers $\beta=15.0$ from learnable tools $\beta=5.0$).
+3. **F-03 (JPI):** Job Proximity Index (cross-career mobility using Jaccard vector similarity with ICT domain affinity modifiers).
+4. **F-04 (RMS):** Relative Merit Score (Zero-PII Gaussian Z-score standardization against active applicant pool).
+5. **F-05 (FRS):** Feed Ranking Score (multi-objective ranking for talent opportunity feed, incorporating work modes and experience brackets).
+6. **F-06 (TSS):** Employer Talent Search Score (anonymized talent ranking factoring capability match, seniority alignment, certifications, and recency).
+
+To explore the formulas interactively, open:
+```bash
+open Presentation/formulas_presentation.html
+```

@@ -66,6 +66,9 @@ The result of the last full check (QA) is in `jinder_platform/docs/CHANGELOG_V2.
 
 ## Read more
 
+- `Presentation/formulas_presentation.html`: Canonical Mathematical Intelligence Engine deck (100vh single-screen view of all 6 formulas, interactive parameter workbench with continuous gradient sliders, ASD-STE100 certified)
+- `Presentation/admin.html`: Admin Control Center & Data Flow Telemetry portal (live SQLite WAL metrics, 5-stage interactive pipeline chart, 22-table database explorer, safe SQL runner)
+- `Presentation/README.md`: Master guide and viewing instructions for all presentation and admin portals
 - `jinder_platform/README.md`: what the product does, the settings, the folders
 - `jinder_platform/docs/`: the database, the formulas in the product, the API notes, and `CHANGELOG_V2.md` (what changed in version 2 and the known limits)
 - `jinder_frontend/prompt.md`: the API contract between the frontend and the backend, and how to build the frontend

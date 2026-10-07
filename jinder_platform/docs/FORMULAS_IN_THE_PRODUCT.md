@@ -148,4 +148,4 @@ The weights of the fit (Formula 1) and of the feed (Formula 5) are the only cons
 - `tests/test_wave4.py`, `tests/test_radar.py`: the per-skill result, `bridge.path`, the pay unit and the compare radar and areas.
 - `tests/test_employer_flow.py::PrivacyTests`: no employer response has a score or personal data.
 - The formula self-check: `python jinder_backend_engine/run_verification.py` (or `python run_tests.py --formulas`).
-- The file `intelligence_engine/formulas_presentation.html` still shows the slides of version 1. A note at the top says so.
+- The interactive presentation `Presentation/formulas_presentation.html` (and `jinder_backend_engine/intelligence_engine/formulas_presentation.html`) presents the canonical Version 2 formulas (F-01 through F-06) with ASD-STE100 technical documentation, 100vh layout, and dynamic gradient sliders.

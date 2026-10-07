@@ -96,7 +96,7 @@ jinder_backend_engine/
 |   |-- 05_job_seeker_ranking_feed.py  + 05_JOB_SEEKER_RANKING_FEED.md
 |   |-- 06_recruiter_candidate_ranking.py + 06_RECRUITER_CANDIDATE_RANKING.md
 |   |-- MASTER_PLAN.md                 Architecture and rules
-|   `-- formulas_presentation.html     Interactive slides (still version 1, see the note in the file)
+|   `-- formulas_presentation.html     Interactive canonical formula deck (Version 2, 100vh, gradient sliders, ASD-STE100)
 |
 |-- data/
 |   |-- reference/                     ict_taxonomy.json (the one list of names), validate_taxonomy.py, README_taxonomy.md
