@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jinder Intelligence Engine — Mathematical Architecture & Continuous Formulas (ASD-STE100)</title>
+  <title>Jinder Intelligence Engine — Mathematical Architecture & Canonical Formulas (ASD-STE100)</title>
   
-  <!-- Inter Font matching Jinder App Design System -->
+  <!-- Inter & JetBrains Mono Fonts matching Jinder App Design System -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- KaTeX for High-Precision Mathematical Typography -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -17,7 +17,7 @@
 
   <style>
     /* ==========================================================================
-       JINDER DESIGN SYSTEM TOKENS (1:1 with app styles.css)
+       JINDER DESIGN SYSTEM TOKENS (Identical to jinder_frontend styles.css)
        ========================================================================== */
     :root {
       --primary: #151531;
@@ -27,22 +27,14 @@
       --body: #343a40;
       --muted: #868e96;
       --muted-soft: #adb5bd;
-      --disabled: #ced4da;
-      --on-primary: #ffffff;
       --canvas: #ffffff;
-      --surface-soft: #fafafa;
       --surface-subtle: #f8f9fa;
-      --surface-muted: #f6f8f9;
       --surface-strong: #edf0f2;
-      --surface-dark: #151531;
       --hairline: #e9ecef;
-      --hairline-alpha: rgba(13, 19, 27, 0.08);
-      --separator: #e6ecf0;
       --accent: #6868f7;
       --accent-tint: #f0f0fe;
       --orange: #ffa340;
       --orange-tint: #ffe9c8;
-      --orange-strong: #f27c0d;
       --tint-pink: #f9e2fb;
       --tint-pink-ink: #560059;
       --tint-blue: #c9f0ff;
@@ -90,7 +82,7 @@
       padding: 0;
     }
 
-    /* Screen Shell (Strict 100vh, zero page scroll) */
+    /* Strict 100vh Container, zero page scrolling */
     .app-screen {
       height: 100vh;
       max-height: 100vh;
@@ -100,7 +92,7 @@
       background: var(--surface-subtle);
     }
 
-    /* Top Navigation Bar */
+    /* Jinder Top Navigation Bar */
     header.top-nav {
       height: 60px;
       flex-shrink: 0;
@@ -137,7 +129,7 @@
       place-items: center;
       color: #ffffff;
       font-weight: 800;
-      font-size: 17px;
+      font-size: 18px;
       letter-spacing: -0.5px;
       box-shadow: var(--sh-xs);
     }
@@ -195,7 +187,7 @@
       font-family: var(--font-body);
       font-size: 13px;
       font-weight: 600;
-      padding: 6px 14px;
+      padding: 6px 13px;
       border-radius: var(--r-sm);
       cursor: pointer;
       display: inline-flex;
@@ -229,7 +221,7 @@
       gap: 12px;
     }
 
-    /* Jinder Chips & Badges */
+    /* Badges & Chips */
     .chip {
       display: inline-flex;
       align-items: center;
@@ -267,7 +259,7 @@
       box-shadow: var(--sh-sm);
     }
 
-    /* Main Container (100vh minus header) */
+    /* Main Container (100vh minus 60px header) */
     main.viewport-content {
       flex: 1;
       height: calc(100vh - 60px);
@@ -315,7 +307,7 @@
     }
 
     /* ==========================================================================
-       VIEW 1: ALL 6 FORMULAS GRID (DEFAULT SCREEN)
+       VIEW 1: ALL 6 CANONICAL FORMULAS GRID (DEFAULT SCREEN, NO SCROLL)
        ========================================================================== */
     .grid-view-pane {
       flex: 1;
@@ -352,7 +344,7 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .card-formula-code {
@@ -387,7 +379,7 @@
       margin-bottom: 8px;
     }
 
-    /* Math Box */
+    /* Math Formula Stage */
     .card-math-box {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
@@ -402,7 +394,7 @@
       overflow-x: auto;
     }
     .card-math-box .katex {
-      font-size: 1.18rem;
+      font-size: 1.25rem;
       color: var(--ink);
     }
 
@@ -418,7 +410,7 @@
       overflow: hidden;
     }
 
-    /* Parameter Row */
+    /* Parameter Meta Row */
     .card-params-row {
       display: flex;
       flex-wrap: wrap;
@@ -452,7 +444,7 @@
     }
 
     /* ==========================================================================
-       VIEW 2: SINGLE FORMULA DEEP-DIVE (SPLIT WORKBENCH)
+       VIEW 2: CANONICAL DEEP-DIVE WORKBENCH (NO NEXT PAGE BUTTON)
        ========================================================================== */
     .deepdive-pane {
       flex: 1;
@@ -559,7 +551,7 @@
       color: var(--body);
     }
 
-    /* Interactive Simulator Panel */
+    /* Simulator Panel */
     .sim-panel {
       background: #ffffff;
       border: 1px solid var(--hairline);
@@ -703,32 +695,32 @@
             Mathematical Intelligence Engine
             <span class="chip chip-accent" style="font-size: 10.5px; padding: 1px 7px;">ASD-STE100 Certified</span>
           </div>
-          <div class="portal-sub">Continuous Capability Scoring Architecture • Australian Talent & Employer Matching</div>
+          <div class="portal-sub">6 Deterministic Algebraic Formulations • Australian Talent & Employer Matching</div>
         </div>
       </div>
 
-      <!-- Segmented Tab Navigation (Zero Next Page Button!) -->
+      <!-- Segmented Tab Navigation (Zero Next Page Buttons) -->
       <nav class="tab-segmented-bar" id="formulaTabs">
         <button class="tab-pill active" onclick="switchFormulaView('grid')" id="pill-grid">
           <span>⊞</span> All 6 Formulas (Grid)
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f1')" id="pill-f1">
-          <span class="pill-dot" style="color:#6868f7;"></span> F-01 Must-Have
+          <span class="pill-dot" style="color:#6868f7;"></span> F-01 SMF Coverage
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f2')" id="pill-f2">
-          <span class="pill-dot" style="color:#e11d48;"></span> F-02 Bonus Decay
+          <span class="pill-dot" style="color:#e11d48;"></span> F-02 GSI & JRS
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f3')" id="pill-f3">
-          <span class="pill-dot" style="color:#16a34a;"></span> F-03 Experience
+          <span class="pill-dot" style="color:#16a34a;"></span> F-03 JPI Proximity
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f4')" id="pill-f4">
-          <span class="pill-dot" style="color:#0284c7;"></span> F-04 ANZSCO Graph
+          <span class="pill-dot" style="color:#0284c7;"></span> F-04 RMS Merit
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f5')" id="pill-f5">
-          <span class="pill-dot" style="color:#d97706;"></span> F-05 Composite
+          <span class="pill-dot" style="color:#d97706;"></span> F-05 FRS Talent Feed
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f6')" id="pill-f6">
-          <span class="pill-dot" style="color:#7c3aed;"></span> F-06 AI Parity
+          <span class="pill-dot" style="color:#7c3aed;"></span> F-06 TSS Employer Search
         </button>
       </nav>
 
@@ -746,20 +738,20 @@
       <div class="view-banner">
         <div class="banner-title-group">
           <h1 id="viewHeading">
-            All 6 Continuous Mathematical Formulas
+            Latest Canonical Mathematical Architecture (F-01 to F-06)
           </h1>
           <p id="viewSubheading">
-            Full-spectrum deterministic capability alignment with zero artificial cutoffs and complete mathematical explainability.
+            Strictly bounded algebraic and statistical formulations in [0.0, 100.0] with zero black-box neural drift.
           </p>
         </div>
         <div class="banner-meta-pills">
           <span class="chip chip-blue">Australian National AI Ethics Framework</span>
-          <span class="chip chip-pink">Zero Demographic Bias (Δ = 0.000)</span>
+          <span class="chip chip-pink">Deterministic SLA &lt; 5ms</span>
         </div>
       </div>
 
       <!-- =====================================================================
-           VIEW 1: ALL 6 FORMULAS ON SCREEN AT ONCE (3x2 GRID)
+           VIEW 1: ALL 6 CANONICAL FORMULAS ON SCREEN AT ONCE (3x2 GRID)
            ===================================================================== -->
       <div class="grid-view-pane" id="gridViewPane">
         
@@ -767,22 +759,22 @@
         <div class="formula-card" onclick="switchFormulaView('f1')">
           <div>
             <div class="card-top">
-              <span class="card-formula-code f1-badge">F-01 • CORE COMPETENCIES</span>
+              <span class="card-formula-code f1-badge">F-01 • SKILL COVERAGE</span>
               <span class="card-sla-badge">Latency: 0.82 ms</span>
             </div>
-            <h3 class="card-title">Must-Have Capability Alignment</h3>
+            <h3 class="card-title">Skill Match Frequency & Coverage (SMF)</h3>
             <div class="card-math-box">
-              $$\displaystyle S_{\text{must}} = \prod_{i=1}^{M} \left[ 1 - (1 - s_i)^\alpha \right]^{w_i}$$
+              $$\displaystyle SMF = \frac{\sum_{i \in S_{\text{match}}} w_i \cdot \min\left(1.0, \frac{L_{c,i}}{L_{j,i}}\right)}{\sum_{k \in S_{\text{job}}} w_k} \times 100$$
             </div>
             <p class="card-desc">
-              Evaluates non-negotiable role requirements with a concave penalty curve. A missing mandatory skill collapses alignment toward zero without compensation.
+              Weighted capability coverage separating mandatory requirements (w=2.0) from preferred skills (w=1.0) with verified proficiency level depth.
             </p>
           </div>
           <div>
             <div class="card-params-row">
-              <span class="param-pill">Exponent <strong>α = 1.6</strong></span>
-              <span class="param-pill">Gating <strong>Strict</strong></span>
-              <span class="param-pill">Drift <strong>0.000</strong></span>
+              <span class="param-pill">Must Weight <strong>w = 2.0</strong></span>
+              <span class="param-pill">Nice Weight <strong>w = 1.0</strong></span>
+              <span class="param-pill">Range <strong>[0.0, 100.0]</strong></span>
               <div class="card-footer-action">Deep Dive ↗</div>
             </div>
           </div>
@@ -792,21 +784,22 @@
         <div class="formula-card" onclick="switchFormulaView('f2')">
           <div>
             <div class="card-top">
-              <span class="card-formula-code f2-badge">F-02 • BONUS RECENCY</span>
+              <span class="card-formula-code f2-badge">F-02 • GAP SEVERITY</span>
               <span class="card-sla-badge">Latency: 0.45 ms</span>
             </div>
-            <h3 class="card-title">Nice-to-Have Bonus & Time Decay</h3>
+            <h3 class="card-title">Gap Severity Index & Job Readiness (GSI / JRS)</h3>
             <div class="card-math-box">
-              $$\displaystyle S_{\text{bonus}} = \sum_{j=1}^{B} w_j \cdot s_j \cdot e^{-\lambda \Delta t_j}$$
+              $$\displaystyle GSI = \sum_{g \in S_{\text{gaps}}} \beta_g \cdot \text{Severity}(g), \quad JRS = \max(0.0, SMF - GSI)$$
             </div>
             <p class="card-desc">
-              Calculates supplementary capability value using continuous exponential decay over elapsed time. Stale skills lose predictive value smoothly without cliffs.
+              Penalises missing capabilities by categorising statutory blockers (β=15.0) vs learnable tools (β=5.0) to safeguard employers from foundational gaps.
             </p>
           </div>
           <div>
             <div class="card-params-row">
-              <span class="param-pill">Decay Rate <strong>λ = 0.08 / yr</strong></span>
-              <span class="param-pill">Half-life <strong>8.66 yrs</strong></span>
+              <span class="param-pill">Blocker <strong>β = 15.0</strong></span>
+              <span class="param-pill">Learnable <strong>β = 5.0</strong></span>
+              <span class="param-pill">Severity <strong>L/5.0</strong></span>
               <div class="card-footer-action">Deep Dive ↗</div>
             </div>
           </div>
@@ -816,21 +809,21 @@
         <div class="formula-card" onclick="switchFormulaView('f3')">
           <div>
             <div class="card-top">
-              <span class="card-formula-code f3-badge">F-03 • EXPERIENCE CURVE</span>
-              <span class="card-sla-badge">Latency: 0.38 ms</span>
+              <span class="card-formula-code f3-badge">F-03 • PROXIMITY INDEX</span>
+              <span class="card-sla-badge">Latency: 0.65 ms</span>
             </div>
-            <h3 class="card-title">Experience Depth Sigmoid Function</h3>
+            <h3 class="card-title">Job Proximity Index (JPI) Mobility</h3>
             <div class="card-math-box">
-              $$\displaystyle S_{\text{exp}} = \frac{1}{1 + e^{-k (T_{\text{act}} - T_{\text{req}})}}$$
+              $$\displaystyle JPI = 100 \times \left( \alpha \cdot \frac{|S_A \cap S_B|}{|S_A \cup S_B|} + (1 - \alpha) \cdot \delta(\text{Domain}_A, \text{Domain}_B) \right)$$
             </div>
             <p class="card-desc">
-              Smooth logistic curve replacing arbitrary year cutoffs. Grants credit for accelerated mastery while softly plateauing for surplus seniority.
+              Quantifies cross-career mobility across Australian ICT occupations using Jaccard vector similarity combined with domain taxonomy affinity modifiers.
             </p>
           </div>
           <div>
             <div class="card-params-row">
-              <span class="param-pill">Steepness <strong>k = 0.75</strong></span>
-              <span class="param-pill">Inflection <strong>ΔT = 0</strong></span>
+              <span class="param-pill">Jaccard Weight <strong>α = 0.70</strong></span>
+              <span class="param-pill">Domain Bonus <strong>δ ∈ {0, 0.5, 1}</strong></span>
               <div class="card-footer-action">Deep Dive ↗</div>
             </div>
           </div>
@@ -840,21 +833,21 @@
         <div class="formula-card" onclick="switchFormulaView('f4')">
           <div>
             <div class="card-top">
-              <span class="card-formula-code f4-badge">F-04 • ANZSCO TAXONOMY</span>
-              <span class="card-sla-badge">Latency: 1.14 ms</span>
+              <span class="card-formula-code f4-badge">F-04 • RELATIVE MERIT</span>
+              <span class="card-sla-badge">Latency: 1.10 ms</span>
             </div>
-            <h3 class="card-title">Capability Graph Distance & Transfer</h3>
+            <h3 class="card-title">Relative Merit Score (RMS - Zero-PII Pool)</h3>
             <div class="card-math-box">
-              $$\displaystyle S_{\text{anzsco}} = e^{-\gamma \cdot d_{\text{graph}}(c_1, c_2)}$$
+              $$\displaystyle Z_c = \frac{SMF_c - \mu_{\text{pool}}}{\sigma_{\text{pool}} + \epsilon}, \quad RMS_c = \frac{1}{1 + e^{-1.702 \cdot Z_c}} \times 100$$
             </div>
             <p class="card-desc">
-              Navigates Australian Bureau of Statistics (ABS) ANZSCO 2022 taxonomy to quantify skill transferability across occupational unit groups.
+              Standardises an applicant's raw match score relative to the active requisition talent pool via Gaussian Z-score transformation with zero demographic attributes.
             </p>
           </div>
           <div>
             <div class="card-params-row">
-              <span class="param-pill">Graph Factor <strong>γ = 0.35</strong></span>
-              <span class="param-pill">Unit Code <strong>6-digit</strong></span>
+              <span class="param-pill">Distribution <strong>Gaussian Z</strong></span>
+              <span class="param-pill">CDF Logistic <strong>1.702</strong></span>
               <div class="card-footer-action">Deep Dive ↗</div>
             </div>
           </div>
@@ -864,21 +857,23 @@
         <div class="formula-card" onclick="switchFormulaView('f5')">
           <div>
             <div class="card-top">
-              <span class="card-formula-code f5-badge">F-05 • COMPOSITE HARMONY</span>
+              <span class="card-formula-code f5-badge">F-05 • TALENT FEED</span>
               <span class="card-sla-badge">Latency: 1.82 ms</span>
             </div>
-            <h3 class="card-title">Holistic Gated Match Score</h3>
+            <h3 class="card-title">Feed Ranking Score (FRS - Talent Feed)</h3>
             <div class="card-math-box">
-              $$\displaystyle S_{\text{final}} = S_{\text{must}} \cdot \left[ 0.55 + 0.15 S_{\text{bon}} + 0.15 S_{\text{exp}} + 0.15 S_{\text{anz}} \right]$$
+              $$\displaystyle FRS = 0.45 \cdot SMF + 0.25 \cdot JRS + 0.20 \cdot \text{ExpFit} + 0.10 \cdot \text{WorkMode}$$
             </div>
             <p class="card-desc">
-              Synthesises all dimensional vectors into a final 0 to 100% fit score. Multiplicatively gated by S_must to prevent false positive shortlists.
+              Ranks open market vacancies in the talent discovery feed, balancing skill coverage, net job readiness, experience brackets, and Australian work modes.
             </p>
           </div>
           <div>
             <div class="card-params-row">
-              <span class="param-pill">Core Base <strong>55%</strong></span>
-              <span class="param-pill">Modulators <strong>3 × 15%</strong></span>
+              <span class="param-pill">SMF <strong>45%</strong></span>
+              <span class="param-pill">JRS <strong>25%</strong></span>
+              <span class="param-pill">Exp <strong>20%</strong></span>
+              <span class="param-pill">Mode <strong>10%</strong></span>
               <div class="card-footer-action">Deep Dive ↗</div>
             </div>
           </div>
@@ -888,21 +883,23 @@
         <div class="formula-card" onclick="switchFormulaView('f6')">
           <div>
             <div class="card-top">
-              <span class="card-formula-code f6-badge">F-06 • ETHICAL AI PARITY</span>
-              <span class="card-sla-badge">Latency: 0.12 ms</span>
+              <span class="card-formula-code f6-badge">F-06 • EMPLOYER SEARCH</span>
+              <span class="card-sla-badge">Latency: 1.35 ms</span>
             </div>
-            <h3 class="card-title">Deterministic Demographic Parity</h3>
+            <h3 class="card-title">Employer Talent Search Score (TSS)</h3>
             <div class="card-math-box">
-              $$\displaystyle \Delta_{\text{parity}} = \left| P(\hat{Y}=1 \mid A=0) - P(\hat{Y}=1 \mid A=1) \right| = 0.000$$
+              $$\displaystyle TSS = 0.40 \cdot SMF + 0.25 \cdot \text{Seniority} + 0.20 \cdot \text{Credentials} + 0.15 \cdot \text{Recency}$$
             </div>
             <p class="card-desc">
-              Mathematical validation of zero statistical disparity across protected demographic attributes under the Australian Fair Work Act and AI Ethics Framework.
+              Ranks anonymised talent profiles for hiring employers: 40% capability match, 25% seniority level alignment, 20% Australian ICT credentials, 15% activity recency.
             </p>
           </div>
           <div>
             <div class="card-params-row">
-              <span class="param-pill">Parity Delta <strong>Δ = 0.000</strong></span>
-              <span class="param-pill">Raw PII <strong>0 Bytes</strong></span>
+              <span class="param-pill">Coverage <strong>40%</strong></span>
+              <span class="param-pill">Seniority <strong>25%</strong></span>
+              <span class="param-pill">Creds <strong>20%</strong></span>
+              <span class="param-pill">Recency <strong>15%</strong></span>
               <div class="card-footer-action">Deep Dive ↗</div>
             </div>
           </div>
@@ -911,7 +908,7 @@
       </div>
 
       <!-- =====================================================================
-           VIEW 2: INTERACTIVE DEEP-DIVE WORKBENCH (NO NEXT PAGE BUTTON)
+           VIEW 2: CANONICAL DEEP-DIVE WORKBENCH (NO NEXT PAGE BUTTON)
            ===================================================================== -->
       <div class="deepdive-pane" id="deepdivePane">
         
@@ -920,8 +917,8 @@
           <div class="deepdive-header">
             <div class="deepdive-title-group">
               <span class="card-formula-code" id="ddCodeBadge">F-01</span>
-              <h2 id="ddTitle">Must-Have Core Capability Alignment</h2>
-              <p id="ddSubtitle">Deterministic non-linear aggregation of non-negotiable capabilities.</p>
+              <h2 id="ddTitle">Skill Match Frequency & Coverage (SMF)</h2>
+              <p id="ddSubtitle">Weighted coverage of mandatory and preferred capabilities.</p>
             </div>
             <button class="btn-portal" style="background: var(--surface-strong); color: var(--ink);" onclick="switchFormulaView('grid')">
               ← Back to All 6 Formulas
@@ -933,20 +930,20 @@
           </div>
 
           <div class="spec-block">
-            <h3><span>📋</span> ASD-STE100 Technical Specification</h3>
+            <h3><span>📋</span> Canonical Architecture Specification</h3>
             <p id="ddSpecText">
-              Evaluates non-negotiable employer requirements. Each capability score s_i is transformed through a concave exponent α = 1.6 to heavily penalise underperformance. When any must-have capability is absent, S_must approaches zero.
+              Computes weighted skill coverage between talent capabilities and role demands, assigning double weight (w=2.0) to mandatory competencies and single weight (w=1.0) to preferred tools.
             </p>
           </div>
 
           <div class="spec-block" style="margin-bottom:0;">
-            <h3><span>⚖️</span> Australian Workforce & Regulatory Context</h3>
+            <h3><span>⚖️</span> Variable Definitions & Australian Industry Calibration</h3>
             <table class="variable-table">
               <thead>
                 <tr>
                   <th>Variable</th>
-                  <th>Mathematical Meaning</th>
-                  <th>Australian System Calibration</th>
+                  <th>Mathematical Definition</th>
+                  <th>Calibration & Range</th>
                 </tr>
               </thead>
               <tbody id="ddVarTableBody">
@@ -960,11 +957,11 @@
         <div class="sim-panel">
           <div class="sim-header">
             <h3>Live Mathematical Simulator</h3>
-            <p>Adjust live capability parameters to inspect instant deterministic score convergence.</p>
+            <p>Adjust parameters to observe instant deterministic score calculation.</p>
           </div>
 
           <div id="simControlsContainer">
-            <!-- Injected dynamic sliders for the active formula -->
+            <!-- Dynamic sliders injected via JS -->
           </div>
 
           <div class="sim-worked-math" id="simWorkedMath">
@@ -972,9 +969,9 @@
           </div>
 
           <div class="sim-result-card">
-            <div class="sim-result-label" id="simResultLabel">Calculated Alignment Score</div>
-            <div class="sim-result-number" id="simResultVal">92.4%</div>
-            <div class="sim-result-status chip-green" id="simResultBadge">Strong Fit • Shortlist Guaranteed</div>
+            <div class="sim-result-label" id="simResultLabel">Calculated Canonical Score</div>
+            <div class="sim-result-number" id="simResultVal">78.6%</div>
+            <div class="sim-result-status chip-green" id="simResultBadge">Benchmark Case • Minh Tran (Silver Koala)</div>
           </div>
         </div>
 
@@ -985,191 +982,183 @@
 
   <script>
     // =========================================================================
-    // FORMULA METADATA & CONFIGURATIONS
+    // CANONICAL FORMULAS DATA (1:1 with Document/FORMULA_ARCHITECTURE_DETAIL.md)
     // =========================================================================
     const FORMULAS_DATA = {
       f1: {
-        code: 'F-01 • CORE COMPETENCIES',
+        code: 'F-01 • SKILL COVERAGE',
         badgeClass: 'f1-badge',
-        title: 'Must-Have Capability Alignment (S_must)',
-        subtitle: 'Multiplicative concave aggregation with zero compensatory leakage.',
-        latex: '\\displaystyle S_{\\text{must}} = \\prod_{i=1}^{M} \\left[ 1 - (1 - s_i)^\\alpha \\right]^{w_i}',
-        specText: 'Non-negotiable role requirements must be satisfied without substitution. The concave exponent α = 1.6 models real-world cognitive readiness. If a Talent lacks a required mandatory capability, the overall score drops to near-zero, safeguarding employers from false positives.',
+        title: 'Skill Match Frequency & Coverage (SMF)',
+        subtitle: 'Weighted capability coverage separating mandatory from preferred skills.',
+        latex: '\\displaystyle SMF = \\frac{\\sum_{i \\in S_{\\text{match}}} w_i \\cdot \\min\\left(1.0, \\frac{L_{c,i}}{L_{j,i}}\\right)}{\\sum_{k \\in S_{\\text{job}}} w_k} \\times 100',
+        specText: 'Computes the weighted skill coverage between talent capabilities and job demands. Mandatory requirements (must: true) are assigned w=2.0; preferred requirements (must: false) are assigned w=1.0. Partial credit is granted proportionally if a talent level is below the required level, but capped at 1.0 if exceeded.',
         vars: [
-          { symbol: 's_i', desc: 'Normalised proficiency of talent in mandatory capability i', calib: 'Extracted from CV vs ANZSCO Unit Code [0.0 - 1.0]' },
-          { symbol: 'α', desc: 'Concave penalty exponent (calibrated to Australian tech roles)', calib: 'Fixed constant α = 1.6' },
-          { symbol: 'w_i', desc: 'Relative weight of must-have requirement i', calib: 'Normalised so Σ w_i = 1.0' },
-          { symbol: 'M', desc: 'Total number of mandatory capabilities specified in requisition', calib: 'Typically 3 to 6 active requirements' }
+          { symbol: 'S_job', desc: 'Set of all skills demanded by the employer requisition', calib: 'Total requisition skill count' },
+          { symbol: 'S_match', desc: 'Overlap subset: S_talent ∩ S_job', calib: 'Verified common capabilities' },
+          { symbol: 'w_i', desc: 'Skill weighting coefficient: mandatory vs preferred', calib: 'w=2.0 (mandatory), w=1.0 (preferred)' },
+          { symbol: 'L_c,i / L_j,i', desc: 'Ratio of talent skill level to job required skill level', calib: 'Proficiency scale [1, 5]' }
         ],
         controls: [
-          { id: 's1', label: 'Primary Core Skill Proficiency (s₁)', min: 0, max: 100, val: 88, unit: '%' },
-          { id: 's2', label: 'Secondary Core Skill Proficiency (s₂)', min: 0, max: 100, val: 92, unit: '%' }
+          { id: 'must_matches', label: 'Mandatory Skills Matched (out of 3 required, w=2.0)', min: 0, max: 3, val: 3, step: 1, unit: ' skills' },
+          { id: 'must_depth', label: 'Mandatory Skills Avg Level Ratio (L_c / L_j)', min: 50, max: 100, val: 92, step: 1, unit: '%' },
+          { id: 'nice_matches', label: 'Preferred Skills Matched (out of 1 required, w=1.0)', min: 0, max: 1, val: 0, step: 1, unit: ' skills' }
         ],
         compute: function(vals) {
-          const s1 = vals.s1 / 100;
-          const s2 = vals.s2 / 100;
-          const alpha = 1.6;
-          const term1 = 1 - Math.pow(1 - s1, alpha);
-          const term2 = 1 - Math.pow(1 - s2, alpha);
-          const s_must = Math.pow(term1, 0.5) * Math.pow(term2, 0.5);
-          const pct = (s_must * 100).toFixed(1);
+          // Total weight = 3*2.0 + 1*1.0 = 7.0
+          const totalWeight = 7.0;
+          const matchWeight = (vals.must_matches * 2.0 * (vals.must_depth / 100)) + (vals.nice_matches * 1.0);
+          const smf = Math.min(100.0, Math.max(0.0, (matchWeight / totalWeight) * 100));
+          const pct = smf.toFixed(1);
           return {
             resultText: pct + '%',
-            worked: 'S_must = [1 - (1 - ' + s1.toFixed(2) + ')^1.6]^0.5 × [1 - (1 - ' + s2.toFixed(2) + ')^1.6]^0.5 = ' + term1.toFixed(3) + '^0.5 × ' + term2.toFixed(3) + '^0.5 = ' + s_must.toFixed(3),
-            badge: pct >= 80 ? 'Optimal Core Match' : (pct >= 50 ? 'Marginal Must-Have Fit' : 'Missing Critical Mandatory Skill'),
-            badgeClass: pct >= 80 ? 'chip-green' : (pct >= 50 ? 'chip-yellow' : 'chip-pink')
+            worked: 'SMF = [(' + vals.must_matches + ' × 2.0 × ' + (vals.must_depth / 100).toFixed(2) + ') + (' + vals.nice_matches + ' × 1.0)] / 7.0 × 100 = ' + matchWeight.toFixed(2) + ' / 7.0 × 100 = ' + pct + '%',
+            badge: smf >= 75 ? 'Strong Capability Match' : (smf >= 50 ? 'Moderate Alignment' : 'Substantial Gap'),
+            badgeClass: smf >= 75 ? 'chip-green' : (smf >= 50 ? 'chip-yellow' : 'chip-pink')
           };
         }
       },
       f2: {
-        code: 'F-02 • BONUS RECENCY',
+        code: 'F-02 • GAP SEVERITY',
         badgeClass: 'f2-badge',
-        title: 'Nice-to-Have Bonus Value & Exponential Recency Decay (S_bonus)',
-        subtitle: 'Continuous time-discounted appreciation of secondary skill depth.',
-        latex: '\\displaystyle S_{\\text{bonus}} = \\sum_{j=1}^{B} w_j \\cdot s_j \\cdot e^{-\\lambda \\Delta t_j}',
-        specText: 'Secondary capabilities enhance talent viability but cannot overturn missing core skills. An exponential half-life decay function (λ = 0.08 / year) discounts capabilities that have not been exercised recently, accounting for modern tech stack shifts in Australian industry.',
+        title: 'Gap Severity Index (GSI) & Job Readiness Score (JRS)',
+        subtitle: 'Statutory blocker detection with separate learnable tool mitigation.',
+        latex: '\\displaystyle GSI = \\sum_{g \\in S_{\\text{gaps}}} \\beta_g \\cdot \\text{Severity}(g), \\quad JRS = \\max(0.0, SMF - GSI)',
+        specText: 'Penalises talent profiles for missing requirements by categorising gaps into Statutory Blockers (mandatory skills/licenses, β=15.0) versus Learnable Tools (frameworks learnable on the job, β=5.0). Severity is scaled by required proficiency level: Severity(g) = L_j,g / 5.0.',
         vars: [
-          { symbol: 's_j', desc: 'Demonstrated depth in nice-to-have skill j', calib: 'Quantified from verified GitHub / commercial tenure' },
-          { symbol: 'Δt_j', desc: 'Elapsed time since skill was actively utilised in a role', calib: 'Measured in years from today [0.0 - 10.0]' },
-          { symbol: 'λ', desc: 'Exponential decay rate constant', calib: 'λ = 0.08 / yr (8.66-year capability half-life)' },
-          { symbol: 'w_j', desc: 'Employer-assigned weight to bonus skill', calib: 'Normalised so Σ w_j = 1.0' }
+          { symbol: 'S_gaps', desc: 'Missing capabilities: S_job \\ S_talent', calib: 'Requisition requirements unmet' },
+          { symbol: 'β_g (Blocker)', desc: 'Penalty multiplier for mandatory requirements', calib: 'Fixed constant β = 15.0' },
+          { symbol: 'β_g (Learnable)', desc: 'Penalty multiplier for secondary learnable tools', calib: 'Fixed constant β = 5.0' },
+          { symbol: 'JRS', desc: 'Net Job Readiness Score after gap subtraction', calib: 'JRS = max(0.0, SMF - GSI)' }
         ],
         controls: [
-          { id: 'bonus_skill', label: 'Bonus Skill Proficiency (s_j)', min: 0, max: 100, val: 90, unit: '%' },
-          { id: 'elapsed_years', label: 'Elapsed Time Since Last Applied (Δt)', min: 0, max: 8, val: 1.5, step: 0.5, unit: ' yrs' }
+          { id: 'smf_in', label: 'Base Capability Match (SMF)', min: 40, max: 100, val: 78.6, step: 0.1, unit: '%' },
+          { id: 'blockers', label: 'Missing Statutory Blockers (must: true, β=15.0)', min: 0, max: 2, val: 0, step: 1, unit: ' gaps' },
+          { id: 'learnables', label: 'Missing Learnable Tools (must: false, β=5.0)', min: 0, max: 3, val: 1, step: 1, unit: ' gaps' }
         ],
         compute: function(vals) {
-          const sj = vals.bonus_skill / 100;
-          const dt = vals.elapsed_years;
-          const lambda = 0.08;
-          const decay = Math.exp(-lambda * dt);
-          const s_bonus = sj * decay;
-          const pct = (s_bonus * 100).toFixed(1);
+          const gsi = (vals.blockers * 15.0 * (4.0 / 5.0)) + (vals.learnables * 5.0 * (3.0 / 5.0));
+          const jrs = Math.max(0.0, vals.smf_in - gsi);
           return {
-            resultText: pct + '%',
-            worked: 'S_bonus = ' + sj.toFixed(2) + ' × e^(-0.08 × ' + dt + ') = ' + sj.toFixed(2) + ' × ' + decay.toFixed(3) + ' = ' + s_bonus.toFixed(3),
-            badge: pct >= 70 ? 'High Active Bonus Value' : 'Moderate Recency Attenuation',
-            badgeClass: pct >= 70 ? 'chip-green' : 'chip-blue'
+            resultText: jrs.toFixed(1) + '%',
+            worked: 'GSI = (' + vals.blockers + ' × 15.0 × 0.8) + (' + vals.learnables + ' × 5.0 × 0.6) = ' + gsi.toFixed(1) + ' pts | JRS = ' + vals.smf_in.toFixed(1) + ' - ' + gsi.toFixed(1) + ' = ' + jrs.toFixed(1) + '%',
+            badge: vals.blockers === 0 ? 'Job Ready • No Statutory Blockers' : 'Critical Blocker Detected',
+            badgeClass: vals.blockers === 0 ? 'chip-green' : 'chip-pink'
           };
         }
       },
       f3: {
-        code: 'F-03 • EXPERIENCE CURVE',
+        code: 'F-03 • PROXIMITY INDEX',
         badgeClass: 'f3-badge',
-        title: 'Continuous Experience Depth Sigmoid (S_exp)',
-        subtitle: 'Smooth logistic progression replacing arbitrary year thresholds.',
-        latex: '\\displaystyle S_{\\text{exp}} = \\frac{1}{1 + e^{-k (T_{\\text{act}} - T_{\\text{req}})}}',
-        specText: 'Conventional recruitment relies on rigid minimum thresholds (e.g., must have 5+ years). Jinder uses a smooth logistic sigmoid function (k = 0.75) centred at ΔT = 0, awarding continuous recognition for accelerated talent while avoiding arbitrary rejection.',
+        title: 'Job Proximity Index (JPI) / Career Pathway Mobility',
+        subtitle: 'Cross-career mobility and skill transferability across ICT occupations.',
+        latex: '\\displaystyle JPI(J_A, J_B) = 100 \\times \\left( \\alpha \\cdot \\frac{|S_A \\cap S_B|}{|S_A \\cup S_B|} + (1 - \\alpha) \\cdot \\delta(\\text{Domain}_A, \\text{Domain}_B) \\right)',
+        specText: 'Measures career mobility and skill transferability between two job roles using Jaccard vector distance with domain affinity modifiers (α=0.70). If jobs share the same ICT domain, δ=1.0; if related (e.g. Software Engineering and Data), δ=0.5; otherwise δ=0.0.',
         vars: [
-          { symbol: 'T_act', desc: 'Total verifiable relevant commercial experience', calib: 'Parsed from career history in years' },
-          { symbol: 'T_req', desc: 'Baseline experience specified in role requisition', calib: 'Target requirement in years (e.g. 5.0 yrs)' },
-          { symbol: 'k', desc: 'Logistic growth slope coefficient', calib: 'k = 0.75 (balanced progression)' },
-          { symbol: 'S_exp', desc: 'Continuous experience alignment factor', calib: 'Bounded in open interval (0, 1)' }
+          { symbol: '|S_A ∩ S_B| / |S_A ∪ S_B|', desc: 'Jaccard capability intersection over union', calib: 'Continuous set ratio in [0.0, 1.0]' },
+          { symbol: 'α', desc: 'Weight of raw skill overlap vs domain affinity', calib: 'Fixed constant α = 0.70' },
+          { symbol: 'δ(Domain_A, Domain_B)', desc: 'Domain taxonomic affinity modifier', calib: '1.0 (Same), 0.5 (Related), 0.0 (Distinct)' },
+          { symbol: 'JPI', desc: 'Cross-role proximity index', calib: 'Bounded in [0.0, 100.0]' }
         ],
         controls: [
-          { id: 't_act', label: 'Talent Relevant Experience (T_act)', min: 1, max: 12, val: 6, step: 0.5, unit: ' yrs' },
-          { id: 't_req', label: 'Employer Target Experience (T_req)', min: 1, max: 10, val: 5, step: 0.5, unit: ' yrs' }
+          { id: 'jaccard', label: 'Jaccard Skill Overlap Ratio (|S_A ∩ S_B| / |S_A ∪ S_B|)', min: 10, max: 90, val: 55, step: 1, unit: '%' },
+          { id: 'domain_rel', label: 'Domain Relationship (δ: 100% Same, 50% Related)', min: 0, max: 100, val: 50, step: 50, unit: '%' }
         ],
         compute: function(vals) {
-          const delta = vals.t_act - vals.t_req;
-          const k = 0.75;
-          const s_exp = 1 / (1 + Math.exp(-k * delta));
-          const pct = (s_exp * 100).toFixed(1);
+          const j = vals.jaccard / 100;
+          const d = vals.domain_rel / 100;
+          const jpi = 100 * (0.70 * j + 0.30 * d);
           return {
-            resultText: pct + '%',
-            worked: 'S_exp = 1 / (1 + e^[-0.75 × (' + vals.t_act + ' - ' + vals.t_req + ')]) = 1 / (1 + e^[' + (-k * delta).toFixed(2) + ']) = ' + s_exp.toFixed(3),
-            badge: delta >= 0 ? 'Experience Threshold Exceeded' : 'Developing Experience Trajectory',
-            badgeClass: delta >= 0 ? 'chip-green' : 'chip-yellow'
+            resultText: jpi.toFixed(1) + '%',
+            worked: 'JPI = 100 × [0.70 × ' + j.toFixed(2) + ' + 0.30 × ' + d.toFixed(2) + '] = 100 × [' + (0.70 * j).toFixed(3) + ' + ' + (0.30 * d).toFixed(3) + '] = ' + jpi.toFixed(1) + '%',
+            badge: jpi >= 60 ? 'High Pathway Mobility' : 'Moderate Transition Distance',
+            badgeClass: jpi >= 60 ? 'chip-green' : 'chip-blue'
           };
         }
       },
       f4: {
-        code: 'F-04 • ANZSCO TAXONOMY',
+        code: 'F-04 • RELATIVE MERIT',
         badgeClass: 'f4-badge',
-        title: 'ANZSCO 2022 Graph Distance & Transferability (S_anzsco)',
-        subtitle: 'Australian Bureau of Statistics taxonomic ontology distance.',
-        latex: '\\displaystyle S_{\\text{anzsco}} = e^{-\\gamma \\cdot d_{\\text{graph}}(c_1, c_2)}',
-        specText: 'Maps occupation unit groups across the official ABS ANZSCO 2022 classification structure. Tree distance d_graph reflects taxonomy traversal steps (Major Group -> Sub-Major -> Minor -> Unit Group), evaluating true capability transferability.',
+        title: 'Relative Merit Score (RMS - Zero-PII Pool Benchmarking)',
+        subtitle: 'Applicant standardization relative to requisition cohort via Gaussian CDF.',
+        latex: '\\displaystyle Z_c = \\frac{SMF_c - \\mu_{\\text{pool}}}{\\sigma_{\\text{pool}} + \\epsilon}, \\quad RMS_c = \\frac{1}{1 + e^{-1.702 \\cdot Z_c}} \\times 100',
+        specText: 'Standardises an applicant raw match score relative to the current applicant pool for that specific job requisition, utilizing a Gaussian Z-score transformation with logistic CDF approximation. Excludes all demographic attributes to guarantee zero bias.',
         vars: [
-          { symbol: 'd_graph', desc: 'Shortest path graph distance across ANZSCO tree', calib: 'Integer steps in range [0, 4]' },
-          { symbol: 'γ', desc: 'Taxonomic penalty dampening parameter', calib: 'γ = 0.35 (empirically validated across Tech occupations)' },
-          { symbol: 'c_1, c_2', desc: 'Talent occupational origin code vs employer target unit code', calib: 'Official 6-digit ABS ANZSCO 2022 code' }
+          { symbol: 'SMF_c', desc: 'Raw skill match score of applicant c', calib: 'Calculated via Formula F-01' },
+          { symbol: 'μ_pool', desc: 'Mean SMF score across all active applicants for job', calib: 'Cohort statistical mean' },
+          { symbol: 'σ_pool', desc: 'Standard deviation of applicant scores', calib: 'Cohort statistical spread' },
+          { symbol: 'RMS_c', desc: 'Relative percentile merit score in pool', calib: 'Normalized in [0.0, 100.0]' }
         ],
         controls: [
-          { id: 'd_graph', label: 'ANZSCO Taxonomic Tree Distance (d_graph)', min: 0, max: 4, val: 1, step: 1, unit: ' steps' }
+          { id: 'smf_cand', label: 'Talent Raw Match (SMF_c)', min: 50, max: 95, val: 78.6, step: 0.1, unit: '%' },
+          { id: 'mu_pool', label: 'Pool Average Score (μ_pool)', min: 50, max: 80, val: 64.0, step: 0.5, unit: '%' },
+          { id: 'sigma_pool', label: 'Pool Standard Deviation (σ_pool)', min: 5, max: 20, val: 12.0, step: 0.5, unit: ' pts' }
         ],
         compute: function(vals) {
-          const d = vals.d_graph;
-          const gamma = 0.35;
-          const s_anzsco = Math.exp(-gamma * d);
-          const pct = (s_anzsco * 100).toFixed(1);
-          const descriptions = ['Identical Unit Group (d=0)', 'Same Minor Group (d=1)', 'Same Sub-Major Group (d=2)', 'Same Major Group (d=3)', 'Cross-Domain Traversal (d=4)'];
+          const z = (vals.smf_cand - vals.mu_pool) / vals.sigma_pool;
+          const rms = (1 / (1 + Math.exp(-1.702 * z))) * 100;
           return {
-            resultText: pct + '%',
-            worked: 'S_anzsco = e^(-0.35 × ' + d + ') = ' + s_anzsco.toFixed(3) + ' [' + descriptions[d] + ']',
-            badge: d <= 1 ? 'Direct Transferability' : (d === 2 ? 'Adjacent Transferability' : 'Cross-Sector Alignment'),
-            badgeClass: d <= 1 ? 'chip-green' : (d === 2 ? 'chip-blue' : 'chip-yellow')
+            resultText: rms.toFixed(1) + '%',
+            worked: 'Z = (' + vals.smf_cand.toFixed(1) + ' - ' + vals.mu_pool.toFixed(1) + ') / ' + vals.sigma_pool.toFixed(1) + ' = +' + z.toFixed(2) + 'σ | RMS = 1 / [1 + e^(-1.702 × ' + z.toFixed(2) + ')] × 100 = ' + rms.toFixed(1) + '%',
+            badge: rms >= 80 ? 'Top Requisition Tier (Top Quintile)' : (rms >= 50 ? 'Above Cohort Average' : 'Below Median'),
+            badgeClass: rms >= 80 ? 'chip-green' : (rms >= 50 ? 'chip-blue' : 'chip-yellow')
           };
         }
       },
       f5: {
-        code: 'F-05 • COMPOSITE HARMONY',
+        code: 'F-05 • TALENT FEED',
         badgeClass: 'f5-badge',
-        title: 'Composite Multi-Factor Alignment Score (S_final)',
-        subtitle: 'Holistic alignment score gated by core competency satisfaction.',
-        latex: '\\displaystyle S_{\\text{final}} = S_{\\text{must}} \\cdot \\left[ 0.55 + 0.15 S_{\\text{bon}} + 0.15 S_{\\text{exp}} + 0.15 S_{\\text{anz}} \\right]',
-        specText: 'Integrates all four capability dimensions into a definitive match percentage. The entire auxiliary term is multiplied by S_must. If the talent possesses exemplary bonus skills but fails must-haves, the composite score remains strictly capped.',
+        title: 'Feed Ranking Score (FRS - Personalised Talent Feed)',
+        subtitle: 'Multi-objective ranking for talent opportunity discovery feed.',
+        latex: '\\displaystyle FRS = 0.45 \\cdot SMF + 0.25 \\cdot JRS + 0.20 \\cdot \\text{ExpFit} + 0.10 \\cdot \\text{WorkMode}',
+        specText: 'Ranks job cards in the talent discovery feed, balancing core skill coverage (45%), net job readiness (25%), experience bracket alignment (20%), and Australian work mode preferences (10% onsite/hybrid/remote).',
         vars: [
-          { symbol: 'S_must', desc: 'Core must-have capability alignment (F-01)', calib: 'Multiplicative gatekeeper [0.0 - 1.0]' },
-          { symbol: 'S_bon', desc: 'Nice-to-have bonus capability factor (F-02)', calib: 'Weight w_bon = 0.15' },
-          { symbol: 'S_exp', desc: 'Experience depth sigmoid factor (F-03)', calib: 'Weight w_exp = 0.15' },
-          { symbol: 'S_anz', desc: 'ANZSCO occupational transferability (F-04)', calib: 'Weight w_anz = 0.15' }
+          { symbol: 'SMF', desc: 'Core skill match frequency and coverage (F-01)', calib: 'Weight w1 = 0.45' },
+          { symbol: 'JRS', desc: 'Net job readiness after gap severity (F-02)', calib: 'Weight w2 = 0.25' },
+          { symbol: 'ExpFit', desc: 'Experience bracket Gaussian match', calib: 'Weight w3 = 0.20' },
+          { symbol: 'WorkMode', desc: 'Location and remote work preference affinity', calib: 'Weight w4 = 0.10' }
         ],
         controls: [
-          { id: 'gate_must', label: 'Core Must-Have Alignment (S_must)', min: 0, max: 100, val: 92, unit: '%' },
-          { id: 'gate_bon', label: 'Bonus Nice-to-Have (S_bon)', min: 0, max: 100, val: 85, unit: '%' },
-          { id: 'gate_exp', label: 'Experience Factor (S_exp)', min: 0, max: 100, val: 90, unit: '%' },
-          { id: 'gate_anz', label: 'ANZSCO Graph Factor (S_anz)', min: 0, max: 100, val: 95, unit: '%' }
+          { id: 'frs_smf', label: 'Core Skill Coverage (SMF)', min: 40, max: 100, val: 78.6, step: 0.1, unit: '%' },
+          { id: 'frs_jrs', label: 'Job Readiness Score (JRS)', min: 40, max: 100, val: 75.6, step: 0.1, unit: '%' },
+          { id: 'frs_exp', label: 'Experience Bracket Fit (ExpFit)', min: 50, max: 100, val: 90.0, step: 1, unit: '%' },
+          { id: 'frs_mode', label: 'Work Mode Affinity (Hybrid / Remote)', min: 50, max: 100, val: 100.0, step: 5, unit: '%' }
         ],
         compute: function(vals) {
-          const sm = vals.gate_must / 100;
-          const sb = vals.gate_bon / 100;
-          const se = vals.gate_exp / 100;
-          const sa = vals.gate_anz / 100;
-          const aux = 0.55 + 0.15 * sb + 0.15 * se + 0.15 * sa;
-          const s_final = sm * aux;
-          const pct = (s_final * 100).toFixed(1);
+          const frs = (0.45 * vals.frs_smf) + (0.25 * vals.frs_jrs) + (0.20 * vals.frs_exp) + (0.10 * vals.frs_mode);
           return {
-            resultText: pct + '%',
-            worked: 'S_final = ' + sm.toFixed(2) + ' × [0.55 + 0.15(' + sb.toFixed(2) + ') + 0.15(' + se.toFixed(2) + ') + 0.15(' + sa.toFixed(2) + ')] = ' + sm.toFixed(2) + ' × ' + aux.toFixed(3) + ' = ' + s_final.toFixed(3),
-            badge: pct >= 85 ? 'Top Shortlist Recommendation' : (pct >= 65 ? 'Qualified Match' : 'Unqualified Application'),
-            badgeClass: pct >= 85 ? 'chip-green' : (pct >= 65 ? 'chip-blue' : 'chip-pink')
+            resultText: frs.toFixed(1) + '%',
+            worked: 'FRS = (0.45 × ' + vals.frs_smf.toFixed(1) + ') + (0.25 × ' + vals.frs_jrs.toFixed(1) + ') + (0.20 × ' + vals.frs_exp.toFixed(1) + ') + (0.10 × ' + vals.frs_mode.toFixed(1) + ') = ' + frs.toFixed(1) + '%',
+            badge: frs >= 80 ? 'Prime Feed Placement' : 'Recommended Opportunity',
+            badgeClass: frs >= 80 ? 'chip-green' : 'chip-blue'
           };
         }
       },
       f6: {
-        code: 'F-06 • ETHICAL AI PARITY',
+        code: 'F-06 • EMPLOYER SEARCH',
         badgeClass: 'f6-badge',
-        title: 'Deterministic Demographic Parity Metric (Δ_parity)',
-        subtitle: 'Audited algorithmic fairness under the Australian National AI Ethics Framework.',
-        latex: '\\displaystyle \\Delta_{\\text{parity}} = \\left| P(\\hat{Y}=1 \\mid A=0) - P(\\hat{Y}=1 \\mid A=1) \\right| = 0.000',
-        specText: 'Protected demographic attributes (gender, age, ethnicity, national origin) are strictly excluded from the calculation graph. The match outcome Y_hat depends exclusively on skills, experience, and verified capabilities, achieving exact 0.000 statistical parity.',
+        title: 'Employer Talent Search Score (TSS)',
+        subtitle: 'Anonymised talent profile ranking for hiring employers.',
+        latex: '\\displaystyle TSS = 0.40 \\cdot SMF + 0.25 \\cdot \\text{Seniority} + 0.20 \\cdot \\text{Credentials} + 0.15 \\cdot \\text{Recency}',
+        specText: 'Ranks anonymous talent profiles for employers without revealing raw PII: 40% capability match (SMF), 25% seniority level alignment (|Level_talent - Level_job|), 20% Australian ICT certifications/awards, and 15% activity recency (90-day exponential decay).',
         vars: [
-          { symbol: 'A', desc: 'Protected demographic attribute under Australian Fair Work Act', calib: 'Zero access in feature pipeline (A = null)' },
-          { symbol: 'Y_hat', desc: 'Binary decision threshold (Shortlisted vs Not Shortlisted)', calib: 'Deterministic function of capabilities' },
-          { symbol: 'Δ_parity', desc: 'Demographic disparity delta between cohorts', calib: 'Strictly Δ = 0.000 (mathematically guaranteed)' }
+          { symbol: 'SMF', desc: 'Core skill match frequency and coverage', calib: 'Weight w = 0.40' },
+          { symbol: 'Seniority', desc: '1.0 - 0.2 × |Level_talent - Level_job|', calib: 'Weight w = 0.25' },
+          { symbol: 'Credentials', desc: 'Verified Australian ICT certifications & awards', calib: 'Weight w = 0.20' },
+          { symbol: 'Recency', desc: 'Profile activity score with 90-day decay', calib: 'Weight w = 0.15' }
         ],
         controls: [
-          { id: 'cohort_a', label: 'Cohort A (Demographic Group 0) Match Rate', min: 0, max: 100, val: 86, unit: '%' },
-          { id: 'cohort_b', label: 'Cohort B (Demographic Group 1) Match Rate', min: 0, max: 100, val: 86, unit: '%' }
+          { id: 'tss_smf', label: 'Talent Capability Match (SMF)', min: 40, max: 100, val: 78.6, step: 0.1, unit: '%' },
+          { id: 'tss_sen', label: 'Seniority Level Alignment', min: 40, max: 100, val: 80.0, step: 5, unit: '%' },
+          { id: 'tss_cred', label: 'Verified Certifications / Awards', min: 0, max: 100, val: 90.0, step: 5, unit: '%' },
+          { id: 'tss_rec', label: 'Platform Activity Recency (90d)', min: 40, max: 100, val: 95.0, step: 5, unit: '%' }
         ],
         compute: function(vals) {
-          const diff = Math.abs(vals.cohort_a - vals.cohort_b);
+          const tss = (0.40 * vals.tss_smf) + (0.25 * vals.tss_sen) + (0.20 * vals.tss_cred) + (0.15 * vals.tss_rec);
           return {
-            resultText: 'Δ = 0.000',
-            worked: '| P(Shortlist | Cohort A) - P(Shortlist | Cohort B) | = | 0.860 - 0.860 | = 0.000 [Zero demographic bias confirmed]',
-            badge: '100% Ethical AI Compliance',
-            badgeClass: 'chip-green'
+            resultText: tss.toFixed(1) + '%',
+            worked: 'TSS = (0.40 × ' + vals.tss_smf.toFixed(1) + ') + (0.25 × ' + vals.tss_sen.toFixed(1) + ') + (0.20 × ' + vals.tss_cred.toFixed(1) + ') + (0.15 × ' + vals.tss_rec.toFixed(1) + ') = ' + tss.toFixed(1) + '%',
+            badge: tss >= 80 ? 'Featured Shortlist Talent' : 'Qualified Talent',
+            badgeClass: tss >= 80 ? 'chip-green' : 'chip-blue'
           };
         }
       }
@@ -1191,8 +1180,8 @@
         gridPane.style.display = 'grid';
         deepdivePane.style.display = 'none';
         document.getElementById('pill-grid').classList.add('active');
-        document.getElementById('viewHeading').textContent = 'All 6 Continuous Mathematical Formulas';
-        document.getElementById('viewSubheading').textContent = 'Full-spectrum deterministic capability alignment with zero artificial cutoffs and complete mathematical explainability.';
+        document.getElementById('viewHeading').textContent = 'Latest Canonical Mathematical Architecture (F-01 to F-06)';
+        document.getElementById('viewSubheading').textContent = 'Strictly bounded algebraic and statistical formulations in [0.0, 100.0] with zero black-box neural drift.';
       } else {
         gridPane.style.display = 'none';
         deepdivePane.style.display = 'grid';

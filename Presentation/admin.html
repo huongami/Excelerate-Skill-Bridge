@@ -2048,15 +2048,15 @@ const STAGE_CONFIGS = {
     tag: 'STAGE 3 • CONTINUOUS MATHEMATICAL INTELLIGENCE ENGINE V2',
     name: '3. Continuous Mathematical Intelligence Engine V2',
     status: 'SLA: <5ms Deterministic • Active',
-    desc: 'Executes the continuous dynamic scoring engine (ASD-STE100 Continuous Formulas F1 - F6). Avoids arbitrary step cliffs via exponential half-life decay. Strictly separates must-have core competencies from nice-to-have bonus factors, guaranteeing 0.000 demographic bias.',
-    formula: 'S_must = Π [1 - (1 - s_i)^α] • S_bonus = Σ w_j • e^(-λ Δt). Sub-5ms execution SLA across the entire 2,754 pair matrix.',
+    desc: 'Executes the 6 canonical deterministic formulas (F-01 SMF, F-02 GSI/JRS, F-03 JPI, F-04 RMS, F-05 FRS, F-06 TSS). Strictly separates mandatory requirements (w=2.0) from learnable tools (w=1.0) with zero black-box neural drift.',
+    formula: 'SMF = Σ w_i min(1, L_c/L_j) / Σ w_k × 100 • JRS = max(0, SMF - GSI) • RMS = Φ(Z) × 100. Sub-5ms execution SLA across the 2,754 pair matrix.',
     throughput: '2,754 Matrix Evaluation Pairs (51 Talents × 54 Jobs)',
     latency: '3.82 ms (p50)',
     accuracy: '100% Deterministic (Zero Drift)',
     targetTable: 'jobs',
-    sampleTitle: 'Evaluated Talent-Role Pair Scores (Continuous Formulas F1 - F6)',
+    sampleTitle: 'Evaluated Talent-Role Pair Scores (Canonical Formulas F-01 to F-06)',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>Talent Alias</th><th>Job Requisition</th><th>Core Score (S_must)</th><th>Bonus Score (S_bonus)</th><th>Continuous Fit</th><th>Latency SLA</th><th>Verdict</th></tr>';
+      thead.innerHTML = '<tr><th>Talent Alias</th><th>Role Requisition</th><th>Skill Match (SMF)</th><th>Readiness (JRS)</th><th>Composite Fit</th><th>Latency SLA</th><th>Verdict</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.scoring || []).forEach(sc => {
         const tr = document.createElement('tr');
