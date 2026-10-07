@@ -597,7 +597,7 @@
       transition: width 0.5s ease;
     }
 
-    /* STAGE DEEP-DIVE INSPECTOR (BẤM VÀO THẤY CHI TIẾT) */
+    /* STAGE DEEP-DIVE INSPECTOR (CLICK-TO-INSPECT DETAIL) */
     .stage-inspector-panel {
       background: var(--canvas);
       border: 2px solid var(--accent);
@@ -986,41 +986,41 @@
       <div class="info-callout">
         <div class="icon-badge">💡</div>
         <div>
-          <strong>Cấu trúc Dữ liệu Tài khoản & Thị trường (51 Ứng viên / 1 Demo HR / 31 Doanh nghiệp):</strong><br>
-          • <strong>51 Tài khoản Ứng viên:</strong> Bao gồm <strong>50 hồ sơ benchmark</strong> (từ <code>talents.json</code>) đại diện đa dạng trình độ, quốc gia du học và mã ANZSCO để thẩm định thuật toán + <strong>1 ứng viên demo</strong> (Teal Heron, du học sinh Việt Nam chuyển đổi Data Engineer).<br>
-          • <strong>1 Tài khoản HR Demo:</strong> Alex Morgan (<code>recruiter@demo.jinder.app</code>) đại diện nhà tuyển dụng <strong>Bluebushworks</strong> sở hữu 4 việc làm trực tiếp.<br>
-          • <strong>31 Doanh nghiệp Tuyển dụng Tuyển sinh:</strong> 50 tin tuyển dụng thị trường còn lại (từ <em>Dingocreek Labs, Marrowgate, Saltbushworks,...</em>) là requisitions mở (<code>owner_id = NULL</code>) tạo môi trường thực tế cho ứng viên tìm kiếm và nộp đơn.
+          <strong>Account & Market Data Architecture (51 Candidates / 1 Demo Recruiter / 31 Australian Enterprises):</strong><br>
+          • <strong>51 Candidate Accounts:</strong> Comprises <strong>50 benchmark profiles</strong> (from <code>talents.json</code>) representing diverse qualifications, international study backgrounds, and ANZSCO codes to audit matching algorithms + <strong>1 active demo candidate</strong> (Teal Heron, overseas BI Specialist transitioning to Data Engineer in Melbourne).<br>
+          • <strong>1 Demo Recruiter Account:</strong> Alex Morgan (<code>recruiter@demo.jinder.app</code>) representing Australian employer <strong>Bluebushworks</strong>, directly owning 4 live requisitions.<br>
+          • <strong>31 Australian Tech Employers:</strong> The remaining 50 market vacancies (from <em>Dingocreek Labs, Marrowgate Labs, Saltbushworks, etc.</em>) are open market requisitions (<code>owner_id = NULL</code>), creating a realistic national job landscape for candidate discovery.
         </div>
       </div>
 
       <div class="stat-cards-grid">
         <div class="stat-card">
           <div class="stat-header">
-            <span>Tài Khoản Đăng Nhập</span>
+            <span>User Accounts</span>
             <span>👤</span>
           </div>
           <div class="stat-val" id="statUsers">52</div>
           <div class="stat-meta">
-            <span class="badge badge-accent" id="statCandidates">51 Ứng viên</span>
-            <span class="badge badge-coral" id="statRecruiters">1 HR Demo</span>
+            <span class="badge badge-accent" id="statCandidates">51 Candidates</span>
+            <span class="badge badge-coral" id="statRecruiters">1 Demo Recruiter</span>
           </div>
         </div>
 
         <div class="stat-card">
           <div class="stat-header">
-            <span>Doanh Nghiệp Tuyển Dụng</span>
+            <span>Hiring Enterprises</span>
             <span>🏢</span>
           </div>
           <div class="stat-val">31</div>
           <div class="stat-meta">
-            <span class="badge badge-success">54 Việc Làm</span>
+            <span class="badge badge-success">54 Tech Requisitions</span>
             <span>Tech Requisitions</span>
           </div>
         </div>
 
         <div class="stat-card">
           <div class="stat-header">
-            <span>Kỹ Năng ANZSCO Graph</span>
+            <span>ANZSCO Graph Skills</span>
             <span>🧠</span>
           </div>
           <div class="stat-val" id="statSkills">738</div>
@@ -1032,7 +1032,7 @@
 
         <div class="stat-card">
           <div class="stat-header">
-            <span>Hồ Sơ Ứng Tuyển</span>
+            <span>Tracked Applications</span>
             <span>📑</span>
           </div>
           <div class="stat-val" id="statApps">7</div>
@@ -1089,17 +1089,17 @@
       <div class="panel-card">
         <div class="panel-header">
           <div class="panel-title">
-            <span>🏢</span> Danh Sách 31 Doanh Nghiệp Tuyển Dụng Trong Hệ Thống
+            <span>🏢</span> Directory of 31 Australian Tech Employers & Active Requisitions
           </div>
-          <span class="badge badge-accent">31 Công ty • 54 Việc làm</span>
+          <span class="badge badge-accent">31 Companies • 54 Requisitions</span>
         </div>
         <div class="panel-body" style="padding:0">
           <table class="data-table">
             <thead>
               <tr>
-                <th>Tên Công Ty</th>
-                <th>Số Tin Tuyển</th>
-                <th>Vị Trí Tiêu Biểu</th>
+                <th>Company Name</th>
+                <th>Active Roles</th>
+                <th>Sample Vacancies</th>
               </tr>
             </thead>
             <tbody id="companiesDirBody">
@@ -1269,21 +1269,21 @@
     <section id="tab-dataflow" class="tab-pane">
       <div style="margin-bottom: 20px;">
         <h2 style="font-size:18px; font-weight:700; color:var(--ink)">End-to-End Capability Alignment Pipeline Flow</h2>
-        <p style="color:var(--muted)">Sơ đồ trực quan luồng dữ liệu 5 chặng. <strong>Bấm vào bất kỳ chặng nào trên biểu đồ để xem chi tiết kiến trúc, công thức và dữ liệu thực tế:</strong></p>
+        <p style="color:var(--muted)">Visual 5-stage capability alignment pipeline flow. <strong>Click any stage on the chart below to inspect architectural specifications, mathematical logic, and live database telemetry:</strong></p>
       </div>
 
       <!-- INTERACTIVE PIPELINE FLOW CHART -->
       <div class="pipeline-chart-container">
         <div class="pipeline-flow-header">
           <span style="font-size:14px; font-weight:700; color:var(--ink)">Pipeline Architecture & Throughput Chart</span>
-          <span class="flow-hint-badge">👆 Nhấp vào nút để mở chi tiết chặng</span>
+          <span class="flow-hint-badge">👆 Click any stage node to inspect deep telemetry</span>
         </div>
 
         <div class="flow-nodes-track">
           <!-- Stage 1 -->
           <div class="flow-node active-stage" id="node-stage-1" onclick="inspectStage(1)">
             <span class="flow-node-icon">📥</span>
-            <div class="flow-node-step">Chặng 1</div>
+            <div class="flow-node-step">Stage 1</div>
             <div class="flow-node-title">Multi-Source Ingestion</div>
             <span class="flow-node-vol">51 CVs • 54 JDs</span>
           </div>
@@ -1293,7 +1293,7 @@
           <!-- Stage 2 -->
           <div class="flow-node" id="node-stage-2" onclick="inspectStage(2)">
             <span class="flow-node-icon">🧩</span>
-            <div class="flow-node-step">Chặng 2</div>
+            <div class="flow-node-step">Stage 2</div>
             <div class="flow-node-title">ANZSCO 2026 Graph</div>
             <span class="flow-node-vol">738 Verified Skills</span>
           </div>
@@ -1303,7 +1303,7 @@
           <!-- Stage 3 -->
           <div class="flow-node" id="node-stage-3" onclick="inspectStage(3)">
             <span class="flow-node-icon">⚙️</span>
-            <div class="flow-node-step">Chặng 3</div>
+            <div class="flow-node-step">Stage 3</div>
             <div class="flow-node-title">Continuous Math Engine</div>
             <span class="flow-node-vol">2,754 Pairs • &lt;5ms</span>
           </div>
@@ -1313,7 +1313,7 @@
           <!-- Stage 4 -->
           <div class="flow-node" id="node-stage-4" onclick="inspectStage(4)">
             <span class="flow-node-icon">🗄️</span>
-            <div class="flow-node-step">Chặng 4</div>
+            <div class="flow-node-step">Stage 4</div>
             <div class="flow-node-title">SQLite WAL Persistence</div>
             <span class="flow-node-vol">242 Pages • ACID</span>
           </div>
@@ -1323,7 +1323,7 @@
           <!-- Stage 5 -->
           <div class="flow-node" id="node-stage-5" onclick="inspectStage(5)">
             <span class="flow-node-icon">🎯</span>
-            <div class="flow-node-step">Chặng 5</div>
+            <div class="flow-node-step">Stage 5</div>
             <div class="flow-node-title">Zero-Bias Shortlist</div>
             <span class="flow-node-vol">7 Apps • 217 Events</span>
           </div>
@@ -1354,42 +1354,42 @@
         </div>
       </div>
 
-      <!-- STAGE DEEP-DIVE INSPECTOR CARD (HIỂN THỊ KHI BẤM VÀO CHẶNG) -->
+      <!-- STAGE DEEP-DIVE INSPECTOR CARD (DISPLAYED ON STAGE SELECTION) -->
       <div class="stage-inspector-panel" id="stageInspectorCard">
         <div class="inspector-header">
           <div>
-            <div class="inspector-stage-tag" id="inspectStageTag">CHẶNG 1 • THU THẬP & CHUẨN HOÁ HỒ SƠ</div>
+            <div class="inspector-stage-tag" id="inspectStageTag">STAGE 1 • MULTI-SOURCE INGESTION & CV PARSING</div>
             <h3 class="inspector-stage-name" id="inspectStageName">1. Multi-Source Ingestion & Profile Parsing</h3>
           </div>
           <div style="display:flex; align-items:center; gap:10px;">
             <span class="badge badge-success" id="inspectStageStatus">SLA: &lt;120ms • Active</span>
             <button class="btn-primary-action" id="inspectJumpTableBtn" onclick="jumpToDatabaseTable('profiles')">
-              <span>🗄️</span> Xem Bảng Trong Database
+              <span>🗄️</span> Explore Table in Database Explorer
             </button>
           </div>
         </div>
 
         <div class="inspector-grid">
           <div class="inspector-desc-box">
-            <h4>Kiến Trúc & Quy Trình Xử Lý Dữ Liệu</h4>
-            <p id="inspectStageDesc">Hệ thống tiếp nhận CV định dạng PDF/DOCX và tin tuyển dụng JD từ đa nguồn. Trích xuất text an toàn, bóc tách cấu trúc kinh nghiệm, bằng cấp và kỹ năng không lưu trữ PII thô.</p>
-            <p id="inspectStageFormula"><strong>Cơ chế toán học / Logic:</strong> Pure regex tokenization + Rule-based entity extraction, zero hallucination.</p>
+            <h4>Pipeline Architecture & Execution Logic</h4>
+            <p id="inspectStageDesc">Multi-source ingestion pipeline processing candidate CVs (PDF, DOCX) and active employer requisitions (JDs). Extracts plain text, structural experience history, qualifications, and capabilities with zero raw PII retention.</p>
+            <p id="inspectStageFormula"><strong>Mathematical / Algorithmic Mechanism:</strong> Pure regex tokenization + Rule-based entity extraction, zero hallucination.</p>
           </div>
           <div class="inspector-meta-list">
             <div class="meta-item-box">
-              <div class="meta-item-lbl">Lưu Lượng Dữ Liệu</div>
-              <div class="meta-item-val" id="inspectMetaThroughput">51 Ứng viên • 54 Việc làm</div>
+              <div class="meta-item-lbl">Throughput Volume</div>
+              <div class="meta-item-val" id="inspectMetaThroughput">51 Candidates • 54 Active Requisitions</div>
             </div>
             <div class="meta-item-box">
-              <div class="meta-item-lbl">Thời Gian Xử Lý (p50)</div>
+              <div class="meta-item-lbl">Processing Time (p50)</div>
               <div class="meta-item-val" id="inspectMetaLatency">0.82 ms</div>
             </div>
             <div class="meta-item-box">
-              <div class="meta-item-lbl">Độ Chuẩn Hoá (Accuracy)</div>
+              <div class="meta-item-lbl">Normalisation Accuracy</div>
               <div class="meta-item-val" id="inspectMetaAccuracy">100% Deterministic</div>
             </div>
             <div class="meta-item-box">
-              <div class="meta-item-lbl">Tỷ Lệ Lỗi (Error Rate)</div>
+              <div class="meta-item-lbl">System Error Rate</div>
               <div class="meta-item-val" style="color:var(--success)">0.00%</div>
             </div>
           </div>
@@ -1398,7 +1398,7 @@
         <!-- Sample Records Preview Table for Current Stage -->
         <div style="margin-top:14px;">
           <div style="font-size:13px; font-weight:700; color:var(--ink); margin-bottom:8px;" id="inspectSampleTableTitle">
-            Dữ Liệu Mẫu Thực Tế Đang Chạy Qua Chặng Này (Từ SQLite Database)
+            Live Database Records Passing Through This Stage (`jinder.db`)
           </div>
           <div class="data-table-wrap" style="max-height:260px; overflow-y:auto; border:1px solid var(--hairline); border-radius:var(--r-md);">
             <table class="data-table" id="inspectSampleTable">
@@ -1951,8 +1951,8 @@ function renderOverview(data) {
   if (!data) return;
   const c = data.counts || {};
   document.getElementById('statUsers').textContent = c.users || 52;
-  document.getElementById('statCandidates').textContent = `${data.users_by_role?.candidate || 51} Ứng viên`;
-  document.getElementById('statRecruiters').textContent = `${data.users_by_role?.recruiter || 1} HR Demo`;
+  document.getElementById('statCandidates').textContent = `${data.users_by_role?.candidate || 51} Candidates`;
+  document.getElementById('statRecruiters').textContent = `${data.users_by_role?.recruiter || 1} Demo Recruiter`;
   document.getElementById('statSkills').textContent = c.translated_skills || 738;
   document.getElementById('statApps').textContent = c.applications || 7;
 
@@ -1975,7 +1975,7 @@ function renderCompaniesDir(companies) {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><strong>${c.company}</strong></td>
-      <td><span class="badge badge-accent">${c.jobs_count} tin tuyển dụng</span></td>
+      <td><span class="badge badge-accent">${c.jobs_count} active roles</span></td>
       <td style="color:var(--muted); font-size:12.5px;">${c.sample_roles}</td>
     `;
     tbody.appendChild(tr);
@@ -1983,22 +1983,22 @@ function renderCompaniesDir(companies) {
 }
 
 // =====================================================================
-// NEW: INTERACTIVE STAGE DEEP-DIVE INSPECTION (CLICK VÀO THẤY CHI TIẾT)
+// INTERACTIVE STAGE DEEP-DIVE INSPECTION (CLICK-TO-INSPECT DETAIL)
 // =====================================================================
 const STAGE_CONFIGS = {
   1: {
-    tag: 'CHẶNG 1 • THU THẬP & BÓC TÁCH HỒ SƠ',
+    tag: 'STAGE 1 • MULTI-SOURCE INGESTION & CV PARSING',
     name: '1. Multi-Source Ingestion & Profile Parsing',
     status: 'SLA: <120ms • Active',
-    desc: 'Hệ thống tiếp nhận hồ sơ ứng viên (PDF, DOCX) và tin tuyển dụng (JD text). Thực hiện trích xuất nội dung văn bản thuần, bóc tách cấu trúc kinh nghiệm, thời gian và bằng cấp. Toàn bộ thông tin cá nhân định danh (PII: Tên, tuổi, quốc tịch, ảnh) bị loại bỏ khỏi luồng tính toán.',
-    formula: 'Bóc tách thực thể theo regex và ngữ nghĩa cấu trúc, bảo toàn số năm kinh nghiệm chính xác và bậc kỹ năng.',
-    throughput: '51 Ứng viên (50 benchmark + 1 demo) • 54 Việc làm',
+    desc: 'Multi-source ingestion pipeline for candidate CVs (PDF, DOCX) and active employer requisitions (JDs). Extracts plain text, structural experience history, qualifications, and capabilities with zero raw PII retention.',
+    formula: 'Deterministic regex tokenisation + structural entity extraction, preserving exact years of experience and skill levels.',
+    throughput: '51 Candidates (50 benchmark + 1 demo) • 54 Requisitions',
     latency: '0.82 ms (p50)',
     accuracy: '100% Deterministic',
     targetTable: 'profiles',
-    sampleTitle: 'Hồ Sơ Ứng Viên Đã Bóc Tách (Trích xuất từ bảng `profiles`)',
+    sampleTitle: 'Parsed Candidate Profiles (Sampled from `profiles` table)',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>ID</th><th>Alias</th><th>Vị Trí Hiện Tại</th><th>Bằng Cấp</th><th>Quốc Gia Du Học</th><th>Số Năm KN</th><th>Bậc</th></tr>';
+      thead.innerHTML = '<tr><th>ID</th><th>Alias</th><th>Current Role</th><th>Qualification</th><th>Study Country</th><th>Years Exp</th><th>Level</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.candidates || []).forEach(c => {
         const tr = document.createElement('tr');
@@ -2008,7 +2008,7 @@ const STAGE_CONFIGS = {
           <td>${c.currentRole}</td>
           <td>${c.qualification}</td>
           <td><span class="badge badge-muted">${c.studyCountry}</span></td>
-          <td>${c.yearsExperience} năm</td>
+          <td>${c.yearsExperience} yrs</td>
           <td><span class="badge badge-accent">${c.level}</span></td>
         `;
         tbody.appendChild(tr);
@@ -2016,18 +2016,18 @@ const STAGE_CONFIGS = {
     }
   },
   2: {
-    tag: 'CHẶNG 2 • CHUẨN HOÁ TAXONOMY ĐỐI CHIẾU',
+    tag: 'STAGE 2 • ABS ANZSCO 2026 TAXONOMY GRAPH ALIGNMENT',
     name: '2. ABS ANZSCO 2026 Taxonomy Graph & Skill Alignment',
     status: 'SLA: <15ms • Active',
-    desc: 'Ánh xạ mọi kỹ năng và vị trí chức danh từ thị trường vào đồ thị Phân loại Tiêu chuẩn Nghề nghiệp Úc (ABS ANZSCO 2026). Giải quyết bài toán bằng cấp nước ngoài và từ ngữ phi chuẩn tắc, quy đổi về mã nghề 6 chữ số và bậc năng lực chuẩn (Level 1 - 5).',
-    formula: 'Fuzzy synonym embedding + Graph traversal. Gán nhãn bằng chứng năng lực (Evidence Strength) xác thực qua kinh nghiệm thực tế.',
-    throughput: '738 Kỹ Năng Chuẩn Hoá (584 Must-Haves, 154 Nice-to-Haves)',
+    desc: 'Maps skills and role titles to the Australian Bureau of Statistics (ABS) ANZSCO 2026 occupational taxonomy graph. Resolves overseas credentials and non-standard colloquialisms into verified 6-digit ANZSCO unit codes and standardized skill levels (Levels 1 - 5).',
+    formula: 'Taxonomy graph traversal + fuzzy semantic embedding. Assigns verified evidence strength (Strong, Moderate, Limited) cross-validated by industry experience.',
+    throughput: '738 Normalised Skills (584 Must-Haves, 154 Nice-to-Haves)',
     latency: '1.14 ms (p50)',
     accuracy: '99.4% Graph Parity',
     targetTable: 'translated_skills',
-    sampleTitle: 'Kỹ Năng Đã Chuẩn Hoá (Trích xuất từ bảng `translated_skills`)',
+    sampleTitle: 'Normalised Capability Graph (Sampled from `translated_skills` table)',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>Kỹ Năng Gốc (Original)</th><th>Kỹ Năng Chuẩn Hoá</th><th>Nghề Nghiệp ANZSCO</th><th>Mã Đơn Vị</th><th>Bậc</th><th>Kinh Nghiệm</th><th>Trạng Thái</th></tr>';
+      thead.innerHTML = '<tr><th>Original Term</th><th>ANZSCO Mapped Skill</th><th>ANZSCO Occupation</th><th>Unit Code</th><th>Level</th><th>Experience</th><th>Status</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.skills || []).forEach(s => {
         const tr = document.createElement('tr');
@@ -2037,7 +2037,7 @@ const STAGE_CONFIGS = {
           <td>${s.occupation}</td>
           <td><span class="badge badge-accent">${s.anzsco}</span></td>
           <td>Lvl ${s.level}</td>
-          <td>${s.years} năm</td>
+          <td>${s.years} yrs</td>
           <td><span class="badge badge-success">${s.status}</span></td>
         `;
         tbody.appendChild(tr);
@@ -2045,18 +2045,18 @@ const STAGE_CONFIGS = {
     }
   },
   3: {
-    tag: 'CHẶNG 3 • TÍNH ĐIỂM TOÁN HỌC LIÊN TỤC V2',
+    tag: 'STAGE 3 • CONTINUOUS MATHEMATICAL INTELLIGENCE ENGINE V2',
     name: '3. Continuous Mathematical Intelligence Engine V2',
     status: 'SLA: <5ms Deterministic • Active',
-    desc: 'Thực thi bộ 6 công thức toán học động liên tục (ASD-STE100 Continuous Formulas F1 - F6). Không sử dụng ngưỡng cắt nhân tạo. Điểm số suy giảm mượt mà theo hàm mũ, phân tách rõ ràng Must-Have Core và Nice-to-Have Bonus. Bảo đảm 0.000 bias đối kháng.',
-    formula: 'S_must = Π [1 - (1 - s_i)^α] • S_bonus = Σ w_j • e^(-λ Δt). SLA dưới 5ms trên toàn bộ ma trận 2,754 cặp.',
-    throughput: '2,754 Cặp Đối Sánh Ma Trận (51 Talents × 54 Jobs)',
+    desc: 'Executes the continuous dynamic scoring engine (ASD-STE100 Continuous Formulas F1 - F6). Avoids arbitrary step cliffs via exponential half-life decay. Strictly separates must-have core competencies from nice-to-have bonus factors, guaranteeing 0.000 demographic bias.',
+    formula: 'S_must = Π [1 - (1 - s_i)^α] • S_bonus = Σ w_j • e^(-λ Δt). Sub-5ms execution SLA across the entire 2,754 pair matrix.',
+    throughput: '2,754 Matrix Evaluation Pairs (51 Talents × 54 Jobs)',
     latency: '3.82 ms (p50)',
     accuracy: '100% Deterministic (Zero Drift)',
     targetTable: 'jobs',
-    sampleTitle: 'Kết Quả Tính Điểm Ma Trận Ứng Viên - Việc Làm (Công thức F1 - F6)',
+    sampleTitle: 'Evaluated Candidate-Job Pair Scores (Continuous Formulas F1 - F6)',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>Ứng Viên (Alias)</th><th>Vị Trí Công Việc</th><th>Điểm Cốt Lõi (S_must)</th><th>Điểm Thưởng (S_bonus)</th><th>Điểm Tổng Hợp</th><th>Thời Gian Tính</th><th>Đánh Giá Khớp</th></tr>';
+      thead.innerHTML = '<tr><th>Candidate Alias</th><th>Job Requisition</th><th>Core Score (S_must)</th><th>Bonus Score (S_bonus)</th><th>Continuous Fit</th><th>Latency SLA</th><th>Verdict</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.scoring || []).forEach(sc => {
         const tr = document.createElement('tr');
@@ -2074,18 +2074,18 @@ const STAGE_CONFIGS = {
     }
   },
   4: {
-    tag: 'CHẶNG 4 • LƯU TRỮ WAL AN TOÀN ACID',
+    tag: 'STAGE 4 • SQLITE WAL CONCURRENCY & ACID PERSISTENCE',
     name: '4. SQLite WAL Concurrency & ACID Persistence',
     status: 'SLA: <1ms Checkpoint • Active',
-    desc: 'Lưu trữ toàn bộ trạng thái vào SQLite với cơ chế Write-Ahead Logging (WAL). Một luồng ghi duy nhất không chặn các luồng đọc song song. Dữ liệu được đồng bộ an toàn qua các trang 4096-byte mà không lo lock contention.',
+    desc: 'Serialises all state transitions to SQLite in Write-Ahead Logging (WAL) mode. Supports dedicated single-writer mutations alongside lock-free concurrent read operations across 4096-byte pages without database contention.',
     formula: 'PRAGMA journal_mode = WAL; PRAGMA synchronous = NORMAL; PRAGMA wal_checkpoint(TRUNCATE).',
-    throughput: '242 Trang Đĩa (0.95 MB) • Không Phân Mảnh (Freelist: 0)',
+    throughput: '242 Database Pages (0.95 MB) • Zero Fragmentation (Freelist: 0)',
     latency: '0.45 ms (p50)',
     accuracy: '100% ACID Durability',
     targetTable: 'schema_info',
-    sampleTitle: 'Thông Số Cấu Hình Lưu Trữ SQLite WAL Hiện Tại',
+    sampleTitle: 'Active SQLite WAL Persistence Telemetry',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>Chỉ Số Lưu Trữ</th><th>Giá Trị Hiện Tại Trong Hệ Thống</th></tr>';
+      thead.innerHTML = '<tr><th>Storage Parameter</th><th>Active Configuration Value</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.wal || []).forEach(w => {
         const tr = document.createElement('tr');
@@ -2098,18 +2098,18 @@ const STAGE_CONFIGS = {
     }
   },
   5: {
-    tag: 'CHẶNG 5 • PHỄU ỨNG TUYỂN & AUDIT LOGS',
+    tag: 'STAGE 5 • ZERO-BIAS REQUISITION FUNNEL & AUDIT LOGS',
     name: '5. Zero-Bias Matching Funnel & Event Distribution',
     status: 'SLA: Real-Time Stream • Active',
-    desc: 'Phân phối hồ sơ theo phễu ứng tuyển mù (Blind Shortlist). Nhà tuyển dụng đánh giá năng lực trước khi mở khoá thông tin liên hệ. Mọi tương tác của ứng viên và nhà tuyển dụng đều ghi nhận thành audit event phục vụ truy vết.',
-    formula: 'State Machine: submitted ➔ reviewing ➔ shortlisted ➔ offer. Ghi nhận 217 sự kiện kiểm toán hệ thống.',
-    throughput: '7 Hồ Sơ Ứng Tuyển • 217 Sự Kiện Hệ Thống',
+    desc: 'Facilitates blind anonymised candidate progression. Recruiters evaluate pure capability fit before accessing identifying contact details. Every interaction records a tamper-evident audit event.',
+    formula: 'State Machine: submitted ➔ reviewing ➔ shortlisted ➔ offer. 217 tamper-evident system audit events recorded.',
+    throughput: '7 Application Lifecycles • 217 System Audit Events',
     latency: '1.20 ms (p50)',
     accuracy: '100% Audit Trail',
     targetTable: 'applications',
-    sampleTitle: 'Hồ Sơ Ứng Tuyển Đang Theo Dõi Trong Phễu (Bảng `applications`)',
+    sampleTitle: 'Active Candidate Funnel Lifecycles (`applications` table)',
     renderSample: (thead, tbody) => {
-      thead.innerHTML = '<tr><th>ID</th><th>Ứng Viên</th><th>Vị Trí Ứng Tuyển</th><th>Trạng Thái Phễu</th><th>Ngày Nộp</th></tr>';
+      thead.innerHTML = '<tr><th>ID</th><th>Candidate</th><th>Applied Requisition</th><th>Funnel Stage</th><th>Date Submitted</th></tr>';
       tbody.innerHTML = '';
       (STAGE_DETAILS.apps || []).forEach(a => {
         const tr = document.createElement('tr');
@@ -2146,7 +2146,7 @@ function inspectStage(stageNum) {
   document.getElementById('inspectStageName').textContent = conf.name;
   document.getElementById('inspectStageStatus').textContent = conf.status;
   document.getElementById('inspectStageDesc').textContent = conf.desc;
-  document.getElementById('inspectStageFormula').innerHTML = `<strong>Cơ chế toán học / Logic:</strong> ${conf.formula}`;
+  document.getElementById('inspectStageFormula').innerHTML = `<strong>Mathematical / Algorithmic Mechanism:</strong> ${conf.formula}`;
   document.getElementById('inspectMetaThroughput').textContent = conf.throughput;
   document.getElementById('inspectMetaLatency').textContent = conf.latency;
   document.getElementById('inspectMetaAccuracy').textContent = conf.accuracy;
