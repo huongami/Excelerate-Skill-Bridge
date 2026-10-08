@@ -76,18 +76,25 @@ Document/
 
 ## 6. 🎨 Interactive Presentation & Administrative Portals
 
-For interactive demonstration and live telemetry, open the standalone HTML applications in [`Presentation/`](../Presentation/README.md):
+For interactive demonstration, strategic roadmaps, and live telemetry, open the standalone HTML applications in [`Presentation/`](../Presentation/README.md):
 
-1. [**`Presentation/formulas_presentation.html`**](../Presentation/formulas_presentation.html) — **Canonical Mathematical Engine Deck (ASD-STE100)**:
+1. [**`Presentation/jinder_deck.html`**](../Presentation/jinder_deck.html) ([`PDF`](../Presentation/jinder_deck.pdf)) — **Executive Pitch Deck**:
+   - Modern executive presentation covering Australian skilled migration challenges, capability alignment architecture, ethical AI principles, and platform demonstration.
+
+2. [**`Presentation/Jinder_Product_Plan.html`**](../Presentation/Jinder_Product_Plan.html) ([`PDF`](../Presentation/Jinder_Product_Plan.pdf)) — **Product & Marketing Strategy (Next 6 Months)**:
+   - Comprehensive 6-month execution plan: GTM strategy, campus ambassadors, university partnership rollout, employer acquisition funnel, pricing tiers, and financial projections.
+
+3. [**`Presentation/formulas_presentation.html`**](../Presentation/formulas_presentation.html) — **Canonical Mathematical Engine Deck (ASD-STE100)**:
    - **All 6 Formulas Grid:** 100vh single-screen layout showing all 6 formulas simultaneously without page scrolling.
    - **Live Parameter Workbench:** Interactive simulation panel with continuous gradient sliders (`#6868f7` $\to$ `#a855f7` $\to$ `#ffa340`), real-time calculation, and step-by-step arithmetic verification.
    - **KaTeX Vector Equations:** High-clarity mathematical notation and calibrated Australian ICT benchmarks.
    - **Standards:** 100% Australian English (`en-AU`), Talent / Employer terminology, and official Jinder SVG vector branding.
 
-2. [**`Presentation/admin.html`**](../Presentation/admin.html) — **Admin Control Center & Data Flow Telemetry**:
+4. [**`Presentation/admin.html`**](../Presentation/admin.html) — **Admin Control Center & Data Flow Telemetry**:
    - **Live SQLite WAL Telemetry:** Active database metrics (file size, page counts, journal mode) and verified entity population (**51 Talents**, **1 Demo Employer**, 54 Job Requisitions).
    - **5-Stage Interactive Data Flow Pipeline:** Click-to-inspect pipeline stages (Ingestion $\to$ Taxonomy Translation $\to$ Mathematical Engine $\to$ SQLite WAL $\to$ Shortlist Delivery) with live query telemetry.
    - **22 Tables SQLite Explorer:** Tabular explorer with instant search, schema inspection, pagination, and safe read-only SQL runner.
 
-3. [**`Presentation/project_presentation.html`**](../Presentation/project_presentation.html) — **System Architecture Pitch Deck**:
-   - Interactive slide deck covering Australian skilled migration challenges, capability alignment architecture, ethical AI principles, and platform demonstration.
+5. [**`Presentation/project_presentation.html`**](../Presentation/project_presentation.html) — **System Architecture Pitch Deck**:
+   - Multi-slide system architecture pitch deck.
+

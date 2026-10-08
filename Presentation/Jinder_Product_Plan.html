@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<title>Jinder — Product &amp; Marketing Plan (Next 6 Months)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#151531; --ink-2:#23234d; --body:#3d4350; --muted:#7c838c; --line:#e6e8ee; --paper:#ffffff; --soft:#f7f7fb;
+    --accent:#6868f7; --accent-tint:#efeffe; --orange:#ffa340; --orange-ink:#d9730d; --orange-tint:#fff1de;
+    --green:#32ae47; --green-ink:#005900; --green-tint:#e3f7e6; --red:#e5484d; --red-tint:#fdecec;
+    --violet:#8b5cf6; --violet-tint:#f5effe; --violet-ink:#6b21a8; --blue:#0ea5e9; --blue-tint:#ebf7fd; --blue-ink:#075985;
+    --font:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  }
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+  @page cover { margin: 0; }
+  @page wide { size: A4 landscape; margin: 14mm 15mm 16mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { font-family: var(--font); color: var(--body); font-size: 10pt; line-height: 1.5; background: #fff; }
+  .page { break-after: page; }
+  .page:last-child { break-after: auto; }
+  .wide { page: wide; }
+
+  /* running footer */
+  .foot { position: fixed; bottom: -11mm; left: 0; right: 0; display: flex; justify-content: space-between; font-family: var(--mono); font-size: 7pt; color: var(--muted); letter-spacing: .4px; }
+
+  /* cover */
+  .cover { page: cover; height: 297mm; padding: 26mm 22mm; position: relative; overflow: hidden; color: rgba(255,255,255,.78);
+    background: radial-gradient(circle at 85% 12%, rgba(104,104,247,.4) 0%, transparent 45%), radial-gradient(circle at 8% 92%, rgba(255,163,64,.25) 0%, transparent 40%), var(--ink); }
+  .cover .logo { width: 52px; height: 52px; }
+  .cover .logo rect:first-child { fill: #0d0d24; }
+  .cover .kick { font-family: var(--mono); font-size: 9pt; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--orange); margin-top: 70mm; }
+  .cover h1 { font-size: 46pt; line-height: 1.02; letter-spacing: -2px; color: #fff; font-weight: 800; margin-top: 6mm; }
+  .cover h1 em { font-style: normal; background: linear-gradient(90deg,#9a9aff,var(--orange)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cover .sub { font-size: 14pt; margin-top: 8mm; max-width: 150mm; }
+  .cover .meta { position: absolute; left: 22mm; right: 22mm; bottom: 24mm; display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,.16); padding-top: 6mm; }
+  .cover .meta b { display: block; color: #fff; font-size: 13pt; }
+  .cover .meta span { font-family: var(--mono); font-size: 8pt; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .cover .stamp { font-family: var(--mono); font-size: 8pt; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: rgba(255,163,64,.16); color: var(--orange); letter-spacing: 1px; }
+
+  /* headings */
+  .sec { font-family: var(--mono); font-size: 8pt; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); }
+  h2 { font-size: 22pt; line-height: 1.15; letter-spacing: -.8px; color: var(--ink); font-weight: 800; margin: 2mm 0 4mm; }
+  h2 span { color: var(--accent); }
+  h3 { font-size: 12.5pt; color: var(--ink); margin: 6mm 0 2.5mm; letter-spacing: -.2px; }
+  h4 { font-size: 11pt; color: var(--ink); letter-spacing: -.2px; }
+  p { margin-bottom: 2.5mm; }
+  .lead { font-size: 11pt; color: var(--body); max-width: 165mm; }
+  .note { font-size: 8.5pt; color: var(--muted); font-style: italic; }
+  b, strong { color: var(--ink); }
+
+  /* contents */
+  .toc { margin-top: 6mm; display: grid; gap: 0; }
+  .toc div { display: grid; grid-template-columns: 12mm 1fr; padding: 3mm 0; border-bottom: 1px solid var(--line); font-size: 11pt; color: var(--ink); font-weight: 600; }
+  .toc i { font-style: normal; font-family: var(--mono); color: var(--accent); font-size: 9pt; padding-top: 1px; }
+  .toc small { display: block; font-weight: 400; color: var(--muted); font-size: 9pt; }
+
+  /* generic blocks */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 4mm; }
+  .box { border: 1px solid var(--line); border-radius: 10px; padding: 4mm 5mm; background: #fff; break-inside: avoid; }
+  .box.dark { background: var(--ink); border: 0; color: rgba(255,255,255,.75); }
+  .box.dark b, .box.dark h4 { color: #fff; }
+  .box.tint { background: var(--soft); border-color: transparent; }
+  .k { font-family: var(--mono); font-size: 7.5pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 1.5mm; }
+  .stat b { display: block; font-family: var(--mono); font-size: 20pt; line-height: 1.1; letter-spacing: -1px; color: var(--accent); }
+  .stat.o b { color: var(--orange-ink); } .stat.g b { color: var(--green); }
+  ul.dots { list-style: none; display: grid; gap: 1.6mm; }
+  ul.dots li { padding-left: 4mm; position: relative; }
+  ul.dots li::before { content: ""; position: absolute; left: 0; top: 2.1mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: var(--accent); }
+  .callout { border-left: 4px solid var(--accent); background: var(--accent-tint); border-radius: 0 10px 10px 0; padding: 3.5mm 5mm; margin: 4mm 0; color: var(--ink); break-inside: avoid; }
+  .callout.o { border-color: var(--orange); background: var(--orange-tint); }
+  .callout.g { border-color: var(--green); background: var(--green-tint); }
+
+  table.t { width: 100%; border-collapse: collapse; font-size: 8.8pt; margin: 2mm 0 3mm; break-inside: auto; }
+  table.t th { text-align: left; font-family: var(--mono); font-size: 7pt; letter-spacing: .8px; text-transform: uppercase; color: var(--muted); padding: 2mm 2.5mm; border-bottom: 1.5px solid var(--ink); }
+  table.t td { padding: 2.2mm 2.5mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.t tr { break-inside: avoid; }
+  table.t td.kpi { color: var(--green-ink); font-weight: 600; }
+  .yes { color: var(--green); font-weight: 700; } .part { color: var(--orange-ink); font-weight: 700; } .no { color: var(--red); font-weight: 700; }
+
+  .tg { display: inline-block; font-size: 7.5pt; font-weight: 700; padding: 1px 7px; border-radius: 99px; background: #f0f1f5; color: var(--ink); white-space: nowrap; }
+  .tg.who { background: var(--blue-tint); color: var(--blue-ink); }
+  .tg.prem { background: var(--orange-tint); color: var(--orange-ink); }
+  .fid { font-family: var(--mono); font-size: 8pt; font-weight: 700; color: var(--muted); margin-right: 2mm; }
+
+  /* personas */
+  .persona { break-inside: avoid; }
+  .persona .who { display: flex; align-items: center; gap: 3mm; margin-bottom: 2mm; }
+  .persona .av { width: 9mm; height: 9mm; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 9pt; }
+  .persona q { display: block; font-style: italic; color: var(--ink); margin: 1mm 0; quotes: "“" "”"; font-size: 9pt; }
+
+  /* feature cards */
+  .fcard { border: 1px solid var(--line); border-radius: 10px; padding: 3.5mm 4.5mm; margin-bottom: 3.5mm; break-inside: avoid; }
+  .fhead { display: flex; justify-content: space-between; align-items: center; gap: 3mm; padding-bottom: 2mm; border-bottom: 1px solid var(--line); }
+  .fhead h4 { display: inline; }
+  .ftags { display: flex; gap: 1.5mm; flex-wrap: wrap; justify-content: flex-end; }
+  .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 5mm; margin-top: 2.5mm; font-size: 8.8pt; }
+  .fgrid b, .mgrid b { display: block; font-family: var(--mono); font-size: 7pt; letter-spacing: .8px; text-transform: uppercase; color: var(--muted); margin-bottom: .5mm; }
+  .fgrid .story { font-style: italic; }
+  .ffoot { display: flex; gap: 6mm; margin-top: 2.5mm; padding: 1.8mm 3mm; border-radius: 7px; background: var(--green-tint); font-size: 8.3pt; color: var(--green-ink); }
+  .ffoot b { color: var(--green-ink); font-family: var(--mono); font-size: 7pt; text-transform: uppercase; letter-spacing: .6px; margin-right: 1mm; }
+
+  /* roadmap gantt */
+  .gantt { display: grid; grid-template-columns: 26mm 42mm repeat(12, 1fr); row-gap: 2px; margin-top: 4mm; }
+  .ph { grid-row: 1; margin: 0 1px; border-radius: 6px; background: var(--ink); color: #fff; font-weight: 700; font-size: 9pt; display: flex; align-items: center; gap: 6px; padding: 0 8px; }
+  .ph small { font-family: var(--mono); font-size: 7pt; color: var(--orange); }
+  .ph.p2 { background: var(--ink-2); } .ph.p3 { background: var(--accent); } .ph.p3 small { color: #ffe1bd; }
+  .mo { grid-row: 2; font-family: var(--mono); font-size: 7pt; color: var(--muted); padding-left: 4px; align-self: center; }
+  .band { margin: 0 1px; border-radius: 6px; background: #f1f1f8; } .band.b2 { background: #f8f8fc; }
+  .rg { grid-column: 1/3; border-radius: 7px; border-left: 3px solid; }
+  .rg.t-talent { background: var(--violet-tint); border-color: var(--violet); }
+  .rg.t-employer { background: var(--blue-tint); border-color: var(--blue); }
+  .rg.t-match { background: #eaf8ec; border-color: var(--green); }
+  .rg.t-biz { background: #fff4e6; border-color: #f08a1c; }
+  .rt { grid-column: 1; z-index: 1; display: flex; align-items: center; padding-left: 9px; font-family: var(--mono); font-size: 7pt; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
+  .c-talent { color: var(--violet-ink); } .c-employer { color: var(--blue-ink); } .c-match { color: var(--green-ink); } .c-biz { color: var(--orange-ink); }
+  .rl { grid-column: 2; z-index: 1; align-self: center; font-size: 8.3pt; font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .rb { z-index: 1; margin: 0 2px; border-radius: 5px; display: flex; align-items: center; gap: 4px; padding: 0 6px; font-size: 7.3pt; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; }
+  .b-talent { background: var(--violet); } .b-employer { background: var(--blue); } .b-match { background: var(--green); } .b-biz { background: #f08a1c; }
+  .coin { flex: none; width: 11px; height: 11px; border-radius: 50%; display: inline-grid; place-items: center; background: #fff; color: var(--orange-ink); font-family: var(--mono); font-size: 7pt; font-weight: 800; }
+  .axis { grid-column: 3/15; position: relative; border-top: 2px solid var(--ink); margin: 0 1px; }
+  .ms { position: absolute; top: -6px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .ms i { width: 9px; height: 9px; background: var(--ink); transform: rotate(45deg); border: 2px solid #fff; box-sizing: content-box; }
+  .ms span { font-size: 7.5pt; font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .ms.end { transform: translateX(-100%); align-items: flex-end; }
+  .leg { grid-column: 1/3; align-self: center; font-size: 7.5pt; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+  .leg .coin { background: var(--orange-tint); }
+  .leg .dia { display: inline-block; width: 7px; height: 7px; background: var(--ink); transform: rotate(45deg); margin: 0 3px; }
+
+  /* action plan gantt */
+  .ap { display: grid; grid-template-columns: 44mm repeat(12, 1fr) 36mm; grid-template-rows: 24px 16px repeat(6, 26px); row-gap: 4px; margin-top: 3mm; }
+  .an { grid-column: 1; align-self: center; font-size: 8.5pt; font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .an i { font-style: normal; font-family: var(--mono); font-size: 7pt; color: var(--muted); margin-right: 6px; }
+  .ab { z-index: 1; align-self: center; height: 19px; margin: 0 2px; border-radius: 5px; display: flex; align-items: center; padding: 0 6px; font-size: 7.3pt; font-weight: 600; white-space: nowrap; overflow: hidden; }
+  .ab.prep { background: #e3e5ec; color: var(--ink); } .ab.go { background: var(--accent); color: #fff; } .ab.go.pay { background: #f08a1c; }
+  .ck { z-index: 2; align-self: center; width: 14px; height: 14px; border-radius: 50%; background: var(--green); color: #fff; border: 2px solid #fff; display: grid; place-items: center; font-size: 7pt; font-weight: 800; }
+  .ak { grid-column: 14; align-self: center; margin-left: 8px; padding: 3px 7px; border-radius: 6px; background: var(--green-tint); color: var(--green-ink); font-size: 7.8pt; font-weight: 600; white-space: nowrap; }
+  .ak small { font-family: var(--mono); font-size: 6.8pt; color: var(--ink); margin-right: 4px; }
+  .akh { grid-row: 1/3; grid-column: 14; align-self: end; margin-left: 8px; font-family: var(--mono); font-size: 7pt; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--green); }
+  .apleg { display: flex; gap: 5mm; margin-top: 2.5mm; font-size: 7.8pt; color: var(--muted); }
+  .apleg i { display: inline-block; width: 12px; height: 7px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  .apleg i.g { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+
+  /* marketing moves */
+  .flips { display: grid; grid-template-columns: auto 0.8fr 1.5fr; gap: 3mm; margin: 3mm 0 4mm; }
+  .flips div { white-space: nowrap; border-radius: 9px; padding: 2.5mm 4mm; font-size: 9pt; color: var(--ink); display: flex; align-items: center; gap: 2.5mm; }
+  .flips .m { background: var(--ink); color: #fff; font-weight: 800; }
+  .flips .m span { color: var(--orange); }
+  .flips .t { background: var(--violet-tint); } .flips .e { background: var(--blue-tint); }
+  .flips s { color: var(--muted); text-decoration-color: var(--red); }
+  .flips b { font-family: var(--mono); font-size: 7pt; letter-spacing: .8px; text-transform: uppercase; }
+  .mcard { border: 1px solid var(--line); border-radius: 10px; padding: 3.5mm 4.5mm; margin-bottom: 3.5mm; break-inside: avoid; }
+  .mhead { display: flex; align-items: center; gap: 2mm; }
+  .mhead h4 { flex: 1; }
+  .see { font-style: italic; color: var(--accent); font-size: 9.5pt; margin: 1mm 0 2mm; }
+  .mgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; font-size: 8.8pt; }
+  .kps { display: flex; gap: 2.5mm; margin-top: 2.5mm; flex-wrap: wrap; }
+  .kp { display: flex; align-items: center; gap: 2mm; padding: 1.5mm 3mm; border-radius: 7px; background: var(--green-tint); font-size: 8pt; color: var(--green-ink); }
+  .kp b { font-family: var(--mono); font-size: 10pt; color: var(--green-ink); }
+  .kp em { font-style: normal; font-family: var(--mono); font-size: 6.8pt; font-weight: 700; padding: 0 5px; border-radius: 4px; background: #fff; color: var(--ink); }
+
+  .north { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 3mm; margin-top: 3mm; }
+  .north div { border-radius: 9px; padding: 3mm 4mm; background: var(--green-tint); color: var(--green-ink); font-size: 9pt; }
+  .north div b { display: block; font-family: var(--mono); font-size: 7pt; letter-spacing: .8px; text-transform: uppercase; color: var(--green-ink); }
+  .north .star { background: var(--ink); color: rgba(255,255,255,.75); }
+  .north .star b { color: var(--orange); } .north .star strong { color: #fff; }
+</style>
+</head>
+<body>
+
+
+<!-- ============================== COVER -->
+<section class="page cover">
+  <svg class="logo" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#151531"/><rect x="8.5" y="9" width="13" height="18" rx="3" fill="#6868f7" transform="rotate(-12 15 18)"/><rect x="18.5" y="9" width="13" height="18" rx="3" fill="#ffa340" transform="rotate(12 25 18)"/><circle cx="20" cy="27" r="6" fill="#fff" stroke="#151531" stroke-width="1.5"/><path d="M17.4 27.1l1.8 1.8 3.4-3.6" stroke="#151531" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="kick">Product &amp; marketing plan · next 6 months</div>
+  <h1>Jinder.<br><span style="color:#9a9aff">Let the skills</span> <span style="color:#ffa340">speak.</span></h1>
+  <p class="sub">How Jinder moves from a working hackathon platform to a trusted, paying product: what we build, in what order, how we earn, and how we reach people.</p>
+  <div class="meta">
+    <div><span>Prepared by</span><b>Team Excelerate</b></div>
+    <div><span>Hackathon 2026 · Future of Work</span><b>October 2026</b></div>
+    <div class="stamp">PROPOSAL</div>
+  </div>
+</section>
+
+<!-- ============================== CONTENTS + SUMMARY -->
+<section class="page">
+  <div class="sec">Contents</div>
+  <h2>What's in this plan</h2>
+  <div class="toc">
+    <div><i>01</i><span>Executive summary<small>The plan on one page</small></span></div>
+    <div><i>02</i><span>Where Jinder is today<small>What is built and what is missing</small></span></div>
+    <div><i>03</i><span>Users and opportunities<small>What our users need, turned into eight opportunities</small></span></div>
+    <div><i>04</i><span>Upcoming features<small>Nine features with problem, scope and success measure</small></span></div>
+    <div><i>05</i><span>Product roadmap<small>Six-month timeline and milestones</small></span></div>
+    <div><i>06</i><span>Business model<small>Free, Premium and partner revenue</small></span></div>
+    <div><i>07</i><span>Marketing plan<small>Campaign spirit, six signature moves, action plan</small></span></div>
+    <div><i>08</i><span>Success measures<small>North star and funnel targets</small></span></div>
+    <div><i>09</i><span>Beyond six months, risks and open questions</span></div>
+  </div>
+
+</section>
+
+<section class="page">
+  <div class="sec">01 · Executive summary</div>
+  <h2>The plan on <span>one page</span>.</h2>
+  <p class="lead">Australia hosts <b>680,582 international students</b>, yet <b>69% of employers</b> report a tech skills shortage. The talent is here; the filters are broken. Jinder matches people to jobs on verified skills, not pedigree — with anonymous profiles, explainable matching and a clear path to every job.</p>
+  <div class="grid3" style="margin-top:4mm">
+    <div class="box"><span class="k">Product</span><b>Nine new features</b> turn eight user needs into tools: trust first, a clear next step after a low match, skills beyond ICT, and hiring that fits the employer's existing work.</div>
+    <div class="box"><span class="k">Business</span><b>Employers pay; talent is seen for free.</b> Premium for employers, a light Premium for talent, and university and training-provider partners. No pay-to-rank.</div>
+    <div class="box"><span class="k">Marketing</span><b>“Let the skills speak.”</b> Six product-led moves let people <i>see</i> the value — translate a job title, take a blind hire challenge, audit past rejections.</div>
+  </div>
+  <div class="north">
+    <div class="star"><b>North star</b><strong>Hires made through Jinder</strong> · first 5 hire stories by month 6</div>
+    <div><b>Revenue</b>10 paying employers · 1 university licence</div>
+    <div><b>Trust</b>≥ 80% of candidates “feel safe sharing my CV”</div>
+  </div>
+  <h3 style="margin-top:8mm">The plan at a glance</h3>
+  <table class="t">
+    <tr><th style="width:18%">Phase</th><th>Product</th><th>Business</th><th>Marketing</th></tr>
+    <tr><td><b>M1–2 · Validate</b></td><td>Privacy Preview · Application Tracker · Any-Industry Translator starts</td><td>Pilot with universities and SME design partners</td><td>“Let the skills speak” — Translate My Job Title · film the Blind Hire Challenge</td></tr>
+    <tr><td><b>M3–4 · Launch</b></td><td>Match Coach · Smart Job Builder · Talent Alerts · Team Hiring Hub starts</td><td>Premium billing live · first revenue</td><td>“Your ATS missed them” — Blind Hire videos · ATS Rejection Audit · Reverse Job Fair</td></tr>
+    <tr><td><b>M5–6 · Grow</b></td><td>Skill Plan · Impact Dashboard · outcome re-ranking</td><td>University licence · training-provider referrals</td><td>“The data is on our side” — Hidden Talent Index · Skill Card referrals</td></tr>
+  </table>
+</section>
+
+<!-- ============================== TODAY -->
+<section class="page">
+  <div class="sec">02 · Where Jinder is today</div>
+  <h2>A working platform, <span>ready to grow</span>.</h2>
+  <p class="lead">The hackathon build is a complete, two-sided web platform: candidates build a translated skills profile and find jobs; employers post jobs and review anonymous, skill-ranked talent.</p>
+  <div class="grid3" style="margin:4mm 0">
+    <div class="box stat"><b>6</b>deterministic, explainable scoring formulas (&lt; 5 ms)</div>
+    <div class="box stat o"><b>172 · 53</b>skills · roles in the Australian ICT taxonomy (ABS ANZSCO)</div>
+    <div class="box stat g"><b>0</b>names, emails or countries shared with employers</div>
+  </div>
+  <h3>What is built</h3>
+  <table class="t">
+    <tr><th style="width:28%">Area</th><th>Capability</th><th style="width:16%">Status</th></tr>
+    <tr><td><b>Profile &amp; translation</b></td><td>CV and job-description upload (PDF/DOCX), rule-based skill translation, accept/edit skills</td><td class="yes">Built (ICT only)</td></tr>
+    <tr><td><b>Matching</b></td><td>F-01 skill match &amp; fit · F-02 gap &amp; readiness · F-03 job-to-job · F-04 benchmarking · F-05 talent feed · F-06 employer search</td><td class="yes">Built</td></tr>
+    <tr><td><b>Privacy</b></td><td>Anonymous aliases, shared-profile allowlist, identity shared only with consent, data export and delete</td><td class="yes">Built</td></tr>
+    <tr><td><b>Hiring flow</b></td><td>Apply, shortlist, interview slots, offer, feedback, notifications, email outbox</td><td class="yes">Built</td></tr>
+    <tr><td><b>Employer Premium</b></td><td>See every profile · invite talent · compare up to 5 profiles · pipeline charts</td><td class="part">Built, no billing</td></tr>
+    <tr><td><b>Talent Premium</b></td><td>Skills to learn next · demand for your skills</td><td class="part">Built, no billing</td></tr>
+    <tr><td><b>Operations</b></td><td>Admin console with live tables, traffic, data flow and read-only SQL</td><td class="yes">Built</td></tr>
+  </table>
+  <h3>What is missing</h3>
+  <ul class="dots">
+    <li><b>Reach beyond ICT</b> — many international graduates (like our persona Minh) work in business and operations.</li>
+    <li><b>A clear next step after a low match</b> — candidates see a gap but not the one skill that opens the most jobs.</li>
+    <li><b>Fit with employer workflows</b> — no team sharing, ATS export or calendar booking.</li>
+    <li><b>Real billing and real outcomes</b> — Premium is a demo switch; hiring results are not yet fed back into matching.</li>
+  </ul>
+</section>
+
+<!-- ============================== USERS -->
+<section class="page">
+  <div class="sec">03 · Users and opportunities</div>
+  <h2>What our users <span>actually ask</span>.</h2>
+  <p class="lead">We walked through the platform as each user, from the first visit to a hire, and wrote down their questions in their own words.</p>
+  <div class="grid3" style="margin:4mm 0">
+    <div class="box persona"><div class="who"><div class="av" style="background:var(--violet-tint);color:var(--violet-ink)">MT</div><div><b>Minh Tran, 26</b><br><span class="note" style="font-style:normal">International graduate · Business &amp; Ops</span></div></div>
+      <q>Is this only for tech people? I'm in operations.</q><q>Why is this one 62% and not 90%?</q><q>If I'm rejected, tell me why.</q></div>
+    <div class="box persona"><div class="who"><div class="av" style="background:var(--blue-tint);color:var(--blue-ink)">SW</div><div><b>Sarah Whitfield, 38</b><br><span class="note" style="font-style:normal">Sole talent lead · 60-person SME</span></div></div>
+      <q>Will this replace my tool or sit alongside it?</q><q>I have 20 minutes a day for this.</q><q>Can I share a shortlist with my manager?</q></div>
+    <div class="box persona"><div class="who"><div class="av" style="background:var(--orange-tint);color:var(--orange-ink)">PR</div><div><b>Priya</b><br><span class="note" style="font-style:normal">University careers advisor</span></div></div>
+      <q>How many of my graduates got jobs?</q><q>Which skills are they missing?</q><q>Is student data safe?</q></div>
+  </div>
+  <div class="callout"><b>Three findings.</b> (1) Trust comes before features — privacy, cost and fairness are the first questions on both sides. (2) Candidates ask “why” and then “what next”. (3) Employers fear extra work more than they want new features.</div>
+  <h3>Eight opportunities</h3>
+  <table class="t">
+    <tr><th style="width:6%">#</th><th style="width:30%">How might we…</th><th>User evidence</th><th style="width:20%">Becomes feature</th></tr>
+    <tr><td>O1</td><td><b>build trust in the first 30 seconds?</b></td><td>“Who sees my CV?” · “Is it free?” · “Is this legal and fair?”</td><td>#13 Privacy Preview</td></tr>
+    <tr><td>O2</td><td><b>turn a low match into a clear next step?</b></td><td>“Why 62%?” · “What one skill unlocks the most jobs?” · “Where do I learn it?”</td><td>#14 Match Coach · #15 Skill Plan</td></tr>
+    <tr><td>O3</td><td><b>recognise skills beyond ICT?</b></td><td>“Is this only for tech people? I'm in operations.”</td><td>#16 Any-Industry Translator</td></tr>
+    <tr><td>O4</td><td><b>end the application black hole?</b></td><td>“Did anyone look?” · “Tell me why I was rejected.”</td><td>#17 Application Tracker</td></tr>
+    <tr><td>O5</td><td><b>fit into the employer's existing work?</b></td><td>“Sit alongside my tool” · “Share with my manager” · “10 emails to book”</td><td>#20 Team Hiring Hub</td></tr>
+    <tr><td>O6</td><td><b>bring strong talent to the employer?</b></td><td>“20 minutes a day” · “Tell me when someone strong appears.”</td><td>#19 Talent Alerts</td></tr>
+    <tr><td>O7</td><td><b>help employers ask for the right skills?</b></td><td>“Am I asking for too much?” · “What do others ask for?”</td><td>#18 Smart Job Builder</td></tr>
+    <tr><td>O8</td><td><b>prove hiring outcomes?</b></td><td>“Show my CEO.” · “How many of my graduates got jobs?”</td><td>#21 Impact Dashboard</td></tr>
+  </table>
+</section>
+
+<!-- ============================== FEATURES -->
+<section class="page">
+  <div class="sec">04 · Upcoming features</div>
+  <h2>Nine features, <span>each with a job to do</span>.</h2>
+  <p class="lead">Numbered #13–#21 to continue the original PRD (#1–7 MVP, #8–12 vision). Effort: S = small, M = medium, L = large.</p>
+  
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#13</span><h4>Privacy Preview</h4></div>
+    <div class="ftags"><span class="tg">O1</span><span class="tg who">Talent</span><span class="tg ">Free</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>Candidates do not upload a CV until they trust who will see it.</div>
+    <div><b>What it does</b>Before uploading anything, the candidate sees exactly what an employer will see: an anonymous alias, translated skills, and no name, email or country.</div>
+    <div class="story"><b>User story</b>As Minh, I want to see what employers will see before I upload, so I feel safe sharing my CV.</div>
+    <div><b>Builds on</b>Shared-profile allowlist and anonymous aliases (built)</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Visit → completed profile rate</span><span><b>Effort</b> S</span><span><b>Timing</b> M1</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#14</span><h4>Match Coach</h4></div>
+    <div class="ftags"><span class="tg">O2</span><span class="tg who">Talent</span><span class="tg prem">Free “why not” · Premium “what if”</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>A low match score with no explanation feels like another silent rejection.</div>
+    <div><b>What it does</b>For every job: the top 3 reasons the match is not higher (“SQL level 2, job needs 4”), and a simulator — “learn Power BI → this job 62 → 78, and 14 more jobs open”.</div>
+    <div class="story"><b>User story</b>As Minh, I want to know the one skill that opens the most doors, so I spend my time well.</div>
+    <div><b>Builds on</b>F-01 Skill match, F-02 Gap &amp; readiness (re-run with an imagined skill, nothing stored)</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Talent who add a skill or start a course within 30 days</span><span><b>Effort</b> M</span><span><b>Timing</b> M2–M4</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#15</span><h4>Skill Plan</h4></div>
+    <div class="ftags"><span class="tg">O2</span><span class="tg who">Talent</span><span class="tg prem">Premium</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>Knowing the gap is not enough; candidates do not know where to learn or how long it takes.</div>
+    <div><b>What it does</b>Turns the Match Coach result into a step-by-step learning plan: 3 skills · about 4 months, with partner courses, time and cost.</div>
+    <div class="story"><b>User story</b>As Minh, I want a realistic plan to become job-ready, so I can set expectations.</div>
+    <div><b>Builds on</b>F-02 months to close, taxonomy learnability</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Course click-through → skill added to profile</span><span><b>Effort</b> M</span><span><b>Timing</b> M4–M6</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#16</span><h4>Any-Industry Translator</h4></div>
+    <div class="ftags"><span class="tg">O3</span><span class="tg who">Talent</span><span class="tg ">Free</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>The platform covers ICT only, but many international graduates work in business, operations and service.</div>
+    <div><b>What it does</b>Extends skill translation to business, operations and service roles, with cross-industry links (e.g. Ops Manager ↔ Project Coordinator).</div>
+    <div class="story"><b>User story</b>As Minh (operations background), I want my experience recognised even though I am not a tech worker.</div>
+    <div><b>Builds on</b>Rule-based translation, ICT taxonomy structure</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Non-ICT CVs with 5+ skills recognised</span><span><b>Effort</b> L</span><span><b>Timing</b> M1–M4</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#17</span><h4>Application Tracker</h4></div>
+    <div class="ftags"><span class="tg">O4</span><span class="tg who">Talent</span><span class="tg ">Free</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>Applicants hear nothing back and cannot learn from rejection.</div>
+    <div><b>What it does</b>A live timeline per application (applied → viewed → shortlisted → interview → result). When an employer closes an application, they pick a skill-based reason in one click.</div>
+    <div class="story"><b>User story</b>As Minh, I want to know where each application stands and why it ended.</div>
+    <div><b>Builds on</b>Application history, feedback and notifications (built)</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Closed applications with feedback · talent return rate</span><span><b>Effort</b> S</span><span><b>Timing</b> M1–M3</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#18</span><h4>Smart Job Builder</h4></div>
+    <div class="ftags"><span class="tg">O7</span><span class="tg who">Employer</span><span class="tg prem">Free hints · Premium benchmarks</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>Job posts ask for too much or the wrong skills, so good candidates never match.</div>
+    <div><b>What it does</b>While posting, suggests skills and levels from similar jobs, and warns “only 3% of talent meet all 9 must-haves”.</div>
+    <div class="story"><b>User story</b>As Sarah, I want to know if my requirements are realistic before I post.</div>
+    <div><b>Builds on</b>Job-description frequency (PRD #4), talent pool</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Jobs edited after a warning · matches per job</span><span><b>Effort</b> M</span><span><b>Timing</b> M2–M4</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#19</span><h4>Talent Alerts</h4></div>
+    <div class="ftags"><span class="tg">O6</span><span class="tg who">Employer</span><span class="tg prem">Premium</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>Recruiters have 20 minutes a day and cannot search every day.</div>
+    <div><b>What it does</b>Notifies the recruiter when a new profile matches a saved job above a chosen level (e.g. 85%+), by email or in the app.</div>
+    <div class="story"><b>User story</b>As Sarah, I want strong candidates to come to me.</div>
+    <div><b>Builds on</b>F-06 talent search, saved candidates, email outbox (built)</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Alert → profile open rate</span><span><b>Effort</b> S</span><span><b>Timing</b> M3–M5</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#20</span><h4>Team Hiring Hub</h4></div>
+    <div class="ftags"><span class="tg">O5</span><span class="tg who">Employer</span><span class="tg prem">Premium (per seat)</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>Hiring is a team decision, but tools are single-user and sit outside existing systems.</div>
+    <div><b>What it does</b>Shared shortlists, team votes per skill, ATS export (e.g. Workday, JobAdder) and calendar booking for interviews.</div>
+    <div class="story"><b>User story</b>As Sarah, I want to share a shortlist with my hiring manager and book interviews without 10 emails.</div>
+    <div><b>Builds on</b>Human-in-the-loop review, interview slots (built)</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Jobs with 2+ team members active</span><span><b>Effort</b> M–L</span><span><b>Timing</b> M3–M6</span></div>
+</div>
+<div class="fcard">
+  <div class="fhead">
+    <div><span class="fid">#21</span><h4>Impact Dashboard</h4></div>
+    <div class="ftags"><span class="tg">O8</span><span class="tg who">Employer · University</span><span class="tg prem">Premium · University licence</span></div>
+  </div>
+  <div class="fgrid">
+    <div><b>Problem</b>Recruiters and universities must prove results to leadership.</div>
+    <div><b>What it does</b>Time-to-hire, funnel by stage, a fair-hiring report (shortlists made on skills only) and graduate outcomes for university partners.</div>
+    <div class="story"><b>User story</b>As a university careers advisor, I want to show how many international graduates got jobs.</div>
+    <div><b>Builds on</b>Pipeline charts (built), hiring outcome feedback</div>
+  </div>
+  <div class="ffoot"><span><b>Success measure</b> Dashboards opened monthly · licences signed</span><span><b>Effort</b> M</span><span><b>Timing</b> M5–M6</span></div>
+</div>
+  <div class="callout g"><b>Engine work behind the features.</b> The skill combination engine (“people with skill A usually also have B”) powers Match Coach and Talent Alerts. Outcome-based re-ranking uses real hires to improve matching over time — the data flywheel.</div>
+  <p class="note">Later (after 6 months): verified skill badges · self-learning transferable skills · career path explorer · multilingual CV upload.</p>
+</section>
+
+<!-- ============================== ROADMAP (landscape) -->
+<section class="page wide">
+  <div class="sec">05 · Product roadmap</div>
+  <h2>From pilot to <span>paying platform</span>.</h2>
+  <p class="lead" style="max-width:none">Three phases of two months. Each feature group has its own colour; <b>$</b> marks a Premium or revenue item.</p>
+  
+<div class="gantt" style="grid-template-rows:26px 16px 19px 19px 19px 19px 19px 6px 19px 19px 19px 19px 6px 19px 19px 6px 19px 19px 30px">
+  <div class="ph" style="grid-column:3/7">Validate <small>M1–2</small></div>
+  <div class="ph p2" style="grid-column:7/11">Launch <small>M3–4</small></div>
+  <div class="ph p3" style="grid-column:11/15">Grow <small>M5–6</small></div>
+  <div class="mo" style="grid-column:3/5">M1</div><div class="mo" style="grid-column:5/7">M2</div><div class="mo" style="grid-column:7/9">M3</div><div class="mo" style="grid-column:9/11">M4</div><div class="mo" style="grid-column:11/13">M5</div><div class="mo" style="grid-column:13/15">M6</div>
+  <div class="band" style="grid-column:3/7;grid-row:3/19"></div>
+  <div class="band b2" style="grid-column:7/11;grid-row:3/19"></div>
+  <div class="band" style="grid-column:11/15;grid-row:3/19"></div>
+  <div class="rg t-talent" style="grid-row:3/8"></div><div class="rt c-talent" style="grid-row:3/8">Talent</div><div class="rl" style="grid-row:3">Privacy Preview</div><div class="rb b-talent" style="grid-row:3;grid-column:3/6">See what employers see</div><div class="rl" style="grid-row:4">Application Tracker</div><div class="rb b-talent" style="grid-row:4;grid-column:4/8">A reason at every no</div><div class="rl" style="grid-row:5">Any-Industry Translator</div><div class="rb b-talent" style="grid-row:5;grid-column:3/11">Business, ops &amp; service</div><div class="rl" style="grid-row:6">Match Coach</div><div class="rb b-talent" style="grid-row:6;grid-column:6/11"><span class="coin">$</span>Why not · what if</div><div class="rl" style="grid-row:7">Skill Plan</div><div class="rb b-talent" style="grid-row:7;grid-column:9/15"><span class="coin">$</span>Courses · time to close</div><div class="rg t-employer" style="grid-row:9/13"></div><div class="rt c-employer" style="grid-row:9/13">Employer</div><div class="rl" style="grid-row:9">Smart Job Builder</div><div class="rb b-employer" style="grid-row:9;grid-column:6/11"><span class="coin">$</span>Right skills · benchmarks</div><div class="rl" style="grid-row:10">Talent Alerts</div><div class="rb b-employer" style="grid-row:10;grid-column:7/12"><span class="coin">$</span>New 85%+ match</div><div class="rl" style="grid-row:11">Team Hiring Hub</div><div class="rb b-employer" style="grid-row:11;grid-column:8/14"><span class="coin">$</span>Shortlists · ATS · calendar</div><div class="rl" style="grid-row:12">Impact Dashboard</div><div class="rb b-employer" style="grid-row:12;grid-column:11/15"><span class="coin">$</span>Fair hiring · outcomes</div><div class="rg t-match" style="grid-row:14/16"></div><div class="rt c-match" style="grid-row:14/16">Matching</div><div class="rl" style="grid-row:14">Skill combination</div><div class="rb b-match" style="grid-row:14;grid-column:5/11">Powers Match Coach</div><div class="rl" style="grid-row:15">Outcome re-ranking</div><div class="rb b-match" style="grid-row:15;grid-column:10/15">Learns from hires</div><div class="rg t-biz" style="grid-row:17/19"></div><div class="rt c-biz" style="grid-row:17/19">Business</div><div class="rl" style="grid-row:17">Pilot</div><div class="rb b-biz" style="grid-row:17;grid-column:3/7">Universities + SME partners</div><div class="rl" style="grid-row:18">Premium subscriptions</div><div class="rb b-biz" style="grid-row:18;grid-column:7/15"><span class="coin">$</span>Billing live · first revenue</div>
+  <div class="axis" style="grid-row:19">
+    <div class="ms" style="left:33.33%"><i></i><span>Product–market fit</span></div>
+    <div class="ms" style="left:50%"><i></i><span>First revenue</span></div>
+    <div class="ms end" style="left:100%"><i></i><span>Data flywheel live</span></div>
+  </div>
+  <div class="leg" style="grid-row:19"><span class="coin">$</span>Premium &nbsp; <i class="dia"></i>Milestone</div>
+</div>
+  <div class="grid3" style="margin-top:7mm">
+    <div class="box"><span class="k">M1–2 · Validate</span><b>Prove skill translation gets people hired.</b> Pilot with universities and SME design partners; ship trust and transparency features first.</div>
+    <div class="box"><span class="k">M3–4 · Launch</span><b>Employers pay for speed and reach.</b> Premium billing goes live with Talent Alerts and the Team Hiring Hub; Match Coach opens to all.</div>
+    <div class="box"><span class="k">M5–6 · Grow</span><b>Every hire makes matching smarter.</b> Outcome re-ranking, Skill Plan and the Impact Dashboard turn results into proof and revenue.</div>
+  </div>
+</section>
+
+<!-- ============================== BUSINESS -->
+<section class="page">
+  <div class="sec">06 · Business model</div>
+  <h2>Employers pay. <span>Talent is seen for free.</span></h2>
+  <div class="callout o"><b>No pay-to-rank.</b> Premium never moves a candidate up a list, and a candidate never pays to be visible. This protects the fairness promise at the heart of the product.</div>
+  <table class="t">
+    <tr><th style="width:17%">Customer</th><th style="width:25%">Free</th><th style="width:29%">Premium · built today</th><th>Premium · next 6 months</th></tr>
+    <tr><td><b>Employers</b><br><span class="note">main revenue</span></td><td>Post jobs · top 5 profiles per job · per-skill match · Smart Job Builder hints</td><td>See every profile · invite talent to apply · compare up to 5 profiles · pipeline charts</td><td>Talent Alerts · Team Hiring Hub (per seat) · Smart Job Builder benchmarks · Impact Dashboard</td></tr>
+    <tr><td><b>Candidates</b></td><td>Profile, translation, applying · match and path to every job · Match Coach “why not” · Application Tracker · Privacy Preview</td><td>Skills to learn next · demand for your skills</td><td>Match Coach “what if” · Skill Plan</td></tr>
+    <tr><td><b>Partners</b></td><td>—</td><td>—</td><td>University licence (Impact Dashboard for graduate outcomes) · referral fee from training providers (Skill Plan courses)</td></tr>
+  </table>
+  <h3>Why this model</h3>
+  <ul class="dots">
+    <li><b>The pain sits with employers.</b> The 69% skills shortage is an employer problem, so employers pay for faster, clearer shortlists.</li>
+    <li><b>Talent supply must stay free.</b> The more candidates join, the more valuable the platform is to employers.</li>
+    <li><b>Partners add a second and third income</b> that also brings in more candidates (universities) and closes skill gaps (training providers).</li>
+  </ul>
+  <p class="note">Price points are not set in this plan; they will be tested with design partners during months 1–2.</p>
+</section>
+
+<!-- ============================== MARKETING SPIRIT + MOVES -->
+<section class="page">
+  <div class="sec">07 · Marketing plan</div>
+  <h2>Let the skills <span>speak</span>.</h2>
+  <p class="lead"><b>Show, don't tell.</b> People do not change their minds because we tell them they are biased or overlooked. They change it when they <i>see</i> it. Every move lets people experience the moment when skills are seen before identity — the marketing <i>is</i> the product.</p>
+  <div class="flips">
+    <div class="m"><span>●</span>&nbsp;Show, don't tell</div>
+    <div class="t"><b style="color:var(--violet-ink)">Talent</b><s>Invisible</s>→<strong>Recognised</strong></div>
+    <div class="e"><b style="color:var(--blue-ink)">Employers</b><s>“No one out there”</s>→<strong>“They were here all along”</strong></div>
+  </div>
+  <table class="t">
+    <tr><th style="width:18%">Audience</th><th>Positioning</th></tr>
+    <tr><td><b>Candidates</b></td><td>“Your skills, recognised. Your identity, protected.” Free, always.</td></tr>
+    <tr><td><b>Employers</b></td><td>“See the talent your ATS filters out.”</td></tr>
+    <tr><td><b>Universities</b></td><td>“Proof your graduates get hired.”</td></tr>
+  </table>
+  <p class="note">Tone: confident, not preachy · warm and human · proof over promise. Not: guilt-tripping employers, a “poor migrants” story, AI hype, or fairness claims without proof.</p>
+  <h3>Six signature moves</h3>
+  
+<div class="mcard">
+  <div class="mhead"><span class="fid">M1</span><h4>Translate My Job Title</h4><span class="tg who">Talent</span></div>
+  <div class="see">“See your experience in Australian terms.”</div>
+  <div class="mgrid">
+    <div><b>Insight</b>International graduates do not know what their overseas job is called in Australia, and nothing answers this.</div>
+    <div><b>Expectation</b>A free, no-signup tool that answers in 10 seconds is shared in student group chats; some users continue to a full profile.</div>
+  </div>
+  <div class="kps"><div class="kp"><b>10%</b><span>translation → sign-up rate</span><em>by M2</em></div><div class="kp"><b>2,000</b><span>translations run</span><em>by M6</em></div><div class="kp"><b>15%</b><span>of translations shared as a card</span><em>by M6</em></div></div>
+</div>
+<div class="mcard">
+  <div class="mhead"><span class="fid">M2</span><h4>Skill Card</h4><span class="tg who">Talent</span></div>
+  <div class="see">“Share your skills, not your name.”</div>
+  <div class="mgrid">
+    <div><b>Insight</b>Talent want to show what they can do but fear bias: “my skills, not my name and country”.</div>
+    <div><b>Expectation</b>An anonymous, good-looking skills card is safe to share; each share brings in people with similar backgrounds.</div>
+  </div>
+  <div class="kps"><div class="kp"><b>25%</b><span>of new sign-ups from shares</span><em>by M6</em></div><div class="kp"><b>20%</b><span>of profiles share a card</span><em>by M6</em></div></div>
+</div>
+<div class="mcard">
+  <div class="mhead"><span class="fid">M3</span><h4>Blind Hire Challenge</h4><span class="tg who">Employers</span></div>
+  <div class="see">“See your own bias.”</div>
+  <div class="mgrid">
+    <div><b>Insight</b>Recruiters believe they are fair, but they judge CVs in seconds by name, school and job title.</div>
+    <div><b>Expectation</b>Seeing that they would reject their own top pick creates a memorable “aha”; the short videos spread on LinkedIn.</div>
+  </div>
+  <div class="kps"><div class="kp"><b>5/10</b><span>recruiters pick differently when blind</span><em>by M2</em></div><div class="kp"><b>30</b><span>employer sign-ups from the videos</span><em>by M6</em></div></div>
+</div>
+<div class="mcard">
+  <div class="mhead"><span class="fid">M4</span><h4>ATS Rejection Audit</h4><span class="tg who">Employers</span></div>
+  <div class="see">“See who you missed.”</div>
+  <div class="mgrid">
+    <div><b>Insight</b>Employers pay for what they can measure; their own missed candidates convince more than an industry statistic.</div>
+    <div><b>Expectation</b>Proof of value from their own data leads straight to a Premium trial.</div>
+  </div>
+  <div class="kps"><div class="kp"><b>10/40</b><span>audits start a Premium trial</span><em>by M4</em></div><div class="kp"><b>60%</b><span>of audits find an 80%+ match</span><em>by M4</em></div><div class="kp"><b>30%</b><span>of trials convert to paid</span><em>by M6</em></div></div>
+</div>
+<div class="mcard">
+  <div class="mhead"><span class="fid">M5</span><h4>Reverse Job Fair</h4><span class="tg who">Universities</span></div>
+  <div class="see">“Be seen before your CV.”</div>
+  <div class="mgrid">
+    <div><b>Insight</b>Students hand out CVs at fairs and hear nothing back; universities want events that produce results.</div>
+    <div><b>Expectation</b>Employers pitch to talent while skills are matched live; universities co-host because it produces interviews.</div>
+  </div>
+  <div class="kps"><div class="kp"><b>8+</b><span>interviews booked per event</span><em>by M4</em></div><div class="kp"><b>100</b><span>students matched per event</span><em>by M4</em></div><div class="kp"><b>1</b><span>university converts to a paid licence</span><em>by M6</em></div></div>
+</div>
+<div class="mcard">
+  <div class="mhead"><span class="fid">M6</span><h4>Hidden Talent Index</h4><span class="tg who">Market</span></div>
+  <div class="see">“See the talent already here.”</div>
+  <div class="mgrid">
+    <div><b>Insight</b>Media and universities discuss the “skills shortage” with no data on skills that already exist.</div>
+    <div><b>Expectation</b>A short quarterly report from platform data makes Jinder a quoted source at almost no cost.</div>
+  </div>
+  <div class="kps"><div class="kp"><b>3+</b><span>media or industry mentions</span><em>by M6</em></div><div class="kp"><b>5</b><span>inbound partner enquiries</span><em>by M6</em></div></div>
+</div>
+  <p class="note">Amplifier: international-student creators use Translate My Job Title and the Skill Card on camera, in their own language.</p>
+</section>
+
+<!-- ============================== ACTION PLAN (landscape) -->
+<section class="page wide">
+  <div class="sec">07 · Marketing plan</div>
+  <h2>Action plan: <span>build, launch, check</span>.</h2>
+  <p class="lead" style="max-width:none">Each move follows the same pattern — prepare or build, run, then check its KPI. <b>Decision rule:</b> at each checkpoint, a move that reaches less than half of its target is stopped or reworked before more effort goes into it.</p>
+  
+<div class="ap">
+  <div class="ph" style="grid-column:2/6">Validate <small>M1–2</small></div>
+  <div class="ph p2" style="grid-column:6/10">Launch <small>M3–4</small></div>
+  <div class="ph p3" style="grid-column:10/14">Grow <small>M5–6</small></div>
+  <div class="akh">Checkpoint</div>
+  <div class="mo" style="grid-column:2/4">M1</div><div class="mo" style="grid-column:4/6">M2</div><div class="mo" style="grid-column:6/8">M3</div><div class="mo" style="grid-column:8/10">M4</div><div class="mo" style="grid-column:10/12">M5</div><div class="mo" style="grid-column:12/14">M6</div>
+  <div class="band" style="grid-column:2/6;grid-row:3/9"></div>
+  <div class="band b2" style="grid-column:6/10;grid-row:3/9"></div>
+  <div class="band" style="grid-column:10/14;grid-row:3/9"></div>
+  <div class="an" style="grid-row:3"><i>01</i>Translate My Job Title</div><div class="ab prep" style="grid-row:3;grid-column:2/3">Build</div><div class="ab go" style="grid-row:3;grid-column:3/6">Launch + creators</div><div class="ck" style="grid-row:3;grid-column:6;justify-self:start;margin-left:-8px">✓</div><div class="ak" style="grid-row:3"><small>M2</small>10% sign-up</div><div class="an" style="grid-row:4"><i>02</i>Blind Hire Challenge</div><div class="ab prep" style="grid-row:4;grid-column:3/4">Recruit</div><div class="ab go" style="grid-row:4;grid-column:4/6">Run &amp; film</div><div class="ab go" style="grid-row:4;grid-column:6/9">Release videos</div><div class="ck" style="grid-row:4;grid-column:6;justify-self:start;margin-left:-8px">✓</div><div class="ak" style="grid-row:4"><small>M2</small>5/10 differ</div><div class="an" style="grid-row:5"><i>03</i>ATS Rejection Audit</div><div class="ab prep" style="grid-row:5;grid-column:6/7">Build</div><div class="ab go pay" style="grid-row:5;grid-column:7/10">Audit → Premium trial</div><div class="ck" style="grid-row:5;grid-column:10;justify-self:start;margin-left:-8px">✓</div><div class="ak" style="grid-row:5"><small>M4</small>10/40 trial</div><div class="an" style="grid-row:6"><i>04</i>Reverse Job Fair</div><div class="ab prep" style="grid-row:6;grid-column:7/9">Plan with a uni</div><div class="ab go" style="grid-row:6;grid-column:9/10">Event</div><div class="ck" style="grid-row:6;grid-column:10;justify-self:start;margin-left:-8px">✓</div><div class="ak" style="grid-row:6"><small>M4</small>8+ interviews</div><div class="an" style="grid-row:7"><i>05</i>Skill Card</div><div class="ab prep" style="grid-row:7;grid-column:10/11">Build</div><div class="ab go" style="grid-row:7;grid-column:11/14">Share + bring a mate</div><div class="ck" style="grid-row:7;grid-column:13;justify-self:end;margin-right:-8px">✓</div><div class="ak" style="grid-row:7"><small>M6</small>25% via shares</div><div class="an" style="grid-row:8"><i>06</i>Hidden Talent Index</div><div class="ab prep" style="grid-row:8;grid-column:10/12">Write report</div><div class="ab go" style="grid-row:8;grid-column:12/14">Publish &amp; pitch</div><div class="ck" style="grid-row:8;grid-column:13;justify-self:end;margin-right:-8px">✓</div><div class="ak" style="grid-row:8"><small>M6</small>3+ mentions</div>
+</div>
+<div class="apleg"><span><i style="background:#e3e5ec"></i>Prepare / build</span><span><i style="background:#6868f7"></i>Run</span><span><i style="background:#f08a1c"></i>Leads to revenue</span><span><i class="g"></i>KPI checkpoint</span></div>
+</section>
+
+<section class="page">
+  <div class="sec">07 · Marketing plan</div>
+  <h2>Action plan <span>in detail</span>.</h2>
+  <p class="lead">Timing is shown in months and weeks from the start of the plan.</p>
+  <table class="t" style="margin-top:3mm">
+    <tr><th style="width:17%">Move</th><th style="width:27%">Prepare / build</th><th style="width:30%">Run</th><th style="width:10%">Checkpoint</th><th>KPI target</th></tr>
+    <tr><td><b>Translate My Job Title</b></td><td>M1 wk 1–2: build the page on the existing translation engine</td><td>M1 wk 3 – M2: launch in student community groups and with creators</td><td>End of M2</td><td class='kpi'>10% translation → sign-up</td></tr><tr><td><b>Blind Hire Challenge</b></td><td>M1 wk 3–4: recruit 10 SME design partners</td><td>M2: run and film 10 sessions · M3 – M4 wk 2: release videos</td><td>End of M2</td><td class='kpi'>5 of 10 pick differently when blind</td></tr><tr><td><b>ATS Rejection Audit</b></td><td>M3 wk 1–2: build the bulk-upload audit</td><td>M3 wk 3 – M4: free audit, then a Premium trial</td><td>End of M4</td><td class='kpi'>10 of 40 audits start a trial</td></tr><tr><td><b>Reverse Job Fair</b></td><td>M3 wk 3 – M4 wk 2: plan with a partner university</td><td>M4 wk 3–4: run the event</td><td>End of M4</td><td class='kpi'>8+ interviews booked</td></tr><tr><td><b>Skill Card</b></td><td>M5 wk 1–2: build sharing and “bring a mate” referrals</td><td>M5 wk 3 – M6: promote sharing to every new profile</td><td>End of M6</td><td class='kpi'>25% of new sign-ups from shares</td></tr><tr><td><b>Hidden Talent Index</b></td><td>M5 – M6 wk 2: pull platform data, write the report</td><td>M6 wk 3–4: publish and pitch to media and universities</td><td>End of M6</td><td class='kpi'>3+ media or industry mentions</td></tr>
+  </table>
+</section>
+
+<!-- ============================== SUCCESS -->
+<section class="page">
+  <div class="sec">08 · Success measures</div>
+  <h2>How we will <span>know it works</span>.</h2>
+  <p class="lead">One north-star metric, supported by a simple funnel. Targets are planning assumptions for the first six months, to be checked during the pilot.</p>
+  <table class="t">
+    <tr><th style="width:18%">Stage</th><th>Metric</th><th style="width:28%">Target by month 6</th></tr>
+    <tr><td><b>North star</b></td><td>Hires made through Jinder</td><td class="kpi">First 5 hire stories</td></tr>
+    <tr><td><b>Awareness</b></td><td>Translations run · Blind Hire video views</td><td class="kpi">2,000 · 20,000</td></tr>
+    <tr><td><b>Acquisition</b></td><td>Candidate sign-ups · employer sign-ups</td><td class="kpi">800 · 30</td></tr>
+    <tr><td><b>Activation</b></td><td>Completed profiles · jobs posted</td><td class="kpi">60% · 50</td></tr>
+    <tr><td><b>Revenue</b></td><td>Paying employers · university licences</td><td class="kpi">10 · 1</td></tr>
+    <tr><td><b>Referral</b></td><td>New sign-ups from shares or referrals</td><td class="kpi">≥ 25%</td></tr>
+    <tr><td><b>Trust</b></td><td>Candidates who agree “I feel safe sharing my CV”</td><td class="kpi">≥ 80%</td></tr>
+  </table>
+  <h3>Milestones</h3>
+  <table class="t">
+    <tr><th style="width:18%">When</th><th>Milestone</th><th>What proves it</th></tr>
+    <tr><td><b>End of M2</b></td><td>Product–market fit (early signal)</td><td>Design partners use Jinder weekly; translation → sign-up ≥ 10%</td></tr>
+    <tr><td><b>End of M3</b></td><td>First revenue</td><td>First employers pay for Premium</td></tr>
+    <tr><td><b>M6</b></td><td>Data flywheel live</td><td>Hiring outcomes feed back into matching; first 5 hire stories</td></tr>
+  </table>
+</section>
+
+<!-- ============================== BEYOND, RISKS, QUESTIONS -->
+<section class="page">
+  <div class="sec">09 · Beyond six months</div>
+  <h2>Year one: <span>focus, not expansion</span>.</h2>
+  <div class="callout">In 12 months, Jinder helps international graduates get fair, skills-based access to entry and mid-level jobs, with a small group of employers and universities who trust it and use it every week.</div>
+  <table class="t">
+    <tr><th style="width:18%">Months 7–12</th><th>What we do</th></tr>
+    <tr><td><b>Improve</b></td><td>Fix what pilot users found hard; make Match Coach and Talent Alerts more accurate using hiring outcomes.</td></tr>
+    <tr><td><b>Prove</b></td><td>Measure hires, time saved and repeat use; turn them into case studies.</td></tr>
+    <tr><td><b>Earn</b></td><td>Make Premium reliable for employers; test one university licence renewal.</td></tr>
+    <tr><td><b>One new thing</b></td><td>Add one item from the “Later” list, chosen from pilot feedback (likely career path explorer or verified skill badges).</td></tr>
+  </table>
+  <p class="note">Deliberately not in year one: national rollout, recruitment agencies, open API, credential-body partnerships, all industries.</p>
+
+  <h3>Risks and how we reduce them</h3>
+  <table class="t">
+    <tr><th style="width:28%">Risk</th><th>Mitigation</th></tr>
+    <tr><td><b>Employers do not pay</b></td><td>Prove value with their own data first (ATS Rejection Audit); start with design partners before billing.</td></tr>
+    <tr><td><b>Too few candidates for a strong match pool</b></td><td>Talent stays free; product-led moves (Translate My Job Title, Skill Card) are built to spread.</td></tr>
+    <tr><td><b>Beyond-ICT taxonomy takes longer</b></td><td>Start the data work in month 1 and add one area (business &amp; operations) before any other.</td></tr>
+    <tr><td><b>Not enough hires to train the flywheel</b></td><td>Collect hiring outcome feedback from day one; keep rule-based matching as the reliable base.</td></tr>
+    <tr><td><b>A privacy or fairness incident</b></td><td>Zero-PII design, consent-only identity, no pay-to-rank, humans make every decision; review against the Privacy Act before launch.</td></tr>
+  </table>
+
+  <h3>Open questions</h3>
+  <ul class="dots">
+    <li>Which non-ICT area comes first for the Any-Industry Translator (business operations, customer service)?</li>
+    <li>What price points do we test for employer Premium and candidate Premium?</li>
+    <li>Which university and SME design partners do we approach first?</li>
+    <li>Which ATS integrations matter most to SMEs?</li>
+  </ul>
+</section>
+
+</body>
+</html>

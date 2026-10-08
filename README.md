@@ -54,15 +54,21 @@ Excelerate-Skill-Bridge/
 
 ## 🖥️ Interactive Presentation & Administrative Portals
 
-The `Presentation/` directory hosts two zero-build, standalone web applications built with the **Jinder Design System**:
+The `Presentation/` directory hosts zero-build standalone HTML web applications and strategic plans built with the **Jinder Design System**:
 
-1. [**`Presentation/formulas_presentation.html`**](Presentation/formulas_presentation.html) — **Canonical Mathematical Engine Deck (ASD-STE100)**:
+1. [**`Presentation/jinder_deck.html`**](Presentation/jinder_deck.html) ([`PDF`](Presentation/jinder_deck.pdf)) — **Executive Pitch Deck**:
+   - Modern executive presentation covering Australian skilled migration challenges, capability alignment architecture, ethical AI principles, and platform demonstration.
+
+2. [**`Presentation/Jinder_Product_Plan.html`**](Presentation/Jinder_Product_Plan.html) ([`PDF`](Presentation/Jinder_Product_Plan.pdf)) — **Product & Marketing Strategy (Next 6 Months)**:
+   - Comprehensive 6-month execution plan: GTM strategy, university partnership rollout, employer acquisition funnel, pricing tiers, and financial projections.
+
+3. [**`Presentation/formulas_presentation.html`**](Presentation/formulas_presentation.html) — **Canonical Mathematical Engine Deck (ASD-STE100)**:
    - **All 6 Formulas Grid:** 100vh single-screen view displaying all 6 canonical formulas (F-01 through F-06) simultaneously with zero page scrolling.
    - **Live Parameter Workbench:** Interactive simulation panel on the left with continuous gradient sliders (`#6868f7` $\to$ `#a855f7` $\to$ `#ffa340`), real-time calculation, and step-by-step worked numerical examples.
    - **KaTeX Variable Table:** Crisp vector mathematical variables with calibrated Australian industry values.
    - **Strict Standards:** 100% Australian English (`en-AU`), Talent / Employer terminology, and official Jinder SVG branding.
 
-2. [**`Presentation/admin.html`**](Presentation/admin.html) — **Admin Control Center & Data Flow Telemetry**:
+4. [**`Presentation/admin.html`**](Presentation/admin.html) — **Admin Control Center & Data Flow Telemetry**:
    - **Live SQLite WAL Metrics:** Active page count, database file size (0.95 MB), journal mode, and verified role breakdown (**51 Talents**, **1 Demo Employer**).
    - **5-Stage Data Flow Pipeline Chart:** Visual pipeline (Ingestion $\to$ Taxonomy Translation $\to$ Mathematical Engine $\to$ SQLite WAL $\to$ Shortlist Delivery) with interactive stage inspection and live query telemetry.
    - **22 Tables SQLite Explorer:** Filter, search, and paginate through all 22 database tables with a built-in Safe SQL runner.
