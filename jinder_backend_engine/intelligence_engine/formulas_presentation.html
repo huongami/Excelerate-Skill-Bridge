@@ -96,9 +96,9 @@
       background: var(--surface-subtle);
     }
 
-    /* Jinder Top Navigation Bar */
+    /* Jinder Top Navigation Bar - Compact for 14-inch and 27-inch displays */
     header.top-nav {
-      height: 60px;
+      height: 52px;
       flex-shrink: 0;
       background: rgba(255, 255, 255, 0.98);
       border-bottom: 1px solid var(--hairline);
@@ -106,15 +106,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 16px;
       z-index: 50;
-      gap: 12px;
+      gap: 10px;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-shrink: 0;
       min-width: 0;
     }
@@ -122,26 +122,26 @@
     .brand-logo {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       text-decoration: none;
       color: var(--ink);
       flex-shrink: 0;
     }
 
     .logo-mark {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       flex-shrink: 0;
       display: block;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(21, 21, 49, 0.18);
+      border-radius: 7px;
+      box-shadow: 0 1px 3px rgba(21, 21, 49, 0.16);
     }
 
     .logo-word {
       font-family: var(--font-display);
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
       color: var(--ink);
       white-space: nowrap;
     }
@@ -149,7 +149,7 @@
 
     .brand-divider {
       width: 1px;
-      height: 26px;
+      height: 22px;
       background: var(--hairline);
       flex-shrink: 0;
     }
@@ -159,33 +159,33 @@
       flex-direction: column;
       justify-content: center;
       min-width: 0;
-      line-height: 1.25;
+      line-height: 1.2;
     }
 
     .portal-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--ink);
       letter-spacing: -0.2px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       white-space: nowrap;
     }
 
     .portal-sub {
-      font-size: 11px;
+      font-size: 10.5px;
       color: var(--muted);
       font-weight: 500;
       white-space: nowrap;
     }
 
-    /* Segmented Tab Bar */
+    /* Segmented Tab Bar - Compact Responsive */
     .tab-segmented-bar {
       display: flex;
       align-items: center;
       background: var(--surface-strong);
-      padding: 3px;
+      padding: 2.5px;
       border-radius: var(--r-md);
       gap: 2px;
       flex-shrink: 0;
@@ -196,14 +196,14 @@
       background: transparent;
       color: var(--body);
       font-family: var(--font-body);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      padding: 6px 13px;
+      padding: 4px 9px;
       border-radius: var(--r-sm);
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       transition: all 0.15s var(--ease);
       white-space: nowrap;
     }
@@ -220,8 +220,8 @@
     }
 
     .tab-pill .pill-dot {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background: currentColor;
     }
@@ -229,19 +229,20 @@
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
+      flex-shrink: 0;
     }
 
     /* Badges & Chips */
     .chip {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
+      gap: 5px;
+      padding: 3px 8px;
       border-radius: var(--r-pill);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      line-height: 1.3;
+      line-height: 1.25;
       white-space: nowrap;
     }
     .chip-blue { background: var(--tint-blue); color: var(--tint-blue-ink); }
@@ -249,34 +250,14 @@
     .chip-green { background: var(--tint-green); color: var(--tint-green-ink); }
     .chip-yellow { background: var(--tint-yellow); color: var(--tint-yellow-ink); }
     .chip-accent { background: var(--accent-tint); color: var(--accent); border: 1px solid rgba(104,104,247,0.2); }
-    
-    .btn-portal {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      height: 34px;
-      padding: 0 14px;
-      border-radius: var(--r-md);
-      background: var(--primary);
-      color: #ffffff;
-      font-size: 12.5px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.15s var(--ease);
-      border: 1px solid transparent;
-    }
-    .btn-portal:hover {
-      background: var(--ink-soft);
-      box-shadow: var(--sh-sm);
-    }
 
-    /* Main Container (100vh minus 60px header) */
+    /* Main Container (100vh minus 52px header) - Strict Fit 14-inch & 27-inch */
     main.viewport-content {
       flex: 1;
-      height: calc(100vh - 60px);
-      max-height: calc(100vh - 60px);
+      height: calc(100vh - 52px);
+      max-height: calc(100vh - 52px);
       overflow: hidden;
-      padding: 12px 20px 14px;
+      padding: 8px 14px 10px;
       display: flex;
       flex-direction: column;
       box-sizing: border-box;
@@ -290,8 +271,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 8px;
-      gap: 16px;
+      margin-bottom: 6px;
+      gap: 12px;
       min-width: 0;
       width: 100%;
       box-sizing: border-box;
@@ -304,20 +285,20 @@
 
     .banner-title-group h1 {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--ink);
-      letter-spacing: -0.4px;
+      letter-spacing: -0.3px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .banner-title-group p {
-      font-size: 13px;
+      font-size: 11.5px;
       color: var(--body);
       margin-top: 1px;
       white-space: nowrap;
@@ -328,7 +309,7 @@
     .banner-meta-pills {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       flex-shrink: 0;
     }
 
@@ -341,7 +322,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 8px;
       overflow: hidden;
       min-width: 0;
       width: 100%;
@@ -351,13 +332,13 @@
     .formula-card {
       background: var(--canvas);
       border: 1px solid var(--hairline);
-      border-radius: var(--r-xl);
-      padding: 14px 16px;
+      border-radius: var(--r-lg);
+      padding: 10px 14px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       box-shadow: var(--sh-sm);
-      transition: all 0.2s var(--ease);
+      transition: all 0.15s var(--ease);
       position: relative;
       cursor: pointer;
       min-width: 0;
@@ -375,18 +356,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 5px;
+      gap: 6px;
+      margin-bottom: 2px;
       min-width: 0;
       width: 100%;
     }
 
     .card-formula-code {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.5px;
-      padding: 2px 7px;
+      padding: 1.5px 6px;
       border-radius: var(--r-xs);
       white-space: nowrap;
       flex-shrink: 0;
@@ -400,7 +381,7 @@
 
     .card-sla-badge {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 10.5px;
       color: var(--muted);
       font-weight: 600;
       white-space: nowrap;
@@ -409,12 +390,12 @@
 
     .card-title {
       font-family: var(--font-display);
-      font-size: 15.5px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--ink);
-      letter-spacing: -0.3px;
+      letter-spacing: -0.2px;
       line-height: 1.25;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       min-width: 0;
       white-space: nowrap;
       overflow: hidden;
@@ -425,13 +406,13 @@
     .card-math-box {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
-      border-radius: var(--r-md);
-      padding: 8px 12px 8px 16px;
-      margin-bottom: 8px;
+      border-radius: var(--r-sm);
+      padding: 4px 10px 4px 12px;
+      margin-bottom: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
+      min-height: 38px;
       max-width: 100%;
       overflow-x: auto;
       overflow-y: hidden;
@@ -447,23 +428,23 @@
       left: 0;
       top: 0;
       bottom: 0;
-      width: 4px;
+      width: 3.5px;
       background: linear-gradient(180deg, #6868f7 0%, #a855f7 50%, #ffa340 100%);
-      border-top-left-radius: var(--r-md);
-      border-bottom-left-radius: var(--r-md);
+      border-top-left-radius: var(--r-sm);
+      border-bottom-left-radius: var(--r-sm);
     }
     .card-math-box .katex {
-      font-size: 1.05rem;
+      font-size: 0.94rem;
       color: var(--ink);
       white-space: nowrap;
     }
 
     /* Plain English Description */
     .card-desc {
-      font-size: 12.5px;
+      font-size: 11.5px;
       color: var(--body);
-      line-height: 1.4;
-      margin-bottom: 8px;
+      line-height: 1.35;
+      margin-bottom: 4px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -477,7 +458,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 6px;
-      padding-top: 8px;
+      padding-top: 5px;
       border-top: 1px solid var(--hairline);
       min-width: 0;
       width: 100%;
@@ -487,15 +468,15 @@
     .card-params-group {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       min-width: 0;
       overflow: hidden;
     }
 
     .param-pill {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
-      padding: 2px 6px;
+      padding: 1.5px 5px;
       border-radius: 4px;
       background: var(--surface-strong);
       color: var(--ink);
@@ -509,15 +490,15 @@
 
     .card-footer-action {
       flex-shrink: 0;
-      font-size: 11.5px;
+      font-size: 10.5px;
       font-weight: 700;
       color: var(--accent);
       background: var(--accent-tint);
-      padding: 2px 7px;
+      padding: 2px 6px;
       border-radius: var(--r-xs);
       display: inline-flex;
       align-items: center;
-      gap: 3px;
+      gap: 2px;
       white-space: nowrap;
       transition: all 0.15s var(--ease);
     }
@@ -534,7 +515,7 @@
       height: 100%;
       display: none;
       grid-template-columns: 0.92fr 1.08fr;
-      gap: 20px;
+      gap: 12px;
       overflow: hidden;
     }
 
@@ -542,8 +523,8 @@
     .sim-panel {
       background: #ffffff;
       border: 1px solid var(--hairline);
-      border-radius: var(--r-xxl);
-      padding: 22px 24px;
+      border-radius: var(--r-xl);
+      padding: 12px 16px;
       display: flex;
       flex-direction: column;
       box-shadow: var(--sh-md);
@@ -551,129 +532,129 @@
     }
 
     .sim-header {
-      margin-bottom: 14px;
-      padding-bottom: 12px;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
       border-bottom: 1px solid var(--hairline);
     }
     .sim-header h3 {
       font-family: var(--font-display);
-      font-size: 18px;
+      font-size: 14.5px;
       font-weight: 700;
       color: var(--ink);
       letter-spacing: -0.3px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .sim-header p {
-      font-size: 13px;
+      font-size: 11.5px;
       color: var(--muted);
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     .control-group {
-      margin-bottom: 14px;
+      margin-bottom: 6px;
     }
 
     .control-label-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .control-label-row label {
-      font-size: 13.5px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--ink);
     }
 
     .control-val-badge {
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--accent);
       background: var(--accent-tint);
-      padding: 2px 8px;
+      padding: 1.5px 6px;
       border-radius: var(--r-xs);
     }
 
     /* Enhanced Range Slider with Gradient Track Fill */
     input[type="range"] {
       width: 100%;
-      height: 8px;
+      height: 6px;
       border-radius: 9999px;
       background: #e9ecef;
       outline: none;
       -webkit-appearance: none;
       cursor: pointer;
-      margin: 6px 0;
+      margin: 3px 0;
       transition: background 0.1s ease;
     }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: #ffffff;
-      border: 3.5px solid var(--accent);
-      box-shadow: 0 2px 6px rgba(104, 104, 247, 0.4);
+      border: 3px solid var(--accent);
+      box-shadow: 0 1px 4px rgba(104, 104, 247, 0.4);
       cursor: pointer;
       transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), border-color 0.15s var(--ease);
     }
     input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.18);
+      transform: scale(1.15);
       border-color: var(--orange);
-      box-shadow: 0 4px 12px rgba(255, 163, 64, 0.5);
+      box-shadow: 0 3px 8px rgba(255, 163, 64, 0.5);
     }
 
     .sim-worked-math {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
       border-radius: var(--r-md);
-      padding: 10px 14px;
-      margin-top: 10px;
-      font-size: 12.5px;
+      padding: 6px 10px;
+      margin-top: 6px;
+      font-size: 11px;
       color: var(--ink);
       font-family: var(--font-mono);
       word-break: break-all;
-      line-height: 1.45;
+      line-height: 1.35;
     }
 
     .sim-result-card {
       background: linear-gradient(135deg, #ffffff 0%, var(--surface-subtle) 100%);
       border: 1.5px solid var(--accent);
-      border-radius: var(--r-lg);
-      padding: 14px 18px;
+      border-radius: var(--r-md);
+      padding: 8px 12px;
       margin-top: auto;
       text-align: center;
       box-shadow: var(--sh-xs);
     }
 
     .sim-result-label {
-      font-size: 11.5px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--muted);
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .sim-result-number {
       font-family: var(--font-display);
-      font-size: 38px;
+      font-size: 26px;
       font-weight: 800;
-      letter-spacing: -1.2px;
+      letter-spacing: -0.8px;
       color: var(--ink);
       line-height: 1.05;
     }
 
     .sim-result-status {
       display: inline-block;
-      margin-top: 6px;
-      font-size: 12px;
+      margin-top: 4px;
+      font-size: 11px;
       font-weight: 700;
-      padding: 3px 10px;
+      padding: 2px 8px;
       border-radius: var(--r-pill);
     }
 
@@ -681,8 +662,8 @@
     .deepdive-card {
       background: var(--canvas);
       border: 1px solid var(--hairline);
-      border-radius: var(--r-xxl);
-      padding: 24px 28px;
+      border-radius: var(--r-xl);
+      padding: 12px 18px;
       display: flex;
       flex-direction: column;
       box-shadow: var(--sh-md);
@@ -693,31 +674,31 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
       border-bottom: 1px solid var(--hairline);
     }
 
     .deepdive-title-group h2 {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--ink);
-      letter-spacing: -0.5px;
-      margin-bottom: 3px;
+      letter-spacing: -0.4px;
+      margin-bottom: 1px;
     }
 
     .deepdive-title-group p {
-      font-size: 13.5px;
+      font-size: 11.5px;
       color: var(--body);
     }
 
     .large-math-stage {
       background: #fdfdfe;
       border: 1.5px solid #dcdcfe;
-      border-radius: var(--r-lg);
-      padding: 16px 22px 16px 26px;
-      margin-bottom: 16px;
+      border-radius: var(--r-md);
+      padding: 8px 14px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -730,38 +711,38 @@
       left: 0;
       top: 0;
       bottom: 0;
-      width: 5px;
+      width: 4px;
       background: linear-gradient(180deg, #6868f7 0%, #a855f7 50%, #ffa340 100%);
-      border-top-left-radius: var(--r-lg);
-      border-bottom-left-radius: var(--r-lg);
+      border-top-left-radius: var(--r-md);
+      border-bottom-left-radius: var(--r-md);
     }
     .large-math-stage .katex {
-      font-size: 1.55rem;
+      font-size: 1.25rem;
       color: var(--ink-deep);
     }
 
     .spec-block {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
-      border-radius: var(--r-lg);
-      padding: 14px 18px;
-      margin-bottom: 14px;
+      border-radius: var(--r-md);
+      padding: 8px 12px;
+      margin-bottom: 8px;
     }
 
     .spec-block h3 {
-      font-size: 13.5px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--ink);
-      margin-bottom: 6px;
+      margin-bottom: 3px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .spec-block p {
-      font-size: 13.5px;
+      font-size: 11.5px;
       color: var(--body);
-      line-height: 1.5;
+      line-height: 1.35;
     }
 
     /* Redesigned High-Clarity Variable Table */
@@ -769,8 +750,8 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      font-size: 13px;
-      margin-top: 8px;
+      font-size: 11.5px;
+      margin-top: 4px;
       border: 1px solid var(--hairline);
       border-radius: var(--r-md);
       overflow: hidden;
@@ -778,17 +759,17 @@
     }
     .variable-table th {
       text-align: left;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       color: #495057;
-      padding: 9px 12px;
+      padding: 5px 8px;
       background: var(--surface-strong);
-      border-bottom: 1.5px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
     }
     .variable-table td {
-      padding: 9px 12px;
+      padding: 4px 8px;
       border-bottom: 1px solid var(--hairline);
       color: var(--body);
       vertical-align: middle;
@@ -807,23 +788,23 @@
       background: var(--accent-tint);
       border: 1px solid rgba(104, 104, 247, 0.25);
       border-radius: var(--r-xs);
-      padding: 3px 8px;
+      padding: 2px 6px;
       color: var(--primary);
-      font-size: 13.5px;
-      min-width: 58px;
+      font-size: 11.5px;
+      min-width: 46px;
       box-shadow: 0 1px 2px rgba(104, 104, 247, 0.06);
     }
     .var-symbol-badge .katex {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
     }
 
     .val-badge {
       display: inline-flex;
       align-items: center;
       font-family: var(--font-mono);
-      font-size: 11.5px;
+      font-size: 10.5px;
       font-weight: 600;
-      padding: 3px 8px;
+      padding: 2px 6px;
       border-radius: var(--r-xs);
       background: #f8fafc;
       border: 1px solid #cbd5e1;
@@ -834,6 +815,54 @@
       background: #eff6ff;
       border-color: #bfdbfe;
       color: #1d4ed8;
+    }
+
+    /* =========================================================================
+       RESPONSIVE ADJUSTMENTS FOR 14-INCH LAPTOPS (< 1500px width or < 820px height)
+       ========================================================================= */
+    @media (max-width: 1520px) {
+      .tab-pill { padding: 4px 7px; font-size: 11.5px; }
+      .portal-sub { display: none; }
+      .nav-right .chip:nth-child(2) { display: none; }
+    }
+
+    @media (max-height: 800px) {
+      header.top-nav { height: 46px; padding: 0 12px; }
+      .logo-mark { width: 24px; height: 24px; }
+      .logo-word { font-size: 16px; }
+      .portal-title { font-size: 11.5px; }
+      .tab-pill { font-size: 11px; padding: 3px 6px; }
+      
+      main.viewport-content {
+        height: calc(100vh - 46px);
+        max-height: calc(100vh - 46px);
+        padding: 5px 10px 6px;
+      }
+      .view-banner { margin-bottom: 3px; }
+      .banner-title-group h1 { font-size: 14px; }
+      .banner-title-group p { font-size: 10.5px; }
+      .banner-meta-pills .chip { font-size: 10px; padding: 2px 6px; }
+
+      .grid-view-pane { gap: 6px; }
+      .formula-card { padding: 7px 10px; border-radius: var(--r-md); }
+      .card-title { font-size: 12px; margin-bottom: 2px; }
+      .card-math-box { min-height: 32px; padding: 2px 6px 2px 8px; margin-bottom: 2px; }
+      .card-math-box .katex { font-size: 0.85rem; }
+      .card-desc { font-size: 10.5px; line-height: 1.25; margin-bottom: 2px; }
+      .card-footer-wrap { padding-top: 3px; }
+      .param-pill { font-size: 9px; padding: 1px 4px; }
+      .card-footer-action { font-size: 9.5px; padding: 1px 5px; }
+
+      .sim-panel { padding: 10px 12px; }
+      .sim-header { margin-bottom: 4px; padding-bottom: 4px; }
+      .sim-header h3 { font-size: 13.5px; }
+      .control-group { margin-bottom: 4px; }
+      .sim-result-card { padding: 6px 10px; }
+      .sim-result-number { font-size: 22px; }
+
+      .deepdive-card { padding: 10px 14px; }
+      .large-math-stage { padding: 6px 10px; margin-bottom: 6px; }
+      .large-math-stage .katex { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -856,40 +885,40 @@
         <div class="portal-tag">
           <div class="portal-title">
             Mathematical Engine
-            <span class="chip chip-accent" style="font-size: 10px; padding: 2px 7px; font-weight: 700;">ASD-STE100</span>
+            <span class="chip chip-accent" style="font-size: 10px; padding: 1.5px 6px; font-weight: 700;">ASD-STE100</span>
           </div>
-          <div class="portal-sub">6 Deterministic Formulas • Talent & Employer Matching</div>
+          <div class="portal-sub">6 Deterministic Formulas (ASD-STE100)</div>
         </div>
       </div>
 
-      <!-- Segmented Tab Navigation -->
+      <!-- Segmented Tab Navigation - Compact High-Clarity -->
       <nav class="tab-segmented-bar" id="formulaTabs">
         <button class="tab-pill active" onclick="switchFormulaView('grid')" id="pill-grid">
-          <span>⊞</span> All 6 Formulas (Grid)
+          <span>⊞</span> All 6 Grid
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f1')" id="pill-f1">
-          <span class="pill-dot" style="color:#6868f7;"></span> F-01 SMF Coverage
+          <span class="pill-dot" style="color:#6868f7;"></span> F-01 SMF
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f2')" id="pill-f2">
-          <span class="pill-dot" style="color:#e11d48;"></span> F-02 GSI & JRS
+          <span class="pill-dot" style="color:#e11d48;"></span> F-02 GSI/JRS
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f3')" id="pill-f3">
-          <span class="pill-dot" style="color:#16a34a;"></span> F-03 JPI Proximity
+          <span class="pill-dot" style="color:#16a34a;"></span> F-03 JPI
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f4')" id="pill-f4">
-          <span class="pill-dot" style="color:#0284c7;"></span> F-04 RMS Merit
+          <span class="pill-dot" style="color:#0284c7;"></span> F-04 RMS
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f5')" id="pill-f5">
-          <span class="pill-dot" style="color:#d97706;"></span> F-05 FRS Talent Feed
+          <span class="pill-dot" style="color:#d97706;"></span> F-05 FRS
         </button>
         <button class="tab-pill" onclick="switchFormulaView('f6')" id="pill-f6">
-          <span class="pill-dot" style="color:#7c3aed;"></span> F-06 TSS Employer Search
+          <span class="pill-dot" style="color:#7c3aed;"></span> F-06 TSS
         </button>
       </nav>
 
       <div class="nav-right">
-        <span class="chip chip-green">Zero PII Retention</span>
-        <span class="chip chip-blue">Deterministic SLA &lt; 5ms</span>
+        <span class="chip chip-green">Zero-PII</span>
+        <span class="chip chip-blue">&lt; 5ms SLA</span>
       </div>
     </header>
 
