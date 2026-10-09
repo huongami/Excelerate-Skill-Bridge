@@ -97,6 +97,7 @@ route("POST", "/demo/reset-interview", (ctx) => {
   const mode = ctx.body?.mode || "interview";
   const aid = ctx.body?.id;
   const cand = db.users.find((u) => u.email === "candidate@demo.jinder.app") || db.users.find((u) => u.role === "candidate");
+  const rec = db.users.find((u) => u.email === "recruiter@demo.jinder.app") || db.users.find((u) => u.role === "recruiter");
   const app = aid ? db.applications.find((a) => a.id === aid) : db.applications.find((a) => a.candidateId === cand?.id);
   if (!app) return { ok: false, message: "Demo application not found." };
 
@@ -128,6 +129,51 @@ route("POST", "/demo/reset-interview", (ctx) => {
       { status: "review", at: at(-4), by: "recruiter", note: "" },
       { status: "interview", at: at(-2), by: "recruiter", note: "Offered 3 interview times" },
     ];
+  }
+
+  // Wipe leftover notifications from previous demo runs and re-seed baseline
+  if (cand && rec) {
+    db.notifications = (db.notifications || []).filter((n) => n.userId !== cand.id && n.userId !== rec.id);
+    const otherApps = (db.applications || []).filter((a) => a.recruiterId === rec.id && a.candidateId !== cand.id && a.status === "applied");
+    for (const oa of otherApps) {
+      const j = (db.jobs || []).find((x) => x.id === oa.jobId);
+      const c = (db.users || []).find((x) => x.id === oa.candidateId);
+      db.notifications.push({
+        id: Math.random().toString(36).slice(2, 10),
+        userId: rec.id,
+        type: "new_application",
+        title: `New application for ${j?.title || "Role"}`,
+        body: `${c?.alias || "Candidate"} applied.`,
+        link: `/review/${oa.id}`,
+        read: false,
+        createdAt: new Date().toISOString(),
+      });
+    }
+    if (mode === "review") {
+      const j = (db.jobs || []).find((x) => x.id === app.jobId);
+      db.notifications.push({
+        id: Math.random().toString(36).slice(2, 10),
+        userId: rec.id,
+        type: "new_application",
+        title: `New application for ${j?.title || "Role"}`,
+        body: "Teal Heron applied.",
+        link: `/review/${app.id}`,
+        read: false,
+        createdAt: new Date().toISOString(),
+      });
+    } else {
+      const j = (db.jobs || []).find((x) => x.id === app.jobId);
+      db.notifications.push({
+        id: Math.random().toString(36).slice(2, 10),
+        userId: cand.id,
+        type: "interview_slots",
+        title: `Interview times for ${j?.title || "Role"}`,
+        body: "Choose a time that works for you.",
+        link: `/applications/${app.id}`,
+        read: false,
+        createdAt: new Date().toISOString(),
+      });
+    }
   }
   return { ok: true, applicationId: app.id, status: app.status };
 });

@@ -4,7 +4,7 @@ from datetime import timedelta
 from collections import Counter
 from typing import Any, Dict
 
-from .. import catalogue, config, db, store
+from .. import catalogue, config, db, seed, store
 from .. import engine_bridge as eb
 from ..guards import require_user
 from ..http_server import Ctx, route
@@ -160,19 +160,59 @@ def _recruiter_stats(conn: sqlite3.Connection, user: sqlite3.Row, ent: Dict[str,
     return {"role": "recruiter", "basic": basic, "advanced": advanced, "plan": ent["plan"]}
 
 
+def _reset_demo_notifications(conn: sqlite3.Connection, emp_id: str, tal_id: str, mode: str, app_id: str, title: str, zero: bool = False) -> None:
+    """Wipe all accumulated notifications and outbox from previous demo runs for both demo accounts.
+    Restore ONLY the pristine initial demo notifications according to mode.
+    If zero=True, all notifications are cleared with 0 left.
+    """
+    # 1. Delete all existing notifications & outbox emails for BOTH demo accounts
+    conn.execute("DELETE FROM notifications WHERE user_id IN (?, ?)", (emp_id, tal_id))
+    conn.execute("DELETE FROM email_outbox WHERE user_id IN (?, ?)", (emp_id, tal_id))
+
+    if zero:
+        return
+
+    # 2. Re-populate clean baseline notifications for the employer (the 3 initial applicants)
+    other_apps = conn.execute("""
+        SELECT a.id, j.title as job_title, u.alias, u.name
+        FROM applications a
+        JOIN jobs j ON a.job_id = j.id
+        JOIN users u ON a.candidate_id = u.id
+        WHERE a.recruiter_id = ? AND a.candidate_id != ? AND a.status = 'applied'
+        ORDER BY a.created_at ASC
+    """, (emp_id, tal_id)).fetchall()
+
+    for row in other_apps:
+        cand_name = row["alias"] or row["name"] or "Candidate"
+        store.notify(conn, emp_id, "new_application", f"New application for {row['job_title']}", f"{cand_name} applied.", f"/review/{row['id']}")
+
+    # 3. Add clean notifications for the demo application based on stage:
+    if mode == "review":
+        # Recruiter gets 1 fresh notification that Teal Heron applied
+        store.notify(conn, emp_id, "new_application", f"New application for {title}", "Teal Heron applied.", f"/review/{app_id}")
+        # Candidate has 0 notifications (waiting for recruiter review)
+    else:
+        # Candidate gets 1 fresh notification to select an interview slot
+        store.notify(conn, tal_id, "interview_slots", f"Interview times for {title}", "Choose a time that works for you.", f"/applications/{app_id}")
+        # Recruiter has NO leftover notifications from Teal Heron (only the 3 initial other candidates)
+
+
 # ---------- Demo Application Reset (Live Hackathon Testing / Demo) ----------
 @route("POST", "/demo/reset-interview")
 def demo_reset_interview(ctx: Ctx):
     """Reset the demo application back to interview or review stage.
+    Wipes all accumulated notifications and outbox from previous demo runs for both demo accounts.
     Accepts:
       - mode: 'interview' (default: 3 future slots offered, ready for candidate selection)
               or 'review' (employer schedules 1-3 slots from scratch)
       - id: optional specific application id (defaults to demo candidate's application)
+      - zeroNotifications: optional boolean (if true, clears all notifications with 0 left)
     """
     conn = ctx.conn
     body = ctx.body if isinstance(ctx.body, dict) else {}
     mode = body.get("mode", "interview")
     app_id = body.get("id")
+    zero_notif = bool(body.get("zeroNotifications") or body.get("zero_notifications"))
 
     # Find the target application
     if app_id:
@@ -190,9 +230,15 @@ def demo_reset_interview(ctx: Ctx):
 
     aid = app["id"]
     cid = app["candidate_id"]
+    emp_user = conn.execute("SELECT id FROM users WHERE email = 'recruiter@demo.jinder.app'").fetchone()
+    emp_id = emp_user["id"] if emp_user else app["recruiter_id"]
     job = catalogue.find_job(conn, app["job_id"])
-    title = job["title"] if job else "Mid Data Engineer"
+    title = job["title"] if job else "Data Engineer, Solar Analytics"
     now = utcnow()
+
+    # Clear feedback and events from previous demo runs on this application
+    conn.execute("DELETE FROM application_feedback WHERE application_id = ?", (aid,))
+    conn.execute("DELETE FROM events WHERE target_type = 'application' AND target_id = ?", (aid,))
 
     if mode == "review":
         conn.execute("""
@@ -207,10 +253,8 @@ def demo_reset_interview(ctx: Ctx):
                      (aid, iso(now - timedelta(days=5))))
         conn.execute("INSERT INTO application_history (application_id, status, at, actor, note) VALUES (?, 'review', ?, 'recruiter', '')",
                      (aid, iso(now - timedelta(days=3))))
-        emp = store.get_user(conn, app["recruiter_id"])
-        if emp:
-            store.notify(conn, emp["id"], "new_application", f"New application for {title}", "Teal Heron applied.", f"/review/{aid}")
-        msg = "Demo application reset to Review stage. Employer can now schedule interview slots from scratch."
+        _reset_demo_notifications(conn, emp_id, cid, "review", aid, title, zero=zero_notif)
+        msg = "Demo application reset to Review stage. All previous demo notifications wiped cleanly."
     else:
         conn.execute("""
             UPDATE applications
@@ -233,7 +277,20 @@ def demo_reset_interview(ctx: Ctx):
                      (aid, iso(now - timedelta(days=4))))
         conn.execute("INSERT INTO application_history (application_id, status, at, actor, note) VALUES (?, 'interview', ?, 'recruiter', 'Offered 3 interview times')",
                      (aid, iso(now - timedelta(days=2))))
-        store.notify(conn, cid, "interview_slots", f"Interview times for {title}", "Choose a time that works for you.", f"/applications/{aid}")
-        msg = "Demo application reset to Interview stage. 3 interview slots are ready for candidate selection."
+        _reset_demo_notifications(conn, emp_id, cid, "interview", aid, title, zero=zero_notif)
+        msg = "Demo application reset to Interview stage. All previous demo notifications wiped cleanly."
 
     return {"ok": True, "message": msg, "applicationId": aid, "status": mode}
+
+
+@route("POST", "/demo/reset")
+def demo_reset(ctx: Ctx):
+    """Full reset of demo accounts, jobs, applications, and notifications to initial seed state."""
+    conn = ctx.conn
+    cand_user = conn.execute("SELECT id FROM users WHERE email = 'candidate@demo.jinder.app'").fetchone()
+    emp_user = conn.execute("SELECT id FROM users WHERE email = 'recruiter@demo.jinder.app'").fetchone()
+    if cand_user and emp_user:
+        conn.execute("DELETE FROM notifications WHERE user_id IN (?, ?)", (emp_user["id"], cand_user["id"]))
+        conn.execute("DELETE FROM email_outbox WHERE user_id IN (?, ?)", (emp_user["id"], cand_user["id"]))
+    passwords = seed.seed_demo_accounts(conn, force=True)
+    return {"ok": True, "message": "Demo data and notifications fully reset.", "passwords": passwords}

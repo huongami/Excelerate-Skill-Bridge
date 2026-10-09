@@ -218,11 +218,17 @@ def _must_coverage(profile: Dict[str, Any], skills: List[Dict[str, Any]]) -> flo
 def _wipe_demo(conn: sqlite3.Connection, emp_id: str, tal_id: str) -> None:
     """Remove the old story of the demo accounts (jobs, applications, alerts, activity), and keep the two accounts."""
     for r in conn.execute("SELECT id FROM jobs WHERE owner_id = ?", (emp_id,)).fetchall():
+        conn.execute("DELETE FROM application_feedback WHERE application_id IN (SELECT id FROM applications WHERE job_id = ?)", (r["id"],))
+        conn.execute("DELETE FROM application_slots WHERE application_id IN (SELECT id FROM applications WHERE job_id = ?)", (r["id"],))
+        conn.execute("DELETE FROM application_history WHERE application_id IN (SELECT id FROM applications WHERE job_id = ?)", (r["id"],))
         conn.execute("DELETE FROM applications WHERE job_id = ?", (r["id"],))
         conn.execute("DELETE FROM events WHERE target_type = 'job' AND target_id = ?", (r["id"],))
         conn.execute("DELETE FROM bookmarks WHERE job_id = ?", (r["id"],))
         conn.execute("DELETE FROM skips WHERE job_id = ?", (r["id"],))
         conn.execute("DELETE FROM jobs WHERE id = ?", (r["id"],))
+    conn.execute("DELETE FROM application_feedback WHERE application_id IN (SELECT id FROM applications WHERE candidate_id = ? OR recruiter_id = ?)", (tal_id, emp_id))
+    conn.execute("DELETE FROM application_slots WHERE application_id IN (SELECT id FROM applications WHERE candidate_id = ? OR recruiter_id = ?)", (tal_id, emp_id))
+    conn.execute("DELETE FROM application_history WHERE application_id IN (SELECT id FROM applications WHERE candidate_id = ? OR recruiter_id = ?)", (tal_id, emp_id))
     conn.execute("DELETE FROM applications WHERE candidate_id = ? OR recruiter_id = ?", (tal_id, emp_id))
     for uid in (emp_id, tal_id):
         conn.execute("DELETE FROM notifications WHERE user_id = ?", (uid,))
@@ -238,7 +244,7 @@ def _at(days: float) -> str:
     return iso(utcnow() + timedelta(days=days))
 
 
-def seed_demo_accounts(conn: sqlite3.Connection) -> Dict[str, str]:
+def seed_demo_accounts(conn: sqlite3.Connection, force: bool = False) -> Dict[str, str]:
     """Make (or reset) the two demo accounts and a small story: jobs, applications, alerts. Returns { email: password }."""
     from .routes.applications import snapshot_match
 
@@ -247,7 +253,7 @@ def seed_demo_accounts(conn: sqlite3.Connection) -> Dict[str, str]:
     emp = store.get_user_by_email(conn, DEMO_EMPLOYER)
     tal = store.get_user_by_email(conn, DEMO_TALENT)
     marker = conn.execute("SELECT value FROM schema_info WHERE key = ?", (_DEMO_KEY,)).fetchone()
-    if emp and tal and marker and marker["value"] == SEED_VERSION:
+    if emp and tal and marker and marker["value"] == SEED_VERSION and not force:
         for email, pw in passwords.items():
             conn.execute("UPDATE users SET password_hash = ? WHERE email = ?", (security.hash_password(pw), email))
         conn.execute("DELETE FROM sessions WHERE user_id IN (?, ?)", (emp["id"], tal["id"]))
