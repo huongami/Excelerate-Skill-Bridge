@@ -251,13 +251,13 @@
     .chip-yellow { background: var(--tint-yellow); color: var(--tint-yellow-ink); }
     .chip-accent { background: var(--accent-tint); color: var(--accent); border: 1px solid rgba(104,104,247,0.2); }
 
-    /* Main Container (100vh minus 52px header) - Strict Fit 14-inch & 27-inch */
+    /* Main Container (100vh minus 56px header) - Generous, Immersive Fit */
     main.viewport-content {
       flex: 1;
-      height: calc(100vh - 52px);
-      max-height: calc(100vh - 52px);
+      height: calc(100vh - 56px);
+      max-height: calc(100vh - 56px);
       overflow: hidden;
-      padding: 8px 14px 10px;
+      padding: 12px 18px 14px;
       display: flex;
       flex-direction: column;
       box-sizing: border-box;
@@ -271,8 +271,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 6px;
-      gap: 12px;
+      margin-bottom: 10px;
+      gap: 14px;
       min-width: 0;
       width: 100%;
       box-sizing: border-box;
@@ -285,22 +285,22 @@
 
     .banner-title-group h1 {
       font-family: var(--font-display);
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 19px;
+      font-weight: 800;
       color: var(--ink);
-      letter-spacing: -0.3px;
+      letter-spacing: -0.4px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .banner-title-group p {
-      font-size: 11.5px;
+      font-size: 13px;
       color: var(--body);
-      margin-top: 1px;
+      margin-top: 2px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -309,8 +309,13 @@
     .banner-meta-pills {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       flex-shrink: 0;
+    }
+    .banner-meta-pills .chip {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
     }
 
     /* ==========================================================================
@@ -322,7 +327,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-rows: repeat(2, minmax(0, 1fr));
-      gap: 8px;
+      gap: 12px;
       overflow: hidden;
       min-width: 0;
       width: 100%;
@@ -332,13 +337,13 @@
     .formula-card {
       background: var(--canvas);
       border: 1px solid var(--hairline);
-      border-radius: var(--r-lg);
-      padding: 10px 14px;
+      border-radius: var(--r-xl);
+      padding: 14px 18px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       box-shadow: var(--sh-sm);
-      transition: all 0.15s var(--ease);
+      transition: all 0.18s var(--ease);
       position: relative;
       cursor: pointer;
       min-width: 0;
@@ -349,25 +354,25 @@
     .formula-card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: var(--sh-md);
+      box-shadow: 0 8px 24px rgba(104, 104, 247, 0.14);
     }
 
     .card-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 6px;
-      margin-bottom: 2px;
+      gap: 8px;
+      margin-bottom: 4px;
       min-width: 0;
       width: 100%;
     }
 
     .card-formula-code {
       font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 11.5px;
+      font-weight: 800;
       letter-spacing: 0.5px;
-      padding: 1.5px 6px;
+      padding: 2.5px 8px;
       border-radius: var(--r-xs);
       white-space: nowrap;
       flex-shrink: 0;
@@ -381,21 +386,21 @@
 
     .card-sla-badge {
       font-family: var(--font-mono);
-      font-size: 10.5px;
+      font-size: 11.5px;
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 700;
       white-space: nowrap;
       flex-shrink: 0;
     }
 
     .card-title {
       font-family: var(--font-display);
-      font-size: 13.5px;
-      font-weight: 700;
+      font-size: 15.5px;
+      font-weight: 800;
       color: var(--ink);
-      letter-spacing: -0.2px;
+      letter-spacing: -0.3px;
       line-height: 1.25;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       min-width: 0;
       white-space: nowrap;
       overflow: hidden;
@@ -406,13 +411,13 @@
     .card-math-box {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
-      border-radius: var(--r-sm);
-      padding: 4px 10px 4px 12px;
-      margin-bottom: 4px;
+      border-radius: var(--r-md);
+      padding: 6px 14px 6px 16px;
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 38px;
+      min-height: 48px;
       max-width: 100%;
       overflow-x: auto;
       overflow-y: hidden;
@@ -428,25 +433,25 @@
       left: 0;
       top: 0;
       bottom: 0;
-      width: 3.5px;
+      width: 4px;
       background: linear-gradient(180deg, #6868f7 0%, #a855f7 50%, #ffa340 100%);
-      border-top-left-radius: var(--r-sm);
-      border-bottom-left-radius: var(--r-sm);
+      border-top-left-radius: var(--r-md);
+      border-bottom-left-radius: var(--r-md);
     }
     .card-math-box .katex {
-      font-size: 0.94rem;
+      font-size: 1.12rem;
       color: var(--ink);
       white-space: nowrap;
     }
 
-    /* Plain English Description */
+    /* Plain English Description - Rich & Fills Space */
     .card-desc {
-      font-size: 11.5px;
+      font-size: 12.5px;
       color: var(--body);
-      line-height: 1.35;
-      margin-bottom: 4px;
+      line-height: 1.45;
+      margin-bottom: 6px;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
       min-width: 0;
@@ -457,48 +462,49 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 6px;
-      padding-top: 5px;
+      gap: 8px;
+      padding-top: 8px;
       border-top: 1px solid var(--hairline);
       min-width: 0;
       width: 100%;
       box-sizing: border-box;
+      margin-top: auto;
     }
 
     .card-params-group {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
       min-width: 0;
       overflow: hidden;
     }
 
     .param-pill {
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
-      padding: 1.5px 5px;
-      border-radius: 4px;
+      padding: 2.5px 7px;
+      border-radius: 5px;
       background: var(--surface-strong);
       color: var(--ink);
       display: inline-flex;
       align-items: center;
-      gap: 3px;
+      gap: 4px;
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .param-pill strong { color: var(--accent); font-family: var(--font-mono); }
+    .param-pill strong { color: var(--accent); font-family: var(--font-mono); font-weight: 700; }
 
     .card-footer-action {
       flex-shrink: 0;
-      font-size: 10.5px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--accent);
       background: var(--accent-tint);
-      padding: 2px 6px;
+      padding: 3.5px 9px;
       border-radius: var(--r-xs);
       display: inline-flex;
       align-items: center;
-      gap: 2px;
+      gap: 3px;
       white-space: nowrap;
       transition: all 0.15s var(--ease);
     }
@@ -514,9 +520,10 @@
       flex: 1;
       height: 100%;
       display: none;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 12px;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
       overflow: hidden;
+      padding-bottom: 2px;
     }
 
     /* Left Column: Interactive Real-Time Simulator */
@@ -524,7 +531,7 @@
       background: #ffffff;
       border: 1px solid var(--hairline);
       border-radius: var(--r-xl);
-      padding: 12px 16px;
+      padding: 18px 22px;
       display: flex;
       flex-direction: column;
       box-shadow: var(--sh-md);
@@ -532,118 +539,148 @@
     }
 
     .sim-header {
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--hairline);
     }
     .sim-header h3 {
       font-family: var(--font-display);
-      font-size: 14.5px;
-      font-weight: 700;
+      font-size: 16.5px;
+      font-weight: 800;
       color: var(--ink);
       letter-spacing: -0.3px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
     .sim-header p {
-      font-size: 11.5px;
+      font-size: 12.5px;
       color: var(--muted);
-      margin-top: 1px;
+      margin-top: 3px;
+      line-height: 1.4;
     }
 
     .control-group {
-      margin-bottom: 6px;
+      margin-bottom: 14px;
     }
 
     .control-label-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2px;
+      margin-bottom: 6px;
     }
 
     .control-label-row label {
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13.5px;
+      font-weight: 700;
       color: var(--ink);
     }
 
     .control-val-badge {
       font-family: var(--font-mono);
-      font-size: 11.5px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 800;
       color: var(--accent);
       background: var(--accent-tint);
-      padding: 1.5px 6px;
+      padding: 2.5px 9px;
       border-radius: var(--r-xs);
     }
 
     /* Enhanced Range Slider with Gradient Track Fill */
     input[type="range"] {
       width: 100%;
-      height: 6px;
+      height: 9px;
       border-radius: 9999px;
-      background: #e9ecef;
+      background: #e2e8f0;
       outline: none;
       -webkit-appearance: none;
       cursor: pointer;
-      margin: 3px 0;
+      margin: 6px 0;
       transition: background 0.1s ease;
     }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background: #ffffff;
-      border: 3px solid var(--accent);
-      box-shadow: 0 1px 4px rgba(104, 104, 247, 0.4);
+      border: 3.5px solid var(--accent);
+      box-shadow: 0 2px 6px rgba(104, 104, 247, 0.45);
       cursor: pointer;
       transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), border-color 0.15s var(--ease);
     }
     input[type="range"]::-webkit-slider-thumb:hover {
       transform: scale(1.15);
       border-color: var(--orange);
-      box-shadow: 0 3px 8px rgba(255, 163, 64, 0.5);
+      box-shadow: 0 4px 10px rgba(255, 163, 64, 0.55);
     }
 
     .sim-worked-math {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
       border-radius: var(--r-md);
-      padding: 6px 10px;
-      margin-top: 6px;
-      font-size: 11px;
+      padding: 10px 14px;
+      margin-top: 10px;
+      font-size: 12.5px;
       color: var(--ink);
       font-family: var(--font-mono);
       word-break: break-all;
-      line-height: 1.35;
+      line-height: 1.5;
+    }
+
+    .sim-telemetry-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-md);
+      padding: 8px 12px;
+      margin-top: 10px;
+    }
+    .tel-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .tel-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+    }
+    .tel-val {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--ink);
     }
 
     .sim-result-card {
       background: linear-gradient(135deg, #ffffff 0%, var(--surface-subtle) 100%);
       border: 1.5px solid var(--accent);
-      border-radius: var(--r-md);
-      padding: 8px 12px;
-      margin-top: auto;
+      border-radius: var(--r-lg);
+      padding: 14px 20px;
+      margin-top: 12px;
       text-align: center;
       box-shadow: var(--sh-xs);
     }
 
     .sim-result-label {
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.9px;
       color: var(--muted);
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     .sim-result-number {
       font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 800;
+      font-size: 34px;
+      font-weight: 900;
       letter-spacing: -0.8px;
       color: var(--ink);
       line-height: 1.05;
@@ -651,10 +688,10 @@
 
     .sim-result-status {
       display: inline-block;
-      margin-top: 4px;
-      font-size: 11px;
+      margin-top: 6px;
+      font-size: 12px;
       font-weight: 700;
-      padding: 2px 8px;
+      padding: 3px 12px;
       border-radius: var(--r-pill);
     }
 
@@ -663,7 +700,7 @@
       background: var(--canvas);
       border: 1px solid var(--hairline);
       border-radius: var(--r-xl);
-      padding: 12px 18px;
+      padding: 18px 24px;
       display: flex;
       flex-direction: column;
       box-shadow: var(--sh-md);
@@ -674,31 +711,67 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--hairline);
+      gap: 16px;
     }
 
     .deepdive-title-group h2 {
       font-family: var(--font-display);
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 800;
       color: var(--ink);
       letter-spacing: -0.4px;
-      margin-bottom: 1px;
+      margin-bottom: 2px;
     }
 
     .deepdive-title-group p {
-      font-size: 11.5px;
+      font-size: 13px;
       color: var(--body);
+    }
+
+    /* Standardised Jinder Template Button */
+    .btn-back-grid {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: var(--r-md);
+      background: var(--ink);
+      color: #ffffff;
+      border: 1px solid var(--ink);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(21, 21, 49, 0.16);
+      transition: all 0.2s var(--ease);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-back-grid svg {
+      width: 15px;
+      height: 15px;
+      transition: transform 0.2s ease;
+    }
+    .btn-back-grid:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(104, 104, 247, 0.35);
+    }
+    .btn-back-grid:hover svg {
+      transform: translateX(-3px);
     }
 
     .large-math-stage {
       background: #fdfdfe;
       border: 1.5px solid #dcdcfe;
       border-radius: var(--r-md);
-      padding: 8px 14px;
-      margin-bottom: 8px;
+      padding: 14px 20px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -711,13 +784,13 @@
       left: 0;
       top: 0;
       bottom: 0;
-      width: 4px;
+      width: 4.5px;
       background: linear-gradient(180deg, #6868f7 0%, #a855f7 50%, #ffa340 100%);
       border-top-left-radius: var(--r-md);
       border-bottom-left-radius: var(--r-md);
     }
     .large-math-stage .katex {
-      font-size: 1.25rem;
+      font-size: 1.45rem;
       color: var(--ink-deep);
     }
 
@@ -725,24 +798,24 @@
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
       border-radius: var(--r-md);
-      padding: 8px 12px;
-      margin-bottom: 8px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
     }
 
     .spec-block h3 {
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 13.5px;
+      font-weight: 800;
       color: var(--ink);
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .spec-block p {
-      font-size: 11.5px;
+      font-size: 12.5px;
       color: var(--body);
-      line-height: 1.35;
+      line-height: 1.45;
     }
 
     /* Redesigned High-Clarity Variable Table */
@@ -750,8 +823,8 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      font-size: 11.5px;
-      margin-top: 4px;
+      font-size: 12.5px;
+      margin-top: 6px;
       border: 1px solid var(--hairline);
       border-radius: var(--r-md);
       overflow: hidden;
@@ -759,17 +832,17 @@
     }
     .variable-table th {
       text-align: left;
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #495057;
-      padding: 5px 8px;
+      letter-spacing: 0.6px;
+      color: #334155;
+      padding: 7px 12px;
       background: var(--surface-strong);
       border-bottom: 1px solid var(--hairline);
     }
     .variable-table td {
-      padding: 4px 8px;
+      padding: 6px 12px;
       border-bottom: 1px solid var(--hairline);
       color: var(--body);
       vertical-align: middle;
@@ -778,7 +851,7 @@
       border-bottom: none;
     }
     .variable-table tr:hover td {
-      background: rgba(104, 104, 247, 0.03);
+      background: rgba(104, 104, 247, 0.04);
     }
     
     .var-symbol-badge {
@@ -788,23 +861,23 @@
       background: var(--accent-tint);
       border: 1px solid rgba(104, 104, 247, 0.25);
       border-radius: var(--r-xs);
-      padding: 2px 6px;
+      padding: 3px 8px;
       color: var(--primary);
-      font-size: 11.5px;
-      min-width: 46px;
+      font-size: 12px;
+      min-width: 48px;
       box-shadow: 0 1px 2px rgba(104, 104, 247, 0.06);
     }
     .var-symbol-badge .katex {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
     }
 
     .val-badge {
       display: inline-flex;
       align-items: center;
       font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 600;
-      padding: 2px 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 2.5px 7px;
       border-radius: var(--r-xs);
       background: #f8fafc;
       border: 1px solid #cbd5e1;
@@ -818,51 +891,39 @@
     }
 
     /* =========================================================================
-       RESPONSIVE ADJUSTMENTS FOR 14-INCH LAPTOPS (< 1500px width or < 820px height)
+       BALANCED LAPTOP RESPONSIVENESS (Zero Cramping, Maintains Large Fonts)
        ========================================================================= */
     @media (max-width: 1520px) {
-      .tab-pill { padding: 4px 7px; font-size: 11.5px; }
+      .tab-pill { padding: 5px 9px; font-size: 12px; }
       .portal-sub { display: none; }
-      .nav-right .chip:nth-child(2) { display: none; }
     }
 
     @media (max-height: 800px) {
-      header.top-nav { height: 46px; padding: 0 12px; }
-      .logo-mark { width: 24px; height: 24px; }
-      .logo-word { font-size: 16px; }
-      .portal-title { font-size: 11.5px; }
-      .tab-pill { font-size: 11px; padding: 3px 6px; }
-      
+      header.top-nav { height: 50px; padding: 0 14px; }
       main.viewport-content {
-        height: calc(100vh - 46px);
-        max-height: calc(100vh - 46px);
-        padding: 5px 10px 6px;
+        height: calc(100vh - 50px);
+        max-height: calc(100vh - 50px);
+        padding: 8px 14px 10px;
       }
-      .view-banner { margin-bottom: 3px; }
-      .banner-title-group h1 { font-size: 14px; }
-      .banner-title-group p { font-size: 10.5px; }
-      .banner-meta-pills .chip { font-size: 10px; padding: 2px 6px; }
-
-      .grid-view-pane { gap: 6px; }
-      .formula-card { padding: 7px 10px; border-radius: var(--r-md); }
-      .card-title { font-size: 12px; margin-bottom: 2px; }
-      .card-math-box { min-height: 32px; padding: 2px 6px 2px 8px; margin-bottom: 2px; }
-      .card-math-box .katex { font-size: 0.85rem; }
-      .card-desc { font-size: 10.5px; line-height: 1.25; margin-bottom: 2px; }
-      .card-footer-wrap { padding-top: 3px; }
-      .param-pill { font-size: 9px; padding: 1px 4px; }
-      .card-footer-action { font-size: 9.5px; padding: 1px 5px; }
-
-      .sim-panel { padding: 10px 12px; }
-      .sim-header { margin-bottom: 4px; padding-bottom: 4px; }
-      .sim-header h3 { font-size: 13.5px; }
-      .control-group { margin-bottom: 4px; }
-      .sim-result-card { padding: 6px 10px; }
-      .sim-result-number { font-size: 22px; }
-
-      .deepdive-card { padding: 10px 14px; }
-      .large-math-stage { padding: 6px 10px; margin-bottom: 6px; }
-      .large-math-stage .katex { font-size: 1.1rem; }
+      .view-banner { margin-bottom: 6px; }
+      .banner-title-group h1 { font-size: 17px; }
+      .banner-title-group p { font-size: 12px; }
+      .grid-view-pane { gap: 8px; }
+      .formula-card { padding: 10px 14px; }
+      .card-title { font-size: 14px; margin-bottom: 3px; }
+      .card-math-box { min-height: 40px; padding: 4px 10px; margin-bottom: 4px; }
+      .card-math-box .katex { font-size: 1.02rem; }
+      .card-desc { font-size: 12px; line-height: 1.35; -webkit-line-clamp: 2; margin-bottom: 4px; }
+      .card-footer-wrap { padding-top: 5px; }
+      .param-pill { font-size: 10px; padding: 2px 5px; }
+      
+      .sim-panel { padding: 12px 16px; }
+      .control-group { margin-bottom: 6px; }
+      .deepdive-card { padding: 12px 18px; }
+      .large-math-stage { padding: 8px 14px; margin-bottom: 8px; }
+      .large-math-stage .katex { font-size: 1.28rem; }
+      .spec-block { padding: 8px 12px; margin-bottom: 8px; }
+      .variable-table td { padding: 4px 8px; font-size: 11.5px; }
     }
   </style>
 </head>
@@ -1118,6 +1179,12 @@
             <!-- Numerical worked example -->
           </div>
 
+          <div class="sim-telemetry-strip">
+            <div class="tel-item"><span class="tel-lbl">Domain</span><span class="tel-val">[0.0, 100.0]</span></div>
+            <div class="tel-item"><span class="tel-lbl">Latency</span><span class="tel-val">&lt; 1.5 ms SLA</span></div>
+            <div class="tel-item"><span class="tel-lbl">Zero-Drift</span><span class="tel-val">Closed-Form</span></div>
+          </div>
+
           <div class="sim-result-card">
             <div class="sim-result-label" id="simResultLabel">Calculated Canonical Score</div>
             <div class="sim-result-number" id="simResultVal">78.6%</div>
@@ -1133,8 +1200,12 @@
               <h2 id="ddTitle">Skill Match Frequency & Coverage (SMF)</h2>
               <p id="ddSubtitle">Weighted coverage of mandatory and preferred capabilities.</p>
             </div>
-            <button class="btn-portal" style="background: var(--surface-strong); color: var(--ink);" onclick="switchFormulaView('grid')">
-              ← Back to All 6 Formulas
+            <button class="btn-back-grid" onclick="switchFormulaView('grid')" title="Return to 6-Formula Grid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Back to All 6 Formulas</span>
             </button>
           </div>
 
@@ -1499,6 +1570,10 @@
           ],
           throwOnError: false
         });
+      }
+      const hash = window.location.hash.replace('#', '');
+      if (['f1','f2','f3','f4','f5','f6'].includes(hash)) {
+        switchFormulaView(hash);
       }
     });
   </script>
