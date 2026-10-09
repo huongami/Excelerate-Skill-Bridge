@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jinder — Technical Poster | Autonomous Capability Alignment Platform</title>
+  <title>Jinder — Technical Architecture Poster | MENTORME FUTURA REMIX HACKATHON 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
   <style>
     :root {
       --bg: #f8fafc;
-      --canvas: #ffffff;
       --card-bg: #ffffff;
       --card-border: #e2e8f0;
       --card-hover-border: #cbd5e1;
@@ -40,8 +39,8 @@
       --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
       --r-sm: 8px;
       --r-md: 12px;
-      --r-lg: 18px;
-      --r-xl: 24px;
+      --r-lg: 16px;
+      --r-xl: 20px;
       --r-pill: 9999px;
     }
 
@@ -60,7 +59,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 36px 44px;
+      padding: 30px 42px;
       position: relative;
     }
 
@@ -68,20 +67,20 @@
     .glow-1 {
       position: absolute;
       top: -120px;
-      left: 30%;
+      left: 25%;
       width: 1100px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(234, 88, 12, 0.04) 50%, transparent 70%);
+      height: 600px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.07) 0%, rgba(234, 88, 12, 0.04) 50%, transparent 70%);
       filter: blur(80px);
       pointer-events: none;
     }
     .glow-2 {
       position: absolute;
       bottom: -100px;
-      right: 10%;
+      right: 15%;
       width: 1000px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(5, 150, 105, 0.06) 0%, rgba(79, 70, 229, 0.05) 50%, transparent 70%);
+      height: 600px;
+      background: radial-gradient(circle, rgba(5, 150, 105, 0.05) 0%, rgba(124, 58, 237, 0.05) 50%, transparent 70%);
       filter: blur(90px);
       pointer-events: none;
     }
@@ -89,7 +88,6 @@
     .poster-canvas {
       width: 100%;
       height: 100%;
-      background: transparent;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -102,8 +100,8 @@
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: var(--r-xl);
-      padding: 34px 44px 30px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      padding: 26px 38px 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
       position: relative;
       overflow: hidden;
     }
@@ -114,14 +112,14 @@
       left: 0;
       right: 0;
       height: 5px;
-      background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 40%, #ea580c 80%, #059669 100%);
+      background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 35%, #ea580c 70%, #059669 100%);
     }
 
     .header-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .brand-wrap {
       display: flex;
@@ -129,17 +127,17 @@
       gap: 16px;
     }
     .brand-logo-svg {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.2);
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
     }
     .brand-text-block {
       display: flex;
       flex-direction: column;
     }
     .brand-title {
-      font-size: 38px;
+      font-size: 34px;
       font-weight: 900;
       letter-spacing: -1.2px;
       color: var(--ink);
@@ -147,10 +145,10 @@
     }
     .brand-title span { color: var(--accent); }
     .brand-tagline {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--muted);
-      font-weight: 600;
-      margin-top: 4px;
+      font-weight: 700;
+      margin-top: 3px;
       letter-spacing: 0.6px;
       text-transform: uppercase;
       font-family: var(--mono);
@@ -159,33 +157,44 @@
     .badges-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      gap: 12px;
     }
-    .header-badge {
-      font-size: 13.5px;
-      font-weight: 800;
+    .hackathon-pill {
       font-family: var(--mono);
-      padding: 8px 18px;
-      border-radius: var(--r-pill);
-      letter-spacing: 0.5px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
+      padding: 9px 22px;
+      border-radius: 9999px;
+      background: #fff7ed;
+      color: #c2410c;
+      border: 1.5px solid #fed7aa;
+      box-shadow: 0 2px 6px rgba(194, 65, 12, 0.08);
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
-    .badge-pitch { background: #fff7ed; color: #c2410c; border: 1.5px solid #fed7aa; }
-    .badge-cyan { background: #f0f9ff; color: #0284c7; border: 1.5px solid #bae6fd; }
-    .badge-purple { background: #f5f3ff; color: #7c3aed; border: 1.5px solid #ddd6fe; }
-    .badge-green { background: #ecfdf5; color: #059669; border: 1.5px solid #a7f3d0; }
+    .hackathon-subtitle-pill {
+      font-family: var(--mono);
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background: #eef2ff;
+      border: 1.5px solid #c7d2fe;
+      padding: 9px 22px;
+      border-radius: 9999px;
+      letter-spacing: 0.4px;
+      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.08);
+    }
 
     .header-main-title {
-      font-size: 41px;
+      font-size: 36px;
       font-weight: 900;
-      line-height: 1.18;
+      line-height: 1.15;
       letter-spacing: -1px;
       color: var(--ink);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
     .header-main-title em {
       font-style: normal;
@@ -193,21 +202,22 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .header-subtext {
-      font-size: 17.5px;
+      font-size: 16px;
       color: var(--ink-secondary);
-      line-height: 1.55;
+      line-height: 1.45;
       font-weight: 450;
-      max-width: 1380px;
+      max-width: 1450px;
     }
 
-    /* ---------- MAIN GRID BODY ---------- */
+    /* ---------- MAIN POSTER BODY (STRUCTURED TECHNICAL LAYOUT) ---------- */
     .poster-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin: 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin: 14px 0;
+      flex: 1;
+      justify-content: space-between;
     }
 
     /* Cards */
@@ -215,15 +225,11 @@
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: var(--r-lg);
-      padding: 24px 28px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      padding: 18px 22px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
       display: flex;
       flex-direction: column;
       position: relative;
-    }
-    .section-card.full-width {
-      grid-column: span 2;
-      padding: 22px 28px;
     }
 
     .card-head {
@@ -231,150 +237,233 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1.5px solid var(--hairline);
-      padding-bottom: 11px;
-      margin-bottom: 15px;
+      padding-bottom: 9px;
+      margin-bottom: 12px;
     }
     .card-head-title {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 19.5px;
+      gap: 9px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--ink);
-      letter-spacing: -0.4px;
+      letter-spacing: -0.3px;
     }
     .card-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
       background: var(--accent-tint);
       color: var(--accent);
       display: grid;
       place-items: center;
-      font-size: 14.5px;
+      font-size: 13.5px;
       font-weight: 800;
       font-family: var(--mono);
       border: 1px solid var(--accent-border);
     }
     .card-tag {
       font-family: var(--mono);
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       background: var(--surface-muted);
-      padding: 3px 10px;
-      border-radius: 6px;
+      padding: 3px 9px;
+      border-radius: 5px;
       border: 1px solid var(--hairline);
     }
 
-    /* Section 1: Problem & Solution */
-    .metric-callouts {
+    /* ROW 1: ARCHITECTURE STACK (LEFT) + DATA MODELING ERD (RIGHT) */
+    .row-split {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .metric-box {
-      background: var(--surface-muted);
-      border-radius: var(--r-md);
-      padding: 12px 14px;
-      border: 1px solid #e2e8f0;
-      text-align: center;
-    }
-    .metric-num {
-      font-family: var(--mono);
-      font-size: 27px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      margin-bottom: 3px;
-    }
-    .metric-num.rose { color: var(--rose); }
-    .metric-num.orange { color: var(--orange); }
-    .metric-num.green { color: var(--green); }
-    .metric-label {
-      font-size: 11.5px;
-      color: var(--muted);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
-    .callout-text {
-      font-size: 14px;
-      line-height: 1.55;
-      color: var(--ink-secondary);
+    /* Architecture 5-Layer Stack */
+    .arch-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
     }
-    .callout-text strong { color: var(--ink); font-weight: 700; }
-
-    /* Section 2: Medallion Pipeline */
-    .medallion-pipeline {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .layer-box {
-      border-radius: var(--r-md);
-      padding: 14px 16px;
+    .arch-layer {
+      background: #f8fafc;
       border: 1px solid #e2e8f0;
-      position: relative;
+      border-left: 4px solid var(--accent);
+      border-radius: var(--r-sm);
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .layer-bronze { background: #fffaf5; border-color: #fed7aa; }
-    .layer-silver { background: #f8fafc; border-color: #cbd5e1; }
-    .layer-gold { background: #f0fdf4; border-color: #bbf7d0; }
-    .layer-tag {
-      font-family: var(--mono);
-      font-size: 10.5px;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 7px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
+    .arch-layer.l2 { border-left-color: #0284c7; background: #f0f9ff; }
+    .arch-layer.l3 { border-left-color: #f59e0b; background: #fffaf5; }
+    .arch-layer.l4 { border-left-color: #059669; background: #f0fdf4; }
+    .arch-layer.l5 { border-left-color: #7c3aed; background: #f5f3ff; }
+
+    .layer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
-    .layer-bronze .layer-tag { background: #ffedd5; color: #9a3412; }
-    .layer-silver .layer-tag { background: #e2e8f0; color: #1e293b; }
-    .layer-gold .layer-tag { background: #dcfce7; color: #166534; }
-    .layer-title {
-      font-size: 14.5px;
+    .layer-name {
+      font-size: 13.5px;
       font-weight: 800;
       color: var(--ink);
-      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .layer-list {
-      list-style: none;
+    .layer-code {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .layer-desc {
       font-size: 12px;
       color: var(--ink-secondary);
-      line-height: 1.5;
+      line-height: 1.35;
     }
-    .layer-list li {
-      margin-bottom: 4px;
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-    }
-    .layer-list li::before {
-      content: '✔';
-      color: var(--accent);
+    .layer-badge-box {
+      font-family: var(--mono);
       font-size: 10.5px;
-      margin-top: 1px;
+      font-weight: 700;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: var(--ink);
+      white-space: nowrap;
     }
 
-    /* Section 3: The 6 Formulas Table / Grid */
+    /* Data Modeling 22-Tables Overview */
+    .model-groups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+    .model-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--r-sm);
+      padding: 10px 12px;
+    }
+    .model-box-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .model-pill {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      font-weight: 800;
+      background: var(--accent-tint);
+      color: var(--accent);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .model-list {
+      list-style: none;
+      font-size: 11.5px;
+      color: var(--ink-secondary);
+      line-height: 1.45;
+    }
+    .model-list li {
+      margin-bottom: 3px;
+    }
+    .model-list code {
+      font-family: var(--mono);
+      font-weight: 700;
+      color: var(--ink);
+      background: #ffffff;
+      padding: 1px 4px;
+      border-radius: 3px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* ROW 2: END-TO-END DATA FLOW PIPELINE (5 STAGES) */
+    .flow-pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      position: relative;
+    }
+    .flow-step {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--r-md);
+      padding: 13px 14px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .flow-step::after {
+      content: '➔';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 900;
+      z-index: 5;
+    }
+    .flow-step:last-child::after {
+      display: none;
+    }
+    .flow-step-num {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background: var(--accent-tint);
+      padding: 2px 7px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 6px;
+      width: fit-content;
+    }
+    .flow-step-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+    .flow-step-desc {
+      font-size: 11.5px;
+      color: var(--ink-secondary);
+      line-height: 1.4;
+    }
+    .flow-step-meta {
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px solid #e2e8f0;
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ROW 3: THE 6 CANONICAL FORMULAS (FULL WIDTH) */
     .formulas-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 12px;
     }
     .formula-mini-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: var(--r-md);
-      padding: 13px 15px;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+      padding: 11px 13px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.02);
       border-left: 4px solid var(--accent);
       display: flex;
       flex-direction: column;
@@ -390,13 +479,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
     .f-code {
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
-      padding: 2px 7px;
+      padding: 1px 6px;
       border-radius: 4px;
       background: var(--surface-muted);
       color: var(--ink);
@@ -404,85 +493,81 @@
     }
     .f-sla {
       font-family: var(--mono);
-      font-size: 10.5px;
+      font-size: 10px;
       color: var(--green);
       font-weight: 700;
       background: #ecfdf5;
-      padding: 2px 6px;
+      padding: 1px 5px;
       border-radius: 4px;
       border: 1px solid #a7f3d0;
     }
     .f-name {
-      font-size: 13.5px;
+      font-size: 12.8px;
       font-weight: 800;
       color: var(--ink);
-      margin-bottom: 6px;
-      line-height: 1.25;
+      margin-bottom: 5px;
+      line-height: 1.2;
     }
     .f-math-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 7px 10px;
-      margin-bottom: 6px;
-      font-size: 12.5px;
+      border-radius: 5px;
+      padding: 5px 8px;
+      margin-bottom: 5px;
+      font-size: 12px;
       text-align: center;
-      min-height: 42px;
+      min-height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--ink);
     }
     .f-desc {
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--muted);
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
-    /* Section 4: Dual Experience Showcase */
+    /* ROW 4: DUAL EXPERIENCE (LEFT) + ENTERPRISE SLA & ATS INTEGRATION (RIGHT) */
     .dual-showcase {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 12px;
     }
     .portal-preview-card {
-      background: #ffffff;
+      background: #f8fafc;
       border: 1px solid var(--card-border);
-      border-radius: var(--r-md);
-      padding: 22px 24px;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
+      border-radius: var(--r-sm);
+      padding: 13px 15px;
     }
-    .portal-preview-card.talent { border-top: 4px solid var(--accent); }
-    .portal-preview-card.employer { border-top: 4px solid var(--orange); }
+    .portal-preview-card.talent { border-top: 3px solid var(--accent); }
+    .portal-preview-card.employer { border-top: 3px solid var(--orange); }
     .portal-label {
-      font-size: 12px;
+      font-size: 10.5px;
       font-weight: 800;
       font-family: var(--mono);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 6px;
+      margin-bottom: 3px;
     }
     .talent .portal-label { color: var(--accent); }
     .employer .portal-label { color: var(--orange); }
     .portal-name {
-      font-size: 16.5px;
+      font-size: 13.5px;
       font-weight: 800;
       color: var(--ink);
-      margin-bottom: 12px;
+      margin-bottom: 7px;
     }
     .feature-bullets {
       list-style: none;
-      font-size: 13px;
+      font-size: 11.5px;
       color: var(--ink-secondary);
-      line-height: 1.55;
+      line-height: 1.45;
     }
     .feature-bullets li {
-      margin-bottom: 9px;
+      margin-bottom: 5px;
       position: relative;
-      padding-left: 16px;
+      padding-left: 14px;
     }
     .feature-bullets li::before {
       content: '▸';
@@ -492,32 +577,30 @@
       color: var(--accent);
       font-weight: 900;
     }
-    .portal-preview-card.employer .feature-bullets li::before {
-      color: var(--orange);
-    }
+    .portal-preview-card.employer .feature-bullets li::before { color: var(--orange); }
     .feature-bullets li strong { color: var(--ink); font-weight: 700; }
 
-    /* Section 5: Technical Pillars & Commercial Pitch */
+    /* Production SLA & ATS Webhooks */
     .tech-pills-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 8px;
     }
     .tech-pill-box {
       background: var(--surface-muted);
       border: 1px solid #e2e8f0;
-      border-radius: var(--r-md);
-      padding: 13px 10px;
+      border-radius: var(--r-sm);
+      padding: 10px 6px;
       text-align: center;
     }
     .tech-pill-val {
       font-family: var(--mono);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 900;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
     .tech-pill-lbl {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--muted);
       font-weight: 700;
       text-transform: uppercase;
@@ -527,27 +610,24 @@
     .commercial-pitch-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 14px;
+      gap: 9px;
+      margin-top: 10px;
     }
     .pitch-item {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: var(--r-md);
-      padding: 15px 18px;
-      font-size: 12.8px;
-      line-height: 1.55;
+      border-radius: var(--r-sm);
+      padding: 9px 12px;
+      font-size: 11.5px;
+      line-height: 1.4;
       color: var(--ink-secondary);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
     }
     .pitch-item strong {
       color: var(--ink);
-      font-size: 13.8px;
+      font-size: 12px;
       font-weight: 800;
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
     }
 
     /* ---------- FOOTER BAR (LIGHT THEME) ---------- */
@@ -555,46 +635,46 @@
       background: #ffffff;
       border: 1px solid #cbd5e1;
       border-radius: var(--r-xl);
-      padding: 20px 44px;
+      padding: 16px 36px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       color: var(--ink);
-      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
     }
     .footer-left {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
     .footer-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 800;
       color: var(--ink);
       letter-spacing: -0.3px;
     }
     .footer-subtitle {
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--muted);
-      font-weight: 500;
+      font-weight: 600;
     }
     .footer-links {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
     }
     .footer-badge-box {
       background: #f8fafc;
       border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      padding: 8px 16px;
+      border-radius: 6px;
+      padding: 6px 12px;
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--ink-secondary);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
     .footer-badge-box span { color: var(--accent); }
   </style>
@@ -606,7 +686,7 @@
 
   <div class="poster-canvas">
 
-    <!-- HEADER (100% LIGHT THEME) -->
+    <!-- HEADER: MENTORME FUTURA REMIX HACKATHON 2026 -->
     <header class="poster-header">
       <div class="header-top">
         <div class="brand-wrap">
@@ -624,108 +704,206 @@
         </div>
 
         <div class="badges-row">
-          <span class="header-badge badge-pitch">★ MENTORME FUTURA REMIX HACKATHON 2026</span>
-          <span class="header-badge badge-cyan">Australia’s National AI Vibe Coding Hackathon</span>
-          <span class="header-badge badge-purple">Zero-PII Privacy (APP 1-13)</span>
-          <span class="header-badge badge-green">&lt; 5ms Deterministic SLA</span>
+          <span class="hackathon-pill">★ MENTORME FUTURA REMIX HACKATHON 2026</span>
+          <span class="hackathon-subtitle-pill">Australia’s National AI Vibe Coding Hackathon</span>
         </div>
       </div>
 
       <h1 class="header-main-title">
-        Bridging Skilled Migration & Enterprise ICT Hiring Via <em>Deterministic Continuous Mathematics</em>
+        Enterprise Architecture, Data Modeling & <em>Algorithmic Alignment Engine</em>
       </h1>
       <p class="header-subtext">
-        Eliminating the overseas "resume vocabulary penalty" for Australian visa holders through automated ANZSCO taxonomy harmonization, zero-PII merit scoring, and explainable algebraic ranking.
+        High-concurrency SQLite3 WAL persistence (22 tables), 5-layer stateless architecture, zero-PII relational modeling, and 6 canonical continuous algebraic formulations eliminating the overseas resume penalty in Australian ICT hiring.
       </p>
     </header>
 
-    <!-- MAIN BODY GRID (LIGHT THEME) -->
+    <!-- MAIN BODY -->
     <main class="poster-body">
 
-      <!-- SECTION 1: THE CRISIS & PROMOTIONAL OPPORTUNITY -->
+      <!-- SECTION 1 & 2: ARCHITECTURE STACK & RELATIONAL DATA MODELING (SPLIT 2 COLUMNS) -->
+      <div class="row-split">
+
+        <!-- 1. SYSTEM ARCHITECTURE & 5-LAYER STACK -->
+        <section class="section-card">
+          <div class="card-head">
+            <div class="card-head-title">
+              <span class="card-icon">1</span>
+              System Architecture & The 5-Layer Stack
+            </div>
+            <span class="card-tag">Tiered System Design</span>
+          </div>
+
+          <div class="arch-stack">
+            <div class="arch-layer">
+              <div class="layer-info">
+                <div class="layer-name">Layer 1 • Web Client SPA <span class="layer-code">jinder_frontend/app</span></div>
+                <div class="layer-desc">Native ES6 SPA, zero build step. In-memory session token, unified API bridge (<code style="font-family:var(--mono);">js/api/index.js</code>).</div>
+              </div>
+              <span class="layer-badge-box">Single-Page App</span>
+            </div>
+
+            <div class="arch-layer l2">
+              <div class="layer-info">
+                <div class="layer-name">Layer 2 • Stateless REST API <span class="layer-code">jinder_platform (Port 8095)</span></div>
+                <div class="layer-desc">Python 3.11 HTTP daemon. Role guard (<code style="font-family:var(--mono);">candidate</code> vs <code style="font-family:var(--mono);">recruiter</code>), zero state per request.</div>
+              </div>
+              <span class="layer-badge-box">Stateless Daemon</span>
+            </div>
+
+            <div class="arch-layer l3">
+              <div class="layer-info">
+                <div class="layer-name">Layer 3 • Ingestion & In-Memory Bridge <span class="layer-code">engine_bridge.py</span></div>
+                <div class="layer-desc">Transforms relational database records into vector dictionaries. Zero persistent scores stored.</div>
+              </div>
+              <span class="layer-badge-box">On-Read Scoring</span>
+            </div>
+
+            <div class="arch-layer l4">
+              <div class="layer-info">
+                <div class="layer-name">Layer 4 • Relational Persistence <span class="layer-code">var/jinder.db (SQLite WAL)</span></div>
+                <div class="layer-desc">22 normalized tables, foreign keys active. Sub-millisecond ACID transactions, strict event audit ledger.</div>
+              </div>
+              <span class="layer-badge-box">SQLite3 WAL Mode</span>
+            </div>
+
+            <div class="arch-layer l5">
+              <div class="layer-info">
+                <div class="layer-name">Layer 5 • Intelligence Engine <span class="layer-code">6 Canonical Formulas</span></div>
+                <div class="layer-desc">ABS ANZSCO 2026 taxonomy DAG (172 skills, 53 occupations). ASD-STE100 certified algebraic determinism.</div>
+              </div>
+              <span class="layer-badge-box">100% Deterministic</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. DATA MODELING & CORE RELATIONAL SCHEMA -->
+        <section class="section-card">
+          <div class="card-head">
+            <div class="card-head-title">
+              <span class="card-icon">2</span>
+              Data Modeling: 22 Relational Tables (Schema V2)
+            </div>
+            <span class="card-tag">Relational ERD • Zero-PII</span>
+          </div>
+
+          <div class="model-groups">
+            <div class="model-box">
+              <div class="model-box-title">
+                Accounts & Profiles (1:1)
+                <span class="model-pill">4 Tables</span>
+              </div>
+              <ul class="model-list">
+                <li><code>users</code>: Unified accounts (candidate / recruiter), scrypt hash, unique alias.</li>
+                <li><code>profiles</code>: Private talent data, JSON skills, encrypted evidence CV lines.</li>
+                <li><code>sessions</code>: Key = SHA-256(token). Never raw.</li>
+                <li><code>plans</code>: Basic vs Premium employer tiers.</li>
+              </ul>
+            </div>
+
+            <div class="model-box">
+              <div class="model-box-title">
+                Taxonomy & Harmonization
+                <span class="model-pill">3 Tables</span>
+              </div>
+              <ul class="model-list">
+                <li><code>translated_skills</code>: Cross-border title mappings with confidence & evidence.</li>
+                <li><code>cv_files</code>: Encrypted uploads, air-gapped.</li>
+                <li><code>parses</code>: Thread-pool parsing state ledger.</li>
+              </ul>
+            </div>
+
+            <div class="model-box">
+              <div class="model-box-title">
+                Jobs & Ordered Skills
+                <span class="model-pill">2 Tables</span>
+              </div>
+              <ul class="model-list">
+                <li><code>jobs</code>: Requisitions, salary bounds, ANZSCO occupation & work mode.</li>
+                <li><code>job_skills</code>: Ordered skill array, levels 1–5, mandatory vs preferred weights.</li>
+              </ul>
+            </div>
+
+            <div class="model-box">
+              <div class="model-box-title">
+                Hiring, History & Privacy
+                <span class="model-pill">13 Tables</span>
+              </div>
+              <ul class="model-list">
+                <li><code>applications</code>: UNIQUE(job, candidate), frozen JSON snapshot & match telemetry.</li>
+                <li><code>application_history</code>: Immutable status log.</li>
+                <li><code>application_slots</code>: UTC interview times.</li>
+                <li><code>events</code>, <code>notifications</code>, <code>email_outbox</code>.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ROW 2: END-TO-END DATA FLOW PIPELINE (FULL WIDTH) -->
       <section class="section-card">
-        <div class="card-head">
-          <div class="card-head-title">
-            <span class="card-icon">1</span>
-            Australian Skilled Migration Opportunity
-          </div>
-          <span class="card-tag">Market Gap & National ROI</span>
-        </div>
-
-        <div class="metric-callouts">
-          <div class="metric-box">
-            <div class="metric-num rose">42%</div>
-            <div class="metric-label">Australian ICT Talent Shortage</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-num orange">68%</div>
-            <div class="metric-label">Migrant Underemployment Rate</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-num green">$4.8B</div>
-            <div class="metric-label">Annual Economic Value Unlocked</div>
-          </div>
-        </div>
-
-        <p class="callout-text">
-          <strong>The Systemic Market Failure:</strong> Australian employers face severe ICT skill deficits, yet 68% of skilled migrants (visas 189, 190, 491) remain locked out due to legacy ATS keyword filters rejecting non-standard overseas titles (e.g. <em>"MIS Lead"</em> vs <em>"Data Specialist"</em>).
-          <br><br>
-          <strong>The Jinder Commercial Breakthrough:</strong> Real-time ontology alignment to the official <strong>ABS ANZSCO 2026</strong> taxonomy coupled with deterministic mathematical match algorithms, surfacing high-calibre verified talent with zero demographic bias.
-        </p>
-      </section>
-
-      <!-- SECTION 2: MEDALLION DATA ARCHITECTURE -->
-      <section class="section-card">
-        <div class="card-head">
-          <div class="card-head-title">
-            <span class="card-icon">2</span>
-            Medallion 3-Tier Enterprise Data Pipeline
-          </div>
-          <span class="card-tag">Enterprise Architecture</span>
-        </div>
-
-        <div class="medallion-pipeline">
-          <div class="layer-box layer-bronze">
-            <span class="layer-tag">Bronze Tier</span>
-            <div class="layer-title">Raw ATS Ingestion</div>
-            <ul class="layer-list">
-              <li>PDF, DOCX, & ATS payload intake</li>
-              <li>Boundary PII redaction firewall</li>
-              <li>Immutable SHA-256 audit ledger</li>
-              <li>AEST normalized stream queue</li>
-            </ul>
-          </div>
-
-          <div class="layer-box layer-silver">
-            <span class="layer-tag">Silver Tier</span>
-            <div class="layer-title">Semantic Graph</div>
-            <ul class="layer-list">
-              <li>ANZSCO 2026 ontology normalization</li>
-              <li>172 verified enterprise competencies</li>
-              <li>53 occupations & 20 specialisations</li>
-              <li>AQF Level 7-9 equivalency mapping</li>
-            </ul>
-          </div>
-
-          <div class="layer-box layer-gold">
-            <span class="layer-tag">Gold Tier</span>
-            <div class="layer-title">Zero-PII Match Graph</div>
-            <ul class="layer-list">
-              <li>High-throughput SQLite3 WAL engine</li>
-              <li>Gaussian Z-scores & Jaccard vectors</li>
-              <li>Statutory visa blocker verification</li>
-              <li>Sub-5ms instant recruiter shortlists</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 3: THE 6 CANONICAL MATHEMATICAL FORMULAS (FULL WIDTH) -->
-      <section class="section-card full-width">
         <div class="card-head">
           <div class="card-head-title">
             <span class="card-icon">3</span>
-            The 6 Canonical Algebraic Formulations — Intelligence Engine V2
+            End-to-End Data Flow & Zero-PII Privacy Projection Lifecycle
+          </div>
+          <span class="card-tag">Data Flow Architecture</span>
+        </div>
+
+        <div class="flow-pipeline">
+          <div class="flow-step">
+            <div>
+              <span class="flow-step-num">STAGE 01</span>
+              <div class="flow-step-title">Multimodal Ingest</div>
+              <div class="flow-step-desc">Talent uploads CV (PDF/DOCX) or employer posts JD. Size & type validated at boundary. Saved to air-gapped storage.</div>
+            </div>
+            <div class="flow-step-meta">ThreadPoolExecutor (2 Workers)</div>
+          </div>
+
+          <div class="flow-step">
+            <div>
+              <span class="flow-step-num">STAGE 02</span>
+              <div class="flow-step-title">Taxonomy Mapping</div>
+              <div class="flow-step-desc">Rule-based reader normalizes raw titles against official ABS ANZSCO 2026 graph (172 skills, AQF 7-9 equivalencies).</div>
+            </div>
+            <div class="flow-step-meta">Evidence Anchor & Confidence</div>
+          </div>
+
+          <div class="flow-step">
+            <div>
+              <span class="flow-step-num">STAGE 03</span>
+              <div class="flow-step-title">On-Read Math Engine</div>
+              <div class="flow-step-desc">On every feed or search request, engine dynamically executes Formulas F-01 to F-06. Scores are never written to disk.</div>
+            </div>
+            <div class="flow-step-meta">&lt; 5ms Deterministic Latency</div>
+          </div>
+
+          <div class="flow-step">
+            <div>
+              <span class="flow-step-num">STAGE 04</span>
+              <div class="flow-step-title">Zero-PII Projection</div>
+              <div class="flow-step-desc">Employer views candidate profiles masked as Australian wildlife personas (Silver Koala). Name & email redacted completely.</div>
+            </div>
+            <div class="flow-step-meta">APP 1-13 Privacy Allowlist</div>
+          </div>
+
+          <div class="flow-step">
+            <div>
+              <span class="flow-step-num">STAGE 05</span>
+              <div class="flow-step-title">Hiring State Machine</div>
+              <div class="flow-step-desc">Atomic database transaction records application, freezes profile snapshot, logs history, and dispatches slot notifications.</div>
+            </div>
+            <div class="flow-step-meta">ACID Concurrency & Audit Trail</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROW 3: THE 6 CANONICAL ALGEBRAIC FORMULATIONS (FULL WIDTH) -->
+      <section class="section-card">
+        <div class="card-head">
+          <div class="card-head-title">
+            <span class="card-icon">4</span>
+            The 6 Canonical Algebraic Formulations (Intelligence Engine V2)
           </div>
           <span class="card-tag">ASD-STE100 Certified • Sub-5ms SLA Determinism • Zero Hallucinations</span>
         </div>
@@ -811,87 +989,92 @@
         </div>
       </section>
 
-      <!-- SECTION 4: DUAL EXPERIENCE SHOWCASE -->
-      <section class="section-card">
-        <div class="card-head">
-          <div class="card-head-title">
-            <span class="card-icon">4</span>
-            Dual-Role Enterprise Portals
-          </div>
-          <span class="card-tag">Product Architecture</span>
-        </div>
+      <!-- ROW 4: DUAL EXPERIENCE (LEFT) + ENTERPRISE SLA & ATS INTEGRATION (RIGHT) -->
+      <div class="row-split">
 
-        <div class="dual-showcase">
-          <div class="portal-preview-card talent">
-            <div class="portal-label">Talent Flow • Candidate View</div>
-            <div class="portal-name">Interactive Radar & Match Transparency</div>
-            <ul class="feature-bullets">
-              <li><strong>Dynamic 5-Axis Capability Radar:</strong> Live SVG visualization comparing candidate strengths to employer benchmarks.</li>
-              <li><strong>Cross-Border Title Translation:</strong> Dissects overseas job mappings with explicit evidence citations and confidence scores.</li>
-              <li><strong>Predictive Wage Trajectory:</strong> Continuous salary projection index reflecting verified capability surplus.</li>
-            </ul>
+        <!-- 5. DUAL EXPERIENCE SHOWCASE -->
+        <section class="section-card">
+          <div class="card-head">
+            <div class="card-head-title">
+              <span class="card-icon">5</span>
+              Dual-Role Interaction Architecture
+            </div>
+            <span class="card-tag">Product Experience</span>
           </div>
 
-          <div class="portal-preview-card employer">
-            <div class="portal-label">Employer Flow • Recruiter View</div>
-            <div class="portal-name">Anonymized Wildlife Talent Cards</div>
-            <ul class="feature-bullets">
-              <li><strong>Zero-PII Wildlife Personas:</strong> Candidate profiles masked under Australian wildlife badges (e.g. <em>Silver Koala</em>, <em>Teal Heron</em>).</li>
-              <li><strong>Multi-Candidate Compare Tray:</strong> Side-by-side benchmarking of up to 4 shortlisted profiles across key criteria.</li>
-              <li><strong>Instant Telemetry Breakdown:</strong> Live audit of mandatory coverage vs statutory visa blockers before interview offer.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <div class="dual-showcase">
+            <div class="portal-preview-card talent">
+              <div class="portal-label">Talent View • Candidate Flow</div>
+              <div class="portal-name">Interactive Radar & Wage Upside</div>
+              <ul class="feature-bullets">
+                <li><strong>Dynamic 5-Axis Capability Radar:</strong> Live SVG visualization comparing candidate proficiencies against requisitions.</li>
+                <li><strong>Taxonomy Translation Transparency:</strong> Detailed breakdown of overseas title equivalence and verified evidence citations.</li>
+                <li><strong>Predictive Wage Trajectory:</strong> Continuous salary projection index reflecting verified capability surplus.</li>
+              </ul>
+            </div>
 
-      <!-- SECTION 5: COMMERCIAL ENTERPRISE INTEGRATION & PRODUCTION ARCHITECTURE -->
-      <section class="section-card">
-        <div class="card-head">
-          <div class="card-head-title">
-            <span class="card-icon">5</span>
-            Enterprise Production Architecture & Integration
+            <div class="portal-preview-card employer">
+              <div class="portal-label">Employer View • Recruiter Flow</div>
+              <div class="portal-name">Wildlife Personas & Compare Tray</div>
+              <ul class="feature-bullets">
+                <li><strong>Zero-PII Wildlife Personas:</strong> Candidate profiles masked under Australian wildlife personas (Silver Koala, Teal Heron).</li>
+                <li><strong>Multi-Candidate Compare Tray:</strong> Side-by-side benchmarking of up to 4 shortlisted profiles across mandatory skills.</li>
+                <li><strong>Statutory Blocker Telemetry:</strong> Live verification of visa rights and required qualifications before interview.</li>
+              </ul>
+            </div>
           </div>
-          <span class="card-tag">Commercial Technical Advantage</span>
-        </div>
+        </section>
 
-        <div class="tech-pills-row">
-          <div class="tech-pill-box">
-            <div class="tech-pill-val" style="color:var(--green);">&lt; 5ms</div>
-            <div class="tech-pill-lbl">Deterministic Match SLA</div>
+        <!-- 6. PRODUCTION SLA & ATS INTEGRATION -->
+        <section class="section-card">
+          <div class="card-head">
+            <div class="card-head-title">
+              <span class="card-icon">6</span>
+              Production SLAs & Turnkey Integration
+            </div>
+            <span class="card-tag">Enterprise Integration</span>
           </div>
-          <div class="tech-pill-box">
-            <div class="tech-pill-val" style="color:var(--accent);">Zero</div>
-            <div class="tech-pill-lbl">Vendor Lock-in</div>
-          </div>
-          <div class="tech-pill-box">
-            <div class="tech-pill-val" style="color:var(--orange);">100%</div>
-            <div class="tech-pill-lbl">Auditable Provenance</div>
-          </div>
-          <div class="tech-pill-box">
-            <div class="tech-pill-val" style="color:var(--purple);">APP 1-13</div>
-            <div class="tech-pill-lbl">Privacy Certified</div>
-          </div>
-        </div>
 
-        <div class="commercial-pitch-grid">
-          <div class="pitch-item">
-            <strong>Seamless ATS / HRIS Webhooks</strong>
-            Turnkey REST APIs compatible with Workday, SAP SuccessFactors, Greenhouse, and Lever for instant candidate sync.
+          <div class="tech-pills-row">
+            <div class="tech-pill-box">
+              <div class="tech-pill-val" style="color:var(--green);">&lt; 5ms</div>
+              <div class="tech-pill-lbl">Deterministic Match SLA</div>
+            </div>
+            <div class="tech-pill-box">
+              <div class="tech-pill-val" style="color:var(--accent);">Zero</div>
+              <div class="tech-pill-lbl">Vendor Lock-in</div>
+            </div>
+            <div class="tech-pill-box">
+              <div class="tech-pill-val" style="color:var(--orange);">100%</div>
+              <div class="tech-pill-lbl">Auditable Provenance</div>
+            </div>
+            <div class="tech-pill-box">
+              <div class="tech-pill-val" style="color:var(--purple);">APP 1-13</div>
+              <div class="tech-pill-lbl">Privacy Certified</div>
+            </div>
           </div>
-          <div class="pitch-item">
-            <strong>Sovereign Cloud & Security</strong>
-            Deployed in AWS Sydney <span style="white-space: nowrap;">(ap-southeast-2)</span> with zero external LLM dependencies, SOC2 alignment, and TLS 1.3 encryption.
+
+          <div class="commercial-pitch-grid">
+            <div class="pitch-item">
+              <strong>Seamless ATS / HRIS Webhooks</strong>
+              Turnkey REST APIs compatible with Workday, SAP SuccessFactors, Greenhouse, and Lever for instant synchronization.
+            </div>
+            <div class="pitch-item">
+              <strong>Sovereign Cloud & Security</strong>
+              Deployed in AWS Sydney <span style="white-space:nowrap;">(ap-southeast-2)</span> with zero external LLM dependencies, SOC2 alignment, and TLS 1.3 encryption.
+            </div>
+            <div class="pitch-item">
+              <strong>Complete Regulatory Explainability</strong>
+              ASD-STE100 certified mathematical derivations give enterprise legal & HR teams 100% transparent audit proof for hiring decisions.
+            </div>
+            <div class="pitch-item">
+              <strong>Predictable Compute Economics</strong>
+              Sub-millisecond algebraic scoring replaces costly GPU inference, cutting enterprise screening compute expenditure by 95%.
+            </div>
           </div>
-          <div class="pitch-item">
-            <strong>Complete Regulatory Explainability</strong>
-            ASD-STE100 certified mathematical derivations give enterprise legal & HR teams 100% transparent audit proof for hiring decisions.
-          </div>
-          <div class="pitch-item">
-            <strong>Predictable Compute Economics</strong>
-            Sub-millisecond algebraic scoring replaces costly GPU inference, cutting enterprise screening compute expenditure by 95%.
-          </div>
-        </div>
-      </section>
+        </section>
+
+      </div>
 
     </main>
 
@@ -913,7 +1096,10 @@
           <span>●</span> APP 1-13 Privacy Standard
         </div>
         <div class="footer-badge-box">
-          <span>●</span> Sovereign Cloud (ap-southeast-2)
+          <span>●</span> SQLite 3 WAL (22 Tables)
+        </div>
+        <div class="footer-badge-box">
+          <span>●</span> Sydney Cloud (ap-southeast-2)
         </div>
       </div>
     </footer>
