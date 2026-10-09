@@ -1,10 +1,10 @@
-# FUTURA REMIX HACKATHON â€” SKILL BRIDGE
+# FUTURA REMIX HACKATHON — SKILL BRIDGE
 
 ## MVP User Stories & Acceptance Criteria
 
 **Scope:** the must-have / should-have features committed for the hackathon build (Section 5.1 of the PRD), decomposed into implementation-sized user stories. Each story follows the standard "As a / I want / So that" format with testable acceptance criteria.
 
-**Actor note:** stories tagged **[CANDIDATE]** describe the core skill-translation work, generated once from the candidate's own profile. Stories tagged **[RECRUITER â€” inherits]** reuse that same output against a specific role, rather than re-parsing or re-translating anything.
+**Actor note:** stories tagged **[CANDIDATE]** describe the core skill-translation work, generated once from the candidate's own profile. Stories tagged **[RECRUITER — inherits]** reuse that same output against a specific role, rather than re-parsing or re-translating anything.
 
 **Story structure:** All items are user stories and use whole-number IDs. When a story is decomposed from another story, it is placed immediately after its predecessor and explicitly identifies that predecessor. The predecessor remains the broader product requirement; the following stories make it smaller and more precise for implementation and testing.
 
@@ -12,11 +12,11 @@
 
 # Epic: CV & Experience Understanding
 
-Before any translation or matching can happen, the system needs a reliable structured picture of who the candidate is and what they've done â€” even when their CV doesn't follow a standard local format. This epic is the foundation the other two epics depend on: if parsing is wrong or incomplete, every downstream skill match inherits that error.
+Before any translation or matching can happen, the system needs a reliable structured picture of who the candidate is and what they've done — even when their CV doesn't follow a standard local format. This epic is the foundation the other two epics depend on: if parsing is wrong or incomplete, every downstream skill match inherits that error.
 
 ## US-1 CV / Experience Parser [Must-have] [CANDIDATE]
 
-**As a candidate, I want to upload my CV or work history and have it automatically structured into a clear profile, so that I can see my experience the way the system â€” and eventually employers â€” will interpret it.**
+**As a candidate, I want to upload my CV or work history and have it automatically structured into a clear profile, so that I can see my experience the way the system — and eventually employers — will interpret it.**
 
 ### Acceptance Criteria
 - Given a candidate uploads a CV (PDF or DOCX), when parsing completes, then they see a structured summary of their roles, employers, durations, and responsibilities.
@@ -28,7 +28,7 @@ Before any translation or matching can happen, the system needs a reliable struc
 
 ## US-2 Upload CV [Must] [CANDIDATE]
 
-**Predecessor:** US-1 â€” CV / Experience Parser [Must-have] [CANDIDATE]
+**Predecessor:** US-1 — CV / Experience Parser [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** to upload my CV, **so that** Skill Bridge can begin building my structured profile.
 
@@ -44,7 +44,7 @@ Before any translation or matching can happen, the system needs a reliable struc
 
 ## US-3 Extract Work Experience Entries [Must] [CANDIDATE]
 
-**Predecessor:** US-1 â€” CV / Experience Parser [Must-have] [CANDIDATE]
+**Predecessor:** US-1 — CV / Experience Parser [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** my work-history entries extracted, **so that** I do not have to manually recreate my CV.
 
@@ -61,7 +61,7 @@ Before any translation or matching can happen, the system needs a reliable struc
 
 ## US-4 Structure Responsibilities by Role [Must] [CANDIDATE]
 
-**Predecessor:** US-1 â€” CV / Experience Parser [Must-have] [CANDIDATE]
+**Predecessor:** US-1 — CV / Experience Parser [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** responsibilities associated with the correct role, **so that** later skill claims are grounded in the right experience.
 
@@ -77,7 +77,7 @@ Before any translation or matching can happen, the system needs a reliable struc
 
 ## US-5 Flag Ambiguous or Missing Fields [Must] [CANDIDATE]
 
-**Predecessor:** US-1 â€” CV / Experience Parser [Must-have] [CANDIDATE]
+**Predecessor:** US-1 — CV / Experience Parser [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** unclear profile information identified, **so that** I can correct it before Skill Bridge interprets my experience.
 
@@ -93,7 +93,7 @@ Before any translation or matching can happen, the system needs a reliable struc
 
 ## US-6 Review and Correct Parsed Profile [Must] [CANDIDATE]
 
-**Predecessor:** US-1 â€” CV / Experience Parser [Must-have] [CANDIDATE]
+**Predecessor:** US-1 — CV / Experience Parser [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** to review and edit the parsed profile, **so that** translation uses information I have verified.
 
@@ -109,7 +109,7 @@ Before any translation or matching can happen, the system needs a reliable struc
 
 # Epic: Skill Translation
 
-This is the core value engine of Skill Bridge. It takes the structured profile from Epic 1 and answers the central product question: does this candidate's experience â€” regardless of country or industry of origin â€” actually translate into skills a local employer would recognise, and why? Every story here produces an explainable answer, generated once from the candidate's profile.
+This is the core value engine of Skill Bridge. It takes the structured profile from Epic 1 and answers the central product question: does this candidate's experience — regardless of country or industry of origin — actually translate into skills a local employer would recognise, and why? Every story here produces an explainable answer, generated once from the candidate's profile.
 
 ## US-7 Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
 
@@ -123,7 +123,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-8 Identify Competencies from Evidence [Must] [CANDIDATE]
 
-**Predecessor:** US-7 â€” Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
+**Predecessor:** US-7 — Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** competencies inferred from my verified responsibilities, **so that** my capability is represented beyond my job title.
 
@@ -139,7 +139,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-9 Translate Cross-Border Role Language [Must] [CANDIDATE]
 
-**Predecessor:** US-7 â€” Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
+**Predecessor:** US-7 — Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
 
 **As a** candidate with overseas experience, **I want** unfamiliar role language mapped to Australian-market terminology, **so that** local employers can understand the function I performed.
 
@@ -155,7 +155,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-10 Translate Skills into Local-Market Terms [Must] [CANDIDATE]
 
-**Predecessor:** US-7 â€” Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
+**Predecessor:** US-7 — Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** my evidence-backed competencies expressed using recognisable Australian-market skill terms, **so that** equivalent capability is not hidden by vocabulary differences.
 
@@ -171,7 +171,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-11 Detect Cross-Industry Transfer [Must] [CANDIDATE]
 
-**Predecessor:** US-7 â€” Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
+**Predecessor:** US-7 — Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
 
 **As a** candidate moving across industries, **I want** genuine transferable competencies identified, **so that** relevant capability is visible even when my previous industry differs from my target industry.
 
@@ -188,7 +188,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-12 Preserve Translation Provenance [Must] [CANDIDATE]
 
-**Predecessor:** US-7 â€” Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
+**Predecessor:** US-7 — Cross-Border + Cross-Industry Skill Translator [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** every translated skill traceable to my actual experience, **so that** I can understand and challenge the AI's interpretation.
 
@@ -215,7 +215,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-14 Generate Plain-Language Skill Explanation [Must] [CANDIDATE]
 
-**Predecessor:** US-13 â€” Transferable Skills Highlighter [Must-have] [CANDIDATE]
+**Predecessor:** US-13 — Transferable Skills Highlighter [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** a simple explanation for each transferable skill, **so that** I understand why Skill Bridge believes it transfers.
 
@@ -231,7 +231,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-15 Group Skills by Relevance [Must] [CANDIDATE]
 
-**Predecessor:** US-13 â€” Transferable Skills Highlighter [Must-have] [CANDIDATE]
+**Predecessor:** US-13 — Transferable Skills Highlighter [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** translated skills organised meaningfully, **so that** I can understand my strongest transferable areas without reading a flat list.
 
@@ -247,7 +247,7 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 ## US-16 Inspect Source Evidence [Must] [CANDIDATE]
 
-**Predecessor:** US-13 â€” Transferable Skills Highlighter [Must-have] [CANDIDATE]
+**Predecessor:** US-13 — Transferable Skills Highlighter [Must-have] [CANDIDATE]
 
 **As a** candidate, **I want** to inspect where a translated skill came from, **so that** I can verify the interpretation before employers use it.
 
@@ -260,20 +260,20 @@ This is the core value engine of Skill Bridge. It takes the structured profile f
 
 # Epic: Ranking & Human-Centred Decisioning
 
-Translating skills is only useful if a recruiter can quickly prioritise what matters and stay confidently in control of the final call. This epic takes the profile candidates already built for themselves in Epics 1â€“2 and applies it against a specific role â€” no story here re-parses a CV or re-runs translation; each one consumes, ranks, or presents output generated once, then adds the ranking and human review a hiring decision actually needs.
+Translating skills is only useful if a recruiter can quickly prioritise what matters and stay confidently in control of the final call. This epic takes the profile candidates already built for themselves in Epics 1–2 and applies it against a specific role — no story here re-parses a CV or re-runs translation; each one consumes, ranks, or presents output generated once, then adds the ranking and human review a hiring decision actually needs.
 
-## US-17 JD-Frequency Skill Ranking [Should-have] [RECRUITER â€” inherits]
+## US-17 JD-Frequency Skill Ranking [Should-have] [RECRUITER — inherits]
 
 **As a recruiter, I want the candidate's already-translated and highlighted skills ranked by how often they appear across similar job descriptions, so that I can prioritise reviewing the most in-demand skills first, without redoing any of the underlying analysis myself.**
 
 ### Acceptance Criteria
-- Given a candidate's existing translated skill profile (from US-1â€“US-13) and a set of sample job descriptions for the target role, when a skill appears across them, then the system displays how frequently that skill appears (e.g. "appears in 6 of 10 similar JDs").
+- Given a candidate's existing translated skill profile (from US-1–US-13) and a set of sample job descriptions for the target role, when a skill appears across them, then the system displays how frequently that skill appears (e.g. "appears in 6 of 10 similar JDs").
 - Given multiple matched skills, when displayed to the recruiter, then they are sorted from highest to lowest JD frequency by default.
 - Given the sample JD set is small (fewer than 5 JDs), when frequency is shown, then the system labels the ranking as "indicative" rather than presenting it as statistically robust.
 
-## US-18 Ingest Target Job Description(s) [Should] [RECRUITER â€” inherits]
+## US-18 Ingest Target Job Description(s) [Should] [RECRUITER — inherits]
 
-**Predecessor:** US-17 â€” JD-Frequency Skill Ranking [Should-have] [RECRUITER â€” inherits]
+**Predecessor:** US-17 — JD-Frequency Skill Ranking [Should-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** to provide a target JD and/or sample JDs, **so that** Skill Bridge can evaluate which skills are relevant to the role.
 
@@ -287,9 +287,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-19 Count Skill Frequency Across Similar JDs [Should] [RECRUITER â€” inherits]
+## US-19 Count Skill Frequency Across Similar JDs [Should] [RECRUITER — inherits]
 
-**Predecessor:** US-17 â€” JD-Frequency Skill Ranking [Should-have] [RECRUITER â€” inherits]
+**Predecessor:** US-17 — JD-Frequency Skill Ranking [Should-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** to know how frequently a skill appears across similar JDs, **so that** I can distinguish commonly requested skills from occasional ones.
 
@@ -303,9 +303,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-20 Rank Candidate Skills by JD Frequency [Should] [RECRUITER â€” inherits]
+## US-20 Rank Candidate Skills by JD Frequency [Should] [RECRUITER — inherits]
 
-**Predecessor:** US-17 â€” JD-Frequency Skill Ranking [Should-have] [RECRUITER â€” inherits]
+**Predecessor:** US-17 — JD-Frequency Skill Ranking [Should-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** matching candidate skills ordered by market/role frequency, **so that** I can review commonly requested skills first.
 
@@ -316,9 +316,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-21 Label Small-Sample Ranking [Should] [RECRUITER â€” inherits]
+## US-21 Label Small-Sample Ranking [Should] [RECRUITER — inherits]
 
-**Predecessor:** US-17 â€” JD-Frequency Skill Ranking [Should-have] [RECRUITER â€” inherits]
+**Predecessor:** US-17 — JD-Frequency Skill Ranking [Should-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** weak evidence clearly labelled, **so that** I do not mistake a tiny JD sample for robust market evidence.
 
@@ -339,7 +339,7 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ## US-23 Identify Expected Skills Without Candidate Evidence [Should] [CANDIDATE]
 
-**Predecessor:** US-22 â€” Honest Gap Flagging [Should-have] [CANDIDATE]
+**Predecessor:** US-22 — Honest Gap Flagging [Should-have] [CANDIDATE]
 
 **As a** candidate, **I want** expected target-role skills that lack evidence in my profile identified, **so that** I can distinguish genuine gaps from translation problems.
 
@@ -355,7 +355,7 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ## US-24 Explain Gaps Neutrally [Should] [CANDIDATE]
 
-**Predecessor:** US-22 â€” Honest Gap Flagging [Should-have] [CANDIDATE]
+**Predecessor:** US-22 — Honest Gap Flagging [Should-have] [CANDIDATE]
 
 **As a** candidate, **I want** gaps described neutrally, **so that** I can decide whether to provide evidence, upskill, or adjust expectations.
 
@@ -368,7 +368,7 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ## US-25 Confirm When No Major Gaps Are Found [Should] [CANDIDATE]
 
-**Predecessor:** US-22 â€” Honest Gap Flagging [Should-have] [CANDIDATE]
+**Predecessor:** US-22 — Honest Gap Flagging [Should-have] [CANDIDATE]
 
 **As a** candidate, **I want** explicit confirmation when no major gaps are identified, **so that** an empty screen is not ambiguous.
 
@@ -377,7 +377,7 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-26 Skill-Level Matching Rate [Must-have] [RECRUITER â€” inherits]
+## US-26 Skill-Level Matching Rate [Must-have] [RECRUITER — inherits]
 
 **As a recruiter, I want the candidate's already-translated skill profile shown against my specific role as a per-skill match rate, so that I can act directly on work already done during candidate discovery, without my hiring judgement being replaced by one opaque overall score.**
 
@@ -386,9 +386,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 - Given a completed match, when results are displayed, then each individual skill shows its own match rate or confidence indicator, tied to the justification already generated for the candidate in US-3.
 - Given a recruiter hovers or taps on a skill's match rate, when viewed, then the underlying reasoning (source experience + translation logic) is visible, reusing the same explanation the candidate already saw.
 
-## US-27 Compare Existing Candidate Skills with a Specific Role [Must] [RECRUITER â€” inherits]
+## US-27 Compare Existing Candidate Skills with a Specific Role [Must] [RECRUITER — inherits]
 
-**Predecessor:** US-26 â€” Skill-Level Matching Rate [Must-have] [RECRUITER â€” inherits]
+**Predecessor:** US-26 — Skill-Level Matching Rate [Must-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** the candidate's existing translated skills compared with my role, **so that** I can evaluate relevant capability without rerunning candidate analysis.
 
@@ -402,9 +402,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-28 Display Per-Skill Match Indicator [Must] [RECRUITER â€” inherits]
+## US-28 Display Per-Skill Match Indicator [Must] [RECRUITER — inherits]
 
-**Predecessor:** US-26 â€” Skill-Level Matching Rate [Must-have] [RECRUITER â€” inherits]
+**Predecessor:** US-26 — Skill-Level Matching Rate [Must-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** a match indicator for each relevant skill, **so that** I can see where evidence is stronger or weaker without receiving an automated verdict on the person.
 
@@ -415,9 +415,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-29 Reveal Match Reasoning [Must] [RECRUITER â€” inherits]
+## US-29 Reveal Match Reasoning [Must] [RECRUITER — inherits]
 
-**Predecessor:** US-26 â€” Skill-Level Matching Rate [Must-have] [RECRUITER â€” inherits]
+**Predecessor:** US-26 — Skill-Level Matching Rate [Must-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** to inspect why a skill was matched, **so that** I can judge whether the mapping is credible.
 
@@ -428,9 +428,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-30 Prevent Person-Level Scoring [Must] [RECRUITER â€” inherits]
+## US-30 Prevent Person-Level Scoring [Must] [RECRUITER — inherits]
 
-**Predecessor:** US-26 â€” Skill-Level Matching Rate [Must-have] [RECRUITER â€” inherits]
+**Predecessor:** US-26 — Skill-Level Matching Rate [Must-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** the interface to avoid reducing a person to one score, **so that** hiring judgement remains mine.
 
@@ -441,18 +441,18 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-31 Human-in-the-Loop Review UI [Must-have] [RECRUITER â€” inherits]
+## US-31 Human-in-the-Loop Review UI [Must-have] [RECRUITER — inherits]
 
 **As a recruiter, I want to review the candidate-generated skill profile and matching output and make my own shortlisting decision, so that the tool supports my judgement instead of making the hiring decision for me.**
 
 ### Acceptance Criteria
 - Given any candidate match result, when displayed, then there is no "auto-approve" or "auto-reject" action available anywhere in the product.
-- Given a recruiter views a match, when they take an action, then the only available actions are recruiter-initiated (e.g. "Shortlist," "Not a fit," "Needs more info") â€” never an automated status change.
-- Given the product is demoed, when a judge asks how a hiring decision is made, then the answer is verifiably "the recruiter decides, using the candidate's own translated profile â€” the tool only explains," consistent with what the UI shows.
+- Given a recruiter views a match, when they take an action, then the only available actions are recruiter-initiated (e.g. "Shortlist," "Not a fit," "Needs more info") — never an automated status change.
+- Given the product is demoed, when a judge asks how a hiring decision is made, then the answer is verifiably "the recruiter decides, using the candidate's own translated profile — the tool only explains," consistent with what the UI shows.
 
-## US-32 Review Candidate Skill Profile and Role Match [Must] [RECRUITER â€” inherits]
+## US-32 Review Candidate Skill Profile and Role Match [Must] [RECRUITER — inherits]
 
-**Predecessor:** US-31 â€” Human-in-the-Loop Review UI [Must-have] [RECRUITER â€” inherits]
+**Predecessor:** US-31 — Human-in-the-Loop Review UI [Must-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** the translated candidate evidence and role-specific matching in one review experience, **so that** I can make an informed decision.
 
@@ -463,9 +463,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-33 Provide Recruiter-Initiated Review Actions [Must] [RECRUITER â€” inherits]
+## US-33 Provide Recruiter-Initiated Review Actions [Must] [RECRUITER — inherits]
 
-**Predecessor:** US-31 â€” Human-in-the-Loop Review UI [Must-have] [RECRUITER â€” inherits]
+**Predecessor:** US-31 — Human-in-the-Loop Review UI [Must-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** to record my own review action, **so that** Skill Bridge supports rather than replaces my hiring workflow.
 
@@ -476,9 +476,9 @@ Translating skills is only useful if a recruiter can quickly prioritise what mat
 
 ---
 
-## US-34 Prohibit Automated Hire/Reject Decisions [Must] [RECRUITER â€” inherits]
+## US-34 Prohibit Automated Hire/Reject Decisions [Must] [RECRUITER — inherits]
 
-**Predecessor:** US-31 â€” Human-in-the-Loop Review UI [Must-have] [RECRUITER â€” inherits]
+**Predecessor:** US-31 — Human-in-the-Loop Review UI [Must-have] [RECRUITER — inherits]
 
 **As a** recruiter, **I want** final hiring judgement to remain human-controlled, **so that** Skill Bridge never acts as an autonomous hiring decision-maker.
 

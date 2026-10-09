@@ -33,7 +33,7 @@ Document standard: Formal architectural decision records (ADRs), explicit edge-c
 
 ### ADR-04: Strict Non-Invention of Scoring Weights (Engine Purity)
 - **Status:** Accepted
-- **Context:** User explicitly demanded: "không tự suy ra, không bỏ qua bất cứ yêu cầu nào... giữ nguyên công thức".
+- **Context:** User explicitly demanded: "do not invent or assume anything, do not omit any requirements... strictly retain all formulas".
 - **Decision:** UI and backend NEVER approximate, invent, or re-weight formulas 1 to 6. All scores (`SMF`, `GSI`, `JRS`, `JPI`, `RMS`, `FRS`, `TSS`) are generated directly by executing the Python modules in `intelligence_engine/`.
 - **Consequences:** Mathematically verified consistency with the formulas presentation and ASD-STE100 technical documentation.
 
@@ -43,7 +43,7 @@ Document standard: Formal architectural decision records (ADRs), explicit edge-c
 
 | Gap Area | Condition in Prompt | Implemented Resolution | Rationale |
 | :--- | :--- | :--- | :--- |
-| **Card Short Description** | "mô tả ngắn ngọn (<= 160 kí tự)" | Strict algorithm in `product_api/seed_db.py`: Strip HTML/newlines, trim to 157 chars at the last complete word boundary, append "..." if original > 160. | Ensures perfect visual symmetry in job feed cards with zero broken words. |
+| **Card Short Description** | "short description (<= 160 characters)" | Strict algorithm in `product_api/seed_db.py`: Strip HTML/newlines, trim to 157 chars at the last complete word boundary, append "..." if original > 160. | Ensures perfect visual symmetry in job feed cards with zero broken words. |
 | **Salary Data Schema Variance** | 71 jobs have min/max salary; 390 jobs lack salary numbers. | Normalized table with `salary_min`, `salary_max`, and `salary_source` (`direct` vs `anzsco_benchmark`). When missing, benchmark median is derived from ANZSCO unit group and clearly badged as "Estimated market range". | Avoids blank fields or artificial zero salaries while preserving transparency. |
 | **Date Calibration** | Prompt specifies relative dates ("Posted 3 days ago"). | Normalized database `posted_at` timestamps using the latest publication date in `data/australian_jobs_dataset.csv` as the reference anchor ($T_0$). | Guarantees realistic, coherent relative time displays ("2 days ago", "1 week ago") regardless of current calendar year. |
 | **Candidate PII Protection** | Recruiter views must not expose seeker identity. | Candidate records feature a public `alias` (e.g., "SilverKangaroo84"). In all HR endpoints (`/api/hr/*`), legal name, email, phone, and street address are strictly omitted from JSON payloads. | Eliminates unconscious bias and complies with Australian Privacy Act 1988 guidelines. |

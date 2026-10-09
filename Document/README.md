@@ -78,7 +78,7 @@ Document/
 
 For interactive demonstration, strategic roadmaps, and live telemetry, open the standalone HTML applications in [`Presentation/`](../Presentation/README.md):
 
-1. [**`Presentation/jinder_deck.html`**](../Presentation/jinder_deck.html) ([`PDF`](../Presentation/jinder_deck.pdf)) — **Canonical Master Pitch Deck (Slide Thuyết Trình Tổng Duy Nhất)**:
+1. [**`Presentation/jinder_deck.html`**](../Presentation/jinder_deck.html) ([`PDF`](../Presentation/jinder_deck.pdf)) — **Canonical Master Pitch Deck**:
    - Comprehensive master executive presentation covering Australian skilled migration challenges, two-sided capability alignment architecture, ethical AI principles, and platform demonstration.
 
 2. [**`Presentation/Jinder_Product_Plan.html`**](../Presentation/Jinder_Product_Plan.html) ([`PDF`](../Presentation/Jinder_Product_Plan.pdf)) — **Product & Marketing Strategy (Next 6 Months)**:
