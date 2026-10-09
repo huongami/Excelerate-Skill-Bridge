@@ -5,6 +5,8 @@ let cachedUser = null;
 
 export const session = {
   token() {
+    const urlToken = new URLSearchParams(window.location.search).get("demo_token");
+    if (urlToken) return urlToken;
     const raw = sessionStorage.getItem(KEY) || localStorage.getItem(KEY);
     if (!raw) return null;
     try {
