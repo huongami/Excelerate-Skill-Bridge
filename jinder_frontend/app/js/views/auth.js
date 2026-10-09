@@ -58,19 +58,32 @@ export async function loginView(root, ctx) {
           <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
         </form>
         <p class="auth-foot">Don't have an account? <a href="#/signup" class="text-link">Create one</a></p>
-        ${CONFIG.API_MODE === "mock" && CONFIG.MOCK_DEMO_DATA && CONFIG.MOCK_DEMO_ACCOUNTS.length ? `
-        <div class="demo-box">
-          <p class="demo-title">Try the demo</p>
-          <p class="hint">Demo accounts with sample jobs and applications. The data stays in this browser.</p>
-          <div class="demo-actions">${CONFIG.MOCK_DEMO_ACCOUNTS.map((a) => `<button type="button" class="btn btn-secondary btn-sm" data-demo="${esc(a.email)}">${esc(a.label)}</button>`).join("")}</div>
-        </div>` : ""}
+        <div class="demo-box" style="margin-top:14px; padding:12px 14px; background:var(--surface-muted); border:1px solid var(--hairline); border-radius:var(--r-md);">
+          <p class="demo-title" style="font-weight:700; font-size:12.5px; margin-bottom:4px; color:var(--ink);">⚡ Quick Demo Sign-In</p>
+          <p class="hint" style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Click to test each role live with verified sample data:</p>
+          <div class="demo-actions" style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button type="button" class="btn btn-secondary btn-sm" data-quick-email="candidate@demo.jinder.app" data-quick-pw="z4CJiNScZXnU">
+              👤 Talent Flow (Candidate)
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" data-quick-email="recruiter@demo.jinder.app" data-quick-pw="Jpr0N8Jtadqo">
+              💼 Employer Flow (Recruiter)
+            </button>
+          </div>
+        </div>
       </div>
       ${legalLine}
     </main>
   </div>`;
 
   const form = root.querySelector("form");
-  // Fill the form with a demo account (mock only)
+  // Fill the form with 1-click quick demo accounts
+  root.querySelectorAll("[data-quick-email]").forEach((b) => b.addEventListener("click", () => {
+    form.email.value = b.dataset.quickEmail;
+    form.password.value = b.dataset.quickPw;
+    if (form.remember) form.remember.checked = false; // keep in sessionStorage so two tabs can run two roles
+    form.requestSubmit();
+  }));
+  // Fill the form with legacy demo account if mock
   root.querySelectorAll("[data-demo]").forEach((b) => b.addEventListener("click", () => {
     form.email.value = b.dataset.demo;
     form.password.value = CONFIG.MOCK_DEMO_PASSWORD;

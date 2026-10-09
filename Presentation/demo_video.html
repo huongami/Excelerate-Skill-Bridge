@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jinder — Autonomous Capability Alignment Platform | Demo Video Walkthrough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <style>
+    :root {
+      --primary: #151531;
+      --bg: #090a16;
+      --stage-bg: #0f1124;
+      --ink: #ffffff;
+      --ink-muted: #94a3b8;
+      --body: #cbd5e1;
+      --accent: #6868f7;
+      --accent-tint: rgba(104, 104, 247, 0.15);
+      --orange: #ffa340;
+      --orange-tint: rgba(255, 163, 64, 0.15);
+      --green: #10b981;
+      --green-tint: rgba(16, 185, 129, 0.15);
+      --red: #f43f5e;
+      --card-bg: rgba(26, 29, 58, 0.85);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: var(--bg);
+      font-family: var(--font);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Fixed 16:9 Cinema Stage scaled to fit screen */
+    .cinema-viewport {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      background: var(--stage-bg);
+      overflow: hidden;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+      border-radius: 12px;
+      transform-origin: center center;
+    }
+
+    /* Top Persistent Ambient Bar */
+    .cinema-topbar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 72px;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 50;
+      background: linear-gradient(180deg, rgba(9, 10, 22, 0.95) 0%, transparent 100%);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-logo-svg {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+    .brand-title {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span { color: var(--accent); }
+
+    .scene-meta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .scene-badge {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      background: rgba(104, 104, 247, 0.2);
+      color: #a5b4fc;
+      border: 1px solid rgba(104, 104, 247, 0.4);
+    }
+    .hackathon-chip {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: rgba(255, 163, 64, 0.2);
+      color: #ffa340;
+      border: 1px solid rgba(255, 163, 64, 0.4);
+    }
+
+    /* Scene Container */
+    .scenes-stack {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .scene-pane {
+      position: absolute;
+      inset: 0;
+      padding: 100px 80px 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.98);
+      transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+    }
+    .scene-pane.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    /* Scene Typography */
+    .scene-tag {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .scene-title {
+      font-size: 54px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      max-width: 1500px;
+    }
+    .scene-title em {
+      font-style: normal;
+      background: linear-gradient(90deg, #818cf8 0%, #c084fc 50%, #ffa340 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .scene-desc {
+      font-size: 20px;
+      color: var(--body);
+      max-width: 1280px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    /* Grids & Panels Inside Scenes */
+    .scene-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      width: 100%;
+    }
+    .scene-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .glass-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .glass-card p {
+      font-size: 15px;
+      color: var(--body);
+      line-height: 1.6;
+    }
+
+    /* Stat Box */
+    .stat-hero {
+      text-align: center;
+      padding: 32px 24px;
+    }
+    .stat-hero .num {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: -2px;
+    }
+    .stat-hero .lbl {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    /* Live Radar Chart Mock */
+    .radar-visual-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 17, 36, 0.9);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      height: 380px;
+    }
+
+    /* Subtitles Bar (English Subtitles) */
+    .engsub-container {
+      position: absolute;
+      bottom: 96px;
+      left: 80px;
+      right: 80px;
+      display: flex;
+      justify-content: center;
+      z-index: 60;
+      pointer-events: none;
+    }
+    .engsub-box {
+      background: rgba(15, 17, 36, 0.92);
+      border: 1.5px solid rgba(104, 104, 247, 0.4);
+      padding: 14px 32px;
+      border-radius: 9999px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      max-width: 1400px;
+      transition: all 0.3s var(--ease);
+    }
+    .engsub-text {
+      font-size: 22px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.35;
+      letter-spacing: 0.2px;
+    }
+    .engsub-text span.highlight {
+      color: var(--orange);
+    }
+
+    /* Bottom Control Bar */
+    .cinema-controls {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 84px;
+      padding: 0 48px;
+      background: linear-gradient(0deg, rgba(9, 10, 22, 0.98) 0%, rgba(9, 10, 22, 0.7) 70%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 70;
+      gap: 24px;
+    }
+
+    .playback-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s var(--ease);
+    }
+    .ctrl-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .ctrl-btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .timeline-bar-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .timeline-track {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .timeline-fill {
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--orange) 100%);
+      transition: width 0.15s linear;
+    }
+    .time-readout {
+      font-family: var(--mono);
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      white-space: nowrap;
+    }
+
+    .playback-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cinema-viewport" id="cinemaStage">
+
+    <!-- TOP HEADER -->
+    <header class="cinema-topbar">
+      <div class="brand-wrap">
+        <svg class="brand-logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="#151531"/>
+          <rect x="8.5" y="9" width="13" height="18" rx="3" fill="#6868f7" transform="rotate(-12 15 18)"/>
+          <rect x="18.5" y="9" width="13" height="18" rx="3" fill="#ffa340" transform="rotate(12 25 18)"/>
+          <circle cx="20" cy="27" r="6" fill="#fff" stroke="#151531" stroke-width="1.5"/>
+          <path d="M17.4 27.1l1.8 1.8 3.4-3.6" stroke="#151531" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-title">Jinder<span>.</span></div>
+      </div>
+
+      <div class="scene-meta-group">
+        <span class="scene-badge" id="sceneIndicator">Scene 1 / 6 • Introduction</span>
+        <span class="hackathon-chip">Australian ICT Matchmaking Pilot</span>
+      </div>
+    </header>
+
+    <!-- SCENES CONTAINER -->
+    <div class="scenes-stack">
+
+      <!-- SCENE 1: INTRODUCTION -->
+      <section class="scene-pane active" id="scene-0">
+        <div class="scene-tag">01 • Executive Overview</div>
+        <h2 class="scene-title">Bridging Skilled Migration & Australian Hiring Via <em>Deterministic Mathematics</em></h2>
+        <p class="scene-desc">
+          Australian technology employers face an acute talent shortage, yet thousands of permanent and provisional visa holders remain trapped in survival jobs because Australian ATS keyword scrapers fail to interpret overseas credentials.
+        </p>
+
+        <div class="scene-grid-3">
+          <div class="glass-card stat-hero">
+            <div class="num" style="color:var(--red);">42%</div>
+            <div class="lbl">Australian ICT Employer Shortage</div>
+          </div>
+          <div class="glass-card stat-hero">
+            <div class="num" style="color:var(--orange);">68%</div>
+            <div class="lbl">Skilled Migrant Underemployment</div>
+          </div>
+          <div class="glass-card stat-hero">
+            <div class="num" style="color:var(--green);">&lt; 5ms</div>
+            <div class="lbl">Deterministic Match SLA</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 2: TALENT FLOW -->
+      <section class="scene-pane" id="scene-1">
+        <div class="scene-tag">02 • Talent Portal Flow</div>
+        <h2 class="scene-title">Autonomous Translation to <em>ABS ANZSCO 2026 Taxonomy</em></h2>
+        <p class="scene-desc">
+          Overseas titles like <em>"BI Specialist"</em> and <em>"MIS Executive"</em> are translated into verified Australian competencies, mapped to AQF Level 7 with strong evidence citations and continuous capability depth.
+        </p>
+
+        <div class="scene-grid-2">
+          <div class="glass-card">
+            <h4><span>📋</span> Candidate Linh Nguyen ("Teal Heron")</h4>
+            <p>
+              • Overseas Title: BI Specialist (4.5 Years Experience in Vietnam)<br>
+              • Harmonized Australian Role: <strong>ANZSCO 224114 • Data Analyst</strong><br>
+              • Qualification: Mapped to <strong>AQF Level 7 (Bachelor Degree)</strong><br>
+              • Core Skills: SQL (Level 4), Python (Level 3), Power BI (Level 4), ETL Pipelines
+            </p>
+          </div>
+          <div class="glass-card">
+            <h4><span>🛡️</span> Evidence-Anchored Verification</h4>
+            <p>
+              Every translated competency is anchored in concrete CV evidence sentences and calibrated against Australian industry benchmarks under Australian Privacy Principle (APP 1-13) boundaries.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 3: RADAR & FEED RANKING -->
+      <section class="scene-pane" id="scene-2">
+        <div class="scene-tag">03 • Capability Radar & Feed Ranking</div>
+        <h2 class="scene-title">Dynamic 5-Axis Radar Chart & <em>Formula F-05 Feed Ranking</em></h2>
+        <p class="scene-desc">
+          Vacancies are scored continuously in [0.0, 100.0] using multi-objective optimization balancing Skill Coverage (45%), Net Job Readiness (25%), Seniority Alignment (20%), and Australian Work Modes (10%).
+        </p>
+
+        <div class="scene-grid-2">
+          <div class="radar-visual-wrap">
+            <svg viewBox="0 0 360 300" width="340" height="280">
+              <polygon points="180,30 300,110 260,240 100,240 60,110" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <polygon points="180,70 260,120 230,210 130,210 100,120" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+              <!-- Candidate Capability Polygon -->
+              <polygon points="180,45 285,115 240,225 110,215 75,112" fill="rgba(104, 104, 247, 0.4)" stroke="#6868f7" stroke-width="2.5"/>
+              <!-- Axis labels -->
+              <text x="180" y="20" fill="#a5b4fc" font-size="12" font-family="var(--mono)" text-anchor="middle">Data Modelling (94%)</text>
+              <text x="310" y="115" fill="#a5b4fc" font-size="12" font-family="var(--mono)" text-anchor="start">SQL / Python (90%)</text>
+              <text x="270" y="260" fill="#a5b4fc" font-size="12" font-family="var(--mono)" text-anchor="middle">BI / Power BI (92%)</text>
+              <text x="90" y="260" fill="#a5b4fc" font-size="12" font-family="var(--mono)" text-anchor="middle">ETL Pipelines (78%)</text>
+              <text x="45" y="115" fill="#a5b4fc" font-size="12" font-family="var(--mono)" text-anchor="end">Analytics (88%)</text>
+            </svg>
+          </div>
+          <div class="glass-card" style="display:flex; flex-direction:column; justify-content:center;">
+            <h4><span>🚀</span> Vacancy Match Transparency</h4>
+            <p>
+              • Role: Senior BI & Data Analyst (Bluebushworks, Melbourne Hybrid)<br>
+              • Overall FRS Match Score: <strong style="color:var(--green); font-size:18px;">92.4%</strong><br>
+              • Estimated Salary Upside: <strong style="color:var(--orange); font-size:18px;">+$24,500 AUD / Year</strong><br>
+              • Zero demographic variables ingested — 100% merit-based alignment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 4: EMPLOYER FLOW & WILDLIFE CARDS -->
+      <section class="scene-pane" id="scene-3">
+        <div class="scene-tag">04 • Employer Portal Flow</div>
+        <h2 class="scene-title">Anonymized Wildlife Cards & <em>Multi-Candidate Compare Tray</em></h2>
+        <p class="scene-desc">
+          Recruiters browse capability-ranked talent masked under iconic Australian wildlife personas (Silver Koala, Teal Heron, Amber Wombat) to prevent subconscious bias and fulfill Australian Privacy Principles.
+        </p>
+
+        <div class="scene-grid-3">
+          <div class="glass-card" style="border-top:4px solid var(--accent);">
+            <h4><span>🐨</span> Silver Koala</h4>
+            <p>
+              • Match Score: <strong>94.2%</strong><br>
+              • ANZSCO: Cloud Engineer<br>
+              • Level: Senior (6.5 Yrs)<br>
+              • Statutory Blockers: 0
+            </p>
+          </div>
+          <div class="glass-card" style="border-top:4px solid var(--green);">
+            <h4><span>🪶</span> Teal Heron (Linh Nguyen)</h4>
+            <p>
+              • Match Score: <strong>92.4%</strong><br>
+              • ANZSCO: Data Analyst<br>
+              • Level: Mid (4.5 Yrs)<br>
+              • Statutory Blockers: 0
+            </p>
+          </div>
+          <div class="glass-card" style="border-top:4px solid var(--orange);">
+            <h4><span>🦘</span> Amber Wombat</h4>
+            <p>
+              • Match Score: <strong>88.1%</strong><br>
+              • ANZSCO: Full-Stack Dev<br>
+              • Level: Mid (4.0 Yrs)<br>
+              • Statutory Blockers: 0
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 5: THE 6 FORMULAS INTELLIGENCE ENGINE -->
+      <section class="scene-pane" id="scene-4">
+        <div class="scene-tag">05 • Mathematical Intelligence Engine</div>
+        <h2 class="scene-title">ASD-STE100 Certified <em>Continuous Algebraic Formulations</em></h2>
+        <p class="scene-desc">
+          Six deterministic continuous formulas execute under 5 milliseconds latency per candidate-job pair. Statutory blockers (β=15.0) are penalized strictly, while learnable skills (β=5.0) receive fair transition credits.
+        </p>
+
+        <div class="scene-grid-2">
+          <div class="glass-card">
+            <h4><span>📐</span> Formula F-01 • Skill Coverage (SMF)</h4>
+            <div style="background:rgba(0,0,0,0.3); border-radius:8px; padding:12px; margin:10px 0; font-size:17px; text-align:center;">
+              $$SMF = \frac{\sum w_i \min\left(1.0, \frac{L_{c,i}}{L_{j,i}}\right)}{\sum w_k} \times 100$$
+            </div>
+            <p>Differentiates mandatory requirements (w=2.0) from preferred skills (w=1.0) with bounded level ratios.</p>
+          </div>
+          <div class="glass-card">
+            <h4><span>🛡️</span> Formula F-02 • Gap Severity & Readiness (GSI / JRS)</h4>
+            <div style="background:rgba(0,0,0,0.3); border-radius:8px; padding:12px; margin:10px 0; font-size:17px; text-align:center;">
+              $$GSI = \sum \beta_g \cdot \text{Sev}(g), \quad JRS = \max(0, SMF - GSI)$$
+            </div>
+            <p>Shields employers from statutory compliance violations while keeping career mobility open.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCENE 6: ENGINEERING RIGOR -->
+      <section class="scene-pane" id="scene-5">
+        <div class="scene-tag">06 • Architecture & Provenance</div>
+        <h2 class="scene-title">Zero External Dependencies & <em>737 Tests Passing in 24 Seconds</em></h2>
+        <p class="scene-desc">
+          Built exclusively using the Python Standard Library and native Vanilla ES6 JavaScript. No NPM packages, no Webpack, zero vendor lock-in, and full deployment in Sydney (ap-southeast-2).
+        </p>
+
+        <div class="scene-grid-3">
+          <div class="glass-card stat-hero">
+            <div class="num" style="color:var(--green);">737 / 737</div>
+            <div class="lbl">Unit & Integration Tests (100% OK)</div>
+          </div>
+          <div class="glass-card stat-hero">
+            <div class="num" style="color:var(--accent);">0</div>
+            <div class="lbl">Pip & NPM External Packages</div>
+          </div>
+          <div class="glass-card stat-hero">
+            <div class="num" style="color:var(--orange);">Sydney</div>
+            <div class="lbl">ap-southeast-2 Multi-Tier Deployment</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ENGLISH SUBTITLES OVERLAY -->
+    <div class="engsub-container">
+      <div class="engsub-box" id="subBox">
+        <div class="engsub-text" id="subText">
+          Welcome to <span class="highlight">Jinder</span>, the autonomous capability alignment platform built for the Australian skilled migration market.
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO ELEMENTS -->
+    <audio id="audio-0" src="audio/scene1.m4a" preload="auto"></audio>
+    <audio id="audio-1" src="audio/scene2.m4a" preload="auto"></audio>
+    <audio id="audio-2" src="audio/scene3.m4a" preload="auto"></audio>
+    <audio id="audio-3" src="audio/scene4.m4a" preload="auto"></audio>
+    <audio id="audio-4" src="audio/scene5.m4a" preload="auto"></audio>
+    <audio id="audio-5" src="audio/scene6.m4a" preload="auto"></audio>
+
+    <!-- BOTTOM CONTROL BAR -->
+    <footer class="cinema-controls">
+      <div class="playback-left">
+        <button type="button" class="ctrl-btn primary" id="playBtn" onclick="togglePlay()">
+          <span>▶</span> Play Demo
+        </button>
+        <button type="button" class="ctrl-btn" onclick="prevScene()">
+          <span>◀</span> Prev
+        </button>
+        <button type="button" class="ctrl-btn" onclick="nextScene()">
+          Next <span>▶</span>
+        </button>
+      </div>
+
+      <div class="timeline-bar-wrap">
+        <span class="time-readout" id="timeCurrent">0:00</span>
+        <div class="timeline-track" id="timelineTrack" onclick="seekTimeline(event)">
+          <div class="timeline-fill" id="timelineFill"></div>
+        </div>
+        <span class="time-readout" id="timeTotal">2:05</span>
+      </div>
+
+      <div class="playback-right">
+        <button type="button" class="ctrl-btn" id="subToggleBtn" onclick="toggleSubs()">
+          CC: ON
+        </button>
+        <button type="button" class="ctrl-btn" onclick="toggleFullscreen()">
+          ⛶ Fullscreen
+        </button>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const stage = document.getElementById('cinemaStage');
+    const totalScenes = 6;
+    let currentScene = 0;
+    let isPlaying = false;
+    let showSubs = true;
+
+    const subtitles = [
+      "Welcome to Jinder, the autonomous capability alignment platform built for the Australian skilled migration market. Over 42 percent of Australian tech employers report severe talent shortages, yet thousands of qualified migrants remain underemployed.",
+      "Talent Flow: When candidate Linh Nguyen uploads her overseas resume, Jinder translates non-standard titles like BI Specialist into the recognized ANZSCO 2026 taxonomy as Data Analyst, mapped to AQF Level 7.",
+      "Dynamic 5-Axis Radar Chart & Formula F-05 Feed Ranking Score: Evaluating capability overlap directly against Australian job requirements while ranking vacancies by skill fit and salary upside.",
+      "Employer Flow: Hiring managers browse anonymized talent cards represented by Australian wildlife personas (Teal Heron, Silver Koala), ensuring strict Zero-PII compliance and eliminating demographic bias.",
+      "Intelligence Engine V2: Operating under ASD-STE100 Simplified Technical English, executing six deterministic algebraic formulations with sub-five-millisecond SLA latency.",
+      "Architecture & Verification: Built exclusively on the Python standard library with zero external dependencies and zero-build vanilla JavaScript. 737 tests passing with 100% reproducibility."
+    ];
+
+    const sceneTitles = [
+      "Scene 1 / 6 • Executive Problem Statement",
+      "Scene 2 / 6 • Talent Portal & ANZSCO Translation",
+      "Scene 3 / 6 • Dynamic Radar & FRS Ranking",
+      "Scene 4 / 6 • Employer Flow & Wildlife Cards",
+      "Scene 5 / 6 • The 6 Canonical Formulas",
+      "Scene 6 / 6 • Engineering Rigor & Provenance"
+    ];
+
+    // Scale 1920x1080 stage to fit screen
+    function fitCinema() {
+      const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+      stage.style.transform = `scale(${scale})`;
+    }
+    window.addEventListener('resize', fitCinema);
+    fitCinema();
+
+    function goToScene(idx) {
+      if (idx < 0) idx = 0;
+      if (idx >= totalScenes) idx = totalScenes - 1;
+
+      // Stop previous audio
+      const prevAudio = document.getElementById(`audio-${currentScene}`);
+      if (prevAudio) {
+        prevAudio.pause();
+        prevAudio.currentTime = 0;
+      }
+
+      // Update panes
+      document.querySelectorAll('.scene-pane').forEach((p, i) => {
+        p.classList.toggle('active', i === idx);
+      });
+
+      currentScene = idx;
+      document.getElementById('sceneIndicator').textContent = sceneTitles[idx];
+      document.getElementById('subText').textContent = subtitles[idx];
+
+      const currentAudio = document.getElementById(`audio-${idx}`);
+      if (currentAudio) {
+        currentAudio.onended = () => {
+          if (currentScene < totalScenes - 1) {
+            goToScene(currentScene + 1);
+            if (isPlaying) playCurrentAudio();
+          } else {
+            pauseDemo();
+          }
+        };
+      }
+
+      updateProgress();
+    }
+
+    function playCurrentAudio() {
+      const audio = document.getElementById(`audio-${currentScene}`);
+      if (audio) {
+        audio.play().catch(e => console.log('Audio autoplay policy:', e));
+      }
+    }
+
+    function togglePlay() {
+      if (isPlaying) {
+        pauseDemo();
+      } else {
+        playDemo();
+      }
+    }
+
+    function playDemo() {
+      isPlaying = true;
+      document.getElementById('playBtn').innerHTML = '<span>⏸</span> Pause';
+      playCurrentAudio();
+    }
+
+    function pauseDemo() {
+      isPlaying = false;
+      document.getElementById('playBtn').innerHTML = '<span>▶</span> Play Demo';
+      const audio = document.getElementById(`audio-${currentScene}`);
+      if (audio) audio.pause();
+    }
+
+    function nextScene() {
+      if (currentScene < totalScenes - 1) {
+        goToScene(currentScene + 1);
+        if (isPlaying) playCurrentAudio();
+      }
+    }
+
+    function prevScene() {
+      if (currentScene > 0) {
+        goToScene(currentScene - 1);
+        if (isPlaying) playCurrentAudio();
+      }
+    }
+
+    function toggleSubs() {
+      showSubs = !showSubs;
+      document.getElementById('subBox').style.display = showSubs ? 'block' : 'none';
+      document.getElementById('subToggleBtn').textContent = showSubs ? 'CC: ON' : 'CC: OFF';
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => alert(err.message));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    function updateProgress() {
+      const percent = ((currentScene + 1) / totalScenes) * 100;
+      document.getElementById('timelineFill').style.width = percent + '%';
+      const mins = Math.floor((currentScene * 21) / 60);
+      const secs = (currentScene * 21) % 60;
+      document.getElementById('timeCurrent').textContent = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function seekTimeline(e) {
+      const rect = document.getElementById('timelineTrack').getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const ratio = clickX / rect.width;
+      const targetScene = Math.min(totalScenes - 1, Math.floor(ratio * totalScenes));
+      goToScene(targetScene);
+      if (isPlaying) playCurrentAudio();
+    }
+
+    // Keyboard shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'k') { e.preventDefault(); togglePlay(); }
+      else if (e.key === 'ArrowRight' || e.key === 'l') { e.preventDefault(); nextScene(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'j') { e.preventDefault(); prevScene(); }
+      else if (e.key === 'c' || e.key === 'C') { toggleSubs(); }
+      else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
+    });
+
+    // KaTeX render on load
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false
+        });
+      }
+      goToScene(0);
+    });
+  </script>
+</body>
+</html>
