@@ -56,8 +56,8 @@ Excelerate-Skill-Bridge/
 
 The `Presentation/` directory hosts zero-build standalone HTML web applications and strategic plans built with the **Jinder Design System**:
 
-1. [**`Presentation/jinder_deck.html`**](Presentation/jinder_deck.html) ([`PDF`](Presentation/jinder_deck.pdf)) — **Executive Pitch Deck**:
-   - Modern executive presentation covering Australian skilled migration challenges, capability alignment architecture, ethical AI principles, and platform demonstration.
+1. [**`Presentation/jinder_deck.html`**](Presentation/jinder_deck.html) ([`PDF`](Presentation/jinder_deck.pdf)) — **Canonical Master Pitch Deck (Slide Thuyết Trình Tổng Duy Nhất)**:
+   - Comprehensive master executive presentation covering Australian skilled migration challenges, capability alignment architecture, ethical AI principles, and platform demonstration.
 
 2. [**`Presentation/Jinder_Product_Plan.html`**](Presentation/Jinder_Product_Plan.html) ([`PDF`](Presentation/Jinder_Product_Plan.pdf)) — **Product & Marketing Strategy (Next 6 Months)**:
    - Comprehensive 6-month execution plan: GTM strategy, university partnership rollout, employer acquisition funnel, pricing tiers, and financial projections.
