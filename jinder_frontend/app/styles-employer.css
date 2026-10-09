@@ -86,8 +86,39 @@
 .chip-row .chip { white-space: normal; }
 .job-overview .jd-sub:first-of-type { margin-top: var(--sp-xs); }
 
+/* ---------- Application detail: Interview slot scheduling ---------- */
+.action-panel {
+  container-type: inline-size;
+}
+.slot-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-sm) var(--sp-md);
+  margin-top: var(--sp-md);
+}
+.slot-inputs .field {
+  min-width: 0;
+}
+.slot-inputs input[type="datetime-local"],
+.slot-inputs .text-input {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 @media (max-width: 1024px) {
   .cert-grid { grid-template-columns: 1fr; }
+  .slot-inputs {
+    grid-template-columns: 1fr;
+    gap: var(--sp-sm);
+  }
+}
+@container (max-width: 680px) {
+  .slot-inputs {
+    grid-template-columns: 1fr;
+    gap: var(--sp-sm);
+  }
 }
 @media (max-width: 768px) {
   .list-toolbar .sort-select { margin-left: 0; }
@@ -95,4 +126,6 @@
   .skill-req-name { grid-column: 1 / -1; }
   .skill-req .btn-icon { width: 44px; height: 44px; }
   .skill-table .result-cell { white-space: normal; }
+  .slot-inputs { grid-template-columns: 1fr; }
 }
+

@@ -622,7 +622,7 @@ select.text-input { cursor: pointer; }
 .history li { display: grid; grid-template-columns: 170px 1fr; gap: var(--sp-md); padding: var(--sp-sm) 0; border-top: 1px solid var(--hairline); font-size: 14px; }
 .history-when { color: var(--muted); font-size: 13px; }
 .app-detail > .panel, .app-detail > div > .panel, .app-detail .jd-grid { margin-bottom: var(--sp-lg); }
-.action-panel { border-width: 2px; }
+.action-panel { border-width: 2px; container-type: inline-size; }
 .action-panel h2 { outline: none; margin-bottom: var(--sp-xs); }
 .action-panel.tone-blue { border-color: var(--tint-blue); }
 .action-panel.tone-yellow { border-color: var(--tint-yellow); }
@@ -637,7 +637,26 @@ select.text-input { cursor: pointer; }
 .slot-list { list-style: none; padding: 0; margin: var(--sp-sm) 0 0; display: grid; gap: 6px; }
 .slot-list li { display: flex; gap: var(--sp-xs); align-items: center; font-size: 14px; }
 .slot-list .icon { width: 16px; height: 16px; color: var(--accent); }
-.slot-inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 var(--sp-md); margin-top: var(--sp-md); }
+.slot-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-sm) var(--sp-md);
+  margin-top: var(--sp-md);
+}
+.slot-inputs .field { min-width: 0; }
+.slot-inputs input[type="datetime-local"],
+.slot-inputs .text-input {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@container (max-width: 680px) {
+  .slot-inputs {
+    grid-template-columns: 1fr;
+    gap: var(--sp-sm);
+  }
+}
 .consent { margin-top: var(--sp-md); padding: var(--sp-sm) var(--sp-md); border-radius: var(--r-md); background: var(--surface-subtle); }
 .consent .hint { display: block; }
 .apply-steps { list-style: none; padding: 0; margin: 0 0 var(--sp-lg); display: flex; gap: var(--sp-lg); font-size: 13px; color: var(--muted); }
@@ -761,6 +780,7 @@ select.text-input { cursor: pointer; }
 @media (max-width: 1024px) {
   .charts-grid, .dash-grid-even { grid-template-columns: 1fr; }
   .field-grid { grid-template-columns: 1fr 1fr; }
+  .slot-inputs { grid-template-columns: 1fr; gap: var(--sp-sm); }
 }
 @media (max-width: 768px) {
   .app-row { flex-direction: column; align-items: flex-start; }
