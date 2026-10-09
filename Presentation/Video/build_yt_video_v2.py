@@ -20,7 +20,7 @@ font_caption = ImageFont.truetype(font_path_bold, 21)
 scenes = [
     {
         "index": 0,
-        "step": "STEP 01 OF 09 • TALENT ONBOARDING",
+        "step": "STEP 01 OF 12 • TALENT ONBOARDING",
         "title": "Account Creation & Role Selection",
         "sub": "Role Picker • Anonymous Wildlife Persona • National Standards",
         "img": os.path.join(AUDIO_DIR, "yt_00_signup.png"),
@@ -29,7 +29,7 @@ scenes = [
     },
     {
         "index": 1,
-        "step": "STEP 02 OF 09 • PLATFORM ACCESS",
+        "step": "STEP 02 OF 12 • PLATFORM ACCESS",
         "title": "Dual-Role Authentication",
         "sub": "Instant 1-Click Platform Access for Talents & Hiring Teams",
         "img": os.path.join(AUDIO_DIR, "yt_01_login.png"),
@@ -38,7 +38,7 @@ scenes = [
     },
     {
         "index": 2,
-        "step": "STEP 03 OF 09 • TALENT WORKSPACE",
+        "step": "STEP 03 OF 12 • TALENT WORKSPACE",
         "title": "Overseas Qualification Harmonisation",
         "sub": "ANZSCO 224114 Data Analyst • AQF Level 7 Benchmarking",
         "img": os.path.join(AUDIO_DIR, "yt_02_talent_home.png"),
@@ -47,7 +47,7 @@ scenes = [
     },
     {
         "index": 3,
-        "step": "STEP 04 OF 09 • OPPORTUNITY DISCOVERY",
+        "step": "STEP 04 OF 12 • OPPORTUNITY DISCOVERY",
         "title": "Continuous Feed Ranking (Formula F-05)",
         "sub": "Continuous Match Engine Across Melbourne, Sydney & Canberra",
         "img": os.path.join(AUDIO_DIR, "yt_03_jobs_feed.png"),
@@ -56,7 +56,7 @@ scenes = [
     },
     {
         "index": 4,
-        "step": "STEP 05 OF 09 • EXPLAINABLE TELEMETRY",
+        "step": "STEP 05 OF 12 • EXPLAINABLE TELEMETRY",
         "title": "Skill Overlap & Gap Analysis",
         "sub": "Transparent Mathematical Breakdown • Targeted Course Actions",
         "img": os.path.join(AUDIO_DIR, "yt_04_job_detail.png"),
@@ -65,7 +65,7 @@ scenes = [
     },
     {
         "index": 5,
-        "step": "STEP 06 OF 09 • VACANCY BENCHMARKING",
+        "step": "STEP 06 OF 12 • VACANCY BENCHMARKING",
         "title": "Multi-Role Comparison Tray",
         "sub": "Benchmarking Opportunities Across Remuneration & Flexibility",
         "img": os.path.join(AUDIO_DIR, "yt_05_job_compare.png"),
@@ -74,7 +74,7 @@ scenes = [
     },
     {
         "index": 6,
-        "step": "STEP 07 OF 09 • EMPLOYER PORTAL",
+        "step": "STEP 07 OF 12 • EMPLOYER PORTAL",
         "title": "Zero-PII Wildlife Candidate Feed",
         "sub": "Eliminating Demographic Hiring Bias With Masked Personas",
         "img": os.path.join(AUDIO_DIR, "yt_06_wildlife_candidates.png"),
@@ -83,7 +83,7 @@ scenes = [
     },
     {
         "index": 7,
-        "step": "STEP 08 OF 09 • CAPABILITY PROVENANCE",
+        "step": "STEP 08 OF 12 • CAPABILITY PROVENANCE",
         "title": "Verified Evidence & CV Citations",
         "sub": "Concrete CV Tracing • Statutory Blocker Audit Trail",
         "img": os.path.join(AUDIO_DIR, "yt_07_candidate_detail.png"),
@@ -92,12 +92,39 @@ scenes = [
     },
     {
         "index": 8,
-        "step": "STEP 09 OF 09 • RADAR BENCHMARKING",
+        "step": "STEP 09 OF 12 • RADAR BENCHMARKING",
         "title": "Multi-Candidate Radar Comparison",
         "sub": "Identical Radar Axes • Skill Fit, Seniority & Certifications",
         "img": os.path.join(AUDIO_DIR, "yt_08_recruiter_compare.png"),
         "audio": os.path.join(AUDIO_DIR, "yt_audio_8.mp3"),
         "subtitle": "Multi-candidate compare tray: Contrasting candidate profiles on identical radar axes across skill fit, seniority, and certification readiness."
+    },
+    {
+        "index": 9,
+        "step": "STEP 10 OF 12 • TWO-SIDED DECISION FLOW",
+        "title": "Offer Acceptance & Decline Actions",
+        "sub": "Full Remuneration & Hybrid Terms • Transparent 1-Click Decisions",
+        "img": os.path.join(AUDIO_DIR, "yt_09_offer_decision.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_9.mp3"),
+        "subtitle": "Closing the hiring loop: When an employer extends an offer, candidates receive full remuneration and hybrid terms, with transparent 1-click actions to either confirm acceptance or respectfully decline the opportunity."
+    },
+    {
+        "index": 10,
+        "step": "STEP 11 OF 12 • MATHEMATICAL RIGOUR",
+        "title": "Canonical Mathematical Engine (F-01 to F-06)",
+        "sub": "Deterministic Equations • Sub-5ms SLAs • Zero Black-Box Drift",
+        "img": os.path.join(AUDIO_DIR, "yt_10_formulas.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_10.mp3"),
+        "subtitle": "Under the hood, Jinder operates on six deterministic mathematical formulas, from Skill Coverage F-01 to Employer Search Score F-06, ensuring complete algorithmic transparency with sub-five-millisecond SLA and zero black-box neural drift."
+    },
+    {
+        "index": 11,
+        "step": "STEP 12 OF 12 • ENTERPRISE TELEMETRY",
+        "title": "Admin Console & Live WAL Pipeline",
+        "sub": "31 Australian Tech Employers • SQLite WAL • 5-Stage Audit Pipeline",
+        "img": os.path.join(AUDIO_DIR, "yt_11_admin.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_11.mp3"),
+        "subtitle": "Finally, the Enterprise Admin Console delivers real-time system telemetry across thirty-one Australian tech employers, SQLite Write-Ahead Logging performance, and a fully inspectable five-stage data pipeline."
     }
 ]
 
@@ -143,7 +170,7 @@ def create_transition_frame(step_text, title_text, sub_text, out_path, step_num)
 
     # Progress bar indicator
     total_bar_w = card_w - 88
-    active_bar_w = int(total_bar_w * ((step_num + 1) / 9.0))
+    active_bar_w = int(total_bar_w * ((step_num + 1) / float(len(scenes))))
     draw.rounded_rectangle([x0 + 44, y1 - 44, x0 + 44 + active_bar_w, y1 - 38], radius=3, fill=(255, 163, 64, 255))
     draw.rounded_rectangle([x0 + 44 + active_bar_w, y1 - 44, x1 - 44, y1 - 38], radius=3, fill=(255, 255, 255, 35))
 
