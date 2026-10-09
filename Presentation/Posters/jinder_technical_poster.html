@@ -37,14 +37,12 @@
       --purple: #7c3aed;
       --purple-tint: #f5f3ff;
       --purple-border: #ddd6fe;
-      --rose: #e11d48;
-      --rose-tint: #fff1f2;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-      --r-sm: 5px;
-      --r-md: 8px;
-      --r-lg: 12px;
-      --r-xl: 16px;
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 14px;
+      --r-xl: 18px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -59,19 +57,20 @@
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
       overflow: hidden;
-      display: block;
-      padding: 14px 20px 14px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 28px;
       position: relative;
     }
 
-    /* Ambient Soft Background Gradients */
+    /* Ambient Soft Background Glows */
     .glow-1 {
       position: absolute;
-      top: -120px;
-      left: 18%;
-      width: 1200px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, rgba(234, 88, 12, 0.02) 50%, transparent 70%);
+      top: -100px;
+      left: 15%;
+      width: 1100px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.05) 0%, rgba(234, 88, 12, 0.02) 60%, transparent 80%);
       filter: blur(80px);
       pointer-events: none;
     }
@@ -79,35 +78,38 @@
       position: absolute;
       bottom: -100px;
       right: 15%;
-      width: 1100px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(5, 150, 105, 0.04) 0%, rgba(124, 58, 237, 0.03) 50%, transparent 70%);
-      filter: blur(90px);
+      width: 1000px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(5, 150, 105, 0.04) 0%, rgba(124, 58, 237, 0.03) 60%, transparent 80%);
+      filter: blur(80px);
       pointer-events: none;
     }
 
     .poster-canvas {
       width: 100%;
-      height: 100%;
+      height: 2215px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      justify-content: space-between;
       position: relative;
       z-index: 10;
     }
 
-    /* ---------- HEADER BAR (LIGHT THEME) ---------- */
+    /* =========================================================
+       1. HEADER BAR (Budget: 185px)
+       ========================================================= */
     .poster-header {
+      height: 185px;
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: var(--r-xl);
-      padding: 12px 24px 10px;
-      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+      padding: 12px 28px 10px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      justify-content: space-between;
       flex-shrink: 0;
     }
     .poster-header::before {
@@ -116,7 +118,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 5px;
+      height: 6px;
       background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 35%, #ea580c 70%, #059669 100%);
     }
 
@@ -128,13 +130,13 @@
     .brand-wrap {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .brand-logo-svg {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.16);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.18);
       flex-shrink: 0;
     }
     .brand-text-block {
@@ -142,7 +144,7 @@
       flex-direction: column;
     }
     .brand-title {
-      font-size: 29px;
+      font-size: 32px;
       font-weight: 900;
       letter-spacing: -1.2px;
       color: var(--ink);
@@ -150,7 +152,7 @@
     }
     .brand-title span { color: var(--accent); }
     .brand-tagline {
-      font-size: 10px;
+      font-size: 12.5px;
       color: var(--muted);
       font-weight: 700;
       margin-top: 2px;
@@ -162,13 +164,13 @@
     .badges-row {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
     .hackathon-pill {
       font-family: var(--mono);
       font-size: 14px;
       font-weight: 800;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       padding: 6px 18px;
       border-radius: 9999px;
@@ -207,7 +209,7 @@
       -webkit-text-fill-color: transparent;
     }
     .header-subtext {
-      font-size: 12.5px;
+      font-size: 14px;
       color: var(--ink-secondary);
       line-height: 1.35;
       font-weight: 450;
@@ -217,7 +219,7 @@
     .header-stats-strip {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
+      gap: 10px;
       border-top: 1px solid var(--hairline);
       padding-top: 6px;
     }
@@ -225,13 +227,13 @@
       background: var(--surface-muted);
       border: 1px solid var(--card-border-subtle);
       border-radius: var(--r-sm);
-      padding: 4px 8px;
+      padding: 4px 10px;
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 8px;
     }
     .h-stat-icon {
-      font-size: 13px;
+      font-size: 16px;
       flex-shrink: 0;
     }
     .h-stat-content {
@@ -240,71 +242,33 @@
     }
     .h-stat-val {
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--ink);
       line-height: 1.1;
     }
     .h-stat-lbl {
-      font-size: 8px;
-      font-weight: 600;
+      font-size: 10.5px;
+      font-weight: 700;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
 
-    /* ---------- MAIN POSTER BODY (NO EMPTY GAPS) ---------- */
-    .poster-body {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 0;
-      flex: 1;
-      min-height: 0;
-    }
-
-    /* Row Proportional Flex Ratios to Fill Height Completely */
-    .row-arch-medallion {
-      flex: 46;
-      min-height: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .row-flow-erd {
-      flex: 54;
-      min-height: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .row-formulas {
-      flex: 47;
-      min-height: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    .row-experience-sla {
-      flex: 51;
-      min-height: 0;
-      display: grid;
-      grid-template-columns: 1fr 1.05fr;
-      gap: 10px;
-    }
-
-    /* Base Section Card */
-    .section-card {
+    /* =========================================================
+       SECTION PILLARS COMMON
+       ========================================================= */
+    .pillar-card {
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: var(--r-lg);
-      padding: 10px 14px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+      padding: 12px 18px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      position: relative;
-      height: 100%;
-      min-height: 0;
+      justify-content: space-between;
+      overflow: hidden;
+      flex-shrink: 0;
     }
 
     .card-head {
@@ -312,149 +276,136 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1.5px solid var(--hairline);
-      padding-bottom: 5px;
-      margin-bottom: 2px;
+      padding-bottom: 6px;
       flex-shrink: 0;
     }
     .card-head-title {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 15px;
+      gap: 8px;
+      font-size: 20px;
       font-weight: 800;
       color: var(--ink);
-      letter-spacing: -0.3px;
+      letter-spacing: -0.4px;
     }
     .card-icon {
-      width: 21px;
-      height: 21px;
-      border-radius: 5px;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
       background: var(--accent-tint);
       color: var(--accent);
       display: grid;
       place-items: center;
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 800;
       font-family: var(--mono);
       border: 1px solid var(--accent-border);
     }
     .card-tag {
       font-family: var(--mono);
-      font-size: 8.8px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
       background: var(--surface-muted);
-      padding: 2px 6px;
+      padding: 2.5px 8px;
       border-radius: 4px;
       border: 1px solid var(--hairline);
     }
 
-    /* Split 2-Column Grid */
-    .row-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+    /* =========================================================
+       PILLAR 1: SYSTEM ARCHITECTURE (Budget: 450px)
+       ========================================================= */
+    .row-pillar-1 {
+      height: 450px;
     }
-
-    /* -------------------------------------------------------------
-       SECTION 1: NATIVE ARCHITECTURE STACK DIAGRAM (PURE HTML/CSS)
-       ------------------------------------------------------------- */
-    .arch-stack-container {
+    .arch-grid-layout {
       display: grid;
-      grid-template-columns: 390px 1fr;
-      gap: 10px;
-      flex: 1;
-      min-height: 0;
+      grid-template-columns: 520px 1fr;
+      gap: 14px;
+      height: calc(100% - 42px);
     }
     .native-stack-visual {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 3px;
       background: var(--surface-subtle);
       border: 1px solid var(--card-border-subtle);
       border-radius: var(--r-md);
-      padding: 7px 8px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 100%;
-      min-height: 0;
     }
     .stack-tier-block {
       background: #ffffff;
       border: 1px solid var(--card-border-subtle);
       border-radius: var(--r-sm);
-      padding: 5px 8px;
+      padding: 6px 12px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 2px;
-      border-left: 3.5px solid var(--accent);
-      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02);
-      flex: 1;
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
     }
     .stack-tier-block.gateway { border-left-color: var(--orange); }
     .stack-tier-block.engine { border-left-color: var(--green); }
     .stack-tier-block.persistence { border-left-color: var(--cyan); }
     .stack-tier-block.vault { border-left-color: var(--purple); }
-    
+
     .tier-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .tier-name {
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--ink);
     }
     .tier-tech {
       font-family: var(--mono);
-      font-size: 8.2px;
+      font-size: 11px;
       font-weight: 700;
       background: var(--surface-muted);
-      padding: 1.5px 5px;
-      border-radius: 3px;
+      padding: 1.5px 6px;
+      border-radius: 4px;
       color: var(--muted);
       border: 1px solid var(--hairline);
     }
     .tier-desc {
-      font-size: 9.6px;
+      font-size: 12.5px;
       color: var(--ink-secondary);
-      line-height: 1.25;
+      line-height: 1.3;
     }
     .tier-connector {
       text-align: center;
-      font-size: 8px;
+      font-size: 10.5px;
       color: var(--muted);
-      line-height: 1;
       font-family: var(--mono);
       font-weight: 700;
       padding: 1px 0;
     }
 
-    .arch-specs-panel {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 6px;
+    .arch-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
       height: 100%;
-      min-height: 0;
     }
     .arch-spec-card {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
       border-radius: var(--r-sm);
-      padding: 7px 10px;
+      padding: 10px 14px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 2.5px;
-      border-left: 3.5px solid var(--accent);
-      flex: 1;
+      justify-content: space-between;
+      gap: 4px;
+      border-left: 4px solid var(--accent);
     }
     .arch-spec-title {
-      font-size: 11px;
+      font-size: 15px;
       font-weight: 800;
       color: var(--ink);
       display: flex;
@@ -462,579 +413,393 @@
       justify-content: space-between;
     }
     .arch-spec-text {
-      font-size: 9.6px;
+      font-size: 13px;
       color: var(--ink-secondary);
       line-height: 1.35;
     }
-
-    /* -------------------------------------------------------------
-       SECTION 2: NATIVE MEDALLION PIPELINE DIAGRAM (PURE HTML/CSS)
-       ------------------------------------------------------------- */
-    .medallion-container {
-      display: grid;
-      grid-template-columns: 390px 1fr;
-      gap: 10px;
-      flex: 1;
-      min-height: 0;
-    }
-    .native-medallion-visual {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 4px;
-      background: var(--surface-subtle);
-      border: 1px solid var(--card-border-subtle);
-      border-radius: var(--r-md);
-      padding: 7px 8px;
-      height: 100%;
-      min-height: 0;
-    }
-    .medallion-tier-box {
-      background: #ffffff;
-      border: 1px solid var(--card-border-subtle);
-      border-radius: var(--r-sm);
-      padding: 7px 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 2.5px;
-      flex: 1;
-    }
-    .medallion-tier-box.bronze { border-left: 4px solid var(--orange); }
-    .medallion-tier-box.silver { border-left: 4px solid #059669; }
-    .medallion-tier-box.gold { border-left: 4px solid #d97706; }
-    .medallion-tier-box.lake { border-left: 4px solid var(--cyan); }
-    
-    .medallion-header {
+    .arch-spec-badge-strip {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-    .medallion-title {
-      font-size: 11.2px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-    .medallion-tag {
-      font-family: var(--mono);
-      font-size: 8.2px;
-      font-weight: 700;
-      padding: 1.5px 5px;
-      border-radius: 3px;
-    }
-    .bronze .medallion-tag { background: #fff7ed; color: #c2410c; }
-    .silver .medallion-tag { background: #ecfdf5; color: #047857; }
-    .gold .medallion-tag { background: #fef3c7; color: #b45309; }
-    .lake .medallion-tag { background: #f0f9ff; color: #0369a1; }
-
-    /* -------------------------------------------------------------
-       SECTION 3: NATIVE DATA FLOW (3x2 GRID - NO VOIDS)
-       ------------------------------------------------------------- */
-    .dataflow-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       gap: 6px;
-      flex: 1;
-      min-height: 0;
     }
-    .dataflow-steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr 1fr;
-      gap: 6px;
-      flex: 1;
-      min-height: 0;
-    }
-    .flow-step-box {
-      background: var(--surface-subtle);
-      border: 1px solid var(--card-border-subtle);
-      border-radius: var(--r-sm);
-      padding: 7px 9px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 3px;
-      border-top: 3.5px solid var(--accent);
-      height: 100%;
-    }
-    .flow-step-box:nth-child(2) { border-top-color: var(--orange); }
-    .flow-step-box:nth-child(3) { border-top-color: var(--green); }
-    .flow-step-box:nth-child(4) { border-top-color: var(--cyan); }
-    .flow-step-box:nth-child(5) { border-top-color: var(--purple); }
-    .flow-step-box:nth-child(6) { border-top-color: #ec4899; }
-
-    .flow-step-num {
+    .spec-micro-badge {
       font-family: var(--mono);
-      font-size: 8.8px;
-      font-weight: 800;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .flow-step-title {
-      font-size: 11.2px;
-      font-weight: 800;
-      color: var(--ink);
-      line-height: 1.15;
-    }
-    .flow-item-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 2.5px;
-    }
-    .flow-item-list li {
-      font-size: 9px;
-      color: var(--ink-secondary);
-      line-height: 1.25;
-      padding-left: 8px;
-      position: relative;
-    }
-    .flow-item-list li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 900;
-    }
-    .flow-step-badge {
-      font-family: var(--mono);
-      font-size: 8px;
+      font-size: 11px;
       font-weight: 700;
       background: #ffffff;
       border: 1px solid var(--hairline);
-      border-radius: 3px;
-      padding: 2px 5px;
+      padding: 1.5px 6px;
+      border-radius: 4px;
       color: var(--muted);
-      text-align: center;
     }
 
-    .dataflow-invariants-bar {
-      background: #ffffff;
-      border: 1px solid var(--card-border-subtle);
-      border-radius: var(--r-sm);
-      padding: 6px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
+    /* =========================================================
+       PILLAR 2: MEDALLION PIPELINE & SCHEMA (Budget: 450px)
+       ========================================================= */
+    .row-pillar-2 {
+      height: 450px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
       flex-shrink: 0;
     }
-    .invariant-item {
+    .medallion-pipeline-box {
       display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 9.5px;
-      color: var(--ink-secondary);
+      flex-direction: column;
+      justify-content: space-between;
+      height: calc(100% - 42px);
     }
-    .invariant-item strong { color: var(--ink); }
-    .invariant-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--green);
-    }
-
-    /* -------------------------------------------------------------
-       SECTION 4: NATIVE RELATIONAL ERD (FULL 22 TABLES)
-       ------------------------------------------------------------- */
-    .erd-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      flex: 1;
-      min-height: 0;
-    }
-    .erd-cluster-box {
+    .medallion-stage-card {
       background: var(--surface-subtle);
       border: 1px solid var(--card-border-subtle);
       border-radius: var(--r-sm);
-      padding: 6px 6px;
+      padding: 8px 12px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      gap: 2px;
+      border-left: 3.5px solid var(--orange);
+    }
+    .medallion-stage-card.silver { border-left-color: #059669; }
+    .medallion-stage-card.gold { border-left-color: #d97706; }
+    .medallion-stage-card.lake { border-left-color: var(--cyan); }
+
+    .stage-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stage-card-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .stage-card-desc {
+      font-size: 12.8px;
+      color: var(--ink-secondary);
+      line-height: 1.3;
+    }
+
+    .schema-clusters-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+      height: calc(100% - 42px);
+    }
+    .schema-cluster-card {
+      background: var(--surface-subtle);
+      border: 1px solid var(--card-border-subtle);
+      border-radius: var(--r-sm);
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       gap: 3px;
       border-top: 3.5px solid var(--accent);
-      height: 100%;
-      min-height: 0;
     }
-    .erd-cluster-box.intel { border-top-color: var(--orange); }
-    .erd-cluster-box.req { border-top-color: var(--cyan); }
-    .erd-cluster-box.hiring { border-top-color: var(--purple); }
+    .schema-cluster-card.intel { border-top-color: var(--orange); }
+    .schema-cluster-card.req { border-top-color: var(--cyan); }
+    .schema-cluster-card.hiring { border-top-color: var(--purple); }
 
-    .erd-cluster-header {
+    .cluster-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--hairline);
-      padding-bottom: 3px;
-      flex-shrink: 0;
+      padding-bottom: 2px;
     }
-    .erd-cluster-title {
-      font-size: 10.6px;
+    .cluster-title {
+      font-size: 14px;
       font-weight: 800;
       color: var(--ink);
     }
-    .erd-cluster-badge {
+    .cluster-tables-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .schema-table-item {
+      font-size: 12px;
+      color: var(--ink-secondary);
+      line-height: 1.25;
+    }
+    .schema-table-item strong {
       font-family: var(--mono);
-      font-size: 8px;
+      font-size: 12px;
+      color: var(--ink);
+      font-weight: 800;
+    }
+    .schema-footer-tag {
+      font-family: var(--mono);
+      font-size: 10.5px;
       font-weight: 700;
       color: var(--muted);
       background: #ffffff;
-      border: 1px solid var(--hairline);
-      padding: 1px 4px;
+      border: 1px dashed var(--hairline);
+      padding: 1.5px 5px;
       border-radius: 3px;
-    }
-    .erd-tables-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex: 1;
-      gap: 2px;
-      margin-top: 3px;
-    }
-    .erd-table-row {
-      background: #ffffff;
-      border: 1px solid var(--card-border-subtle);
-      border-radius: 3px;
-      padding: 2.5px 4px;
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-    .erd-t-name {
-      font-family: var(--mono);
-      font-size: 8.8px;
-      font-weight: 800;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .erd-t-cols {
-      font-size: 7.8px;
-      color: var(--muted);
-      line-height: 1.15;
-    }
-    .erd-key-pill {
-      font-family: var(--mono);
-      font-size: 7px;
-      font-weight: 800;
-      background: #eef2ff;
-      color: var(--accent);
-      padding: 0 3px;
-      border-radius: 2px;
-      border: 1px solid #c7d2fe;
     }
 
-    /* -------------------------------------------------------------
-       SECTION 5: THE 6 CANONICAL ALGEBRAIC FORMULATIONS (FULL WIDTH)
-       ------------------------------------------------------------- */
-    .formulas-section {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--r-lg);
-      padding: 10px 14px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      height: 100%;
-      min-height: 0;
+    /* =========================================================
+       PILLAR 3: THE 4 CANONICAL FORMULATIONS (Budget: 520px)
+       ========================================================= */
+    .row-pillar-3 {
+      height: 520px;
     }
-    .formulas-grid {
+    .formulas-grid-2x2 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      gap: 8px;
-      flex: 1;
-      min-height: 0;
+      gap: 12px;
+      height: calc(100% - 42px);
     }
-    .formula-mini-card {
+    .formula-large-card {
       background: var(--surface-subtle);
       border: 1px solid var(--card-border-subtle);
       border-radius: var(--r-sm);
-      padding: 7px 10px;
+      padding: 10px 14px;
       box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
-      border-left: 4px solid var(--accent);
+      border-left: 4.5px solid var(--accent);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 2.5px;
-      height: 100%;
+      gap: 4px;
     }
-    .formula-mini-card.f2 { border-left-color: #ec4899; }
-    .formula-mini-card.f3 { border-left-color: var(--green); }
-    .formula-mini-card.f4 { border-left-color: var(--cyan); }
-    .formula-mini-card.f5 { border-left-color: #f59e0b; }
-    .formula-mini-card.f6 { border-left-color: var(--purple); }
+    .formula-large-card.f2 { border-left-color: #ec4899; }
+    .formula-large-card.f3 { border-left-color: var(--green); }
+    .formula-large-card.f4 { border-left-color: var(--cyan); }
 
-    .f-mini-top {
+    .f-head-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .f-code {
+    .f-title-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .f-code-tag {
       font-family: var(--mono);
-      font-size: 9px;
+      font-size: 13px;
       font-weight: 800;
-      padding: 1px 5px;
-      border-radius: 3px;
+      padding: 1.5px 7px;
+      border-radius: 4px;
       background: #ffffff;
       color: var(--ink);
       border: 1px solid var(--hairline);
     }
-    .f-sla {
+    .f-name-large {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .f-sla-tag {
       font-family: var(--mono);
-      font-size: 8.8px;
+      font-size: 12px;
       color: var(--green);
       font-weight: 700;
       background: #ecfdf5;
-      padding: 1px 5px;
-      border-radius: 3px;
+      padding: 1.5px 7px;
+      border-radius: 4px;
       border: 1px solid #a7f3d0;
     }
-    .f-name {
-      font-size: 11.2px;
-      font-weight: 800;
-      color: var(--ink);
-      line-height: 1.15;
-    }
-    .f-math-box {
+
+    .f-math-display {
       background: #ffffff;
-      border: 1px solid var(--hairline);
-      border-radius: 4px;
-      padding: 4px 6px;
-      font-size: 11.8px;
+      border: 1px solid var(--card-border-subtle);
+      border-radius: var(--r-sm);
+      padding: 6px 12px;
+      font-size: 19px;
       text-align: center;
-      min-height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--ink);
       box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.02);
-      margin: 1px 0;
     }
-    .f-desc {
-      font-size: 9.6px;
+    .f-desc-large {
+      font-size: 13.5px;
       color: var(--ink-secondary);
-      line-height: 1.3;
+      line-height: 1.35;
     }
-    .f-params {
+    .f-params-row {
       font-family: var(--mono);
-      font-size: 8.2px;
+      font-size: 11.5px;
       color: var(--muted);
       background: #ffffff;
       border: 1px solid var(--hairline);
-      border-radius: 3px;
-      padding: 1.5px 5px;
+      border-radius: 4px;
+      padding: 3px 6px;
     }
-
-    /* -------------------------------------------------------------
-       SECTION 6: DUAL ROLE & PRODUCTION SLAS
-       ------------------------------------------------------------- */
-    .dual-showcase {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      flex: 1;
-      min-height: 0;
-    }
-    .portal-preview-card {
-      background: var(--surface-subtle);
-      border: 1px solid var(--card-border-subtle);
-      border-radius: var(--r-sm);
-      padding: 7px 9px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 3.5px;
-      height: 100%;
-      min-height: 0;
-    }
-    .portal-preview-card.talent { border-top: 3.5px solid var(--accent); }
-    .portal-preview-card.employer { border-top: 3.5px solid var(--orange); }
-    .portal-top-bar {
+    .f-guarantee-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-    .portal-label {
-      font-size: 9.2px;
-      font-weight: 800;
+      gap: 6px;
       font-family: var(--mono);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 11px;
     }
-    .talent .portal-label { color: var(--accent); }
-    .employer .portal-label { color: var(--orange); }
-    .portal-name {
-      font-size: 11.6px;
-      font-weight: 800;
-      color: var(--ink);
-    }
-
-    .micro-matrix-box {
-      background: #ffffff;
-      border: 1px solid var(--card-border-subtle);
-      border-radius: var(--r-sm);
-      padding: 4px 6px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .matrix-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 8.8px;
-      color: var(--ink-secondary);
-    }
-    .matrix-row strong { color: var(--ink); font-weight: 700; }
-    .radar-bar-bg {
-      width: 65px;
-      height: 4px;
-      background: #e2e8f0;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .radar-bar-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #4f46e5, #7c3aed);
-    }
-    .radar-bar-fill.orange { background: linear-gradient(90deg, #ea580c, #f59e0b); }
-
-    .mini-card-banner {
-      background: #ffffff;
-      border: 1px solid var(--card-border-subtle);
-      border-radius: var(--r-sm);
-      padding: 3.5px 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 8.5px;
-      line-height: 1.2;
-    }
-    .mini-card-banner code {
-      font-family: var(--mono);
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .f-guarantee-strip {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 4px;
-      font-family: var(--mono);
-      font-size: 7.8px;
-    }
-    .f-bound-pill {
+    .f-bound-chip {
       background: #ffffff;
       border: 1px solid var(--hairline);
       border-radius: 3px;
-      padding: 1px 4px;
+      padding: 1.5px 6px;
       color: var(--muted);
       font-weight: 700;
     }
-    .f-guarantee-badge {
+    .f-proof-chip {
       background: #ecfdf5;
       color: var(--green);
       border: 1px solid #a7f3d0;
       border-radius: 3px;
-      padding: 1px 4px;
+      padding: 1.5px 6px;
       font-weight: 800;
     }
 
-    .feature-bullets {
-      list-style: none;
-      font-size: 9px;
-      color: var(--ink-secondary);
-      line-height: 1.25;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    /* =========================================================
+       PILLAR 4: DUAL EXPERIENCE & BENCHMARK (Budget: 500px)
+       ========================================================= */
+    .row-pillar-4 {
+      height: 500px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      flex-shrink: 0;
     }
-    .feature-bullets li {
-      position: relative;
-      padding-left: 9px;
-    }
-    .feature-bullets li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-      font-weight: 900;
-    }
-    .portal-preview-card.employer .feature-bullets li::before { color: var(--orange); }
-    .feature-bullets li strong { color: var(--ink); font-weight: 700; }
-
-    .sec7-container {
+    .dual-experience-col {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 5px;
-      flex: 1;
-      min-height: 0;
-      height: 100%;
+      height: calc(100% - 42px);
+      gap: 8px;
     }
+    .dual-subcard {
+      background: var(--surface-subtle);
+      border: 1px solid var(--card-border-subtle);
+      border-radius: var(--r-sm);
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 4px;
+      border-top: 3.5px solid var(--accent);
+      flex: 1;
+    }
+    .dual-subcard.employer { border-top-color: var(--orange); }
 
-    .tech-pills-row {
+    .dual-subhead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dual-subhead-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .dual-radar-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      background: #ffffff;
+      padding: 4px 8px;
+      border-radius: var(--r-sm);
+      border: 1px solid var(--card-border-subtle);
+    }
+    .radar-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: var(--ink-secondary);
+    }
+    .radar-item strong { color: var(--ink); font-weight: 700; }
+    .radar-track {
+      width: 110px;
+      height: 5px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .radar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
+    }
+    .radar-fill.orange { background: linear-gradient(90deg, #ea580c, #f59e0b); }
+
+    .dual-banner {
+      background: #ffffff;
+      border: 1px solid var(--card-border-subtle);
+      border-radius: var(--r-sm);
+      padding: 3.5px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+    .dual-banner strong { color: var(--ink); }
+    .dual-banner code { font-family: var(--mono); color: var(--accent); font-weight: 700; }
+
+    /* Benchmark Column */
+    .benchmark-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: calc(100% - 42px);
+      gap: 8px;
+    }
+    .kpi-row-4 {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      flex-shrink: 0;
+      gap: 6px;
     }
-    .tech-pill-box {
+    .kpi-mini-card {
       background: var(--surface-subtle);
       border: 1px solid var(--card-border-subtle);
       border-radius: var(--r-sm);
       padding: 4px 3px;
       text-align: center;
     }
-    .tech-pill-val {
+    .kpi-val {
       font-family: var(--mono);
-      font-size: 13.5px;
+      font-size: 16px;
       font-weight: 900;
       margin-bottom: 1px;
     }
-    .tech-pill-lbl {
-      font-size: 7.8px;
+    .kpi-lbl {
+      font-size: 10px;
       color: var(--muted);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
 
-    .benchmark-table-box {
+    .benchmark-table-wrap {
       background: #ffffff;
       border: 1px solid var(--card-border-subtle);
       border-radius: var(--r-sm);
       overflow: hidden;
-      flex: 1;
-      display: flex;
     }
     .benchmark-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 8.8px;
+      font-size: 12px;
       text-align: left;
     }
     .benchmark-table th {
       background: var(--surface-muted);
       color: var(--ink);
       font-weight: 800;
-      padding: 3px 6px;
-      border-bottom: 1px solid var(--hairline);
+      padding: 4.5px 8px;
+      border-bottom: 1.5px solid var(--hairline);
       font-family: var(--mono);
-      font-size: 7.8px;
+      font-size: 11px;
     }
     .benchmark-table td {
-      padding: 3px 6px;
+      padding: 4.5px 8px;
       border-bottom: 1px solid var(--hairline);
       color: var(--ink-secondary);
     }
@@ -1043,37 +808,40 @@
       color: var(--green);
       font-weight: 800;
       font-family: var(--mono);
+      background: #f0fdf4;
     }
 
-    .commercial-pitch-grid {
+    .enterprise-cards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5px;
-      flex-shrink: 0;
+      gap: 6px;
     }
-    .pitch-item {
+    .ent-card {
       background: var(--surface-subtle);
       border: 1px solid var(--hairline);
       border-radius: var(--r-sm);
-      padding: 4px 7px;
-      font-size: 9px;
-      line-height: 1.25;
+      padding: 5px 8px;
+      font-size: 12px;
+      line-height: 1.3;
       color: var(--ink-secondary);
     }
-    .pitch-item strong {
+    .ent-card strong {
       color: var(--ink);
-      font-size: 9.4px;
+      font-size: 12.5px;
       font-weight: 800;
       display: block;
       margin-bottom: 1px;
     }
 
-    /* ---------- FOOTER BAR (LIGHT THEME) ---------- */
+    /* =========================================================
+       FOOTER BAR (Budget: 50px)
+       ========================================================= */
     .poster-footer {
+      height: 50px;
       background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: var(--r-xl);
-      padding: 8px 22px;
+      padding: 8px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1084,50 +852,35 @@
     .footer-left {
       display: flex;
       flex-direction: column;
-      gap: 1px;
     }
     .footer-title {
-      font-size: 13px;
+      font-size: 14.5px;
       font-weight: 800;
       color: var(--ink);
-      letter-spacing: -0.3px;
     }
     .footer-subtitle {
-      font-size: 10px;
+      font-size: 11.5px;
       color: var(--muted);
-      font-weight: 600;
     }
     .footer-links {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 12px;
     }
     .footer-badge-box {
-      background: var(--surface-subtle);
-      border: 1px solid var(--card-border);
-      border-radius: 4px;
-      padding: 3px 6px;
       font-family: var(--mono);
-      font-size: 8.8px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--ink-secondary);
+      background: var(--surface-muted);
+      border: 1px solid var(--hairline);
+      padding: 3px 8px;
+      border-radius: 5px;
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 5px;
     }
-    .footer-badge-box span { color: var(--accent); }
-
-    @media print {
-      @page {
-        size: A4 portrait;
-        margin: 0;
-      }
-      body {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-      }
-    }
+    .footer-badge-box span { color: var(--green); }
   </style>
 </head>
 <body>
@@ -1137,16 +890,18 @@
 
   <div class="poster-canvas">
 
-    <!-- HEADER: MENTORME FUTURA REMIX HACKATHON 2026 -->
+    <!-- =======================================================
+         HEADER: BRAND, MISSION & SYSTEM STATS
+         ======================================================= -->
     <header class="poster-header">
       <div class="header-top">
         <div class="brand-wrap">
-          <svg class="brand-logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="40" height="40" rx="10" fill="#0f172a"/>
-            <rect x="8.5" y="9" width="13" height="18" rx="3" fill="#4f46e5" transform="rotate(-12 15 18)"/>
-            <rect x="18.5" y="9" width="13" height="18" rx="3" fill="#ea580c" transform="rotate(12 25 18)"/>
-            <circle cx="20" cy="27" r="6" fill="#fff" stroke="#0f172a" stroke-width="1.5"/>
-            <path d="M17.4 27.1l1.8 1.8 3.4-3.6" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="#0f172a"/>
+            <rect x="10.5" y="11" width="15" height="22" rx="4" fill="#4f46e5" transform="rotate(-12 18 22)"/>
+            <rect x="22.5" y="11" width="15" height="22" rx="4" fill="#ea580c" transform="rotate(12 30 22)"/>
+            <circle cx="24" cy="33" r="7" fill="#fff" stroke="#0f172a" stroke-width="2"/>
+            <path d="M21 33l2.2 2.2 4.2-4.4" stroke="#0f172a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div class="brand-text-block">
             <div class="brand-title">Jinder<span>.</span></div>
@@ -1164,34 +919,33 @@
         Enterprise Architecture, Data Modeling &amp; <em>Algorithmic Alignment Engine</em>
       </h1>
       <p class="header-subtext">
-        Production-grade stateless 5-layer stack, zero-PII relational schema (22 tables), high-concurrency SQLite3 WAL engine, and 6 canonical continuous algebraic formulations eliminating the overseas resume penalty in Australian ICT hiring.
+        Stateless 5-layer sovereign stack, zero-PII relational schema (22 tables), high-concurrency SQLite3 WAL engine, and 4 canonical closed-form algebraic formulations eliminating the overseas qualification discount in Australian ICT hiring.
       </p>
 
-      <!-- Quick Metrics Strip -->
       <div class="header-stats-strip">
         <div class="h-stat-box">
           <span class="h-stat-icon">⚡</span>
           <div class="h-stat-content">
             <span class="h-stat-val">&lt; 5ms P99</span>
-            <span class="h-stat-lbl">Match SLA Latency</span>
+            <span class="h-stat-lbl">Deterministic Match</span>
           </div>
         </div>
         <div class="h-stat-box">
-          <span class="h-stat-icon">🔒</span>
+          <span class="h-stat-icon">🛡️</span>
           <div class="h-stat-content">
             <span class="h-stat-val">Zero PII Leak</span>
-            <span class="h-stat-lbl">Wildlife Projections</span>
+            <span class="h-stat-lbl">Blind Personas</span>
           </div>
         </div>
         <div class="h-stat-box">
           <span class="h-stat-icon">🗄️</span>
           <div class="h-stat-content">
-            <span class="h-stat-val">22 Normalized</span>
-            <span class="h-stat-lbl">SQLite WAL Tables</span>
+            <span class="h-stat-val">22 Tables</span>
+            <span class="h-stat-lbl">SQLite WAL Engine</span>
           </div>
         </div>
         <div class="h-stat-box">
-          <span class="h-stat-icon">🏛️</span>
+          <span class="h-stat-icon">📊</span>
           <div class="h-stat-content">
             <span class="h-stat-val">172 Skills</span>
             <span class="h-stat-lbl">ABS ANZSCO 2026</span>
@@ -1200,812 +954,557 @@
         <div class="h-stat-box">
           <span class="h-stat-icon">🔄</span>
           <div class="h-stat-content">
-            <span class="h-stat-val">Turnkey Webhooks</span>
+            <span class="h-stat-val">Turnkey API</span>
             <span class="h-stat-lbl">Workday &amp; HRIS</span>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- MAIN BODY (PURE TECHNICAL SYSTEM ARCHITECTURE - ZERO EMPTY SPACE) -->
-    <main class="poster-body">
-
-      <!-- ROW 1: SYSTEM ARCHITECTURE & 5-LAYER STACK (LEFT) + MEDALLION DATA PIPELINE (RIGHT) -->
-      <div class="row-split row-arch-medallion">
-
-        <!-- 1. SYSTEM ARCHITECTURE & 5-LAYER STACK (NATIVE VISUAL FLOW) -->
-        <section class="section-card">
-          <div class="card-head">
-            <div class="card-head-title">
-              <span class="card-icon">1</span>
-              System Architecture &amp; 5-Layer Stack
-            </div>
-            <span class="card-tag">Tiered System Design</span>
-          </div>
-
-          <div class="arch-stack-container">
-            <!-- Left: Native Interactive Stack Component Diagram -->
-            <div class="native-stack-visual">
-              <div class="stack-tier-block">
-                <div class="tier-header">
-                  <span class="tier-name">L1: Presentation Client</span>
-                  <span class="tier-tech">Native ES6 SPA</span>
-                </div>
-                <div class="tier-desc">Hash routing (<code>#/jobs/:id</code>), in-memory reactive state, compare basket (≤ 5 items), zero build pipeline.</div>
-              </div>
-              <div class="tier-connector">▼ HTTP JSON /api/* • Bearer Auth • Stateless REST</div>
-
-              <div class="stack-tier-block gateway">
-                <div class="tier-header">
-                  <span class="tier-name">L2: Stateless REST Gateway</span>
-                  <span class="tier-tech">Python 3.11 stdlib</span>
-                </div>
-                <div class="tier-desc">Stateless HTTP server (<code>port 8095</code>), strict role guards, session tokens, and request context isolation.</div>
-              </div>
-              <div class="tier-connector">▼ In-Memory IPC • Dynamic On-Read Evaluation</div>
-
-              <div class="stack-tier-block engine">
-                <div class="tier-header">
-                  <span class="tier-name">L3: Intelligence Alignment</span>
-                  <span class="tier-tech">engine_bridge.py</span>
-                </div>
-                <div class="tier-desc">Executes Formulations F-01 to F-06 on-the-fly. Scores computed on request; zero score caching to prevent drift.</div>
-              </div>
-              <div class="tier-connector">▼ SQLite C-Bindings • WAL POSIX Concurrency</div>
-
-              <div class="stack-tier-block persistence">
-                <div class="tier-header">
-                  <span class="tier-name">L4: Relational Persistence</span>
-                  <span class="tier-tech">SQLite3 WAL Mode</span>
-                </div>
-                <div class="tier-desc">22 normalized tables, foreign keys active, single writer / multiple readers without database table locking.</div>
-              </div>
-
-              <div class="stack-tier-block vault">
-                <div class="tier-header">
-                  <span class="tier-name">L5: Air-Gapped File Storage</span>
-                  <span class="tier-tech">ThreadPool (2 Workers)</span>
-                </div>
-                <div class="tier-desc">Private CV uploads directory (<code>var/uploads/</code>), async document parser pool, and decoupled <code>email_outbox</code>.</div>
-              </div>
-            </div>
-
-            <!-- Right: Architectural Tenets & Invariants -->
-            <div class="arch-specs-panel">
-              <div class="arch-spec-card">
-                <div class="arch-spec-title">
-                  <span>Stateless Micro-Daemon</span>
-                  <span class="card-tag">High Concurrency</span>
-                </div>
-                <div class="arch-spec-text">
-                  Standard library <code>http.server</code> daemon executes without heavy web frameworks. Fully decoupled from client lifecycle, allowing seamless horizontal worker scaling.
-                </div>
-              </div>
-
-              <div class="arch-spec-card" style="border-left-color: var(--green);">
-                <div class="arch-spec-title">
-                  <span>Fact-Only Storage Law</span>
-                  <span class="card-tag">Zero Drift</span>
-                </div>
-                <div class="arch-spec-text">
-                  The SQLite database stores historical facts only (skills, applications, timestamps). Fit scores are calculated fresh on every HTTP read, eliminating data staleness.
-                </div>
-              </div>
-
-              <div class="arch-spec-card" style="border-left-color: var(--orange);">
-                <div class="arch-spec-title">
-                  <span>Zero GPU Compute Overhead</span>
-                  <span class="card-tag">95% TCO Cut</span>
-                </div>
-                <div class="arch-spec-text">
-                  Algebraic closed-form algorithms replace costly GPU neural screening inference. Scoring executes in sub-millisecond CPU cycles without external LLM dependencies or token bills.
-                </div>
-              </div>
-
-              <div class="arch-spec-card" style="border-left-color: var(--cyan);">
-                <div class="arch-spec-title">
-                  <span>POSIX Concurrency Control</span>
-                  <span class="card-tag">PRAGMA WAL</span>
-                </div>
-                <div class="arch-spec-text">
-                  Write-Ahead Logging provides non-blocking concurrent reads while background worker threads write application state transitions, ensuring zero transaction starvation.
-                </div>
-              </div>
-
-              <div class="arch-spec-card" style="border-left-color: var(--purple);">
-                <div class="arch-spec-title">
-                  <span>Zero Cold-Start Footprint</span>
-                  <span class="card-tag">&lt; 65MB RAM</span>
-                </div>
-                <div class="arch-spec-text">
-                  Native Python stdlib + SQLite C-bindings initialize in &lt; 180ms without container warmup pauses, reducing idle compute waste to zero.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 2. MEDALLION 3-TIER ENTERPRISE DATA PIPELINE (NATIVE VISUAL TIERS) -->
-        <section class="section-card">
-          <div class="card-head">
-            <div class="card-head-title">
-              <span class="card-icon">2</span>
-              Medallion 3-Tier Enterprise Data Pipeline
-            </div>
-            <span class="card-tag">Data Lakehouse Architecture</span>
-          </div>
-
-          <div class="medallion-container">
-            <!-- Left: Native Medallion Visual Tiers -->
-            <div class="native-medallion-visual">
-              <div class="medallion-tier-box bronze">
-                <div class="medallion-header">
-                  <span class="medallion-title">🥉 Bronze: Raw Intake</span>
-                  <span class="medallion-tag">Air-Gapped Tier</span>
-                </div>
-                <div class="tier-desc">Unstructured CV and JD document intake (PDF, DOCX). Cryptographic SHA-256 fingerprinting and sandbox quarantine isolation.</div>
-              </div>
-              <div class="tier-connector">▼ ThreadPool Extraction &amp; Ontology Normalization</div>
-
-              <div class="medallion-tier-box silver">
-                <div class="medallion-header">
-                  <span class="medallion-title">🥈 Silver: Canonical Graph</span>
-                  <span class="medallion-tag">ANZSCO 2026</span>
-                </div>
-                <div class="tier-desc">Maps raw qualifications to 172 Australian ICT skills, 5 domain verticals, and AQF Levels 7–9 credential equivalence tables.</div>
-              </div>
-              <div class="tier-connector">▼ Privacy Vector Projection &amp; Z-Standardization</div>
-
-              <div class="medallion-tier-box gold">
-                <div class="medallion-header">
-                  <span class="medallion-title">🥇 Gold: Zero-PII Vectors</span>
-                  <span class="medallion-tag">Curated Intelligence</span>
-                </div>
-                <div class="tier-desc">Mathematical capability matrices, Gaussian Z-scores, statutory blocker gates, and wildlife persona projections. Strictly zero PII.</div>
-              </div>
-
-              <div class="medallion-tier-box lake">
-                <div class="medallion-header">
-                  <span class="medallion-title">🏛️ Lake: Sovereign Sydney</span>
-                  <span class="medallion-tag">ap-southeast-2</span>
-                </div>
-                <div class="tier-desc">Apache Iceberg tables, AWS Lake Formation RBAC, and strict APP 1-13 data sovereignty compliance.</div>
-              </div>
-            </div>
-
-            <!-- Right: Enterprise Governance & Data Specifications -->
-            <div class="arch-specs-panel">
-              <div class="arch-spec-card" style="border-left-color: var(--orange);">
-                <div class="arch-spec-title">
-                  <span>Intake &amp; File Hygiene</span>
-                  <span class="card-tag">Quarantine Mode</span>
-                </div>
-                <div class="arch-spec-text">
-                  Source documents stored in <code>var/uploads/</code> are never exposed directly to employer endpoints. Raw resumes are scrubbed of personal identifiers during ingestion.
-                </div>
-              </div>
-
-              <div class="arch-spec-card" style="border-left-color: var(--green);">
-                <div class="arch-spec-title">
-                  <span>Ontology Normalization</span>
-                  <span class="card-tag">172 Canonical Skills</span>
-                </div>
-                <div class="arch-spec-text">
-                  ABS ANZSCO 2026 taxonomy maps overseas titles into Australian ICT occupational classifications, eliminating overseas qualification discounting and pedigree bias.
-                </div>
-              </div>
-
-              <div class="arch-spec-card" style="border-left-color: #d97706;">
-                <div class="arch-spec-title">
-                  <span>Allowlist Privacy Shield</span>
-                  <span class="card-tag">store.shared_profile()</span>
-                </div>
-                <div class="arch-spec-text">
-                  Strict allowlist projection ensures employer views only receive accepted skills, rounded experience bands, certifications, and Australian wildlife personas.
-                </div>
-              </div>
-
-              <div class="arch-spec-card" style="border-left-color: var(--cyan);">
-                <div class="arch-spec-title">
-                  <span>Statutory Compliance Gate</span>
-                  <span class="card-tag">APP 1-13 &amp; GDPR</span>
-                </div>
-                <div class="arch-spec-text">
-                  Full right-to-be-forgotten implementation. Automated single-command profile purging; immutable audit trail preserved under cryptographically anonymized IDs.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+    <!-- =======================================================
+         PILLAR 1: SYSTEM ARCHITECTURE & 5-LAYER STACK
+         ======================================================= -->
+    <section class="pillar-card row-pillar-1">
+      <div class="card-head">
+        <div class="card-head-title">
+          <span class="card-icon">1</span>
+          System Architecture &amp; 5-Layer Sovereign Stack
+        </div>
+        <span class="card-tag">Stateless Micro-Daemon • POSIX WAL Persistence • Zero Cold Start</span>
       </div>
 
-      <!-- ROW 2: END-TO-END DATA FLOW (TOP) + RELATIONAL DATA MODELING (BOTTOM) -->
-      <div class="row-split row-flow-erd">
-
-        <!-- 3. DATA FLOW ARCHITECTURE (6-STAGE LIFECYCLE 3x2 GRID) -->
-        <section class="section-card">
-          <div class="card-head">
-            <div class="card-head-title">
-              <span class="card-icon">3</span>
-              End-to-End Data Flow Architecture (6-Stage Pipeline)
+      <div class="arch-grid-layout">
+        <!-- Left: 5-Tier Component Stack -->
+        <div class="native-stack-visual">
+          <div class="stack-tier-block">
+            <div class="tier-header">
+              <span class="tier-name">L1: Presentation Client</span>
+              <span class="tier-tech">Native ES6 SPA</span>
             </div>
-            <span class="card-tag">Deterministic State Machine</span>
+            <div class="tier-desc">Zero-build reactive client, hash routing (<code>#/jobs/:id</code>), candidate compare basket, SVG capability radars.</div>
+          </div>
+          <div class="tier-connector">▼ HTTP JSON /api/* • Stateless Bearer Token Authorization</div>
+
+          <div class="stack-tier-block gateway">
+            <div class="tier-header">
+              <span class="tier-name">L2: Stateless REST Gateway</span>
+              <span class="tier-tech">Python 3.11 stdlib</span>
+            </div>
+            <div class="tier-desc">Stateless HTTP daemon (<code>port 8095</code>), strict role guards (candidate|recruiter), isolated request context.</div>
+          </div>
+          <div class="tier-connector">▼ In-Memory IPC • Dynamic On-Read Evaluation (Zero Stored Scores)</div>
+
+          <div class="stack-tier-block engine">
+            <div class="tier-header">
+              <span class="tier-name">L3: Intelligence Alignment Bridge</span>
+              <span class="tier-tech">engine_bridge.py</span>
+            </div>
+            <div class="tier-desc">Executes closed-form Formulations F-01 to F-04 dynamically on-the-fly. Zero score persistence prevents drift.</div>
+          </div>
+          <div class="tier-connector">▼ SQLite C-Bindings • POSIX WAL Non-Blocking Concurrency</div>
+
+          <div class="stack-tier-block persistence">
+            <div class="tier-header">
+              <span class="tier-name">L4: Relational Persistence</span>
+              <span class="tier-tech">SQLite3 WAL Mode</span>
+            </div>
+            <div class="tier-desc">22 normalized relational tables, foreign key constraints active, single-writer / concurrent readers without locks.</div>
           </div>
 
-          <div class="dataflow-container">
-            <div class="dataflow-steps-grid">
-              <!-- Step 1 -->
-              <div class="flow-step-box">
-                <div class="flow-step-num"><span>STAGE 01</span><span>INGEST</span></div>
-                <div class="flow-step-title">Air-Gapped Upload</div>
-                <ul class="flow-item-list">
-                  <li><strong>Input:</strong> CV upload (PDF/DOCX)</li>
-                  <li><strong>Sandbox:</strong> <code>var/uploads/</code> UUID</li>
-                  <li><strong>Check:</strong> SHA-256 fingerprint</li>
-                  <li><strong>DB:</strong> <code>cv_files</code> &amp; <code>parses</code></li>
-                </ul>
-                <div class="flow-step-badge">ThreadPool &lt; 120ms</div>
-              </div>
-
-              <!-- Step 2 -->
-              <div class="flow-step-box">
-                <div class="flow-step-num"><span>STAGE 02</span><span>PARSE</span></div>
-                <div class="flow-step-title">Taxonomy Mapping</div>
-                <ul class="flow-item-list">
-                  <li><strong>NER:</strong> Sentence extraction</li>
-                  <li><strong>Ontology:</strong> 172 ANZSCO nodes</li>
-                  <li><strong>AQF:</strong> Level 7–9 mapping</li>
-                  <li><strong>DB:</strong> <code>translated_skills</code></li>
-                </ul>
-                <div class="flow-step-badge">172 Skills &lt; 850ms</div>
-              </div>
-
-              <!-- Step 3 -->
-              <div class="flow-step-box">
-                <div class="flow-step-num"><span>STAGE 03</span><span>COMPUTE</span></div>
-                <div class="flow-step-title">On-Read Math</div>
-                <ul class="flow-item-list">
-                  <li><strong>Trigger:</strong> GET <code>/api/jobs/rec</code></li>
-                  <li><strong>Engine:</strong> Runs F-01 to F-06</li>
-                  <li><strong>Law:</strong> Zero scores stored</li>
-                  <li><strong>DB:</strong> <code>events (job_appear)</code></li>
-                </ul>
-                <div class="flow-step-badge">Dynamic &lt; 5ms P99</div>
-              </div>
-
-              <!-- Step 4 -->
-              <div class="flow-step-box">
-                <div class="flow-step-num"><span>STAGE 04</span><span>MASK</span></div>
-                <div class="flow-step-title">Zero-PII View</div>
-                <ul class="flow-item-list">
-                  <li><strong>Masking:</strong> PII air-gapped</li>
-                  <li><strong>Personas:</strong> Silver Koala, Heron</li>
-                  <li><strong>Filter:</strong> Allowlist projection</li>
-                  <li><strong>DB:</strong> <code>shared_profile()</code></li>
-                </ul>
-                <div class="flow-step-badge">Zero PII Leakage</div>
-              </div>
-
-              <!-- Step 5 -->
-              <div class="flow-step-box">
-                <div class="flow-step-num"><span>STAGE 05</span><span>TRANSITION</span></div>
-                <div class="flow-step-title">Atomic Progress</div>
-                <ul class="flow-item-list">
-                  <li><strong>Invite:</strong> Employer sends slots</li>
-                  <li><strong>Accept:</strong> Talent selects UTC time</li>
-                  <li><strong>Lock:</strong> SQLite POSIX commit</li>
-                  <li><strong>DB:</strong> <code>status = interview</code></li>
-                </ul>
-                <div class="flow-step-badge">Atomic State Lock</div>
-              </div>
-
-              <!-- Step 6 -->
-              <div class="flow-step-box">
-                <div class="flow-step-num"><span>STAGE 06</span><span>AUDIT</span></div>
-                <div class="flow-step-title">Audit &amp; Dispatch</div>
-                <ul class="flow-item-list">
-                  <li><strong>Ledger:</strong> Append status change</li>
-                  <li><strong>Outbox:</strong> Decoupled worker</li>
-                  <li><strong>Retry:</strong> Exponential backoff</li>
-                  <li><strong>DB:</strong> <code>email_outbox</code> history</li>
-                </ul>
-                <div class="flow-step-badge">100% Provenance</div>
-              </div>
+          <div class="stack-tier-block vault">
+            <div class="tier-header">
+              <span class="tier-name">L5: Air-Gapped Sovereign Storage</span>
+              <span class="tier-tech">ThreadPool Pool (2 Workers)</span>
             </div>
-
-            <!-- Invariants Bar -->
-            <div class="dataflow-invariants-bar">
-              <div class="invariant-item"><span class="invariant-dot"></span><strong>Fact-Only Storage:</strong> Scores never persisted; computed on request</div>
-              <div class="invariant-item"><span class="invariant-dot"></span><strong>Allowlist Projection:</strong> Private fields never leak to employer</div>
-              <div class="invariant-item"><span class="invariant-dot"></span><strong>Atomic Transitions:</strong> Zero state desynchronization</div>
-              <div class="invariant-item"><span class="invariant-dot"></span><strong>Human in the Loop:</strong> Zero auto-rejections by AI</div>
-            </div>
+            <div class="tier-desc">Quarantine upload sandbox (<code>var/uploads/</code>), async document parser worker pool, decoupled <code>email_outbox</code>.</div>
           </div>
-        </section>
-
-        <!-- 4. DATA MODELING & ERD (SCHEMA V2 • 22 TABLES) -->
-        <section class="section-card">
-          <div class="card-head">
-            <div class="card-head-title">
-              <span class="card-icon">4</span>
-              Relational Data Modeling (Schema V2 • 22 Normalized Tables)
-            </div>
-            <span class="card-tag">SQLite3 WAL • Relational ERD</span>
-          </div>
-
-          <div class="erd-container">
-            <!-- Cluster 1: Accounts & Access -->
-            <div class="erd-cluster-box">
-              <div class="erd-cluster-header">
-                <span class="erd-cluster-title">Accounts &amp; Access</span>
-                <span class="erd-cluster-badge">4 Tables</span>
-              </div>
-              <div class="erd-tables-list">
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>users</span><span class="erd-key-pill">PK • UQ</span></div>
-                  <div class="erd-t-cols"><code>id</code> (PK UUID), <code>email</code> (UQ PRIV), <code>alias</code> (UQ), <code>password_hash</code> (scrypt), <code>role</code> (candidate|recruiter), <code>onboarding</code>, <code>created_at</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>sessions</span><span class="erd-key-pill">PK • FK</span></div>
-                  <div class="erd-t-cols"><code>token_hash</code> (SHA-256 PK), <code>user_id</code> (FK users.id ON DELETE CASCADE), <code>expires_at</code> (UTC), <code>created_at</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>plans</span><span class="erd-key-pill">PK • FK</span></div>
-                  <div class="erd-t-cols"><code>user_id</code> (PK FK users.id), <code>plan</code> (free | basic | enterprise), <code>renews_at</code>, <code>quota_tier</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>schema_info</span><span class="erd-key-pill">CONFIG PK</span></div>
-                  <div class="erd-t-cols"><code>key</code> (PK text), <code>value</code> (schema_v=2, seed_v=2, migration_timestamp, integrity_sig)</div>
-                </div>
-              </div>
-              <div class="erd-constraint-footer">🔒 PRAGMA foreign_keys = ON; scrypt N=16384, r=8, p=1</div>
-            </div>
-
-            <!-- Cluster 2: Talent Intelligence -->
-            <div class="erd-cluster-box intel">
-              <div class="erd-cluster-header">
-                <span class="erd-cluster-title">Talent Intelligence</span>
-                <span class="erd-cluster-badge">5 Tables</span>
-              </div>
-              <div class="erd-tables-list">
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>profiles</span><span class="erd-key-pill">1:1 FK</span></div>
-                  <div class="erd-t-cols"><code>user_id</code> (PK FK), <code>qualification</code>, <code>study_country</code> (PRIV), <code>skills</code>, <code>level</code>, <code>years_exact</code>, <code>certs JSON</code>, <code>awards JSON</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>translated_skills</span><span class="erd-key-pill">FK • INDEX</span></div>
-                  <div class="erd-t-cols"><code>id</code> (PK), <code>user_id</code> (FK), <code>skill_name</code>, <code>proficiency</code> (1-5), <code>evidence_citations</code>, <code>decision</code> (accepted|edited)</div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>cv_files</span><span class="erd-key-pill">FK • SHA</span></div>
-                  <div class="erd-t-cols"><code>id</code> (PK UUID), <code>user_id</code> (FK), <code>storage_path</code> (air-gapped), <code>file_size</code>, <code>sha256_hash</code>, <code>quarantine_status</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>parses</span><span class="erd-key-pill">QUEUE</span></div>
-                  <div class="erd-t-cols"><code>id</code> (PK), <code>kind</code> (cv|jd), <code>status</code> (queued|done|fail), <code>result JSON</code>, <code>ner_tokens</code>, <code>latency_ms</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>shared_profiles</span><span class="erd-key-pill">VIEW CACHE</span></div>
-                  <div class="erd-t-cols"><code>user_id</code> (PK FK), <code>masked_persona</code> (Koala/Heron), <code>verified_skills JSON</code>, <code>aqf_level</code> (7-9), <code>zk_proof</code></div>
-                </div>
-              </div>
-              <div class="erd-constraint-footer">🛡️ APP 1-13 Zero-PII Projection; AQF 7–9 Equivalent</div>
-            </div>
-
-            <!-- Cluster 3: Requisitions & Ontology -->
-            <div class="erd-cluster-box req">
-              <div class="erd-cluster-header">
-                <span class="erd-cluster-title">Jobs &amp; Taxonomy</span>
-                <span class="erd-cluster-badge">4 Tables</span>
-              </div>
-              <div class="erd-tables-list">
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>jobs</span><span class="erd-key-pill">PK • FK</span></div>
-                  <div class="erd-t-cols"><code>id</code> (PK UUID), <code>owner_id</code> (FK), <code>title</code>, <code>description</code> (≤10k), <code>salary_min</code>, <code>salary_max</code>, <code>work_mode</code>, <code>closes_at</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>job_skills</span><span class="erd-key-pill">FK • COMPOSITE</span></div>
-                  <div class="erd-t-cols"><code>job_id</code> (FK), <code>skill_name</code>, <code>required_level</code> (1-5), <code>is_mandatory</code> (0|1, w=2.0), <code>weight</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>taxonomy_skills</span><span class="erd-key-pill">ONTOLOGY REF</span></div>
-                  <div class="erd-t-cols"><code>id</code> (PK), <code>anzsco_code</code> (2613xx), <code>canonical_name</code> (172 skills), <code>vertical</code> (5 domains), <code>aliases JSON</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>bookmarks_and_skips</span><span class="erd-key-pill">USER ACTION</span></div>
-                  <div class="erd-t-cols"><code>user_id</code> (FK), <code>target_id</code>, <code>action_type</code> (bookmark|skip|compare), <code>created_at</code></div>
-                </div>
-              </div>
-              <div class="erd-constraint-footer">📊 172 ABS ANZSCO 2026 Nodes; FTS5 Full-Text Indexed</div>
-            </div>
-
-            <!-- Cluster 4: Hiring Workflow & Outbox -->
-            <div class="erd-cluster-box hiring">
-              <div class="erd-cluster-header">
-                <span class="erd-cluster-title">Hiring &amp; Event Bus</span>
-                <span class="erd-cluster-badge">9 Tables</span>
-              </div>
-              <div class="erd-tables-list">
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>applications</span><span class="erd-key-pill">UQ (job,cand)</span></div>
-                  <div class="erd-t-cols"><code>id</code> (PK), <code>job_id</code> (FK), <code>candidate_id</code> (FK), <code>status</code> (applied|interview|offer), <code>profile_snapshot JSON</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>application_history</span><span class="erd-key-pill">IMMUTABLE AUDIT</span></div>
-                  <div class="erd-t-cols"><code>id</code>, <code>application_id</code> (FK), <code>prev_status</code>, <code>new_status</code>, <code>actor_role</code>, <code>timestamp</code>, <code>audit_note</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>application_slots</span><span class="erd-key-pill">UTC LOCK</span></div>
-                  <div class="erd-t-cols"><code>id</code>, <code>application_id</code> (FK), <code>slot_utc</code> (ISO8601), <code>is_selected</code>, <code>selection_lock_ts</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>application_feedback</span><span class="erd-key-pill">DOUBLE BLIND</span></div>
-                  <div class="erd-t-cols"><code>id</code>, <code>application_id</code> (FK), <code>score</code> (1-5), <code>feedback_candidate</code>, <code>feedback_internal</code></div>
-                </div>
-                <div class="erd-table-row">
-                  <div class="erd-t-name"><span>email_outbox &amp; events</span><span class="erd-key-pill">RELIABLE QUEUE</span></div>
-                  <div class="erd-t-cols"><code>email_outbox</code> (retries, backoff), <code>events</code> (job_view, apply), <code>reports</code>, <code>audit_ledger</code></div>
-                </div>
-              </div>
-              <div class="erd-constraint-footer">⚡ POSIX Atomic State Locks; 100% Provenance Ledger</div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-
-      <!-- ROW 3: THE 6 CANONICAL ALGEBRAIC FORMULATIONS (FULL WIDTH) -->
-      <section class="formulas-section row-formulas">
-        <div class="card-head">
-          <div class="card-head-title">
-            <span class="card-icon">5</span>
-            The 6 Canonical Algebraic Formulations (Intelligence Engine V2)
-          </div>
-          <span class="card-tag">ASD-STE100 Certified • Sub-5ms SLA Determinism • Zero Hallucinations</span>
         </div>
 
-        <div class="formulas-grid">
-          <!-- F-01 -->
-          <div class="formula-mini-card">
-            <div class="f-mini-top">
-              <span class="f-code">F-01 • SMF</span>
-              <span class="f-sla">0.82 ms</span>
+        <!-- Right: 4 Big Architecture Tenet Cards -->
+        <div class="arch-specs-grid">
+          <div class="arch-spec-card">
+            <div class="arch-spec-title">
+              <span>Stateless Micro-Daemon</span>
+              <span class="card-tag">High Concurrency</span>
             </div>
-            <div class="f-name">Skill Match Frequency &amp; Coverage</div>
-            <div class="f-math-box">
-              $$SMF = \frac{\sum w_i \min\left(1.0, \frac{L_{c,i}}{L_{j,i}}\right)}{\sum w_k} \times 100$$
+            <div class="arch-spec-text">
+              Built upon standard library <code>http.server</code> executing without heavy WSGI/ASGI framework overhead. Decoupled from client connection state, allowing horizontal scaling across sovereign edge nodes.
             </div>
-            <div class="f-desc">Weights mandatory (w=2.0) vs preferred skills (w=1.0) with continuous proficiency saturation bounds.</div>
-            <div class="f-params">w_i ∈ {1.0, 2.0} • L_c, L_j ∈ [1, 5] • Saturation clamp min(1.0, ·)</div>
-            <div class="f-guarantee-strip">
-              <span class="f-bound-pill">Bound [0, 100]</span>
-              <span class="f-guarantee-badge">✓ Zero LLM Drift</span>
+            <div class="arch-spec-badge-strip">
+              <span class="spec-micro-badge">Port 8095</span>
+              <span class="spec-micro-badge">Bearer Auth</span>
+              <span class="spec-micro-badge">&lt; 180ms Boot</span>
             </div>
           </div>
 
-          <!-- F-02 -->
-          <div class="formula-mini-card f2">
-            <div class="f-mini-top">
-              <span class="f-code">F-02 • GSI &amp; JRS</span>
-              <span class="f-sla">0.45 ms</span>
+          <div class="arch-spec-card" style="border-left-color: var(--green);">
+            <div class="arch-spec-title">
+              <span>Fact-Only Storage Law</span>
+              <span class="card-tag">Zero Drift</span>
             </div>
-            <div class="f-name">Gap Severity Index &amp; Net Readiness</div>
-            <div class="f-math-box">
-              $$GSI = \sum \beta_g \cdot \text{Sev}(g), \quad JRS = \max(0, SMF - GSI)$$
+            <div class="arch-spec-text">
+              Stores immutable historical facts only: verified skills, applications, and timestamped events. Capability fit scores are evaluated strictly on HTTP read, eliminating cache invalidation lag and desynchronization.
             </div>
-            <div class="f-desc">Heavily penalises statutory blockers (β=15.0) while forgiving learnable micro-tools (β=5.0) for actionable bridging.</div>
-            <div class="f-params">β_blocker = 15.0 • β_tool = 5.0 • Sev(g) ∈ [1, 5]</div>
-            <div class="f-guarantee-strip">
-              <span class="f-bound-pill">Strict JRS ≥ 0</span>
-              <span class="f-guarantee-badge">✓ Statutory Safety Gate</span>
+            <div class="arch-spec-badge-strip">
+              <span class="spec-micro-badge">Dynamic Math</span>
+              <span class="spec-micro-badge">No Cached Scores</span>
+              <span class="spec-micro-badge">Strict Provenance</span>
             </div>
           </div>
 
-          <!-- F-03 -->
-          <div class="formula-mini-card f3">
-            <div class="f-mini-top">
-              <span class="f-code">F-03 • JPI</span>
-              <span class="f-sla">0.65 ms</span>
+          <div class="arch-spec-card" style="border-left-color: var(--orange);">
+            <div class="arch-spec-title">
+              <span>Zero GPU Compute Overhead</span>
+              <span class="card-tag">95% TCO Cut</span>
             </div>
-            <div class="f-name">Job Proximity Index Mobility</div>
-            <div class="f-math-box">
-              $$JPI = 100 \left[ 0.70 \frac{|S_A \cap S_B|}{|S_A \cup S_B|} + 0.30 \delta_{\text{dom}} \right]$$
+            <div class="arch-spec-text">
+              Closed-form continuous algebraic equations replace costly GPU neural screening inference. Scoring executes in sub-millisecond CPU cycles without third-party LLM API dependencies or token bills.
             </div>
-            <div class="f-desc">Quantifies career mobility using Jaccard vector intersection plus ANZSCO domain taxonomy affinity.</div>
-            <div class="f-params">Jaccard weight α = 0.70 • Domain weight (1-α) = 0.30 • δ_dom ∈ {0, 1}</div>
-            <div class="f-guarantee-strip">
-              <span class="f-bound-pill">Bound [0, 100]</span>
-              <span class="f-guarantee-badge">✓ ANZSCO 2026 Aligned</span>
+            <div class="arch-spec-badge-strip">
+              <span class="spec-micro-badge">$0 GPU Bill</span>
+              <span class="spec-micro-badge">Sub-5ms Latency</span>
+              <span class="spec-micro-badge">Deterministic</span>
             </div>
           </div>
 
-          <!-- F-04 -->
-          <div class="formula-mini-card f4">
-            <div class="f-mini-top">
-              <span class="f-code">F-04 • RMS</span>
-              <span class="f-sla">1.10 ms</span>
+          <div class="arch-spec-card" style="border-left-color: var(--cyan);">
+            <div class="arch-spec-title">
+              <span>POSIX Concurrency Control</span>
+              <span class="card-tag">PRAGMA WAL</span>
             </div>
-            <div class="f-name">Relative Merit Score (Zero-PII Pool)</div>
-            <div class="f-math-box">
-              $$Z_c = \frac{SMF_c - \mu}{\sigma + \epsilon}, \quad RMS = \frac{100}{1 + e^{-1.702 Z_c}}$$
+            <div class="arch-spec-text">
+              Write-Ahead Logging provides non-blocking concurrent reads while background worker threads write application state transitions. With <code>busy_timeout=5000ms</code>, zero reader-writer lock contention is guaranteed.
             </div>
-            <div class="f-desc">Gaussian Z-score standardization against active applicant distribution, eliminating demographic bias.</div>
-            <div class="f-params">Standardized Normal Z_c • Logistic scale s = 1.702 • ε = 10⁻⁶</div>
-            <div class="f-guarantee-strip">
-              <span class="f-bound-pill">Logistic Sigmoid [0, 100]</span>
-              <span class="f-guarantee-badge">✓ Demographic Neutral</span>
+            <div class="arch-spec-badge-strip">
+              <span class="spec-micro-badge">PRAGMA wal</span>
+              <span class="spec-micro-badge">synchronous=NORMAL</span>
+              <span class="spec-micro-badge">Zero Starvation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         PILLAR 2: MEDALLION PIPELINE & RELATIONAL SCHEMA CORE
+         ======================================================= -->
+    <div class="row-pillar-2">
+
+      <!-- Left: Medallion 3-Tier Enterprise Data Pipeline -->
+      <section class="pillar-card" style="height:100%;">
+        <div class="card-head">
+          <div class="card-head-title">
+            <span class="card-icon">2A</span>
+            Medallion Data Pipeline
+          </div>
+          <span class="card-tag">Sovereign Lakehouse Tiering</span>
+        </div>
+
+        <div class="medallion-pipeline-box">
+          <div class="medallion-stage-card bronze">
+            <div class="stage-card-head">
+              <span class="stage-card-title">🥉 Bronze: Air-Gapped Raw Intake</span>
+              <span class="card-tag">Quarantine Tier</span>
+            </div>
+            <div class="stage-card-desc">
+              Unstructured resume intake (PDF, DOCX) quarantined in private storage (<code>var/uploads/</code>). Cryptographic SHA-256 fingerprinting prevents collision and enforces data hygiene.
             </div>
           </div>
 
-          <!-- F-05 -->
-          <div class="formula-mini-card f5">
-            <div class="f-mini-top">
-              <span class="f-code">F-05 • FRS</span>
-              <span class="f-sla">1.82 ms</span>
+          <div class="medallion-stage-card silver">
+            <div class="stage-card-head">
+              <span class="stage-card-title">🥈 Silver: Canonical Graph Normalization</span>
+              <span class="card-tag">ANZSCO 2026 Taxonomy</span>
             </div>
-            <div class="f-name">Talent Feed Ranking Score</div>
-            <div class="f-math-box">
-              $$FRS = 0.45 SMF + 0.25 JRS + 0.20 \text{Exp} + 0.10 \text{Mode}$$
-            </div>
-            <div class="f-desc">Multi-objective ranking balancing direct skill alignment, readiness score, seniority level, and hybrid work mode.</div>
-            <div class="f-params">Convex weights: 0.45 + 0.25 + 0.20 + 0.10 = 1.0 • Pareto-Optimal</div>
-            <div class="f-guarantee-strip">
-              <span class="f-bound-pill">Unit Simplex Convex</span>
-              <span class="f-guarantee-badge">✓ Sub-2ms Throughput</span>
+            <div class="stage-card-desc">
+              Maps raw qualifications and job descriptions to 172 Australian ICT skills, 5 domain verticals, and AQF Levels 7–9 credential equivalence tables, eliminating overseas pedigree penalties.
             </div>
           </div>
 
-          <!-- F-06 -->
-          <div class="formula-mini-card f6">
-            <div class="f-mini-top">
-              <span class="f-code">F-06 • TSS</span>
-              <span class="f-sla">1.35 ms</span>
+          <div class="medallion-stage-card gold">
+            <div class="stage-card-head">
+              <span class="stage-card-title">🥇 Gold: Zero-PII Capability Vectors</span>
+              <span class="card-tag">Curated Intelligence</span>
             </div>
-            <div class="f-name">Employer Talent Search Score</div>
-            <div class="f-math-box">
-              $$TSS = 0.40 SMF + 0.25 \text{Sen} + 0.20 \text{Cred} + 0.15 \text{Rec}$$
+            <div class="stage-card-desc">
+              Mathematical proficiency vectors, Gaussian Z-scores, and Australian wildlife persona projections (Silver Koala, Teal Heron). Candidate PII is air-gapped until mutually accepted interview lock.
             </div>
-            <div class="f-desc">Ranks enterprise candidate pool factoring capability coverage, AQF seniority, verified credentials, and recency.</div>
-            <div class="f-params">w_1=0.40, w_2=0.25, w_3=0.20, w_4=0.15 • AQF Level 7–9 Benchmark</div>
-            <div class="f-guarantee-strip">
-              <span class="f-bound-pill">Recency Decay 180d</span>
-              <span class="f-guarantee-badge">✓ Deterministic P99</span>
+          </div>
+
+          <div class="medallion-stage-card lake">
+            <div class="stage-card-head">
+              <span class="stage-card-title">🏛️ Sovereign Sydney Lakehouse</span>
+              <span class="card-tag">AWS ap-southeast-2</span>
+            </div>
+            <div class="stage-card-desc">
+              Immutable audit ledger, TLS 1.3 encryption, and strict APP 1-13 Australian Privacy Principles compliance. Single-command right-to-be-forgotten profile purging.
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ROW 4: DUAL EXPERIENCE (LEFT) + ENTERPRISE SLA & ATS INTEGRATION (RIGHT) -->
-      <div class="row-split row-experience-sla">
+      <!-- Right: Relational Schema Architecture (22 Tables) -->
+      <section class="pillar-card" style="height:100%;">
+        <div class="card-head">
+          <div class="card-head-title">
+            <span class="card-icon">2B</span>
+            Relational Schema Core (22 Tables)
+          </div>
+          <span class="card-tag">SQLite3 WAL • 3NF Normalized</span>
+        </div>
 
-        <!-- 6. DUAL EXPERIENCE SHOWCASE -->
-        <section class="section-card">
-          <div class="card-head">
-            <div class="card-head-title">
-              <span class="card-icon">6</span>
-              Dual-Role Interaction Architecture
+        <div class="schema-clusters-grid">
+          <div class="schema-cluster-card">
+            <div class="cluster-head">
+              <span class="cluster-title">Accounts &amp; Access</span>
+              <span class="card-tag">4 Tables</span>
             </div>
-            <span class="card-tag">Product Experience</span>
+            <div class="cluster-tables-list">
+              <div class="schema-table-item"><strong>users:</strong> UUID, email (PRIV), password_hash (scrypt), role, created_at</div>
+              <div class="schema-table-item"><strong>sessions:</strong> token_hash (SHA-256 PK), user_id (FK), expires_at</div>
+              <div class="schema-table-item"><strong>plans &amp; schema_info:</strong> user_id (FK), quota_tier, schema_version = 2</div>
+            </div>
+            <span class="schema-footer-tag">PRAGMA foreign_keys = ON; scrypt N=16384</span>
           </div>
 
-          <div class="dual-showcase">
-            <div class="portal-preview-card talent">
-              <div class="portal-top-bar">
-                <span class="portal-label">Talent Experience</span>
-                <span class="card-tag">Candidate Flow</span>
-              </div>
-              <div class="portal-name">Interactive Radar &amp; Wage Trajectory</div>
-
-              <!-- Micro Radar Matrix Mockup -->
-              <div class="micro-matrix-box">
-                <div class="matrix-row">
-                  <span>Backend &amp; Distributed Systems</span>
-                  <div class="radar-bar-bg"><div class="radar-bar-fill" style="width:94%;"></div></div>
-                  <strong>94%</strong>
-                </div>
-                <div class="matrix-row">
-                  <span>System Architecture &amp; WAL</span>
-                  <div class="radar-bar-bg"><div class="radar-bar-fill" style="width:88%;"></div></div>
-                  <strong>88%</strong>
-                </div>
-                <div class="matrix-row">
-                  <span>Cloud Native (AWS Sydney)</span>
-                  <div class="radar-bar-bg"><div class="radar-bar-fill" style="width:82%;"></div></div>
-                  <strong>82%</strong>
-                </div>
-                <div class="matrix-row">
-                  <span>Frontend Architecture &amp; ES6</span>
-                  <div class="radar-bar-bg"><div class="radar-bar-fill" style="width:91%;"></div></div>
-                  <strong>91%</strong>
-                </div>
-                <div class="matrix-row">
-                  <span>AI Integration &amp; Python stdlib</span>
-                  <div class="radar-bar-bg"><div class="radar-bar-fill" style="width:96%;"></div></div>
-                  <strong>96%</strong>
-                </div>
-              </div>
-
-              <div class="mini-card-banner">
-                <span>Overseas Title Translation: <code>Tech Lead (Hanoi)</code> ➔ <strong>ANZSCO 261313</strong></span>
-                <span class="f-sla">0% Penalty</span>
-              </div>
-              <div class="mini-card-banner">
-                <span>Predictive Salary Uplift: <strong>$147,000 AUD</strong> (+$28,500 Fair Upside)</span>
-                <span class="card-tag">AQF Level 7</span>
-              </div>
-
-              <ul class="feature-bullets">
-                <li><strong>Dynamic 5-Axis Capability Radar:</strong> Live SVG polygon comparing candidate proficiencies against requisitions.</li>
-                <li><strong>Taxonomy Translation Transparency:</strong> Detailed breakdown of overseas title equivalence and verified citations.</li>
-                <li><strong>Predictive Wage Trajectory:</strong> Salary uplift model projecting surplus earnings (+$28,500 AUD).</li>
-              </ul>
-              <div class="card-tag" style="text-align:center; padding:3px;">🔒 Real PII Masked Until Candidate Accepts Interview</div>
+          <div class="schema-cluster-card intel">
+            <div class="cluster-head">
+              <span class="cluster-title">Talent Intelligence</span>
+              <span class="card-tag">5 Tables</span>
             </div>
-
-            <div class="portal-preview-card employer">
-              <div class="portal-top-bar">
-                <span class="portal-label">Employer Experience</span>
-                <span class="card-tag">Recruiter Flow</span>
-              </div>
-              <div class="portal-name">Wildlife Personas &amp; Compare Tray</div>
-
-              <!-- Micro Wildlife Persona Match Mockup -->
-              <div class="micro-matrix-box">
-                <div class="matrix-row">
-                  <strong>🐨 Silver Koala</strong>
-                  <span>ANZSCO 261313 • 96% Match</span>
-                  <strong style="color:var(--green);">&lt; 5ms</strong>
-                </div>
-                <div class="matrix-row">
-                  <strong>🦩 Teal Heron</strong>
-                  <span>ANZSCO 261312 • 92% Match</span>
-                  <strong style="color:var(--green);">&lt; 5ms</strong>
-                </div>
-                <div class="matrix-row">
-                  <strong>🦜 Crimson Rosella</strong>
-                  <span>ANZSCO 261311 • 89% Match</span>
-                  <strong style="color:var(--green);">&lt; 5ms</strong>
-                </div>
-                <div class="matrix-row">
-                  <strong>🦘 Golden Wallaby</strong>
-                  <span>ANZSCO 261314 • 86% Match</span>
-                  <strong style="color:var(--green);">&lt; 5ms</strong>
-                </div>
-                <div class="matrix-row">
-                  <strong>🦆 Azure Kingfisher</strong>
-                  <span>ANZSCO 261399 • 84% Match</span>
-                  <strong style="color:var(--green);">&lt; 5ms</strong>
-                </div>
-              </div>
-
-              <div class="mini-card-banner">
-                <span>Statutory Verification: <strong>485 Graduate / 189 Skilled PR</strong></span>
-                <span class="f-sla">β = 0.0 Zero Risk</span>
-              </div>
-              <div class="mini-card-banner">
-                <span>Active Compare Tray: <strong>5 Profiles Benchmarked Side-by-Side</strong></span>
-                <span class="card-tag">0ms UI Lag</span>
-              </div>
-
-              <ul class="feature-bullets">
-                <li><strong>Zero-PII Wildlife Personas:</strong> Candidate profiles masked under Australian wildlife personas to prevent bias.</li>
-                <li><strong>Multi-Candidate Compare Tray:</strong> Side-by-side benchmarking of up to 5 profiles across mandatory skills.</li>
-                <li><strong>Statutory Blocker Telemetry:</strong> Live verification of visa rights and required qualifications before interview.</li>
-              </ul>
-              <div class="card-tag" style="text-align:center; padding:3px;">⚖️ Deterministic Bias Elimination &amp; Audit Ready</div>
+            <div class="cluster-tables-list">
+              <div class="schema-table-item"><strong>profiles:</strong> user_id (PK FK), qualification, level, certs JSON, awards</div>
+              <div class="schema-table-item"><strong>translated_skills:</strong> user_id, skill_name, proficiency (1-5), citations</div>
+              <div class="schema-table-item"><strong>cv_files, parses, shared_profiles:</strong> SHA-256 hash, zero-PII cache</div>
             </div>
-          </div>
-        </section>
-
-        <!-- 7. PRODUCTION SLA & ATS INTEGRATION -->
-        <section class="section-card">
-          <div class="card-head">
-            <div class="card-head-title">
-              <span class="card-icon">7</span>
-              Production SLAs &amp; Turnkey Integration
-            </div>
-            <span class="card-tag">Enterprise Integration</span>
+            <span class="schema-footer-tag">Strict Zero-PII Projection; AQF 7-9 Equivalent</span>
           </div>
 
-          <div class="sec7-container">
-            <div class="tech-pills-row">
-              <div class="tech-pill-box">
-                <div class="tech-pill-val" style="color:var(--green);">&lt; 5ms</div>
-                <div class="tech-pill-lbl">Deterministic Match SLA</div>
-              </div>
-              <div class="tech-pill-box">
-                <div class="tech-pill-val" style="color:var(--accent);">Zero</div>
-                <div class="tech-pill-lbl">Vendor Lock-in</div>
-              </div>
-              <div class="tech-pill-box">
-                <div class="tech-pill-val" style="color:var(--orange);">100%</div>
-                <div class="tech-pill-lbl">Auditable Provenance</div>
-              </div>
-              <div class="tech-pill-box">
-                <div class="tech-pill-val" style="color:var(--purple);">APP 1-13</div>
-                <div class="tech-pill-lbl">Privacy Certified</div>
-              </div>
+          <div class="schema-cluster-card req">
+            <div class="cluster-head">
+              <span class="cluster-title">Jobs &amp; Taxonomy</span>
+              <span class="card-tag">4 Tables</span>
             </div>
-
-            <!-- Live Comparative Benchmark Table (6 Rows) -->
-            <div class="benchmark-table-box">
-              <table class="benchmark-table">
-                <thead>
-                  <tr>
-                    <th>Capability Dimension</th>
-                    <th>Jinder Engine V2</th>
-                    <th>Legacy LLM RAG ATS</th>
-                    <th>Keyword Boolean Search</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Match SLA Latency</strong></td>
-                    <td class="highlight">&lt; 5ms (P99 Deterministic)</td>
-                    <td>2,800ms – 8,500ms</td>
-                    <td>15ms – 40ms</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Overseas Qualification Fair</strong></td>
-                    <td class="highlight">100% (ANZSCO Ontology)</td>
-                    <td>Prone to hallucination drift</td>
-                    <td>Severe penalty (0% hit)</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Compute Expenditure (10k ops)</strong></td>
-                    <td class="highlight">$0.0001 (Pure Math)</td>
-                    <td>$65.00 – $140.00 (GPU)</td>
-                    <td>$0.0050</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Legal &amp; Privacy Audit Proof</strong></td>
-                    <td class="highlight">ASD-STE100 Closed-Form</td>
-                    <td>Black-box probability</td>
-                    <td>None (Literal match only)</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Vendor Lock-in &amp; Portability</strong></td>
-                    <td class="highlight">Zero (SQLite WAL / Python)</td>
-                    <td>High (OpenAI/Claude APIs)</td>
-                    <td>Moderate (Elasticsearch)</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Bias Elimination Protocol</strong></td>
-                    <td class="highlight">Deterministic Wildlife Mask</td>
-                    <td>Prompt-injection sensitive</td>
-                    <td>None (Literal search bias)</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="cluster-tables-list">
+              <div class="schema-table-item"><strong>jobs:</strong> UUID, owner_id (FK), title, salary_band, work_mode, closes_at</div>
+              <div class="schema-table-item"><strong>job_skills:</strong> job_id (FK), skill_name, required_level, is_mandatory</div>
+              <div class="schema-table-item"><strong>taxonomy_skills:</strong> 172 ANZSCO competencies, 5 domains, aliases JSON</div>
             </div>
-
-            <div class="commercial-pitch-grid">
-              <div class="pitch-item">
-                <strong>Seamless ATS / HRIS Webhooks</strong>
-                Turnkey REST APIs compatible with Workday, SAP SuccessFactors, Greenhouse, and Lever for instant candidate synchronization.
-              </div>
-              <div class="pitch-item">
-                <strong>Sovereign Cloud &amp; Security</strong>
-                Deployed in AWS Sydney <span style="white-space:nowrap;">(ap-southeast-2)</span> with zero external LLM dependencies, SOC2 alignment, and TLS 1.3 encryption.
-              </div>
-              <div class="pitch-item">
-                <strong>Complete Regulatory Explainability</strong>
-                ASD-STE100 certified mathematical derivations give enterprise legal &amp; HR teams 100% transparent audit proof for hiring decisions.
-              </div>
-              <div class="pitch-item">
-                <strong>Predictable Compute Economics</strong>
-                Sub-millisecond algebraic scoring replaces costly GPU inference, cutting enterprise screening compute expenditure by 95%.
-              </div>
-            </div>
+            <span class="schema-footer-tag">ABS ANZSCO 2026 Nodes; FTS5 Full-Text Indexed</span>
           </div>
-        </section>
 
+          <div class="schema-cluster-card hiring">
+            <div class="cluster-head">
+              <span class="cluster-title">Hiring Workflow &amp; Bus</span>
+              <span class="card-tag">9 Tables</span>
+            </div>
+            <div class="cluster-tables-list">
+              <div class="schema-table-item"><strong>applications:</strong> job_id, candidate_id, status (UQ), profile_snapshot JSON</div>
+              <div class="schema-table-item"><strong>application_history:</strong> immutable status ledger, actor_role, timestamp</div>
+              <div class="schema-table-item"><strong>slots, feedback, outbox, events:</strong> UTC selection locks, outbox queue</div>
+            </div>
+            <span class="schema-footer-tag">POSIX Atomic State Locks; 100% Provenance Ledger</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- =======================================================
+         PILLAR 3: THE 4 CORE CANONICAL ALGEBRAIC FORMULATIONS
+         ======================================================= -->
+    <section class="pillar-card row-pillar-3">
+      <div class="card-head">
+        <div class="card-head-title">
+          <span class="card-icon">3</span>
+          The 4 Core Canonical Algebraic Formulations (Intelligence Engine V2)
+        </div>
+        <span class="card-tag">ASD-STE100 Certified • Sub-5ms SLA Determinism • Zero Hallucination Risk</span>
       </div>
 
-    </main>
+      <div class="formulas-grid-2x2">
+        <!-- F-01 -->
+        <div class="formula-large-card">
+          <div class="f-head-bar">
+            <div class="f-title-group">
+              <span class="f-code-tag">F-01 • SMF</span>
+              <span class="f-name-large">Skill Match Frequency &amp; Coverage</span>
+            </div>
+            <span class="f-sla-tag">&lt; 0.82 ms</span>
+          </div>
+          <div class="f-math-display">
+            $$SMF = \frac{\sum_{i=1}^{n} w_i \cdot \min\left(1.0, \frac{L_{c,i}}{L_{j,i}}\right)}{\sum_{k=1}^{n} w_k} \times 100$$
+          </div>
+          <div class="f-desc-large">
+            Weights mandatory capabilities ($w_i=2.0$) against preferred competencies ($w_i=1.0$) with continuous proficiency saturation bounds to eliminate over-qualification bias.
+          </div>
+          <div class="f-params-row">
+            Domain: $w_i \in \{1.0, 2.0\}$ • $L_{c,i}, L_{j,i} \in [1, 5]$ • Saturation clamp $\min(1.0, \cdot)$
+          </div>
+          <div class="f-guarantee-bar">
+            <span class="f-bound-chip">Strictly Bounded [0, 100]</span>
+            <span class="f-proof-chip">✓ Zero Drift Guarantee</span>
+          </div>
+        </div>
 
-    <!-- FOOTER (100% LIGHT THEME) -->
+        <!-- F-02 -->
+        <div class="formula-large-card f2">
+          <div class="f-head-bar">
+            <div class="f-title-group">
+              <span class="f-code-tag">F-02 • GSI &amp; JRS</span>
+              <span class="f-name-large">Gap Severity Index &amp; Net Readiness</span>
+            </div>
+            <span class="f-sla-tag">&lt; 0.45 ms</span>
+          </div>
+          <div class="f-math-display">
+            $$GSI = \sum_{g=1}^{m} \beta_g \cdot \text{Sev}(g), \qquad JRS = \max\Big(0,\; SMF - GSI\Big)$$
+          </div>
+          <div class="f-desc-large">
+            Heavily penalizes statutory blockers ($\beta=15.0$) such as missing visa working rights, while forgiving easily learnable micro-tools ($\beta=5.0$) to support overseas career transition.
+          </div>
+          <div class="f-params-row">
+            Weights: $\beta_{\text{blocker}} = 15.0$ • $\beta_{\text{tool}} = 5.0$ • Severity: $\text{Sev}(g) \in [1, 5]$
+          </div>
+          <div class="f-guarantee-bar">
+            <span class="f-bound-chip">Non-Negative JRS ≥ 0</span>
+            <span class="f-proof-chip">✓ Statutory Safety Gate</span>
+          </div>
+        </div>
+
+        <!-- F-03 -->
+        <div class="formula-large-card f3">
+          <div class="f-head-bar">
+            <div class="f-title-group">
+              <span class="f-code-tag">F-03 • RMS</span>
+              <span class="f-name-large">Relative Merit Score (Zero-PII Pool)</span>
+            </div>
+            <span class="f-sla-tag">&lt; 1.10 ms</span>
+          </div>
+          <div class="f-math-display">
+            $$Z_c = \frac{SMF_c - \mu_{\text{pool}}}{\sigma_{\text{pool}} + \epsilon}, \qquad RMS = \frac{100}{1 + e^{-1.702 \cdot Z_c}}$$
+          </div>
+          <div class="f-desc-large">
+            Standardizes applicant fitness using a Gaussian Z-score against active requisition pool distribution, completely eliminating overseas pedigree and name-based demographic biases.
+          </div>
+          <div class="f-params-row">
+            Distribution: $Z_c \sim \mathcal{N}(0, 1)$ • Logistic slope $s = 1.702$ • Smoothing $\epsilon = 10^{-6}$
+          </div>
+          <div class="f-guarantee-bar">
+            <span class="f-bound-chip">Logistic Sigmoid [0, 100]</span>
+            <span class="f-proof-chip">✓ Demographic Neutral</span>
+          </div>
+        </div>
+
+        <!-- F-04 -->
+        <div class="formula-large-card f4">
+          <div class="f-head-bar">
+            <div class="f-title-group">
+              <span class="f-code-tag">F-04 • FRS &amp; TSS</span>
+              <span class="f-name-large">Multi-Objective Feed &amp; Search Scoring</span>
+            </div>
+            <span class="f-sla-tag">&lt; 1.82 ms</span>
+          </div>
+          <div class="f-math-display">
+            $$FRS = 0.45\, SMF + 0.25\, JRS + 0.20\, \text{Exp} + 0.10\, \text{Mode}$$
+          </div>
+          <div class="f-desc-large">
+            Convex linear combination balancing direct skill coverage, net readiness, verified AQF experience level, and hybrid work-mode alignment on the unit simplex.
+          </div>
+          <div class="f-params-row">
+            Convexity: $\sum w_i = 0.45 + 0.25 + 0.20 + 0.10 = 1.00$ • Pareto-Optimal Front
+          </div>
+          <div class="f-guarantee-bar">
+            <span class="f-bound-chip">Unit Simplex Convex</span>
+            <span class="f-proof-chip">✓ P99 &lt; 2ms Throughput</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         PILLAR 4: DUAL-ROLE EXPERIENCE & BENCHMARK
+         ======================================================= -->
+    <div class="row-pillar-4">
+
+      <!-- Left: Dual-Role Interaction Architecture -->
+      <section class="pillar-card" style="height:100%;">
+        <div class="card-head">
+          <div class="card-head-title">
+            <span class="card-icon">4A</span>
+            Dual-Role Interaction Experience
+          </div>
+          <span class="card-tag">End-to-End Product Flow</span>
+        </div>
+
+        <div class="dual-experience-col">
+          <!-- Talent Experience Subcard -->
+          <div class="dual-subcard">
+            <div class="dual-subhead">
+              <span class="dual-subhead-title">Talent Portal: Transparent Capability Radar</span>
+              <span class="card-tag">Candidate View</span>
+            </div>
+
+            <div class="dual-radar-bars">
+              <div class="radar-item">
+                <span>Backend &amp; Distributed Systems</span>
+                <div class="radar-track"><div class="radar-fill" style="width:94%;"></div></div>
+                <strong>94%</strong>
+              </div>
+              <div class="radar-item">
+                <span>Cloud Architecture (AWS Sydney)</span>
+                <div class="radar-track"><div class="radar-fill" style="width:88%;"></div></div>
+                <strong>88%</strong>
+              </div>
+              <div class="radar-item">
+                <span>Python stdlib &amp; SQLite WAL</span>
+                <div class="radar-track"><div class="radar-fill" style="width:96%;"></div></div>
+                <strong>96%</strong>
+              </div>
+            </div>
+
+            <div class="dual-banner">
+              <span>Overseas Translation: <code>Lead Architect (Hanoi)</code> ➔ <strong>ANZSCO 261313</strong></span>
+              <span class="f-sla-tag">0% Penalty</span>
+            </div>
+            <div class="dual-banner">
+              <span>Fair Market Value: <strong>$148,000 AUD</strong> (+$28,500 Fair Upside)</span>
+              <span class="card-tag">AQF Level 7</span>
+            </div>
+          </div>
+
+          <!-- Employer Experience Subcard -->
+          <div class="dual-subcard employer">
+            <div class="dual-subhead">
+              <span class="dual-subhead-title">Employer Portal: Zero-PII Blind Review</span>
+              <span class="card-tag">Recruiter View</span>
+            </div>
+
+            <div class="dual-radar-bars">
+              <div class="radar-item">
+                <strong>🐨 Silver Koala</strong>
+                <span>ANZSCO 261313 • 96% Match</span>
+                <strong style="color:var(--green);">&lt; 5ms</strong>
+              </div>
+              <div class="radar-item">
+                <strong>🦩 Teal Heron</strong>
+                <span>ANZSCO 261312 • 92% Match</span>
+                <strong style="color:var(--green);">&lt; 5ms</strong>
+              </div>
+              <div class="radar-item">
+                <strong>🦜 Crimson Rosella</strong>
+                <span>ANZSCO 261311 • 89% Match</span>
+                <strong style="color:var(--green);">&lt; 5ms</strong>
+              </div>
+            </div>
+
+            <div class="dual-banner">
+              <span>Statutory Verification: <strong>485 Graduate / 189 Skilled PR</strong></span>
+              <span class="f-sla-tag">β = 0.0 Zero Risk</span>
+            </div>
+            <div class="dual-banner">
+              <span>Multi-Candidate Compare Tray: <strong>5 Profiles Benchmarked</strong></span>
+              <span class="card-tag">0ms UI Lag</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Production SLAs & Comparative Benchmark -->
+      <section class="pillar-card" style="height:100%;">
+        <div class="card-head">
+          <div class="card-head-title">
+            <span class="card-icon">4B</span>
+            Production SLAs &amp; Benchmark
+          </div>
+          <span class="card-tag">Enterprise Integration</span>
+        </div>
+
+        <div class="benchmark-col">
+          <!-- 4 Top KPIs -->
+          <div class="kpi-row-4">
+            <div class="kpi-mini-card">
+              <div class="kpi-val" style="color:var(--green);">&lt; 5ms</div>
+              <div class="kpi-lbl">Deterministic SLA</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-val" style="color:var(--accent);">Zero</div>
+              <div class="kpi-lbl">Vendor Lock-in</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-val" style="color:var(--orange);">100%</div>
+              <div class="kpi-lbl">Auditable Provenance</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-val" style="color:var(--purple);">APP 1-13</div>
+              <div class="kpi-lbl">Privacy Certified</div>
+            </div>
+          </div>
+
+          <!-- Benchmark Table -->
+          <div class="benchmark-table-wrap">
+            <table class="benchmark-table">
+              <thead>
+                <tr>
+                  <th>Capability Dimension</th>
+                  <th>Jinder Engine V2</th>
+                  <th>Legacy LLM RAG ATS</th>
+                  <th>Keyword Boolean Search</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Match SLA Latency</strong></td>
+                  <td class="highlight">&lt; 5ms (P99 Deterministic)</td>
+                  <td>2,800ms – 8,500ms</td>
+                  <td>15ms – 40ms</td>
+                </tr>
+                <tr>
+                  <td><strong>Overseas Qualification Fair</strong></td>
+                  <td class="highlight">100% (ANZSCO Ontology)</td>
+                  <td>Hallucination drift prone</td>
+                  <td>Severe penalty (0% hit)</td>
+                </tr>
+                <tr>
+                  <td><strong>Compute Cost (10k ops)</strong></td>
+                  <td class="highlight">$0.0001 (Pure CPU Math)</td>
+                  <td>$65.00 – $140.00 (GPU)</td>
+                  <td>$0.0050</td>
+                </tr>
+                <tr>
+                  <td><strong>Legal &amp; Regulatory Audit</strong></td>
+                  <td class="highlight">ASD-STE100 Closed-Form</td>
+                  <td>Black-box probability</td>
+                  <td>None (Token match only)</td>
+                </tr>
+                <tr>
+                  <td><strong>Bias Elimination Protocol</strong></td>
+                  <td class="highlight">Deterministic Wildlife Mask</td>
+                  <td>Prompt injection sensitive</td>
+                  <td>None (Literal search bias)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Enterprise Integration Cards -->
+          <div class="enterprise-cards-grid">
+            <div class="ent-card">
+              <strong>Turnkey ATS / HRIS Webhooks</strong>
+              REST APIs compatible with Workday, SAP SuccessFactors, Greenhouse, and Lever for instant synchronization.
+            </div>
+            <div class="ent-card">
+              <strong>Sovereign Cloud &amp; Security</strong>
+              Deployed in AWS Sydney (<code>ap-southeast-2</code>) with zero external LLM API dependencies and TLS 1.3 encryption.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- =======================================================
+         FOOTER BAR (Budget: 50px)
+         ======================================================= -->
     <footer class="poster-footer">
       <div class="footer-left">
         <div class="footer-title">Jinder • MENTORME FUTURA REMIX HACKATHON 2026</div>
