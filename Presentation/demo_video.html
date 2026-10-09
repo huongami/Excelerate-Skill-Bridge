@@ -594,10 +594,14 @@
         <div class="timeline-track" id="timelineTrack" onclick="seekTimeline(event)">
           <div class="timeline-fill" id="timelineFill"></div>
         </div>
-        <span class="time-readout" id="timeTotal">2:05</span>
+        <span class="time-readout" id="timeTotal">1:35</span>
       </div>
 
       <div class="playback-right">
+        <select id="voiceSelect" onchange="changeVoice(this.value)" class="ctrl-btn" style="background:#1e2044; border-color:rgba(255,255,255,0.2); color:#fff; cursor:pointer;">
+          <option value="natasha">🇦🇺 Natasha (Warm Neural)</option>
+          <option value="william">🇦🇺 William (Dynamic Neural)</option>
+        </select>
         <button type="button" class="ctrl-btn" id="subToggleBtn" onclick="toggleSubs()">
           CC: ON
         </button>
@@ -750,6 +754,20 @@
       if (isPlaying) playCurrentAudio();
     }
 
+    let currentVoice = 'natasha';
+    function changeVoice(voice) {
+      currentVoice = voice;
+      for (let i = 0; i < totalScenes; i++) {
+        const audio = document.getElementById(`audio-${i}`);
+        if (audio) {
+          const src = voice === 'william' ? `audio/scene${i+1}_william.m4a` : `audio/scene${i+1}.m4a`;
+          audio.src = src;
+          audio.load();
+        }
+      }
+      if (isPlaying) playCurrentAudio();
+    }
+
     // Keyboard shortcuts
     window.addEventListener('keydown', (e) => {
       if (e.key === ' ' || e.key === 'k') { e.preventDefault(); togglePlay(); }
@@ -759,7 +777,7 @@
       else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
     });
 
-    // KaTeX render on load
+    // KaTeX render on load & URL scene query support
     document.addEventListener("DOMContentLoaded", function() {
       if (window.renderMathInElement) {
         renderMathInElement(document.body, {
@@ -770,7 +788,9 @@
           throwOnError: false
         });
       }
-      goToScene(0);
+      const params = new URLSearchParams(window.location.search);
+      const s = parseInt(params.get('scene'), 10);
+      goToScene(!isNaN(s) ? s : 0);
     });
   </script>
 </body>
