@@ -5,6 +5,9 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+AUDIO_DIR = os.path.join(SCRIPT_DIR, "audio")
+
 FFMPEG_BIN = "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/imageio_ffmpeg/binaries/ffmpeg-macos-aarch64-v7.1"
 font_path_bold = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
 font_path_reg = "/System/Library/Fonts/Supplemental/Arial.ttf"
@@ -20,8 +23,8 @@ scenes = [
         "step": "STEP 01 OF 09 • TALENT ONBOARDING",
         "title": "Account Creation & Role Selection",
         "sub": "Role Picker • Anonymous Wildlife Persona • National Standards",
-        "img": "Presentation/audio/yt_00_signup.png",
-        "audio": "Presentation/audio/yt_audio_0.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_00_signup.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_0.mp3"),
         "subtitle": "To get started with Jinder, talents and employers can create an account in seconds. Candidates select their role, choose an anonymous Australian wildlife persona like Teal Heron to protect privacy and eliminate bias, and enter their details under strict national standards."
     },
     {
@@ -29,8 +32,8 @@ scenes = [
         "step": "STEP 02 OF 09 • PLATFORM ACCESS",
         "title": "Dual-Role Authentication",
         "sub": "Instant 1-Click Platform Access for Talents & Hiring Teams",
-        "img": "Presentation/audio/yt_01_login.png",
-        "audio": "Presentation/audio/yt_audio_1.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_01_login.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_1.mp3"),
         "subtitle": "Welcome to Jinder, the autonomous capability alignment platform for Australia. Let's sign into the live application as candidate Linh Nguyen."
     },
     {
@@ -38,8 +41,8 @@ scenes = [
         "step": "STEP 03 OF 09 • TALENT WORKSPACE",
         "title": "Overseas Qualification Harmonisation",
         "sub": "ANZSCO 224114 Data Analyst • AQF Level 7 Benchmarking",
-        "img": "Presentation/audio/yt_02_talent_home.png",
-        "audio": "Presentation/audio/yt_audio_2.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_02_talent_home.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_2.mp3"),
         "subtitle": "Linh's overseas BI Specialist title is harmonised to ANZSCO 224114 Data Analyst (AQF Level 7), masked under anonymous persona Teal Heron."
     },
     {
@@ -47,8 +50,8 @@ scenes = [
         "step": "STEP 04 OF 09 • OPPORTUNITY DISCOVERY",
         "title": "Continuous Feed Ranking (Formula F-05)",
         "sub": "Continuous Match Engine Across Melbourne, Sydney & Canberra",
-        "img": "Presentation/audio/yt_03_jobs_feed.png",
-        "audio": "Presentation/audio/yt_audio_3.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_03_jobs_feed.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_3.mp3"),
         "subtitle": "Jinder executes Formula F-05 to rank open roles across Melbourne, Sydney, and Canberra by skill coverage, fit score, and salary upside."
     },
     {
@@ -56,8 +59,8 @@ scenes = [
         "step": "STEP 05 OF 09 • EXPLAINABLE TELEMETRY",
         "title": "Skill Overlap & Gap Analysis",
         "sub": "Transparent Mathematical Breakdown • Targeted Course Actions",
-        "img": "Presentation/audio/yt_04_job_detail.png",
-        "audio": "Presentation/audio/yt_audio_4.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_04_job_detail.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_4.mp3"),
         "subtitle": "Reviewing the Data Analyst role at Stringybark Data: 76% skill coverage, verified SQL & Python competencies, and transparent gap flagging."
     },
     {
@@ -65,8 +68,8 @@ scenes = [
         "step": "STEP 06 OF 09 • VACANCY BENCHMARKING",
         "title": "Multi-Role Comparison Tray",
         "sub": "Benchmarking Opportunities Across Remuneration & Flexibility",
-        "img": "Presentation/audio/yt_05_job_compare.png",
-        "audio": "Presentation/audio/yt_audio_5.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_05_job_compare.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_5.mp3"),
         "subtitle": "Candidates benchmark multiple job opportunities side-by-side across salary, hybrid work flexibility, and long-term capability growth."
     },
     {
@@ -74,8 +77,8 @@ scenes = [
         "step": "STEP 07 OF 09 • EMPLOYER PORTAL",
         "title": "Zero-PII Wildlife Candidate Feed",
         "sub": "Eliminating Demographic Hiring Bias With Masked Personas",
-        "img": "Presentation/audio/yt_06_wildlife_candidates.png",
-        "audio": "Presentation/audio/yt_audio_6.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_06_wildlife_candidates.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_6.mp3"),
         "subtitle": "Switching to Employer portal: Hiring managers discover talent masked under wildlife personas like Violet Koala to eliminate demographic bias."
     },
     {
@@ -83,8 +86,8 @@ scenes = [
         "step": "STEP 08 OF 09 • CAPABILITY PROVENANCE",
         "title": "Verified Evidence & CV Citations",
         "sub": "Concrete CV Tracing • Statutory Blocker Audit Trail",
-        "img": "Presentation/audio/yt_07_candidate_detail.png",
-        "audio": "Presentation/audio/yt_audio_7.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_07_candidate_detail.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_7.mp3"),
         "subtitle": "In-depth candidate profile: Every claimed competency is anchored to concrete CV citations, certifications, and Australian benchmarks."
     },
     {
@@ -92,8 +95,8 @@ scenes = [
         "step": "STEP 09 OF 09 • RADAR BENCHMARKING",
         "title": "Multi-Candidate Radar Comparison",
         "sub": "Identical Radar Axes • Skill Fit, Seniority & Certifications",
-        "img": "Presentation/audio/yt_08_recruiter_compare.png",
-        "audio": "Presentation/audio/yt_audio_8.mp3",
+        "img": os.path.join(AUDIO_DIR, "yt_08_recruiter_compare.png"),
+        "audio": os.path.join(AUDIO_DIR, "yt_audio_8.mp3"),
         "subtitle": "Multi-candidate compare tray: Contrasting candidate profiles on identical radar axes across skill fit, seniority, and certification readiness."
     }
 ]
@@ -156,8 +159,7 @@ def create_app_frame(img_path, subtitle_text, out_path):
     overlay = Image.new("RGBA", (1920, 1080), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
 
-    # NOTICE: NO TOP CHAPTER BAR! KEEP THE APP SCREEN 100% CLEAN!
-    # Bottom Subtitle Box only:
+    # Clean App Screen: Bottom Subtitle Box only
     sub_x0, sub_y0, sub_x1, sub_y1 = 80, 960, 1840, 1050
     draw.rounded_rectangle([sub_x0, sub_y0, sub_x1, sub_y1], radius=16, fill=(10, 12, 28, 238), outline=(255, 255, 255, 60), width=1)
 
@@ -174,104 +176,108 @@ def create_app_frame(img_path, subtitle_text, out_path):
     final_img.save(out_path)
 
 
-print("=== 1. Generating Frames for 9 Scenes ===")
-trans_files = []
-app_files = []
+def main():
+    print("=== 1. Generating Frames for 9 Scenes ===")
+    trans_files = []
+    app_files = []
 
-for sc in scenes:
-    i = sc["index"]
-    t_out = f"Presentation/audio/v2_trans_{i}.png"
-    create_transition_frame(sc["step"], sc["title"], sc["sub"], t_out, i)
-    trans_files.append(t_out)
-    print(f"Created transition frame: {t_out}")
+    for sc in scenes:
+        i = sc["index"]
+        t_out = os.path.join(AUDIO_DIR, f"v2_trans_{i}.png")
+        create_transition_frame(sc["step"], sc["title"], sc["sub"], t_out, i)
+        trans_files.append(t_out)
 
-    a_out = f"Presentation/audio/v2_app_{i}.png"
-    create_app_frame(sc["img"], sc["subtitle"], a_out)
-    app_files.append(a_out)
-    print(f"Created app frame: {a_out}")
+        a_out = os.path.join(AUDIO_DIR, f"v2_app_{i}.png")
+        create_app_frame(sc["img"], sc["subtitle"], a_out)
+        app_files.append(a_out)
 
-print("\n=== 2. Encoding Video Clips with Synchronized Audio Settings (44.1kHz Stereo) ===")
-clip_list = []
+    print("=== 2. Encoding Video Clips (44.1kHz Stereo Synchronized) ===")
+    clip_list = []
+    temp_clips = []
 
-for sc in scenes:
-    i = sc["index"]
-    t_frame = trans_files[i]
-    a_frame = app_files[i]
-    audio_file = sc["audio"]
+    for sc in scenes:
+        i = sc["index"]
+        t_frame = trans_files[i]
+        a_frame = app_files[i]
+        audio_file = sc["audio"]
 
-    t_clip = f"Presentation/audio/v2_tclip_{i}.mp4"
-    a_clip = f"Presentation/audio/v2_aclip_{i}.mp4"
+        t_clip = os.path.join(AUDIO_DIR, f"temp_tclip_{i}.mp4")
+        a_clip = os.path.join(AUDIO_DIR, f"temp_aclip_{i}.mp4")
+        temp_clips.extend([t_clip, a_clip])
 
-    # 1. Transition clip: 1.2s duration, silent audio at 44.1kHz stereo
-    cmd_trans = [
+        # Transition clip: 1.2s duration, silent audio at 44.1kHz stereo
+        cmd_trans = [
+            FFMPEG_BIN, "-y",
+            "-loop", "1", "-t", "1.2",
+            "-i", t_frame,
+            "-f", "lavfi", "-t", "1.2", "-i", "anullsrc=r=44100:cl=stereo",
+            "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
+            "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2",
+            "-pix_fmt", "yuv420p",
+            "-shortest",
+            t_clip
+        ]
+        subprocess.run(cmd_trans, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        clip_list.append(t_clip)
+
+        # App clip: looped image with matching voiceover audio
+        cmd_app = [
+            FFMPEG_BIN, "-y",
+            "-loop", "1",
+            "-i", a_frame,
+            "-i", audio_file,
+            "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
+            "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2",
+            "-pix_fmt", "yuv420p",
+            "-shortest",
+            a_clip
+        ]
+        subprocess.run(cmd_app, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        clip_list.append(a_clip)
+
+    print("=== 3. Concatenating clips ===")
+    concat_txt = os.path.join(AUDIO_DIR, "temp_concat.txt")
+    with open(concat_txt, "w") as f:
+        for c in clip_list:
+            f.write(f"file '{os.path.abspath(c)}'\n")
+
+    intermediate_mp4 = os.path.join(AUDIO_DIR, "temp_intermediate.mp4")
+    subprocess.run([
         FFMPEG_BIN, "-y",
-        "-loop", "1", "-t", "1.2",
-        "-i", t_frame,
-        "-f", "lavfi", "-t", "1.2", "-i", "anullsrc=r=44100:cl=stereo",
-        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
-        "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2",
-        "-pix_fmt", "yuv420p",
-        "-shortest",
-        t_clip
-    ]
-    subprocess.run(cmd_trans, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    clip_list.append(t_clip)
-    print(f"Rendered transition clip {i} -> {t_clip}")
+        "-f", "concat",
+        "-safe", "0",
+        "-i", concat_txt,
+        "-c", "copy",
+        intermediate_mp4
+    ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    # 2. App clip: looped image with matching voiceover audio resampled to 44.1kHz stereo
-    cmd_app = [
+    print("=== 4. Mixing Ambient Background Music ===")
+    master_mp4 = os.path.join(SCRIPT_DIR, "jinder_demo_video.mp4")
+    bg_music = os.path.join(AUDIO_DIR, "ambient_bg_music.mp3")
+
+    cmd_mix = [
         FFMPEG_BIN, "-y",
-        "-loop", "1",
-        "-i", a_frame,
-        "-i", audio_file,
-        "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18",
-        "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2",
-        "-pix_fmt", "yuv420p",
-        "-shortest",
-        a_clip
+        "-i", intermediate_mp4,
+        "-i", bg_music,
+        "-filter_complex",
+        "[1:a]volume=0.12[bg];[0:a][bg]amix=inputs=2:duration=first:dropout_transition=2[aout]",
+        "-c:v", "copy",
+        "-c:a", "aac",
+        "-b:a", "192k",
+        "-ar", "44100",
+        "-map", "0:v",
+        "-map", "[aout]",
+        master_mp4
     ]
-    subprocess.run(cmd_app, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    clip_list.append(a_clip)
-    print(f"Rendered app clip {i} -> {a_clip}")
+    subprocess.run(cmd_mix, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-print("\n=== 3. Concatenating all 18 clips into intermediate video ===")
-concat_txt = "Presentation/audio/v2_concat.txt"
-with open(concat_txt, "w") as f:
-    for c in clip_list:
-        f.write(f"file '{os.path.abspath(c)}'\n")
+    # Clean up temporary clips
+    for tc in temp_clips + [concat_txt, intermediate_mp4]:
+        if os.path.exists(tc):
+            os.remove(tc)
 
-intermediate_mp4 = "Presentation/audio/v2_intermediate.mp4"
-subprocess.run([
-    FFMPEG_BIN, "-y",
-    "-f", "concat",
-    "-safe", "0",
-    "-i", concat_txt,
-    "-c", "copy",
-    intermediate_mp4
-], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-print(f"Intermediate concatenated video: {intermediate_mp4}")
+    size_mb = os.path.getsize(master_mp4) / (1024 * 1024)
+    print(f"SUCCESS! Master Video: {master_mp4} ({size_mb:.2f} MB)")
 
-print("\n=== 4. Mixing Continuous Ambient Background Music ===")
-master_mp4 = "Presentation/jinder_demo_video.mp4"
-bg_music = "Presentation/audio/ambient_bg_music.wav"
-
-cmd_mix = [
-    FFMPEG_BIN, "-y",
-    "-i", intermediate_mp4,
-    "-i", bg_music,
-    "-filter_complex",
-    "[1:a]volume=0.12[bg];[0:a][bg]amix=inputs=2:duration=first:dropout_transition=2[aout]",
-    "-c:v", "copy",
-    "-c:a", "aac",
-    "-b:a", "192k",
-    "-ar", "44100",
-    "-map", "0:v",
-    "-map", "[aout]",
-    master_mp4
-]
-subprocess.run(cmd_mix, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-
-size_mb = os.path.getsize(master_mp4) / (1024 * 1024)
-print(f"\n==========================================")
-print(f"SUCCESS! Master Video: {master_mp4} ({size_mb:.2f} MB)")
-print(f"==========================================")
+if __name__ == "__main__":
+    main()
