@@ -59,7 +59,12 @@ export async function loginView(root, ctx) {
         </form>
         <p class="auth-foot">Don't have an account? <a href="#/signup" class="text-link">Create one</a></p>
         <div class="demo-box" style="margin-top:14px; padding:12px 14px; background:var(--surface-muted); border:1px solid var(--hairline); border-radius:var(--r-md);">
-          <p class="demo-title" style="font-weight:700; font-size:12.5px; margin-bottom:4px; color:var(--ink);">⚡ Quick Demo Sign-In</p>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+            <p class="demo-title" style="font-weight:700; font-size:12.5px; margin:0; color:var(--ink);">⚡ Quick Demo Sign-In</p>
+            <button type="button" class="btn btn-ghost btn-sm" id="btnResetDemoData" style="font-size:11px; padding:2px 8px; color:var(--accent); height:auto;" title="Đặt lại hồ sơ ứng tuyển demo về trạng thái Interview">
+              🔄 Reset Demo
+            </button>
+          </div>
           <p class="hint" style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Click to test each role live with verified sample data:</p>
           <div class="demo-actions" style="display:flex; gap:8px; flex-wrap:wrap;">
             <button type="button" class="btn btn-secondary btn-sm" data-quick-email="candidate@demo.jinder.app" data-quick-pw="z4CJiNScZXnU">
@@ -76,6 +81,30 @@ export async function loginView(root, ctx) {
   </div>`;
 
   const form = root.querySelector("form");
+  const alertEl = root.querySelector("[data-alert]");
+
+  // Reset demo data button on login page
+  const resetBtn = root.querySelector("#btnResetDemoData");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", async () => {
+      resetBtn.disabled = true;
+      resetBtn.textContent = "⏳ Đang reset...";
+      try {
+        await api.demo.resetInterview({ mode: "interview" });
+        showAlert(alertEl, "Đã đặt lại dữ liệu demo về bước Interview thành công! Bạn có thể chọn tài khoản bên dưới để đăng nhập.", "success");
+        resetBtn.textContent = "✓ Đã reset";
+        setTimeout(() => {
+          resetBtn.disabled = false;
+          resetBtn.textContent = "🔄 Reset Demo";
+        }, 2500);
+      } catch (err) {
+        resetBtn.disabled = false;
+        resetBtn.textContent = "🔄 Reset Demo";
+        showAlert(alertEl, "Không thể reset demo: " + (err.message || err), "error");
+      }
+    });
+  }
+
   // Fill the form with 1-click quick demo accounts
   root.querySelectorAll("[data-quick-email]").forEach((b) => b.addEventListener("click", () => {
     form.email.value = b.dataset.quickEmail;
@@ -89,7 +118,6 @@ export async function loginView(root, ctx) {
     form.password.value = CONFIG.MOCK_DEMO_PASSWORD;
     form.requestSubmit();
   }));
-  const alertEl = root.querySelector("[data-alert]");
   enhanceForm(root);
   if (ctx.query.registered) showAlert(alertEl, "Thanks! If this email is new to Jinder, your account is ready. Sign in to continue.", "success");
   if (ctx.query.expired) showAlert(alertEl, "Your session has ended. Sign in again to continue.", "error");
