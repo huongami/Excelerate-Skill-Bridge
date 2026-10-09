@@ -1,5 +1,6 @@
 """Notifications, plans, charts and health (Feature 7). Charts show counts about jobs and the process, never a score on a person."""
 import sqlite3
+from datetime import timedelta
 from collections import Counter
 from typing import Any, Dict
 
@@ -8,7 +9,7 @@ from .. import engine_bridge as eb
 from ..guards import require_user
 from ..http_server import Ctx, route
 from ..reference import PLANS
-from ..util import ApiError, as_list, iso, new_id, utcnow, validation
+from ..util import ApiError, as_list, iso, new_id, short_id, utcnow, validation
 from .applications import FINAL
 from .jobs import talent_context
 
@@ -157,3 +158,82 @@ def _recruiter_stats(conn: sqlite3.Connection, user: sqlite3.Row, ent: Dict[str,
         # The employer opened the Premium charts. This marks the benefit "Pipeline by stage and interest per job" as used.
         store.track(conn, "advanced_charts_view", "feature", "advanced_charts", user["id"])
     return {"role": "recruiter", "basic": basic, "advanced": advanced, "plan": ent["plan"]}
+
+
+# ---------- Demo Application Reset (Live Hackathon Testing / Demo) ----------
+@route("POST", "/demo/reset-interview")
+def demo_reset_interview(ctx: Ctx):
+    """Reset the demo application back to interview or review stage.
+    Accepts:
+      - mode: 'interview' (default: 3 future slots offered, ready for candidate selection)
+              or 'review' (employer schedules 1-3 slots from scratch)
+      - id: optional specific application id (defaults to demo candidate's application)
+    """
+    conn = ctx.conn
+    body = ctx.body if isinstance(ctx.body, dict) else {}
+    mode = body.get("mode", "interview")
+    app_id = body.get("id")
+
+    # Find the target application
+    if app_id:
+        app = conn.execute("SELECT * FROM applications WHERE id = ?", (app_id,)).fetchone()
+    else:
+        tal = conn.execute("SELECT id FROM users WHERE email = 'candidate@demo.jinder.app'").fetchone()
+        if not tal:
+            tal = conn.execute("SELECT id FROM users WHERE role = 'candidate' LIMIT 1").fetchone()
+        if not tal:
+            raise ApiError(404, "NOT_FOUND", "No candidate found.")
+        app = conn.execute("SELECT * FROM applications WHERE candidate_id = ? ORDER BY created_at DESC LIMIT 1", (tal["id"],)).fetchone()
+
+    if not app:
+        raise ApiError(404, "NOT_FOUND", "Demo application not found.")
+
+    aid = app["id"]
+    cid = app["candidate_id"]
+    job = catalogue.find_job(conn, app["job_id"])
+    title = job["title"] if job else "Mid Data Engineer"
+    now = utcnow()
+
+    if mode == "review":
+        conn.execute("""
+            UPDATE applications
+            SET status = 'review', offer_text = NULL, offer_sent_at = NULL, chosen_slot_id = NULL,
+                slot_confirmed = 0, identity_shared = 0, updated_at = ?
+            WHERE id = ?
+        """, (iso(now), aid))
+        conn.execute("DELETE FROM application_slots WHERE application_id = ?", (aid,))
+        conn.execute("DELETE FROM application_history WHERE application_id = ?", (aid,))
+        conn.execute("INSERT INTO application_history (application_id, status, at, actor, note) VALUES (?, 'applied', ?, 'candidate', '')",
+                     (aid, iso(now - timedelta(days=5))))
+        conn.execute("INSERT INTO application_history (application_id, status, at, actor, note) VALUES (?, 'review', ?, 'recruiter', '')",
+                     (aid, iso(now - timedelta(days=3))))
+        emp = store.get_user(conn, app["recruiter_id"])
+        if emp:
+            store.notify(conn, emp["id"], "new_application", f"New application for {title}", "Teal Heron applied.", f"/review/{aid}")
+        msg = "Demo application reset to Review stage. Employer can now schedule interview slots from scratch."
+    else:
+        conn.execute("""
+            UPDATE applications
+            SET status = 'interview', offer_text = NULL, offer_sent_at = NULL, chosen_slot_id = NULL,
+                slot_confirmed = 0, identity_shared = 0, updated_at = ?
+            WHERE id = ?
+        """, (iso(now), aid))
+        conn.execute("DELETE FROM application_slots WHERE application_id = ?", (aid,))
+        future_slots = [
+            (short_id(8), iso((now + timedelta(days=d + 2)).replace(hour=10 + d, minute=0, second=0, microsecond=0)), d)
+            for d in (1, 2, 3)
+        ]
+        for sid, start_iso, pos in future_slots:
+            conn.execute("INSERT INTO application_slots (id, application_id, start, position) VALUES (?, ?, ?, ?)",
+                         (sid, aid, start_iso, pos))
+        conn.execute("DELETE FROM application_history WHERE application_id = ?", (aid,))
+        conn.execute("INSERT INTO application_history (application_id, status, at, actor, note) VALUES (?, 'applied', ?, 'candidate', '')",
+                     (aid, iso(now - timedelta(days=5))))
+        conn.execute("INSERT INTO application_history (application_id, status, at, actor, note) VALUES (?, 'review', ?, 'recruiter', '')",
+                     (aid, iso(now - timedelta(days=4))))
+        conn.execute("INSERT INTO application_history (application_id, status, at, actor, note) VALUES (?, 'interview', ?, 'recruiter', 'Offered 3 interview times')",
+                     (aid, iso(now - timedelta(days=2))))
+        store.notify(conn, cid, "interview_slots", f"Interview times for {title}", "Choose a time that works for you.", f"/applications/{aid}")
+        msg = "Demo application reset to Interview stage. 3 interview slots are ready for candidate selection."
+
+    return {"ok": True, "message": msg, "applicationId": aid, "status": mode}

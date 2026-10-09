@@ -91,3 +91,43 @@ route("POST", "/demo/reset", (ctx) => {
   ctx.skipSave = true; // do not write the old data back
   return { ok: true };
 });
+
+route("POST", "/demo/reset-interview", (ctx) => {
+  const db = ctx.db;
+  const mode = ctx.body?.mode || "interview";
+  const aid = ctx.body?.id;
+  const cand = db.users.find((u) => u.email === "candidate@demo.jinder.app") || db.users.find((u) => u.role === "candidate");
+  const app = aid ? db.applications.find((a) => a.id === aid) : db.applications.find((a) => a.candidateId === cand?.id);
+  if (!app) return { ok: false, message: "Demo application not found." };
+
+  const DAY = 864e5;
+  const at = (days) => new Date(Date.now() + days * DAY).toISOString();
+  if (mode === "review") {
+    app.status = "review";
+    app.slots = [];
+    app.chosenSlotId = null;
+    app.slotConfirmed = false;
+    app.identityShared = false;
+    app.offer = null;
+    app.history = [
+      { status: "applied", at: at(-5), by: "candidate", note: "" },
+      { status: "review", at: at(-3), by: "recruiter", note: "" },
+    ];
+  } else {
+    app.status = "interview";
+    app.slots = [1, 2, 3].map((d) => ({
+      id: Math.random().toString(36).slice(2, 10),
+      start: new Date(new Date(at(d + 2)).setHours(10 + d, 0, 0, 0)).toISOString(),
+    }));
+    app.chosenSlotId = null;
+    app.slotConfirmed = false;
+    app.identityShared = false;
+    app.offer = null;
+    app.history = [
+      { status: "applied", at: at(-5), by: "candidate", note: "" },
+      { status: "review", at: at(-4), by: "recruiter", note: "" },
+      { status: "interview", at: at(-2), by: "recruiter", note: "Offered 3 interview times" },
+    ];
+  }
+  return { ok: true, applicationId: app.id, status: app.status };
+});

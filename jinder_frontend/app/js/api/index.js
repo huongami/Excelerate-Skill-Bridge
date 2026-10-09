@@ -293,6 +293,8 @@ export const api = {
   demo: {
     // Mock only: delete all mock data and write the demo data again
     reset: () => request("POST", "/demo/reset"),
+    // Reset demo application back to interview or review stage
+    resetInterview: (options = {}) => request("POST", "/demo/reset-interview", options),
   },
   bookmarks: {
     // GET /bookmarks?page=&pageSize=&sort=saved|best|newest -> 200 { items: JobCard[], page, sort }

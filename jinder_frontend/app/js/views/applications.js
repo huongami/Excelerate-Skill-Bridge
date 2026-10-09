@@ -225,7 +225,18 @@ export async function applicationDetailView(root, ctx) {
             <h1>${esc(a.job.title)}</h1>
             <p class="dash-sub">${esc(a.job.company)} · ${esc(a.job.area || a.job.location)} · <a class="text-link" href="#/jobs/${esc(a.job.id)}">Job detail</a></p>
           </div>
-          ${ribbonHtml(a.status, a.statusLabel)}
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div class="demo-reset-group" style="display:inline-flex; align-items:center; background:var(--surface-muted); border:1px solid var(--hairline); border-radius:var(--r-md); padding:3px 6px; gap:6px;">
+              <span style="font-size:11px; font-weight:700; color:var(--accent); display:flex; align-items:center; gap:3px;">⚡ Demo:</span>
+              <button type="button" class="btn btn-ghost btn-sm" data-demo-reset="interview" style="font-size:11px; padding:3px 8px; height:auto;" title="Đặt lại về Interview (Talent chọn lịch)">
+                🔄 Về Interview
+              </button>
+              <button type="button" class="btn btn-ghost btn-sm" data-demo-reset="review" style="font-size:11px; padding:3px 8px; height:auto;" title="Đặt lại về Review (Employer set lịch từ đầu)">
+                📅 Set lịch interview từ đầu
+              </button>
+            </div>
+            ${ribbonHtml(a.status, a.statusLabel)}
+          </div>
         </header>
         <section class="panel" aria-label="Progress">${stepperHtml(a)}</section>
         <div data-action></div>
@@ -245,6 +256,21 @@ export async function applicationDetailView(root, ctx) {
         <section class="panel" aria-labelledby="histTitle"><h2 id="histTitle">History</h2>${historyHtml(a.history)}</section>
       </div>`;
     paintMeters(root);
+    root.querySelectorAll("[data-demo-reset]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const mode = btn.dataset.demoReset;
+        btn.disabled = true;
+        try {
+          await api.demo.resetInterview({ id: a.id, mode });
+          announce(mode === "review" ? "Đã reset demo về bước Review (Set lịch interview từ đầu)." : "Đã reset demo về bước Interview (Talent chọn lịch).");
+          app = await api.applications.get(a.id);
+          render(app, "[data-action] h2");
+        } catch (err) {
+          btn.disabled = false;
+          alert("Không thể reset demo: " + (err.message || err));
+        }
+      });
+    });
     renderAction(a, root.querySelector("[data-action]"));
     if (focusSel) root.querySelector(focusSel)?.focus();
   };

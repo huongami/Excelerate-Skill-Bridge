@@ -105,6 +105,31 @@ export function renderShell(root, ctx, activeId) {
   const menuBtn = h("button", { type: "button", class: "btn btn-ghost btn-icon", "aria-controls": "sidebar", "aria-expanded": "false", "aria-label": "Open navigation" }, icon("menu"));
   const topbar = h("header", { class: "app-topbar" }, menuBtn);
   topbar.insertAdjacentHTML("beforeend", logoHtml("#/home", "Jinder home"));
+  const isDemoUser = user.email?.includes("demo.jinder.app") || user.email?.includes("candidate@") || user.email?.includes("recruiter@");
+  if (isDemoUser) {
+    const demoBtn = h("button", {
+      type: "button",
+      class: "btn btn-ghost btn-sm",
+      id: "topbarResetDemo",
+      title: "Reset demo flow to interview",
+      style: "font-size:11.5px; padding:3px 8px; border:1px dashed var(--accent); color:var(--ink); border-radius:12px; margin-left:auto; margin-right:8px; display:inline-flex; align-items:center; gap:4px;"
+    }, "⚡ Reset Demo");
+    demoBtn.addEventListener("click", async () => {
+      demoBtn.disabled = true;
+      demoBtn.textContent = "⏳ Đang reset...";
+      try {
+        const res = await api.demo.resetInterview({ mode: "interview" });
+        const targetHash = user.role === "recruiter" ? `#/review/${res.applicationId}` : `#/applications/${res.applicationId}`;
+        window.location.hash = targetHash;
+        window.location.reload();
+      } catch (e) {
+        demoBtn.disabled = false;
+        demoBtn.textContent = "⚡ Reset Demo";
+        alert("Lỗi khi reset demo: " + (e.message || e));
+      }
+    });
+    topbar.append(demoBtn);
+  }
   const bell = h("a", { href: "#/notifications", class: "btn btn-ghost btn-icon topbar-bell", "aria-label": "Notifications" }, icon("bell"), h("span", { class: "nav-badge", "data-unread": true, hidden: true }));
   topbar.append(bell);
   const scrim = h("div", { class: "sidebar-scrim", hidden: true });

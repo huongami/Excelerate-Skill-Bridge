@@ -978,7 +978,24 @@ export async function reviewView(root, ctx) {
     root.innerHTML = `
       <div class="dash app-detail">
         ${backHtml(`#/my-jobs/${esc(a.job.id)}`, a.job.title)}
-        <header class="dash-head"><div><h1>${esc(a.snapshot.alias)}</h1><p class="dash-sub">${esc(a.job.title)} · ${a.origin === "contacted" ? "You sent an invitation" : `Applied ${esc(formatDate(a.createdAt))}`}</p></div>${ribbonHtml(a.status, a.statusLabel)}</header>
+        <header class="dash-head">
+          <div>
+            <h1>${esc(a.snapshot.alias)}</h1>
+            <p class="dash-sub">${esc(a.job.title)} · ${a.origin === "contacted" ? "You sent an invitation" : `Applied ${esc(formatDate(a.createdAt))}`}</p>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div class="demo-reset-group" style="display:inline-flex; align-items:center; background:var(--surface-muted); border:1px solid var(--hairline); border-radius:var(--r-md); padding:3px 6px; gap:6px;">
+              <span style="font-size:11px; font-weight:700; color:var(--accent); display:flex; align-items:center; gap:3px;">⚡ Demo:</span>
+              <button type="button" class="btn btn-ghost btn-sm" data-demo-reset="interview" style="font-size:11px; padding:3px 8px; height:auto;" title="Đặt lại về Interview (Talent chọn lịch)">
+                🔄 Về Interview
+              </button>
+              <button type="button" class="btn btn-ghost btn-sm" data-demo-reset="review" style="font-size:11px; padding:3px 8px; height:auto;" title="Đặt lại về Review (Employer set lịch từ đầu)">
+                📅 Set lịch interview từ đầu
+              </button>
+            </div>
+            ${ribbonHtml(a.status, a.statusLabel)}
+          </div>
+        </header>
         <section class="panel" aria-label="Progress">${stepperHtml(a)}</section>
         <div data-action></div>
         <div class="jd-grid">
@@ -998,6 +1015,21 @@ export async function reviewView(root, ctx) {
         ${view.wide}
         <section class="panel" aria-labelledby="hTitle"><h2 id="hTitle">History</h2>${historyHtml(a.history, { you: "recruiter" })}</section>
       </div>`;
+    root.querySelectorAll("[data-demo-reset]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const mode = btn.dataset.demoReset;
+        btn.disabled = true;
+        try {
+          await api.demo.resetInterview({ id: a.id, mode });
+          announce(mode === "review" ? "Đã reset demo về bước Review (Set lịch interview từ đầu)." : "Đã reset demo về bước Interview (Talent chọn lịch).");
+          app = await api.recruiter.applications.get(a.id);
+          render(app, true);
+        } catch (err) {
+          btn.disabled = false;
+          alert("Không thể reset demo: " + (err.message || err));
+        }
+      });
+    });
     renderAction(a, root.querySelector("[data-action]"));
     if (focus) root.querySelector("[data-action] h2")?.focus();
   };
