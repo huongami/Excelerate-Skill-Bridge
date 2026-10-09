@@ -606,9 +606,39 @@ select.text-input { cursor: pointer; }
 .ribbon-yellow { background: var(--tint-yellow); color: var(--tint-yellow-ink); }
 .ribbon-green { background: var(--tint-green); color: var(--tint-green-ink); }
 .ribbon-rose { background: var(--tint-rose); color: var(--tint-rose-ink); }
-.stepper { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--sp-xs); overflow-x: auto; }
-.stepper li { flex: 1; min-width: 88px; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; font-size: 13px; color: var(--muted); text-align: center; }
-.stepper li + li::before { content: ""; position: absolute; top: 14px; right: calc(50% + 18px); width: calc(100% - 28px); height: 2px; background: var(--hairline); }
+.stepper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  overflow: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.stepper::-webkit-scrollbar {
+  display: none;
+}
+.stepper li {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+.stepper li + li::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: calc(50% + 14px);
+  width: calc(100% - 28px);
+  height: 2px;
+  background: var(--hairline);
+}
 .stepper-dot { width: 28px; height: 28px; border-radius: var(--r-pill); display: grid; place-items: center; font-weight: 600; font-size: 13px; background: var(--surface-strong); color: var(--muted); position: relative; z-index: 1; }
 .stepper-dot .icon { width: 14px; height: 14px; }
 .step-done .stepper-dot { background: var(--success); color: var(--on-primary); }
@@ -790,7 +820,7 @@ select.text-input { cursor: pointer; }
   .field-grid, .slot-inputs, .plan-group { grid-template-columns: 1fr; }
   .history li { grid-template-columns: 1fr; gap: 2px; }
   .pf-row { grid-template-columns: 1fr; gap: 4px; }
-  .stepper li { min-width: 72px; font-size: 12px; }
+  .stepper li { min-width: 0; font-size: 11px; }
   .check-sm { margin-left: 0; }
   .inline-field .text-input { min-width: 0; width: 100%; }
 }
