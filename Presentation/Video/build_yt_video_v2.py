@@ -25,7 +25,7 @@ scenes = [
         "sub": "Role Picker • Anonymous Wildlife Persona • National Standards",
         "img": os.path.join(AUDIO_DIR, "yt_00_signup.png"),
         "audio": os.path.join(AUDIO_DIR, "yt_audio_0.mp3"),
-        "subtitle": "To get started with Jinder, talents and employers can create an account in seconds. Candidates select their role, choose an anonymous Australian wildlife persona like Teal Heron to protect privacy and eliminate bias, and enter their details under strict national standards."
+        "subtitle": "Welcome to Jinder, the autonomous capability alignment platform for Australia. To get started, talents and employers can create an account in seconds. Candidates select their role, choose an anonymous Australian wildlife persona like Teal Heron to protect privacy and eliminate bias, and enter their details under strict national standards."
     },
     {
         "index": 1,
@@ -34,7 +34,7 @@ scenes = [
         "sub": "Instant 1-Click Platform Access for Talents & Hiring Teams",
         "img": os.path.join(AUDIO_DIR, "yt_01_login.png"),
         "audio": os.path.join(AUDIO_DIR, "yt_audio_1.mp3"),
-        "subtitle": "Welcome to Jinder, the autonomous capability alignment platform for Australia. Let's sign into the live application as candidate Linh Nguyen."
+        "subtitle": "With the account ready, let's sign into the live application using instant 1-click dual-role authentication as candidate Linh Nguyen."
     },
     {
         "index": 2,
