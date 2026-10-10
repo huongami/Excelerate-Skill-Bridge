@@ -61,7 +61,7 @@ export async function loginView(root, ctx) {
         <div class="demo-box" style="margin-top:14px; padding:12px 14px; background:var(--surface-muted); border:1px solid var(--hairline); border-radius:var(--r-md);">
           <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
             <p class="demo-title" style="font-weight:700; font-size:12.5px; margin:0; color:var(--ink);">⚡ Quick Demo Sign-In</p>
-            <button type="button" class="btn btn-ghost btn-sm" id="btnResetDemoData" style="font-size:11px; padding:2px 8px; color:var(--accent); height:auto;" title="Đặt lại hồ sơ ứng tuyển demo về trạng thái Interview">
+            <button type="button" class="btn btn-ghost btn-sm" id="btnResetDemoData" style="font-size:11px; padding:2px 8px; color:var(--accent); height:auto;" title="Reset demo application data to Interview stage">
               🔄 Reset Demo
             </button>
           </div>
@@ -86,21 +86,32 @@ export async function loginView(root, ctx) {
   // Reset demo data button on login page
   const resetBtn = root.querySelector("#btnResetDemoData");
   if (resetBtn) {
+    let alertTimer = null;
+    let btnTimer = null;
     resetBtn.addEventListener("click", async () => {
       resetBtn.disabled = true;
-      resetBtn.textContent = "⏳ Đang reset...";
+      resetBtn.textContent = "⏳ Resetting...";
       try {
         await api.demo.resetInterview({ mode: "interview" });
-        showAlert(alertEl, "Đã đặt lại dữ liệu demo về bước Interview thành công! Bạn có thể chọn tài khoản bên dưới để đăng nhập.", "success");
-        resetBtn.textContent = "✓ Đã reset";
-        setTimeout(() => {
+        const successMsg = "Demo data successfully reset to Interview stage! You can select an account below to sign in.";
+        showAlert(alertEl, successMsg, "success");
+        if (alertTimer) clearTimeout(alertTimer);
+        alertTimer = setTimeout(() => {
+          if (alertEl && alertEl.textContent === successMsg) {
+            alertEl.className = "form-alert";
+            alertEl.textContent = "";
+          }
+        }, 2000);
+        resetBtn.textContent = "✓ Reset";
+        if (btnTimer) clearTimeout(btnTimer);
+        btnTimer = setTimeout(() => {
           resetBtn.disabled = false;
           resetBtn.textContent = "🔄 Reset Demo";
-        }, 2500);
+        }, 2000);
       } catch (err) {
         resetBtn.disabled = false;
         resetBtn.textContent = "🔄 Reset Demo";
-        showAlert(alertEl, "Không thể reset demo: " + (err.message || err), "error");
+        showAlert(alertEl, "Unable to reset demo data: " + (err.message || err), "error");
       }
     });
   }
